@@ -2272,7 +2272,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1670737280234),
+    lastupdate: new Date(1670767930059),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2633,7 +2633,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/from-halo-计算机保研简历面准备-ji-suan-ji-bao-yan-jian-li-mian-zhun-bei/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/09/from-halo-个人博客后台服务器宕机解决-ge-ren-bo-ke-hou-tai-fu-wu-qi-dang-ji-jie-jue/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="self-drive">
   </span>
@@ -2651,7 +2651,81 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/from-halo-%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BF%9D%E7%A0%94%E7%AE%80%E5%8E%86%E9%9D%A2%E5%87%86%E5%A4%87-ji-suan-ji-bao-yan-jian-li-mian-zhun-bei/"  itemprop="url">
+      <a href="/2022/07/09/from-halo-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%90%8E%E5%8F%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%95%E6%9C%BA%E8%A7%A3%E5%86%B3-ge-ren-bo-ke-hou-tai-fu-wu-qi-dang-ji-jie-jue/"  itemprop="url">
+        个人博客后台服务器宕机解决
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        宕机恢复后如何重启服务服务器上重启博客后台服务：
+
+检查是否有进程的comm是“java”
+ps -eo pid,comm | grep &quot;java&quot;
+
+若无则运行halo jar包
+nohup java -jar halo-1.5.4.jar &amp;
+
+
+检查是否有进程的comm是“nginx”，若无则重启nginx服务
+nginx -s reload
+#可能由于一...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-07-09T23:25:19+08:00">2022-07-09</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/fix-error/">fix_error</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/fix-error/" itemprop="url"><span itemprop="name">fix_error</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/07/09/from-halo-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%90%8E%E5%8F%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%95%E6%9C%BA%E8%A7%A3%E5%86%B3-ge-ren-bo-ke-hou-tai-fu-wu-qi-dang-ji-jie-jue/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/09/from-halo-计算机保研简历面准备-ji-suan-ji-bao-yan-jian-li-mian-zhun-bei/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="self-drive">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="self-drive">
+    <meta itemprop="description" content="personal blog">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/07/09/from-halo-%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BF%9D%E7%A0%94%E7%AE%80%E5%8E%86%E9%9D%A2%E5%87%86%E5%A4%87-ji-suan-ji-bao-yan-jian-li-mian-zhun-bei/"  itemprop="url">
         计算机保研简历面准备
       </a>
     </h2>
@@ -2685,7 +2759,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       </div>
       
         <div>
-          <a class='readmore' href='/from-halo-%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BF%9D%E7%A0%94%E7%AE%80%E5%8E%86%E9%9D%A2%E5%87%86%E5%A4%87-ji-suan-ji-bao-yan-jian-li-mian-zhun-bei/' itemprop="url">
+          <a class='readmore' href='/2022/07/09/from-halo-%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BF%9D%E7%A0%94%E7%AE%80%E5%8E%86%E9%9D%A2%E5%87%86%E5%A4%87-ji-suan-ji-bao-yan-jian-li-mian-zhun-bei/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2701,7 +2775,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/from-halo-linux源码阅读开发环境搭建-linux-yuan-ma-yue-du-kai-fa-huan-jing-da-jian/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/09/from-halo-linux源码阅读开发环境搭建-linux-yuan-ma-yue-du-kai-fa-huan-jing-da-jian/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="self-drive">
   </span>
@@ -2719,7 +2793,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/from-halo-linux%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA-linux-yuan-ma-yue-du-kai-fa-huan-jing-da-jian/"  itemprop="url">
+      <a href="/2022/07/09/from-halo-linux%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA-linux-yuan-ma-yue-du-kai-fa-huan-jing-da-jian/"  itemprop="url">
         linux源码阅读开发环境搭建
       </a>
     </h2>
@@ -2762,7 +2836,7 @@ C&#x2F;C++ 插件：remote安装（在remote安装插件的方法：先Remote-SS
       </div>
       
         <div>
-          <a class='readmore' href='/from-halo-linux%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA-linux-yuan-ma-yue-du-kai-fa-huan-jing-da-jian/' itemprop="url">
+          <a class='readmore' href='/2022/07/09/from-halo-linux%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA-linux-yuan-ma-yue-du-kai-fa-huan-jing-da-jian/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2778,7 +2852,7 @@ C&#x2F;C++ 插件：remote安装（在remote安装插件的方法：先Remote-SS
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/from-halo-powershell-windowssmalltools/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/09/from-halo-powershell-windowssmalltools/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="self-drive">
   </span>
@@ -2796,7 +2870,7 @@ C&#x2F;C++ 插件：remote安装（在remote安装插件的方法：先Remote-SS
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/from-halo-powershell-windowssmalltools/"  itemprop="url">
+      <a href="/2022/07/09/from-halo-powershell-windowssmalltools/"  itemprop="url">
         powershell
       </a>
     </h2>
@@ -2835,7 +2909,7 @@ dir /A *
       </div>
       
         <div>
-          <a class='readmore' href='/from-halo-powershell-windowssmalltools/' itemprop="url">
+          <a class='readmore' href='/2022/07/09/from-halo-powershell-windowssmalltools/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2851,7 +2925,7 @@ dir /A *
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/from-halo-tmux-linux-kai-fa-xiao-lv-gong-ju/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/09/from-halo-tmux-linux-kai-fa-xiao-lv-gong-ju/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="self-drive">
   </span>
@@ -2869,7 +2943,7 @@ dir /A *
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/from-halo-tmux-linux-kai-fa-xiao-lv-gong-ju/"  itemprop="url">
+      <a href="/2022/07/09/from-halo-tmux-linux-kai-fa-xiao-lv-gong-ju/"  itemprop="url">
         tmux
       </a>
     </h2>
@@ -2909,7 +2983,7 @@ Tmux 窗口底部有一个状态栏。状态栏的左侧是...
       </div>
       
         <div>
-          <a class='readmore' href='/from-halo-tmux-linux-kai-fa-xiao-lv-gong-ju/' itemprop="url">
+          <a class='readmore' href='/2022/07/09/from-halo-tmux-linux-kai-fa-xiao-lv-gong-ju/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2925,7 +2999,7 @@ Tmux 窗口底部有一个状态栏。状态栏的左侧是...
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/from-halo-git-linux-kai-fa-ji-chu-she-shi-gong-ju/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/09/from-halo-git-linux-kai-fa-ji-chu-she-shi-gong-ju/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="self-drive">
   </span>
@@ -2943,7 +3017,7 @@ Tmux 窗口底部有一个状态栏。状态栏的左侧是...
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/from-halo-git-linux-kai-fa-ji-chu-she-shi-gong-ju/"  itemprop="url">
+      <a href="/2022/07/09/from-halo-git-linux-kai-fa-ji-chu-she-shi-gong-ju/"  itemprop="url">
         git
       </a>
     </h2>
@@ -2988,7 +3062,7 @@ $ g...
       </div>
       
         <div>
-          <a class='readmore' href='/from-halo-git-linux-kai-fa-ji-chu-she-shi-gong-ju/' itemprop="url">
+          <a class='readmore' href='/2022/07/09/from-halo-git-linux-kai-fa-ji-chu-she-shi-gong-ju/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3004,7 +3078,7 @@ $ g...
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/from-halo-netstat-查看udptcp连接-linux-wang-luo-jian-kong-gong-ju/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/09/from-halo-netstat-查看udptcp连接-linux-wang-luo-jian-kong-gong-ju/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="self-drive">
   </span>
@@ -3022,7 +3096,7 @@ $ g...
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/from-halo-netstat-%E6%9F%A5%E7%9C%8Budptcp%E8%BF%9E%E6%8E%A5-linux-wang-luo-jian-kong-gong-ju/"  itemprop="url">
+      <a href="/2022/07/09/from-halo-netstat-%E6%9F%A5%E7%9C%8Budptcp%E8%BF%9E%E6%8E%A5-linux-wang-luo-jian-kong-gong-ju/"  itemprop="url">
         netstat 查看udptcp连接
       </a>
     </h2>
@@ -3059,7 +3133,7 @@ Proto Recv-Q Send-Q Loca...
       </div>
       
         <div>
-          <a class='readmore' href='/from-halo-netstat-%E6%9F%A5%E7%9C%8Budptcp%E8%BF%9E%E6%8E%A5-linux-wang-luo-jian-kong-gong-ju/' itemprop="url">
+          <a class='readmore' href='/2022/07/09/from-halo-netstat-%E6%9F%A5%E7%9C%8Budptcp%E8%BF%9E%E6%8E%A5-linux-wang-luo-jian-kong-gong-ju/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3075,7 +3149,7 @@ Proto Recv-Q Send-Q Loca...
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/from-halo-npm-qian-duan-gong-ju/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/09/from-halo-npm-qian-duan-gong-ju/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="self-drive">
   </span>
@@ -3093,7 +3167,7 @@ Proto Recv-Q Send-Q Loca...
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/from-halo-npm-qian-duan-gong-ju/"  itemprop="url">
+      <a href="/2022/07/09/from-halo-npm-qian-duan-gong-ju/"  itemprop="url">
         npm
       </a>
     </h2>
@@ -3134,7 +3208,7 @@ npm start #u
       </div>
       
         <div>
-          <a class='readmore' href='/from-halo-npm-qian-duan-gong-ju/' itemprop="url">
+          <a class='readmore' href='/2022/07/09/from-halo-npm-qian-duan-gong-ju/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3150,7 +3224,7 @@ npm start #u
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/from-halo-vim操作-vim-cao-zuo/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/09/from-halo-vim操作-vim-cao-zuo/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="self-drive">
   </span>
@@ -3168,7 +3242,7 @@ npm start #u
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/from-halo-vim%E6%93%8D%E4%BD%9C-vim-cao-zuo/"  itemprop="url">
+      <a href="/2022/07/09/from-halo-vim%E6%93%8D%E4%BD%9C-vim-cao-zuo/"  itemprop="url">
         vim操作
       </a>
     </h2>
@@ -3202,7 +3276,7 @@ cp /etc/vim/vim...
       </div>
       
         <div>
-          <a class='readmore' href='/from-halo-vim%E6%93%8D%E4%BD%9C-vim-cao-zuo/' itemprop="url">
+          <a class='readmore' href='/2022/07/09/from-halo-vim%E6%93%8D%E4%BD%9C-vim-cao-zuo/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3218,7 +3292,7 @@ cp /etc/vim/vim...
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/from-halo-vscode通用操作-vscode安装卸载-bian-ji-qi-vscodevim-cao-zuo/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/09/from-halo-vscode通用操作-vscode安装卸载-bian-ji-qi-vscodevim-cao-zuo/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="self-drive">
   </span>
@@ -3236,7 +3310,7 @@ cp /etc/vim/vim...
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/from-halo-vscode%E9%80%9A%E7%94%A8%E6%93%8D%E4%BD%9C-vscode%E5%AE%89%E8%A3%85%E5%8D%B8%E8%BD%BD-bian-ji-qi-vscodevim-cao-zuo/"  itemprop="url">
+      <a href="/2022/07/09/from-halo-vscode%E9%80%9A%E7%94%A8%E6%93%8D%E4%BD%9C-vscode%E5%AE%89%E8%A3%85%E5%8D%B8%E8%BD%BD-bian-ji-qi-vscodevim-cao-zuo/"  itemprop="url">
         vscode通用操作 vscode安装卸载
       </a>
     </h2>
@@ -3270,82 +3344,7 @@ sudo apt install software-properties-common apt-tran...
       </div>
       
         <div>
-          <a class='readmore' href='/from-halo-vscode%E9%80%9A%E7%94%A8%E6%93%8D%E4%BD%9C-vscode%E5%AE%89%E8%A3%85%E5%8D%B8%E8%BD%BD-bian-ji-qi-vscodevim-cao-zuo/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/from-halo-python安装模块-python-an-zhuang-mo-kuai/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="self-drive">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="self-drive">
-    <meta itemprop="description" content="personal blog">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/from-halo-python%E5%AE%89%E8%A3%85%E6%A8%A1%E5%9D%97-python-an-zhuang-mo-kuai/"  itemprop="url">
-        python安装模块
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        python3 pipwindows
-pip install &lt;package_name&gt;
-
-linuxpython3:
-pip3 install &lt;package_name&gt;
-
-网上搜一下，不一定和import的一样
-–user 仅为当前用户安装10.13 安装私有的包 — python3-cookbook 3.0.0 文档
-Python有一个用户安装目录，通常类似...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-07-09T12:45:21+08:00">2022-07-09</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/fix-error/">fix_error</a><span class="sep"></span><a class="category-link" href="/categories/fix-error/python/">python</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/fix-error/" itemprop="url"><span itemprop="name">fix_error</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/fix-error/python/" itemprop="url"><span itemprop="name">python</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/from-halo-python%E5%AE%89%E8%A3%85%E6%A8%A1%E5%9D%97-python-an-zhuang-mo-kuai/' itemprop="url">
+          <a class='readmore' href='/2022/07/09/from-halo-vscode%E9%80%9A%E7%94%A8%E6%93%8D%E4%BD%9C-vscode%E5%AE%89%E8%A3%85%E5%8D%B8%E8%BD%BD-bian-ji-qi-vscodevim-cao-zuo/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3611,7 +3610,7 @@ Python有一个用户安装目录，通常类似...
           <li><a class="flat-box"
             title="/categories/math/" href="/categories/math/"
             active-action="action-categoriesmath"
-            ><div class='name'>math</div><div class='badge'>(4)</div></a></li>
+            ><div class='name'>math</div><div class='badge'>(5)</div></a></li>
         
           <li><a class="flat-box child"
             title="/categories/math/algorithm/" href="/categories/math/algorithm/"
@@ -3621,12 +3620,12 @@ Python有一个用户安装目录，通常类似...
           <li><a class="flat-box child"
             title="/categories/math/graph/" href="/categories/math/graph/"
             active-action="action-categoriesmathgraph"
-            ><div class='name'>graph</div><div class='badge'>(2)</div></a></li>
+            ><div class='name'>graph</div><div class='badge'>(3)</div></a></li>
         
           <li><a class="flat-box child"
             title="/categories/math/graph/algorithm/" href="/categories/math/graph/algorithm/"
             active-action="action-categoriesmathgraphalgorithm"
-            ><div class='name'>algorithm</div><div class='badge'>(1)</div></a></li>
+            ><div class='name'>algorithm</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/paper/" href="/categories/paper/"
