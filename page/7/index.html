@@ -2272,7 +2272,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1670767930059),
+    lastupdate: new Date(1670768198568),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2628,6 +2628,73 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <section class="post-list">
     
     
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/14/from-halo-conda环境切换-conda-huan-jing-qie-huan/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="self-drive">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="self-drive">
+    <meta itemprop="description" content="personal blog">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/09/14/from-halo-conda%E7%8E%AF%E5%A2%83%E5%88%87%E6%8D%A2-conda-huan-jing-qie-huan/"  itemprop="url">
+        conda环境切换
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        装好miniconda之后有的conda命令（miniconda：相比起anaconda不会自带几千个包）
+conda activate &lt;env_name&gt;
+
+比如conda activate basebase外的其他环境的存储目录在&lt;miniconda的安装目录&gt;/envs下（比如/home/yuanzhiqiu/miniconda3）
+
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-09-14T20:53:22+08:00">2022-09-14</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/tool/">tool</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/tool/" itemprop="url"><span itemprop="name">tool</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/09/14/from-halo-conda%E7%8E%AF%E5%A2%83%E5%88%87%E6%8D%A2-conda-huan-jing-qie-huan/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
       
         
           <div class='post-wrapper'>
@@ -3232,80 +3299,6 @@ SStable文件格式物理结构
       
         <div>
           <a class='readmore' href='/2022/09/04/from-halo-leveldb-SSTable-sst%E6%96%87%E4%BB%B6-sst%E8%A7%A3%E6%9E%90%E5%B7%A5%E5%85%B7-leveldbsstablesst-wen-jian/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/04/from-halo-跳跃列表-tiao-yue-lie-biao/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="self-drive">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="self-drive">
-    <meta itemprop="description" content="personal blog">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/09/04/from-halo-%E8%B7%B3%E8%B7%83%E5%88%97%E8%A1%A8-tiao-yue-lie-biao/"  itemprop="url">
-        跳跃列表
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        
-https://zh.wikipedia.org/wiki/%E8%B7%B3%E8%B7%83%E5%88%97%E8%A1%A8
-
-概述
-使得包含n个元素的有序序列的查找和插入操作的平均时间复杂度都是O(log n)，优于数组的O(n)复杂度
-一个多层次的链表。与前一层（下面一层）链表元素的数量相比，每一层链表中的元素的数量更少。每一层是有序的
-
-构造跳跃列表是按层建造的。底层是一个普...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-09-04T09:44:28+08:00">2022-09-04</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/algorithm/">algorithm</a><span class="sep"></span><a class="category-link" href="/categories/algorithm/data-structure/">data_structure</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/algorithm/" itemprop="url"><span itemprop="name">algorithm</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/algorithm/data-structure/" itemprop="url"><span itemprop="name">data_structure</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/09/04/from-halo-%E8%B7%B3%E8%B7%83%E5%88%97%E8%A1%A8-tiao-yue-lie-biao/' itemprop="url">
             Read More
           </a>
         </div>
