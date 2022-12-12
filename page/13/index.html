@@ -2272,7 +2272,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1670768198568),
+    lastupdate: new Date(1670859171409),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2632,7 +2632,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/16/from-halo-c-并发编程实践2ed：33-保护共享数据的方式-c-bing-fa-bian-cheng-shi-jian-2ed33-bao-hu-gong-xiang-shu-ju-de-fang-shi/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/16/c++并发编程实践2ed：32 使用互斥量/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="self-drive">
   </span>
@@ -2650,79 +2650,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/07/16/from-halo-c-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B52ed%EF%BC%9A33-%E4%BF%9D%E6%8A%A4%E5%85%B1%E4%BA%AB%E6%95%B0%E6%8D%AE%E7%9A%84%E6%96%B9%E5%BC%8F-c-bing-fa-bian-cheng-shi-jian-2ed33-bao-hu-gong-xiang-shu-ju-de-fang-shi/"  itemprop="url">
-        c++并发编程实践2ed：3.3 保护共享数据的方式
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        3.3 保护共享数据的方式互斥量是一种通用的机制，但其并非保护共享数据的唯一方式。有很多方式可以在特定情况下，对共享数据提供合适的保护。
-一个特别极端的情况就是，共享数据在并发访问和初始化时(都需要保护)，需要进行隐式同步。这可能是因为数据作为只读方式创建，所以没有同步问题，或者因为必要的保护作为对数据操作的一部分。任何情况下，数据初始化后锁住一个互斥量，纯粹是为了保护其初始化过程，并且会给...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-07-16T21:22:56+08:00">2022-07-16</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/c/">c++</a><span class="sep"></span><a class="category-link" href="/categories/c/language/">language</a><span class="sep"></span><a class="category-link" href="/categories/c/language/concurrency/">concurrency</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/c/" itemprop="url"><span itemprop="name">c++</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/c/language/" itemprop="url"><span itemprop="name">language</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/c/language/concurrency/" itemprop="url"><span itemprop="name">concurrency</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/07/16/from-halo-c-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B52ed%EF%BC%9A33-%E4%BF%9D%E6%8A%A4%E5%85%B1%E4%BA%AB%E6%95%B0%E6%8D%AE%E7%9A%84%E6%96%B9%E5%BC%8F-c-bing-fa-bian-cheng-shi-jian-2ed33-bao-hu-gong-xiang-shu-ju-de-fang-shi/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/16/from-halo-c-并发编程实践2ed：32-使用互斥量-c-bing-fa-bian-cheng-shi-jian-2ed32-shi-yong-hu-chi-liang/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="self-drive">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="self-drive">
-    <meta itemprop="description" content="personal blog">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/07/16/from-halo-c-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B52ed%EF%BC%9A32-%E4%BD%BF%E7%94%A8%E4%BA%92%E6%96%A5%E9%87%8F-c-bing-fa-bian-cheng-shi-jian-2ed32-shi-yong-hu-chi-liang/"  itemprop="url">
+      <a href="/2022/07/16/c++%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B52ed%EF%BC%9A32%20%E4%BD%BF%E7%94%A8%E4%BA%92%E6%96%A5%E9%87%8F/"  itemprop="url">
         c++并发编程实践2ed：3.2 使用互斥量
       </a>
     </h2>
@@ -2763,7 +2691,7 @@ std::lock_guard和std::unique_lock对象，都是为构造它们时传入的第�
       </div>
       
         <div>
-          <a class='readmore' href='/2022/07/16/from-halo-c-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B52ed%EF%BC%9A32-%E4%BD%BF%E7%94%A8%E4%BA%92%E6%96%A5%E9%87%8F-c-bing-fa-bian-cheng-shi-jian-2ed32-shi-yong-hu-chi-liang/' itemprop="url">
+          <a class='readmore' href='/2022/07/16/c++%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B52ed%EF%BC%9A32%20%E4%BD%BF%E7%94%A8%E4%BA%92%E6%96%A5%E9%87%8F/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2779,7 +2707,7 @@ std::lock_guard和std::unique_lock对象，都是为构造它们时传入的第�
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/16/from-halo-c-并发编程实践2ed：25-线程标识-c-bing-fa-bian-cheng-shi-jian-25-xian-cheng-biao-shi/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/16/c++并发编程实践2ed：25 线程标识/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="self-drive">
   </span>
@@ -2797,7 +2725,7 @@ std::lock_guard和std::unique_lock对象，都是为构造它们时传入的第�
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/07/16/from-halo-c-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B52ed%EF%BC%9A25-%E7%BA%BF%E7%A8%8B%E6%A0%87%E8%AF%86-c-bing-fa-bian-cheng-shi-jian-25-xian-cheng-biao-shi/"  itemprop="url">
+      <a href="/2022/07/16/c++%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B52ed%EF%BC%9A25%20%E7%BA%BF%E7%A8%8B%E6%A0%87%E8%AF%86/"  itemprop="url">
         c++并发编程实践2ed：2.5 线程标识
       </a>
     </h2>
@@ -2834,7 +2762,7 @@ std::lock_guard和std::unique_lock对象，都是为构造它们时传入的第�
       </div>
       
         <div>
-          <a class='readmore' href='/2022/07/16/from-halo-c-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B52ed%EF%BC%9A25-%E7%BA%BF%E7%A8%8B%E6%A0%87%E8%AF%86-c-bing-fa-bian-cheng-shi-jian-25-xian-cheng-biao-shi/' itemprop="url">
+          <a class='readmore' href='/2022/07/16/c++%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B52ed%EF%BC%9A25%20%E7%BA%BF%E7%A8%8B%E6%A0%87%E8%AF%86/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2850,7 +2778,7 @@ std::lock_guard和std::unique_lock对象，都是为构造它们时传入的第�
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/16/from-halo-c-并发编程实践2ed：24-确定线程数量-c-bing-fa-bian-cheng-shi-jian-2ed24-que-ding-xian-cheng-shu-liang/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/16/c++并发编程实践2ed：24 确定线程数量/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="self-drive">
   </span>
@@ -2868,7 +2796,7 @@ std::lock_guard和std::unique_lock对象，都是为构造它们时传入的第�
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/07/16/from-halo-c-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B52ed%EF%BC%9A24-%E7%A1%AE%E5%AE%9A%E7%BA%BF%E7%A8%8B%E6%95%B0%E9%87%8F-c-bing-fa-bian-cheng-shi-jian-2ed24-que-ding-xian-cheng-shu-liang/"  itemprop="url">
+      <a href="/2022/07/16/c++%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B52ed%EF%BC%9A24%20%E7%A1%AE%E5%AE%9A%E7%BA%BF%E7%A8%8B%E6%95%B0%E9%87%8F/"  itemprop="url">
         c++并发编程实践2ed：2.4 确定线程数量
       </a>
     </h2>
@@ -2906,7 +2834,7 @@ std::lock_guard和std::unique_lock对象，都是为构造它们时传入的第�
       </div>
       
         <div>
-          <a class='readmore' href='/2022/07/16/from-halo-c-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B52ed%EF%BC%9A24-%E7%A1%AE%E5%AE%9A%E7%BA%BF%E7%A8%8B%E6%95%B0%E9%87%8F-c-bing-fa-bian-cheng-shi-jian-2ed24-que-ding-xian-cheng-shu-liang/' itemprop="url">
+          <a class='readmore' href='/2022/07/16/c++%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B52ed%EF%BC%9A24%20%E7%A1%AE%E5%AE%9A%E7%BA%BF%E7%A8%8B%E6%95%B0%E9%87%8F/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2922,7 +2850,7 @@ std::lock_guard和std::unique_lock对象，都是为构造它们时传入的第�
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/16/from-halo-c-并发编程实践2ed：22-传递参数-c-bing-fa-bian-cheng-shi-jian-2ed22-chuan-di-can-shu/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/16/c++并发编程实践2ed：22 传递参数/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="self-drive">
   </span>
@@ -2940,7 +2868,7 @@ std::lock_guard和std::unique_lock对象，都是为构造它们时传入的第�
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/07/16/from-halo-c-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B52ed%EF%BC%9A22-%E4%BC%A0%E9%80%92%E5%8F%82%E6%95%B0-c-bing-fa-bian-cheng-shi-jian-2ed22-chuan-di-can-shu/"  itemprop="url">
+      <a href="/2022/07/16/c++%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B52ed%EF%BC%9A22%20%E4%BC%A0%E9%80%92%E5%8F%82%E6%95%B0/"  itemprop="url">
         c++并发编程实践2ed：2.2 传递参数
       </a>
     </h2>
@@ -2978,7 +2906,7 @@ std::lock_guard和std::unique_lock对象，都是为构造它们时传入的第�
       </div>
       
         <div>
-          <a class='readmore' href='/2022/07/16/from-halo-c-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B52ed%EF%BC%9A22-%E4%BC%A0%E9%80%92%E5%8F%82%E6%95%B0-c-bing-fa-bian-cheng-shi-jian-2ed22-chuan-di-can-shu/' itemprop="url">
+          <a class='readmore' href='/2022/07/16/c++%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B52ed%EF%BC%9A22%20%E4%BC%A0%E9%80%92%E5%8F%82%E6%95%B0/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2994,7 +2922,7 @@ std::lock_guard和std::unique_lock对象，都是为构造它们时传入的第�
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/16/from-halo-c-11左右值引用-移动语义-c11-zuo-you-zhi-yin-yong-yi-dong-yu-yi/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/16/c++11左右值引用 移动语义/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="self-drive">
   </span>
@@ -3012,7 +2940,7 @@ std::lock_guard和std::unique_lock对象，都是为构造它们时传入的第�
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/07/16/from-halo-c-11%E5%B7%A6%E5%8F%B3%E5%80%BC%E5%BC%95%E7%94%A8-%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89-c11-zuo-you-zhi-yin-yong-yi-dong-yu-yi/"  itemprop="url">
+      <a href="/2022/07/16/c++11%E5%B7%A6%E5%8F%B3%E5%80%BC%E5%BC%95%E7%94%A8%20%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89/"  itemprop="url">
         c++11左右值引用 移动语义
       </a>
     </h2>
@@ -3053,7 +2981,7 @@ int &amp;ref_a = 5; // 左值引用指向了...
       </div>
       
         <div>
-          <a class='readmore' href='/2022/07/16/from-halo-c-11%E5%B7%A6%E5%8F%B3%E5%80%BC%E5%BC%95%E7%94%A8-%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89-c11-zuo-you-zhi-yin-yong-yi-dong-yu-yi/' itemprop="url">
+          <a class='readmore' href='/2022/07/16/c++11%E5%B7%A6%E5%8F%B3%E5%80%BC%E5%BC%95%E7%94%A8%20%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3069,7 +2997,7 @@ int &amp;ref_a = 5; // 左值引用指向了...
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/16/from-halo-c-11异常处理-c11-yi-chang-chu-li/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/16/c++11异常处理/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="self-drive">
   </span>
@@ -3087,7 +3015,7 @@ int &amp;ref_a = 5; // 左值引用指向了...
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/07/16/from-halo-c-11%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86-c11-yi-chang-chu-li/"  itemprop="url">
+      <a href="/2022/07/16/c++11%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/"  itemprop="url">
         c++11异常处理
       </a>
     </h2>
@@ -3131,7 +3059,7 @@ public:
       </div>
       
         <div>
-          <a class='readmore' href='/2022/07/16/from-halo-c-11%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86-c11-yi-chang-chu-li/' itemprop="url">
+          <a class='readmore' href='/2022/07/16/c++11%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3147,7 +3075,7 @@ public:
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/16/from-halo-c-并发编程实践2ed：21和23-thread生命周期-c-bing-fa-bian-cheng-shi-jian-21thread-sheng-ming-zhou-qi/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/16/c++并发编程实践2ed：21和23 thread生命周期/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="self-drive">
   </span>
@@ -3165,7 +3093,7 @@ public:
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/07/16/from-halo-c-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B52ed%EF%BC%9A21%E5%92%8C23-thread%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F-c-bing-fa-bian-cheng-shi-jian-21thread-sheng-ming-zhou-qi/"  itemprop="url">
+      <a href="/2022/07/16/c++%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B52ed%EF%BC%9A21%E5%92%8C23%20thread%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"  itemprop="url">
         c++并发编程实践2ed：2.1和2.3 thread生命周期
       </a>
     </h2>
@@ -3209,7 +3137,7 @@ public:
       </div>
       
         <div>
-          <a class='readmore' href='/2022/07/16/from-halo-c-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B52ed%EF%BC%9A21%E5%92%8C23-thread%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F-c-bing-fa-bian-cheng-shi-jian-21thread-sheng-ming-zhou-qi/' itemprop="url">
+          <a class='readmore' href='/2022/07/16/c++%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B52ed%EF%BC%9A21%E5%92%8C23%20thread%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3225,7 +3153,7 @@ public:
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/16/from-halo-c-底层-c-STL源码-c-di-ceng-cstl-yuan-ma/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/16/c++底层 c++STL源码/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="self-drive">
   </span>
@@ -3243,7 +3171,7 @@ public:
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/07/16/from-halo-c-%E5%BA%95%E5%B1%82-c-STL%E6%BA%90%E7%A0%81-c-di-ceng-cstl-yuan-ma/"  itemprop="url">
+      <a href="/2022/07/16/c++%E5%BA%95%E5%B1%82%20c++STL%E6%BA%90%E7%A0%81/"  itemprop="url">
         c++底层 c++STL源码
       </a>
     </h2>
@@ -3285,7 +3213,7 @@ ulimit -aH
       </div>
       
         <div>
-          <a class='readmore' href='/2022/07/16/from-halo-c-%E5%BA%95%E5%B1%82-c-STL%E6%BA%90%E7%A0%81-c-di-ceng-cstl-yuan-ma/' itemprop="url">
+          <a class='readmore' href='/2022/07/16/c++%E5%BA%95%E5%B1%82%20c++STL%E6%BA%90%E7%A0%81/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3301,7 +3229,7 @@ ulimit -aH
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/16/from-halo-数据库表连接查询-shu-ju-ku-biao-lian-jie-cha-xun/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/16/数据库表连接查询/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="self-drive">
   </span>
@@ -3319,7 +3247,7 @@ ulimit -aH
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/07/16/from-halo-%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A1%A8%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2-shu-ju-ku-biao-lian-jie-cha-xun/"  itemprop="url">
+      <a href="/2022/07/16/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A1%A8%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2/"  itemprop="url">
         数据库表连接查询
       </a>
     </h2>
@@ -3360,7 +3288,78 @@ https://www.ruanyifeng.com/blog/2019/01/table-join.html
       </div>
       
         <div>
-          <a class='readmore' href='/2022/07/16/from-halo-%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A1%A8%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2-shu-ju-ku-biao-lian-jie-cha-xun/' itemprop="url">
+          <a class='readmore' href='/2022/07/16/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A1%A8%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/16/halo主题开发/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="self-drive">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="self-drive">
+    <meta itemprop="description" content="personal blog">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/07/16/halo%E4%B8%BB%E9%A2%98%E5%BC%80%E5%8F%91/"  itemprop="url">
+        halo主题开发
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        官方文档halo主题开发指南：Halo Documents侧边栏的开发者指南-主题开发（文档写得真好！）
+基础
+halo 博客深度定制与美化教程 (bestzuo.cn)
+
+浏览器 F12 定位目标样式F12，然后&#96;&#96;ctrl+shift+c&#96;之后就可以
+
+鼠标选择（指：鼠标悬停）界面元素定位html代码（“元素”tab中）和样式
+
+同时还可以在右边开发者面板中临时修...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-07-16T17:45:42+08:00">2022-07-16</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/play/">play</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/play/" itemprop="url"><span itemprop="name">play</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/07/16/halo%E4%B8%BB%E9%A2%98%E5%BC%80%E5%8F%91/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3625,7 +3624,7 @@ https://www.ruanyifeng.com/blog/2019/01/table-join.html
           <li><a class="flat-box"
             title="/categories/math/" href="/categories/math/"
             active-action="action-categoriesmath"
-            ><div class='name'>math</div><div class='badge'>(5)</div></a></li>
+            ><div class='name'>math</div><div class='badge'>(3)</div></a></li>
         
           <li><a class="flat-box child"
             title="/categories/math/algorithm/" href="/categories/math/algorithm/"
@@ -3635,12 +3634,7 @@ https://www.ruanyifeng.com/blog/2019/01/table-join.html
           <li><a class="flat-box child"
             title="/categories/math/graph/" href="/categories/math/graph/"
             active-action="action-categoriesmathgraph"
-            ><div class='name'>graph</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/math/graph/algorithm/" href="/categories/math/graph/algorithm/"
-            active-action="action-categoriesmathgraphalgorithm"
-            ><div class='name'>algorithm</div><div class='badge'>(2)</div></a></li>
+            ><div class='name'>graph</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/paper/" href="/categories/paper/"
