@@ -2272,7 +2272,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1671288261284),
+    lastupdate: new Date(1672155682867),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2632,6 +2632,438 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/12/10/pidstat/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="self-drive">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="self-drive">
+    <meta itemprop="description" content="personal blog">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/12/10/pidstat/"  itemprop="url">
+        pidstat
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        pidstat（对于每个进程）Linux 运行进程实时监控pidstat命令详解
+pidstat主要用于监控全部或指定进程占用系统资源的情况，如CPU，内存、设备IO、任务切换、线程等。
+pidstat首次运行时显示自系统启动开始的各项统计信息，之后运行pidstat将显示自上次运行该命令以后的统计信息。用户可以通过指定统计的次数和时间来获得所需的统计信息。
+pidstat [ 选项 ] [...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-12-10T23:38:02+08:00">2022-12-10</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/debug/">debug</a><span class="sep"></span><a class="category-link" href="/categories/tool/">tool</a><span class="sep"></span><a class="category-link" href="/categories/tool/linux/">linux</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/tool/" itemprop="url"><span itemprop="name">tool</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/tool/linux/" itemprop="url"><span itemprop="name">linux</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/debug/" itemprop="url"><span itemprop="name">debug</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/12/10/pidstat/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/12/10/linux进程状态 ps指定stat字段可查看/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="self-drive">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="self-drive">
+    <meta itemprop="description" content="personal blog">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/12/10/linux%E8%BF%9B%E7%A8%8B%E7%8A%B6%E6%80%81%20ps%E6%8C%87%E5%AE%9Astat%E5%AD%97%E6%AE%B5%E5%8F%AF%E6%9F%A5%E7%9C%8B/"  itemprop="url">
+        linux进程状态 ps指定stat字段可查看
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        [转载] Linux进程状态解析之R、S、D、T、Z、X-阿里云开发者社区 (aliyun.com)
+stat字段比如R+
+R (TASK_RUNNING)，可执行状态只有在该状态的进程才可能在CPU上运行。而同一时刻可能有多个进程处于可执行状态，这些进程的task_struct结构（进程控制块）被放入对应CPU的可执行队列中（一个进程最多只能出现在一个CPU的可执行队列中）。进程调度器的任...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-12-10T23:36:45+08:00">2022-12-10</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/debug/">debug</a><span class="sep"></span><a class="category-link" href="/categories/tool/">tool</a><span class="sep"></span><a class="category-link" href="/categories/tool/linux/">linux</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/tool/" itemprop="url"><span itemprop="name">tool</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/tool/linux/" itemprop="url"><span itemprop="name">linux</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/debug/" itemprop="url"><span itemprop="name">debug</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/12/10/linux%E8%BF%9B%E7%A8%8B%E7%8A%B6%E6%80%81%20ps%E6%8C%87%E5%AE%9Astat%E5%AD%97%E6%AE%B5%E5%8F%AF%E6%9F%A5%E7%9C%8B/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/12/10/命令行颜色/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="self-drive">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="self-drive">
+    <meta itemprop="description" content="personal blog">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/12/10/%E5%91%BD%E4%BB%A4%E8%A1%8C%E9%A2%9C%E8%89%B2/"  itemprop="url">
+        命令行颜色
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        
+ANSI转义序列 - 维基百科，自由的百科全书 (wikipedia.org)
+Build your own Command Line with ANSI escape codes (lihaoyi.com)
+
+
+Red: \u001b[31m
+Reset: \u001b[0m
+
+This \u001b character is the special character that sta...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-12-10T23:28:58+08:00">2022-12-10</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/tool/">tool</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/tool/" itemprop="url"><span itemprop="name">tool</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/12/10/%E5%91%BD%E4%BB%A4%E8%A1%8C%E9%A2%9C%E8%89%B2/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/12/10/ls/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="self-drive">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="self-drive">
+    <meta itemprop="description" content="personal blog">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/12/10/ls/"  itemprop="url">
+        ls
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        -luse a long listing format
+
+missing:~$ ls -l /home
+drwxr-xr-x 1 missing users 4096 Jun 15 2019 missing
+
+First, the d at the beginning of the line tells us that missing is a directory. 
+Then follow...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-12-10T23:28:20+08:00">2022-12-10</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/tool/">tool</a><span class="sep"></span><a class="category-link" href="/categories/tool/linux/">linux</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/tool/" itemprop="url"><span itemprop="name">tool</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/tool/linux/" itemprop="url"><span itemprop="name">linux</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/12/10/ls/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/12/10/文件系统查看 df/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="self-drive">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="self-drive">
+    <meta itemprop="description" content="personal blog">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/12/10/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E6%9F%A5%E7%9C%8B%20df/"  itemprop="url">
+        文件系统查看 df
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        report file system disk space usage
+Filesystem      Size  Used Avail Use% Mounted on
+
+-h-h, –human-readable              print sizes in powers of 1024 (e.g., 1023M)
+df -h
+
+–max-depth-a, –all       ...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-12-10T23:27:53+08:00">2022-12-10</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/tool/">tool</a><span class="sep"></span><a class="category-link" href="/categories/tool/linux/">linux</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/tool/" itemprop="url"><span itemprop="name">tool</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/tool/linux/" itemprop="url"><span itemprop="name">linux</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/12/10/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E6%9F%A5%E7%9C%8B%20df/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/12/10/bash快捷键/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="self-drive">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="self-drive">
+    <meta itemprop="description" content="personal blog">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/12/10/bash%E5%BF%AB%E6%8D%B7%E9%94%AE/"  itemprop="url">
+        bash快捷键
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        ctrl+R 可以搜索历史输入指令
+
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-12-10T23:26:19+08:00">2022-12-10</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/tool/">tool</a><span class="sep"></span><a class="category-link" href="/categories/tool/linux/">linux</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/tool/" itemprop="url"><span itemprop="name">tool</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/tool/linux/" itemprop="url"><span itemprop="name">linux</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/12/10/bash%E5%BF%AB%E6%8D%B7%E9%94%AE/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
   <link itemprop="mainEntityOfPage" href="http://example.com/2022/12/10/bash文件判断和比较/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="self-drive">
@@ -2834,10 +3266,18 @@ $ echo $...
         <time itemprop="dateCreated datePublished" datetime="2022-12-10T22:21:00+08:00">2022-12-10</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/SIMD/">SIMD</a>
+          <a class="category-link" href="/categories/SIMD/">SIMD</a><span class="sep"></span><a class="category-link" href="/categories/c/">c++</a><span class="sep"></span><a class="category-link" href="/categories/c/SIMD/">SIMD</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
               <a href="/categories/SIMD/" itemprop="url"><span itemprop="name">SIMD</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/c/" itemprop="url"><span itemprop="name">c++</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/c/SIMD/" itemprop="url"><span itemprop="name">SIMD</span></a>
             </span>
           
         
@@ -2903,7 +3343,7 @@ opreport -o symbols.txt -l
         <time itemprop="dateCreated datePublished" datetime="2022-12-09T22:55:43+08:00">2022-12-09</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/tool/">tool</a><span class="sep"></span><a class="category-link" href="/categories/tool/linux/">linux</a>
+          <a class="category-link" href="/categories/debug/">debug</a><span class="sep"></span><a class="category-link" href="/categories/tool/">tool</a><span class="sep"></span><a class="category-link" href="/categories/tool/linux/">linux</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
               <a href="/categories/tool/" itemprop="url"><span itemprop="name">tool</span></a>
@@ -2913,380 +3353,15 @@ opreport -o symbols.txt -l
               <a href="/categories/tool/linux/" itemprop="url"><span itemprop="name">linux</span></a>
             </span>
           
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/debug/" itemprop="url"><span itemprop="name">debug</span></a>
+            </span>
+          
         
       </div>
       
         <div>
           <a class='readmore' href='/2022/12/09/operf-t-thread%E4%B8%BE%E4%BE%8B/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/12/09/社交网络复习/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="self-drive">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="self-drive">
-    <meta itemprop="description" content="personal blog">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/"  itemprop="url">
-        社交网络复习
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        
-未看但是可能要看：
-2.4 分支限界算法中：多项式近似算法，page 35
-2.4 KT index，page 63
-
-
-1.1 图的基本概念、类型
-
-
-1.2 幂律分布、图的测度参数、随机图
-
-
-
-
-
-
-2.1 顶点及边的中心性计算
-n为全图顶点数目
-
-无向图的度中心性：顶点的度（可以通过除以最大可能值n-1来标准化度数）
-
-
-
-
-
-
-
-2.2 可达性&amp;最短路径
-Dijkstra...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-12-09T19:36:23+08:00">2022-12-09</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/course/">course</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/course/" itemprop="url"><span itemprop="name">course</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/12/08/github-hexo-volantis主题搭建博客/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="self-drive">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="self-drive">
-    <meta itemprop="description" content="personal blog">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/12/08/github-hexo-volantis%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"  itemprop="url">
-        github+hexo+volantis主题搭建博客
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        参考：GitHub Pages + Hexo搭建个人博客网站，史上最全教程
-搭建创建github仓库新建public仓库，命名为&lt;用户名&gt;.github.io
-仓库settings中pages项启用github pages（默认是启用了的）
-本地hexo
-安装 Hexo
-
-npm install -g hexo-cli
-
-
-验证是否安装成功：查看版本
-hexo -v
-
-
-
-创建一...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-12-08T23:31:20+08:00">2022-12-08</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/play/">play</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/play/" itemprop="url"><span itemprop="name">play</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/12/08/github-hexo-volantis%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/12/07/rust学习资源链接/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="self-drive">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="self-drive">
-    <meta itemprop="description" content="personal blog">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/12/07/rust%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90%E9%93%BE%E6%8E%A5/"  itemprop="url">
-        rust learning source link
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        入门学习：rust语言圣经 https://course.rs/first-try/editor.html
-
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-12-07T23:50:58+08:00">2022-12-07</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/language/">language</a><span class="sep"></span><a class="category-link" href="/categories/language/rust/">rust</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/language/" itemprop="url"><span itemprop="name">language</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/language/rust/" itemprop="url"><span itemprop="name">rust</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/12/07/rust%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90%E9%93%BE%E6%8E%A5/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/12/07/cargo/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="self-drive">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="self-drive">
-    <meta itemprop="description" content="personal blog">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/12/07/cargo/"  itemprop="url">
-        cargo
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        cargo run 编译运行cargo run 首先对项目进行编译，然后再运行默认是debug模式，在这种模式下，代码的编译速度会非常快，运行速度就慢了. 原因是，在 debug 模式下，Rust 编译器不会做任何的优化高性能：cargo run --release
-cargo check 检查能否通过编译cargo check快速的检查一下代码能否编译通过。因此该命令速度会非常快，能节省大...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-12-07T23:49:46+08:00">2022-12-07</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/language/">language</a><span class="sep"></span><a class="category-link" href="/categories/language/rust/">rust</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/language/" itemprop="url"><span itemprop="name">language</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/language/rust/" itemprop="url"><span itemprop="name">rust</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/12/07/cargo/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/22/数据库概念/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="self-drive">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="self-drive">
-    <meta itemprop="description" content="personal blog">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/11/22/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A6%82%E5%BF%B5/"  itemprop="url">
-        数据库概念-transaction
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        A transaction is a logical, atomic unit of work that contains one or more SQL statements. A transaction groups SQL statements so that they are either all committed, which means they are applied to ...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-11-22T19:31:44+08:00">2022-11-22</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/db/">db</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/db/" itemprop="url"><span itemprop="name">db</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/11/22/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A6%82%E5%BF%B5/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3428,11 +3503,6 @@ cargo check 检查能否通过编译cargo check快速的检查一下代码能否
             active-action="action-categoriesML"
             ><div class='name'>ML</div><div class='badge'>(1)</div></a></li>
         
-          <li><a class="flat-box child"
-            title="/categories/ML/math/" href="/categories/ML/math/"
-            active-action="action-categoriesMLmath"
-            ><div class='name'>math</div><div class='badge'>(1)</div></a></li>
-        
           <li><a class="flat-box"
             title="/categories/SIMD/" href="/categories/SIMD/"
             active-action="action-categoriesSIMD"
@@ -3441,57 +3511,47 @@ cargo check 检查能否通过编译cargo check快速的检查一下代码能否
           <li><a class="flat-box"
             title="/categories/algorithm/" href="/categories/algorithm/"
             active-action="action-categoriesalgorithm"
-            ><div class='name'>algorithm</div><div class='badge'>(2)</div></a></li>
+            ><div class='name'>algorithm</div><div class='badge'>(6)</div></a></li>
         
-          <li><a class="flat-box child"
-            title="/categories/algorithm/data-structure/" href="/categories/algorithm/data-structure/"
-            active-action="action-categoriesalgorithmdata-structure"
-            ><div class='name'>data_structure</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/algorithm/distributed-computing/" href="/categories/algorithm/distributed-computing/"
-            active-action="action-categoriesalgorithmdistributed-computing"
-            ><div class='name'>distributed_computing</div><div class='badge'>(1)</div></a></li>
+          <li><a class="flat-box"
+            title="/categories/c-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B52ed/" href="/categories/c-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B52ed/"
+            active-action="action-categoriesc-E5B9B6E58F91E7BC96E7A88BE5AE9EE8B7B52ed"
+            ><div class='name'>c++并发编程实践2ed</div><div class='badge'>(9)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/c/" href="/categories/c/"
             active-action="action-categoriesc"
-            ><div class='name'>c++</div><div class='badge'>(24)</div></a></li>
+            ><div class='name'>c++</div><div class='badge'>(33)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/c/SIMD/" href="/categories/c/SIMD/"
+            active-action="action-categoriescSIMD"
+            ><div class='name'>SIMD</div><div class='badge'>(3)</div></a></li>
         
           <li><a class="flat-box child"
             title="/categories/c/debug/" href="/categories/c/debug/"
             active-action="action-categoriescdebug"
-            ><div class='name'>debug</div><div class='badge'>(4)</div></a></li>
+            ><div class='name'>debug</div><div class='badge'>(5)</div></a></li>
         
           <li><a class="flat-box child"
-            title="/categories/c/debug/gcc/" href="/categories/c/debug/gcc/"
-            active-action="action-categoriescdebuggcc"
+            title="/categories/c/gcc/" href="/categories/c/gcc/"
+            active-action="action-categoriescgcc"
             ><div class='name'>gcc</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/c/language-deep/" href="/categories/c/language-deep/"
+            active-action="action-categoriesclanguage-deep"
+            ><div class='name'>language_deep</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box child"
             title="/categories/c/language/" href="/categories/c/language/"
             active-action="action-categoriesclanguage"
-            ><div class='name'>language</div><div class='badge'>(18)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/c/language/concurrency/" href="/categories/c/language/concurrency/"
-            active-action="action-categoriesclanguageconcurrency"
-            ><div class='name'>concurrency</div><div class='badge'>(9)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/c/language/debug/" href="/categories/c/language/debug/"
-            active-action="action-categoriesclanguagedebug"
-            ><div class='name'>debug</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/c/language/linux-syscall/" href="/categories/c/language/linux-syscall/"
-            active-action="action-categoriesclanguagelinux-syscall"
-            ><div class='name'>linux_syscall</div><div class='badge'>(1)</div></a></li>
+            ><div class='name'>language</div><div class='badge'>(20)</div></a></li>
         
           <li><a class="flat-box child"
             title="/categories/c/linux-syscall/" href="/categories/c/linux-syscall/"
             active-action="action-categoriesclinux-syscall"
-            ><div class='name'>linux_syscall</div><div class='badge'>(2)</div></a></li>
+            ><div class='name'>linux_syscall</div><div class='badge'>(5)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/course/" href="/categories/course/"
@@ -3504,79 +3564,44 @@ cargo check 检查能否通过编译cargo check快速的检查一下代码能否
             ><div class='name'>os</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
-            title="/categories/data-structure/" href="/categories/data-structure/"
-            active-action="action-categoriesdata-structure"
-            ><div class='name'>data_structure</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
             title="/categories/db/" href="/categories/db/"
             active-action="action-categoriesdb"
-            ><div class='name'>db</div><div class='badge'>(6)</div></a></li>
+            ><div class='name'>db</div><div class='badge'>(8)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/debug/" href="/categories/debug/"
+            active-action="action-categoriesdebug"
+            ><div class='name'>debug</div><div class='badge'>(23)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/fix-error/" href="/categories/fix-error/"
             active-action="action-categoriesfix-error"
-            ><div class='name'>fix_error</div><div class='badge'>(7)</div></a></li>
+            ><div class='name'>fix_error</div><div class='badge'>(13)</div></a></li>
         
           <li><a class="flat-box child"
             title="/categories/fix-error/gcc/" href="/categories/fix-error/gcc/"
             active-action="action-categoriesfix-errorgcc"
             ><div class='name'>gcc</div><div class='badge'>(1)</div></a></li>
         
-          <li><a class="flat-box child"
-            title="/categories/fix-error/python/" href="/categories/fix-error/python/"
-            active-action="action-categoriesfix-errorpython"
-            ><div class='name'>python</div><div class='badge'>(1)</div></a></li>
-        
           <li><a class="flat-box"
             title="/categories/graph/" href="/categories/graph/"
             active-action="action-categoriesgraph"
-            ><div class='name'>graph</div><div class='badge'>(4)</div></a></li>
+            ><div class='name'>graph</div><div class='badge'>(7)</div></a></li>
         
           <li><a class="flat-box child"
-            title="/categories/graph/system/" href="/categories/graph/system/"
-            active-action="action-categoriesgraphsystem"
-            ><div class='name'>system</div><div class='badge'>(4)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/language/" href="/categories/language/"
-            active-action="action-categorieslanguage"
-            ><div class='name'>language</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/language/rust/" href="/categories/language/rust/"
-            active-action="action-categorieslanguagerust"
-            ><div class='name'>rust</div><div class='badge'>(2)</div></a></li>
+            title="/categories/graph/db/" href="/categories/graph/db/"
+            active-action="action-categoriesgraphdb"
+            ><div class='name'>db</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/math/" href="/categories/math/"
             active-action="action-categoriesmath"
-            ><div class='name'>math</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/math/algorithm/" href="/categories/math/algorithm/"
-            active-action="action-categoriesmathalgorithm"
-            ><div class='name'>algorithm</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/math/graph/" href="/categories/math/graph/"
-            active-action="action-categoriesmathgraph"
-            ><div class='name'>graph</div><div class='badge'>(1)</div></a></li>
+            ><div class='name'>math</div><div class='badge'>(4)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/paper/" href="/categories/paper/"
             active-action="action-categoriespaper"
             ><div class='name'>paper</div><div class='badge'>(17)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/paper/graph/" href="/categories/paper/graph/"
-            active-action="action-categoriespapergraph"
-            ><div class='name'>graph</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/paper/graph/algorithm/" href="/categories/paper/graph/algorithm/"
-            active-action="action-categoriespapergraphalgorithm"
-            ><div class='name'>algorithm</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/plan/" href="/categories/plan/"
@@ -3591,57 +3616,47 @@ cargo check 检查能否通过编译cargo check快速的检查一下代码能否
           <li><a class="flat-box"
             title="/categories/play/" href="/categories/play/"
             active-action="action-categoriesplay"
-            ><div class='name'>play</div><div class='badge'>(4)</div></a></li>
+            ><div class='name'>play</div><div class='badge'>(6)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/python/" href="/categories/python/"
+            active-action="action-categoriespython"
+            ><div class='name'>python</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/python/debug/" href="/categories/python/debug/"
+            active-action="action-categoriespythondebug"
+            ><div class='name'>debug</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/python/language/" href="/categories/python/language/"
+            active-action="action-categoriespythonlanguage"
+            ><div class='name'>language</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/rust/" href="/categories/rust/"
+            active-action="action-categoriesrust"
+            ><div class='name'>rust</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/rust/language/" href="/categories/rust/language/"
+            active-action="action-categoriesrustlanguage"
+            ><div class='name'>language</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/rust/tool/" href="/categories/rust/tool/"
+            active-action="action-categoriesrusttool"
+            ><div class='name'>tool</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/tool/" href="/categories/tool/"
             active-action="action-categoriestool"
-            ><div class='name'>tool</div><div class='badge'>(69)</div></a></li>
+            ><div class='name'>tool</div><div class='badge'>(70)</div></a></li>
         
           <li><a class="flat-box child"
             title="/categories/tool/linux/" href="/categories/tool/linux/"
             active-action="action-categoriestoollinux"
-            ><div class='name'>linux</div><div class='badge'>(52)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/tool/linux/c/" href="/categories/tool/linux/c/"
-            active-action="action-categoriestoollinuxc"
-            ><div class='name'>c++</div><div class='badge'>(5)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/tool/linux/c/debug/" href="/categories/tool/linux/c/debug/"
-            active-action="action-categoriestoollinuxcdebug"
-            ><div class='name'>debug</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/tool/linux/c/language/" href="/categories/tool/linux/c/language/"
-            active-action="action-categoriestoollinuxclanguage"
-            ><div class='name'>language</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/tool/linux/c/language/linux-syscall/" href="/categories/tool/linux/c/language/linux-syscall/"
-            active-action="action-categoriestoollinuxclanguagelinux-syscall"
-            ><div class='name'>linux_syscall</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/tool/linux/c/linux-syscall/" href="/categories/tool/linux/c/linux-syscall/"
-            active-action="action-categoriestoollinuxclinux-syscall"
-            ><div class='name'>linux_syscall</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/tool/linux/debug/" href="/categories/tool/linux/debug/"
-            active-action="action-categoriestoollinuxdebug"
-            ><div class='name'>debug</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/tool/linux/fix-error/" href="/categories/tool/linux/fix-error/"
-            active-action="action-categoriestoollinuxfix-error"
-            ><div class='name'>fix_error</div><div class='badge'>(4)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/tool/play/" href="/categories/tool/play/"
-            active-action="action-categoriestoolplay"
-            ><div class='name'>play</div><div class='badge'>(1)</div></a></li>
+            ><div class='name'>linux</div><div class='badge'>(51)</div></a></li>
         
           <li><a class="flat-box child"
             title="/categories/tool/windows/" href="/categories/tool/windows/"
@@ -3676,7 +3691,7 @@ cargo check 检查能否通过编译cargo check快速的检查一下代码能否
 
 
     <div class='content'>
-      <a href="/tags/SIMD/" style="font-size: 17.33px; color: #828282">SIMD</a> <a href="/tags/bash/" style="font-size: 24px; color: #555">bash</a> <a href="/tags/course/" style="font-size: 14px; color: #999">course</a> <a href="/tags/db/" style="font-size: 14px; color: #999">db</a> <a href="/tags/excel/" style="font-size: 14px; color: #999">excel</a> <a href="/tags/gdb/" style="font-size: 14px; color: #999">gdb</a> <a href="/tags/graph/" style="font-size: 14px; color: #999">graph</a> <a href="/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/tags/linux/" style="font-size: 17.33px; color: #828282">linux</a> <a href="/tags/math/" style="font-size: 14px; color: #999">math</a> <a href="/tags/paper/" style="font-size: 17.33px; color: #828282">paper</a> <a href="/tags/rocksdb/" style="font-size: 20.67px; color: #6c6c6c">rocksdb</a> <a href="/tags/rust/" style="font-size: 17.33px; color: #828282">rust</a> <a href="/tags/tool/" style="font-size: 17.33px; color: #828282">tool</a> <a href="/tags/windows/" style="font-size: 17.33px; color: #828282">windows</a> <a href="/tags/%E6%A6%82%E7%BB%9F/" style="font-size: 14px; color: #999">概统</a>
+      <a href="/tags/GPU/" style="font-size: 15.25px; color: #919191">GPU</a> <a href="/tags/SIMD/" style="font-size: 16.5px; color: #888">SIMD</a> <a href="/tags/bash/" style="font-size: 21.5px; color: #666">bash</a> <a href="/tags/c/" style="font-size: 22.75px; color: #5e5e5e">c++</a> <a href="/tags/concurrency/" style="font-size: 20.25px; color: #6f6f6f">concurrency</a> <a href="/tags/git/" style="font-size: 14px; color: #999">git</a> <a href="/tags/graph/" style="font-size: 19px; color: #777">graph</a> <a href="/tags/halo/" style="font-size: 16.5px; color: #888">halo</a> <a href="/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/tags/linux/" style="font-size: 24px; color: #555">linux</a> <a href="/tags/python/" style="font-size: 17.75px; color: #808080">python</a> <a href="/tags/rocksdb/" style="font-size: 16.5px; color: #888">rocksdb</a> <a href="/tags/rust/" style="font-size: 15.25px; color: #919191">rust</a> <a href="/tags/tool/" style="font-size: 15.25px; color: #919191">tool</a> <a href="/tags/%E6%A6%82%E7%BB%9F/" style="font-size: 14px; color: #999">概统</a>
     </div>
   </section>
 

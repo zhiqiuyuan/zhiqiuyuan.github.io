@@ -34,7 +34,7 @@
   <!-- feed -->
   <!-- 页面元数据 -->
   <title>c++并发编程实践2ed：2.4 确定线程数量 - self-drive</title>
-  <meta name="keywords" content="null">
+  <meta name="keywords" content="c++,concurrency,null">
   <meta desc name="description" content="personal blog - zhiqiuyuan - self-drive">
   
 <meta property="og:type" content="article">
@@ -47,6 +47,8 @@
 <meta property="article:published_time" content="2022-07-16T13:16:43.074Z">
 <meta property="article:modified_time" content="2022-12-10T15:17:13.000Z">
 <meta property="article:author" content="zhiqiuyuan">
+<meta property="article:tag" content="c++">
+<meta property="article:tag" content="concurrency">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -2274,7 +2276,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1671288261284),
+    lastupdate: new Date(1672155682867),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2655,9 +2657,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
             
 <div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <a itemprop="url" class='author' href="/" rel="nofollow">
-    <img itemprop="image" src="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/apple-touch-icon.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/apple-touch-icon.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-    <p itemprop="name">请设置文章作者</p>
+  <a itemprop="url" class='author' target="_blank" href="https://zhiqiuyuan.github.io/" rel="nofollow noopener">
+    <img itemprop="image" src="https://cn.bing.com/th?id=AMMS_fc8f99fd41ebd737a71c4e13806db9a0&w=110&h=110&c=7&rs=1&qlt=80&pcl=f9f9f9&cdv=1&dpr=2&pid=16.1" class="lazyload" data-srcset="https://cn.bing.com/th?id=AMMS_fc8f99fd41ebd737a71c4e13806db9a0&w=110&h=110&c=7&rs=1&qlt=80&pcl=f9f9f9&cdv=1&dpr=2&pid=16.1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <p itemprop="name">zhiqiuyuan</p>
   </a>
 </div>
 
@@ -2670,7 +2672,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
   <div class='new-meta-item category'>
     <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
-    <a class="category-link" href="/categories/c/">c++</a><span class="sep"></span><a class="category-link" href="/categories/c/language/">language</a><span class="sep"></span><a class="category-link" href="/categories/c/language/concurrency/">concurrency</a>
+    <a class="category-link" href="/categories/c/">c++</a><span class="sep"></span><a class="category-link" href="/categories/c/language/">language</a><span class="sep"></span><a class="category-link" href="/categories/c-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B52ed/">c++并发编程实践2ed</a>
     
       <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
         <a href="/categories/c/" itemprop="url"><span itemprop="name">c++</span></a>
@@ -2681,7 +2683,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       </span>
     
       <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-        <a href="/categories/c/language/concurrency/" itemprop="url"><span itemprop="name">concurrency</span></a>
+        <a href="/categories/c-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B52ed/" itemprop="url"><span itemprop="name">c++并发编程实践2ed</span></a>
       </span>
     
   </div>
@@ -2817,6 +2819,13 @@ T parallel_accumulate(Iterator first,Iterator last,T init)
       
         
           
+  
+  
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/c/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>c++</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/concurrency/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>concurrency</p></a></div>
+  <span hidden itemprop="keywords">c++ concurrency</span>
+  
+
 
         
       
@@ -3917,7 +3926,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"self-drive","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"personal blog"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"self-drive"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/c/","name":"c++"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/c/language/","name":"language"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/c/language/concurrency/","name":"concurrency"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/07/16/c++并发编程实践2ed：24 确定线程数量/","name":"c++并发编程实践2ed：2.4 确定线程数量"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"self-drive","url":"http://example.com/","keywords":null,"description":"personal blog","author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"personal blog"},"publisher":{"@type":"Organization","name":"self-drive","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"c++并发编程实践2ed：2.4 确定线程数量","description":"personal blog","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/07/16/c++%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B52ed%EF%BC%9A24%20%E7%A1%AE%E5%AE%9A%E7%BA%BF%E7%A8%8B%E6%95%B0%E9%87%8F/"},"author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"self-drive","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/07/16/c++%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B52ed%EF%BC%9A24%20%E7%A1%AE%E5%AE%9A%E7%BA%BF%E7%A8%8B%E6%95%B0%E9%87%8F/","wordCount":0,"datePublished":"2022-07-16T13:16:43.074Z","dateModified":"2022-12-10T15:17:13.000Z","articleSection":"c++","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"self-drive","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"personal blog"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"self-drive"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/c/","name":"c++"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/c/language/","name":"language"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/c-并发编程实践2ed/","name":"c++并发编程实践2ed"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/07/16/c++并发编程实践2ed：24 确定线程数量/","name":"c++并发编程实践2ed：2.4 确定线程数量"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"self-drive","url":"http://example.com/","keywords":null,"description":"personal blog","author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"personal blog"},"publisher":{"@type":"Organization","name":"self-drive","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"c++并发编程实践2ed：2.4 确定线程数量","description":"personal blog","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/07/16/c++%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B52ed%EF%BC%9A24%20%E7%A1%AE%E5%AE%9A%E7%BA%BF%E7%A8%8B%E6%95%B0%E9%87%8F/"},"author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"self-drive","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/07/16/c++%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B52ed%EF%BC%9A24%20%E7%A1%AE%E5%AE%9A%E7%BA%BF%E7%A8%8B%E6%95%B0%E9%87%8F/","wordCount":0,"datePublished":"2022-07-16T13:16:43.074Z","dateModified":"2022-12-10T15:17:13.000Z","articleSection":"c++","keywords":"c++,concurrency","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

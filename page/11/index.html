@@ -2272,7 +2272,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1671288261284),
+    lastupdate: new Date(1672155682867),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2632,6 +2632,434 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/11/WSL wsl/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="self-drive">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="self-drive">
+    <meta itemprop="description" content="personal blog">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/08/11/WSL%20wsl/"  itemprop="url">
+        WSL wsl
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        安装教程https://zhuanlan.zhihu.com/p/386590591?utm_campaign=shareopn&amp;utm_medium=social&amp;utm_oi=1123716080996339712&amp;utm_psn=1540980178544648192&amp;utm_source=wechat_session
+WSL中访问本地文件
+在“&#x2...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-08-11T11:04:12+08:00">2022-08-11</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/tool/">tool</a><span class="sep"></span><a class="category-link" href="/categories/tool/windows/">windows</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/tool/" itemprop="url"><span itemprop="name">tool</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/tool/windows/" itemprop="url"><span itemprop="name">windows</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/08/11/WSL%20wsl/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/11/跨越跳板服务器传送文件 登录目标服务器/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="self-drive">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="self-drive">
+    <meta itemprop="description" content="personal blog">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/08/11/%E8%B7%A8%E8%B6%8A%E8%B7%B3%E6%9D%BF%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BC%A0%E9%80%81%E6%96%87%E4%BB%B6%20%E7%99%BB%E5%BD%95%E7%9B%AE%E6%A0%87%E6%9C%8D%E5%8A%A1%E5%99%A8/"  itemprop="url">
+        跨越跳板服务器传送文件 登录目标服务器
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        A-&gt;B-&gt;CA&lt;-B&lt;-C
+配置A-&gt;B免密，A-&gt;C免密
+把A的公匙上传到B和C的~/.ssh/authorized_keys中
+公匙生成命令（.pub文件为公匙）ssh-keygen -t rsa 
+
+
+
+
+
+在A的~/.ssh/config增加：Host B #跳板机
+    HostName B_ip
+    User B_user
+    Po...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-08-11T10:18:26+08:00">2022-08-11</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/tool/">tool</a><span class="sep"></span><a class="category-link" href="/categories/tool/linux/">linux</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/tool/" itemprop="url"><span itemprop="name">tool</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/tool/linux/" itemprop="url"><span itemprop="name">linux</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/08/11/%E8%B7%A8%E8%B6%8A%E8%B7%B3%E6%9D%BF%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BC%A0%E9%80%81%E6%96%87%E4%BB%B6%20%E7%99%BB%E5%BD%95%E7%9B%AE%E6%A0%87%E6%9C%8D%E5%8A%A1%E5%99%A8/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/11/linux服务器间文件传送 targz文件压缩和解压/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="self-drive">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="self-drive">
+    <meta itemprop="description" content="personal blog">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/08/11/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%97%B4%E6%96%87%E4%BB%B6%E4%BC%A0%E9%80%81%20targz%E6%96%87%E4%BB%B6%E5%8E%8B%E7%BC%A9%E5%92%8C%E8%A7%A3%E5%8E%8B/"  itemprop="url">
+        linux服务器间文件传送 .tar.gz文件压缩和解压
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        
+旧服务器备份：把~&#x2F;.halo压缩
+
+tar -zvcf ~/.halo.tar.gz ~/.halo # 得到~/.halo.tar.gz
+
+
+移到新服务器中在旧服务器上运行
+
+scp ~/.halo.tar.gz &lt;新服务器用户名&gt;@&lt;新服务器ip地址&gt;:~/.halo.tar.gz #scp即secure copy，是用来进行远程文件拷贝的。数据传输...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-08-11T09:46:09+08:00">2022-08-11</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/tool/">tool</a><span class="sep"></span><a class="category-link" href="/categories/tool/linux/">linux</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/tool/" itemprop="url"><span itemprop="name">tool</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/tool/linux/" itemprop="url"><span itemprop="name">linux</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/08/11/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%97%B4%E6%96%87%E4%BB%B6%E4%BC%A0%E9%80%81%20targz%E6%96%87%E4%BB%B6%E5%8E%8B%E7%BC%A9%E5%92%8C%E8%A7%A3%E5%8E%8B/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/11/解决应用商店Microsoft store打不开 代码0x80131500/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="self-drive">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="self-drive">
+    <meta itemprop="description" content="personal blog">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/08/11/%E8%A7%A3%E5%86%B3%E5%BA%94%E7%94%A8%E5%95%86%E5%BA%97Microsoft%20store%E6%89%93%E4%B8%8D%E5%BC%80%20%E4%BB%A3%E7%A0%810x80131500/"  itemprop="url">
+        解决应用商店Microsoft store打不开 代码0x80131500
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        解决方法：https://zhuanlan.zhihu.com/p/116654088事后还原：勾选 TLS 1.0，取消勾选TLS 1.2
+
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-08-11T09:10:13+08:00">2022-08-11</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/fix-error/">fix_error</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/fix-error/" itemprop="url"><span itemprop="name">fix_error</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/08/11/%E8%A7%A3%E5%86%B3%E5%BA%94%E7%94%A8%E5%95%86%E5%BA%97Microsoft%20store%E6%89%93%E4%B8%8D%E5%BC%80%20%E4%BB%A3%E7%A0%810x80131500/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/10/linux文件打开系统调用 追加写覆盖写/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="self-drive">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="self-drive">
+    <meta itemprop="description" content="personal blog">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/08/10/linux%E6%96%87%E4%BB%B6%E6%89%93%E5%BC%80%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8%20%E8%BF%BD%E5%8A%A0%E5%86%99%E8%A6%86%E7%9B%96%E5%86%99/"  itemprop="url">
+        linux文件打开系统调用 追加写覆盖写
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        
+man page: https://man7.org/linux/man-pages/man2/open.2.html
+
+const char* file = &quot;test_file.txt&quot;;
+int pfd = open(file, O_WRONLY | O_CREAT | O_APPEND, 0777);
+
+O_WRONLY：只写O_CREAT：如果不存在则创建O_...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-08-10T15:48:23+08:00">2022-08-10</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/c/">c++</a><span class="sep"></span><a class="category-link" href="/categories/c/linux-syscall/">linux_syscall</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/c/" itemprop="url"><span itemprop="name">c++</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/c/linux-syscall/" itemprop="url"><span itemprop="name">linux_syscall</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/08/10/linux%E6%96%87%E4%BB%B6%E6%89%93%E5%BC%80%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8%20%E8%BF%BD%E5%8A%A0%E5%86%99%E8%A6%86%E7%9B%96%E5%86%99/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/06/RDF三元组数据转schema图/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="self-drive">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="self-drive">
+    <meta itemprop="description" content="personal blog">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/08/06/RDF%E4%B8%89%E5%85%83%E7%BB%84%E6%95%B0%E6%8D%AE%E8%BD%ACschema%E5%9B%BE/"  itemprop="url">
+        RDF三元组数据转schema图
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        schema：反映顶点label之间的关系，以及Label会有哪些常量类型用G6
+&lt;id&gt; &lt;label&gt; &lt;vertex label&gt;.
+&lt;id&gt; &lt;edge label&gt; &lt;id&gt;.
+&lt;id&gt; &lt;vertex property&gt; literal.
+
+不可以拖拽http://graphviz.h...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-08-06T14:48:24+08:00">2022-08-06</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/graph/">graph</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/graph/" itemprop="url"><span itemprop="name">graph</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/08/06/RDF%E4%B8%89%E5%85%83%E7%BB%84%E6%95%B0%E6%8D%AE%E8%BD%ACschema%E5%9B%BE/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
   <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/06/生成树/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="self-drive">
@@ -2670,10 +3098,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <time itemprop="dateCreated datePublished" datetime="2022-08-06T11:38:52+08:00">2022-08-06</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/data-structure/">data_structure</a>
+          <a class="category-link" href="/categories/algorithm/">algorithm</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/data-structure/" itemprop="url"><span itemprop="name">data_structure</span></a>
+              <a href="/categories/algorithm/" itemprop="url"><span itemprop="name">algorithm</span></a>
             </span>
           
         
@@ -2873,18 +3301,18 @@ https://stackoverflow.com/questions/297416...
         <time itemprop="dateCreated datePublished" datetime="2022-08-04T17:29:36+08:00">2022-08-04</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/paper/">paper</a><span class="sep"></span><a class="category-link" href="/categories/paper/graph/">graph</a><span class="sep"></span><a class="category-link" href="/categories/paper/graph/algorithm/">algorithm</a>
+          <a class="category-link" href="/categories/algorithm/">algorithm</a><span class="sep"></span><a class="category-link" href="/categories/graph/">graph</a><span class="sep"></span><a class="category-link" href="/categories/paper/">paper</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/graph/" itemprop="url"><span itemprop="name">graph</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/algorithm/" itemprop="url"><span itemprop="name">algorithm</span></a>
+            </span>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
               <a href="/categories/paper/" itemprop="url"><span itemprop="name">paper</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/paper/graph/" itemprop="url"><span itemprop="name">graph</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/paper/graph/algorithm/" itemprop="url"><span itemprop="name">algorithm</span></a>
             </span>
           
         
@@ -2892,452 +3320,6 @@ https://stackoverflow.com/questions/297416...
       
         <div>
           <a class='readmore' href='/2022/08/04/disjoint%20path%20max%20flow%20problem/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/04/论文笔记 Faster Energy Maximization for Faster Maximum Flow/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="self-drive">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="self-drive">
-    <meta itemprop="description" content="personal blog">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/08/04/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20Faster%20Energy%20Maximization%20for%20Faster%20Maximum%20Flow/"  itemprop="url">
-        论文笔记 Faster Energy Maximization for Faster Maximum Flow
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        思考目前没有看完，刚看完central path的定义，在看norm的定义，浏览了下算法overall，似乎文章主要目标在max-flow的max，augment path的步骤文章中是直接说执行这个步骤，即这个步骤和往昔的max-flow算法是一样的，而++max-flow的disjoint是cancel flow提供的++，通过augment path步骤构造路径，而我们只需要两条aug...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-08-04T15:57:51+08:00">2022-08-04</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/paper/">paper</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/paper/" itemprop="url"><span itemprop="name">paper</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/08/04/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20Faster%20Energy%20Maximization%20for%20Faster%20Maximum%20Flow/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/04/图拉普拉斯/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="self-drive">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="self-drive">
-    <meta itemprop="description" content="personal blog">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/08/04/%E5%9B%BE%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF/"  itemprop="url">
-        图拉普拉斯
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        
-学习自 https://zhuanlan.zhihu.com/p/484348911
-
-定义梯度拉普拉斯算子
-图拉普拉斯公式给定一个有n个顶点的图G&#x3D;(V,E)，其拉普拉斯矩阵被定义为L&#x3D;D-A，D其中为图的度矩阵，A为图的邻接矩阵。
-
-推导
-
-
-(4) 拉普拉斯矩阵中的第i行反应了第i个节点在对其他所有节点产生扰动时所产生的增益累积。图拉普拉斯反映了当我们在节点i上施...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-08-04T14:41:06+08:00">2022-08-04</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/math/">math</a><span class="sep"></span><a class="category-link" href="/categories/math/graph/">graph</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/math/" itemprop="url"><span itemprop="name">math</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/math/graph/" itemprop="url"><span itemprop="name">graph</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/08/04/%E5%9B%BE%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/04/多对数函数polylogarithmic/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="self-drive">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="self-drive">
-    <meta itemprop="description" content="personal blog">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/08/04/%E5%A4%9A%E5%AF%B9%E6%95%B0%E5%87%BD%E6%95%B0polylogarithmic/"  itemprop="url">
-        多对数函数polylogarithmic
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        https://zh.wikipedia.org/zh-cn/%E5%A4%9A%E5%B0%8D%E6%95%B8%E5%87%BD%E6%95%B8
-
-
-
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-08-04T11:03:20+08:00">2022-08-04</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/math/">math</a><span class="sep"></span><a class="category-link" href="/categories/math/algorithm/">algorithm</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/math/" itemprop="url"><span itemprop="name">math</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/math/algorithm/" itemprop="url"><span itemprop="name">algorithm</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/08/04/%E5%A4%9A%E5%AF%B9%E6%95%B0%E5%87%BD%E6%95%B0polylogarithmic/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/29/c重定向stdout然后恢复stdout 文件权限编码 chmod/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="self-drive">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="self-drive">
-    <meta itemprop="description" content="personal blog">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/07/29/c%E9%87%8D%E5%AE%9A%E5%90%91stdout%E7%84%B6%E5%90%8E%E6%81%A2%E5%A4%8Dstdout%20%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E7%BC%96%E7%A0%81%20chmod/"  itemprop="url">
-        c重定向stdout然后恢复stdout 文件权限编码 chmod
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        重定向https://stackoverflow.com/questions/47719965/how-to-redirect-stdout-to-a-file-and-then-restore-stdout-back
-举例#include &lt;iostream&gt;
-#include &lt;unistd.h&gt;
-#include &lt;fcntl.h&gt;
-using na...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-07-29T10:25:17+08:00">2022-07-29</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/tool/">tool</a><span class="sep"></span><a class="category-link" href="/categories/tool/linux/">linux</a><span class="sep"></span><a class="category-link" href="/categories/tool/linux/c/">c++</a><span class="sep"></span><a class="category-link" href="/categories/tool/linux/c/linux-syscall/">linux_syscall</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/tool/" itemprop="url"><span itemprop="name">tool</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/tool/linux/" itemprop="url"><span itemprop="name">linux</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/tool/linux/c/" itemprop="url"><span itemprop="name">c++</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/tool/linux/c/linux-syscall/" itemprop="url"><span itemprop="name">linux_syscall</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/07/29/c%E9%87%8D%E5%AE%9A%E5%90%91stdout%E7%84%B6%E5%90%8E%E6%81%A2%E5%A4%8Dstdout%20%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E7%BC%96%E7%A0%81%20chmod/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/28/c函数宏定义函数可变参数/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="self-drive">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="self-drive">
-    <meta itemprop="description" content="personal blog">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/07/28/c%E5%87%BD%E6%95%B0%E5%AE%8F%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0%E5%8F%AF%E5%8F%98%E5%8F%82%E6%95%B0/"  itemprop="url">
-        c函数宏定义函数可变参数
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        宏定义函数https://gcc.gnu.org/onlinedocs/gcc-7.3.0/gcc.pdf搜索__VA_ARGS__
-#define debug(format, ...) fprintf (stderr, format, __VA_ARGS__)
-
-Here ... is a variable argument. In the invocation of such a mac...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-07-28T12:33:23+08:00">2022-07-28</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/tool/">tool</a><span class="sep"></span><a class="category-link" href="/categories/tool/linux/">linux</a><span class="sep"></span><a class="category-link" href="/categories/tool/linux/c/">c++</a><span class="sep"></span><a class="category-link" href="/categories/tool/linux/c/language/">language</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/tool/" itemprop="url"><span itemprop="name">tool</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/tool/linux/" itemprop="url"><span itemprop="name">linux</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/tool/linux/c/" itemprop="url"><span itemprop="name">c++</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/tool/linux/c/language/" itemprop="url"><span itemprop="name">language</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/07/28/c%E5%87%BD%E6%95%B0%E5%AE%8F%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0%E5%8F%AF%E5%8F%98%E5%8F%82%E6%95%B0/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/27/linux c隐藏输入 termiosh/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="self-drive">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="self-drive">
-    <meta itemprop="description" content="personal blog">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/07/27/linux%20c%E9%9A%90%E8%97%8F%E8%BE%93%E5%85%A5%20termiosh/"  itemprop="url">
-        linux c隐藏输入 termios.h
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        参考教程https://terminalroot.com/how-to-hide-input-via-cli-with-cpp/?ref=morioh.com&amp;utm_source=morioh.com
-man信息#include &lt;termios.h&gt;https://pubs.opengroup.org/onlinepubs/7908799/xsh/termios.h....
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-07-27T16:27:11+08:00">2022-07-27</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/tool/">tool</a><span class="sep"></span><a class="category-link" href="/categories/tool/linux/">linux</a><span class="sep"></span><a class="category-link" href="/categories/tool/linux/c/">c++</a><span class="sep"></span><a class="category-link" href="/categories/tool/linux/c/language/">language</a><span class="sep"></span><a class="category-link" href="/categories/tool/linux/c/language/linux-syscall/">linux_syscall</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/tool/" itemprop="url"><span itemprop="name">tool</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/tool/linux/" itemprop="url"><span itemprop="name">linux</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/tool/linux/c/" itemprop="url"><span itemprop="name">c++</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/tool/linux/c/language/" itemprop="url"><span itemprop="name">language</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/tool/linux/c/language/linux-syscall/" itemprop="url"><span itemprop="name">linux_syscall</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/07/27/linux%20c%E9%9A%90%E8%97%8F%E8%BE%93%E5%85%A5%20termiosh/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3479,11 +3461,6 @@ man信息#include &lt;termios.h&gt;https://pubs.opengroup.org/onlinepubs/7908799
             active-action="action-categoriesML"
             ><div class='name'>ML</div><div class='badge'>(1)</div></a></li>
         
-          <li><a class="flat-box child"
-            title="/categories/ML/math/" href="/categories/ML/math/"
-            active-action="action-categoriesMLmath"
-            ><div class='name'>math</div><div class='badge'>(1)</div></a></li>
-        
           <li><a class="flat-box"
             title="/categories/SIMD/" href="/categories/SIMD/"
             active-action="action-categoriesSIMD"
@@ -3492,57 +3469,47 @@ man信息#include &lt;termios.h&gt;https://pubs.opengroup.org/onlinepubs/7908799
           <li><a class="flat-box"
             title="/categories/algorithm/" href="/categories/algorithm/"
             active-action="action-categoriesalgorithm"
-            ><div class='name'>algorithm</div><div class='badge'>(2)</div></a></li>
+            ><div class='name'>algorithm</div><div class='badge'>(6)</div></a></li>
         
-          <li><a class="flat-box child"
-            title="/categories/algorithm/data-structure/" href="/categories/algorithm/data-structure/"
-            active-action="action-categoriesalgorithmdata-structure"
-            ><div class='name'>data_structure</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/algorithm/distributed-computing/" href="/categories/algorithm/distributed-computing/"
-            active-action="action-categoriesalgorithmdistributed-computing"
-            ><div class='name'>distributed_computing</div><div class='badge'>(1)</div></a></li>
+          <li><a class="flat-box"
+            title="/categories/c-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B52ed/" href="/categories/c-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B52ed/"
+            active-action="action-categoriesc-E5B9B6E58F91E7BC96E7A88BE5AE9EE8B7B52ed"
+            ><div class='name'>c++并发编程实践2ed</div><div class='badge'>(9)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/c/" href="/categories/c/"
             active-action="action-categoriesc"
-            ><div class='name'>c++</div><div class='badge'>(24)</div></a></li>
+            ><div class='name'>c++</div><div class='badge'>(33)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/c/SIMD/" href="/categories/c/SIMD/"
+            active-action="action-categoriescSIMD"
+            ><div class='name'>SIMD</div><div class='badge'>(3)</div></a></li>
         
           <li><a class="flat-box child"
             title="/categories/c/debug/" href="/categories/c/debug/"
             active-action="action-categoriescdebug"
-            ><div class='name'>debug</div><div class='badge'>(4)</div></a></li>
+            ><div class='name'>debug</div><div class='badge'>(5)</div></a></li>
         
           <li><a class="flat-box child"
-            title="/categories/c/debug/gcc/" href="/categories/c/debug/gcc/"
-            active-action="action-categoriescdebuggcc"
+            title="/categories/c/gcc/" href="/categories/c/gcc/"
+            active-action="action-categoriescgcc"
             ><div class='name'>gcc</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/c/language-deep/" href="/categories/c/language-deep/"
+            active-action="action-categoriesclanguage-deep"
+            ><div class='name'>language_deep</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box child"
             title="/categories/c/language/" href="/categories/c/language/"
             active-action="action-categoriesclanguage"
-            ><div class='name'>language</div><div class='badge'>(18)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/c/language/concurrency/" href="/categories/c/language/concurrency/"
-            active-action="action-categoriesclanguageconcurrency"
-            ><div class='name'>concurrency</div><div class='badge'>(9)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/c/language/debug/" href="/categories/c/language/debug/"
-            active-action="action-categoriesclanguagedebug"
-            ><div class='name'>debug</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/c/language/linux-syscall/" href="/categories/c/language/linux-syscall/"
-            active-action="action-categoriesclanguagelinux-syscall"
-            ><div class='name'>linux_syscall</div><div class='badge'>(1)</div></a></li>
+            ><div class='name'>language</div><div class='badge'>(20)</div></a></li>
         
           <li><a class="flat-box child"
             title="/categories/c/linux-syscall/" href="/categories/c/linux-syscall/"
             active-action="action-categoriesclinux-syscall"
-            ><div class='name'>linux_syscall</div><div class='badge'>(2)</div></a></li>
+            ><div class='name'>linux_syscall</div><div class='badge'>(5)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/course/" href="/categories/course/"
@@ -3555,79 +3522,44 @@ man信息#include &lt;termios.h&gt;https://pubs.opengroup.org/onlinepubs/7908799
             ><div class='name'>os</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
-            title="/categories/data-structure/" href="/categories/data-structure/"
-            active-action="action-categoriesdata-structure"
-            ><div class='name'>data_structure</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
             title="/categories/db/" href="/categories/db/"
             active-action="action-categoriesdb"
-            ><div class='name'>db</div><div class='badge'>(6)</div></a></li>
+            ><div class='name'>db</div><div class='badge'>(8)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/debug/" href="/categories/debug/"
+            active-action="action-categoriesdebug"
+            ><div class='name'>debug</div><div class='badge'>(23)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/fix-error/" href="/categories/fix-error/"
             active-action="action-categoriesfix-error"
-            ><div class='name'>fix_error</div><div class='badge'>(7)</div></a></li>
+            ><div class='name'>fix_error</div><div class='badge'>(13)</div></a></li>
         
           <li><a class="flat-box child"
             title="/categories/fix-error/gcc/" href="/categories/fix-error/gcc/"
             active-action="action-categoriesfix-errorgcc"
             ><div class='name'>gcc</div><div class='badge'>(1)</div></a></li>
         
-          <li><a class="flat-box child"
-            title="/categories/fix-error/python/" href="/categories/fix-error/python/"
-            active-action="action-categoriesfix-errorpython"
-            ><div class='name'>python</div><div class='badge'>(1)</div></a></li>
-        
           <li><a class="flat-box"
             title="/categories/graph/" href="/categories/graph/"
             active-action="action-categoriesgraph"
-            ><div class='name'>graph</div><div class='badge'>(4)</div></a></li>
+            ><div class='name'>graph</div><div class='badge'>(7)</div></a></li>
         
           <li><a class="flat-box child"
-            title="/categories/graph/system/" href="/categories/graph/system/"
-            active-action="action-categoriesgraphsystem"
-            ><div class='name'>system</div><div class='badge'>(4)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/language/" href="/categories/language/"
-            active-action="action-categorieslanguage"
-            ><div class='name'>language</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/language/rust/" href="/categories/language/rust/"
-            active-action="action-categorieslanguagerust"
-            ><div class='name'>rust</div><div class='badge'>(2)</div></a></li>
+            title="/categories/graph/db/" href="/categories/graph/db/"
+            active-action="action-categoriesgraphdb"
+            ><div class='name'>db</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/math/" href="/categories/math/"
             active-action="action-categoriesmath"
-            ><div class='name'>math</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/math/algorithm/" href="/categories/math/algorithm/"
-            active-action="action-categoriesmathalgorithm"
-            ><div class='name'>algorithm</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/math/graph/" href="/categories/math/graph/"
-            active-action="action-categoriesmathgraph"
-            ><div class='name'>graph</div><div class='badge'>(1)</div></a></li>
+            ><div class='name'>math</div><div class='badge'>(4)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/paper/" href="/categories/paper/"
             active-action="action-categoriespaper"
             ><div class='name'>paper</div><div class='badge'>(17)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/paper/graph/" href="/categories/paper/graph/"
-            active-action="action-categoriespapergraph"
-            ><div class='name'>graph</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/paper/graph/algorithm/" href="/categories/paper/graph/algorithm/"
-            active-action="action-categoriespapergraphalgorithm"
-            ><div class='name'>algorithm</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/plan/" href="/categories/plan/"
@@ -3642,57 +3574,47 @@ man信息#include &lt;termios.h&gt;https://pubs.opengroup.org/onlinepubs/7908799
           <li><a class="flat-box"
             title="/categories/play/" href="/categories/play/"
             active-action="action-categoriesplay"
-            ><div class='name'>play</div><div class='badge'>(4)</div></a></li>
+            ><div class='name'>play</div><div class='badge'>(6)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/python/" href="/categories/python/"
+            active-action="action-categoriespython"
+            ><div class='name'>python</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/python/debug/" href="/categories/python/debug/"
+            active-action="action-categoriespythondebug"
+            ><div class='name'>debug</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/python/language/" href="/categories/python/language/"
+            active-action="action-categoriespythonlanguage"
+            ><div class='name'>language</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/rust/" href="/categories/rust/"
+            active-action="action-categoriesrust"
+            ><div class='name'>rust</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/rust/language/" href="/categories/rust/language/"
+            active-action="action-categoriesrustlanguage"
+            ><div class='name'>language</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/rust/tool/" href="/categories/rust/tool/"
+            active-action="action-categoriesrusttool"
+            ><div class='name'>tool</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/tool/" href="/categories/tool/"
             active-action="action-categoriestool"
-            ><div class='name'>tool</div><div class='badge'>(69)</div></a></li>
+            ><div class='name'>tool</div><div class='badge'>(70)</div></a></li>
         
           <li><a class="flat-box child"
             title="/categories/tool/linux/" href="/categories/tool/linux/"
             active-action="action-categoriestoollinux"
-            ><div class='name'>linux</div><div class='badge'>(52)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/tool/linux/c/" href="/categories/tool/linux/c/"
-            active-action="action-categoriestoollinuxc"
-            ><div class='name'>c++</div><div class='badge'>(5)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/tool/linux/c/debug/" href="/categories/tool/linux/c/debug/"
-            active-action="action-categoriestoollinuxcdebug"
-            ><div class='name'>debug</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/tool/linux/c/language/" href="/categories/tool/linux/c/language/"
-            active-action="action-categoriestoollinuxclanguage"
-            ><div class='name'>language</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/tool/linux/c/language/linux-syscall/" href="/categories/tool/linux/c/language/linux-syscall/"
-            active-action="action-categoriestoollinuxclanguagelinux-syscall"
-            ><div class='name'>linux_syscall</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/tool/linux/c/linux-syscall/" href="/categories/tool/linux/c/linux-syscall/"
-            active-action="action-categoriestoollinuxclinux-syscall"
-            ><div class='name'>linux_syscall</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/tool/linux/debug/" href="/categories/tool/linux/debug/"
-            active-action="action-categoriestoollinuxdebug"
-            ><div class='name'>debug</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/tool/linux/fix-error/" href="/categories/tool/linux/fix-error/"
-            active-action="action-categoriestoollinuxfix-error"
-            ><div class='name'>fix_error</div><div class='badge'>(4)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/tool/play/" href="/categories/tool/play/"
-            active-action="action-categoriestoolplay"
-            ><div class='name'>play</div><div class='badge'>(1)</div></a></li>
+            ><div class='name'>linux</div><div class='badge'>(51)</div></a></li>
         
           <li><a class="flat-box child"
             title="/categories/tool/windows/" href="/categories/tool/windows/"
@@ -3727,7 +3649,7 @@ man信息#include &lt;termios.h&gt;https://pubs.opengroup.org/onlinepubs/7908799
 
 
     <div class='content'>
-      <a href="/tags/SIMD/" style="font-size: 17.33px; color: #828282">SIMD</a> <a href="/tags/bash/" style="font-size: 24px; color: #555">bash</a> <a href="/tags/course/" style="font-size: 14px; color: #999">course</a> <a href="/tags/db/" style="font-size: 14px; color: #999">db</a> <a href="/tags/excel/" style="font-size: 14px; color: #999">excel</a> <a href="/tags/gdb/" style="font-size: 14px; color: #999">gdb</a> <a href="/tags/graph/" style="font-size: 14px; color: #999">graph</a> <a href="/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/tags/linux/" style="font-size: 17.33px; color: #828282">linux</a> <a href="/tags/math/" style="font-size: 14px; color: #999">math</a> <a href="/tags/paper/" style="font-size: 17.33px; color: #828282">paper</a> <a href="/tags/rocksdb/" style="font-size: 20.67px; color: #6c6c6c">rocksdb</a> <a href="/tags/rust/" style="font-size: 17.33px; color: #828282">rust</a> <a href="/tags/tool/" style="font-size: 17.33px; color: #828282">tool</a> <a href="/tags/windows/" style="font-size: 17.33px; color: #828282">windows</a> <a href="/tags/%E6%A6%82%E7%BB%9F/" style="font-size: 14px; color: #999">概统</a>
+      <a href="/tags/GPU/" style="font-size: 15.25px; color: #919191">GPU</a> <a href="/tags/SIMD/" style="font-size: 16.5px; color: #888">SIMD</a> <a href="/tags/bash/" style="font-size: 21.5px; color: #666">bash</a> <a href="/tags/c/" style="font-size: 22.75px; color: #5e5e5e">c++</a> <a href="/tags/concurrency/" style="font-size: 20.25px; color: #6f6f6f">concurrency</a> <a href="/tags/git/" style="font-size: 14px; color: #999">git</a> <a href="/tags/graph/" style="font-size: 19px; color: #777">graph</a> <a href="/tags/halo/" style="font-size: 16.5px; color: #888">halo</a> <a href="/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/tags/linux/" style="font-size: 24px; color: #555">linux</a> <a href="/tags/python/" style="font-size: 17.75px; color: #808080">python</a> <a href="/tags/rocksdb/" style="font-size: 16.5px; color: #888">rocksdb</a> <a href="/tags/rust/" style="font-size: 15.25px; color: #919191">rust</a> <a href="/tags/tool/" style="font-size: 15.25px; color: #919191">tool</a> <a href="/tags/%E6%A6%82%E7%BB%9F/" style="font-size: 14px; color: #999">概统</a>
     </div>
   </section>
 
