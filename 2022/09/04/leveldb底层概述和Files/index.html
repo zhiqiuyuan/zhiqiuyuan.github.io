@@ -2275,7 +2275,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1672324134819),
+    lastupdate: new Date(1672325813283),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2712,7 +2712,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
     <p><a target="_blank" rel="noopener" href="https://leveldb-handbook.readthedocs.io/zh/latest/basic.html">https://leveldb-handbook.readthedocs.io/zh/latest/basic.html</a><br><a target="_blank" rel="noopener" href="https://github.com/google/leveldb/blob/main/doc/impl.md">https://github.com/google/leveldb/blob/main/doc/impl.md</a></p>
-<h2 id="leveldb架构"><a href="#leveldb架构" class="headerlink" title="leveldb架构"></a>leveldb架构</h2><p><img src="/leveldb%E5%BA%95%E5%B1%82%E6%A6%82%E8%BF%B0%E5%92%8CFiles/image-1662257013081.png" class="lazyload" data-srcset="/leveldb%E5%BA%95%E5%B1%82%E6%A6%82%E8%BF%B0%E5%92%8CFiles/image-1662257013081.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-1662257013081"></p>
+<h2 id="leveldb架构"><a href="#leveldb架构" class="headerlink" title="leveldb架构"></a>leveldb架构</h2><img src="/2022/09/04/leveldb%E5%BA%95%E5%B1%82%E6%A6%82%E8%BF%B0%E5%92%8CFiles/image-1662257013081.png" class="lazyload" data-srcset="/2022/09/04/leveldb%E5%BA%95%E5%B1%82%E6%A6%82%E8%BF%B0%E5%92%8CFiles/image-1662257013081.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 <h2 id="leveldb写流程概述"><a href="#leveldb写流程概述" class="headerlink" title="leveldb写流程概述"></a>leveldb写流程概述</h2><ul>
 <li>将所有的写操作写到日志文件（log文件）中</li>
 <li>将内容写入到内存中<ul>
@@ -2777,7 +2777,7 @@ type tFile struct &#123;
 <h4 id="创建版本"><a href="#创建版本" class="headerlink" title="创建版本"></a>创建版本</h4><p>当<strong>每次compaction完成</strong>（或者换一种更容易理解的说法，当每次sstable文件有新增或者减少），leveldb都会创建一个新的version</p>
 <h3 id="manifest文件记录版本更新-versionEdit"><a href="#manifest文件记录版本更新-versionEdit" class="headerlink" title="manifest文件记录版本更新(versionEdit)"></a>manifest文件记录版本更新(versionEdit)</h3><ul>
 <li>每次leveldb启动时，都会创建一个新的Manifest文件</li>
-<li>下图是一个manifest文件的示意图，其中包含了3条versionEdit记录，每条记录包括（1）新增哪些sst文件（2）删除哪些sst文件（3）当前compaction的下标（4）日志文件编号（5）操作seqNumber等信息。<br><img src="/leveldb%E5%BA%95%E5%B1%82%E6%A6%82%E8%BF%B0%E5%92%8CFiles/image-1662257421227.png" class="lazyload" data-srcset="/leveldb%E5%BA%95%E5%B1%82%E6%A6%82%E8%BF%B0%E5%92%8CFiles/image-1662257421227.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-1662257421227"></li>
+<li>下图是一个manifest文件的示意图，其中包含了3条versionEdit记录，每条记录包括（1）新增哪些sst文件（2）删除哪些sst文件（3）当前compaction的下标（4）日志文件编号（5）操作seqNumber等信息。<img src="/2022/09/04/leveldb%E5%BA%95%E5%B1%82%E6%A6%82%E8%BF%B0%E5%92%8CFiles/image-1662257421227.png" class="lazyload" data-srcset="/2022/09/04/leveldb%E5%BA%95%E5%B1%82%E6%A6%82%E8%BF%B0%E5%92%8CFiles/image-1662257421227.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload"></li>
 <li>通过这些信息，leveldb便可以在启动时，<strong>基于一个空的version</strong>，不断apply这些记录，最终得到一个上次运行结束时的版本信息。</li>
 </ul>
 <h2 id="current"><a href="#current" class="headerlink" title="current"></a>current</h2><p>记载当前的manifest文件名</p>

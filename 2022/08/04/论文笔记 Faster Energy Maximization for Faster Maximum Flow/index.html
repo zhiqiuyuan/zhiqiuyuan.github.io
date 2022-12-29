@@ -2274,7 +2274,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1672324134819),
+    lastupdate: new Date(1672325813283),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2716,40 +2716,48 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li>如果是的话，是否 对于第一条aygment path的选择，其可以对于整体找两条augment path有<strong>效率提升</strong>？</li>
 </ol>
 <h2 id="解决的问题"><a href="#解决的问题" class="headerlink" title="解决的问题"></a>解决的问题</h2><p>最大流：其中BT*f&#x3D;tX即（BT*f即得到一个n维向量，表示每个顶点的净流量（出-入））满足flow conservation，所有顶点除了st都入流&#x3D;出流，即净流&#x3D;0，s是出，t是入，且s出量&#x3D;t入量</p>
-<p>![image-1659600703125](论文笔记 Faster Energy Maximization for Faster Maximum Flow&#x2F;image-1659600703125.png)</p>
+<img src="/2022/08/04/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20Faster%20Energy%20Maximization%20for%20Faster%20Maximum%20Flow/image-1659600703125.png" class="lazyload" data-srcset="/2022/08/04/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20Faster%20Energy%20Maximization%20for%20Faster%20Maximum%20Flow/image-1659600703125.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
 <p>V是标量，V的梯度（下三角）是m维向量（V对于每条边求偏导）</p>
 <p>无向图</p>
 <h2 id="Preliminaries定义"><a href="#Preliminaries定义" class="headerlink" title="Preliminaries定义"></a>Preliminaries定义</h2><h3 id="d-flow"><a href="#d-flow" class="headerlink" title="d-flow"></a>d-flow</h3><p>即满足顶点净流量&#x3D;&#x3D;dv</p>
-<p>![image-1659603418975](论文笔记 Faster Energy Maximization for Faster Maximum Flow&#x2F;image-1659603418975.png)</p>
+<img src="/2022/08/04/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20Faster%20Energy%20Maximization%20for%20Faster%20Maximum%20Flow/image-1659603418975.png" class="lazyload" data-srcset="/2022/08/04/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20Faster%20Energy%20Maximization%20for%20Faster%20Maximum%20Flow/image-1659603418975.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 <h3 id="ab-flow"><a href="#ab-flow" class="headerlink" title="ab-flow"></a>ab-flow</h3><p>即满足flow conservation</p>
-<p>![image-1659603485035](论文笔记 Faster Energy Maximization for Faster Maximum Flow&#x2F;image-1659603485035.png)</p>
-<h3 id="energy和electrical-d-flow"><a href="#energy和electrical-d-flow" class="headerlink" title="energy和electrical d-flow"></a>energy和electrical d-flow</h3><p>![image-1659603304898](论文笔记 Faster Energy Maximization for Faster Maximum Flow&#x2F;image-1659603304898.png)<br>能量回忆物理：电功率i^2*r<br>electrical d-flow即满足顶点净流量&#x3D;&#x3D;dv、minimize能量的</p>
-<h3 id="maximum-flow-problem"><a href="#maximum-flow-problem" class="headerlink" title="maximum flow problem"></a>maximum flow problem</h3><p>![image-1659603585242](论文笔记 Faster Energy Maximization for Faster Maximum Flow&#x2F;image-1659603585242.png)</p>
-<h3 id="Laplacian-of-the-graph-G-with-resistances-r"><a href="#Laplacian-of-the-graph-G-with-resistances-r" class="headerlink" title="Laplacian of the graph G with resistances r"></a>Laplacian of the graph G with resistances r</h3><p>![image-1659603809230](论文笔记 Faster Energy Maximization for Faster Maximum Flow&#x2F;image-1659603809230.png)<br>n*n矩阵，Lij&#x3D;0，如果顶点ij之间没有边相连；&#x3D;负的 ij间边电阻的倒数之和，如果顶点ij之间有边相连</p>
+<img src="/2022/08/04/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20Faster%20Energy%20Maximization%20for%20Faster%20Maximum%20Flow/image-1659603485035.png" class="lazyload" data-srcset="/2022/08/04/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20Faster%20Energy%20Maximization%20for%20Faster%20Maximum%20Flow/image-1659603485035.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<h3 id="energy和electrical-d-flow"><a href="#energy和electrical-d-flow" class="headerlink" title="energy和electrical d-flow"></a>energy和electrical d-flow</h3><img src="/2022/08/04/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20Faster%20Energy%20Maximization%20for%20Faster%20Maximum%20Flow/image-1659603304898.png" class="lazyload" data-srcset="/2022/08/04/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20Faster%20Energy%20Maximization%20for%20Faster%20Maximum%20Flow/image-1659603304898.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<p>能量回忆物理：电功率i^2*r<br>electrical d-flow即满足顶点净流量&#x3D;&#x3D;dv、minimize能量的</p>
+<h3 id="maximum-flow-problem"><a href="#maximum-flow-problem" class="headerlink" title="maximum flow problem"></a>maximum flow problem</h3><img src="/2022/08/04/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20Faster%20Energy%20Maximization%20for%20Faster%20Maximum%20Flow/image-1659603585242.png" class="lazyload" data-srcset="/2022/08/04/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20Faster%20Energy%20Maximization%20for%20Faster%20Maximum%20Flow/image-1659603585242.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<h3 id="Laplacian-of-the-graph-G-with-resistances-r"><a href="#Laplacian-of-the-graph-G-with-resistances-r" class="headerlink" title="Laplacian of the graph G with resistances r"></a>Laplacian of the graph G with resistances r</h3><img src="/2022/08/04/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20Faster%20Energy%20Maximization%20for%20Faster%20Maximum%20Flow/image-1659603809230.png" class="lazyload" data-srcset="/2022/08/04/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20Faster%20Energy%20Maximization%20for%20Faster%20Maximum%20Flow/image-1659603809230.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<p>n*n矩阵，Lij&#x3D;0，如果顶点ij之间没有边相连；&#x3D;负的 ij间边电阻的倒数之和，如果顶点ij之间有边相连</p>
 <blockquote>
 <p>B矩阵：对于每条边（即B的每行）只有两个端点（即B的每行只有两列非零，1和-1）；B矩阵的每一列（即每个顶点的），表示对应顶点的出边入边情况</p>
 </blockquote>
 <blockquote>
 <p>推导思考：<br>B转置*R-1得到的是：n*m矩阵，是B转置每一列都分别乘 该列对应的边的电阻的倒数<br>再乘以B，对于目标矩阵n*n的每个格子ij，思考：顶点i和j 的入边出边记录 对位相乘再相加 -&gt; 对于每条边，这条边要么在顶点ij之间，要么不在，在的话对位相乘结果是”-1”(-1*1&#x2F;r)，不在的话则至少有一边是0，则对位相乘结果是0</p>
 </blockquote>
-<p>![image-1659603885652](论文笔记 Faster Energy Maximization for Faster Maximum Flow&#x2F;image-1659603885652.png)</p>
+<img src="/2022/08/04/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20Faster%20Energy%20Maximization%20for%20Faster%20Maximum%20Flow/image-1659603885652.png" class="lazyload" data-srcset="/2022/08/04/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20Faster%20Energy%20Maximization%20for%20Faster%20Maximum%20Flow/image-1659603885652.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
 <p>R-1*B，得到：m*n矩阵，是B矩阵每一行（每条边）都乘以对应边的电阻的倒数<br>可以看出求出φ就可以求出f帽</p>
-<h2 id="提出的定义"><a href="#提出的定义" class="headerlink" title="提出的定义"></a>提出的定义</h2><h3 id="central-path"><a href="#central-path" class="headerlink" title="central path"></a>central path</h3><p>为了转换优化问题，<br>观察到在最优时：<br>![image-1659602023961](论文笔记 Faster Energy Maximization for Faster Maximum Flow&#x2F;image-1659602023961.png)<br>![image-1659602059236](论文笔记 Faster Energy Maximization for Faster Maximum Flow&#x2F;image-1659602059236.png)</p>
+<h2 id="提出的定义"><a href="#提出的定义" class="headerlink" title="提出的定义"></a>提出的定义</h2><h3 id="central-path"><a href="#central-path" class="headerlink" title="central path"></a>central path</h3><p>为了转换优化问题，<br>观察到在最优时：</p>
+<img src="/2022/08/04/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20Faster%20Energy%20Maximization%20for%20Faster%20Maximum%20Flow/image-1659602023961.png" class="lazyload" data-srcset="/2022/08/04/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20Faster%20Energy%20Maximization%20for%20Faster%20Maximum%20Flow/image-1659602023961.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<img src="/2022/08/04/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20Faster%20Energy%20Maximization%20for%20Faster%20Maximum%20Flow/image-1659602059236.png" class="lazyload" data-srcset="/2022/08/04/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20Faster%20Energy%20Maximization%20for%20Faster%20Maximum%20Flow/image-1659602059236.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
 <ul>
-<li><p>因此<strong>定义central path（满足V(f)最小时点(f,t,y)在central path上）</strong>：<br>![image-1659602087536](论文笔记 Faster Energy Maximization for Faster Maximum Flow&#x2F;image-1659602087536.png)</p>
-</li>
+<li><p>因此<strong>定义central path（满足V(f)最小时点(f,t,y)在central path上）</strong>：</p>
+<img src="/2022/08/04/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20Faster%20Energy%20Maximization%20for%20Faster%20Maximum%20Flow/image-1659602087536.png" class="lazyload" data-srcset="/2022/08/04/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20Faster%20Energy%20Maximization%20for%20Faster%20Maximum%20Flow/image-1659602087536.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload"></li>
 <li><p>以及<strong>定义描述离central path距离的measurement</strong>：</p>
 <ul>
-<li>先定义电阻<br>  ![image-1659602813777](论文笔记 Faster Energy Maximization for Faster Maximum Flow&#x2F;image-1659602813777.png)</li>
-<li>![image-1659602852205](论文笔记 Faster Energy Maximization for Faster Maximum Flow&#x2F;image-1659602852205.png)</li>
-<li>再定义measurement：![image-1659602869654](论文笔记 Faster Energy Maximization for Faster Maximum Flow&#x2F;image-1659602869654.png)</li>
+<li>先定义电阻  <img src="/2022/08/04/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20Faster%20Energy%20Maximization%20for%20Faster%20Maximum%20Flow/image-1659602813777.png" class="lazyload" data-srcset="/2022/08/04/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20Faster%20Energy%20Maximization%20for%20Faster%20Maximum%20Flow/image-1659602813777.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload"></li>
+<li><img src="/2022/08/04/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20Faster%20Energy%20Maximization%20for%20Faster%20Maximum%20Flow/image-1659602852205.png" class="lazyload" data-srcset="/2022/08/04/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20Faster%20Energy%20Maximization%20for%20Faster%20Maximum%20Flow/image-1659602852205.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload"></li>
+<li>再定义measurement：<img src="/2022/08/04/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20Faster%20Energy%20Maximization%20for%20Faster%20Maximum%20Flow/image-1659602869654.png" class="lazyload" data-srcset="/2022/08/04/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20Faster%20Energy%20Maximization%20for%20Faster%20Maximum%20Flow/image-1659602869654.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload"></li>
 </ul>
 </li>
-<li><p>也定义描述最大流距离“流最大”的measurement：<br>![image-1659603027412](论文笔记 Faster Energy Maximization for Faster Maximum Flow&#x2F;image-1659603027412.png)</p>
-</li>
+<li><p>也定义描述最大流距离“流最大”的measurement：</p>
+<img src="/2022/08/04/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20Faster%20Energy%20Maximization%20for%20Faster%20Maximum%20Flow/image-1659603027412.png" class="lazyload" data-srcset="/2022/08/04/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20Faster%20Energy%20Maximization%20for%20Faster%20Maximum%20Flow/image-1659603027412.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload"></li>
 </ul>
-<h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><h3 id="overall"><a href="#overall" class="headerlink" title="overall"></a>overall</h3><p>![image-1659604708454](论文笔记 Faster Energy Maximization for Faster Maximum Flow&#x2F;image-1659604708454.png)</p>
-<p>![image-1659604794703](论文笔记 Faster Energy Maximization for Faster Maximum Flow&#x2F;image-1659604794703.png)</p>
+<h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><h3 id="overall"><a href="#overall" class="headerlink" title="overall"></a>overall</h3><img src="/2022/08/04/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20Faster%20Energy%20Maximization%20for%20Faster%20Maximum%20Flow/image-1659604708454.png" class="lazyload" data-srcset="/2022/08/04/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20Faster%20Energy%20Maximization%20for%20Faster%20Maximum%20Flow/image-1659604708454.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<img src="/2022/08/04/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20Faster%20Energy%20Maximization%20for%20Faster%20Maximum%20Flow/image-1659604794703.png" class="lazyload" data-srcset="/2022/08/04/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20Faster%20Energy%20Maximization%20for%20Faster%20Maximum%20Flow/image-1659604794703.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 
   </div>
   
@@ -2866,8 +2874,12 @@ unit capacity network单位容量网络：所有边容量&#x3...</p>
           <p class='content'>
 学习自 https://zhuanlan.zhihu.com/p/484348911
 
-定义梯度拉普拉斯算子
-图拉普拉斯公式给定一个有n个顶点的图G&#x3D;(V,E)，其拉普拉斯矩阵被定义...</p>
+定义梯度
+
+拉普拉斯算子
+
+
+图拉普拉斯公式给定一个有n个顶点的图G&#x3D;(V,E)，其拉普拉斯矩...</p>
         </a>
       
     </div>

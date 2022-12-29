@@ -41,7 +41,7 @@
 <meta property="og:title" content="论文笔记 2014VLDB The More the Merrier Efficient Multi-Source Graph Traversal">
 <meta property="og:url" content="http://example.com/2022/08/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202014VLDB%20The%20More%20the%20Merrier%20Efficient%20Multi%20Source%20Graph%20Traversal/index.html">
 <meta property="og:site_name" content="self-drive">
-<meta property="og:description" content="MSBFSThe More the Merrier: Efficient Multi-Source Graph TraversalVLDB 2014  基准![image-1660379434954](论文笔记 2014VLDB The More the Merrier Efficient Multi Source Graph Traversal&#x2F;image-1660379434954">
+<meta property="og:description" content="MSBFSThe More the Merrier: Efficient Multi-Source Graph TraversalVLDB 2014  基准 bit op ANP（这个） tuningcache line heuristic maximum sharing way of grouping BFSs  reason:">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-08-13T08:36:44.519Z">
@@ -2274,7 +2274,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1672324134819),
+    lastupdate: new Date(1672325813283),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2713,13 +2713,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <blockquote>
 <p>MSBFS<br>The More the Merrier: Efficient Multi-Source Graph Traversal<br>VLDB 2014</p>
 </blockquote>
-<h2 id="基准"><a href="#基准" class="headerlink" title="基准"></a>基准</h2><p>![image-1660379434954](论文笔记 2014VLDB The More the Merrier Efficient Multi Source Graph Traversal&#x2F;image-1660379434954.png)</p>
-<h2 id="bit-op"><a href="#bit-op" class="headerlink" title="bit op"></a>bit op</h2><p>![image-1660379501112](论文笔记 2014VLDB The More the Merrier Efficient Multi Source Graph Traversal&#x2F;image-1660379501112.png)</p>
-<h2 id="ANP（这个）"><a href="#ANP（这个）" class="headerlink" title="ANP（这个）"></a>ANP（这个）</h2><p>![image-1660379554699](论文笔记 2014VLDB The More the Merrier Efficient Multi Source Graph Traversal&#x2F;image-1660379554699.png)</p>
-<h2 id="tuning"><a href="#tuning" class="headerlink" title="tuning"></a>tuning</h2><h3 id="cache-line"><a href="#cache-line" class="headerlink" title="cache line"></a>cache line</h3><p>![image-1660379621743](论文笔记 2014VLDB The More the Merrier Efficient Multi Source Graph Traversal&#x2F;image-1660379621743.png)</p>
-<h3 id="heuristic-maximum-sharing-way-of-grouping-BFSs"><a href="#heuristic-maximum-sharing-way-of-grouping-BFSs" class="headerlink" title="heuristic maximum sharing way of grouping BFSs"></a>heuristic maximum sharing way of grouping BFSs</h3><p>![image-1660379684208](论文笔记 2014VLDB The More the Merrier Efficient Multi Source Graph Traversal&#x2F;image-1660379684208.png)</p>
+<h2 id="基准"><a href="#基准" class="headerlink" title="基准"></a>基准</h2><img src="/2022/08/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202014VLDB%20The%20More%20the%20Merrier%20Efficient%20Multi%20Source%20Graph%20Traversal/image-1660379434954.png" class="lazyload" data-srcset="/2022/08/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202014VLDB%20The%20More%20the%20Merrier%20Efficient%20Multi%20Source%20Graph%20Traversal/image-1660379434954.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<h2 id="bit-op"><a href="#bit-op" class="headerlink" title="bit op"></a>bit op</h2><img src="/2022/08/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202014VLDB%20The%20More%20the%20Merrier%20Efficient%20Multi%20Source%20Graph%20Traversal/image-1660379501112.png" class="lazyload" data-srcset="/2022/08/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202014VLDB%20The%20More%20the%20Merrier%20Efficient%20Multi%20Source%20Graph%20Traversal/image-1660379501112.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<h2 id="ANP（这个）"><a href="#ANP（这个）" class="headerlink" title="ANP（这个）"></a>ANP（这个）</h2><img src="/2022/08/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202014VLDB%20The%20More%20the%20Merrier%20Efficient%20Multi%20Source%20Graph%20Traversal/image-1660379554699.png" class="lazyload" data-srcset="/2022/08/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202014VLDB%20The%20More%20the%20Merrier%20Efficient%20Multi%20Source%20Graph%20Traversal/image-1660379554699.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<h2 id="tuning"><a href="#tuning" class="headerlink" title="tuning"></a>tuning</h2><h3 id="cache-line"><a href="#cache-line" class="headerlink" title="cache line"></a>cache line</h3><img src="/2022/08/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202014VLDB%20The%20More%20the%20Merrier%20Efficient%20Multi%20Source%20Graph%20Traversal/image-1660379621743.png" class="lazyload" data-srcset="/2022/08/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202014VLDB%20The%20More%20the%20Merrier%20Efficient%20Multi%20Source%20Graph%20Traversal/image-1660379621743.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<h3 id="heuristic-maximum-sharing-way-of-grouping-BFSs"><a href="#heuristic-maximum-sharing-way-of-grouping-BFSs" class="headerlink" title="heuristic maximum sharing way of grouping BFSs"></a>heuristic maximum sharing way of grouping BFSs</h3><img src="/2022/08/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202014VLDB%20The%20More%20the%20Merrier%20Efficient%20Multi%20Source%20Graph%20Traversal/image-1660379684208.png" class="lazyload" data-srcset="/2022/08/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202014VLDB%20The%20More%20the%20Merrier%20Efficient%20Multi%20Source%20Graph%20Traversal/image-1660379684208.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 <blockquote>
-<p>reason:<br>![image-1660379729404](论文笔记 2014VLDB The More the Merrier Efficient Multi Source Graph Traversal&#x2F;image-1660379729404.png)</p>
+<p>reason: </p>
+<img src="/2022/08/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202014VLDB%20The%20More%20the%20Merrier%20Efficient%20Multi%20Source%20Graph%20Traversal/image-1660379729404.png" class="lazyload" data-srcset="/2022/08/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202014VLDB%20The%20More%20the%20Merrier%20Efficient%20Multi%20Source%20Graph%20Traversal/image-1660379729404.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 </blockquote>
 
   </div>

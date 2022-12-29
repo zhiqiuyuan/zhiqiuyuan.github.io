@@ -41,7 +41,7 @@
 <meta property="og:title" content="论文笔记 1999SODA IO-complexity of graph algorithms">
 <meta property="og:url" content="http://example.com/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%201999SODA%20IOcomplexity%20of%20graph%20algorithms/index.html">
 <meta property="og:site_name" content="self-drive">
-<meta property="og:description" content="尚未全部阅读 parallel disk model（对于BFS没啥大用）模型![image-1663384939197](论文笔记 1999SODA IOcomplexity of graph algorithms&#x2F;image-1663384939197.png)![image-1663380355418](论文笔记 1999SODA IOcomplexity of graph alg">
+<meta property="og:description" content="尚未全部阅读 parallel disk model（对于BFS没啥大用）模型  BD(j-1)定位红色框（trackj前有j-1个track（红框），每个track有BD个records）；B(k-1)在红框中定位蓝框（红框中，diskk前有k-1个block（蓝框），每个block有B个records）；i在蓝框中定位record IO  compute BFS一个性质level(t-1)邻居">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-09-17T03:25:31.428Z">
@@ -2274,7 +2274,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1672324134819),
+    lastupdate: new Date(1672325813283),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2711,14 +2711,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
     <p>尚未全部阅读</p>
-<h2 id="parallel-disk-model（对于BFS没啥大用）"><a href="#parallel-disk-model（对于BFS没啥大用）" class="headerlink" title="parallel disk model（对于BFS没啥大用）"></a>parallel disk model（对于BFS没啥大用）</h2><h3 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h3><p>![image-1663384939197](论文笔记 1999SODA IOcomplexity of graph algorithms&#x2F;image-1663384939197.png)<br>![image-1663380355418](论文笔记 1999SODA IOcomplexity of graph algorithms&#x2F;image-1663380355418.png)<br>BD(j-1)定位红色框（trackj前有j-1个track（红框），每个track有BD个records）；<br>B(k-1)在红框中定位蓝框（红框中，diskk前有k-1个block（蓝框），每个block有B个records）；<br>i在蓝框中定位record</p>
-<h3 id="IO"><a href="#IO" class="headerlink" title="IO"></a>IO</h3><p>![image-1663384969517](论文笔记 1999SODA IOcomplexity of graph algorithms&#x2F;image-1663384969517.png)<br>![image-1663385005277](论文笔记 1999SODA IOcomplexity of graph algorithms&#x2F;image-1663385005277.png)</p>
-<h3 id="compute"><a href="#compute" class="headerlink" title="compute"></a>compute</h3><p>![image-1663385041495](论文笔记 1999SODA IOcomplexity of graph algorithms&#x2F;image-1663385041495.png)</p>
+<h2 id="parallel-disk-model（对于BFS没啥大用）"><a href="#parallel-disk-model（对于BFS没啥大用）" class="headerlink" title="parallel disk model（对于BFS没啥大用）"></a>parallel disk model（对于BFS没啥大用）</h2><h3 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h3><img src="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%201999SODA%20IOcomplexity%20of%20graph%20algorithms/image-1663384939197.png" class="lazyload" data-srcset="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%201999SODA%20IOcomplexity%20of%20graph%20algorithms/image-1663384939197.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<img src="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%201999SODA%20IOcomplexity%20of%20graph%20algorithms/image-1663380355418.png" class="lazyload" data-srcset="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%201999SODA%20IOcomplexity%20of%20graph%20algorithms/image-1663380355418.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<p>BD(j-1)定位红色框（trackj前有j-1个track（红框），每个track有BD个records）；<br>B(k-1)在红框中定位蓝框（红框中，diskk前有k-1个block（蓝框），每个block有B个records）；<br>i在蓝框中定位record</p>
+<h3 id="IO"><a href="#IO" class="headerlink" title="IO"></a>IO</h3><img src="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%201999SODA%20IOcomplexity%20of%20graph%20algorithms/image-1663384969517.png" class="lazyload" data-srcset="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%201999SODA%20IOcomplexity%20of%20graph%20algorithms/image-1663384969517.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<img src="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%201999SODA%20IOcomplexity%20of%20graph%20algorithms/image-1663385005277.png" class="lazyload" data-srcset="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%201999SODA%20IOcomplexity%20of%20graph%20algorithms/image-1663385005277.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<h3 id="compute"><a href="#compute" class="headerlink" title="compute"></a>compute</h3><img src="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%201999SODA%20IOcomplexity%20of%20graph%20algorithms/image-1663385041495.png" class="lazyload" data-srcset="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%201999SODA%20IOcomplexity%20of%20graph%20algorithms/image-1663385041495.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 <h2 id="BFS"><a href="#BFS" class="headerlink" title="BFS"></a>BFS</h2><h3 id="一个性质"><a href="#一个性质" class="headerlink" title="一个性质"></a>一个性质</h3><p>level(t-1)邻居的并集得到初始level(t)，此level(t)中要去除的已经visited（入队）的顶点，只可能在level(t-1)∪level(t-2)中</p>
 <blockquote>
-<p>证明（by me）：如果初始level(t)中有level(t-3)中的顶点，则说明level(t-1)中有顶点有邻居在level(t-3)（因为level(t)是level(t-1)邻居的并集），而如果level(t-1)中有顶点有邻居在level(t-3)，则该顶点应该在处理level(t-3)的时候被入队到下一个level，即应该属于level(t-2)，这与该顶点属于level(t-1)矛盾<br>证明（by [2002 ESA] External-memory breadth-first search with sublinear I&#x2F;O）：![image-1663401980336](论文笔记 1999SODA IOcomplexity of graph algorithms&#x2F;image-1663401980336.png)</p>
+<p>证明（by me）：如果初始level(t)中有level(t-3)中的顶点，则说明level(t-1)中有顶点有邻居在level(t-3)（因为level(t)是level(t-1)邻居的并集），而如果level(t-1)中有顶点有邻居在level(t-3)，则该顶点应该在处理level(t-3)的时候被入队到下一个level，即应该属于level(t-2)，这与该顶点属于level(t-1)矛盾<br>证明（by [2002 ESA] External-memory breadth-first search with sublinear I&#x2F;O）：<img src="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%201999SODA%20IOcomplexity%20of%20graph%20algorithms/image-1663401980336.png" class="lazyload" data-srcset="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%201999SODA%20IOcomplexity%20of%20graph%20algorithms/image-1663401980336.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload"></p>
 </blockquote>
-<h3 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h3><p>![image-1663384573211](论文笔记 1999SODA IOcomplexity of graph algorithms&#x2F;image-1663384573211.png)<br>![image-1663385104600](论文笔记 1999SODA IOcomplexity of graph algorithms&#x2F;image-1663385104600.png)<br>![image-1663385116701](论文笔记 1999SODA IOcomplexity of graph algorithms&#x2F;image-1663385116701.png)</p>
+<h3 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h3><img src="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%201999SODA%20IOcomplexity%20of%20graph%20algorithms/image-1663384573211.png" class="lazyload" data-srcset="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%201999SODA%20IOcomplexity%20of%20graph%20algorithms/image-1663384573211.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<img src="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%201999SODA%20IOcomplexity%20of%20graph%20algorithms/image-1663385104600.png" class="lazyload" data-srcset="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%201999SODA%20IOcomplexity%20of%20graph%20algorithms/image-1663385104600.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<img src="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%201999SODA%20IOcomplexity%20of%20graph%20algorithms/image-1663385116701.png" class="lazyload" data-srcset="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%201999SODA%20IOcomplexity%20of%20graph%20algorithms/image-1663385116701.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 
   </div>
   
@@ -2824,14 +2829,34 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class='prev' href='/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20B%E7%B1%BB2002ESA%20External%20memory%20breadth/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>论文笔记 B类2002ESA External-memory breadth-first search with sublinear IO</p>
-          <p class='content'>related workexternal BFS![image-1663401222323](论文笔记 B类2002ESA External memory breadth&#x2F;image-...</p>
+          <p class='content'>related workexternal BFS
+
+算法1 预处理
+
+
+
+
+非随机划分
+回顾：欧拉图：
+
+
+
+2 和[1999 SODA]几乎一样的BFS（只是多了个有序文件放最近用到的邻接表）...</p>
         </a>
       
       
         <a class='next' href='/2022/09/16/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202020VLDB%20Traversing%20Large%20Graphs%20on%20GPUs%20with%20Unified%20Memory/'>
           <p class='title'>论文笔记 2020VLDB Traversing Large Graphs on GPUs with Unified Memory<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
           <p class='content'>问题
-![image-1663297911325](论文笔记 2020VLDB Traversing Large Graphs on GPUs with Unified Memory&#x2F;...</p>
+ 且cpu部分的存储貌似只是内存，没有考虑外存那些
+在UVM settings下讨论（CUDA支持）
+
+related work本文作为对比对象的：
+
+
+大图放多GPU或GPU和CPU
+
+...</p>
         </a>
       
     </div>

@@ -41,7 +41,7 @@
 <meta property="og:title" content="论文笔记 2014SC Scalable and high performance betweenness centrality on the gpu">
 <meta property="og:url" content="http://example.com/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202014SC%20Scalable%20and%20high%20performance%20betweenness%20centrality%20on%20the%20gpu/index.html">
 <meta property="og:site_name" content="self-drive">
-<meta property="og:description" content="一些定义和知识betweenness中心性![image-1663405983705](论文笔记 2014SC Scalable and high performance betweenness centrality on the gpu&#x2F;image-1663405983705.png)比较不同图的BC：（(n-1)(n-2)是除了v之外所有不同点对的数目，且含方向）![image-16">
+<meta property="og:description" content="一些定义和知识betweenness中心性 比较不同图的BC：（(n-1)(n-2)是除了v之外所有不同点对的数目，且含方向）  求BC的著名算法 [7] U. Brandes, “A Faster Algorithm for Betweenness Centrality,” Journalof Mathematical Sociology, vol. 25, pp. 163–177, 2001.">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-09-17T09:27:09.726Z">
@@ -2274,7 +2274,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1672324134819),
+    lastupdate: new Date(1672325813283),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2710,28 +2710,41 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="一些定义和知识"><a href="#一些定义和知识" class="headerlink" title="一些定义和知识"></a>一些定义和知识</h2><h3 id="betweenness中心性"><a href="#betweenness中心性" class="headerlink" title="betweenness中心性"></a>betweenness中心性</h3><p>![image-1663405983705](论文笔记 2014SC Scalable and high performance betweenness centrality on the gpu&#x2F;image-1663405983705.png)<br>比较不同图的BC：（(n-1)(n-2)是除了v之外所有不同点对的数目，且含方向）<br>![image-1663406194443](论文笔记 2014SC Scalable and high performance betweenness centrality on the gpu&#x2F;image-1663406194443.png)</p>
+    <h2 id="一些定义和知识"><a href="#一些定义和知识" class="headerlink" title="一些定义和知识"></a>一些定义和知识</h2><h3 id="betweenness中心性"><a href="#betweenness中心性" class="headerlink" title="betweenness中心性"></a>betweenness中心性</h3><img src="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202014SC%20Scalable%20and%20high%20performance%20betweenness%20centrality%20on%20the%20gpu/image-1663405983705.png" class="lazyload" data-srcset="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202014SC%20Scalable%20and%20high%20performance%20betweenness%20centrality%20on%20the%20gpu/image-1663405983705.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<p>比较不同图的BC：（(n-1)(n-2)是除了v之外所有不同点对的数目，且含方向）</p>
+<img src="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202014SC%20Scalable%20and%20high%20performance%20betweenness%20centrality%20on%20the%20gpu/image-1663406194443.png" class="lazyload" data-srcset="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202014SC%20Scalable%20and%20high%20performance%20betweenness%20centrality%20on%20the%20gpu/image-1663406194443.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 <h3 id="求BC的著名算法"><a href="#求BC的著名算法" class="headerlink" title="求BC的著名算法"></a>求BC的著名算法</h3><blockquote>
 <p>[7] U. Brandes, “A Faster Algorithm for Betweenness Centrality,” Journal<br>of Mathematical Sociology, vol. 25, pp. 163–177, 2001.</p>
 </blockquote>
-<p>![image-1663406746351](论文笔记 2014SC Scalable and high performance betweenness centrality on the gpu&#x2F;image-1663406746351.png)<br>![image-1663406756280](论文笔记 2014SC Scalable and high performance betweenness centrality on the gpu&#x2F;image-1663406756280.png)</p>
+<img src="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202014SC%20Scalable%20and%20high%20performance%20betweenness%20centrality%20on%20the%20gpu/image-1663406746351.png" class="lazyload" data-srcset="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202014SC%20Scalable%20and%20high%20performance%20betweenness%20centrality%20on%20the%20gpu/image-1663406746351.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<img src="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202014SC%20Scalable%20and%20high%20performance%20betweenness%20centrality%20on%20the%20gpu/image-1663406756280.png" class="lazyload" data-srcset="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202014SC%20Scalable%20and%20high%20performance%20betweenness%20centrality%20on%20the%20gpu/image-1663406756280.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 <h3 id="上述的GPU版本"><a href="#上述的GPU版本" class="headerlink" title="上述的GPU版本"></a>上述的GPU版本</h3><h4 id="Jia"><a href="#Jia" class="headerlink" title="Jia"></a>Jia</h4><blockquote>
 <ul>
 <li>[23] Y. Jia, V. Lu, J. Hoberock, M. Garland, and J. C. Hart, “Edge v. Node<br>Parallelism for Graph Centrality Metrics,” GPU Computing Gems, vol. 2,<br>pp. 15–30, 2011.</li>
 </ul>
 </blockquote>
-<p>![image-1663410337753](论文笔记 2014SC Scalable and high performance betweenness centrality on the gpu&#x2F;image-1663410337753.png)<br>问题：不需要在这层inspect的点边或者边也inspect了，因为是给每个点&#x2F;边一个thread<br>![image-1663410979706](论文笔记 2014SC Scalable and high performance betweenness centrality on the gpu&#x2F;image-1663410979706.png)<br>（需要记录前驱是因为我们需要知道路径是否经过xx点，因此完整路径是要记录的）<br>![image-1663411053727](论文笔记 2014SC Scalable and high performance betweenness centrality on the gpu&#x2F;image-1663411053727.png)</p>
+<img src="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202014SC%20Scalable%20and%20high%20performance%20betweenness%20centrality%20on%20the%20gpu/image-1663410337753.png" class="lazyload" data-srcset="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202014SC%20Scalable%20and%20high%20performance%20betweenness%20centrality%20on%20the%20gpu/image-1663410337753.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<p>问题：不需要在这层inspect的点边或者边也inspect了，因为是给每个点&#x2F;边一个thread</p>
+<img src="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202014SC%20Scalable%20and%20high%20performance%20betweenness%20centrality%20on%20the%20gpu/image-1663410979706.png" class="lazyload" data-srcset="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202014SC%20Scalable%20and%20high%20performance%20betweenness%20centrality%20on%20the%20gpu/image-1663410979706.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<p>（需要记录前驱是因为我们需要知道路径是否经过xx点，因此完整路径是要记录的）</p>
+<img src="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202014SC%20Scalable%20and%20high%20performance%20betweenness%20centrality%20on%20the%20gpu/image-1663411053727.png" class="lazyload" data-srcset="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202014SC%20Scalable%20and%20high%20performance%20betweenness%20centrality%20on%20the%20gpu/image-1663411053727.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 <h4 id="GPU-FAN（虽然但是，这个显然就是上面的改了一点点，还更菜）"><a href="#GPU-FAN（虽然但是，这个显然就是上面的改了一点点，还更菜）" class="headerlink" title="GPU-FAN（虽然但是，这个显然就是上面的改了一点点，还更菜）"></a>GPU-FAN（虽然但是，这个显然就是上面的改了一点点，还更菜）</h4><blockquote>
 <ul>
 <li>[34] Z. Shi and B. Zhang, “Fast Network Centrality Analysis using GPUs,”<br>BMC bioinformatics, vol. 12, no. 1, p. 149, 2011</li>
 </ul>
 </blockquote>
-<p>![image-1663410942407](论文笔记 2014SC Scalable and high performance betweenness centrality on the gpu&#x2F;image-1663410942407.png)<br>前驱记录<br>![image-1663411076605](论文笔记 2014SC Scalable and high performance betweenness centrality on the gpu&#x2F;image-1663411076605.png)</p>
-<h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><p>（perblock的block指CUDA术语中的thread block）<br>![image-1663411739054](论文笔记 2014SC Scalable and high performance betweenness centrality on the gpu&#x2F;image-1663411739054.png)<br>![image-1663411867731](论文笔记 2014SC Scalable and high performance betweenness centrality on the gpu&#x2F;image-1663411867731.png)<br>S和ends记录每层的顶点，类似CSR的结构<br>![image-1663411892774](论文笔记 2014SC Scalable and high performance betweenness centrality on the gpu&#x2F;image-1663411892774.png)</p>
-<h3 id="1-初始化"><a href="#1-初始化" class="headerlink" title="1 初始化"></a>1 初始化</h3><p>![image-1663411948726](论文笔记 2014SC Scalable and high performance betweenness centrality on the gpu&#x2F;image-1663411948726.png)</p>
-<h3 id="2-计算所有点对间最短路径数目"><a href="#2-计算所有点对间最短路径数目" class="headerlink" title="2 计算所有点对间最短路径数目"></a>2 计算所有点对间最短路径数目</h3><p>![image-1663422251359](论文笔记 2014SC Scalable and high performance betweenness centrality on the gpu&#x2F;image-1663422251359.png)</p>
+<img src="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202014SC%20Scalable%20and%20high%20performance%20betweenness%20centrality%20on%20the%20gpu/image-1663410942407.png" class="lazyload" data-srcset="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202014SC%20Scalable%20and%20high%20performance%20betweenness%20centrality%20on%20the%20gpu/image-1663410942407.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<p>前驱记录</p>
+<img src="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202014SC%20Scalable%20and%20high%20performance%20betweenness%20centrality%20on%20the%20gpu/image-1663411076605.png" class="lazyload" data-srcset="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202014SC%20Scalable%20and%20high%20performance%20betweenness%20centrality%20on%20the%20gpu/image-1663411076605.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><p>（perblock的block指CUDA术语中的thread block）</p>
+<img src="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202014SC%20Scalable%20and%20high%20performance%20betweenness%20centrality%20on%20the%20gpu/image-1663411739054.png" class="lazyload" data-srcset="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202014SC%20Scalable%20and%20high%20performance%20betweenness%20centrality%20on%20the%20gpu/image-1663411739054.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<img src="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202014SC%20Scalable%20and%20high%20performance%20betweenness%20centrality%20on%20the%20gpu/image-1663411867731.png" class="lazyload" data-srcset="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202014SC%20Scalable%20and%20high%20performance%20betweenness%20centrality%20on%20the%20gpu/image-1663411867731.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<p>S和ends记录每层的顶点，类似CSR的结构</p>
+<img src="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202014SC%20Scalable%20and%20high%20performance%20betweenness%20centrality%20on%20the%20gpu/image-1663411892774.png" class="lazyload" data-srcset="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202014SC%20Scalable%20and%20high%20performance%20betweenness%20centrality%20on%20the%20gpu/image-1663411892774.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<h3 id="1-初始化"><a href="#1-初始化" class="headerlink" title="1 初始化"></a>1 初始化</h3><img src="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202014SC%20Scalable%20and%20high%20performance%20betweenness%20centrality%20on%20the%20gpu/image-1663411948726.png" class="lazyload" data-srcset="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202014SC%20Scalable%20and%20high%20performance%20betweenness%20centrality%20on%20the%20gpu/image-1663411948726.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<h3 id="2-计算所有点对间最短路径数目"><a href="#2-计算所有点对间最短路径数目" class="headerlink" title="2 计算所有点对间最短路径数目"></a>2 计算所有点对间最短路径数目</h3><img src="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202014SC%20Scalable%20and%20high%20performance%20betweenness%20centrality%20on%20the%20gpu/image-1663422251359.png" class="lazyload" data-srcset="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202014SC%20Scalable%20and%20high%20performance%20betweenness%20centrality%20on%20the%20gpu/image-1663422251359.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 <blockquote>
-<p>![image-1663422225463](论文笔记 2014SC Scalable and high performance betweenness centrality on the gpu&#x2F;image-1663422225463.png)</p>
+<img src="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202014SC%20Scalable%20and%20high%20performance%20betweenness%20centrality%20on%20the%20gpu/image-1663422225463.png" class="lazyload" data-srcset="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202014SC%20Scalable%20and%20high%20performance%20betweenness%20centrality%20on%20the%20gpu/image-1663422225463.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 </blockquote>
 <h3 id="目前本文还没有提出新的东西"><a href="#目前本文还没有提出新的东西" class="headerlink" title="目前本文还没有提出新的东西"></a>目前本文还没有提出新的东西</h3>
   </div>
@@ -2845,7 +2858,19 @@ The __m128i data type, for use with the Streaming SIMD Extension...</p>
       
         <a class='next' href='/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20B%E7%B1%BB2002ESA%20External%20memory%20breadth/'>
           <p class='title'>论文笔记 B类2002ESA External-memory breadth-first search with sublinear IO<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>related workexternal BFS![image-1663401222323](论文笔记 B类2002ESA External memory breadth&#x2F;image-...</p>
+          <p class='content'>related workexternal BFS
+
+算法1 预处理
+
+
+
+
+非随机划分
+回顾：欧拉图：
+
+
+
+2 和[1999 SODA]几乎一样的BFS（只是多了个有序文件放最近用到的邻接表）...</p>
         </a>
       
     </div>

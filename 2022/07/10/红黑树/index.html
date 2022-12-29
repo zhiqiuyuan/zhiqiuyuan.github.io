@@ -2274,7 +2274,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1672324134819),
+    lastupdate: new Date(1672325813283),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2734,7 +2734,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <h2 id="旋转"><a href="#旋转" class="headerlink" title="旋转"></a>旋转</h2><blockquote>
 <p>通过对结点进行重新着色，以及对树进行相关的旋转操作，即修改树中某些结点的颜色及指针结构，来达到对红黑树进行插入或删除结点等操作后，继续保持它的性质或平衡。</p>
 </blockquote>
-<h3 id="左旋"><a href="#左旋" class="headerlink" title="左旋"></a>左旋</h3><p>在某个结点x上做左旋操作：以x到y（x的右孩子）之间的链为“支轴”进行，它使y成为该孩子树新的根，y的左孩子b成为x的右孩子<br><img src="/%E7%BA%A2%E9%BB%91%E6%A0%91/image-1657464686857.png" class="lazyload" data-srcset="/%E7%BA%A2%E9%BB%91%E6%A0%91/image-1657464686857.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-1657464686857"></p>
+<h3 id="左旋"><a href="#左旋" class="headerlink" title="左旋"></a>左旋</h3><p>在某个结点x上做左旋操作：以x到y（x的右孩子）之间的链为“支轴”进行，它使y成为该孩子树新的根，y的左孩子b成为x的右孩子</p>
+<img src="/2022/07/10/%E7%BA%A2%E9%BB%91%E6%A0%91/image-1657464686857.png" class="lazyload" data-srcset="/2022/07/10/%E7%BA%A2%E9%BB%91%E6%A0%91/image-1657464686857.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 <pre><code class="python">#p[v]是v的父亲，left[v]right[v]是v的左右孩子
 def LEFT-ROTATE(T, x): #在x上做左旋 
     y ← right[x]
@@ -2755,8 +2756,8 @@ def LEFT-ROTATE(T, x): #在x上做左旋
     left[y] ← x 
     p[x] ← y  
 </code></pre>
-<h3 id="右旋"><a href="#右旋" class="headerlink" title="右旋"></a>右旋</h3><p>在某个结点x上做右旋操作：以x到y（x的左孩子）之间的链为“支轴”进行，它使y成为该孩子树新的根，y的右孩子c成为x的左孩子<br><img src="/%E7%BA%A2%E9%BB%91%E6%A0%91/image-1657464761451.png" class="lazyload" data-srcset="/%E7%BA%A2%E9%BB%91%E6%A0%91/image-1657464761451.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-1657464761451"></p>
-
+<h3 id="右旋"><a href="#右旋" class="headerlink" title="右旋"></a>右旋</h3><p>在某个结点x上做右旋操作：以x到y（x的左孩子）之间的链为“支轴”进行，它使y成为该孩子树新的根，y的右孩子c成为x的左孩子</p>
+<img src="/2022/07/10/%E7%BA%A2%E9%BB%91%E6%A0%91/image-1657464761451.png" class="lazyload" data-srcset="/2022/07/10/%E7%BA%A2%E9%BB%91%E6%A0%91/image-1657464761451.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
   </div>
   
   

@@ -2275,7 +2275,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1672324134819),
+    lastupdate: new Date(1672325813283),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2724,26 +2724,44 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li>unit capacity network单位容量网络：所有边容量&#x3D;1</li>
 </ul>
 <h2 id="reductions-of-problem-version"><a href="#reductions-of-problem-version" class="headerlink" title="reductions of problem version"></a>reductions of problem version</h2><h3 id="undirected-gt-directed"><a href="#undirected-gt-directed" class="headerlink" title="undirected-&gt;directed"></a>undirected-&gt;directed</h3><blockquote>
-<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/29741691/maximum-flow-in-the-undirected-graph">https://stackoverflow.com/questions/29741691/maximum-flow-in-the-undirected-graph</a><br>![image-1659605085722](disjoint path max flow problem&#x2F;image-1659605085722.png)<br>    正确性：<br>    - for max-flow：It can be easily proven that in such conversion, flow only propagates through one of the two edges and always one of them is not used</p>
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/29741691/maximum-flow-in-the-undirected-graph">https://stackoverflow.com/questions/29741691/maximum-flow-in-the-undirected-graph</a></p>
 </blockquote>
+<img src="/2022/08/04/disjoint%20path%20max%20flow%20problem/image-1659605085722.png" class="lazyload" data-srcset="/2022/08/04/disjoint%20path%20max%20flow%20problem/image-1659605085722.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<pre><code>正确性：
+- for max-flow：It can be easily proven that in such conversion, flow only propagates through one of the two edges and always one of them is not used
+</code></pre>
 <h3 id="max-flow-directed-gt-undirected"><a href="#max-flow-directed-gt-undirected" class="headerlink" title="max flow: directed-&gt;undirected"></a>max flow: directed-&gt;undirected</h3><blockquote>
-<p>Faster Energy Maximization for Faster Maximum Flow<br>方法：<br>![image-1659605356724](disjoint path max flow problem&#x2F;image-1659605356724.png)</p>
+<p>Faster Energy Maximization for Faster Maximum Flow<br>方法：</p>
 </blockquote>
-<p>证明：<br>![image-1659605369488](disjoint path max flow problem&#x2F;image-1659605369488.png)</p>
-<h3 id="directed-vertex-disjoint-gt-directed-edge-disjoint"><a href="#directed-vertex-disjoint-gt-directed-edge-disjoint" class="headerlink" title="directed vertex disjoint -&gt; directed edge disjoint"></a>directed vertex disjoint -&gt; directed edge disjoint</h3><p>![image-1659605145539](disjoint path max flow problem&#x2F;image-1659605145539.png)</p>
+<img src="/2022/08/04/disjoint%20path%20max%20flow%20problem/image-1659605356724.png" class="lazyload" data-srcset="/2022/08/04/disjoint%20path%20max%20flow%20problem/image-1659605356724.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<p>证明：</p>
+<img src="/2022/08/04/disjoint%20path%20max%20flow%20problem/image-1659605369488.png" class="lazyload" data-srcset="/2022/08/04/disjoint%20path%20max%20flow%20problem/image-1659605369488.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<h3 id="directed-vertex-disjoint-gt-directed-edge-disjoint"><a href="#directed-vertex-disjoint-gt-directed-edge-disjoint" class="headerlink" title="directed vertex disjoint -&gt; directed edge disjoint"></a>directed vertex disjoint -&gt; directed edge disjoint</h3><img src="/2022/08/04/disjoint%20path%20max%20flow%20problem/image-1659605145539.png" class="lazyload" data-srcset="/2022/08/04/disjoint%20path%20max%20flow%20problem/image-1659605145539.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
 <h2 id="general-relationship-between-max-flow-and-disjoint"><a href="#general-relationship-between-max-flow-and-disjoint" class="headerlink" title="general relationship between max-flow and disjoint"></a>general relationship between max-flow and disjoint</h2><h3 id="edge-disjoint-gt-max-flow"><a href="#edge-disjoint-gt-max-flow" class="headerlink" title="edge-disjoint -&gt; max-flow"></a>edge-disjoint -&gt; max-flow</h3><p>对于单位容量、整数流的网络，augment paths after adjustment are edge-disjoint：<strong>edge-disjoint来自于 边容量都是1，流是{0,1}流</strong></p>
-<h3 id="最大流最小割定理"><a href="#最大流最小割定理" class="headerlink" title="最大流最小割定理"></a>最大流最小割定理</h3><p>![image-1659664025696](disjoint path max flow problem&#x2F;image-1659664025696.png)</p>
-<p>![image-1659665782987](disjoint path max flow problem&#x2F;image-1659665782987.png)</p>
+<h3 id="最大流最小割定理"><a href="#最大流最小割定理" class="headerlink" title="最大流最小割定理"></a>最大流最小割定理</h3><img src="/2022/08/04/disjoint%20path%20max%20flow%20problem/image-1659664025696.png" class="lazyload" data-srcset="/2022/08/04/disjoint%20path%20max%20flow%20problem/image-1659664025696.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<img src="/2022/08/04/disjoint%20path%20max%20flow%20problem/image-1659665782987.png" class="lazyload" data-srcset="/2022/08/04/disjoint%20path%20max%20flow%20problem/image-1659665782987.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
 <blockquote>
-<p>![image-1659665800732](disjoint path max flow problem&#x2F;image-1659665800732.png)<br>这个定理可以看出，最大流的大小取决于网络拓扑（因为等于最小s-t割的容量）</p>
+<img src="/2022/08/04/disjoint%20path%20max%20flow%20problem/image-1659665800732.png" class="lazyload" data-srcset="/2022/08/04/disjoint%20path%20max%20flow%20problem/image-1659665800732.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<p>这个定理可以看出，最大流的大小取决于网络拓扑（因为等于最小s-t割的容量）</p>
 </blockquote>
 <h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><ul>
 <li><strong>augment path</strong> for f in G：<strong>s-t path in Gf</strong></li>
 <li><strong>Gf</strong>：残余网络，G上流上f得到的：对于流f流过的边(u,v)，正向边(u,v)的容量为c(u,v)-f(u,v)，反向边(v,u)的容量为f(u,v)</li>
-<li><strong>s-t cut</strong>：顶点集的划分<br>![image-1659665012203](disjoint path max flow problem&#x2F;image-1659665012203.png)</li>
+<li><strong>s-t cut</strong>：顶点集的划分<img src="/2022/08/04/disjoint%20path%20max%20flow%20problem/image-1659665012203.png" class="lazyload" data-srcset="/2022/08/04/disjoint%20path%20max%20flow%20problem/image-1659665012203.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload"></li>
 </ul>
 <h4 id="proof"><a href="#proof" class="headerlink" title="proof"></a>proof</h4><blockquote>
-<p>![image-1659664546552](disjoint path max flow problem&#x2F;image-1659664546552.png)<br>![image-1659664582776](disjoint path max flow problem&#x2F;image-1659664582776.png)<br>因此证明只需要 在对f没有augment path时，找到一个s-t cut满足这个iff后面的特征即可，下面找这个s-t cut<br>![image-1659664700740](disjoint path max flow problem&#x2F;image-1659664700740.png)<br>![image-1659664819008](disjoint path max flow problem&#x2F;image-1659664819008.png)<br>if then是因为 没有augment path for f，则没有s-t path in Gf，所以Ef中一些边不存在<br>![image-1659664900682](disjoint path max flow problem&#x2F;image-1659664900682.png)</p>
+<img src="/2022/08/04/disjoint%20path%20max%20flow%20problem/image-1659664546552.png" class="lazyload" data-srcset="/2022/08/04/disjoint%20path%20max%20flow%20problem/image-1659664546552.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<img src="/2022/08/04/disjoint%20path%20max%20flow%20problem/image-1659664582776.png" class="lazyload" data-srcset="/2022/08/04/disjoint%20path%20max%20flow%20problem/image-1659664582776.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<p>因此证明只需要 在对f没有augment path时，找到一个s-t cut满足这个iff后面的特征即可，下面找这个s-t cut</p>
+<img src="/2022/08/04/disjoint%20path%20max%20flow%20problem/image-1659664700740.png" class="lazyload" data-srcset="/2022/08/04/disjoint%20path%20max%20flow%20problem/image-1659664700740.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<img src="/2022/08/04/disjoint%20path%20max%20flow%20problem/image-1659664819008.png" class="lazyload" data-srcset="/2022/08/04/disjoint%20path%20max%20flow%20problem/image-1659664819008.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<p>if then是因为 没有augment path for f，则没有s-t path in Gf，所以Ef中一些边不存在</p>
+<img src="/2022/08/04/disjoint%20path%20max%20flow%20problem/image-1659664900682.png" class="lazyload" data-srcset="/2022/08/04/disjoint%20path%20max%20flow%20problem/image-1659664900682.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 </blockquote>
 <h2 id="2-disjoint-path"><a href="#2-disjoint-path" class="headerlink" title="2 disjoint path"></a>2 disjoint path</h2><p>第一条augment path的选择，</p>
 <h3 id="正确性"><a href="#正确性" class="headerlink" title="正确性"></a>正确性</h3><p>定理的(2)-&gt;(1)：对于f没有augment path -&gt; f是G中最大流<br>因此 <font color=red>对于<strong>最大流&gt;&#x3D;2</strong>的单位容量、整数流网络，<strong>随意选择第一条augment path</strong>，都<strong>一定可以找到第二条</strong>augment path</font></p>
@@ -2868,7 +2886,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <a class='prev' href='/2022/08/05/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20multiterminal%20network%20flows/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>论文笔记 multi-terminal network flows</p>
           <p class='content'>定义bij：顶点Ni到顶点Nj间边Bij的容量fij：顶点Ni到顶点Nj的最大流流量F是fij构成的方阵
-贡献判定一个F是否能在某些网络拓扑中达到![image-1659691120152](论...</p>
+贡献判定一个F是否能在某些网络拓扑中达到
+判定算法：求fij；然后在构造最大生成树时检查...</p>
         </a>
       
       

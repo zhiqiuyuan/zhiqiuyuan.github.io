@@ -41,7 +41,7 @@
 <meta property="og:title" content="论文笔记 B类2002ESA External-memory breadth-first search with sublinear IO">
 <meta property="og:url" content="http://example.com/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20B%E7%B1%BB2002ESA%20External%20memory%20breadth/index.html">
 <meta property="og:site_name" content="self-drive">
-<meta property="og:description" content="related workexternal BFS![image-1663401222323](论文笔记 B类2002ESA External memory breadth&#x2F;image-1663401222323.png) 算法1 预处理![image-1663402581439](论文笔记 B类2002ESA External memory breadth&#x2F;image-1663">
+<meta property="og:description" content="related workexternal BFS  算法1 预处理     非随机划分 回顾：欧拉图：    2 和[1999 SODA]几乎一样的BFS（只是多了个有序文件放最近用到的邻接表）  不一样的地方：维护一个有序的文件H用于获取邻接表：（H有序：H中存放的内容是边entry，有序按边entry字典序）   如何获取L(t-1)的邻居：">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-09-17T08:03:06.650Z">
@@ -2274,7 +2274,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1672324134819),
+    lastupdate: new Date(1672325813283),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2710,14 +2710,25 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="related-work"><a href="#related-work" class="headerlink" title="related work"></a>related work</h2><p>external BFS<br>![image-1663401222323](论文笔记 B类2002ESA External memory breadth&#x2F;image-1663401222323.png)</p>
-<h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><h3 id="1-预处理"><a href="#1-预处理" class="headerlink" title="1 预处理"></a>1 预处理</h3><p>![image-1663402581439](论文笔记 B类2002ESA External memory breadth&#x2F;image-1663402581439.png)<br>![image-1663402741195](论文笔记 B类2002ESA External memory breadth&#x2F;image-1663402741195.png)<br>![image-1663402750726](论文笔记 B类2002ESA External memory breadth&#x2F;image-1663402750726.png)<br>![image-1663402781938](论文笔记 B类2002ESA External memory breadth&#x2F;image-1663402781938.png)<br>![image-1663402793314](论文笔记 B类2002ESA External memory breadth&#x2F;image-1663402793314.png)</p>
+    <h2 id="related-work"><a href="#related-work" class="headerlink" title="related work"></a>related work</h2><p>external BFS</p>
+<img src="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20B%E7%B1%BB2002ESA%20External%20memory%20breadth/image-1663401222323.png" class="lazyload" data-srcset="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20B%E7%B1%BB2002ESA%20External%20memory%20breadth/image-1663401222323.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><h3 id="1-预处理"><a href="#1-预处理" class="headerlink" title="1 预处理"></a>1 预处理</h3><img src="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20B%E7%B1%BB2002ESA%20External%20memory%20breadth/image-1663402581439.png" class="lazyload" data-srcset="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20B%E7%B1%BB2002ESA%20External%20memory%20breadth/image-1663402581439.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<img src="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20B%E7%B1%BB2002ESA%20External%20memory%20breadth/image-1663402741195.png" class="lazyload" data-srcset="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20B%E7%B1%BB2002ESA%20External%20memory%20breadth/image-1663402741195.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<img src="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20B%E7%B1%BB2002ESA%20External%20memory%20breadth/image-1663402750726.png" class="lazyload" data-srcset="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20B%E7%B1%BB2002ESA%20External%20memory%20breadth/image-1663402750726.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<img src="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20B%E7%B1%BB2002ESA%20External%20memory%20breadth/image-1663402781938.png" class="lazyload" data-srcset="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20B%E7%B1%BB2002ESA%20External%20memory%20breadth/image-1663402781938.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<img src="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20B%E7%B1%BB2002ESA%20External%20memory%20breadth/image-1663402793314.png" class="lazyload" data-srcset="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20B%E7%B1%BB2002ESA%20External%20memory%20breadth/image-1663402793314.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 <h4 id="非随机划分"><a href="#非随机划分" class="headerlink" title="非随机划分"></a>非随机划分</h4><blockquote>
-<p>回顾：欧拉图：![image-1663403664912](论文笔记 B类2002ESA External memory breadth&#x2F;image-1663403664912.png)</p>
+<p>回顾：欧拉图：<img src="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20B%E7%B1%BB2002ESA%20External%20memory%20breadth/image-1663403664912.png" class="lazyload" data-srcset="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20B%E7%B1%BB2002ESA%20External%20memory%20breadth/image-1663403664912.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload"></p>
 </blockquote>
-<p>![image-1663403911254](论文笔记 B类2002ESA External memory breadth&#x2F;image-1663403911254.png)<br>![image-1663403923130](论文笔记 B类2002ESA External memory breadth&#x2F;image-1663403923130.png)</p>
-<h3 id="2-和-1999-SODA-几乎一样的BFS（只是多了个有序文件放最近用到的邻接表）"><a href="#2-和-1999-SODA-几乎一样的BFS（只是多了个有序文件放最近用到的邻接表）" class="headerlink" title="2 和[1999 SODA]几乎一样的BFS（只是多了个有序文件放最近用到的邻接表）"></a>2 和[1999 SODA]几乎一样的BFS（只是多了个有序文件放最近用到的邻接表）</h3><p>![image-1663403277216](论文笔记 B类2002ESA External memory breadth&#x2F;image-1663403277216.png)<br>![image-1663403292565](论文笔记 B类2002ESA External memory breadth&#x2F;image-1663403292565.png)<br>不一样的地方：维护一个有序的文件H用于获取邻接表：（H有序：H中存放的内容是边entry，有序按边entry字典序）<br>![image-1663403364280](论文笔记 B类2002ESA External memory breadth&#x2F;image-1663403364280.png)<br>![image-1663403391511](论文笔记 B类2002ESA External memory breadth&#x2F;image-1663403391511.png)<br>如何获取L(t-1)的邻居：<br>![image-1663403461931](论文笔记 B类2002ESA External memory breadth&#x2F;image-1663403461931.png)</p>
-
+<img src="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20B%E7%B1%BB2002ESA%20External%20memory%20breadth/image-1663403911254.png" class="lazyload" data-srcset="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20B%E7%B1%BB2002ESA%20External%20memory%20breadth/image-1663403911254.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<img src="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20B%E7%B1%BB2002ESA%20External%20memory%20breadth/image-1663403923130.png" class="lazyload" data-srcset="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20B%E7%B1%BB2002ESA%20External%20memory%20breadth/image-1663403923130.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<h3 id="2-和-1999-SODA-几乎一样的BFS（只是多了个有序文件放最近用到的邻接表）"><a href="#2-和-1999-SODA-几乎一样的BFS（只是多了个有序文件放最近用到的邻接表）" class="headerlink" title="2 和[1999 SODA]几乎一样的BFS（只是多了个有序文件放最近用到的邻接表）"></a>2 和[1999 SODA]几乎一样的BFS（只是多了个有序文件放最近用到的邻接表）</h3><img src="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20B%E7%B1%BB2002ESA%20External%20memory%20breadth/image-1663403277216.png" class="lazyload" data-srcset="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20B%E7%B1%BB2002ESA%20External%20memory%20breadth/image-1663403277216.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<img src="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20B%E7%B1%BB2002ESA%20External%20memory%20breadth/image-1663403292565.png" class="lazyload" data-srcset="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20B%E7%B1%BB2002ESA%20External%20memory%20breadth/image-1663403292565.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<p>不一样的地方：维护一个有序的文件H用于获取邻接表：（H有序：H中存放的内容是边entry，有序按边entry字典序）</p>
+<img src="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20B%E7%B1%BB2002ESA%20External%20memory%20breadth/image-1663403364280.png" class="lazyload" data-srcset="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20B%E7%B1%BB2002ESA%20External%20memory%20breadth/image-1663403364280.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<img src="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20B%E7%B1%BB2002ESA%20External%20memory%20breadth/image-1663403391511.png" class="lazyload" data-srcset="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20B%E7%B1%BB2002ESA%20External%20memory%20breadth/image-1663403391511.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<p>如何获取L(t-1)的邻居：</p>
+<img src="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20B%E7%B1%BB2002ESA%20External%20memory%20breadth/image-1663403461931.png" class="lazyload" data-srcset="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20B%E7%B1%BB2002ESA%20External%20memory%20breadth/image-1663403461931.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
   </div>
   
   
@@ -2822,14 +2833,20 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class='prev' href='/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202014SC%20Scalable%20and%20high%20performance%20betweenness%20centrality%20on%20the%20gpu/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>论文笔记 2014SC Scalable and high performance betweenness centrality on the gpu</p>
-          <p class='content'>一些定义和知识betweenness中心性![image-1663405983705](论文笔记 2014SC Scalable and high performance betweenness...</p>
+          <p class='content'>一些定义和知识betweenness中心性
+比较不同图的BC：（(n-1)(n-2)是除了v之外所有不同点对的数目，且含方向）
+
+求BC的著名算法
+[7] U. Brandes, “A Fast...</p>
         </a>
       
       
         <a class='next' href='/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%201999SODA%20IOcomplexity%20of%20graph%20algorithms/'>
           <p class='title'>论文笔记 1999SODA IO-complexity of graph algorithms<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
           <p class='content'>尚未全部阅读
-parallel disk model（对于BFS没啥大用）模型![image-1663384939197](论文笔记 1999SODA IOcomplexity of graph...</p>
+parallel disk model（对于BFS没啥大用）模型
+
+BD(j-1)定位红色框（trackj前有j-1个track（红框），每个track有BD个records）；B...</p>
         </a>
       
     </div>

@@ -2272,7 +2272,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1672324134819),
+    lastupdate: new Date(1672325813283),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2658,8 +2658,25 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-        related workexternal BFS![image-1663401222323](论文笔记 B类2002ESA External memory breadth&#x2F;image-1663401222323.png)
-算法1 预处理![image-1663402581439](论文笔记 B类2002ESA External memory breadth&#x2F;image-1...
+        related workexternal BFS
+
+算法1 预处理
+
+
+
+
+非随机划分
+回顾：欧拉图：
+
+
+
+2 和[1999 SODA]几乎一样的BFS（只是多了个有序文件放最近用到的邻接表）
+
+不一样的地方：维护一个有序的文件H用于获取邻接表：（H有序：H中存放的内容是边entry，有序按边entry字典序）
+
+
+如何获取L(t-1)的邻居：
+
       
     
   </div>
@@ -2723,7 +2740,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         尚未全部阅读
-parallel disk model（对于BFS没啥大用）模型![image-1663384939197](论文笔记 1999SODA IOcomplexity of graph algorithms&#x2F;image-1663384939197.png)![image-1663380355418](论文笔记 1999SODA IOcomplexity of graph ...
+parallel disk model（对于BFS没啥大用）模型
+
+BD(j-1)定位红色框（trackj前有j-1个track（红框），每个track有BD个records）；B(k-1)在红框中定位蓝框（红框中，diskk前有k-1个block（蓝框），每个block有B个records）；i在蓝框中定位record
+IO
+
+compute
+BFS一个性质level(t-1...
       
     
   </div>
@@ -2787,10 +2810,25 @@ parallel disk model（对于BFS没啥大用）模型![image-1663384939197](论�
     
       
         问题
-![image-1663297911325](论文笔记 2020VLDB Traversing Large Graphs on GPUs with Unified Memory&#x2F;image-1663297911325.png) 且cpu部分的存储貌似只是内存，没有考虑外存那些
+ 且cpu部分的存储貌似只是内存，没有考虑外存那些
 在UVM settings下讨论（CUDA支持）
 
-related work本文作为对比对象的：![...
+related work本文作为对比对象的：
+
+
+大图放多GPU或GPU和CPU
+
+GPU BFS
+
+external BFS：已计划
+
+一些定义
+UVM
+
+
+CSR和BFS
+
+分析factors that impact performance(DATA ACCESS PATTERN...
       
     
   </div>
@@ -2856,7 +2894,17 @@ related work本文作为对比对象的：![...
         
 来自2022FAST Practicably Boosting the Processing Performance of BFS-like Algorithms on Semi-External Graph System via IO-Efficient Graph Ordering
 
-存储![image-1663224615065](An Overview of Semi&#x2F;i...
+存储
+
+
+
+
+I&#x2F;O optimization techniques
+
+
+
+
+Pre-pro...
       
     
   </div>
@@ -2882,76 +2930,6 @@ related work本文作为对比对象的：![...
       
         <div>
           <a class='readmore' href='/2022/09/15/An%20Overview%20of%20Semi/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/15/论文笔记 2010SC Multithreaded Asynchronous Graph Traversal for In/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="self-drive">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="self-drive">
-    <meta itemprop="description" content="personal blog">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/09/15/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202010SC%20Multithreaded%20Asynchronous%20Graph%20Traversal%20for%20In/"  itemprop="url">
-        论文笔记 2010SC Multithreaded Asynchronous Graph Traversal for In-Memory and Semi-External Memory
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        研究的图
-1 ASYNCHRONOUS GRAPH TRAVERSAL
-图算法的框架
-
-队列优先队列：优先级是within队列的，而不是cross所有队列&#x2F;global的入队：hash计算决定入队到哪个队列出队和执行visitor计算：这个由每个队列所属的线程来处理（一个队列一个线程，最简单的就是线程不断loop从其队列中取队首来执行，而线程之间是并发的）
-SSSP
-
-分析：举例：...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-09-15T10:24:54+08:00">2022-09-15</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/paper/">paper</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/paper/" itemprop="url"><span itemprop="name">paper</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/09/15/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202010SC%20Multithreaded%20Asynchronous%20Graph%20Traversal%20for%20In/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3127,7 +3105,28 @@ fata...
   <div class='md article-desc' itemprop="articleBody">
     
       
-        一些definition![image-1663125575582](论文笔记 2017FAST Graphene_Fine Grained IO Management for Graph Computing&#x2F;image-1663125575582.png)![image-1663125900908](论文笔记 2017FAST Graphene_Fine Grained IO M...
+        一些definition
+
+1 Bitmap Based, Asynchronous IO1 store
+
+
+block size依据： 
+
+
+2 bitmap（这个）
+
+
+bitmap size: 举例：benefit:  
+
+
+3 Asynchronous IO
+upper bound for IO size(size for each IO transaction)
+
+
+依据： 
+
+
+...
       
     
   </div>
@@ -3190,8 +3189,15 @@ fata...
   <div class='md article-desc' itemprop="articleBody">
     
       
-        问题![image-1663060642629](论文笔记 2016SIGMOD iBFS_Concurrent Breadth First Search on GPUs&#x2F;image-1663060642629.png)
-code![image-1663123709041](论文笔记 2016SIGMOD iBFS_Concurrent Breadth First Search o...
+        问题
+
+code
+
+related workCPU-多BFS实例
+
+
+
+MSBFS VLDB[26] Manuel Then, Moritz Kaufmann, Fernando Chirigati,Tuan-Anh Hoang-Vu, Kien Pham, Alfons Kemper,Thomas Neumann, and Huy T Vo. The more themerrier: Ef...
       
     
   </div>
@@ -3228,7 +3234,7 @@ code![image-1663123709041](论文笔记 2016SIGMOD iBFS_Concurrent Breadth First
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/13/论文笔记 2022FAST Practicably Boosting the Processing Performance of BFS/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/10/论文笔记 2012PPoPP Scalable GPU Graph Traversal/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="self-drive">
   </span>
@@ -3246,19 +3252,22 @@ code![image-1663123709041](论文笔记 2016SIGMOD iBFS_Concurrent Breadth First
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202022FAST%20Practicably%20Boosting%20the%20Processing%20Performance%20of%20BFS/"  itemprop="url">
-        论文笔记 2022FAST Practicably Boosting the Processing Performance of BFS-like Algorithms on Semi
+      <a href="/2022/09/10/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202012PPoPP%20Scalable%20GPU%20Graph%20Traversal/"  itemprop="url">
+        论文笔记 2012PPoPP Scalable GPU Graph Traversal
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        Practicably Boosting the Processing Performance of BFS-like Algorithms on Semi-External Graph System via I&#x2F;O-Efficient Graph Ordering
-related work
-一些定义
-2017preselect篇的问题
-GVS不够高效：用GVS来选顶点，需要sta...
+        details: High-Performance and Scalable GPU Graph Traversal我读的这篇详细的
+BFS
+approach
+componentsContract-Expand
+Two-Phase
+gatheringCoarse-Grained, Warp-Based Gathering
+
+Fine-Grained, Scan-Based Gathering...
       
     
   </div>
@@ -3266,7 +3275,7 @@ GVS不够高效：用GVS来选顶点，需要sta...
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-09-13T15:48:11+08:00">2022-09-13</time>
+        <time itemprop="dateCreated datePublished" datetime="2022-09-10T17:58:42+08:00">2022-09-10</time>
         
           <span class="dot"></span>
           <a class="category-link" href="/categories/paper/">paper</a>
@@ -3279,7 +3288,73 @@ GVS不够高效：用GVS来选顶点，需要sta...
       </div>
       
         <div>
-          <a class='readmore' href='/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202022FAST%20Practicably%20Boosting%20the%20Processing%20Performance%20of%20BFS/' itemprop="url">
+          <a class='readmore' href='/2022/09/10/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202012PPoPP%20Scalable%20GPU%20Graph%20Traversal/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/09/CUDA编程模型/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="self-drive">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="self-drive">
+    <meta itemprop="description" content="personal blog">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/09/09/CUDA%E7%BC%96%E7%A8%8B%E6%A8%A1%E5%9E%8B/"  itemprop="url">
+        CUDA编程模型
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html#programming-model
+overall
+thread hierarchy：将问题划分为线程块block
+Thread blocks are required to execute independently: It must be possible t...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-09-09T16:17:04+08:00">2022-09-09</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/GPU/">GPU</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/GPU/" itemprop="url"><span itemprop="name">GPU</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/09/09/CUDA%E7%BC%96%E7%A8%8B%E6%A8%A1%E5%9E%8B/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3514,7 +3589,7 @@ GVS不够高效：用GVS来选顶点，需要sta...
           <li><a class="flat-box"
             title="/categories/paper/" href="/categories/paper/"
             active-action="action-categoriespaper"
-            ><div class='name'>paper</div><div class='badge'>(17)</div></a></li>
+            ><div class='name'>paper</div><div class='badge'>(14)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/plan/" href="/categories/plan/"

@@ -2275,7 +2275,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1672324134819),
+    lastupdate: new Date(1672325813283),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2722,7 +2722,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </ul>
 </li>
 </ul>
-<p>![image-1662258641277](leveldb SSTable sst文件 sst解析工具&#x2F;image-1662258641277.png)</p>
+<img src="/2022/09/04/leveldb%20SSTable%20sst%E6%96%87%E4%BB%B6%20sst%E8%A7%A3%E6%9E%90%E5%B7%A5%E5%85%B7/image-1662258641277.png" class="lazyload" data-srcset="/2022/09/04/leveldb%20SSTable%20sst%E6%96%87%E4%BB%B6%20sst%E8%A7%A3%E6%9E%90%E5%B7%A5%E5%85%B7/image-1662258641277.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 <h3 id="逻辑结构"><a href="#逻辑结构" class="headerlink" title="逻辑结构"></a>逻辑结构</h3><p>将一个sstable分为：</p>
 <ul>
 <li>data block: 用来存储key value数据对；</li>
@@ -2731,8 +2731,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li>index block：index block中用来存储每个data block的索引信息；</li>
 <li>footer: 用来存储meta index block及index block的索引信息；</li>
 </ul>
-<p>![image-1662258700174](leveldb SSTable sst文件 sst解析工具&#x2F;image-1662258700174.png)<br>注意，1-4类型的区块，其物理结构都是如1.1节所示，每个区块都会有自己的压缩信息以及CRC校验码信息。</p>
-<h2 id="data-block结构"><a href="#data-block结构" class="headerlink" title="data block结构"></a><font color=green>data block结构</font></h2><p>一个data block中的数据部分（<strong>不包括压缩类型、CRC校验码</strong>）按逻辑以下图进行划分：<br>![image-1662258799686](leveldb SSTable sst文件 sst解析工具&#x2F;image-1662258799686.png)</p>
+<img src="/2022/09/04/leveldb%20SSTable%20sst%E6%96%87%E4%BB%B6%20sst%E8%A7%A3%E6%9E%90%E5%B7%A5%E5%85%B7/image-1662258700174.png" class="lazyload" data-srcset="/2022/09/04/leveldb%20SSTable%20sst%E6%96%87%E4%BB%B6%20sst%E8%A7%A3%E6%9E%90%E5%B7%A5%E5%85%B7/image-1662258700174.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<p>注意，1-4类型的区块，其物理结构都是如1.1节所示，每个区块都会有自己的压缩信息以及CRC校验码信息。</p>
+<h2 id="data-block结构"><a href="#data-block结构" class="headerlink" title="data block结构"></a><font color=green>data block结构</font></h2><p>一个data block中的数据部分（<strong>不包括压缩类型、CRC校验码</strong>）按逻辑以下图进行划分：</p>
+<img src="/2022/09/04/leveldb%20SSTable%20sst%E6%96%87%E4%BB%B6%20sst%E8%A7%A3%E6%9E%90%E5%B7%A5%E5%85%B7/image-1662258799686.png" class="lazyload" data-srcset="/2022/09/04/leveldb%20SSTable%20sst%E6%96%87%E4%BB%B6%20sst%E8%A7%A3%E6%9E%90%E5%B7%A5%E5%85%B7/image-1662258799686.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 <h3 id="entry存储keyvalue数据"><a href="#entry存储keyvalue数据" class="headerlink" title="entry存储keyvalue数据"></a>entry存储keyvalue数据</h3><h4 id="key"><a href="#key" class="headerlink" title="key"></a>key</h4><ul>
 <li>由于sstable中所有的keyvalue对都是严格按序存储的，为了节省存储空间，leveldb并不会为每一对keyvalue对都存储完整的key值，而是<strong>存储与上一个key非共享的部分</strong>，避免了key重复内容的存储。</li>
 <li>每间隔若干个keyvalue对，将为该条记录重新存储一个完整的key。重复该过程（默认间隔值为16），每个重新存储完整key的点称之为<strong>Restart point</strong>。<ul>
@@ -2743,7 +2745,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </ul>
 </li>
 </ul>
-<h4 id="entry格式"><a href="#entry格式" class="headerlink" title="entry格式"></a>entry格式</h4><p>每个entry的格式如下图所示：<br>![image-1662258960061](leveldb SSTable sst文件 sst解析工具&#x2F;image-1662258960061.png)</p>
+<h4 id="entry格式"><a href="#entry格式" class="headerlink" title="entry格式"></a>entry格式</h4><p>每个entry的格式如下图所示：</p>
+<img src="/2022/09/04/leveldb%20SSTable%20sst%E6%96%87%E4%BB%B6%20sst%E8%A7%A3%E6%9E%90%E5%B7%A5%E5%85%B7/image-1662258960061.png" class="lazyload" data-srcset="/2022/09/04/leveldb%20SSTable%20sst%E6%96%87%E4%BB%B6%20sst%E8%A7%A3%E6%9E%90%E5%B7%A5%E5%85%B7/image-1662258960061.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 <ul>
 <li>与前一条记录key共享部分的长度；</li>
 <li>与前一条记录key不共享部分的长度；</li>
@@ -2751,8 +2754,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li>与前一条记录key非共享的内容；</li>
 <li>value内容；</li>
 </ul>
-<h4 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h4><p>restart_interval&#x3D;2<br>entry one  : key&#x3D;deck,value&#x3D;v1<br>entry two  : key&#x3D;dock,value&#x3D;v2<br>entry three: key&#x3D;duck,value&#x3D;v3<br>![image-1662259048912](leveldb SSTable sst文件 sst解析工具&#x2F;image-1662259048912.png)<br>三组entry按上图的格式进行存储。值得注意的是restart_interval为2，因此每隔两个entry都会有一条数据作为restart point点的数据项，存储完整key值。因此entry3存储了完整的key。</p>
-<p>此外，第一个restart point为0（偏移量），第二个restart point为16，restart point共有两个，因此一个datablock数据段的末尾添加了下图所示的数据：<br>![image-1662259071125](leveldb SSTable sst文件 sst解析工具&#x2F;image-1662259071125.png)<br>尾部数据记录了每一个restart point的值，以及所有restart point的个数。</p>
+<h4 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h4><p>restart_interval&#x3D;2<br>entry one  : key&#x3D;deck,value&#x3D;v1<br>entry two  : key&#x3D;dock,value&#x3D;v2<br>entry three: key&#x3D;duck,value&#x3D;v3</p>
+<img src="/2022/09/04/leveldb%20SSTable%20sst%E6%96%87%E4%BB%B6%20sst%E8%A7%A3%E6%9E%90%E5%B7%A5%E5%85%B7/image-1662259048912.png" class="lazyload" data-srcset="/2022/09/04/leveldb%20SSTable%20sst%E6%96%87%E4%BB%B6%20sst%E8%A7%A3%E6%9E%90%E5%B7%A5%E5%85%B7/image-1662259048912.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<p>三组entry按上图的格式进行存储。值得注意的是restart_interval为2，因此每隔两个entry都会有一条数据作为restart point点的数据项，存储完整key值。因此entry3存储了完整的key。</p>
+<p>此外，第一个restart point为0（偏移量），第二个restart point为16，restart point共有两个，因此一个datablock数据段的末尾添加了下图所示的数据：</p>
+<img src="/2022/09/04/leveldb%20SSTable%20sst%E6%96%87%E4%BB%B6%20sst%E8%A7%A3%E6%9E%90%E5%B7%A5%E5%85%B7/image-1662259071125.png" class="lazyload" data-srcset="/2022/09/04/leveldb%20SSTable%20sst%E6%96%87%E4%BB%B6%20sst%E8%A7%A3%E6%9E%90%E5%B7%A5%E5%85%B7/image-1662259071125.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<p>尾部数据记录了每一个restart point的值，以及所有restart point的个数。</p>
 <h2 id="SST-dump-tool"><a href="#SST-dump-tool" class="headerlink" title="SST dump tool"></a>SST dump tool</h2><h3 id="编译sst-dump"><a href="#编译sst-dump" class="headerlink" title="编译sst_dump"></a>编译sst_dump</h3><blockquote>
 <p>参考<a target="_blank" rel="noopener" href="https://shashangka.com/2020/06/26/rocksdb-administration-and-data-access-tool/">https://shashangka.com/2020/06/26/rocksdb-administration-and-data-access-tool/</a></p>
 </blockquote>

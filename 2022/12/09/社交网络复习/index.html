@@ -41,11 +41,11 @@
 <meta property="og:title" content="社交网络复习">
 <meta property="og:url" content="http://example.com/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/index.html">
 <meta property="og:site_name" content="self-drive">
-<meta property="og:description" content="未看但是可能要看： 2.4 分支限界算法中：多项式近似算法，page 35 2.4 KT index，page 63   1.1 图的基本概念、类型   1.2 幂律分布、图的测度参数、随机图       2.1 顶点及边的中心性计算 n为全图顶点数目  无向图的度中心性：顶点的度（可以通过除以最大可能值n-1来标准化度数）        2.2 可达性&amp;最短路径 Dijkstra算法：">
+<meta property="og:description" content="未看但是可能要看： 2.4 分支限界算法中：多项式近似算法，page 35 2.4 KT index，page 63   1.1 图的基本概念、类型  1.2 幂律分布、图的测度参数、随机图      2.1 顶点及边的中心性计算  n为全图顶点数目  无向图的度中心性：顶点的度（可以通过除以最大可能值n-1来标准化度数）        2.2 可达性&amp;最短路径 Dijkstra算法：">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-12-09T11:36:23.000Z">
-<meta property="article:modified_time" content="2022-12-29T14:28:38.541Z">
+<meta property="article:modified_time" content="2022-12-29T14:53:29.980Z">
 <meta property="article:author" content="zhiqiuyuan">
 <meta property="article:tag" content="graph">
 <meta name="twitter:card" content="summary">
@@ -2275,7 +2275,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1672324134819),
+    lastupdate: new Date(1672325813283),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2717,216 +2717,279 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li>2.4 KT index，page 63</li>
 </ul>
 </blockquote>
-<h2 id="1-1-图的基本概念、类型"><a href="#1-1-图的基本概念、类型" class="headerlink" title="1.1 图的基本概念、类型"></a>1.1 图的基本概念、类型</h2><p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210150004681.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210150004681.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221210150004681"></p>
-<img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210150004681.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210150004681.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<h2 id="1-1-图的基本概念、类型"><a href="#1-1-图的基本概念、类型" class="headerlink" title="1.1 图的基本概念、类型"></a>1.1 图的基本概念、类型</h2><img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210150004681.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210150004681.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 
 <h2 id="1-2-幂律分布、图的测度参数、随机图"><a href="#1-2-幂律分布、图的测度参数、随机图" class="headerlink" title="1.2 幂律分布、图的测度参数、随机图"></a>1.2 幂律分布、图的测度参数、随机图</h2><ul>
-<li><p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210150505641.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210150505641.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221210150505641"></p>
+<li><img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210150505641.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210150505641.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 </li>
-<li><p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210151000674.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210151000674.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221210151000674"></p>
-<p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210150938200.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210150938200.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221210150938200"></p>
-</li>
+<li><img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210151000674.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210151000674.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload"> <img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210150938200.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210150938200.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload"></li>
 </ul>
-<h2 id="2-1-顶点及边的中心性计算"><a href="#2-1-顶点及边的中心性计算" class="headerlink" title="2.1 顶点及边的中心性计算"></a>2.1 顶点及边的中心性计算</h2><p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210151705491.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210151705491.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221210151705491"></p>
+<h2 id="2-1-顶点及边的中心性计算"><a href="#2-1-顶点及边的中心性计算" class="headerlink" title="2.1 顶点及边的中心性计算"></a>2.1 顶点及边的中心性计算</h2><img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210151705491.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210151705491.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
 <p>n为全图顶点数目</p>
 <ul>
 <li><p>无向图的度中心性：顶点的度（可以通过除以最大可能值n-1来标准化度数）</p>
 </li>
-<li><p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210151927682.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210151927682.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221210151927682"></p>
+<li><img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210151927682.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210151927682.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 </li>
-<li><p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210152056660.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210152056660.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221210152056660"></p>
-<p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210152112105.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210152112105.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221210152112105"></p>
-</li>
+<li><img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210152056660.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210152056660.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210152112105.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210152112105.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload"></li>
 </ul>
 <h2 id="2-2-可达性-amp-最短路径"><a href="#2-2-可达性-amp-最短路径" class="headerlink" title="2.2 可达性&amp;最短路径"></a>2.2 可达性&amp;最短路径</h2><ul>
 <li><p>Dijkstra算法：</p>
-<p>直到所有顶点都加入集合S<img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210153047266.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210153047266.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221210153047266"></p>
+<p>直到所有顶点都加入集合S<img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210153047266.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210153047266.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload"></p>
 </li>
 <li><p>A*算法：</p>
 <p>直到所有顶点都加入集合S</p>
-<p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210153140363.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210153140363.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221210153140363"></p>
+<img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210153140363.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210153140363.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
 <p>其中g(n)的计算：传递计算</p>
 </li>
 </ul>
 <h2 id="2-3-稠密子图搜索"><a href="#2-3-稠密子图搜索" class="headerlink" title="2.3 稠密子图搜索"></a>2.3 稠密子图搜索</h2><p>定义和算法</p>
-<p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210153623906.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210153623906.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221210153623906"></p>
+<img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210153623906.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210153623906.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
 <h3 id="k-core"><a href="#k-core" class="headerlink" title="k-core"></a>k-core</h3><h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><ul>
-<li><p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210160321141.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210160321141.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221210160321141"></p>
+<li><img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210160321141.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210160321141.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 </li>
-<li><p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210160329688.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210160329688.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221210160329688"></p>
-<p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210160418068.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210160418068.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221210160418068"></p>
+<li><img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210160329688.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210160329688.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210160418068.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210160418068.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 </li>
-<li><p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210160441344.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210160441344.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221210160441344"></p>
-</li>
+<li><img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210160441344.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210160441344.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload"></li>
 </ul>
 <h4 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h4><ul>
-<li><p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210161627759.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210161627759.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221210161627759"></p>
+<li><img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210161627759.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210161627759.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
 <p>degree(u)&gt;degree(v)：即看在order中在v（当前顶点）右边的v邻居</p>
 </li>
 <li><p>算法举例：page 34-50</p>
 </li>
 </ul>
 <h3 id="k-truss"><a href="#k-truss" class="headerlink" title="k-truss"></a>k-truss</h3><h4 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h4><ul>
-<li><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210161005313.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210161005313.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221210161005313"></li>
-<li><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210161017249.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210161017249.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221210161017249"></li>
-<li><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210161121483.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210161121483.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221210161121483"></li>
+<li><img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210161005313.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210161005313.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload"></li>
+<li><img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210161017249.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210161017249.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload"></li>
+<li><img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210161121483.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210161121483.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload"></li>
 </ul>
 <h4 id="算法-1"><a href="#算法-1" class="headerlink" title="算法"></a>算法</h4><ul>
-<li><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210165129506.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210165129506.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221210165129506"></li>
+<li><img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210165129506.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210165129506.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload"></li>
 <li>举例：page 54-63</li>
 </ul>
 <h3 id="k-clique"><a href="#k-clique" class="headerlink" title="k-clique"></a>k-clique</h3><h4 id="定义-2"><a href="#定义-2" class="headerlink" title="定义"></a>定义</h4><ul>
-<li><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210161152034.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210161152034.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221210161152034"></li>
+<li><img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210161152034.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210161152034.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload"></li>
 </ul>
-<h4 id="原始算法"><a href="#原始算法" class="headerlink" title="原始算法"></a>原始算法</h4><p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210170707023.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210170707023.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221210170707023"></p>
+<h4 id="原始算法"><a href="#原始算法" class="headerlink" title="原始算法"></a>原始算法</h4><img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210170707023.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210170707023.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
 <ul>
 <li>举例：page 69-79</li>
 </ul>
-<h4 id="算法KCLIST"><a href="#算法KCLIST" class="headerlink" title="算法KCLIST"></a>算法KCLIST</h4><p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210171441841.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210171441841.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221210171441841"></p>
+<h4 id="算法KCLIST"><a href="#算法KCLIST" class="headerlink" title="算法KCLIST"></a>算法KCLIST</h4><img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210171441841.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210171441841.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
 <ul>
 <li>举例：page 82-86（如果看不懂，建议先看简单算法的举例）</li>
 </ul>
-<h3 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h3><p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210161255750.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210161255750.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221210161255750"></p>
-<h2 id="2-4-图关键字搜索"><a href="#2-4-图关键字搜索" class="headerlink" title="2.4 图关键字搜索"></a>2.4 图关键字搜索</h2><h3 id="r-clique"><a href="#r-clique" class="headerlink" title="r-clique"></a>r-clique</h3><p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210184539180.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210184539180.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221210184539180"></p>
-<p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210184738944.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210184738944.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221210184738944"></p>
-<h3 id="分支限界算法"><a href="#分支限界算法" class="headerlink" title="分支限界算法"></a>分支限界算法</h3><p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210184824731.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210184824731.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221210184824731"></p>
-<p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210193617293.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210193617293.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221210193617293"></p>
+<h3 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h3><img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210161255750.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210161255750.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<h2 id="2-4-图关键字搜索"><a href="#2-4-图关键字搜索" class="headerlink" title="2.4 图关键字搜索"></a>2.4 图关键字搜索</h2><h3 id="r-clique"><a href="#r-clique" class="headerlink" title="r-clique"></a>r-clique</h3><img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210184539180.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210184539180.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210184738944.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210184738944.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<h3 id="分支限界算法"><a href="#分支限界算法" class="headerlink" title="分支限界算法"></a>分支限界算法</h3><img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210184824731.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210184824731.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210193617293.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210193617293.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
 <ul>
 <li>举例：page 20-33</li>
 </ul>
-<h3 id="k-NK搜索"><a href="#k-NK搜索" class="headerlink" title="k-NK搜索"></a>k-NK搜索</h3><h4 id="二跳标签索引"><a href="#二跳标签索引" class="headerlink" title="二跳标签索引"></a>二跳标签索引</h4><p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210194151837.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210194151837.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221210194151837"></p>
-<p>举例和应用：线性扫描L(v1)和L(v3)<img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210194413086.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210194413086.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221210194413086"></p>
-<h4 id="k-Nk查询定义"><a href="#k-Nk查询定义" class="headerlink" title="k-Nk查询定义"></a>k-Nk查询定义</h4><p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210194055477.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210194055477.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221210194055477"></p>
-<h4 id="前向搜索-FS"><a href="#前向搜索-FS" class="headerlink" title="前向搜索(FS)"></a>前向搜索(FS)</h4><p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210194621260.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210194621260.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221210194621260"></p>
+<h3 id="k-NK搜索"><a href="#k-NK搜索" class="headerlink" title="k-NK搜索"></a>k-NK搜索</h3><h4 id="二跳标签索引"><a href="#二跳标签索引" class="headerlink" title="二跳标签索引"></a>二跳标签索引</h4><img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210194151837.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210194151837.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<p>举例和应用：线性扫描L(v1)和L(v3)<img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210194413086.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210194413086.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload"></p>
+<h4 id="k-Nk查询定义"><a href="#k-Nk查询定义" class="headerlink" title="k-Nk查询定义"></a>k-Nk查询定义</h4><img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210194055477.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210194055477.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<h4 id="前向搜索-FS"><a href="#前向搜索-FS" class="headerlink" title="前向搜索(FS)"></a>前向搜索(FS)</h4><img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210194621260.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210194621260.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
 <p>其中“查找dist(q,vi)”通过查二跳标签索引L(q)和L(vi)得到</p>
 <h4 id="二跳标签后向索引"><a href="#二跳标签后向索引" class="headerlink" title="二跳标签后向索引"></a>二跳标签后向索引</h4><p>根据二跳标签索引L构建LB：</p>
-<p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210195855511.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210195855511.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221210195855511"></p>
-<h4 id="前向后向搜索-FBS"><a href="#前向后向搜索-FBS" class="headerlink" title="前向后向搜索(FBS)"></a>前向后向搜索(FBS)</h4><p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210204841078.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210204841078.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221210204841078"></p>
+<img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210195855511.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210195855511.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<h4 id="前向后向搜索-FBS"><a href="#前向后向搜索-FBS" class="headerlink" title="前向后向搜索(FBS)"></a>前向后向搜索(FBS)</h4><img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210204841078.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210204841078.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
 <p>举例：</p>
-<p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210204703842.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210204703842.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221210204703842"></p>
+<img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210204703842.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210204703842.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
 <h2 id="2-5-图结构差异性搜索"><a href="#2-5-图结构差异性搜索" class="headerlink" title="2.5 图结构差异性搜索"></a>2.5 图结构差异性搜索</h2><h3 id="基于连通分量的结构差异性"><a href="#基于连通分量的结构差异性" class="headerlink" title="基于连通分量的结构差异性"></a>基于连通分量的结构差异性</h3><p>是一个顶点的性质</p>
-<p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210210505904-16706775065021.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210210505904-16706775065021.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221210210505904"></p>
+<img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210210505904-16706775065021.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210210505904-16706775065021.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
 <h3 id="基于核心的结构差异性"><a href="#基于核心的结构差异性" class="headerlink" title="基于核心的结构差异性"></a>基于核心的结构差异性</h3><p>是一个顶点的性质</p>
-<p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210210638428.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210210638428.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221210210638428"></p>
-<h3 id="问题-CC-TopK-Core-TopK"><a href="#问题-CC-TopK-Core-TopK" class="headerlink" title="问题 CC-TopK Core-TopK"></a>问题 CC-TopK Core-TopK</h3><p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210211514174.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210211514174.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221210211514174"></p>
-<h3 id="CC-TopK的基于度的简单方法"><a href="#CC-TopK的基于度的简单方法" class="headerlink" title="CC-TopK的基于度的简单方法"></a>CC-TopK的基于度的简单方法</h3><h4 id="bound"><a href="#bound" class="headerlink" title="bound"></a>bound</h4><p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210212201509.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210212201509.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221210212201509"></p>
-<h4 id="算法-2"><a href="#算法-2" class="headerlink" title="算法"></a>算法</h4><p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210212909339.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210212909339.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221210212909339"></p>
-<p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210212356002.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210212356002.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221210212356002"></p>
+<img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210210638428.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210210638428.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<h3 id="问题-CC-TopK-Core-TopK"><a href="#问题-CC-TopK-Core-TopK" class="headerlink" title="问题 CC-TopK Core-TopK"></a>问题 CC-TopK Core-TopK</h3><img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210211514174.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210211514174.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<h3 id="CC-TopK的基于度的简单方法"><a href="#CC-TopK的基于度的简单方法" class="headerlink" title="CC-TopK的基于度的简单方法"></a>CC-TopK的基于度的简单方法</h3><h4 id="bound"><a href="#bound" class="headerlink" title="bound"></a>bound</h4><img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210212201509.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210212201509.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<h4 id="算法-2"><a href="#算法-2" class="headerlink" title="算法"></a>算法</h4><img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210212909339.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210212909339.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210212356002.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210212356002.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
 <p>举例：</p>
-<p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210212846067.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210212846067.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221210212846067"></p>
+<img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210212846067.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210212846067.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
 <h2 id="2-6-图划分"><a href="#2-6-图划分" class="headerlink" title="2.6 图划分"></a>2.6 图划分</h2><p>标签更新过程：</p>
-<p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210214614721.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210214614721.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221210214614721"></p>
+<img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210214614721.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210214614721.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
 <ul>
 <li><p>两个扩展：（当多个标签具有相同的最高频率，不再是随机选一个）</p>
 <ul>
-<li><p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210214644819.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210214644819.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221210214644819"></p>
+<li><img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210214644819.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210214644819.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 </li>
 <li><blockquote>
 <p>定义：</p>
-<p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210214903796.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210214903796.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221210214903796"></p>
-<p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210214920694.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210214920694.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221210214920694"></p>
-</blockquote>
+<img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210214903796.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210214903796.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210214920694.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221210214920694.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload"></blockquote>
 </li>
 </ul>
 </li>
 </ul>
 <h2 id="3-1-社区检测-COPRA"><a href="#3-1-社区检测-COPRA" class="headerlink" title="3.1 社区检测 COPRA"></a>3.1 社区检测 COPRA</h2><p>重叠社区发现算法COPRA</p>
-<h3 id="算法-3"><a href="#算法-3" class="headerlink" title="算法"></a>算法</h3><p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211093612190.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211093612190.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221211093612190"></p>
-<p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211093637812.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211093637812.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221211093637812"></p>
-<p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211093713709.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211093713709.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221211093713709"></p>
-<h3 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h3><p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211092708910.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211092708910.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221211092708910"></p>
+<h3 id="算法-3"><a href="#算法-3" class="headerlink" title="算法"></a>算法</h3><img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211093612190.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211093612190.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211093637812.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211093637812.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211093713709.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211093713709.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<h3 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h3><img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211092708910.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211092708910.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
 <p>解：</p>
-<p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211093825292.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211093825292.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221211093825292"></p>
+<img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211093825292.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211093825292.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
 <p>对于每个顶点：</p>
 <ul>
 <li>删除标签：系数&gt;&#x3D;1&#x2F;2的标签保留；若所有标签都系数&lt;1&#x2F;2，则保留其中系数最高的标签；若有多个系数相同的这种标签，则随机保留其中一个；</li>
 <li>对于保留的标签，进行系数归一化（所有标签系数之和为1）</li>
 </ul>
-<p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211094120349.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211094120349.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221211094120349"></p>
+<img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211094120349.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211094120349.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
 <p>传播：对于每个顶点，对于其邻居中的每个标签L，扫描它的所有邻居将该标签的系数求和，再除以邻居数目，得到L的系数</p>
-<p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211100016911.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211100016911.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221211100016911"></p>
-<p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211100334921.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211100334921.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221211100334921"></p>
-<p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211100752115.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211100752115.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221211100752115"></p>
-<p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211100850556.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211100850556.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221211100850556"></p>
+<img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211100016911.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211100016911.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211100334921.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211100334921.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211100752115.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211100752115.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211100850556.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211100850556.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
 <p>以此类推，见作业答案</p>
 <h2 id="3-2-异常检测"><a href="#3-2-异常检测" class="headerlink" title="3.2 异常检测"></a>3.2 异常检测</h2><h3 id="评测指标"><a href="#评测指标" class="headerlink" title="评测指标"></a>评测指标</h3><ul>
 <li>精确率P，召回率R</li>
 </ul>
-<p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211102908115.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211102908115.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221211102908115"></p>
+<img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211102908115.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211102908115.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
 <ul>
 <li>F-measure（是P和R的一个平均数）</li>
 </ul>
-<p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211103041602.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211103041602.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221211103041602"></p>
+<img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211103041602.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211103041602.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
 <ul>
 <li>ROC 曲线（TPR（即召回率）：样本中的正例有多少被预测正确了；FPR：样本中的负例有多少被预测正确了）</li>
 </ul>
-<p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211103302263.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211103302263.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221211103302263"></p>
-<p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211103532947.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211103532947.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221211103532947"></p>
+<img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211103302263.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211103302263.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211103532947.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211103532947.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
 <h3 id="SpotLight-算法"><a href="#SpotLight-算法" class="headerlink" title="SpotLight 算法"></a>SpotLight 算法</h3><h4 id="图模型"><a href="#图模型" class="headerlink" title="图模型"></a>图模型</h4><blockquote>
 <p>每个Gt是一个有向二部图</p>
-<p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211105608094.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211105608094.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221211105608094"></p>
-<p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211105654987.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211105654987.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221211105654987"></p>
+<img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211105608094.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211105608094.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211105654987.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211105654987.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
 <blockquote>
-<p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211105733053.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211105733053.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221211105733053"></p>
+<img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211105733053.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211105733053.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 </blockquote>
 </blockquote>
 <h4 id="算法-4"><a href="#算法-4" class="headerlink" title="算法"></a>算法</h4><blockquote>
-<p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211105112623.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211105112623.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221211105112623"></p>
+<img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211105112623.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211105112623.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 </blockquote>
 <ul>
 <li>如何提取spotlight草图v(G)：先选取k个查询子图（分别对应v(G)坐标的k个维度），然后计算每个维度（对应查询子图的边权之和）</li>
 </ul>
-<p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211105226429.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211105226429.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221211105226429"></p>
-<p>举例：<img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211105420348.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211105420348.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221211105420348"></p>
+<img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211105226429.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211105226429.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<p>举例：<img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211105420348.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211105420348.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload"></p>
 <h2 id="3-3-频繁子图挖掘"><a href="#3-3-频繁子图挖掘" class="headerlink" title="3.3 频繁子图挖掘"></a>3.3 频繁子图挖掘</h2><h3 id="定义-3"><a href="#定义-3" class="headerlink" title="定义"></a>定义</h3><blockquote>
-<p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211110134001.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211110134001.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221211110134001"></p>
+<img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211110134001.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211110134001.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
 <p>子图的支持度：（在输入的多个图中的）出现次数</p>
 <blockquote>
 <p>一个图中出现（不管多少次），计一次</p>
 </blockquote>
-<p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211110428363.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211110428363.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221211110428363"></p>
+<img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211110428363.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211110428363.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
 <p>举例：</p>
-<p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211110740270.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211110740270.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221211110740270"></p>
+<img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211110740270.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211110740270.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 </blockquote>
-<h3 id="Apriori算法"><a href="#Apriori算法" class="headerlink" title="Apriori算法"></a>Apriori算法</h3><p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211112558507.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211112558507.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221211112558507"></p>
-<p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211112614706.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211112614706.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221211112614706"></p>
+<h3 id="Apriori算法"><a href="#Apriori算法" class="headerlink" title="Apriori算法"></a>Apriori算法</h3><img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211112558507.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211112558507.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211112614706.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211112614706.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
 <h3 id="AGM-基于Apriori算法的频繁子图挖掘算法"><a href="#AGM-基于Apriori算法的频繁子图挖掘算法" class="headerlink" title="AGM 基于Apriori算法的频繁子图挖掘算法"></a>AGM 基于Apriori算法的频繁子图挖掘算法</h3><h4 id="图编码"><a href="#图编码" class="headerlink" title="图编码"></a>图编码</h4><blockquote>
-<p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211114003101.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211114003101.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221211114003101"></p>
-<p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211114016720.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211114016720.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221211114016720"></p>
-<p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211114027120.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211114027120.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221211114027120"></p>
+<img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211114003101.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211114003101.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211114016720.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211114016720.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211114027120.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211114027120.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
 <p>合并两个含有k个顶点（且共有一个k-1个顶点的子图）的图：如果用编码</p>
-<p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211115905796.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211115905796.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221211115905796"></p>
+<img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211115905796.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211115905796.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 </blockquote>
-<h4 id="算法-5"><a href="#算法-5" class="headerlink" title="算法"></a>算法</h4><p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211112747859.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211112747859.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221211112747859"></p>
-<p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211115939016.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211115939016.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221211115939016"></p>
-<p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211115959579.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211115959579.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221211115959579"></p>
-<p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211120040153.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211120040153.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221211120040153"></p>
+<h4 id="算法-5"><a href="#算法-5" class="headerlink" title="算法"></a>算法</h4><img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211112747859.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211112747859.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211115939016.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211115939016.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211115959579.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211115959579.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211120040153.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211120040153.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
 <h2 id="3-5-图概要"><a href="#3-5-图概要" class="headerlink" title="3.5 图概要"></a>3.5 图概要</h2><blockquote>
-<p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211120415001.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211120415001.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221211120415001"></p>
+<img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211120415001.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211120415001.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 </blockquote>
 <blockquote>
-<h3 id="无损图表示"><a href="#无损图表示" class="headerlink" title="无损图表示"></a>无损图表示</h3><p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211154001060.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211154001060.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221211154001060"></p>
+<h3 id="无损图表示"><a href="#无损图表示" class="headerlink" title="无损图表示"></a>无损图表示</h3><img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211154001060.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211154001060.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
 <p>”超节点映射“：记录每个超节点代表原图中的哪些点</p>
-<p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211154107450.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211154107450.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221211154107450"></p>
-<p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211154211120.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211154211120.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221211154211120"></p>
-<p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211154136707.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211154136707.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221211154136707"></p>
-<p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211154148516.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211154148516.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221211154148516"></p>
+<img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211154107450.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211154107450.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211154211120.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211154211120.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211154136707.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211154136707.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211154148516.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211154148516.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 </blockquote>
 <h3 id="（超点连接的）存储开销"><a href="#（超点连接的）存储开销" class="headerlink" title="（超点连接的）存储开销"></a>（超点连接的）存储开销</h3><blockquote>
-<p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211124714669.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211124714669.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221211124714669"></p>
+<img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211124714669.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211124714669.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 </blockquote>
-<p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211153504224.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211153504224.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221211153504224"></p>
+<img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211153504224.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211153504224.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
 <blockquote>
-<p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211153532156.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211153532156.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221211153532156"></p>
+<img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211153532156.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211153532156.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 </blockquote>
-<p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211153607410.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211153607410.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221211153607410"></p>
-<p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211153753228.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211153753228.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221211153753228"></p>
-<h3 id="贪婪算法"><a href="#贪婪算法" class="headerlink" title="贪婪算法"></a>贪婪算法</h3><p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211153818534.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211153818534.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221211153818534"></p>
-<p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211181632446.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211181632446.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221211181632446"></p>
-<h4 id="算法-6"><a href="#算法-6" class="headerlink" title="算法"></a>算法</h4><p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211181526908.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211181526908.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221211181526908"></p>
-<p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211181716402.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211181716402.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221211181716402"></p>
-<p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211182330900.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211182330900.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221211182330900"></p>
-<p><img src="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211181946886.png" class="lazyload" data-srcset="/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211181946886.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221211181946886"></p>
+<img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211153607410.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211153607410.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211153753228.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211153753228.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<h3 id="贪婪算法"><a href="#贪婪算法" class="headerlink" title="贪婪算法"></a>贪婪算法</h3><img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211153818534.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211153818534.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211181632446.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211181632446.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<h4 id="算法-6"><a href="#算法-6" class="headerlink" title="算法"></a>算法</h4><img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211181526908.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211181526908.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211181716402.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211181716402.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211182330900.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211182330900.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<img src="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211181946886.png" class="lazyload" data-srcset="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20221211181946886.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
 <h4 id="举例-1"><a href="#举例-1" class="headerlink" title="举例"></a>举例</h4><p>s(x,y)计算举例 page42和page45</p>
 <p>算法举例 page41-48</p>
 
@@ -2953,7 +3016,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-12-29T22:28:38+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-12-29T22:53:29+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：Dec 29, 2022</p>
@@ -4074,7 +4137,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"self-drive","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"personal blog"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"self-drive"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/course/","name":"course"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/12/09/社交网络复习/","name":"社交网络复习"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"self-drive","url":"http://example.com/","keywords":null,"description":"personal blog","author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"personal blog"},"publisher":{"@type":"Organization","name":"self-drive","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"社交网络复习","description":"personal blog","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/"},"author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"self-drive","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/","wordCount":0,"datePublished":"2022-12-09T11:36:23.000Z","dateModified":"2022-12-29T14:28:38.541Z","articleSection":"course","keywords":"graph","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"self-drive","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"personal blog"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"self-drive"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/course/","name":"course"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/12/09/社交网络复习/","name":"社交网络复习"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"self-drive","url":"http://example.com/","keywords":null,"description":"personal blog","author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"personal blog"},"publisher":{"@type":"Organization","name":"self-drive","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"社交网络复习","description":"personal blog","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/"},"author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"self-drive","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/","wordCount":0,"datePublished":"2022-12-09T11:36:23.000Z","dateModified":"2022-12-29T14:53:29.980Z","articleSection":"course","keywords":"graph","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

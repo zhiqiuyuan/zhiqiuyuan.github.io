@@ -2274,7 +2274,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1672324134819),
+    lastupdate: new Date(1672325813283),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2715,7 +2715,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </blockquote>
 <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><ul>
 <li>使得包含n个元素的有序序列的查找和插入操作的平均时间复杂度都是<code>O(log n)</code>，优于数组的<code>O(n)</code>复杂度</li>
-<li>一个多层次的链表。与前一层（下面一层）链表元素的数量相比，每一层链表中的元素的数量更少。每一层是有序的<br><img src="/%E8%B7%B3%E8%B7%83%E5%88%97%E8%A1%A8/image-1662254661093.png" class="lazyload" data-srcset="/%E8%B7%B3%E8%B7%83%E5%88%97%E8%A1%A8/image-1662254661093.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-1662254661093"></li>
+<li>一个多层次的链表。与前一层（下面一层）链表元素的数量相比，每一层链表中的元素的数量更少。每一层是有序的<img src="/2022/09/04/%E8%B7%B3%E8%B7%83%E5%88%97%E8%A1%A8/image-1662254661093.png" class="lazyload" data-srcset="/2022/09/04/%E8%B7%B3%E8%B7%83%E5%88%97%E8%A1%A8/image-1662254661093.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload"></li>
 </ul>
 <h2 id="构造"><a href="#构造" class="headerlink" title="构造"></a>构造</h2><p>跳跃列表是按层建造的。底层是一个普通的有序链表。每个更高层都充当下面列表的“快速通道”，在<strong>第<code>i</code>层（下面的层）中的每个元素按某个固定的概率<code>p</code>（通常为<code>1/2</code>或<code>1/4</code>）出现在第<code>i+1</code>层（上面的层）中</strong>，直到当前层元素个数为1</p>
 <blockquote>
@@ -2725,8 +2725,24 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <blockquote>
 <p>每层链表中预期的查找步数最多为<code>1/p</code>，而层数为<code>log&#123;1/p&#125;n</code>，所以查找的总体步数为<code>log&#123;p&#125;n/p</code>，由于<code>p</code>是常数，查找操作总体的时间复杂度为<code>O(logn)</code>。而通过选择不同<code>p</code>值，就可以在查找代价和存储代价之间获取平衡。</p>
 </blockquote>
-<h2 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h2><p>和查找类似<br>插入80<br><img src="/%E8%B7%B3%E8%B7%83%E5%88%97%E8%A1%A8/image-1662255073517.png" class="lazyload" data-srcset="/%E8%B7%B3%E8%B7%83%E5%88%97%E8%A1%A8/image-1662255073517.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-1662255073517"><br>80&lt;&#x3D;30?<br><img src="/%E8%B7%B3%E8%B7%83%E5%88%97%E8%A1%A8/image-1662255172413.png" class="lazyload" data-srcset="/%E8%B7%B3%E8%B7%83%E5%88%97%E8%A1%A8/image-1662255172413.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-1662255172413"><br>80&lt;&#x3D;30?no<br><img src="/%E8%B7%B3%E8%B7%83%E5%88%97%E8%A1%A8/image-1662255366652.png" class="lazyload" data-srcset="/%E8%B7%B3%E8%B7%83%E5%88%97%E8%A1%A8/image-1662255366652.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-1662255366652"><br>80&lt;&#x3D;50?<br><img src="/%E8%B7%B3%E8%B7%83%E5%88%97%E8%A1%A8/image-1662255229399.png" class="lazyload" data-srcset="/%E8%B7%B3%E8%B7%83%E5%88%97%E8%A1%A8/image-1662255229399.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-1662255229399"><br>80&lt;&#x3D;50?no<br><img src="/%E8%B7%B3%E8%B7%83%E5%88%97%E8%A1%A8/image-1662255045464.png" class="lazyload" data-srcset="/%E8%B7%B3%E8%B7%83%E5%88%97%E8%A1%A8/image-1662255045464.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-1662255045464"><br>走到nil所以向下走<br>80&lt;&#x3D;70?<br><img src="/%E8%B7%B3%E8%B7%83%E5%88%97%E8%A1%A8/image-1662255516103.png" class="lazyload" data-srcset="/%E8%B7%B3%E8%B7%83%E5%88%97%E8%A1%A8/image-1662255516103.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-1662255516103"><br>80&lt;&#x3D;70?no<br><img src="/%E8%B7%B3%E8%B7%83%E5%88%97%E8%A1%A8/image-1662255109127.png" class="lazyload" data-srcset="/%E8%B7%B3%E8%B7%83%E5%88%97%E8%A1%A8/image-1662255109127.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-1662255109127"><br>80&lt;&#x3D;90?<br><img src="/%E8%B7%B3%E8%B7%83%E5%88%97%E8%A1%A8/image-1662255138735.png" class="lazyload" data-srcset="/%E8%B7%B3%E8%B7%83%E5%88%97%E8%A1%A8/image-1662255138735.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-1662255138735"><br>80&lt;&#x3D;90?yes, insert<br><img src="/%E8%B7%B3%E8%B7%83%E5%88%97%E8%A1%A8/image-1662255477168.png" class="lazyload" data-srcset="/%E8%B7%B3%E8%B7%83%E5%88%97%E8%A1%A8/image-1662255477168.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-1662255477168"></p>
-
+<h2 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h2><p>和查找类似<br>插入80</p>
+<img src="/2022/09/04/%E8%B7%B3%E8%B7%83%E5%88%97%E8%A1%A8/image-1662255073517.png" class="lazyload" data-srcset="/2022/09/04/%E8%B7%B3%E8%B7%83%E5%88%97%E8%A1%A8/image-1662255073517.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<p>80&lt;&#x3D;30?</p>
+<img src="/2022/09/04/%E8%B7%B3%E8%B7%83%E5%88%97%E8%A1%A8/image-1662255172413.png" class="lazyload" data-srcset="/2022/09/04/%E8%B7%B3%E8%B7%83%E5%88%97%E8%A1%A8/image-1662255172413.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<p>80&lt;&#x3D;30?no</p>
+<img src="/2022/09/04/%E8%B7%B3%E8%B7%83%E5%88%97%E8%A1%A8/image-1662255366652.png" class="lazyload" data-srcset="/2022/09/04/%E8%B7%B3%E8%B7%83%E5%88%97%E8%A1%A8/image-1662255366652.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<p>80&lt;&#x3D;50?</p>
+<img src="/2022/09/04/%E8%B7%B3%E8%B7%83%E5%88%97%E8%A1%A8/image-1662255229399.png" class="lazyload" data-srcset="/2022/09/04/%E8%B7%B3%E8%B7%83%E5%88%97%E8%A1%A8/image-1662255229399.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<p>80&lt;&#x3D;50?no</p>
+<img src="/2022/09/04/%E8%B7%B3%E8%B7%83%E5%88%97%E8%A1%A8/image-1662255045464.png" class="lazyload" data-srcset="/2022/09/04/%E8%B7%B3%E8%B7%83%E5%88%97%E8%A1%A8/image-1662255045464.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<p>走到nil所以向下走<br>80&lt;&#x3D;70?</p>
+<img src="/2022/09/04/%E8%B7%B3%E8%B7%83%E5%88%97%E8%A1%A8/image-1662255516103.png" class="lazyload" data-srcset="/2022/09/04/%E8%B7%B3%E8%B7%83%E5%88%97%E8%A1%A8/image-1662255516103.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<p>80&lt;&#x3D;70?no</p>
+<img src="/2022/09/04/%E8%B7%B3%E8%B7%83%E5%88%97%E8%A1%A8/image-1662255109127.png" class="lazyload" data-srcset="/2022/09/04/%E8%B7%B3%E8%B7%83%E5%88%97%E8%A1%A8/image-1662255109127.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<p>80&lt;&#x3D;90?</p>
+<img src="/2022/09/04/%E8%B7%B3%E8%B7%83%E5%88%97%E8%A1%A8/image-1662255138735.png" class="lazyload" data-srcset="/2022/09/04/%E8%B7%B3%E8%B7%83%E5%88%97%E8%A1%A8/image-1662255138735.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<p>80&lt;&#x3D;90?yes, insert</p>
+<img src="/2022/09/04/%E8%B7%B3%E8%B7%83%E5%88%97%E8%A1%A8/image-1662255477168.png" class="lazyload" data-srcset="/2022/09/04/%E8%B7%B3%E8%B7%83%E5%88%97%E8%A1%A8/image-1662255477168.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
   </div>
   
   

@@ -2274,7 +2274,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1672324134819),
+    lastupdate: new Date(1672325813283),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2719,8 +2719,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>回忆阅读推荐：3.6 Analysis of the I&#x2F;O Costs</p>
 </blockquote>
 <h2 id="PSW-processing-a-interval"><a href="#PSW-processing-a-interval" class="headerlink" title="PSW processing a interval"></a>PSW processing a interval</h2><h3 id="1-load-subgraph"><a href="#1-load-subgraph" class="headerlink" title="1. load subgraph"></a>1. load subgraph</h3><ul>
-<li>![image-1661945074753](论文笔记 GraphChi_Large Scale Graph Computation on Just a PC&#x2F;image-1661945074753.png)<ul>
-<li>For each interval, we associate a shard, which stores all the edges that have <strong>destination</strong> in the interval. <strong>Edges</strong> are stored <strong>in the order of their source</strong>（看下图的shard1中的src列，顶点是in order的）<br>![image-1661947197755](论文笔记 GraphChi_Large Scale Graph Computation on Just a PC&#x2F;image-1661947197755.png)</li>
+<li><img src="/2022/08/31/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20GraphChi_Large%20Scale%20Graph%20Computation%20on%20Just%20a%20PC/image-1661945074753.png" class="lazyload" data-srcset="/2022/08/31/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20GraphChi_Large%20Scale%20Graph%20Computation%20on%20Just%20a%20PC/image-1661945074753.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<ul>
+<li>For each interval, we associate a shard, which stores all the edges that have <strong>destination</strong> in the interval. <strong>Edges</strong> are stored <strong>in the order of their source</strong>（看下图的shard1中的src列，顶点是in order的） <img src="/2022/08/31/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20GraphChi_Large%20Scale%20Graph%20Computation%20on%20Just%20a%20PC/image-1661947197755.png" class="lazyload" data-srcset="/2022/08/31/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20GraphChi_Large%20Scale%20Graph%20Computation%20on%20Just%20a%20PC/image-1661947197755.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload"></li>
 <li>Intervals are chosen to balance the number of edges in each shard</li>
 <li>且interval的划分就是对顶点1-&gt;|V|这个长区间进行划分（从而在前面的interval中的顶点id小于后面的interval中的顶点id）</li>
 </ul>
@@ -2738,7 +2739,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li>vertices that <strong>have edges with both end-points in the same interval</strong> are flagged as critical, and are updated in sequential order</li>
 </ul>
 <h3 id="3-write-back"><a href="#3-write-back" class="headerlink" title="3. write back"></a>3. write back</h3><p>把subgraph中有更新的edge value写回，文章中没有提出新的idea，只是分析了一下写回对于磁盘的访问</p>
-<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><p>![image-1661947136212](论文笔记 GraphChi_Large Scale Graph Computation on Just a PC&#x2F;image-1661947136212.png)</p>
+<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><img src="/2022/08/31/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20GraphChi_Large%20Scale%20Graph%20Computation%20on%20Just%20a%20PC/image-1661947136212.png" class="lazyload" data-srcset="/2022/08/31/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20GraphChi_Large%20Scale%20Graph%20Computation%20on%20Just%20a%20PC/image-1661947136212.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
 <h2 id="remark"><a href="#remark" class="headerlink" title="remark"></a>remark</h2><ul>
 <li>graph traversals or vertex queries are not efficient in the model, because <strong>loading the neighborhood of a single vertex requires scanning a complete memory-shard.</strong></li>
 </ul>

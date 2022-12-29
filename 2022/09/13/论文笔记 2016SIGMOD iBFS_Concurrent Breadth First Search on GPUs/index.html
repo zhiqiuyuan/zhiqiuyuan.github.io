@@ -41,7 +41,7 @@
 <meta property="og:title" content="论文笔记 2016SIGMOD iBFS_Concurrent Breadth-First Search on GPUs">
 <meta property="og:url" content="http://example.com/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/index.html">
 <meta property="og:site_name" content="self-drive">
-<meta property="og:description" content="问题![image-1663060642629](论文笔记 2016SIGMOD iBFS_Concurrent Breadth First Search on GPUs&#x2F;image-1663060642629.png) code![image-1663123709041](论文笔记 2016SIGMOD iBFS_Concurrent Breadth First Search on G">
+<meta property="og:description" content="问题  code  related workCPU-多BFS实例    MSBFS VLDB[26] Manuel Then, Moritz Kaufmann, Fernando Chirigati,Tuan-Anh Hoang-Vu, Kien Pham, Alfons Kemper,Thomas Neumann, and Huy T Vo. The more themerrier: Effic">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-09-13T09:22:20.912Z">
@@ -2274,7 +2274,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1672324134819),
+    lastupdate: new Date(1672325813283),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2710,9 +2710,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>![image-1663060642629](论文笔记 2016SIGMOD iBFS_Concurrent Breadth First Search on GPUs&#x2F;image-1663060642629.png)</p>
-<h2 id="code"><a href="#code" class="headerlink" title="code"></a>code</h2><p>![image-1663123709041](论文笔记 2016SIGMOD iBFS_Concurrent Breadth First Search on GPUs&#x2F;image-1663123709041.png)</p>
-<h2 id="related-work"><a href="#related-work" class="headerlink" title="related work"></a>related work</h2><p>CPU-多BFS实例<br>![image-1663060695102](论文笔记 2016SIGMOD iBFS_Concurrent Breadth First Search on GPUs&#x2F;image-1663060695102.png)</p>
+    <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><img src="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663060642629.png" class="lazyload" data-srcset="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663060642629.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<h2 id="code"><a href="#code" class="headerlink" title="code"></a>code</h2><img src="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663123709041.png" class="lazyload" data-srcset="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663123709041.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<h2 id="related-work"><a href="#related-work" class="headerlink" title="related work"></a>related work</h2><p>CPU-多BFS实例</p>
+<img src="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663060695102.png" class="lazyload" data-srcset="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663060695102.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 <blockquote>
 <ul>
 <li>MSBFS VLDB[26] Manuel Then, Moritz Kaufmann, Fernando Chirigati,<br>Tuan-Anh Hoang-Vu, Kien Pham, Alfons Kemper,<br>Thomas Neumann, and Huy T Vo. The more the<br>merrier: Efficient multi-source graph traversal.<br>Proceedings of the VLDB Endowment, 8(4), 2014.</li>
@@ -2720,42 +2723,83 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li>CCF-B IPDPS [28] Ahmet Erdem Sariyuce, Erik Saule, Kamer Kaya, and<br>Umit V Catalyurek. Hardware&#x2F;software vectorization<br>for closeness centrality on multi-&#x2F;many-core<br>architectures. In International Parallel &amp; Distributed<br>Processing Symposium Workshops (IPDPSW), pages<br>1386–1395. IEEE, 2014.</li>
 </ul>
 </blockquote>
-<p>GPU-多BFS实例<br>![image-1663071740936](论文笔记 2016SIGMOD iBFS_Concurrent Breadth First Search on GPUs&#x2F;image-1663071740936.png)</p>
+<p>GPU-多BFS实例</p>
+<img src="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663071740936.png" class="lazyload" data-srcset="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663071740936.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 <blockquote>
 <ul>
 <li>见上面[27]</li>
 <li>SC [35]Adam McLaughlin and David A Bader. Scalable and<br>high performance betweenness centrality on the gpu.<br>In International Conference for High Performance<br>Computing, Networking, Storage and Analysis (SC),<br>pages 572–583. IEEE, 2014</li>
 </ul>
 </blockquote>
-<h2 id="一些字母含义和取值"><a href="#一些字母含义和取值" class="headerlink" title="一些字母含义和取值"></a>一些字母含义和取值</h2><p>![image-1663072987083](论文笔记 2016SIGMOD iBFS_Concurrent Breadth First Search on GPUs&#x2F;image-1663072987083.png)</p>
-<h2 id="idea"><a href="#idea" class="headerlink" title="idea"></a>idea</h2><h3 id="example中状态数组SA的图示说明"><a href="#example中状态数组SA的图示说明" class="headerlink" title="example中状态数组SA的图示说明"></a>example中状态数组SA的图示说明</h3><p>![image-1663070382406](论文笔记 2016SIGMOD iBFS_Concurrent Breadth First Search on GPUs&#x2F;image-1663070382406.png)</p>
-<h3 id="典型的BFS"><a href="#典型的BFS" class="headerlink" title="典型的BFS"></a>典型的BFS</h3><p>![image-1663070403309](论文笔记 2016SIGMOD iBFS_Concurrent Breadth First Search on GPUs&#x2F;image-1663070403309.png)<br>![image-1663070702899](论文笔记 2016SIGMOD iBFS_Concurrent Breadth First Search on GPUs&#x2F;image-1663070702899.png)</p>
-<h4 id="observation-on-shared-frontiers"><a href="#observation-on-shared-frontiers" class="headerlink" title="observation on shared frontiers"></a>observation on shared frontiers</h4><p>![image-1663070593486](论文笔记 2016SIGMOD iBFS_Concurrent Breadth First Search on GPUs&#x2F;image-1663070593486.png)<br>![image-1663070604861](论文笔记 2016SIGMOD iBFS_Concurrent Breadth First Search on GPUs&#x2F;image-1663070604861.png)</p>
-<h3 id="1-JOINT-TRAVERSAL-和MSBFS类似-GPU设计"><a href="#1-JOINT-TRAVERSAL-和MSBFS类似-GPU设计" class="headerlink" title="1 JOINT TRAVERSAL 和MSBFS类似+GPU设计"></a>1 JOINT TRAVERSAL 和MSBFS类似+GPU设计</h3><p>![image-1663071046645](论文笔记 2016SIGMOD iBFS_Concurrent Breadth First Search on GPUs&#x2F;image-1663071046645.png)</p>
-<h4 id="data-structure"><a href="#data-structure" class="headerlink" title="data structure"></a>data structure</h4><p>![image-1663070780323](论文笔记 2016SIGMOD iBFS_Concurrent Breadth First Search on GPUs&#x2F;image-1663070780323.png)</p>
-<h4 id="generate-JFQ"><a href="#generate-JFQ" class="headerlink" title="generate JFQ"></a>generate JFQ</h4><p>![image-1663070856898](论文笔记 2016SIGMOD iBFS_Concurrent Breadth First Search on GPUs&#x2F;image-1663070856898.png)<br>![image-1663071194193](论文笔记 2016SIGMOD iBFS_Concurrent Breadth First Search on GPUs&#x2F;image-1663071194193.png)<br>![image-1663070791855](论文笔记 2016SIGMOD iBFS_Concurrent Breadth First Search on GPUs&#x2F;image-1663070791855.png)<br>![image-1663070932374](论文笔记 2016SIGMOD iBFS_Concurrent Breadth First Search on GPUs&#x2F;image-1663070932374.png)</p>
-<h4 id="implementation-of-JFQ"><a href="#implementation-of-JFQ" class="headerlink" title="implementation of JFQ"></a>implementation of JFQ</h4><p>![image-1663070918555](论文笔记 2016SIGMOD iBFS_Concurrent Breadth First Search on GPUs&#x2F;image-1663070918555.png)</p>
-<h4 id="example"><a href="#example" class="headerlink" title="example"></a>example</h4><p>![image-1663071244717](论文笔记 2016SIGMOD iBFS_Concurrent Breadth First Search on GPUs&#x2F;image-1663071244717.png)<br>![image-1663071291753](论文笔记 2016SIGMOD iBFS_Concurrent Breadth First Search on GPUs&#x2F;image-1663071291753.png)<br>![image-1663071309336](论文笔记 2016SIGMOD iBFS_Concurrent Breadth First Search on GPUs&#x2F;image-1663071309336.png)</p>
-<h3 id="2-GROUPBY-这个好（将BFS分组以最大化组内BFS的frontiers-share）"><a href="#2-GROUPBY-这个好（将BFS分组以最大化组内BFS的frontiers-share）" class="headerlink" title="2 GROUPBY 这个好（将BFS分组以最大化组内BFS的frontiers share）"></a>2 GROUPBY 这个好（将BFS分组以最大化组内BFS的frontiers share）</h3><h4 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h4><h5 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h5><p>![image-1663073462560](论文笔记 2016SIGMOD iBFS_Concurrent Breadth First Search on GPUs&#x2F;image-1663073462560.png)</p>
-<h5 id="结论的详细得出过程"><a href="#结论的详细得出过程" class="headerlink" title="结论的详细得出过程"></a>结论的详细得出过程</h5><p>![image-1663073224067](论文笔记 2016SIGMOD iBFS_Concurrent Breadth First Search on GPUs&#x2F;image-1663073224067.png)<br>speedup指相对于串行、分离地执行这个group中的BFS而言的加速比（串行时间&#x2F;此方案时间）<br>![image-1663073247979](论文笔记 2016SIGMOD iBFS_Concurrent Breadth First Search on GPUs&#x2F;image-1663073247979.png)<br>![image-1663073319644](论文笔记 2016SIGMOD iBFS_Concurrent Breadth First Search on GPUs&#x2F;image-1663073319644.png)<br>![image-1663073346876](论文笔记 2016SIGMOD iBFS_Concurrent Breadth First Search on GPUs&#x2F;image-1663073346876.png)<br>![image-1663073356474](论文笔记 2016SIGMOD iBFS_Concurrent Breadth First Search on GPUs&#x2F;image-1663073356474.png)</p>
-<h4 id="idea-1"><a href="#idea-1" class="headerlink" title="idea"></a>idea</h4><h5 id="规则"><a href="#规则" class="headerlink" title="规则"></a>规则</h5><p>对于两个BFS实例而言<br>![image-1663074665273](论文笔记 2016SIGMOD iBFS_Concurrent Breadth First Search on GPUs&#x2F;image-1663074665273.png)<br>![image-1663074719046](论文笔记 2016SIGMOD iBFS_Concurrent Breadth First Search on GPUs&#x2F;image-1663074719046.png)</p>
-<blockquote>
-<p>q的选择：![image-1663120899539](论文笔记 2016SIGMOD iBFS_Concurrent Breadth First Search on GPUs&#x2F;image-1663120899539.png)<br>![image-1663120926812](论文笔记 2016SIGMOD iBFS_Concurrent Breadth First Search on GPUs&#x2F;image-1663120926812.png)</p>
-</blockquote>
-<h5 id="规则应用方法"><a href="#规则应用方法" class="headerlink" title="规则应用方法"></a>规则应用方法</h5><p>![image-1663074738809](论文笔记 2016SIGMOD iBFS_Concurrent Breadth First Search on GPUs&#x2F;image-1663074738809.png)<br>N be default &#x3D; 128</p>
-<blockquote>
-<p>效果：![image-1663074769156](论文笔记 2016SIGMOD iBFS_Concurrent Breadth First Search on GPUs&#x2F;image-1663074769156.png)<br>![image-1663074781008](论文笔记 2016SIGMOD iBFS_Concurrent Breadth First Search on GPUs&#x2F;image-1663074781008.png)<br>规则的直观解释：![image-1663120872979](论文笔记 2016SIGMOD iBFS_Concurrent Breadth First Search on GPUs&#x2F;image-1663120872979.png)<br>![image-1663121012413](论文笔记 2016SIGMOD iBFS_Concurrent Breadth First Search on GPUs&#x2F;image-1663121012413.png)</p>
-</blockquote>
-<h3 id="3-GPU-BASED-BITWISE-OPERATIONS-和MSBFS类似-GPU设计"><a href="#3-GPU-BASED-BITWISE-OPERATIONS-和MSBFS类似-GPU设计" class="headerlink" title="3 GPU-BASED BITWISE OPERATIONS 和MSBFS类似+GPU设计"></a>3 GPU-BASED BITWISE OPERATIONS 和MSBFS类似+GPU设计</h3><h4 id="idea-2"><a href="#idea-2" class="headerlink" title="idea"></a>idea</h4><h5 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h5><p>![image-1663123185648](论文笔记 2016SIGMOD iBFS_Concurrent Breadth First Search on GPUs&#x2F;image-1663123185648.png)</p>
-<p>![image-1663123211765](论文笔记 2016SIGMOD iBFS_Concurrent Breadth First Search on GPUs&#x2F;image-1663123211765.png)</p>
-<p>![image-1663123292123](论文笔记 2016SIGMOD iBFS_Concurrent Breadth First Search on GPUs&#x2F;image-1663123292123.png)</p>
-<p>实现：</p>
-<p>![image-1663123517908](论文笔记 2016SIGMOD iBFS_Concurrent Breadth First Search on GPUs&#x2F;image-1663123517908.png)</p>
-<h5 id="expansion"><a href="#expansion" class="headerlink" title="expansion"></a>expansion</h5><p>![image-1663123316129](论文笔记 2016SIGMOD iBFS_Concurrent Breadth First Search on GPUs&#x2F;image-1663123316129.png)</p>
-<h5 id="inspection"><a href="#inspection" class="headerlink" title="inspection"></a>inspection</h5><p>![image-1663123419948](论文笔记 2016SIGMOD iBFS_Concurrent Breadth First Search on GPUs&#x2F;image-1663123419948.png)</p>
-<p>Early Termination：This newly freed-up thread will then be scheduled to work on other frontiers.</p>
-<h5 id="frontier-generation"><a href="#frontier-generation" class="headerlink" title="frontier generation"></a>frontier generation</h5><p>![image-1663123484709](论文笔记 2016SIGMOD iBFS_Concurrent Breadth First Search on GPUs&#x2F;image-1663123484709.png)</p>
+<h2 id="一些字母含义和取值"><a href="#一些字母含义和取值" class="headerlink" title="一些字母含义和取值"></a>一些字母含义和取值</h2><img src="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663072987083.png" class="lazyload" data-srcset="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663072987083.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 
+<h2 id="idea"><a href="#idea" class="headerlink" title="idea"></a>idea</h2><h3 id="example中状态数组SA的图示说明"><a href="#example中状态数组SA的图示说明" class="headerlink" title="example中状态数组SA的图示说明"></a>example中状态数组SA的图示说明</h3><img src="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663070382406.png" class="lazyload" data-srcset="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663070382406.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<h3 id="典型的BFS"><a href="#典型的BFS" class="headerlink" title="典型的BFS"></a>典型的BFS</h3><img src="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663070403309.png" class="lazyload" data-srcset="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663070403309.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<img src="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663070702899.png" class="lazyload" data-srcset="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663070702899.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<h4 id="observation-on-shared-frontiers"><a href="#observation-on-shared-frontiers" class="headerlink" title="observation on shared frontiers"></a>observation on shared frontiers</h4><img src="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663070593486.png" class="lazyload" data-srcset="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663070593486.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<img src="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663070604861.png" class="lazyload" data-srcset="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663070604861.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<h3 id="1-JOINT-TRAVERSAL-和MSBFS类似-GPU设计"><a href="#1-JOINT-TRAVERSAL-和MSBFS类似-GPU设计" class="headerlink" title="1 JOINT TRAVERSAL 和MSBFS类似+GPU设计"></a>1 JOINT TRAVERSAL 和MSBFS类似+GPU设计</h3><img src="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663071046645.png" class="lazyload" data-srcset="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663071046645.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<h4 id="data-structure"><a href="#data-structure" class="headerlink" title="data structure"></a>data structure</h4><img src="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663070780323.png" class="lazyload" data-srcset="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663070780323.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<h4 id="generate-JFQ"><a href="#generate-JFQ" class="headerlink" title="generate JFQ"></a>generate JFQ</h4><img src="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663070856898.png" class="lazyload" data-srcset="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663070856898.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<img src="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663071194193.png" class="lazyload" data-srcset="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663071194193.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<img src="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663070791855.png" class="lazyload" data-srcset="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663070791855.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<img src="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663070932374.png" class="lazyload" data-srcset="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663070932374.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<h4 id="implementation-of-JFQ"><a href="#implementation-of-JFQ" class="headerlink" title="implementation of JFQ"></a>implementation of JFQ</h4><img src="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663070918555.png" class="lazyload" data-srcset="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663070918555.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<h4 id="example"><a href="#example" class="headerlink" title="example"></a>example</h4><img src="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663071244717.png" class="lazyload" data-srcset="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663071244717.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<img src="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663071291753.png" class="lazyload" data-srcset="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663071291753.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<img src="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663071309336.png" class="lazyload" data-srcset="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663071309336.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<h3 id="2-GROUPBY-这个好（将BFS分组以最大化组内BFS的frontiers-share）"><a href="#2-GROUPBY-这个好（将BFS分组以最大化组内BFS的frontiers-share）" class="headerlink" title="2 GROUPBY 这个好（将BFS分组以最大化组内BFS的frontiers share）"></a>2 GROUPBY 这个好（将BFS分组以最大化组内BFS的frontiers share）</h3><h4 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h4><h5 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h5><img src="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663073462560.png" class="lazyload" data-srcset="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663073462560.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<h5 id="结论的详细得出过程"><a href="#结论的详细得出过程" class="headerlink" title="结论的详细得出过程"></a>结论的详细得出过程</h5><img src="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663073224067.png" class="lazyload" data-srcset="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663073224067.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<p>speedup指相对于串行、分离地执行这个group中的BFS而言的加速比（串行时间&#x2F;此方案时间）</p>
+<img src="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663073247979.png" class="lazyload" data-srcset="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663073247979.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<img src="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663073319644.png" class="lazyload" data-srcset="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663073319644.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<img src="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663073346876.png" class="lazyload" data-srcset="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663073346876.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<img src="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663073356474.png" class="lazyload" data-srcset="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663073356474.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<h4 id="idea-1"><a href="#idea-1" class="headerlink" title="idea"></a>idea</h4><h5 id="规则"><a href="#规则" class="headerlink" title="规则"></a>规则</h5><p>对于两个BFS实例而言</p>
+<img src="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663074665273.png" class="lazyload" data-srcset="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663074665273.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<img src="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663074719046.png" class="lazyload" data-srcset="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663074719046.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<blockquote>
+<p>q的选择：<img src="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663120899539.png" class="lazyload" data-srcset="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663120899539.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload"> </p>
+</blockquote>
+<img src="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663120926812.png" class="lazyload" data-srcset="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663120926812.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<h5 id="规则应用方法"><a href="#规则应用方法" class="headerlink" title="规则应用方法"></a>规则应用方法</h5><img src="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663074738809.png" class="lazyload" data-srcset="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663074738809.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<p>N be default &#x3D; 128</p>
+<blockquote>
+<p>效果：<img src="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663074769156.png" class="lazyload" data-srcset="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663074769156.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload"> </p>
+</blockquote>
+<img src="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663074781008.png" class="lazyload" data-srcset="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663074781008.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<blockquote>
+<p>规则的直观解释：<img src="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663120872979.png" class="lazyload" data-srcset="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663120872979.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload"> </p>
+</blockquote>
+<img src="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663121012413.png" class="lazyload" data-srcset="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663121012413.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<h3 id="3-GPU-BASED-BITWISE-OPERATIONS-和MSBFS类似-GPU设计"><a href="#3-GPU-BASED-BITWISE-OPERATIONS-和MSBFS类似-GPU设计" class="headerlink" title="3 GPU-BASED BITWISE OPERATIONS 和MSBFS类似+GPU设计"></a>3 GPU-BASED BITWISE OPERATIONS 和MSBFS类似+GPU设计</h3><h4 id="idea-2"><a href="#idea-2" class="headerlink" title="idea"></a>idea</h4><h5 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h5><img src="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663123185648.png" class="lazyload" data-srcset="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663123185648.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<img src="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663123211765.png" class="lazyload" data-srcset="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663123211765.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<img src="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663123292123.png" class="lazyload" data-srcset="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663123292123.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<p>实现：</p>
+<img src="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663123517908.png" class="lazyload" data-srcset="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663123517908.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<h5 id="expansion"><a href="#expansion" class="headerlink" title="expansion"></a>expansion</h5><img src="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663123316129.png" class="lazyload" data-srcset="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663123316129.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<h5 id="inspection"><a href="#inspection" class="headerlink" title="inspection"></a>inspection</h5><img src="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663123419948.png" class="lazyload" data-srcset="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663123419948.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<p>Early Termination：This newly freed-up thread will then be scheduled to work on other frontiers.</p>
+<h5 id="frontier-generation"><a href="#frontier-generation" class="headerlink" title="frontier generation"></a>frontier generation</h5><img src="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663123484709.png" class="lazyload" data-srcset="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/image-1663123484709.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
   </div>
   
   
@@ -2860,13 +2904,27 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class='prev' href='/2022/09/14/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202017FAST%20Graphene_Fine%20Grained%20IO%20Management%20for%20Graph%20Computing/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>论文笔记 2017FAST Graphene_Fine-Grained IO Management for Graph Computing</p>
-          <p class='content'>一些definition![image-1663125575582](论文笔记 2017FAST Graphene_Fine Grained IO Management for Graph Co...</p>
+          <p class='content'>一些definition
+
+1 Bitmap Based, Asynchronous IO1 store
+
+
+block size依据： 
+
+
+2 bitmap（这个）
+
+
+bitmap siz...</p>
         </a>
       
       
-        <a class='next' href='/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202022FAST%20Practicably%20Boosting%20the%20Processing%20Performance%20of%20BFS/'>
-          <p class='title'>论文笔记 2022FAST Practicably Boosting the Processing Performance of BFS-like Algorithms on Semi<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>Practicably Boosting the Processing Performance of BFS-like Algorithms on Semi-External Graph Sys...</p>
+        <a class='next' href='/2022/09/10/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202012PPoPP%20Scalable%20GPU%20Graph%20Traversal/'>
+          <p class='title'>论文笔记 2012PPoPP Scalable GPU Graph Traversal<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>details: High-Performance and Scalable GPU Graph Traversal我读的这篇详细的
+BFS
+approach
+componentsContrac...</p>
         </a>
       
     </div>

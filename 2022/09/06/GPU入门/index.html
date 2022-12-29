@@ -2275,7 +2275,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1672324134819),
+    lastupdate: new Date(1672325813283),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2717,8 +2717,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <h2 id="整体感知"><a href="#整体感知" class="headerlink" title="整体感知"></a>整体感知</h2><ul>
 <li>GPU 的整个处理过程是一个流式处理（Stream Processing）的过程，分支条件少（<strong>少用控制语句</strong>）</li>
 <li>每个GPU核心（是个电路） 只有 取指令、指令译码、ALU 以及执行这些计算需要的寄存器和缓存<blockquote>
-<p>现代 CPU 里的晶体管变得越来越多，越来越复杂，其实已经不是用来实现“计算”这个核心功能，而是拿来实现<strong>处理乱序执行、进行分支预测，以及高速缓存</strong>部分。GPU把这些部分<strong>去除</strong>了<br>the GPU can <strong>hide memory access latencies with computation</strong>, instead of relying on large data caches and complex flow control to avoid long memory access latencies, both of which are expensive in terms of transistors.<br><img src="/GPU%E5%85%A5%E9%97%A8/image-1662452837784.png" class="lazyload" data-srcset="/GPU%E5%85%A5%E9%97%A8/image-1662452837784.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-1662452837784"></p>
-</blockquote>
+<p>现代 CPU 里的晶体管变得越来越多，越来越复杂，其实已经不是用来实现“计算”这个核心功能，而是拿来实现<strong>处理乱序执行、进行分支预测，以及高速缓存</strong>部分。GPU把这些部分<strong>去除</strong>了<br>the GPU can <strong>hide memory access latencies with computation</strong>, instead of relying on large data caches and complex flow control to avoid long memory access latencies, both of which are expensive in terms of transistors.</p>
+<img src="/2022/09/06/GPU%E5%85%A5%E9%97%A8/image-1662452837784.png" class="lazyload" data-srcset="/2022/09/06/GPU%E5%85%A5%E9%97%A8/image-1662452837784.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload"></blockquote>
 </li>
 <li>一个 GPU ：多个这样并行的 GPU 电路</li>
 <li>内存访问（分离式架构）：（gpu作为外设可以访问cpu内存，但）<strong>cpu 和gpu 最擅长访问自己的内存</strong></li>
@@ -2730,20 +2730,20 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li>访问存储单元（Load&#x2F;Store Queues）：在核心和内存之间快速传输数据；</li>
 <li>特殊函数的计算单元（Special Functions Unit、SPU）</li>
 <li>存储和缓存数据的寄存器文件（Register File）</li>
-<li>共享内存（Shared Memory）<br><img src="/GPU%E5%85%A5%E9%97%A8/image-1662453268955.png" class="lazyload" data-srcset="/GPU%E5%85%A5%E9%97%A8/image-1662453268955.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-1662453268955"></li>
+<li>共享内存（Shared Memory）<img src="/2022/09/06/GPU%E5%85%A5%E9%97%A8/image-1662453268955.png" class="lazyload" data-srcset="/2022/09/06/GPU%E5%85%A5%E9%97%A8/image-1662453268955.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload"></li>
 </ul>
 </blockquote>
 </li>
 </ul>
 <h2 id="执行速度"><a href="#执行速度" class="headerlink" title="执行速度"></a>执行速度</h2><p>CUDA 核心在每个时钟周期都可以准确的执行一次整数或者浮点数的运算</p>
 <h2 id="CPU-与GPU-协作（分离式）"><a href="#CPU-与GPU-协作（分离式）" class="headerlink" title="CPU 与GPU 协作（分离式）"></a>CPU 与GPU 协作（分离式）</h2><blockquote>
-<p>分离式：<img src="/GPU%E5%85%A5%E9%97%A8/image-1662453966542.png" class="lazyload" data-srcset="/GPU%E5%85%A5%E9%97%A8/image-1662453966542.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-1662453966542"></p>
+<p>分离式：<img src="/2022/09/06/GPU%E5%85%A5%E9%97%A8/image-1662453966542.png" class="lazyload" data-srcset="/2022/09/06/GPU%E5%85%A5%E9%97%A8/image-1662453966542.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload"></p>
 </blockquote>
 <ul>
 <li>GPU 是一个<strong>外设</strong>，有驱动程序<blockquote>
-<p>MMIO: Memory-Mapped I&#x2F;O<br>锁页：操作系统常用的操作，可以使硬件外设直接访问物理内存。”被锁定“的页面被os标记为不可被os 换出<br><img src="/GPU%E5%85%A5%E9%97%A8/image-1662454098171.png" class="lazyload" data-srcset="/GPU%E5%85%A5%E9%97%A8/image-1662454098171.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-1662454098171"></p>
+<p>MMIO: Memory-Mapped I&#x2F;O<br>锁页：操作系统常用的操作，可以使硬件外设直接访问物理内存。”被锁定“的页面被os标记为不可被os 换出</p>
 </blockquote>
-</li>
+<img src="/2022/09/06/GPU%E5%85%A5%E9%97%A8/image-1662454098171.png" class="lazyload" data-srcset="/2022/09/06/GPU%E5%85%A5%E9%97%A8/image-1662454098171.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload"></li>
 <li>驱动程序提供的接口：<ul>
 <li>一般的外设：输出数据地址 command_operation(输入数据地址)<blockquote>
 <p>这个意思是类似于函数申明：cpu控制向输入数据地址写数据，调用接口，等中断，然后从输出数据地址读数据</p>
@@ -2772,9 +2772,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <h3 id="编程模型"><a href="#编程模型" class="headerlink" title="编程模型"></a>编程模型</h3><p>这些抽象提供了细粒度的数据并行和线程并行，嵌套在粗粒度的数据并行和任务并行中。它们指导程序员<strong>将问题划分为可以由++线程块++<font color=red>并行独立</font>解决的粗略子问题</strong>，并<strong>将每个子问题划分为可以由++块内所有线程++<font color=red>并行协作</font>解决的更精细的部分</strong>。</p>
 <ul>
 <li>一个问题（grid）划分为多个线程块（block或者warp；gridDim个），线程块之间独立执行；</li>
-<li>每个线程块有多个thread（blockDim个），<strong>每个线程块对应一个deviceFunction（kernel）</strong><br><img src="/GPU%E5%85%A5%E9%97%A8/image-1662455868694.png" class="lazyload" data-srcset="/GPU%E5%85%A5%E9%97%A8/image-1662455868694.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-1662455868694"></li>
+<li>每个线程块有多个thread（blockDim个），<strong>每个线程块对应一个deviceFunction（kernel）</strong><img src="/2022/09/06/GPU%E5%85%A5%E9%97%A8/image-1662455868694.png" class="lazyload" data-srcset="/2022/09/06/GPU%E5%85%A5%E9%97%A8/image-1662455868694.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload"></li>
 </ul>
-<h3 id="编程模型和硬件的关系"><a href="#编程模型和硬件的关系" class="headerlink" title="编程模型和硬件的关系"></a>编程模型和硬件的关系</h3><p><img src="/GPU%E5%85%A5%E9%97%A8/image-1662539709514.png" class="lazyload" data-srcset="/GPU%E5%85%A5%E9%97%A8/image-1662539709514.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-1662539709514"><br>A cooperative thread array (or <strong>CTA</strong>) is a group of threads that will be co-located on the same multiprocessor（即比如此图中到同一个SM上的所有block的所有thread，它们属于一个CTA）<br><strong>each block</strong> of threads can be scheduled on <strong>any</strong> of the available multiprocessors within a GPU, in any order（<code>指block之间的顺序？</code>）, concurrently or sequentially, so that a compiled CUDA program can execute on any number of multiprocessors, and only the runtime system needs to know the physical multiprocessor count.</p>
+<h3 id="编程模型和硬件的关系"><a href="#编程模型和硬件的关系" class="headerlink" title="编程模型和硬件的关系"></a>编程模型和硬件的关系</h3><img src="/2022/09/06/GPU%E5%85%A5%E9%97%A8/image-1662539709514.png" class="lazyload" data-srcset="/2022/09/06/GPU%E5%85%A5%E9%97%A8/image-1662539709514.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<p>A cooperative thread array (or <strong>CTA</strong>) is a group of threads that will be co-located on the same multiprocessor（即比如此图中到同一个SM上的所有block的所有thread，它们属于一个CTA）<br><strong>each block</strong> of threads can be scheduled on <strong>any</strong> of the available multiprocessors within a GPU, in any order（<code>指block之间的顺序？</code>）, concurrently or sequentially, so that a compiled CUDA program can execute on any number of multiprocessors, and only the runtime system needs to know the physical multiprocessor count.</p>
 <h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><blockquote>
 <p>在CUDA中：host指代CPU及其内存，而用device指代GPU及其内存</p>
 </blockquote>

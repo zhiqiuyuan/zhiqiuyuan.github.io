@@ -41,7 +41,7 @@
 <meta property="og:title" content="论文笔记 multi-terminal network flows">
 <meta property="og:url" content="http://example.com/2022/08/05/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20multiterminal%20network%20flows/index.html">
 <meta property="og:site_name" content="self-drive">
-<meta property="og:description" content="定义bij：顶点Ni到顶点Nj间边Bij的容量fij：顶点Ni到顶点Nj的最大流流量F是fij构成的方阵 贡献判定一个F是否能在某些网络拓扑中达到![image-1659691120152](论文笔记 multiterminal network flows&#x2F;image-1659691120152.png)判定算法：求fij；然后在构造最大生成树时检查是否违反这个 (1)可以自然推出：&amp;g">
+<meta property="og:description" content="定义bij：顶点Ni到顶点Nj间边Bij的容量fij：顶点Ni到顶点Nj的最大流流量F是fij构成的方阵 贡献判定一个F是否能在某些网络拓扑中达到 判定算法：求fij；然后在构造最大生成树时检查是否违反这个 (1)可以自然推出：&gt;&#x3D;i-p任意“路径”（注意路径上“相邻”两点不需要有边相连）的minflow   证明过程中提出：以fij作为边Bij的权重构造一棵最大生成树，对于任意一">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-08-05T08:26:54.181Z">
@@ -2274,7 +2274,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1672324134819),
+    lastupdate: new Date(1672325813283),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2711,19 +2711,39 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
     <h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>bij：顶点Ni到顶点Nj间边Bij的容量<br>fij：顶点Ni到顶点Nj的最大流流量<br>F是fij构成的方阵</p>
-<h2 id="贡献"><a href="#贡献" class="headerlink" title="贡献"></a>贡献</h2><h3 id="判定一个F是否能在某些网络拓扑中达到"><a href="#判定一个F是否能在某些网络拓扑中达到" class="headerlink" title="判定一个F是否能在某些网络拓扑中达到"></a>判定一个F是否能在某些网络拓扑中达到</h3><p>![image-1659691120152](论文笔记 multiterminal network flows&#x2F;image-1659691120152.png)<br>判定算法：求fij；然后在构造最大生成树时检查是否违反这个</p>
-<p>(1)可以自然推出：&gt;&#x3D;i-p任意“路径”（注意路径上“相邻”两点不需要有边相连）的minflow<br>![image-1659750607899](论文笔记 multiterminal network flows&#x2F;image-1659750607899.png)</p>
-<p>证明过程中提出：以fij作为边Bij的权重构造一棵最大生成树，对于任意一条<strong>不在该树上的边</strong>ip，i到p的最大流 等于 <strong>该树上i到p（唯一）的路径</strong>的minflow<br>![image-1659691272735](论文笔记 multiterminal network flows&#x2F;image-1659691272735.png)</p>
-<h3 id="condense-graph"><a href="#condense-graph" class="headerlink" title="condense graph"></a>condense graph</h3><p>构造（注意(A,A’)是最小割）<br>![image-1659691611160](论文笔记 multiterminal network flows&#x2F;image-1659691611160.png)</p>
-<p>![image-1659751699963](论文笔记 multiterminal network flows&#x2F;image-1659751699963.png)</p>
-<p>性质（ordinary nodes是指在A中（A中是因为A‘中的顶点在condense graph中已经被收缩成一个点了）、非Ni的顶点）<br>![image-1659691632730](论文笔记 multiterminal network flows&#x2F;image-1659691632730.png)</p>
-<h3 id="n-1次最大流求解就求出全图所有点对之间的最大流"><a href="#n-1次最大流求解就求出全图所有点对之间的最大流" class="headerlink" title="n-1次最大流求解就求出全图所有点对之间的最大流"></a>n-1次最大流求解就求出全图所有点对之间的最大流</h3><p>不断做划分顶点的事，然后<br>![image-1659692864511](论文笔记 multiterminal network flows&#x2F;image-1659692864511.png)</p>
-<p>证明中提出的一个性质：<br>![image-1659751231688](论文笔记 multiterminal network flows&#x2F;image-1659751231688.png)<br>这个性质应用到最终划分所得树上，以及根据划分过程，得到<strong>最终树的性质</strong>：<font color=red><strong>关键是这个性质使得可以n-1代替n(n-1)&#x2F;2、进行合并</strong></font>：<strong>最终树的边既是cut又是maxflow</strong>，cut则两点间maxflow&lt;&#x3D;min(树上路径)，maxflow则两点间maxflow&gt;&#x3D;min(树上路径)，因此两点间maxflow&#x3D;&#x3D;min(树上路径)<br>![image-1659751929921](论文笔记 multiterminal network flows&#x2F;image-1659751929921.png)</p>
-<h4 id="划分过程"><a href="#划分过程" class="headerlink" title="划分过程"></a>划分过程</h4><p>原文描述完思路之后还有一个详细例子</p>
-<p>![image-1659751558215](论文笔记 multiterminal network flows&#x2F;image-1659751558215.png)<br>![image-1659751727759](论文笔记 multiterminal network flows&#x2F;image-1659751727759.png)<br>![image-1659751607499](论文笔记 multiterminal network flows&#x2F;image-1659751607499.png)<br>![image-1659751627829](论文笔记 multiterminal network flows&#x2F;image-1659751627829.png)<br>![image-1659751754231](论文笔记 multiterminal network flows&#x2F;image-1659751754231.png)</p>
-<p>![image-1659751643606](论文笔记 multiterminal network flows&#x2F;image-1659751643606.png)</p>
-<h2 id="证明阅读"><a href="#证明阅读" class="headerlink" title="证明阅读"></a>证明阅读</h2><p>lemma1证明<br>![image-1659687994465](论文笔记 multiterminal network flows&#x2F;image-1659687994465.png)</p>
+<h2 id="贡献"><a href="#贡献" class="headerlink" title="贡献"></a>贡献</h2><h3 id="判定一个F是否能在某些网络拓扑中达到"><a href="#判定一个F是否能在某些网络拓扑中达到" class="headerlink" title="判定一个F是否能在某些网络拓扑中达到"></a>判定一个F是否能在某些网络拓扑中达到</h3><img src="/2022/08/05/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20multiterminal%20network%20flows/image-1659691120152.png" class="lazyload" data-srcset="/2022/08/05/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20multiterminal%20network%20flows/image-1659691120152.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<p>判定算法：求fij；然后在构造最大生成树时检查是否违反这个</p>
+<p>(1)可以自然推出：&gt;&#x3D;i-p任意“路径”（注意路径上“相邻”两点不需要有边相连）的minflow</p>
+<img src="/2022/08/05/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20multiterminal%20network%20flows/image-1659750607899.png" class="lazyload" data-srcset="/2022/08/05/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20multiterminal%20network%20flows/image-1659750607899.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 
+<p>证明过程中提出：以fij作为边Bij的权重构造一棵最大生成树，对于任意一条<strong>不在该树上的边</strong>ip，i到p的最大流 等于 <strong>该树上i到p（唯一）的路径</strong>的minflow</p>
+<img src="/2022/08/05/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20multiterminal%20network%20flows/image-1659691272735.png" class="lazyload" data-srcset="/2022/08/05/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20multiterminal%20network%20flows/image-1659691272735.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<h3 id="condense-graph"><a href="#condense-graph" class="headerlink" title="condense graph"></a>condense graph</h3><p>构造（注意(A,A’)是最小割）</p>
+<img src="/2022/08/05/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20multiterminal%20network%20flows/image-1659691611160.png" class="lazyload" data-srcset="/2022/08/05/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20multiterminal%20network%20flows/image-1659691611160.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<img src="/2022/08/05/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20multiterminal%20network%20flows/image-1659751699963.png" class="lazyload" data-srcset="/2022/08/05/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20multiterminal%20network%20flows/image-1659751699963.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<p>性质（ordinary nodes是指在A中（A中是因为A‘中的顶点在condense graph中已经被收缩成一个点了）、非Ni的顶点）</p>
+<img src="/2022/08/05/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20multiterminal%20network%20flows/image-1659691632730.png" class="lazyload" data-srcset="/2022/08/05/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20multiterminal%20network%20flows/image-1659691632730.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<h3 id="n-1次最大流求解就求出全图所有点对之间的最大流"><a href="#n-1次最大流求解就求出全图所有点对之间的最大流" class="headerlink" title="n-1次最大流求解就求出全图所有点对之间的最大流"></a>n-1次最大流求解就求出全图所有点对之间的最大流</h3><p>不断做划分顶点的事，然后</p>
+<img src="/2022/08/05/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20multiterminal%20network%20flows/image-1659692864511.png" class="lazyload" data-srcset="/2022/08/05/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20multiterminal%20network%20flows/image-1659692864511.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<p>证明中提出的一个性质：</p>
+<img src="/2022/08/05/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20multiterminal%20network%20flows/image-1659751231688.png" class="lazyload" data-srcset="/2022/08/05/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20multiterminal%20network%20flows/image-1659751231688.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<p>这个性质应用到最终划分所得树上，以及根据划分过程，得到<strong>最终树的性质</strong>：<font color=red><strong>关键是这个性质使得可以n-1代替n(n-1)&#x2F;2、进行合并</strong></font>：<strong>最终树的边既是cut又是maxflow</strong>，cut则两点间maxflow&lt;&#x3D;min(树上路径)，maxflow则两点间maxflow&gt;&#x3D;min(树上路径)，因此两点间maxflow&#x3D;&#x3D;min(树上路径)</p>
+<img src="/2022/08/05/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20multiterminal%20network%20flows/image-1659751929921.png" class="lazyload" data-srcset="/2022/08/05/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20multiterminal%20network%20flows/image-1659751929921.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<h4 id="划分过程"><a href="#划分过程" class="headerlink" title="划分过程"></a>划分过程</h4><p>原文描述完思路之后还有一个详细例子</p>
+<img src="/2022/08/05/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20multiterminal%20network%20flows/image-1659751558215.png" class="lazyload" data-srcset="/2022/08/05/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20multiterminal%20network%20flows/image-1659751558215.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<img src="/2022/08/05/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20multiterminal%20network%20flows/image-1659751727759.png" class="lazyload" data-srcset="/2022/08/05/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20multiterminal%20network%20flows/image-1659751727759.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<img src="/2022/08/05/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20multiterminal%20network%20flows/image-1659751607499.png" class="lazyload" data-srcset="/2022/08/05/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20multiterminal%20network%20flows/image-1659751607499.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<img src="/2022/08/05/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20multiterminal%20network%20flows/image-1659751627829.png" class="lazyload" data-srcset="/2022/08/05/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20multiterminal%20network%20flows/image-1659751627829.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<img src="/2022/08/05/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20multiterminal%20network%20flows/image-1659751754231.png" class="lazyload" data-srcset="/2022/08/05/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20multiterminal%20network%20flows/image-1659751754231.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<img src="/2022/08/05/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20multiterminal%20network%20flows/image-1659751643606.png" class="lazyload" data-srcset="/2022/08/05/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20multiterminal%20network%20flows/image-1659751643606.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<h2 id="证明阅读"><a href="#证明阅读" class="headerlink" title="证明阅读"></a>证明阅读</h2><p>lemma1证明</p>
+<img src="/2022/08/05/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20multiterminal%20network%20flows/image-1659687994465.png" class="lazyload" data-srcset="/2022/08/05/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20multiterminal%20network%20flows/image-1659687994465.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
   </div>
   
   

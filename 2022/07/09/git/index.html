@@ -2275,7 +2275,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1672324134819),
+    lastupdate: new Date(1672325813283),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2932,14 +2932,16 @@ Cloning into &#39;zsrepo&#39;...
 <li>上传到其他git服务器上：<a href="#%E5%B0%86%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E5%85%AC%E9%92%A5%E4%BC%A0%E5%85%A5%E8%BF%9C%E7%A8%8Bgit%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E8%AE%A4%E8%AF%81%E6%96%87%E4%BB%B6%E4%B8%AD">见下文</a></li>
 </ul>
 <p><strong>然后remote用ssh的地址，不用http的地址</strong></p>
-<p><img src="/git/image-1657370789232.png" class="lazyload" data-srcset="/git/image-1657370789232.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-1657370789232"></p>
+<img src="/2022/07/09/git/image-1657370789232.png" class="lazyload" data-srcset="/2022/07/09/git/image-1657370789232.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 <h4 id="linux下公匙私匙生成"><a href="#linux下公匙私匙生成" class="headerlink" title="linux下公匙私匙生成"></a><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_38163309/article/details/105335097">linux下公匙私匙生成</a></h4><h4 id="公匙上传github"><a href="#公匙上传github" class="headerlink" title="公匙上传github"></a><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_38163309/article/details/105335097">公匙上传github</a></h4><h4 id="windows下公匙私匙生成"><a href="#windows下公匙私匙生成" class="headerlink" title="windows下公匙私匙生成"></a>windows下公匙私匙生成</h4><blockquote>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_17524035/article/details/70762162">SSH-key 在Windows下如何生成公钥和私钥</a></p>
 <p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1404134">在centos上搭建git服务器并自动同步代码 - 云+社区 - 腾讯云 (tencent.com)</a></p>
 </blockquote>
 <p>git安装好后</p>
 <p>右键选择Git GUI Here-&gt;Help-&gt;Show SSH Key</p>
-<p><img src="/git/image-1657370818512.png" class="lazyload" data-srcset="/git/image-1657370818512.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-1657370818512"><br><img src="/git/image-1657370829590.png" class="lazyload" data-srcset="/git/image-1657370829590.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-1657370829590"></p>
+<img src="/2022/07/09/git/image-1657370818512.png" class="lazyload" data-srcset="/2022/07/09/git/image-1657370818512.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<img src="/2022/07/09/git/image-1657370829590.png" class="lazyload" data-srcset="/2022/07/09/git/image-1657370829590.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
 <p>就能得到私钥和公钥</p>
 <h4 id="公钥上传远程git服务器的认证文件中"><a href="#公钥上传远程git服务器的认证文件中" class="headerlink" title="公钥上传远程git服务器的认证文件中"></a>公钥上传远程git服务器的认证文件中</h4><pre><code class="bash">cat id_rsa.pub &gt;&gt; authorized_keys #pwd:/home/&lt;user_name&gt;/.ssh/
 </code></pre>
@@ -2953,7 +2955,8 @@ chmod 600 .ssh/authorized_keys
 <h3 id="git原理"><a href="#git原理" class="headerlink" title="git原理"></a>git原理</h3><h4 id="暂存区"><a href="#暂存区" class="headerlink" title="暂存区"></a>暂存区</h4><p>工作区（Working Directory）：比如刚刚git init所在的那个目录</p>
 <p>版本库（Repository）：工作区有一个隐藏目录<code>.git</code>，这个不算工作区，而是Git的版本库</p>
 <p>Git的版本库里存了很多东西，其中最重要的就是称为stage（或者叫index）的暂存区，还有Git为我们自动创建的第一个分支<code>master</code>，以及指向<code>master</code>的一个指针叫<code>HEAD</code>。</p>
-<p><img src="/git/image-1657370880539.png" class="lazyload" data-srcset="/git/image-1657370880539.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-1657370880539"></p>
+<img src="/2022/07/09/git/image-1657370880539.png" class="lazyload" data-srcset="/2022/07/09/git/image-1657370880539.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
 <p>把文件往Git版本库里添加的时候，是分两步执行的：</p>
 <p>第一步是用 <strong><code>git add</code>把文件添加进去，实际上就是把文件修改添加到暂存区</strong>；</p>
 <p>第二步是用 <strong><code>git commit</code>提交更改，实际上就是把暂存区的所有内容提交到当前分支。</strong></p>
@@ -2965,13 +2968,16 @@ chmod 600 .ssh/authorized_keys
 </blockquote>
 <p>一般来说，团队合作开发的话，每个人都需要在自己的功能分支 <strong>feat&#x2F;XXX</strong> 上开发，最后一起合并到总的开发分支 <strong>dev</strong> 上，然后将开发分支 <strong>dev</strong> 合并到<strong>测试</strong>分支上，最后将<strong>测试</strong>分支合并到正式<strong>发布</strong>分支上。</p>
 <p>其中总的开发分支一般叫做 <strong>dev</strong> 分支，正式发布分支一般是叫 <strong>main&#x2F;master&#x2F;release</strong> 分支。</p>
-<p>一般的开发流程：<br><img src="/git/gitflow.jpg" class="lazyload" data-srcset="/git/gitflow.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="gitflow"></p>
+<p>一般的开发流程：</p>
+<img src="/2022/07/09/git/gitflow.jpg" class="lazyload" data-srcset="/2022/07/09/git/gitflow.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
 <p>比如说有 A、B、C 三个人协助进行功能开发：</p>
 <p>1、首先 A、B、C 三位小伙伴从总开发分支 Dev 上开辟自己的功能分支，分别是 feat&#x2F;AXXX、feat&#x2F;BXXX、feat&#x2F;CXXX，也就是图中 feat&#x2F;AXXX、feat&#x2F;BXXX、feat&#x2F;CXXX 的三条线；</p>
 <p>2、然后在自己的开发机上进行开发，这里的开发机可以是本地环境也可以是一些云端的开发机。开发完毕后，再分别合到总开发分支 dev 上，也就是图中蓝色的三条线，在这个过程中可能会产生一些代码冲突，挨个 solve 即可；</p>
 <p>3、接着在 dev 分支上确认所有功能开发完毕，进行简单自测，fix 一些 bug 后再向测试分支上进行合并；</p>
 <p>4、这个时候就可以艾特测试组的同学来进行测试，测试通过后再合到 master 分支进行发布。</p>
-<p><img src="/git/gitflow.webp" class="lazyload" data-srcset="/git/gitflow.webp" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="gitflow"></p>
+<img src="/2022/07/09/git/gitflow.webp" class="lazyload" data-srcset="/2022/07/09/git/gitflow.webp" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
 <p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/4948dc76c52c">GitFlow流程 - 简书 (jianshu.com)</a></p>
 <p><img src="https://upload-images.jianshu.io/upload_images/1792635-d5576823432e622f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1150/format/webp" class="lazyload" data-srcset="https://upload-images.jianshu.io/upload_images/1792635-d5576823432e622f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1150/format/webp" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
 <h4 id="git提交-m规范"><a href="#git提交-m规范" class="headerlink" title="git提交-m规范"></a>git提交-m规范</h4><p><strong><code>type （scope）: message</code></strong></p>
