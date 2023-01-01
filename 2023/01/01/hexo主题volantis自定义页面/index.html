@@ -41,11 +41,11 @@
 <meta property="og:title" content="hexo主题volantis自定义页面">
 <meta property="og:url" content="http://example.com/2023/01/01/hexo%E4%B8%BB%E9%A2%98volantis%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2/index.html">
 <meta property="og:site_name" content="zhiqiuyuan&#39;s blog">
-<meta property="og:description" content="在source&#x2F;目录下的index.md的链接：source&#x2F;about&#x2F;index.md的访问链接为博客链接&#x2F;about，在.yml文件中导航栏处配置url时写about&#x2F; font-matter中layout: docs指定使用themes&#x2F;layout&#x2F;下哪个ejs文件作为模板，比如上述的index.md文件 post.&lt;name&gt;可以获取每篇博客的font-matter中的值">
+<meta property="og:description" content="知识 在source&#x2F;目录下的index.md的链接：source&#x2F;about&#x2F;index.md的访问链接为博客链接&#x2F;about，在.yml文件中导航栏处配置url时写about&#x2F;  font-matter中layout: docs指定使用themes&#x2F;layout&#x2F;下哪个ejs文件作为模板，比如上述的index.md文件  post.&lt;name&gt;可以获取每篇博客的font-matte">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-01-01T14:04:00.000Z">
-<meta property="article:modified_time" content="2023-01-01T14:58:04.650Z">
+<meta property="article:modified_time" content="2023-01-01T15:04:26.130Z">
 <meta property="article:author" content="zhiqiuyuan">
 <meta property="article:tag" content="hexo">
 <meta name="twitter:card" content="summary">
@@ -2275,7 +2275,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1672585170513),
+    lastupdate: new Date(1672588157734),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2677,19 +2677,24 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p>在<code>source/</code>目录下的<code>index.md</code>的链接：<br><code>source/about/index.md</code>的访问链接为<code>博客链接/about</code>，在<code>.yml</code>文件中导航栏处配置<code>url</code>时写<code>about/</code></p>
-<p><code>font-matter</code>中<code>layout: docs</code>指定使用<code>themes/layout/</code>下哪个ejs文件作为模板，比如上述的<code>index.md</code>文件</p>
-<p><code>post.&lt;name&gt;</code>可以获取每篇博客的font-matter中<name>的值</p>
-<h1 id="举例："><a href="#举例：" class="headerlink" title="举例："></a>举例：</h1><h2 id="新建类似首页的显示个人随笔的页面-新增页面首先在source下新建目录writing，然后在source-writing下新建index-md，内容：-96-96-96-markdown"><a href="#新建类似首页的显示个人随笔的页面-新增页面首先在source下新建目录writing，然后在source-writing下新建index-md，内容：-96-96-96-markdown" class="headerlink" title="新建类似首页的显示个人随笔的页面## 新增页面首先在source下新建目录writing，然后在source/writing下新建index.md，内容：&#96;&#96;&#96;markdown"></a>新建类似首页的显示个人随笔的页面<br>## 新增页面<br>首先在<code>source</code>下新建目录<code>writing</code>，然后在<code>source/writing</code>下新建<code>index.md</code>，内容：<br>&#96;&#96;&#96;markdown</h2><h2 id="layout-writingtitle-所有随笔sidebar-blogger"><a href="#layout-writingtitle-所有随笔sidebar-blogger" class="headerlink" title="layout: writingtitle: 所有随笔sidebar: [blogger]"></a>layout: writing<br>title: 所有随笔<br>sidebar: [blogger]</h2><pre><code>其中layout指定模板使用`themes/layout/writing.ejs`，`sidebar`是定制侧边栏的内容
+    <h2 id="知识"><a href="#知识" class="headerlink" title="知识"></a>知识</h2><ul>
+<li><p>在<code>source/</code>目录下的<code>index.md</code>的链接：<code>source/about/index.md</code>的访问链接为<code>博客链接/about</code>，在<code>.yml</code>文件中导航栏处配置<code>url</code>时写<code>about/</code></p>
+</li>
+<li><p><code>font-matter</code>中<code>layout: docs</code>指定使用<code>themes/layout/</code>下哪个ejs文件作为模板，比如上述的<code>index.md</code>文件</p>
+</li>
+<li><p><code>post.&lt;name&gt;</code>可以获取每篇博客的font-matter中<name>的值</p>
+</li>
+</ul>
+<h2 id="举例：新建类似首页的显示个人随笔的页面"><a href="#举例：新建类似首页的显示个人随笔的页面" class="headerlink" title="举例：新建类似首页的显示个人随笔的页面"></a>举例：新建类似首页的显示个人随笔的页面</h2><h3 id="新增页面"><a href="#新增页面" class="headerlink" title="新增页面"></a>新增页面</h3><h2 id="首先在source下新建目录writing，然后在source-writing下新建index-md，内容：-96-96-96-markdown"><a href="#首先在source下新建目录writing，然后在source-writing下新建index-md，内容：-96-96-96-markdown" class="headerlink" title="首先在source下新建目录writing，然后在source/writing下新建index.md，内容：&#96;&#96;&#96;markdown"></a>首先在<code>source</code>下新建目录<code>writing</code>，然后在<code>source/writing</code>下新建<code>index.md</code>，内容：<br>&#96;&#96;&#96;markdown</h2><h2 id="layout-writingtitle-所有随笔sidebar-blogger"><a href="#layout-writingtitle-所有随笔sidebar-blogger" class="headerlink" title="layout: writingtitle: 所有随笔sidebar: [blogger]"></a>layout: writing<br>title: 所有随笔<br>sidebar: [blogger]</h2><pre><code>其中layout指定模板使用`themes/layout/writing.ejs`，`sidebar`是定制侧边栏的内容
 
-## 文章的控制传参
+### 文章的控制传参
 对于仅在这个页面显示而不在博客首页显示的文章，在font-matter中新增一个键：
 ```markdown
 ---
 is_writing: true
 ---
 </code></pre>
-<h2 id="模板文件"><a href="#模板文件" class="headerlink" title="模板文件"></a>模板文件</h2><p>新增<code>themes/layout/writing.ejs</code>文件内容如下：参考首页(<code>index.ejs</code>)</p>
+<h3 id="模板文件"><a href="#模板文件" class="headerlink" title="模板文件"></a>模板文件</h3><p>新增<code>themes/layout/writing.ejs</code>文件内容如下：参考首页(<code>index.ejs</code>)</p>
 <pre><code class="ejs">&lt;%- partial(&#39;_pre&#39;) %&gt;
 &lt;div id=&quot;l_main&quot; class=&#39;&lt;%- page.sidebar == false ? &#39; no_sidebar&#39; : &#39;&#39; %&gt;&#39;&gt;
   &lt;%- partial(&#39;_partial/writing&#39;) %&gt;
@@ -2716,7 +2721,7 @@ is_writing: true
   &lt;/section&gt;
 &lt;% &#125; %&gt;
 </code></pre>
-<h2 id="导航栏增加一项"><a href="#导航栏增加一项" class="headerlink" title="导航栏增加一项"></a>导航栏增加一项</h2><p>导航栏增加一项指向新增的页面：修改<code>_config.volantis.yml</code></p>
+<h3 id="导航栏增加一项"><a href="#导航栏增加一项" class="headerlink" title="导航栏增加一项"></a>导航栏增加一项</h3><p>导航栏增加一项指向新增的页面：修改<code>_config.volantis.yml</code></p>
 <pre><code class="yml">navbar:
   menu:
     - name: 随笔
@@ -2747,7 +2752,7 @@ is_writing: true
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-01-01T22:58:04+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-01-01T23:04:26+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：Jan 1, 2023</p>
@@ -2833,10 +2838,25 @@ is_writing: true
   
     <div class="prev-next">
       
+        <a class='prev' href='/2023/01/01/writing-2023-1-1-%E5%88%86%E8%AF%BE%E6%97%B6%E7%AE%A1%E7%90%86/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>分课时管理</p>
+          <p class='content'>决定尝试以“40分钟一节课”为单元进行任务的时间安排原因：
+
+现在总是以几个小时来划分时间
+如果不干科研会慌（即必须先干一点）：划分时间片，40分钟后还有较多时间可以干别的事情，不至于几个小时都...</p>
+        </a>
       
-        <a class='next' href='/2023/01/01/writing-2023-1-1-%E5%B0%9D%E8%AF%9540%E5%88%86%E9%92%9F%E4%B8%80%E8%8A%82%E8%AF%BE%E7%AE%A1%E7%90%86/'>
-          <p class='title'>尝试40分钟一节课管理<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'></p>
+      
+        <a class='next' href='/2023/01/01/writing-%E5%86%99%E4%BD%9C%E9%A2%98%E7%9B%AE/'>
+          <p class='title'>写作题目<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>tank
+感觉自己劲用错了地方，聪明劲没有发挥出来
+如何平衡科研和其他学习
+
+done
+决定尝试40分钟一节课来管理自己每天的时间，以课为单位分配时间给任务
+今天为啥白搞了写作博客
+为啥发了年终...</p>
         </a>
       
     </div>
@@ -2897,7 +2917,7 @@ is_writing: true
 
 
   <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B0%E5%BB%BA%E7%B1%BB%E4%BC%BC%E9%A6%96%E9%A1%B5%E7%9A%84%E6%98%BE%E7%A4%BA%E4%B8%AA%E4%BA%BA%E9%9A%8F%E7%AC%94%E7%9A%84%E9%A1%B5%E9%9D%A2-%E6%96%B0%E5%A2%9E%E9%A1%B5%E9%9D%A2%E9%A6%96%E5%85%88%E5%9C%A8source%E4%B8%8B%E6%96%B0%E5%BB%BA%E7%9B%AE%E5%BD%95writing%EF%BC%8C%E7%84%B6%E5%90%8E%E5%9C%A8source-writing%E4%B8%8B%E6%96%B0%E5%BB%BAindex-md%EF%BC%8C%E5%86%85%E5%AE%B9%EF%BC%9A-96-96-96-markdown"><span class="toc-text">新建类似首页的显示个人随笔的页面## 新增页面首先在source下新建目录writing，然后在source&#x2F;writing下新建index.md，内容：&#96;&#96;&#96;markdown</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#layout-writingtitle-%E6%89%80%E6%9C%89%E9%9A%8F%E7%AC%94sidebar-blogger"><span class="toc-text">layout: writingtitle: 所有随笔sidebar: [blogger]</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF%E6%96%87%E4%BB%B6"><span class="toc-text">模板文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%BC%E8%88%AA%E6%A0%8F%E5%A2%9E%E5%8A%A0%E4%B8%80%E9%A1%B9"><span class="toc-text">导航栏增加一项</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86"><span class="toc-text">知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BE%E4%BE%8B%EF%BC%9A%E6%96%B0%E5%BB%BA%E7%B1%BB%E4%BC%BC%E9%A6%96%E9%A1%B5%E7%9A%84%E6%98%BE%E7%A4%BA%E4%B8%AA%E4%BA%BA%E9%9A%8F%E7%AC%94%E7%9A%84%E9%A1%B5%E9%9D%A2"><span class="toc-text">举例：新建类似首页的显示个人随笔的页面</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B0%E5%A2%9E%E9%A1%B5%E9%9D%A2"><span class="toc-text">新增页面</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A6%96%E5%85%88%E5%9C%A8source%E4%B8%8B%E6%96%B0%E5%BB%BA%E7%9B%AE%E5%BD%95writing%EF%BC%8C%E7%84%B6%E5%90%8E%E5%9C%A8source-writing%E4%B8%8B%E6%96%B0%E5%BB%BAindex-md%EF%BC%8C%E5%86%85%E5%AE%B9%EF%BC%9A-96-96-96-markdown"><span class="toc-text">首先在source下新建目录writing，然后在source&#x2F;writing下新建index.md，内容：&#96;&#96;&#96;markdown</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#layout-writingtitle-%E6%89%80%E6%9C%89%E9%9A%8F%E7%AC%94sidebar-blogger"><span class="toc-text">layout: writingtitle: 所有随笔sidebar: [blogger]</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF%E6%96%87%E4%BB%B6"><span class="toc-text">模板文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%BC%E8%88%AA%E6%A0%8F%E5%A2%9E%E5%8A%A0%E4%B8%80%E9%A1%B9"><span class="toc-text">导航栏增加一项</span></a></li></ol></li></ol>
   </div>
 </section>
 
@@ -3860,7 +3880,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"grapher"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"zhiqiuyuan's blog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/play/","name":"play"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/01/01/hexo主题volantis自定义页面/","name":"hexo主题volantis自定义页面"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"zhiqiuyuan's blog","url":"http://example.com/","keywords":null,"description":"grapher","author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"grapher"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"hexo主题volantis自定义页面","description":"grapher","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/01/01/hexo%E4%B8%BB%E9%A2%98volantis%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2/"},"author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/01/01/hexo%E4%B8%BB%E9%A2%98volantis%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2/","wordCount":0,"datePublished":"2023-01-01T14:04:00.000Z","dateModified":"2023-01-01T14:58:04.650Z","articleSection":"play","keywords":"hexo","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"grapher"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"zhiqiuyuan's blog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/play/","name":"play"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/01/01/hexo主题volantis自定义页面/","name":"hexo主题volantis自定义页面"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"zhiqiuyuan's blog","url":"http://example.com/","keywords":null,"description":"grapher","author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"grapher"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"hexo主题volantis自定义页面","description":"grapher","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/01/01/hexo%E4%B8%BB%E9%A2%98volantis%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2/"},"author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/01/01/hexo%E4%B8%BB%E9%A2%98volantis%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2/","wordCount":0,"datePublished":"2023-01-01T14:04:00.000Z","dateModified":"2023-01-01T15:04:26.130Z","articleSection":"play","keywords":"hexo","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
