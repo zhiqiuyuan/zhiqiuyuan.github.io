@@ -28,8 +28,8 @@
   
   <!-- Custom Files headBegin end-->
   <link rel="preload" href="/css/style.css" as="style">
-  <link rel="preload" href="https://unpkg.com/volantis-static@0.0.1660614606622/media/fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
-<link rel="preload" href="https://unpkg.com/volantis-static@0.0.1660614606622/media/fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="volantis-static/media/fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+<link rel="preload" href="volantis-static/media/fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
   <!-- feed -->
   <!-- 页面元数据 -->
@@ -43,12 +43,12 @@
 <meta property="og:site_name" content="zhiqiuyuan&#39;s blog">
 <meta property="og:description" content="grapher">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+<meta property="og:image" content="http://example.com/writing/volantis-static/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-01-01T14:47:10.257Z">
 <meta property="article:modified_time" content="2023-01-01T14:46:03.409Z">
 <meta property="article:author" content="zhiqiuyuan">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+<meta name="twitter:image" content="http://example.com/writing/volantis-static/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
     /* 首屏样式 */
     #safearea {
@@ -985,14 +985,14 @@ button {
 }
 @font-face {
   font-family: 'UbuntuMono';
-  src: url("https://unpkg.com/volantis-static@0.0.1660614606622/media/fonts/UbuntuMono/UbuntuMono-Regular.ttf");
+  src: url("volantis-static/media/fonts/UbuntuMono/UbuntuMono-Regular.ttf");
   font-weight: 'normal';
   font-style: 'normal';
   font-display: swap;
 }
 @font-face {
   font-family: 'Varela Round';
-  src: url("https://unpkg.com/volantis-static@0.0.1660614606622/media/fonts/VarelaRound/VarelaRound-Regular.ttf");
+  src: url("volantis-static/media/fonts/VarelaRound/VarelaRound-Regular.ttf");
   font-weight: 'normal';
   font-style: 'normal';
   font-display: swap;
@@ -2254,11 +2254,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   /******************************************************************************/
   //图像加载出错时的处理
   function errorImgAvatar(img) {
-    img.src = "https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg";
+    img.src = "volantis-static/media/placeholder/avatar/round/3442075.svg";
     img.onerror = null;
   }
   function errorImgCover(img) {
-    img.src = "https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg";
+    img.src = "volantis-static/media/placeholder/cover/76b86c0226ffd.svg";
     img.onerror = null;
   }
   /******************************************************************************/
@@ -2273,8 +2273,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   volantis.GLOBAL_CONFIG ={
     root: '/',
     debug: "env",
-    default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1672671894218),
+    default: {"avatar":"volantis-static/media/placeholder/avatar/round/3442075.svg","link":"volantis-static/media/placeholder/link/8f277b4ee0ecd.svg","cover":"volantis-static/media/placeholder/cover/76b86c0226ffd.svg","image":"volantis-static/media/placeholder/image/2659360.svg"},
+    lastupdate: new Date(1673019332476),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2953,12 +2953,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
   
     <div class='pin'>
-      <img alt="写作题目" src='https://unpkg.com/volantis-static@0.0.1660614606622/media/twemoji/assets/svg/1f4cc.svg'/>
+      <img alt="写作题目" src='volantis-static/media/twemoji/assets/svg/1f4cc.svg'/>
     </div>
   
   
     <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+      <meta itemprop="image" content="volantis-static/media/org.volantis/blog/favicon/android-chrome-192x192.png">
     </span>
   
   
@@ -2973,7 +2973,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         tank
+同理心的缺乏
 感觉自己劲用错了地方，聪明劲没有发挥出来
+为何在家中容易语气暴躁
 
 
       
@@ -3027,12 +3029,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
   
     <div class='pin'>
-      <img alt="鸡汤~" src='https://unpkg.com/volantis-static@0.0.1660614606622/media/twemoji/assets/svg/1f4cc.svg'/>
+      <img alt="鸡汤~" src='volantis-static/media/twemoji/assets/svg/1f4cc.svg'/>
     </div>
   
   
     <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+      <meta itemprop="image" content="volantis-static/media/org.volantis/blog/favicon/android-chrome-192x192.png">
     </span>
   
   
@@ -3071,6 +3073,87 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </div>
 
         </div>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <div class='post-wrapper'>
+          <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/03/writing-play/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+    <div class='pin'>
+      <img alt="play" src='volantis-static/media/twemoji/assets/svg/1f4cc.svg'/>
+    </div>
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="volantis-static/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title" pin itemprop="name headline">
+      <a href="/2023/01/03/writing-play/"  itemprop="url">
+        play
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        https://github.com/corkami/pics 文件执行剖析https://github.com/excalidraw/excalidraw 手绘风流程图学这个！Linux Performance (brendangregg.com)https://github.com/nonebot/nonebot2 异步的 Python 聊天机器人框架 有效地帮助开发人员快速构建聊天机器...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-01-03T09:27:28+08:00">2023-01-03</time>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/01/03/writing-play/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+        </div>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
       
     
       
@@ -3411,7 +3494,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
   
     <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+      <meta itemprop="image" content="volantis-static/media/org.volantis/blog/favicon/android-chrome-192x192.png">
     </span>
   
   
@@ -3480,7 +3563,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
   
     <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+      <meta itemprop="image" content="volantis-static/media/org.volantis/blog/favicon/android-chrome-192x192.png">
     </span>
   
   
@@ -3535,7 +3618,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
   
     <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+      <meta itemprop="image" content="volantis-static/media/org.volantis/blog/favicon/android-chrome-192x192.png">
     </span>
   
   
@@ -3592,7 +3675,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
   
     <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+      <meta itemprop="image" content="volantis-static/media/org.volantis/blog/favicon/android-chrome-192x192.png">
     </span>
   
   
@@ -3652,7 +3735,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
   
     <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+      <meta itemprop="image" content="volantis-static/media/org.volantis/blog/favicon/android-chrome-192x192.png">
     </span>
   
   
@@ -3730,7 +3813,7 @@ check点赞
   
   
     <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+      <meta itemprop="image" content="volantis-static/media/org.volantis/blog/favicon/android-chrome-192x192.png">
     </span>
   
   
@@ -3798,7 +3881,7 @@ check点赞
   
   
     <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+      <meta itemprop="image" content="volantis-static/media/org.volantis/blog/favicon/android-chrome-192x192.png">
     </span>
   
   
@@ -3854,7 +3937,7 @@ check点赞
   
   
     <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+      <meta itemprop="image" content="volantis-static/media/org.volantis/blog/favicon/android-chrome-192x192.png">
     </span>
   
   
@@ -3894,6 +3977,273 @@ check点赞
       
         <div>
           <a class='readmore' href='/2023/01/02/writing-2023-1-2-%E5%A6%82%E4%BD%95%E5%B9%B3%E8%A1%A1%E7%A7%91%E7%A0%94%E5%92%8C%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+        </div>
+      
+    
+      
+    
+      
+        <div class='post-wrapper'>
+          <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/06/writing-科研计划-时态图/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="volantis-static/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/01/06/writing-%E7%A7%91%E7%A0%94%E8%AE%A1%E5%88%92-%E6%97%B6%E6%80%81%E5%9B%BE/"  itemprop="url">
+        科研计划-时态图
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        这可能成为你的研究方向噢！所以请对这个研究邻居有哪些研究问题、算法、数据结构，都非常了解且follow最前沿噢！（前沿：即顶会近年）
+todo调研
+
+泛调研：
+graph analysis的streaming
+github awsome
+
+
+时态算子
+子图匹配
+
+
+
+
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-01-06T23:05:50+08:00">2023-01-06</time>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/01/06/writing-%E7%A7%91%E7%A0%94%E8%AE%A1%E5%88%92-%E6%97%B6%E6%80%81%E5%9B%BE/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+        </div>
+      
+    
+      
+        <div class='post-wrapper'>
+          <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/06/writing-科研计划-独立路径/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="volantis-static/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/01/06/writing-%E7%A7%91%E7%A0%94%E8%AE%A1%E5%88%92-%E7%8B%AC%E7%AB%8B%E8%B7%AF%E5%BE%84/"  itemprop="url">
+        科研计划-独立路径
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        ddlsigmod 4.15截止投稿https://2024.sigmod.org/calls_papers_important_dates.shtml
+需要干的事：方案：
+加Vins没有stepreduce的实验（这是说明一步走两步有用，且说明msbfs_merge-&gt;msbfs_1step2效果不好有重要原因是path1_rev数据结构不好）
+算法加速效果是对所有图都一样的吗还是会...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-01-06T20:45:21+08:00">2023-01-06</time>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/01/06/writing-%E7%A7%91%E7%A0%94%E8%AE%A1%E5%88%92-%E7%8B%AC%E7%AB%8B%E8%B7%AF%E5%BE%84/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+        </div>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <div class='post-wrapper'>
+          <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/06/writing-2023-1-6-今日汇报的成功原因/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="volantis-static/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/01/06/writing-2023-1-6-%E4%BB%8A%E6%97%A5%E6%B1%87%E6%8A%A5%E7%9A%84%E6%88%90%E5%8A%9F%E5%8E%9F%E5%9B%A0/"  itemprop="url">
+        今日汇报的成功原因
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        现象：今日汇报（两类：问题调研和进度汇报）都很成功原因：
+
+问题调研：
+全面，框架很好
+前期调研和做ppt，积累了知识
+在思考ppt逻辑的时候想到分析了为啥要专门研究时态图-&gt;和静态图分析有啥区别，然后在思考区别的时候发现调研的东西正好可以用区别来组织
+
+
+逻辑清晰（框架很好是其中一部分）
+做ppt的一个原则：讲自己懂的东西，不懂的东西并不“尝试摆上去之后通过写好稿子绕过去”
+符合这一...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-01-06T23:03:59+08:00">2023-01-06</time>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/01/06/writing-2023-1-6-%E4%BB%8A%E6%97%A5%E6%B1%87%E6%8A%A5%E7%9A%84%E6%88%90%E5%8A%9F%E5%8E%9F%E5%9B%A0/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+        </div>
+      
+    
+      
+        <div class='post-wrapper'>
+          <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/03/writing-2023-1-3-劝说臭臭狗事件/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="volantis-static/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/01/03/writing-2023-1-3-%E5%8A%9D%E8%AF%B4%E8%87%AD%E8%87%AD%E7%8B%97%E4%BA%8B%E4%BB%B6/"  itemprop="url">
+        劝说臭臭狗事件
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        事件：中午的时候臭臭狗比较暴躁地和老妈说早点煮饭，我当时借题发挥了一下指出臭臭狗在家就比较暴躁且这是她自己的问题分析：
+
+确实有暴躁这点，和臭臭狗性格确实有关，需要指出
+但是并非完全只是性格的问题，我忽略了寒假回家效率的变化情况，我 和臭臭狗是不一样的，我是效率更高，而臭臭狗更低
+指出的时机不对，不应该在人家着急去上课且处于生气状态时以责怪的方式指出问题
+指出的表达方式和语气不对，是以指责和...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-01-03T23:53:15+08:00">2023-01-03</time>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/01/03/writing-2023-1-3-%E5%8A%9D%E8%AF%B4%E8%87%AD%E8%87%AD%E7%8B%97%E4%BA%8B%E4%BB%B6/' itemprop="url">
             Read More
           </a>
         </div>
@@ -4923,7 +5273,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"grapher"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"zhiqiuyuan's blog"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"zhiqiuyuan's blog","url":"http://example.com/","keywords":null,"description":"grapher","author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"grapher"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"所有随笔","description":"grapher","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/writing/index.html"},"author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/writing/index.html","wordCount":0,"datePublished":"2023-01-01T14:47:10.257Z","dateModified":"2023-01-01T14:46:03.409Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"volantis-static/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"volantis-static/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"grapher"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"zhiqiuyuan's blog"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"zhiqiuyuan's blog","url":"http://example.com/","keywords":null,"description":"grapher","author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"volantis-static/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"grapher"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"volantis-static/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"所有随笔","description":"grapher","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/writing/index.html"},"author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"volantis-static/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","logo":{"@type":"ImageObject","url":"volantis-static/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/writing/index.html","wordCount":0,"datePublished":"2023-01-01T14:47:10.257Z","dateModified":"2023-01-01T14:46:03.409Z","image":{"@type":"ImageObject","url":"volantis-static/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

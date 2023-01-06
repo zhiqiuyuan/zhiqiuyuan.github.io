@@ -28,8 +28,8 @@
   
   <!-- Custom Files headBegin end-->
   <link rel="preload" href="/css/style.css" as="style">
-  <link rel="preload" href="https://unpkg.com/volantis-static@0.0.1660614606622/media/fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
-<link rel="preload" href="https://unpkg.com/volantis-static@0.0.1660614606622/media/fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="volantis-static/media/fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+<link rel="preload" href="volantis-static/media/fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
   <!-- feed -->
   <!-- 页面元数据 -->
@@ -41,16 +41,16 @@
 <meta property="og:title" content="调试奇怪bug">
 <meta property="og:url" content="http://example.com/2022/11/08/%E8%B0%83%E8%AF%95%E5%A5%87%E6%80%AAbug/index.html">
 <meta property="og:site_name" content="zhiqiuyuan&#39;s blog">
-<meta property="og:description" content="valgrind gdb细粒度跟踪（这个超级牛啊） 可以不断确定要在哪里打断点，然后r，带着已经打的断点重新观察  经验malloc abortheap is corrupt：被程序写了不该写的地方，比如在数组&#x2F;vector长度后面写东西 std::vector&lt;VertexIdType&gt; new_vps(problem_num*2);  &#x2F;&#x2F;... for(...)">
+<meta property="og:description" content="valgrind gdb细粒度跟踪（这个超级牛啊） 可以不断确定要在哪里打断点，然后r，带着已经打的断点重新观察  经验malloc abort 或者 delete报错（说二次释放可是其实没有）heap is corrupt：被程序写了不该写的地方，比如在数组&#x2F;vector长度后面写东西 std::vector&lt;VertexIdType&gt; new_vps(problem_n">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+<meta property="og:image" content="http://example.com/2022/11/08/%E8%B0%83%E8%AF%95%E5%A5%87%E6%80%AAbug/volantis-static/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-11-08T07:26:44.976Z">
 <meta property="article:modified_time" content="2022-12-10T14:16:58.648Z">
 <meta property="article:author" content="zhiqiuyuan">
 <meta property="article:tag" content="c++">
 <meta property="article:tag" content="linux">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+<meta name="twitter:image" content="http://example.com/2022/11/08/%E8%B0%83%E8%AF%95%E5%A5%87%E6%80%AAbug/volantis-static/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
     /* 首屏样式 */
     #safearea {
@@ -987,14 +987,14 @@ button {
 }
 @font-face {
   font-family: 'UbuntuMono';
-  src: url("https://unpkg.com/volantis-static@0.0.1660614606622/media/fonts/UbuntuMono/UbuntuMono-Regular.ttf");
+  src: url("volantis-static/media/fonts/UbuntuMono/UbuntuMono-Regular.ttf");
   font-weight: 'normal';
   font-style: 'normal';
   font-display: swap;
 }
 @font-face {
   font-family: 'Varela Round';
-  src: url("https://unpkg.com/volantis-static@0.0.1660614606622/media/fonts/VarelaRound/VarelaRound-Regular.ttf");
+  src: url("volantis-static/media/fonts/VarelaRound/VarelaRound-Regular.ttf");
   font-weight: 'normal';
   font-style: 'normal';
   font-display: swap;
@@ -2256,11 +2256,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   /******************************************************************************/
   //图像加载出错时的处理
   function errorImgAvatar(img) {
-    img.src = "https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg";
+    img.src = "volantis-static/media/placeholder/avatar/round/3442075.svg";
     img.onerror = null;
   }
   function errorImgCover(img) {
-    img.src = "https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg";
+    img.src = "volantis-static/media/placeholder/cover/76b86c0226ffd.svg";
     img.onerror = null;
   }
   /******************************************************************************/
@@ -2275,8 +2275,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   volantis.GLOBAL_CONFIG ={
     root: '/',
     debug: "env",
-    default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1672671894218),
+    default: {"avatar":"volantis-static/media/placeholder/avatar/round/3442075.svg","link":"volantis-static/media/placeholder/link/8f277b4ee0ecd.svg","cover":"volantis-static/media/placeholder/cover/76b86c0226ffd.svg","image":"volantis-static/media/placeholder/image/2659360.svg"},
+    lastupdate: new Date(1673019332476),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2642,7 +2642,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   
     <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+      <meta itemprop="image" content="volantis-static/media/org.volantis/blog/favicon/android-chrome-192x192.png">
     </span>
   
   <div class="article-meta" id="top">
@@ -2733,7 +2733,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li><code>gdb</code>细粒度跟踪（这个超级牛啊）</li>
 <li>可以不断确定要在哪里打断点，然后<code>r</code>，带着已经打的断点重新观察</li>
 </ol>
-<h2 id="经验"><a href="#经验" class="headerlink" title="经验"></a>经验</h2><h3 id="malloc-abort"><a href="#malloc-abort" class="headerlink" title="malloc abort"></a>malloc abort</h3><p><code>heap is corrupt</code>：被程序写了不该写的地方，比如在数组&#x2F;vector长度后面写东西</p>
+<h2 id="经验"><a href="#经验" class="headerlink" title="经验"></a>经验</h2><h3 id="malloc-abort-或者-delete报错（说二次释放可是其实没有）"><a href="#malloc-abort-或者-delete报错（说二次释放可是其实没有）" class="headerlink" title="malloc abort 或者 delete报错（说二次释放可是其实没有）"></a>malloc abort 或者 delete报错（说二次释放可是其实没有）</h3><p><code>heap is corrupt</code>：被程序写了不该写的地方，比如在数组&#x2F;vector长度后面写东西</p>
 <pre><code class="cpp">std::vector&lt;VertexIdType&gt; new_vps(problem_num*2); 
 //...
 for(...)
@@ -2744,6 +2744,8 @@ VertexIdType *ranges = new VertexIdType[batch_num * 2];
 <p>这个通常可以通过<code>检查所有new来的原始数组的写入 是否有越界</code>来找原因，通常这个“所有数组”是 “<code>在delete abort发生的数组 之前new申请的数组</code>”（这些数组都在堆上，如果这些数组写越界了，把后面申请的数组也写了，由于俩数组可能元素类型不一样，所以会出现heap crupt的问题）（说通常是因为，堆分配不一定是后面分配的地址在前面分配的后面，不过数组本身确实是连续内存）</p>
 <p>或者是<code>内存不够</code></p>
 <h3 id="delete-or-delete"><a href="#delete-or-delete" class="headerlink" title="delete or delete[]"></a>delete or delete[]</h3><p><code>Type* p = new Type;</code><br>如果是<code>delete[] p</code>，会把p当做数组首地址去释放，这个数组的长度undefined，如果不是1的话会释放多次且是释放数组首地址+sizeof(数组元素)的地址</p>
+<h3 id="奇怪的段错误"><a href="#奇怪的段错误" class="headerlink" title="奇怪的段错误"></a>奇怪的段错误</h3><p>比如某个向量奇怪的段错误：gdb检查下这个向量的entry（尤其头尾），看下是否有被写入junk（比如一些很大的数字）<br>如果被写入junk了，那么很可能是在“这个向量一切正常”的地方-“这个向量异常”的地方之间、写入的某个数组或向量等越界了<br>注意，<strong>数组和向量越界都不会有内置的告警！！！</strong></p>
+<h3 id="future-wait"><a href="#future-wait" class="headerlink" title="future wait"></a>future wait</h3><p>用future wait框架写的，里面会生成个线程来跑你的异步程序，注意你的程序中可能<strong>部分异常不会有提示而是直接安静退出</strong>！<br>调试奇妙的程序终止时建议把future框架暂时去掉，让你的程序不是在future生成的线程里面跑</p>
 
   </div>
   
@@ -2926,7 +2928,7 @@ VertexIdType *ranges = new VertexIdType[batch_num * 2];
 
 
   <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%8F%E9%AA%8C"><span class="toc-text">经验</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#malloc-abort"><span class="toc-text">malloc abort</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#delete-or-delete"><span class="toc-text">delete or delete[]</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%8F%E9%AA%8C"><span class="toc-text">经验</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#malloc-abort-%E6%88%96%E8%80%85-delete%E6%8A%A5%E9%94%99%EF%BC%88%E8%AF%B4%E4%BA%8C%E6%AC%A1%E9%87%8A%E6%94%BE%E5%8F%AF%E6%98%AF%E5%85%B6%E5%AE%9E%E6%B2%A1%E6%9C%89%EF%BC%89"><span class="toc-text">malloc abort 或者 delete报错（说二次释放可是其实没有）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#delete-or-delete"><span class="toc-text">delete or delete[]</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A5%87%E6%80%AA%E7%9A%84%E6%AE%B5%E9%94%99%E8%AF%AF"><span class="toc-text">奇怪的段错误</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#future-wait"><span class="toc-text">future wait</span></a></li></ol></li></ol>
   </div>
 </section>
 
@@ -3889,7 +3891,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"grapher"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"zhiqiuyuan's blog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/c/","name":"c++"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/tool/","name":"tool"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/tool/linux/","name":"linux"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/c/debug/","name":"debug"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/debug/","name":"debug"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/11/08/调试奇怪bug/","name":"调试奇怪bug"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"zhiqiuyuan's blog","url":"http://example.com/","keywords":null,"description":"grapher","author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"grapher"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"调试奇怪bug","description":"grapher","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/11/08/%E8%B0%83%E8%AF%95%E5%A5%87%E6%80%AAbug/"},"author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/11/08/%E8%B0%83%E8%AF%95%E5%A5%87%E6%80%AAbug/","wordCount":0,"datePublished":"2022-11-08T07:26:44.976Z","dateModified":"2022-12-10T14:16:58.648Z","articleSection":"c++","keywords":"c++,linux","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"volantis-static/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"volantis-static/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"grapher"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"zhiqiuyuan's blog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/c/","name":"c++"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/tool/","name":"tool"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/tool/linux/","name":"linux"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/c/debug/","name":"debug"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/debug/","name":"debug"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/11/08/调试奇怪bug/","name":"调试奇怪bug"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"zhiqiuyuan's blog","url":"http://example.com/","keywords":null,"description":"grapher","author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"volantis-static/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"grapher"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"volantis-static/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"调试奇怪bug","description":"grapher","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/11/08/%E8%B0%83%E8%AF%95%E5%A5%87%E6%80%AAbug/"},"author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"volantis-static/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","logo":{"@type":"ImageObject","url":"volantis-static/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/11/08/%E8%B0%83%E8%AF%95%E5%A5%87%E6%80%AAbug/","wordCount":0,"datePublished":"2022-11-08T07:26:44.976Z","dateModified":"2022-12-10T14:16:58.648Z","articleSection":"c++","keywords":"c++,linux","image":{"@type":"ImageObject","url":"volantis-static/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
