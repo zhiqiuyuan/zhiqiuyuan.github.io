@@ -2272,7 +2272,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1675858006710),
+    lastupdate: new Date(1676301498059),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2628,6 +2628,281 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <section class="post-list">
     
     
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/10/linux文件打开系统调用 追加写覆盖写/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/08/10/linux%E6%96%87%E4%BB%B6%E6%89%93%E5%BC%80%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8%20%E8%BF%BD%E5%8A%A0%E5%86%99%E8%A6%86%E7%9B%96%E5%86%99/"  itemprop="url">
+        linux文件打开系统调用 追加写覆盖写
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        
+man page: https://man7.org/linux/man-pages/man2/open.2.html
+
+const char* file = &quot;test_file.txt&quot;;
+int pfd = open(file, O_WRONLY | O_CREAT | O_APPEND, 0777);
+
+O_WRONLY：只写O_CREAT：如果不存在则创建O_...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-08-10T15:48:23+08:00">2022-08-10</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/c/">c++</a><span class="sep"></span><a class="category-link" href="/categories/c/linux-syscall/">linux_syscall</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/c/" itemprop="url"><span itemprop="name">c++</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/c/linux-syscall/" itemprop="url"><span itemprop="name">linux_syscall</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/08/10/linux%E6%96%87%E4%BB%B6%E6%89%93%E5%BC%80%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8%20%E8%BF%BD%E5%8A%A0%E5%86%99%E8%A6%86%E7%9B%96%E5%86%99/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/06/RDF三元组数据转schema图/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/08/06/RDF%E4%B8%89%E5%85%83%E7%BB%84%E6%95%B0%E6%8D%AE%E8%BD%ACschema%E5%9B%BE/"  itemprop="url">
+        RDF三元组数据转schema图
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        schema：反映顶点label之间的关系，以及Label会有哪些常量类型用G6
+&lt;id&gt; &lt;label&gt; &lt;vertex label&gt;.
+&lt;id&gt; &lt;edge label&gt; &lt;id&gt;.
+&lt;id&gt; &lt;vertex property&gt; literal.
+
+不可以拖拽http://graphviz.h...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-08-06T14:48:24+08:00">2022-08-06</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/graph/">graph</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/graph/" itemprop="url"><span itemprop="name">graph</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/08/06/RDF%E4%B8%89%E5%85%83%E7%BB%84%E6%95%B0%E6%8D%AE%E8%BD%ACschema%E5%9B%BE/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/06/生成树/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/08/06/%E7%94%9F%E6%88%90%E6%A0%91/"  itemprop="url">
+        生成树
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        生成树最大生成树的性质
+
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-08-06T11:38:52+08:00">2022-08-06</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/algorithm/">algorithm</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/algorithm/" itemprop="url"><span itemprop="name">algorithm</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/08/06/%E7%94%9F%E6%88%90%E6%A0%91/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/06/MIT 6S081 Operating System Engineering 资源汇总/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/08/06/MIT%206S081%20Operating%20System%20Engineering%20%E8%B5%84%E6%BA%90%E6%B1%87%E6%80%BB/"  itemprop="url">
+        MIT 6.S081 Operating System Engineering 资源汇总
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        
+https://csdiy.wiki/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/MIT6.S081/
+
+课程资源课程网站：https://pdos.csail.mit.edu/6.828/2021/schedule.html课程视频：https://www.youtube.com/watch?v=L6YqHxYHa7A，每节课的链接详见课程网站    B站 ...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-08-06T09:19:50+08:00">2022-08-06</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/course/">course</a><span class="sep"></span><a class="category-link" href="/categories/course/os/">os</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/course/" itemprop="url"><span itemprop="name">course</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/course/os/" itemprop="url"><span itemprop="name">os</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/08/06/MIT%206S081%20Operating%20System%20Engineering%20%E8%B5%84%E6%BA%90%E6%B1%87%E6%80%BB/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
       
         
           <div class='post-wrapper'>
@@ -3069,295 +3344,6 @@ using na...
           </div>
         
       
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/28/c函数宏定义函数可变参数/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-    <meta itemprop="description" content="grapher">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/07/28/c%E5%87%BD%E6%95%B0%E5%AE%8F%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0%E5%8F%AF%E5%8F%98%E5%8F%82%E6%95%B0/"  itemprop="url">
-        c函数宏定义函数可变参数
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        宏定义函数https://gcc.gnu.org/onlinedocs/gcc-7.3.0/gcc.pdf搜索__VA_ARGS__
-#define debug(format, ...) fprintf (stderr, format, __VA_ARGS__)
-
-Here ... is a variable argument. In the invocation of such a mac...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-07-28T12:33:23+08:00">2022-07-28</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/c/">c++</a><span class="sep"></span><a class="category-link" href="/categories/c/language/">language</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/c/" itemprop="url"><span itemprop="name">c++</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/c/language/" itemprop="url"><span itemprop="name">language</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/07/28/c%E5%87%BD%E6%95%B0%E5%AE%8F%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0%E5%8F%AF%E5%8F%98%E5%8F%82%E6%95%B0/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/27/linux c隐藏输入 termiosh/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-    <meta itemprop="description" content="grapher">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/07/27/linux%20c%E9%9A%90%E8%97%8F%E8%BE%93%E5%85%A5%20termiosh/"  itemprop="url">
-        linux c隐藏输入 termios.h
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        参考教程https://terminalroot.com/how-to-hide-input-via-cli-with-cpp/?ref=morioh.com&amp;utm_source=morioh.com
-man信息#include &lt;termios.h&gt;https://pubs.opengroup.org/onlinepubs/7908799/xsh/termios.h....
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-07-27T16:27:11+08:00">2022-07-27</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/c/">c++</a><span class="sep"></span><a class="category-link" href="/categories/c/linux-syscall/">linux_syscall</a><span class="sep"></span><a class="category-link" href="/categories/tool/">tool</a><span class="sep"></span><a class="category-link" href="/categories/tool/linux/">linux</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/c/" itemprop="url"><span itemprop="name">c++</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/tool/" itemprop="url"><span itemprop="name">tool</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/tool/linux/" itemprop="url"><span itemprop="name">linux</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/c/linux-syscall/" itemprop="url"><span itemprop="name">linux_syscall</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/07/27/linux%20c%E9%9A%90%E8%97%8F%E8%BE%93%E5%85%A5%20termiosh/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/27/GNU readline/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-    <meta itemprop="description" content="grapher">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/07/27/GNU%20readline/"  itemprop="url">
-        GNU readline
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        自动补全，添加历史https://blog.51cto.com/u_3078781/3287204
-自定义换行符https://www.igiftidea.com/article/12962763210.html
-官方文档https://web.mit.edu/gnu/doc/html/rlman_2.html
-快捷键使用（该库支持的）https://flyyang.me/2017/05/0...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-07-27T09:49:47+08:00">2022-07-27</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/c/">c++</a><span class="sep"></span><a class="category-link" href="/categories/c/language/">language</a><span class="sep"></span><a class="category-link" href="/categories/tool/">tool</a><span class="sep"></span><a class="category-link" href="/categories/tool/linux/">linux</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/c/" itemprop="url"><span itemprop="name">c++</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/tool/" itemprop="url"><span itemprop="name">tool</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/c/language/" itemprop="url"><span itemprop="name">language</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/tool/linux/" itemprop="url"><span itemprop="name">linux</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/07/27/GNU%20readline/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/26/git配置/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-    <meta itemprop="description" content="grapher">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/07/26/git%E9%85%8D%E7%BD%AE/"  itemprop="url">
-        git配置
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        写得非常好的官方文档 https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%88%9D%E6%AC%A1%E8%BF%90%E8%A1%8C-Git-%E5%89%8D%E7%9A%84%E9%85%8D%E7%BD%AE
-设置当前git仓库提交的用户名和邮箱git config user.name yuanzhiqiu
-git conf...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-07-26T14:20:26+08:00">2022-07-26</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/tool/">tool</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/tool/" itemprop="url"><span itemprop="name">tool</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/07/26/git%E9%85%8D%E7%BD%AE/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
     
   </section>
   
@@ -3372,7 +3358,7 @@ git conf...
           </a>
         
         <p class="current">
-          18 / 22
+          18 / 23
         </p>
         
           <a class="next" rel="next" href="/page/19/">
@@ -3572,12 +3558,12 @@ git conf...
           <li><a class="flat-box"
             title="/categories/paper/" href="/categories/paper/"
             active-action="action-categoriespaper"
-            ><div class='name'>paper</div><div class='badge'>(23)</div></a></li>
+            ><div class='name'>paper</div><div class='badge'>(25)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/play/" href="/categories/play/"
             active-action="action-categoriesplay"
-            ><div class='name'>play</div><div class='badge'>(8)</div></a></li>
+            ><div class='name'>play</div><div class='badge'>(9)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/python/" href="/categories/python/"
@@ -3652,7 +3638,7 @@ git conf...
 
 
     <div class='content'>
-      <a href="/tags/GPU/" style="font-size: 15.25px; color: #919191">GPU</a> <a href="/tags/SIMD/" style="font-size: 16.5px; color: #888">SIMD</a> <a href="/tags/bash/" style="font-size: 21.5px; color: #666">bash</a> <a href="/tags/c/" style="font-size: 22.75px; color: #5e5e5e">c++</a> <a href="/tags/concurrency/" style="font-size: 20.25px; color: #6f6f6f">concurrency</a> <a href="/tags/git/" style="font-size: 14px; color: #999">git</a> <a href="/tags/graph/" style="font-size: 19px; color: #777">graph</a> <a href="/tags/halo/" style="font-size: 16.5px; color: #888">halo</a> <a href="/tags/hexo/" style="font-size: 15.25px; color: #919191">hexo</a> <a href="/tags/linux/" style="font-size: 24px; color: #555">linux</a> <a href="/tags/python/" style="font-size: 17.75px; color: #808080">python</a> <a href="/tags/rocksdb/" style="font-size: 16.5px; color: #888">rocksdb</a> <a href="/tags/rust/" style="font-size: 19px; color: #777">rust</a> <a href="/tags/tex/" style="font-size: 16.5px; color: #888">tex</a> <a href="/tags/tool/" style="font-size: 14px; color: #999">tool</a> <a href="/tags/%E6%A6%82%E7%BB%9F/" style="font-size: 14px; color: #999">概统</a>
+      <a href="/tags/GPU/" style="font-size: 15.25px; color: #919191">GPU</a> <a href="/tags/SIMD/" style="font-size: 16.5px; color: #888">SIMD</a> <a href="/tags/bash/" style="font-size: 21.5px; color: #666">bash</a> <a href="/tags/c/" style="font-size: 22.75px; color: #5e5e5e">c++</a> <a href="/tags/concurrency/" style="font-size: 20.25px; color: #6f6f6f">concurrency</a> <a href="/tags/git/" style="font-size: 14px; color: #999">git</a> <a href="/tags/graph/" style="font-size: 19px; color: #777">graph</a> <a href="/tags/halo/" style="font-size: 16.5px; color: #888">halo</a> <a href="/tags/hexo/" style="font-size: 15.25px; color: #919191">hexo</a> <a href="/tags/linux/" style="font-size: 24px; color: #555">linux</a> <a href="/tags/python/" style="font-size: 17.75px; color: #808080">python</a> <a href="/tags/rocksdb/" style="font-size: 16.5px; color: #888">rocksdb</a> <a href="/tags/rust/" style="font-size: 19px; color: #777">rust</a> <a href="/tags/tex/" style="font-size: 17.75px; color: #808080">tex</a> <a href="/tags/tool/" style="font-size: 14px; color: #999">tool</a> <a href="/tags/%E6%A6%82%E7%BB%9F/" style="font-size: 14px; color: #999">概统</a>
     </div>
   </section>
 
