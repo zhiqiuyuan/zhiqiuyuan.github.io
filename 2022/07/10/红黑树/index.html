@@ -2274,7 +2274,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1676341885674),
+    lastupdate: new Date(1677634352166),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2758,6 +2758,76 @@ def LEFT-ROTATE(T, x): #在x上做左旋
 </code></pre>
 <h3 id="右旋"><a href="#右旋" class="headerlink" title="右旋"></a>右旋</h3><p>在某个结点x上做右旋操作：以x到y（x的左孩子）之间的链为“支轴”进行，它使y成为该孩子树新的根，y的右孩子c成为x的左孩子</p>
 <img src="/2022/07/10/%E7%BA%A2%E9%BB%91%E6%A0%91/image-1657464761451.png" class="lazyload" data-srcset="/2022/07/10/%E7%BA%A2%E9%BB%91%E6%A0%91/image-1657464761451.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+<h2 id="红黑树的插入"><a href="#红黑树的插入" class="headerlink" title="红黑树的插入"></a>红黑树的插入</h2><p>红黑树的插入相当于在二叉查找树插入的基础上，为了重新恢复平衡，继续做了插入修复操作。</p>
+<p>向红黑树T中插入z：</p>
+<ul>
+<li>搜索二叉树插入z</li>
+<li>把z的左孩子、右孩子都赋为叶结点nil，再把z结点着为红色</li>
+<li>旋转和调整着色</li>
+</ul>
+<pre><code class="python">RB-INSERT(T, z)  
+# 搜索二叉树插入
+ 1  y ← nil[T]  
+ 2  x ← root[T]  
+ 3  while x ≠ nil[T]  
+ 4      do y ← x  
+ 5         if key[z] &lt; key[x]  
+ 6            then x ← left[x]  
+ 7            else x ← right[x]  
+ 8  p[z] ← y  
+ 9  if y = nil[T]  
+10     then root[T] ← z  
+11     else if key[z] &lt; key[y]  
+12             then left[y] ← z  
+13             else right[y] ← z  
+# 涂色
+# 把z的左孩子、右孩子都赋为叶结点nil，再把z结点着为红色
+14  left[z] ← nil[T]  
+15  right[z] ← nil[T]  
+16  color[z] ← RED  
+# 旋转和调整着色
+17  RB-INSERT-FIXUP(T, z)  
+</code></pre>
+<h3 id="旋转和调整着色"><a href="#旋转和调整着色" class="headerlink" title="旋转和调整着色"></a>旋转和调整着色</h3><blockquote>
+<pre><code class="python">RB-INSERT-FIXUP（T,z）
+ 1 while color[p[z]] = RED  
+ 2     do if p[z] = left[p[p[z]]]  
+ 3           then y ← right[p[p[z]]]  
+ 4                if color[y] = RED  
+ 5                   then color[p[z]] ← BLACK           
+ 6                        color[y] ← BLACK             
+ 7                        color[p[p[z]]] ← RED         
+ 8                        z ← p[p[z]]                   
+ 9                   else if z = right[p[z]]  
+10                           then z ← p[z]                         
+11                                LEFT-ROTATE(T, z)                
+12                           color[p[z]] ← BLACK                   
+13                           color[p[p[z]]] ← RED                  
+14                           RIGHT-ROTATE(T, p[p[z]])              
+15           else (same as then clause  
+                         with &quot;right&quot; and &quot;left&quot; exchanged)  
+16 color[root[T]] ← BLACK  
+</code></pre>
+</blockquote>
+<p>while<strong>当前节点的父结点着色还是红色的</strong>，就继续调整</p>
+<pre><code class="python"> 1 while color[p[z]] = RED
+</code></pre>
+<p>此时父结点的父结点一定存在，因为如果没有父结点即是根，而根不能是红色的</p>
+<h4 id="插入修复情况1：当前结点的父结点是红色且祖父结点的另一个子结点（叔叔结点）是红色"><a href="#插入修复情况1：当前结点的父结点是红色且祖父结点的另一个子结点（叔叔结点）是红色" class="headerlink" title="插入修复情况1：当前结点的父结点是红色且祖父结点的另一个子结点（叔叔结点）是红色"></a>插入修复情况1：当前结点的父结点是红色且祖父结点的另一个子结点（叔叔结点）是红色</h4><p>即如下代码所示：</p>
+<pre><code class="python"> 2     do if p[z] = left[p[p[z]]]  # 如果父亲是祖父的左孩子
+ 3           then y ← right[p[p[z]]]  
+ 4                if color[y] = RED  
+</code></pre>
+<p><img src="/%E7%BA%A2%E9%BB%91%E6%A0%91/insert.drawio.svg" class="lazyload" data-srcset="/%E7%BA%A2%E9%BB%91%E6%A0%91/insert.drawio.svg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p>将当前结点的父结点和叔叔结点涂黑，祖父结点涂红，从祖父结点重新开始算法</p>
+<pre><code class="python"> 5                   then color[p[z]] ← BLACK             
+ 6                        color[y] ← BLACK                
+ 7                        color[p[p[z]]] ← RED            
+ 8                        z ← p[p[z]]                     
+</code></pre>
+<p>当前一定是红色</p>
+
   </div>
   
   
@@ -2939,7 +3009,7 @@ halo 博客深度定制与美化教程 (bestzuo.cn)
 
 
   <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9E%E9%A1%BE%EF%BC%9A%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91"><span class="toc-text">回顾：二叉查找树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%A2%E9%BB%91%E6%A0%91%E6%80%A7%E8%B4%A8"><span class="toc-text">红黑树性质</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%8B%E8%BD%AC"><span class="toc-text">旋转</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%A6%E6%97%8B"><span class="toc-text">左旋</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%B3%E6%97%8B"><span class="toc-text">右旋</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9E%E9%A1%BE%EF%BC%9A%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91"><span class="toc-text">回顾：二叉查找树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%A2%E9%BB%91%E6%A0%91%E6%80%A7%E8%B4%A8"><span class="toc-text">红黑树性质</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%8B%E8%BD%AC"><span class="toc-text">旋转</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%A6%E6%97%8B"><span class="toc-text">左旋</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%B3%E6%97%8B"><span class="toc-text">右旋</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%A2%E9%BB%91%E6%A0%91%E7%9A%84%E6%8F%92%E5%85%A5"><span class="toc-text">红黑树的插入</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%8B%E8%BD%AC%E5%92%8C%E8%B0%83%E6%95%B4%E7%9D%80%E8%89%B2"><span class="toc-text">旋转和调整着色</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8F%92%E5%85%A5%E4%BF%AE%E5%A4%8D%E6%83%85%E5%86%B51%EF%BC%9A%E5%BD%93%E5%89%8D%E7%BB%93%E7%82%B9%E7%9A%84%E7%88%B6%E7%BB%93%E7%82%B9%E6%98%AF%E7%BA%A2%E8%89%B2%E4%B8%94%E7%A5%96%E7%88%B6%E7%BB%93%E7%82%B9%E7%9A%84%E5%8F%A6%E4%B8%80%E4%B8%AA%E5%AD%90%E7%BB%93%E7%82%B9%EF%BC%88%E5%8F%94%E5%8F%94%E7%BB%93%E7%82%B9%EF%BC%89%E6%98%AF%E7%BA%A2%E8%89%B2"><span class="toc-text">插入修复情况1：当前结点的父结点是红色且祖父结点的另一个子结点（叔叔结点）是红色</span></a></li></ol></li></ol></li></ol>
   </div>
 </section>
 

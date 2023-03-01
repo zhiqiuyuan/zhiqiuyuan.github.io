@@ -2272,7 +2272,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1676341885674),
+    lastupdate: new Date(1677634352166),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2632,7 +2632,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/06/GPU入门/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/27/vscode调试c++查看变量的二进制表示/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2650,20 +2650,16 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/09/06/GPU%E5%85%A5%E9%97%A8/"  itemprop="url">
-        GPU入门
+      <a href="/2022/09/27/vscode%E8%B0%83%E8%AF%95c++%E6%9F%A5%E7%9C%8B%E5%8F%98%E9%87%8F%E7%9A%84%E4%BA%8C%E8%BF%9B%E5%88%B6%E8%A1%A8%E7%A4%BA/"  itemprop="url">
+        vscode调试c++查看变量的二进制表示
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        
-学习自：https://qiankunli.github.io/2021/08/18/gpu.htmlNVIDA官方手册：https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html#abstract
-
-整体感知
-GPU 的整个处理过程是一个流式处理（Stream Processing）的过程，分支条件少（少用控制语句）
-...
+        方法一：watch窗口加expression后缀expression[,suffix]无后缀：十进值,x或,h：十六进制,o：八进制,b：二进制（低地址在右边）比如：undone.reg,b（reg是undone的private成员，也可以监控）
+方法二：gdb内存查看命令xF5启动调试在断点处停住后，可以在debug console中通过-exec前缀执行gdb的命令比如内存查看指令x（g...
       
     
   </div>
@@ -2671,20 +2667,28 @@ GPU 的整个处理过程是一个流式处理（Stream Processing）的过程�
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-09-06T17:26:37+08:00">2022-09-06</time>
+        <time itemprop="dateCreated datePublished" datetime="2022-09-27T22:04:59+08:00">2022-09-27</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/GPU/">GPU</a>
+          <a class="category-link" href="/categories/c/">c++</a><span class="sep"></span><a class="category-link" href="/categories/c/debug/">debug</a><span class="sep"></span><a class="category-link" href="/categories/debug/">debug</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/GPU/" itemprop="url"><span itemprop="name">GPU</span></a>
+              <a href="/categories/c/" itemprop="url"><span itemprop="name">c++</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/debug/" itemprop="url"><span itemprop="name">debug</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/c/debug/" itemprop="url"><span itemprop="name">debug</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2022/09/06/GPU%E5%85%A5%E9%97%A8/' itemprop="url">
+          <a class='readmore' href='/2022/09/27/vscode%E8%B0%83%E8%AF%95c++%E6%9F%A5%E7%9C%8B%E5%8F%98%E9%87%8F%E7%9A%84%E4%BA%8C%E8%BF%9B%E5%88%B6%E8%A1%A8%E7%A4%BA/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2700,7 +2704,7 @@ GPU 的整个处理过程是一个流式处理（Stream Processing）的过程�
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/04/rockdb leveldb handbook链接/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/26/unorder_map插入键 值调用默认构造函数/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2718,15 +2722,23 @@ GPU 的整个处理过程是一个流式处理（Stream Processing）的过程�
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/09/04/rockdb%20leveldb%20handbook%E9%93%BE%E6%8E%A5/"  itemprop="url">
-        rockdb leveldb handbook链接
+      <a href="/2022/09/26/unorder_map%E6%8F%92%E5%85%A5%E9%94%AE%20%E5%80%BC%E8%B0%83%E7%94%A8%E9%BB%98%E8%AE%A4%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/"  itemprop="url">
+        unorder_map插入键 值调用默认构造函数
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        leveldb: https://leveldb-handbook.readthedocs.io/zh/latest/basic.htmlrocksdb: https://www.bookstack.cn/read/rocksdb-6.14-en/79f0ebf380de6ff5.md
+        
+判断是否有某键，不用count而是用find，因为如果存在某键的话，count会返回键的所有个数，也就是会遍历所有，而不是找到了就返回
+[]向Fr中插入键n，值调用默认构造函数
+
+if (Fr.find(n) == Fr.end())
+    &#123;
+        Fr[n];
+    &#125;
+
 
       
     
@@ -2735,20 +2747,24 @@ GPU 的整个处理过程是一个流式处理（Stream Processing）的过程�
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-09-04T11:04:12+08:00">2022-09-04</time>
+        <time itemprop="dateCreated datePublished" datetime="2022-09-26T17:04:03+08:00">2022-09-26</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/db/">db</a>
+          <a class="category-link" href="/categories/c/">c++</a><span class="sep"></span><a class="category-link" href="/categories/c/language/">language</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/db/" itemprop="url"><span itemprop="name">db</span></a>
+              <a href="/categories/c/" itemprop="url"><span itemprop="name">c++</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/c/language/" itemprop="url"><span itemprop="name">language</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2022/09/04/rockdb%20leveldb%20handbook%E9%93%BE%E6%8E%A5/' itemprop="url">
+          <a class='readmore' href='/2022/09/26/unorder_map%E6%8F%92%E5%85%A5%E9%94%AE%20%E5%80%BC%E8%B0%83%E7%94%A8%E9%BB%98%E8%AE%A4%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2764,7 +2780,7 @@ GPU 的整个处理过程是一个流式处理（Stream Processing）的过程�
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/04/leveldb SSTable sst文件 sst解析工具/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/26/模板定义和声明分离方法/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2782,21 +2798,27 @@ GPU 的整个处理过程是一个流式处理（Stream Processing）的过程�
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/09/04/leveldb%20SSTable%20sst%E6%96%87%E4%BB%B6%20sst%E8%A7%A3%E6%9E%90%E5%B7%A5%E5%85%B7/"  itemprop="url">
-        leveldb SSTable sst文件 sst解析工具
+      <a href="/2022/09/26/%E6%A8%A1%E6%9D%BF%E5%AE%9A%E4%B9%89%E5%92%8C%E5%A3%B0%E6%98%8E%E5%88%86%E7%A6%BB%E6%96%B9%E6%B3%95/"  itemprop="url">
+        模板定义和声明分离方法
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        
-https://leveldb-handbook.readthedocs.io/zh/latest/sstable.html
+        调用可以和定义或申明不在一起
+不分离申明和定义都放在.h文件中函数模板
+template &lt;typename T&gt;
+void testprint(T i)
+&#123;
+    std::cout &lt;&lt; i &lt;&lt; std::endl;
+&#125;
 
-SStable文件格式物理结构
-一个sstable文件按照固定大小进行块划分，默认每个块的大小为4KiB。
-每个Block中，除了存储数据以外，还会存储两个额外的辅助字段：
-压缩类型：说明了Block中存储的数据是否进行了数据压缩，若是，采用了哪种算法进行压缩。l...
+类模板
+template &lt;typename T&gt;
+class A
+&#123;
+    T ...
       
     
   </div>
@@ -2804,20 +2826,24 @@ SStable文件格式物理结构
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-09-04T10:45:23+08:00">2022-09-04</time>
+        <time itemprop="dateCreated datePublished" datetime="2022-09-26T15:19:03+08:00">2022-09-26</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/db/">db</a>
+          <a class="category-link" href="/categories/c/">c++</a><span class="sep"></span><a class="category-link" href="/categories/c/language/">language</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/db/" itemprop="url"><span itemprop="name">db</span></a>
+              <a href="/categories/c/" itemprop="url"><span itemprop="name">c++</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/c/language/" itemprop="url"><span itemprop="name">language</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2022/09/04/leveldb%20SSTable%20sst%E6%96%87%E4%BB%B6%20sst%E8%A7%A3%E6%9E%90%E5%B7%A5%E5%85%B7/' itemprop="url">
+          <a class='readmore' href='/2022/09/26/%E6%A8%A1%E6%9D%BF%E5%AE%9A%E4%B9%89%E5%92%8C%E5%A3%B0%E6%98%8E%E5%88%86%E7%A6%BB%E6%96%B9%E6%B3%95/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2833,7 +2859,7 @@ SStable文件格式物理结构
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/04/跳跃列表/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/23/SSE指令速查链接/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2851,22 +2877,16 @@ SStable文件格式物理结构
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/09/04/%E8%B7%B3%E8%B7%83%E5%88%97%E8%A1%A8/"  itemprop="url">
-        跳跃列表
+      <a href="/2022/09/23/SSE%E6%8C%87%E4%BB%A4%E9%80%9F%E6%9F%A5%E9%93%BE%E6%8E%A5/"  itemprop="url">
+        SSE指令速查链接
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        
-https://zh.wikipedia.org/wiki/%E8%B7%B3%E8%B7%83%E5%88%97%E8%A1%A8
+        指令速查中文部分（从这里猜测用什么关键词去下面的官方文档中搜）https://packagewjx.github.io/2018/11/12/sse-note/官方（这个超级好，搜索迅速，给了描述、实现指令、头文件、对应指令集标准等）https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html
 
-概述
-使得包含n个元素的有序序列的查找和插入操作的平均时间复杂度都是O(log n)，优于数组的O(n)复杂度
-一个多层次的链表。与前一层（下面一层）链表元素的数量相比，每一层链表中的元素的数量更少。每一层是有序的
-
-构造跳跃列表是按层建造的。底层是一个普...
       
     
   </div>
@@ -2874,20 +2894,28 @@ https://zh.wikipedia.org/wiki/%E8%B7%B3%E8%B7%83%E5%88%97%E8%A1%A8
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-09-04T09:44:28+08:00">2022-09-04</time>
+        <time itemprop="dateCreated datePublished" datetime="2022-09-23T16:56:48+08:00">2022-09-23</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/algorithm/">algorithm</a>
+          <a class="category-link" href="/categories/SIMD/">SIMD</a><span class="sep"></span><a class="category-link" href="/categories/c/">c++</a><span class="sep"></span><a class="category-link" href="/categories/c/SIMD/">SIMD</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/algorithm/" itemprop="url"><span itemprop="name">algorithm</span></a>
+              <a href="/categories/c/" itemprop="url"><span itemprop="name">c++</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/SIMD/" itemprop="url"><span itemprop="name">SIMD</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/c/SIMD/" itemprop="url"><span itemprop="name">SIMD</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2022/09/04/%E8%B7%B3%E8%B7%83%E5%88%97%E8%A1%A8/' itemprop="url">
+          <a class='readmore' href='/2022/09/23/SSE%E6%8C%87%E4%BB%A4%E9%80%9F%E6%9F%A5%E9%93%BE%E6%8E%A5/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2903,7 +2931,7 @@ https://zh.wikipedia.org/wiki/%E8%B7%B3%E8%B7%83%E5%88%97%E8%A1%A8
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/04/leveldb底层概述和Files/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/22/cpp对齐/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2921,20 +2949,21 @@ https://zh.wikipedia.org/wiki/%E8%B7%B3%E8%B7%83%E5%88%97%E8%A1%A8
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/09/04/leveldb%E5%BA%95%E5%B1%82%E6%A6%82%E8%BF%B0%E5%92%8CFiles/"  itemprop="url">
-        leveldb底层概述和Files
+      <a href="/2022/09/22/cpp%E5%AF%B9%E9%BD%90/"  itemprop="url">
+        cpp对齐
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        https://leveldb-handbook.readthedocs.io/zh/latest/basic.htmlhttps://github.com/google/leveldb/blob/main/doc/impl.md
-leveldb架构
-leveldb写流程概述
-将所有的写操作写到日志文件（log文件）中
-将内容写入到内存中
-先memtable，等到其存储内容的容量达到阈值时（...
+        栈：alignas specifier (since C++11)
+alignas specifier (since C++11) - cppreference.com
+
+Specifies the alignment requirement of a type or an object.
+Syntaxalignas( expression )		
+
+\1) expression must ...
       
     
   </div>
@@ -2942,20 +2971,28 @@ leveldb写流程概述
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-09-04T09:16:33+08:00">2022-09-04</time>
+        <time itemprop="dateCreated datePublished" datetime="2022-09-22T14:54:42+08:00">2022-09-22</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/db/">db</a>
+          <a class="category-link" href="/categories/c/">c++</a><span class="sep"></span><a class="category-link" href="/categories/c/language/">language</a><span class="sep"></span><a class="category-link" href="/categories/c/linux-syscall/">linux_syscall</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/db/" itemprop="url"><span itemprop="name">db</span></a>
+              <a href="/categories/c/" itemprop="url"><span itemprop="name">c++</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/c/language/" itemprop="url"><span itemprop="name">language</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/c/linux-syscall/" itemprop="url"><span itemprop="name">linux_syscall</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2022/09/04/leveldb%E5%BA%95%E5%B1%82%E6%A6%82%E8%BF%B0%E5%92%8CFiles/' itemprop="url">
+          <a class='readmore' href='/2022/09/22/cpp%E5%AF%B9%E9%BD%90/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2971,7 +3008,7 @@ leveldb写流程概述
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/03/NebulaGraph存储/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/22/cpp new placement new/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2989,20 +3026,16 @@ leveldb写流程概述
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/09/03/NebulaGraph%E5%AD%98%E5%82%A8/"  itemprop="url">
-        NebulaGraph存储
+      <a href="/2022/09/22/cpp%20new%20placement%20new/"  itemprop="url">
+        cpp new placement new
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        架构
-架构总览 - Nebula Graph Database 手册 (nebula-graph.com.cn)
-
-Meta 服务是由 nebula-metad 进程提供的，负责数据管理，例如 Schema 操作、集群管理和用户权限管理等。
-
-所有 nebula-metad 进程构成了基于 Raft 协议的集群，其中一个进程是 leader，其他进程都是 follower。leader 是由...
+        new expression - cppreference.com 
+Creates and initializes objects with dynamic storage duration, that is, objects whose lifetime is not necessarily limited by the scope in which they were created....
       
     
   </div>
@@ -3010,24 +3043,24 @@ Meta 服务是由 nebula-metad 进程提供的，负责数据管理，例如 Sch
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-09-03T10:17:55+08:00">2022-09-03</time>
+        <time itemprop="dateCreated datePublished" datetime="2022-09-22T11:12:45+08:00">2022-09-22</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/graph/">graph</a><span class="sep"></span><a class="category-link" href="/categories/graph/db/">db</a>
+          <a class="category-link" href="/categories/c/">c++</a><span class="sep"></span><a class="category-link" href="/categories/c/language/">language</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/graph/" itemprop="url"><span itemprop="name">graph</span></a>
+              <a href="/categories/c/" itemprop="url"><span itemprop="name">c++</span></a>
             </span>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/graph/db/" itemprop="url"><span itemprop="name">db</span></a>
+              <a href="/categories/c/language/" itemprop="url"><span itemprop="name">language</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2022/09/03/NebulaGraph%E5%AD%98%E5%82%A8/' itemprop="url">
+          <a class='readmore' href='/2022/09/22/cpp%20new%20placement%20new/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3043,7 +3076,7 @@ Meta 服务是由 nebula-metad 进程提供的，负责数据管理，例如 Sch
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/03/Raft/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/21/mmap munmap/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -3061,20 +3094,16 @@ Meta 服务是由 nebula-metad 进程提供的，负责数据管理，例如 Sch
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/09/03/Raft/"  itemprop="url">
-        Raft
+      <a href="/2022/09/21/mmap%20munmap/"  itemprop="url">
+        mmap munmap
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        
-https://docs.nebula-graph.com.cn/3.2.0/1.introduction/3.nebula-graph-architecture/4.storage-service/#raft
-https://cloud.tencent.com/developer/article/1826594
-
-简介
-分布式系统中，同一份数据通常会有多个副本，这样即使少数副本发生故障，...
+        Memory-mapped fileA memory-mapped file is a segment of virtual memory[1] that has been assigned a direct byte-for-byte correlation with some portion of a file or file-like resource. 
+This resource ...
       
     
   </div>
@@ -3082,24 +3111,24 @@ https://cloud.tencent.com/developer/article/1826594
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-09-03T10:17:27+08:00">2022-09-03</time>
+        <time itemprop="dateCreated datePublished" datetime="2022-09-21T18:45:34+08:00">2022-09-21</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/algorithm/">algorithm</a><span class="sep"></span><a class="category-link" href="/categories/db/">db</a>
+          <a class="category-link" href="/categories/c/">c++</a><span class="sep"></span><a class="category-link" href="/categories/c/linux-syscall/">linux_syscall</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/algorithm/" itemprop="url"><span itemprop="name">algorithm</span></a>
+              <a href="/categories/c/" itemprop="url"><span itemprop="name">c++</span></a>
             </span>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/db/" itemprop="url"><span itemprop="name">db</span></a>
+              <a href="/categories/c/linux-syscall/" itemprop="url"><span itemprop="name">linux_syscall</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2022/09/03/Raft/' itemprop="url">
+          <a class='readmore' href='/2022/09/21/mmap%20munmap/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3115,7 +3144,7 @@ https://cloud.tencent.com/developer/article/1826594
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/03/WAL Write Ahead Log预写日志/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/21/c++ data types __m128i/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -3133,20 +3162,18 @@ https://cloud.tencent.com/developer/article/1826594
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/09/03/WAL%20Write%20Ahead%20Log%E9%A2%84%E5%86%99%E6%97%A5%E5%BF%97/"  itemprop="url">
-        WAL Write Ahead Log预写日志
+      <a href="/2022/09/21/c++%20data%20types%20__m128i/"  itemprop="url">
+        c++ data types __m128i
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        
-https://www.cnblogs.com/xuwc/p/14037750.html
+        __m128i__m128i | Microsoft Learn
+The __m128i data type, for use with the Streaming SIMD Extensions 2 (SSE2) instructions intrinsics, is defined in &lt;emmintrin.h&gt;.
 
-
-在使用 WAL 的系统中，**所有的修改在提交之前都要先写入 log 文件中(写入log文件是写入永久存储)**。log 文件中通常包括 redo 和 undo 信息
-使用 WAL 的数据库系统不会再每新增一条 WAL 日志就将其刷入数据库文件中，一般**积累一定的量然后批量写入(checkpoi...
+eg: /usr/local/gcc-9.3.0/lib...
       
     
   </div>
@@ -3154,20 +3181,28 @@ https://www.cnblogs.com/xuwc/p/14037750.html
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-09-03T09:31:41+08:00">2022-09-03</time>
+        <time itemprop="dateCreated datePublished" datetime="2022-09-21T16:35:50+08:00">2022-09-21</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/db/">db</a>
+          <a class="category-link" href="/categories/SIMD/">SIMD</a><span class="sep"></span><a class="category-link" href="/categories/c/">c++</a><span class="sep"></span><a class="category-link" href="/categories/c/SIMD/">SIMD</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/db/" itemprop="url"><span itemprop="name">db</span></a>
+              <a href="/categories/c/" itemprop="url"><span itemprop="name">c++</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/SIMD/" itemprop="url"><span itemprop="name">SIMD</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/c/SIMD/" itemprop="url"><span itemprop="name">SIMD</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2022/09/03/WAL%20Write%20Ahead%20Log%E9%A2%84%E5%86%99%E6%97%A5%E5%BF%97/' itemprop="url">
+          <a class='readmore' href='/2022/09/21/c++%20data%20types%20__m128i/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3183,7 +3218,7 @@ https://www.cnblogs.com/xuwc/p/14037750.html
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/02/powershell美化字体颜色/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/17/论文笔记 2014SC Scalable and high performance betweenness centrality on the gpu/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -3201,30 +3236,19 @@ https://www.cnblogs.com/xuwc/p/14037750.html
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/09/02/powershell%E7%BE%8E%E5%8C%96%E5%AD%97%E4%BD%93%E9%A2%9C%E8%89%B2/"  itemprop="url">
-        powershell美化 powershell字体 powershell颜色
+      <a href="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202014SC%20Scalable%20and%20high%20performance%20betweenness%20centrality%20on%20the%20gpu/"  itemprop="url">
+        论文笔记 2014SC Scalable and high performance betweenness centrality on the gpu
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        设置颜色
-安装colortoolscoop install colortool
+        一些定义和知识betweenness中心性
+比较不同图的BC：（(n-1)(n-2)是除了v之外所有不同点对的数目，且含方向）
 
-
-预览主题
-列出哪些主题
-
-colortool -s
-
-
-预览主题，比如OneHalfDark.itermcolors
-
-  colortool OneHalfDark.itermcolors
-
-
-设置主题（将方案同时应用于当前控制台和默认控制台）colortool -b OneHalfDark.itermco...
+求BC的著名算法
+[7] U. Brandes, “A Faster Algorithm for Betweenness Centrality,” Journalof Mathematical Sociology, vol. 25, pp. 163–177, 20...
       
     
   </div>
@@ -3232,24 +3256,20 @@ colortool -s
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-09-02T15:09:19+08:00">2022-09-02</time>
+        <time itemprop="dateCreated datePublished" datetime="2022-09-17T17:27:09+08:00">2022-09-17</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/tool/">tool</a><span class="sep"></span><a class="category-link" href="/categories/tool/windows/">windows</a>
+          <a class="category-link" href="/categories/paper/">paper</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/tool/" itemprop="url"><span itemprop="name">tool</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/tool/windows/" itemprop="url"><span itemprop="name">windows</span></a>
+              <a href="/categories/paper/" itemprop="url"><span itemprop="name">paper</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2022/09/02/powershell%E7%BE%8E%E5%8C%96%E5%AD%97%E4%BD%93%E9%A2%9C%E8%89%B2/' itemprop="url">
+          <a class='readmore' href='/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202014SC%20Scalable%20and%20high%20performance%20betweenness%20centrality%20on%20the%20gpu/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3265,7 +3285,7 @@ colortool -s
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/02/graph schema/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/17/论文笔记 B类2002ESA External memory breadth/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -3283,18 +3303,33 @@ colortool -s
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/09/02/graph%20schema/"  itemprop="url">
-        graph schema
+      <a href="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20B%E7%B1%BB2002ESA%20External%20memory%20breadth/"  itemprop="url">
+        论文笔记 B类2002ESA External-memory breadth-first search with sublinear IO
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        
-https://docs.tigergraph.com/gsql-ref/current/tutorials/gsql-101/
+        related workexternal BFS
 
-Every graph has a schema, or a model describing the types of vertices and edges that appear in a graph.（描述图中有哪些类型的点边，每种类型有哪些属性，以及点...
+算法1 预处理
+
+
+
+
+非随机划分
+回顾：欧拉图：
+
+
+
+2 和[1999 SODA]几乎一样的BFS（只是多了个有序文件放最近用到的邻接表）
+
+不一样的地方：维护一个有序的文件H用于获取邻接表：（H有序：H中存放的内容是边entry，有序按边entry字典序）
+
+
+如何获取L(t-1)的邻居：
+
       
     
   </div>
@@ -3302,20 +3337,20 @@ Every graph has a schema, or a model describing the types of vertices and edges 
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-09-02T10:34:14+08:00">2022-09-02</time>
+        <time itemprop="dateCreated datePublished" datetime="2022-09-17T16:03:06+08:00">2022-09-17</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/graph/">graph</a>
+          <a class="category-link" href="/categories/paper/">paper</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/graph/" itemprop="url"><span itemprop="name">graph</span></a>
+              <a href="/categories/paper/" itemprop="url"><span itemprop="name">paper</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2022/09/02/graph%20schema/' itemprop="url">
+          <a class='readmore' href='/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20B%E7%B1%BB2002ESA%20External%20memory%20breadth/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3342,7 +3377,7 @@ Every graph has a schema, or a model describing the types of vertices and edges 
           </a>
         
         <p class="current">
-          15 / 23
+          15 / 25
         </p>
         
           <a class="next" rel="next" href="/page/16/">
@@ -3442,12 +3477,12 @@ Every graph has a schema, or a model describing the types of vertices and edges 
           <li><a class="flat-box"
             title="/categories/SIMD/" href="/categories/SIMD/"
             active-action="action-categoriesSIMD"
-            ><div class='name'>SIMD</div><div class='badge'>(3)</div></a></li>
+            ><div class='name'>SIMD</div><div class='badge'>(4)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/algorithm/" href="/categories/algorithm/"
             active-action="action-categoriesalgorithm"
-            ><div class='name'>algorithm</div><div class='badge'>(6)</div></a></li>
+            ><div class='name'>algorithm</div><div class='badge'>(7)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/c/" href="/categories/c/"
@@ -3542,12 +3577,12 @@ Every graph has a schema, or a model describing the types of vertices and edges 
           <li><a class="flat-box"
             title="/categories/paper/" href="/categories/paper/"
             active-action="action-categoriespaper"
-            ><div class='name'>paper</div><div class='badge'>(25)</div></a></li>
+            ><div class='name'>paper</div><div class='badge'>(26)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/play/" href="/categories/play/"
             active-action="action-categoriesplay"
-            ><div class='name'>play</div><div class='badge'>(9)</div></a></li>
+            ><div class='name'>play</div><div class='badge'>(11)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/python/" href="/categories/python/"
@@ -3595,6 +3630,11 @@ Every graph has a schema, or a model describing the types of vertices and edges 
             ><div class='name'>windows</div><div class='badge'>(8)</div></a></li>
         
           <li><a class="flat-box"
+            title="/categories/tools/" href="/categories/tools/"
+            active-action="action-categoriestools"
+            ><div class='name'>tools</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
             title="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/" href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/"
             active-action="action-categoriesE7949FE6B4BBE99A8FE8AEB0"
             ><div class='name'>生活随记</div><div class='badge'>(3)</div></a></li>
@@ -3622,7 +3662,7 @@ Every graph has a schema, or a model describing the types of vertices and edges 
 
 
     <div class='content'>
-      <a href="/tags/GPU/" style="font-size: 15.25px; color: #919191">GPU</a> <a href="/tags/SIMD/" style="font-size: 16.5px; color: #888">SIMD</a> <a href="/tags/bash/" style="font-size: 21.5px; color: #666">bash</a> <a href="/tags/c/" style="font-size: 22.75px; color: #5e5e5e">c++</a> <a href="/tags/concurrency/" style="font-size: 20.25px; color: #6f6f6f">concurrency</a> <a href="/tags/git/" style="font-size: 14px; color: #999">git</a> <a href="/tags/graph/" style="font-size: 19px; color: #777">graph</a> <a href="/tags/halo/" style="font-size: 16.5px; color: #888">halo</a> <a href="/tags/hexo/" style="font-size: 15.25px; color: #919191">hexo</a> <a href="/tags/linux/" style="font-size: 24px; color: #555">linux</a> <a href="/tags/python/" style="font-size: 17.75px; color: #808080">python</a> <a href="/tags/rocksdb/" style="font-size: 16.5px; color: #888">rocksdb</a> <a href="/tags/rust/" style="font-size: 19px; color: #777">rust</a> <a href="/tags/tex/" style="font-size: 17.75px; color: #808080">tex</a> <a href="/tags/tool/" style="font-size: 14px; color: #999">tool</a> <a href="/tags/%E6%A6%82%E7%BB%9F/" style="font-size: 14px; color: #999">概统</a>
+      <a href="/tags/GPU/" style="font-size: 15.11px; color: #919191">GPU</a> <a href="/tags/SIMD/" style="font-size: 17.33px; color: #828282">SIMD</a> <a href="/tags/bash/" style="font-size: 21.78px; color: #646464">bash</a> <a href="/tags/c/" style="font-size: 22.89px; color: #5d5d5d">c++</a> <a href="/tags/concurrency/" style="font-size: 20.67px; color: #6c6c6c">concurrency</a> <a href="/tags/git/" style="font-size: 14px; color: #999">git</a> <a href="/tags/graph/" style="font-size: 19.56px; color: #737373">graph</a> <a href="/tags/halo/" style="font-size: 16.22px; color: #8a8a8a">halo</a> <a href="/tags/hexo/" style="font-size: 15.11px; color: #919191">hexo</a> <a href="/tags/linux/" style="font-size: 24px; color: #555">linux</a> <a href="/tags/python/" style="font-size: 18.44px; color: #7b7b7b">python</a> <a href="/tags/rocksdb/" style="font-size: 16.22px; color: #8a8a8a">rocksdb</a> <a href="/tags/rust/" style="font-size: 19.56px; color: #737373">rust</a> <a href="/tags/tex/" style="font-size: 18.44px; color: #7b7b7b">tex</a> <a href="/tags/tool/" style="font-size: 14px; color: #999">tool</a> <a href="/tags/%E6%A6%82%E7%BB%9F/" style="font-size: 14px; color: #999">概统</a>
     </div>
   </section>
 

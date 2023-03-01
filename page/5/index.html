@@ -2272,7 +2272,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1676341885674),
+    lastupdate: new Date(1677634352166),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2630,11 +2630,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         
-      
-        
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/08/写paper学习-chapter1 Planning and Preparation/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/15/tex文献引用/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2652,8 +2650,361 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/01/08/%E5%86%99paper%E5%AD%A6%E4%B9%A0-chapter1%20Planning%20and%20Preparation/"  itemprop="url">
-        写paper学习-chapter1 Planning and Preparation
+      <a href="/2023/01/15/tex%E6%96%87%E7%8C%AE%E5%BC%95%E7%94%A8/"  itemprop="url">
+        tex文献引用
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        举例main.tex指定引用所在文件和引用样式
+\documentclass&#123;article&#125;
+
+\begin&#123;document&#125;
+ 
+\bibliographystyle&#123;ACM-Reference-Format&#125;
+\bibliography&#123;main&#125; % 引用在文件/main.bib中
+
+... are e...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-01-15T11:35:36+08:00">2023-01-15</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/paper/">paper</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/paper/" itemprop="url"><span itemprop="name">paper</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/01/15/tex%E6%96%87%E7%8C%AE%E5%BC%95%E7%94%A8/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/15/使用默认pypi源出现连接超时/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/01/15/%E4%BD%BF%E7%94%A8%E9%BB%98%E8%AE%A4pypi%E6%BA%90%E5%87%BA%E7%8E%B0%E8%BF%9E%E6%8E%A5%E8%B6%85%E6%97%B6/"  itemprop="url">
+        使用默认pypi源出现连接超时
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        https://cloud.tencent.com/developer/article/1354614
+报错：
+&#39;Connection to pypi.python.org timed out. (connect timeout=15)&#39;)&#39;
+
+原因：采用了默认的pypi源(国外的pypi源)，出现连接超时问题
+解决办法
+国内常用的pypi源如下：
+阿里云 http:...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-01-15T10:39:15+08:00">2023-01-15</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/python/">python</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/python/" itemprop="url"><span itemprop="name">python</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/01/15/%E4%BD%BF%E7%94%A8%E9%BB%98%E8%AE%A4pypi%E6%BA%90%E5%87%BA%E7%8E%B0%E8%BF%9E%E6%8E%A5%E8%B6%85%E6%97%B6/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+      
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/15/tex作图TikZ/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/01/15/tex%E4%BD%9C%E5%9B%BETikZ/"  itemprop="url">
+        tex作图TikZ
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        https://www.overleaf.com/learn/latex/TikZ_package主要是面向画图论的图
+单文件和语法举例\node和\draw后面的[]中传入样式参数\begin&#123;tikzpicture&#125;后面的[]中也是传参，定义这个画图环境中的一些变量
+1\documentclass&#123;article&#125;
+\usepackage&#123...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-01-15T09:40:02+08:00">2023-01-15</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/paper/">paper</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/paper/" itemprop="url"><span itemprop="name">paper</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/01/15/tex%E4%BD%9C%E5%9B%BETikZ/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/15/tex伪代码/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/01/15/tex%E4%BC%AA%E4%BB%A3%E7%A0%81/"  itemprop="url">
+        tex伪代码
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        比特操作\mathbin&#123;\&amp;&#125; % and
+\mathbin&#123;|&#125; % or
+\ll % shift left
+\gg % shift right
+\ensuremath&#123;\mathord&#123;\sim&#125;&#125; % not
+
+伪代码举例文档参考：https://www.overleaf.com/learn/la...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-01-15T09:38:45+08:00">2023-01-15</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/paper/">paper</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/paper/" itemprop="url"><span itemprop="name">paper</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/01/15/tex%E4%BC%AA%E4%BB%A3%E7%A0%81/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/13/画graph-for-research-paper-的工具推荐/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/01/13/%E7%94%BBgraph-for-research-paper-%E7%9A%84%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90/"  itemprop="url">
+        画graph(for research paper)的工具推荐
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        哪些工具推荐Graphviz
+
+from https://networkx.org/documentation/stable/reference/drawing.htmlwe highly recommend that people visualize their graphs with tools dedicated to that task. Notable examples of de...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-01-13T19:05:06+08:00">2023-01-13</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/graph/">graph</a><span class="sep"></span><a class="category-link" href="/categories/paper/">paper</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/paper/" itemprop="url"><span itemprop="name">paper</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/graph/" itemprop="url"><span itemprop="name">graph</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/01/13/%E7%94%BBgraph-for-research-paper-%E7%9A%84%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/11/写paper学习-chapter14-Review-of-the-Literature/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/01/11/%E5%86%99paper%E5%AD%A6%E4%B9%A0-chapter14-Review-of-the-Literature/"  itemprop="url">
+        写paper学习-chapter14 Review of the Literature
       </a>
     </h2>
   
@@ -2661,8 +3012,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         from “English for Writing Research Papers”
-writing orderyou might write several sections simultaneously
-It is generally best to start with a very rough draft of the Abstract, and then whichever sec...
+provide readers with just the right amount of literature regarding the sequence of events leading up to the current situationas support for the author’s a...
       
     
   </div>
@@ -2670,7 +3020,7 @@ It is generally best to start with a very rough draft of the Abstract, and then 
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-01-08T11:37:00+08:00">2023-01-08</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-01-11T10:59:08+08:00">2023-01-11</time>
         
           <span class="dot"></span>
           <a class="category-link" href="/categories/paper/">paper</a>
@@ -2683,7 +3033,7 @@ It is generally best to start with a very rough draft of the Abstract, and then 
       </div>
       
         <div>
-          <a class='readmore' href='/2023/01/08/%E5%86%99paper%E5%AD%A6%E4%B9%A0-chapter1%20Planning%20and%20Preparation/' itemprop="url">
+          <a class='readmore' href='/2023/01/11/%E5%86%99paper%E5%AD%A6%E4%B9%A0-chapter14-Review-of-the-Literature/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2694,91 +3044,6 @@ It is generally best to start with a very rough draft of the Abstract, and then 
 </div>
 
           </div>
-        
-      
-        
-      
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/07/Latex入门/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-    <meta itemprop="description" content="grapher">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/01/07/Latex%E5%85%A5%E9%97%A8/"  itemprop="url">
-        Latex入门
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        编辑器：
-
-vscode插件
-在线编辑器overleaf：开箱即用
-
-Latex语法这个教程好 https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes注释：%开头举例：
-\documentclass&#123;article&#125;
-\begin&#123;document&#125;
-Subscripts(下标) i...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-01-07T20:20:52+08:00">2023-01-07</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/paper/">paper</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/paper/" itemprop="url"><span itemprop="name">paper</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/01/07/Latex%E5%85%A5%E9%97%A8/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
         
       
     
@@ -2795,7 +3060,7 @@ Subscripts(下标) i...
           </a>
         
         <p class="current">
-          5 / 23
+          5 / 25
         </p>
         
           <a class="next" rel="next" href="/page/6/">
@@ -2895,12 +3160,12 @@ Subscripts(下标) i...
           <li><a class="flat-box"
             title="/categories/SIMD/" href="/categories/SIMD/"
             active-action="action-categoriesSIMD"
-            ><div class='name'>SIMD</div><div class='badge'>(3)</div></a></li>
+            ><div class='name'>SIMD</div><div class='badge'>(4)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/algorithm/" href="/categories/algorithm/"
             active-action="action-categoriesalgorithm"
-            ><div class='name'>algorithm</div><div class='badge'>(6)</div></a></li>
+            ><div class='name'>algorithm</div><div class='badge'>(7)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/c/" href="/categories/c/"
@@ -2995,12 +3260,12 @@ Subscripts(下标) i...
           <li><a class="flat-box"
             title="/categories/paper/" href="/categories/paper/"
             active-action="action-categoriespaper"
-            ><div class='name'>paper</div><div class='badge'>(25)</div></a></li>
+            ><div class='name'>paper</div><div class='badge'>(26)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/play/" href="/categories/play/"
             active-action="action-categoriesplay"
-            ><div class='name'>play</div><div class='badge'>(9)</div></a></li>
+            ><div class='name'>play</div><div class='badge'>(11)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/python/" href="/categories/python/"
@@ -3048,6 +3313,11 @@ Subscripts(下标) i...
             ><div class='name'>windows</div><div class='badge'>(8)</div></a></li>
         
           <li><a class="flat-box"
+            title="/categories/tools/" href="/categories/tools/"
+            active-action="action-categoriestools"
+            ><div class='name'>tools</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
             title="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/" href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/"
             active-action="action-categoriesE7949FE6B4BBE99A8FE8AEB0"
             ><div class='name'>生活随记</div><div class='badge'>(3)</div></a></li>
@@ -3075,7 +3345,7 @@ Subscripts(下标) i...
 
 
     <div class='content'>
-      <a href="/tags/GPU/" style="font-size: 15.25px; color: #919191">GPU</a> <a href="/tags/SIMD/" style="font-size: 16.5px; color: #888">SIMD</a> <a href="/tags/bash/" style="font-size: 21.5px; color: #666">bash</a> <a href="/tags/c/" style="font-size: 22.75px; color: #5e5e5e">c++</a> <a href="/tags/concurrency/" style="font-size: 20.25px; color: #6f6f6f">concurrency</a> <a href="/tags/git/" style="font-size: 14px; color: #999">git</a> <a href="/tags/graph/" style="font-size: 19px; color: #777">graph</a> <a href="/tags/halo/" style="font-size: 16.5px; color: #888">halo</a> <a href="/tags/hexo/" style="font-size: 15.25px; color: #919191">hexo</a> <a href="/tags/linux/" style="font-size: 24px; color: #555">linux</a> <a href="/tags/python/" style="font-size: 17.75px; color: #808080">python</a> <a href="/tags/rocksdb/" style="font-size: 16.5px; color: #888">rocksdb</a> <a href="/tags/rust/" style="font-size: 19px; color: #777">rust</a> <a href="/tags/tex/" style="font-size: 17.75px; color: #808080">tex</a> <a href="/tags/tool/" style="font-size: 14px; color: #999">tool</a> <a href="/tags/%E6%A6%82%E7%BB%9F/" style="font-size: 14px; color: #999">概统</a>
+      <a href="/tags/GPU/" style="font-size: 15.11px; color: #919191">GPU</a> <a href="/tags/SIMD/" style="font-size: 17.33px; color: #828282">SIMD</a> <a href="/tags/bash/" style="font-size: 21.78px; color: #646464">bash</a> <a href="/tags/c/" style="font-size: 22.89px; color: #5d5d5d">c++</a> <a href="/tags/concurrency/" style="font-size: 20.67px; color: #6c6c6c">concurrency</a> <a href="/tags/git/" style="font-size: 14px; color: #999">git</a> <a href="/tags/graph/" style="font-size: 19.56px; color: #737373">graph</a> <a href="/tags/halo/" style="font-size: 16.22px; color: #8a8a8a">halo</a> <a href="/tags/hexo/" style="font-size: 15.11px; color: #919191">hexo</a> <a href="/tags/linux/" style="font-size: 24px; color: #555">linux</a> <a href="/tags/python/" style="font-size: 18.44px; color: #7b7b7b">python</a> <a href="/tags/rocksdb/" style="font-size: 16.22px; color: #8a8a8a">rocksdb</a> <a href="/tags/rust/" style="font-size: 19.56px; color: #737373">rust</a> <a href="/tags/tex/" style="font-size: 18.44px; color: #7b7b7b">tex</a> <a href="/tags/tool/" style="font-size: 14px; color: #999">tool</a> <a href="/tags/%E6%A6%82%E7%BB%9F/" style="font-size: 14px; color: #999">概统</a>
     </div>
   </section>
 
