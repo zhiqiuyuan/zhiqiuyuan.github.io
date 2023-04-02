@@ -41,11 +41,11 @@
 <meta property="og:title" content="operf -t thread举例">
 <meta property="og:url" content="http://example.com/2022/12/09/operf-t-thread%E4%B8%BE%E4%BE%8B/index.html">
 <meta property="og:site_name" content="zhiqiuyuan&#39;s blog">
-<meta property="og:description" content="命令profile程序（-t则将把每个线程分开统计并分别输出，-k指定内核调试文件，这样会得到内核的调用信息） sudo operf -t -k &#x2F;usr&#x2F;lib&#x2F;debug&#x2F;lib&#x2F;modules&#x2F;$(uname -r)&#x2F;vmlinux .&#x2F;main  根据得到的采集数据输出结果 opreport -o symbols.txt -l   输出输出的symbols.txt例如：三个线程每个线程分开">
+<meta property="og:description" content="命令 profile程序（-t则将把每个线程分开统计并分别输出，-k指定内核调试文件，这样会得到内核的调用信息）  sudo operf -t -k &#x2F;usr&#x2F;lib&#x2F;debug&#x2F;lib&#x2F;modules&#x2F;$(uname -r)&#x2F;vmlinux .&#x2F;main   根据得到的采集数据输出结果  opreport -o symbols.txt -l   callgraph若要输出函数callgraph信">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-12-09T14:55:43.000Z">
-<meta property="article:modified_time" content="2022-12-29T14:56:26.810Z">
+<meta property="article:modified_time" content="2023-03-21T02:37:56.394Z">
 <meta property="article:author" content="zhiqiuyuan">
 <meta property="article:tag" content="linux">
 <meta property="article:tag" content="tool">
@@ -2276,7 +2276,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1678018354333),
+    lastupdate: new Date(1680449240058),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2720,12 +2720,28 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h1 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h1><p>profile程序（<code>-t</code>则将把每个线程分开统计并分别输出，<code>-k</code>指定内核调试文件，这样会得到内核的调用信息）</p>
+    <h1 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h1><ul>
+<li>profile程序（<code>-t</code>则将把每个线程分开统计并分别输出，<code>-k</code>指定内核调试文件，这样会得到内核的调用信息）</li>
+</ul>
 <pre><code class="bash">sudo operf -t -k /usr/lib/debug/lib/modules/$(uname -r)/vmlinux ./main
 </code></pre>
-<p>根据得到的采集数据输出结果</p>
+<ul>
+<li>根据得到的采集数据输出结果</li>
+</ul>
 <pre><code class="bash">opreport -o symbols.txt -l 
 </code></pre>
+<h2 id="callgraph"><a href="#callgraph" class="headerlink" title="callgraph"></a>callgraph</h2><p>若要输出函数callgraph信息（这样每个函数就不仅仅是一行，而是它的调用栈），则都加上–callgraph选项</p>
+<ul>
+<li>profile程序<br>–callgraph或-g</li>
+</ul>
+<pre><code class="bash">sudo operf --callgraph -t -k /usr/lib/debug/lib/modules/$(uname -r)/vmlinux ./main
+</code></pre>
+<ul>
+<li>根据得到的采集数据输出结果<br>–callgraph或-c</li>
+</ul>
+<pre><code class="bash">opreport --callgraph -o symbols.txt -l 
+</code></pre>
+<p>输出的含义：<a target="_blank" rel="noopener" href="https://oprofile.sourceforge.io/doc/opreport.html">https://oprofile.sourceforge.io/doc/opreport.html</a><br>输出的每一个entry(一个entry通过<code>----</code>和其他entry分开)，含义：<br>没有缩进的函数是我们关心的函数，<br>其上的函数是直接调用关心函数的函数（有时会出现不是直接调用关心函数的函数，这是因为这些采样发生在直接调用关心函数的函数刚开始的时候，此时函数栈还没有搭好，误以为是这个函数的caller <a target="_blank" rel="noopener" href="https://oprofile.sourceforge.io/doc/interpreting-callgraph.html%EF%BC%89%EF%BC%8C">https://oprofile.sourceforge.io/doc/interpreting-callgraph.html），</a><br>其下的函数是关心函数直接调用的函数（其中有一个[self]行，这是关心函数去除调用callee以外的时间）</p>
 <h1 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h1><p><strong>输出的symbols.txt例如</strong>：三个线程<br>每个线程分开统计，下面的%每一列是一个线程（每个%列求和是100），是按第一%列进行降序排序的</p>
 <img src="/2022/12/09/operf-t-thread%E4%B8%BE%E4%BE%8B/image-16705978693511.png" class="lazyload" data-srcset="/2022/12/09/operf-t-thread%E4%B8%BE%E4%BE%8B/image-16705978693511.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 
@@ -2804,10 +2820,10 @@ clean:main
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-12-29T22:56:26+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-03-21T10:37:56+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Dec 29, 2022</p>
+    <p>更新于：Mar 21, 2023</p>
   </a>
 </div>
 
@@ -2961,7 +2977,7 @@ clean:main
 
 
   <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#main-cpp"><span class="toc-text">main.cpp</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#makefile"><span class="toc-text">makefile</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#callgraph"><span class="toc-text">callgraph</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#main-cpp"><span class="toc-text">main.cpp</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#makefile"><span class="toc-text">makefile</span></a></li></ol>
   </div>
 </section>
 
@@ -3924,7 +3940,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"grapher"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"zhiqiuyuan's blog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/tool/","name":"tool"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/tool/linux/","name":"linux"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/debug/","name":"debug"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/12/09/operf-t-thread举例/","name":"operf -t thread举例"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"zhiqiuyuan's blog","url":"http://example.com/","keywords":null,"description":"grapher","author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"grapher"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"operf -t thread举例","description":"grapher","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/12/09/operf-t-thread%E4%B8%BE%E4%BE%8B/"},"author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/12/09/operf-t-thread%E4%B8%BE%E4%BE%8B/","wordCount":0,"datePublished":"2022-12-09T14:55:43.000Z","dateModified":"2022-12-29T14:56:26.810Z","articleSection":"tool","keywords":"linux,tool","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"grapher"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"zhiqiuyuan's blog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/tool/","name":"tool"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/tool/linux/","name":"linux"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/debug/","name":"debug"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/12/09/operf-t-thread举例/","name":"operf -t thread举例"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"zhiqiuyuan's blog","url":"http://example.com/","keywords":null,"description":"grapher","author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"grapher"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"operf -t thread举例","description":"grapher","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/12/09/operf-t-thread%E4%B8%BE%E4%BE%8B/"},"author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/12/09/operf-t-thread%E4%B8%BE%E4%BE%8B/","wordCount":0,"datePublished":"2022-12-09T14:55:43.000Z","dateModified":"2023-03-21T02:37:56.394Z","articleSection":"tool","keywords":"linux,tool","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

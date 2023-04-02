@@ -2275,7 +2275,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1678018354333),
+    lastupdate: new Date(1680449240058),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2936,6 +2936,26 @@ void push_back (const value_type&amp; val);
 void push_back (value_type&amp;&amp; val);
 </code></pre>
 <p>加个<code>std::move</code>会调用到移动语义函数，避免了深拷贝。</p>
+<h3 id="移动进函数中（函数参数移动构造）"><a href="#移动进函数中（函数参数移动构造）" class="headerlink" title="移动进函数中（函数参数移动构造）"></a>移动进函数中（函数参数移动构造）</h3><p>注意1.函数定义的参数类型 2.调用函数用std::move传参</p>
+<pre><code class="cpp">typedef std::map&lt;unsigned, std::set&lt;unsigned&gt;&gt; PatternType;
+void print_mapContainer(const PatternType&amp;ptn);
+void func(PatternType ptn) // 函数参数类型
+&#123;
+    std::cout &lt;&lt; &quot;[in func:]&quot; &lt;&lt; std::endl;
+    print_mapContainer(ptn);
+&#125;
+void test_move_semantics()
+&#123;
+    PatternType ptn;
+    for (int k = 0; k &lt; 3; ++k)
+        for (int v = 0; v &lt; 2; ++v)
+            ptn[k].insert(k + v);
+    print_mapContainer(ptn); // ptn
+    func(std::move(ptn)); // 函数调用传参
+    std::cout &lt;&lt; &quot;[after func call:]&quot; &lt;&lt; std::endl;
+    print_mapContainer(ptn); // 空了
+&#125;
+</code></pre>
 <h3 id="只可移动类型"><a href="#只可移动类型" class="headerlink" title="只可移动类型"></a>只可移动类型</h3><p>还有些STL类是<code>move-only</code>的，比如<code>unique_ptr</code>，这种类只有移动构造函数，因此只能移动，不能拷贝:</p>
 <pre><code class="cpp">std::unique_ptr&lt;A&gt; ptr_a = std::make_unique&lt;A&gt;();
 
@@ -3191,7 +3211,7 @@ C++03 异常处理（throw）c++11也可以用
 
 
   <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B7%A6%E5%8F%B3%E5%80%BC%E5%BC%95%E7%94%A8"><span class="toc-text">左右值引用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%A6%E5%80%BC%E5%BC%95%E7%94%A8"><span class="toc-text">左值引用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%B3%E5%80%BC%E5%BC%95%E7%94%A8"><span class="toc-text">右值引用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#std-move"><span class="toc-text">std::move</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="toc-text">结论</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#std-ref"><span class="toc-text">std::ref</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E9%87%8F%E5%BC%95%E7%94%A8%E5%8F%AF%E4%BB%A5%E7%BB%91%E5%AE%9A%E5%88%B0%E5%8F%B3%E5%80%BC"><span class="toc-text">常量引用可以绑定到右值</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%B3%E5%80%BC%E5%BC%95%E7%94%A8%E5%92%8Cstd-move%E7%9A%84%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF-%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89"><span class="toc-text">右值引用和std::move的应用场景 移动语义</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89-%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89%E7%90%86%E8%A7%A3"><span class="toc-text">实现移动语义 移动语义理解</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BE%E4%BE%8B"><span class="toc-text">举例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89%E7%90%86%E8%A7%A3"><span class="toc-text">移动语义理解</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B%EF%BC%9Avector-push-back"><span class="toc-text">实例：vector::push_back</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AA%E5%8F%AF%E7%A7%BB%E5%8A%A8%E7%B1%BB%E5%9E%8B"><span class="toc-text">只可移动类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BB%BA%E8%AE%AE"><span class="toc-text">建议</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#std-forward"><span class="toc-text">std::forward</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B7%A6%E5%8F%B3%E5%80%BC%E5%BC%95%E7%94%A8"><span class="toc-text">左右值引用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%A6%E5%80%BC%E5%BC%95%E7%94%A8"><span class="toc-text">左值引用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%B3%E5%80%BC%E5%BC%95%E7%94%A8"><span class="toc-text">右值引用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#std-move"><span class="toc-text">std::move</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="toc-text">结论</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#std-ref"><span class="toc-text">std::ref</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E9%87%8F%E5%BC%95%E7%94%A8%E5%8F%AF%E4%BB%A5%E7%BB%91%E5%AE%9A%E5%88%B0%E5%8F%B3%E5%80%BC"><span class="toc-text">常量引用可以绑定到右值</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%B3%E5%80%BC%E5%BC%95%E7%94%A8%E5%92%8Cstd-move%E7%9A%84%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF-%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89"><span class="toc-text">右值引用和std::move的应用场景 移动语义</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89-%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89%E7%90%86%E8%A7%A3"><span class="toc-text">实现移动语义 移动语义理解</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BE%E4%BE%8B"><span class="toc-text">举例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89%E7%90%86%E8%A7%A3"><span class="toc-text">移动语义理解</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B%EF%BC%9Avector-push-back"><span class="toc-text">实例：vector::push_back</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A7%BB%E5%8A%A8%E8%BF%9B%E5%87%BD%E6%95%B0%E4%B8%AD%EF%BC%88%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0%E7%A7%BB%E5%8A%A8%E6%9E%84%E9%80%A0%EF%BC%89"><span class="toc-text">移动进函数中（函数参数移动构造）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AA%E5%8F%AF%E7%A7%BB%E5%8A%A8%E7%B1%BB%E5%9E%8B"><span class="toc-text">只可移动类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BB%BA%E8%AE%AE"><span class="toc-text">建议</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#std-forward"><span class="toc-text">std::forward</span></a></li></ol>
   </div>
 </section>
 

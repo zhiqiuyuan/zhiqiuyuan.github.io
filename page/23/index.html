@@ -2272,7 +2272,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1678018354333),
+    lastupdate: new Date(1680449240058),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2632,7 +2632,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/16/c++并发编程实践2ed：22 传递参数/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/04/leveldb底层概述和Files/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2650,16 +2650,20 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/07/16/c++%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B52ed%EF%BC%9A22%20%E4%BC%A0%E9%80%92%E5%8F%82%E6%95%B0/"  itemprop="url">
-        c++并发编程实践2ed：2.2 传递参数
+      <a href="/2022/09/04/leveldb%E5%BA%95%E5%B1%82%E6%A6%82%E8%BF%B0%E5%92%8CFiles/"  itemprop="url">
+        leveldb底层概述和Files
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        2.2 传递参数：std::thread构造函数规则如代码2.4所示，向可调用对象或函数传递参数很简单，只需要将这些参数作为 std::thread构造函数的附加参数即可。需要注意的是，这些参数会**拷贝至新线程的内存空间中(同临时变量一样)。即使函数中的参数是引用的形式**，拷贝操作也会执行。
-事实上，以附加参数传入的参数，其在线程函数中的类型只能是值传递或者const引用传递（const...
+        https://leveldb-handbook.readthedocs.io/zh/latest/basic.htmlhttps://github.com/google/leveldb/blob/main/doc/impl.md
+leveldb架构
+leveldb写流程概述
+将所有的写操作写到日志文件（log文件）中
+将内容写入到内存中
+先memtable，等到其存储内容的容量达到阈值时（...
       
     
   </div>
@@ -2667,401 +2671,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-07-16T21:12:10+08:00">2022-07-16</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/c/">c++</a><span class="sep"></span><a class="category-link" href="/categories/c/c-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B52ed/">c++并发编程实践2ed</a><span class="sep"></span><a class="category-link" href="/categories/c/language/">language</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/c/" itemprop="url"><span itemprop="name">c++</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/c/language/" itemprop="url"><span itemprop="name">language</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/c/c-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B52ed/" itemprop="url"><span itemprop="name">c++并发编程实践2ed</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/07/16/c++%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B52ed%EF%BC%9A22%20%E4%BC%A0%E9%80%92%E5%8F%82%E6%95%B0/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/16/c++11左右值引用 移动语义/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-    <meta itemprop="description" content="grapher">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/07/16/c++11%E5%B7%A6%E5%8F%B3%E5%80%BC%E5%BC%95%E7%94%A8%20%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89/"  itemprop="url">
-        c++11左右值引用 移动语义
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        
-学习自一文读懂C++右值引用和std::move - 知乎 (zhihu.com)，原文真的写得超级好！
-该文文末还讲解了std::forward，暂时未学习
-
-左右值引用左值引用左值引用类型为T&amp;
-非const不可以指向右值
-int a = 5;
-int &amp;ref_a = a; // 左值引用指向左值，编译通过
-int &amp;ref_a = 5; // 左值引用指向了...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-07-16T21:11:07+08:00">2022-07-16</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/c/">c++</a><span class="sep"></span><a class="category-link" href="/categories/c/language/">language</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/c/" itemprop="url"><span itemprop="name">c++</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/c/language/" itemprop="url"><span itemprop="name">language</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/07/16/c++11%E5%B7%A6%E5%8F%B3%E5%80%BC%E5%BC%95%E7%94%A8%20%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/16/c++11异常处理/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-    <meta itemprop="description" content="grapher">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/07/16/c++11%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/"  itemprop="url">
-        c++11异常处理
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        
-学习自C++11异常处理 noexcept_木的情感的博客-CSDN博客_c++11 noexcept
-
-C++03 异常处理（throw）c++11也可以用
-指定异常规格（语法）C++98中，在函数声明时，我们使用throw指定一个函数可以抛出异常的类型（异常规格（exception specification））。例如：
-class Ex &#123;
-public:
-  double...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-07-16T21:10:25+08:00">2022-07-16</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/c/">c++</a><span class="sep"></span><a class="category-link" href="/categories/c/language/">language</a><span class="sep"></span><a class="category-link" href="/categories/debug/">debug</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/c/" itemprop="url"><span itemprop="name">c++</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/c/language/" itemprop="url"><span itemprop="name">language</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/debug/" itemprop="url"><span itemprop="name">debug</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/07/16/c++11%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/16/c++并发编程实践2ed：21和23 thread生命周期/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-    <meta itemprop="description" content="grapher">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/07/16/c++%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B52ed%EF%BC%9A21%E5%92%8C23%20thread%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"  itemprop="url">
-        c++并发编程实践2ed：2.1和2.3 thread生命周期
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        
-学习自 第25课 std::thread对象的析构 - 浅墨浓香 - 博客园 (cnblogs.com)和《c++并发编程实践第二版》2.1
-
-一、线程创建std::thread th对象创建时，创建线程，这个线程是主线程的子线程，与主线程并发执行
-语法
-每个程序有一个执行 main() 函数的主线程，将函数添加为 std::thread 的参数即可创建另一个线程，两个线程并发运行
-
-#i...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-07-16T21:08:25+08:00">2022-07-16</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/c/">c++</a><span class="sep"></span><a class="category-link" href="/categories/c/c-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B52ed/">c++并发编程实践2ed</a><span class="sep"></span><a class="category-link" href="/categories/c/language/">language</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/c/" itemprop="url"><span itemprop="name">c++</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/c/language/" itemprop="url"><span itemprop="name">language</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/c/c-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B52ed/" itemprop="url"><span itemprop="name">c++并发编程实践2ed</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/07/16/c++%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B52ed%EF%BC%9A21%E5%92%8C23%20thread%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/16/c++底层 c++STL源码/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-    <meta itemprop="description" content="grapher">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/07/16/c++%E5%BA%95%E5%B1%82%20c++STL%E6%BA%90%E7%A0%81/"  itemprop="url">
-        c++底层 c++STL源码
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        用户内存分配和使用的规则（os知识）堆栈查看堆栈总大小每个进程允许的堆栈总大小在linux下可以用ulimit查看 stack size
-#查看软极限，单个进程的stack size限制
-ulimit -a #或者ulimit -aS
-#查看硬极限，软极限的限制
-ulimit -aH
-
-堆栈地址增长方向x86机器上，
-
-栈是向下增长的，即入栈是栈顶指针值变小
-堆是向上增长的（这个其实无所谓，...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-07-16T21:00:59+08:00">2022-07-16</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/c/">c++</a><span class="sep"></span><a class="category-link" href="/categories/c/language-deep/">language_deep</a><span class="sep"></span><a class="category-link" href="/categories/debug/">debug</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/c/" itemprop="url"><span itemprop="name">c++</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/debug/" itemprop="url"><span itemprop="name">debug</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/c/language-deep/" itemprop="url"><span itemprop="name">language_deep</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/07/16/c++%E5%BA%95%E5%B1%82%20c++STL%E6%BA%90%E7%A0%81/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/16/数据库表连接查询/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-    <meta itemprop="description" content="grapher">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/07/16/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A1%A8%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2/"  itemprop="url">
-        数据库表连接查询
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        数据库表连接（join）的简单解释 
-
-https://www.ruanyifeng.com/blog/2019/01/table-join.html
-图解 SQL 中各种连接 JOIN - 知乎 (zhihu.com)
-
-多表连接查询
-
-内连接
-外连接
-交叉连接
-
-连接查询是啥所谓”连接”，就是两张表根据关联字段，组合成一个数据集。
-举例车站站点表。假设用的是关系型数据库（早期开发中估计这...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-07-16T17:49:54+08:00">2022-07-16</time>
+        <time itemprop="dateCreated datePublished" datetime="2022-09-04T09:16:33+08:00">2022-09-04</time>
         
           <span class="dot"></span>
           <a class="category-link" href="/categories/db/">db</a>
@@ -3074,7 +2684,7 @@ https://www.ruanyifeng.com/blog/2019/01/table-join.html
       </div>
       
         <div>
-          <a class='readmore' href='/2022/07/16/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A1%A8%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2/' itemprop="url">
+          <a class='readmore' href='/2022/09/04/leveldb%E5%BA%95%E5%B1%82%E6%A6%82%E8%BF%B0%E5%92%8CFiles/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3090,7 +2700,7 @@ https://www.ruanyifeng.com/blog/2019/01/table-join.html
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/16/halo主题开发/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/03/NebulaGraph存储/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -3108,23 +2718,20 @@ https://www.ruanyifeng.com/blog/2019/01/table-join.html
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/07/16/halo%E4%B8%BB%E9%A2%98%E5%BC%80%E5%8F%91/"  itemprop="url">
-        halo主题开发
+      <a href="/2022/09/03/NebulaGraph%E5%AD%98%E5%82%A8/"  itemprop="url">
+        NebulaGraph存储
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        官方文档halo主题开发指南：Halo Documents侧边栏的开发者指南-主题开发（文档写得真好！）
-基础
-halo 博客深度定制与美化教程 (bestzuo.cn)
+        架构
+架构总览 - Nebula Graph Database 手册 (nebula-graph.com.cn)
 
-浏览器 F12 定位目标样式F12，然后&#96;&#96;ctrl+shift+c&#96;之后就可以
+Meta 服务是由 nebula-metad 进程提供的，负责数据管理，例如 Schema 操作、集群管理和用户权限管理等。
 
-鼠标选择（指：鼠标悬停）界面元素定位html代码（“元素”tab中）和样式
-
-同时还可以在右边开发者面板中临时修...
+所有 nebula-metad 进程构成了基于 Raft 协议的集群，其中一个进程是 leader，其他进程都是 follower。leader 是由...
       
     
   </div>
@@ -3132,20 +2739,24 @@ halo 博客深度定制与美化教程 (bestzuo.cn)
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-07-16T17:45:42+08:00">2022-07-16</time>
+        <time itemprop="dateCreated datePublished" datetime="2022-09-03T10:17:55+08:00">2022-09-03</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/play/">play</a>
+          <a class="category-link" href="/categories/graph/">graph</a><span class="sep"></span><a class="category-link" href="/categories/graph/db/">db</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/play/" itemprop="url"><span itemprop="name">play</span></a>
+              <a href="/categories/graph/" itemprop="url"><span itemprop="name">graph</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/graph/db/" itemprop="url"><span itemprop="name">db</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2022/07/16/halo%E4%B8%BB%E9%A2%98%E5%BC%80%E5%8F%91/' itemprop="url">
+          <a class='readmore' href='/2022/09/03/NebulaGraph%E5%AD%98%E5%82%A8/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3161,7 +2772,7 @@ halo 博客深度定制与美化教程 (bestzuo.cn)
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/10/红黑树/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/03/Raft/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -3179,8 +2790,8 @@ halo 博客深度定制与美化教程 (bestzuo.cn)
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/07/10/%E7%BA%A2%E9%BB%91%E6%A0%91/"  itemprop="url">
-        红黑树
+      <a href="/2022/09/03/Raft/"  itemprop="url">
+        Raft
       </a>
     </h2>
   
@@ -3188,12 +2799,11 @@ halo 博客深度定制与美化教程 (bestzuo.cn)
     
       
         
-The-Art-Of-Programming-By-July&#x2F;03.01.md at master · julycoding&#x2F;The-Art-Of-Programming-By-July (github.com)
+https://docs.nebula-graph.com.cn/3.2.0/1.introduction/3.nebula-graph-architecture/4.storage-service/#raft
+https://cloud.tencent.com/developer/article/1826594
 
-红黑树本质上是一棵近似平衡的二叉查找树
-红黑树的查找、插入、删除的时间复杂度最坏为O(log n)
-回顾：二叉查找树
-若任意结点的左子树不空，则左子树上所有...
+简介
+分布式系统中，同一份数据通常会有多个副本，这样即使少数副本发生故障，...
       
     
   </div>
@@ -3201,20 +2811,24 @@ The-Art-Of-Programming-By-July&#x2F;03.01.md at master · julycoding&#x2F;The-Ar
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-07-10T22:55:20+08:00">2022-07-10</time>
+        <time itemprop="dateCreated datePublished" datetime="2022-09-03T10:17:27+08:00">2022-09-03</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/algorithm/">algorithm</a>
+          <a class="category-link" href="/categories/algorithm/">algorithm</a><span class="sep"></span><a class="category-link" href="/categories/db/">db</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
               <a href="/categories/algorithm/" itemprop="url"><span itemprop="name">algorithm</span></a>
             </span>
           
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/db/" itemprop="url"><span itemprop="name">db</span></a>
+            </span>
+          
         
       </div>
       
         <div>
-          <a class='readmore' href='/2022/07/10/%E7%BA%A2%E9%BB%91%E6%A0%91/' itemprop="url">
+          <a class='readmore' href='/2022/09/03/Raft/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3230,7 +2844,7 @@ The-Art-Of-Programming-By-July&#x2F;03.01.md at master · julycoding&#x2F;The-Ar
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/10/gdb/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/03/WAL Write Ahead Log预写日志/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -3248,8 +2862,8 @@ The-Art-Of-Programming-By-July&#x2F;03.01.md at master · julycoding&#x2F;The-Ar
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/07/10/gdb/"  itemprop="url">
-        gdb
+      <a href="/2022/09/03/WAL%20Write%20Ahead%20Log%E9%A2%84%E5%86%99%E6%97%A5%E5%BF%97/"  itemprop="url">
+        WAL Write Ahead Log预写日志
       </a>
     </h2>
   
@@ -3257,12 +2871,11 @@ The-Art-Of-Programming-By-July&#x2F;03.01.md at master · julycoding&#x2F;The-Ar
     
       
         
-关注报错信息（搜索报错号）
--rdynamic -g 编译，直接gdb运行（-rdynamic可以方便监控可能的段错误）
+https://www.cnblogs.com/xuwc/p/14037750.html
 
 
-
-报错型bug调试建议：bt，从最靠近栈顶你写的函数，l那个函数和上一层函数，看p info这个函数的参数对不对（如果不好p info又没有写打印代码的话，先改源码在这个函数里面刚入口的地方加打印，然后r）不断向栈底看，直到参数没有问题的函数（就是它调用接下来的函数...
+在使用 WAL 的系统中，**所有的修改在提交之前都要先写入 log 文件中(写入log文件是写入永久存储)**。log 文件中通常包括 redo 和 undo 信息
+使用 WAL 的数据库系统不会再每新增一条 WAL 日志就将其刷入数据库文件中，一般**积累一定的量然后批量写入(checkpoi...
       
     
   </div>
@@ -3270,28 +2883,20 @@ The-Art-Of-Programming-By-July&#x2F;03.01.md at master · julycoding&#x2F;The-Ar
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-07-10T15:06:13+08:00">2022-07-10</time>
+        <time itemprop="dateCreated datePublished" datetime="2022-09-03T09:31:41+08:00">2022-09-03</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/debug/">debug</a><span class="sep"></span><a class="category-link" href="/categories/tool/">tool</a><span class="sep"></span><a class="category-link" href="/categories/tool/linux/">linux</a>
+          <a class="category-link" href="/categories/db/">db</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/tool/" itemprop="url"><span itemprop="name">tool</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/tool/linux/" itemprop="url"><span itemprop="name">linux</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/debug/" itemprop="url"><span itemprop="name">debug</span></a>
+              <a href="/categories/db/" itemprop="url"><span itemprop="name">db</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2022/07/10/gdb/' itemprop="url">
+          <a class='readmore' href='/2022/09/03/WAL%20Write%20Ahead%20Log%E9%A2%84%E5%86%99%E6%97%A5%E5%BF%97/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3307,7 +2912,7 @@ The-Art-Of-Programming-By-July&#x2F;03.01.md at master · julycoding&#x2F;The-Ar
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/10/linux下源码编译安装 设置环境变量/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/02/powershell美化字体颜色/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -3325,18 +2930,30 @@ The-Art-Of-Programming-By-July&#x2F;03.01.md at master · julycoding&#x2F;The-Ar
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/07/10/linux%E4%B8%8B%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85%20%E8%AE%BE%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/"  itemprop="url">
-        linux下源码编译安装 设置环境变量
+      <a href="/2022/09/02/powershell%E7%BE%8E%E5%8C%96%E5%AD%97%E4%BD%93%E9%A2%9C%E8%89%B2/"  itemprop="url">
+        powershell美化 powershell字体 powershell颜色
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        设置环境变量先学习下如何设置环境变量
-To make the variable settings effect for each bash shell, put the exporting command to your ~/.bashrc, the individual per-interactive-shell startup file.
-bash中用于设置环境变量的语法如下
-expor...
+        设置颜色
+安装colortoolscoop install colortool
+
+
+预览主题
+列出哪些主题
+
+colortool -s
+
+
+预览主题，比如OneHalfDark.itermcolors
+
+  colortool OneHalfDark.itermcolors
+
+
+设置主题（将方案同时应用于当前控制台和默认控制台）colortool -b OneHalfDark.itermco...
       
     
   </div>
@@ -3344,10 +2961,144 @@ expor...
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-07-10T12:53:49+08:00">2022-07-10</time>
+        <time itemprop="dateCreated datePublished" datetime="2022-09-02T15:09:19+08:00">2022-09-02</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/fix-error/">fix_error</a><span class="sep"></span><a class="category-link" href="/categories/tool/">tool</a><span class="sep"></span><a class="category-link" href="/categories/tool/linux/">linux</a>
+          <a class="category-link" href="/categories/tool/">tool</a><span class="sep"></span><a class="category-link" href="/categories/tool/windows/">windows</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/tool/" itemprop="url"><span itemprop="name">tool</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/tool/windows/" itemprop="url"><span itemprop="name">windows</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/09/02/powershell%E7%BE%8E%E5%8C%96%E5%AD%97%E4%BD%93%E9%A2%9C%E8%89%B2/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/02/graph schema/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/09/02/graph%20schema/"  itemprop="url">
+        graph schema
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        
+https://docs.tigergraph.com/gsql-ref/current/tutorials/gsql-101/
+
+Every graph has a schema, or a model describing the types of vertices and edges that appear in a graph.（描述图中有哪些类型的点边，每种类型有哪些属性，以及点...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-09-02T10:34:14+08:00">2022-09-02</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/graph/">graph</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/graph/" itemprop="url"><span itemprop="name">graph</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/09/02/graph%20schema/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/01/linux启动docker服务/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/09/01/linux%E5%90%AF%E5%8A%A8docker%E6%9C%8D%E5%8A%A1/"  itemprop="url">
+        linux启动docker服务
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        安装和启动这个写很好：Install Docker Engine on Ubuntu
+在上述教程install之后docker run hello-word之前可能需要启动docker后台服务：sudo service docker starthow would you know that the service name was docker： You can see them using...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-09-01T20:49:03+08:00">2022-09-01</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/tool/">tool</a><span class="sep"></span><a class="category-link" href="/categories/tool/linux/">linux</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
               <a href="/categories/tool/" itemprop="url"><span itemprop="name">tool</span></a>
@@ -3357,15 +3108,225 @@ expor...
               <a href="/categories/tool/linux/" itemprop="url"><span itemprop="name">linux</span></a>
             </span>
           
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/09/01/linux%E5%90%AF%E5%8A%A8docker%E6%9C%8D%E5%8A%A1/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/01/bash获取命令退出代码/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/09/01/bash%E8%8E%B7%E5%8F%96%E5%91%BD%E4%BB%A4%E9%80%80%E5%87%BA%E4%BB%A3%E7%A0%81/"  itemprop="url">
+        bash获取命令退出代码
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        echo $?即输出上一条执行命令的退出码另外if command; then fi也是对command的退出码进行判断，如果为0则条件成立
+
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-09-01T14:39:40+08:00">2022-09-01</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/tool/">tool</a><span class="sep"></span><a class="category-link" href="/categories/tool/linux/">linux</a>
+          
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/fix-error/" itemprop="url"><span itemprop="name">fix_error</span></a>
+              <a href="/categories/tool/" itemprop="url"><span itemprop="name">tool</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/tool/linux/" itemprop="url"><span itemprop="name">linux</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2022/07/10/linux%E4%B8%8B%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85%20%E8%AE%BE%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/' itemprop="url">
+          <a class='readmore' href='/2022/09/01/bash%E8%8E%B7%E5%8F%96%E5%91%BD%E4%BB%A4%E9%80%80%E5%87%BA%E4%BB%A3%E7%A0%81/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/01/bash超时kill/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/09/01/bash%E8%B6%85%E6%97%B6kill/"  itemprop="url">
+        bash超时kill
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        timeout 3 sleep 30
+
+当 sleep 执行 3 秒的时候就会终止
+包裹程序未超时，timeout传递退出代码（--preserve-status）（亲测似乎不加此选项也会保护退出代码）
+timeout --preserve-status 1m ping -c 5 Nostromo.local
+echo $? # 如果timeout包裹的程序超时，则返回值为124，否则为未超...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-09-01T11:05:21+08:00">2022-09-01</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/tool/">tool</a><span class="sep"></span><a class="category-link" href="/categories/tool/linux/">linux</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/tool/" itemprop="url"><span itemprop="name">tool</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/tool/linux/" itemprop="url"><span itemprop="name">linux</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/09/01/bash%E8%B6%85%E6%97%B6kill/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/01/bash遍历数组/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/09/01/bash%E9%81%8D%E5%8E%86%E6%95%B0%E7%BB%84/"  itemprop="url">
+        bash遍历数组
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        无下标控制，类似range-for
+array=(hello word)
+for element in $array  
+do 
+    echo $element
+done
+
+
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-09-01T11:03:35+08:00">2022-09-01</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/tool/">tool</a><span class="sep"></span><a class="category-link" href="/categories/tool/linux/">linux</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/tool/" itemprop="url"><span itemprop="name">tool</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/tool/linux/" itemprop="url"><span itemprop="name">linux</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/09/01/bash%E9%81%8D%E5%8E%86%E6%95%B0%E7%BB%84/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3392,7 +3353,7 @@ expor...
           </a>
         
         <p class="current">
-          23 / 25
+          23 / 31
         </p>
         
           <a class="next" rel="next" href="/page/24/">
@@ -3497,12 +3458,12 @@ expor...
           <li><a class="flat-box"
             title="/categories/algorithm/" href="/categories/algorithm/"
             active-action="action-categoriesalgorithm"
-            ><div class='name'>algorithm</div><div class='badge'>(7)</div></a></li>
+            ><div class='name'>algorithm</div><div class='badge'>(9)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/c/" href="/categories/c/"
             active-action="action-categoriesc"
-            ><div class='name'>c++</div><div class='badge'>(35)</div></a></li>
+            ><div class='name'>c++</div><div class='badge'>(37)</div></a></li>
         
           <li><a class="flat-box child"
             title="/categories/c/SIMD/" href="/categories/c/SIMD/"
@@ -3647,7 +3608,7 @@ expor...
           <li><a class="flat-box"
             title="/categories/tools/" href="/categories/tools/"
             active-action="action-categoriestools"
-            ><div class='name'>tools</div><div class='badge'>(2)</div></a></li>
+            ><div class='name'>tools</div><div class='badge'>(3)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/" href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/"

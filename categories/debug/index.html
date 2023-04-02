@@ -2272,7 +2272,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1678018354333),
+    lastupdate: new Date(1680449240058),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -3224,13 +3224,17 @@ R (TASK_RUNNING)，可执行状态只有在该状态的进程才可能在CPU上�
   <div class='md article-desc' itemprop="articleBody">
     
       
-        命令profile程序（-t则将把每个线程分开统计并分别输出，-k指定内核调试文件，这样会得到内核的调用信息）
+        命令
+profile程序（-t则将把每个线程分开统计并分别输出，-k指定内核调试文件，这样会得到内核的调用信息）
+
 sudo operf -t -k /usr/lib/debug/lib/modules/$(uname -r)/vmlinux ./main
 
+
 根据得到的采集数据输出结果
+
 opreport -o symbols.txt -l 
 
-输出输出的symbols.txt例如：三个线程每个线...
+callgraph若要输出函数callgra...
       
     
   </div>
@@ -3302,12 +3306,12 @@ opreport -o symbols.txt -l
     
       
         
-valgrind
+valgrind  这个厉害！比如其中的memcheck工具，跑一遍告诉你哪里越界访问了！yyds！
 gdb细粒度跟踪（这个超级牛啊）
 可以不断确定要在哪里打断点，然后r，带着已经打的断点重新观察
 
 经验malloc abort 或者 delete报错（说二次释放可是其实没有）heap is corrupt：被程序写了不该写的地方，比如在数组&#x2F;vector长度后面写东西
-std::vector&lt;VertexIdType&gt; new_vps(proble...
+std:...
       
     
   </div>
@@ -3548,12 +3552,12 @@ pro...
           <li><a class="flat-box"
             title="/categories/algorithm/" href="/categories/algorithm/"
             active-action="action-categoriesalgorithm"
-            ><div class='name'>algorithm</div><div class='badge'>(7)</div></a></li>
+            ><div class='name'>algorithm</div><div class='badge'>(9)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/c/" href="/categories/c/"
             active-action="action-categoriesc"
-            ><div class='name'>c++</div><div class='badge'>(35)</div></a></li>
+            ><div class='name'>c++</div><div class='badge'>(37)</div></a></li>
         
           <li><a class="flat-box child"
             title="/categories/c/SIMD/" href="/categories/c/SIMD/"
@@ -3698,7 +3702,7 @@ pro...
           <li><a class="flat-box"
             title="/categories/tools/" href="/categories/tools/"
             active-action="action-categoriestools"
-            ><div class='name'>tools</div><div class='badge'>(2)</div></a></li>
+            ><div class='name'>tools</div><div class='badge'>(3)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/" href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/"

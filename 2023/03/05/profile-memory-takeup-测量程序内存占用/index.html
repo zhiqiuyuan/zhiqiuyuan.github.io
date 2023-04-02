@@ -45,7 +45,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-03-05T08:21:05.000Z">
-<meta property="article:modified_time" content="2023-03-05T09:20:14.928Z">
+<meta property="article:modified_time" content="2023-03-08T01:14:23.347Z">
 <meta property="article:author" content="zhiqiuyuan">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -2274,7 +2274,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1678018354333),
+    lastupdate: new Date(1680449240058),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2710,13 +2710,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h1 id="内存占用峰值：time-f"><a href="#内存占用峰值：time-f" class="headerlink" title="内存占用峰值：time -f"></a>内存占用峰值：<code>time -f</code></h1><pre><code class="bash">$ /usr/bin/time -f &quot;%M KB&quot; &lt;command_and_args&gt;
+    <h2 id="内存占用峰值：time-f"><a href="#内存占用峰值：time-f" class="headerlink" title="内存占用峰值：time -f"></a>内存占用峰值：<code>time -f</code></h2><pre><code class="bash">$ /usr/bin/time -f &quot;%M KB&quot; &lt;command_and_args&gt;
 </code></pre>
 <p>注意给<code>time</code>传递参数的时候，bash user需要给定time的绝对路径<br><code>time -f ... ...</code>会报错<code>-f: command not found</code>，这实际上uses an internal version of time, provided as a shell keyword</p>
 <pre><code>Users of the bash shell need to use an explicit path in order to run
 the external time command and not the shell builtin variant.
 </code></pre>
-<h2 id="time输出程序运行的time-memory-IO"><a href="#time输出程序运行的time-memory-IO" class="headerlink" title="time输出程序运行的time memory IO"></a>time输出程序运行的time memory IO</h2><p><a target="_blank" rel="noopener" href="https://man7.org/linux/man-pages/man1/time.1.html">https://man7.org/linux/man-pages/man1/time.1.html</a></p>
+<h3 id="time输出程序运行的time-memory-IO"><a href="#time输出程序运行的time-memory-IO" class="headerlink" title="time输出程序运行的time memory IO"></a>time输出程序运行的time memory IO</h3><p><a target="_blank" rel="noopener" href="https://man7.org/linux/man-pages/man1/time.1.html">https://man7.org/linux/man-pages/man1/time.1.html</a></p>
 <blockquote>
 <p>man time: it output lots of useful<br>information, not only about time used, but also on other<br>resources like memory, I&#x2F;O and IPC calls (where available).  The<br>output is formatted using a format string that can be specified<br>using the -f option or the TIME environment variable.</p>
 </blockquote>
@@ -2724,8 +2724,10 @@ the external time command and not the shell builtin variant.
 <li>Memory<br>%M     <strong>Maximum resident set size</strong> of the process during its<br>        lifetime, in Kbytes.<br>%t     (Not in tcsh(1).)  Average resident set size of the<br>        process, in Kbytes.<br>%K     Average total (data+stack+text) memory use of the process,<br>        in Kbytes.</li>
 <li>time<br>%e     (Not in tcsh(1).)  Elapsed real time (in seconds).</li>
 </ul>
-<h1 id="详细堆内存-x2F-all内存占用：massif"><a href="#详细堆内存-x2F-all内存占用：massif" class="headerlink" title="详细堆内存&#x2F;all内存占用：massif"></a>详细堆内存&#x2F;all内存占用：massif</h1><p><a target="_blank" rel="noopener" href="https://valgrind.org/docs/manual/ms-manual.html">https://valgrind.org/docs/manual/ms-manual.html</a><br>is shipped within Valgrind.<br>By default Massif measures only <strong>heap memory</strong>, i.e. memory allocated with <code>malloc, calloc, realloc, memalign, new, new[]</code>, and a few other, similar functions. (And it can optionally measure stack memory, <code>--stacks=yes</code>) This means it does not directly measure memory allocated with lower-level system calls such as <code>mmap, mremap, and brk</code>.<br>if you wish to measure all the memory used by your program, you can use the <code>--pages-as-heap=yes</code> (then Massif’s normal heap block profiling is replaced by lower-level page profiling: Every page allocated via <code>mmap</code> and similar system calls is treated as a distinct block)</p>
-<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><ol>
+<h2 id="详细堆内存-x2F-all内存占用：massif"><a href="#详细堆内存-x2F-all内存占用：massif" class="headerlink" title="详细堆内存&#x2F;all内存占用：massif"></a>详细堆内存&#x2F;all内存占用：massif</h2><blockquote>
+<p>超级好用！优化程序内存占用的时候再也不用手工检查哪些地方是瓶颈了！<br><a target="_blank" rel="noopener" href="https://valgrind.org/docs/manual/ms-manual.html">https://valgrind.org/docs/manual/ms-manual.html</a><br>is shipped within Valgrind.<br>By default Massif measures only <strong>heap memory</strong>, i.e. memory allocated with <code>malloc, calloc, realloc, memalign, new, new[]</code>, and a few other, similar functions. (And it can optionally measure stack memory, <code>--stacks=yes</code>) This means it does not directly measure memory allocated with lower-level system calls such as <code>mmap, mremap, and brk</code>.<br>if you wish to measure all the memory used by your program, you can use the <code>--pages-as-heap=yes</code> (then Massif’s normal heap block profiling is replaced by lower-level page profiling: Every page allocated via <code>mmap</code> and similar system calls is treated as a distinct block)</p>
+</blockquote>
+<h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><ol>
 <li>compile with debugging info (the -g option)</li>
 <li>run Massif itself to gather the profiling information</li>
 </ol>
@@ -2739,7 +2741,7 @@ the external time command and not the shell builtin variant.
 </code></pre>
 <p>ms_print will produce<br>(a) a graph showing the <em>memory consumption over</em> the program’s execution<br>    - By default, Massif uses “instructions executed” as the unit of time<br>(b) detailed information about the <em>responsible allocation sites</em> at various points in the program, including the point of peak memory allocation.</p>
 <p><img src="/profile-memory-takeup-%E6%B5%8B%E9%87%8F%E7%A8%8B%E5%BA%8F%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8/image-20230305165130590.png" class="lazyload" data-srcset="/profile-memory-takeup-%E6%B5%8B%E9%87%8F%E7%A8%8B%E5%BA%8F%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8/image-20230305165130590.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20230305165130590"><br>Each vertical bar represents a snapshot, i.e. a measurement of the memory usage at a certain point in time.</p>
-<h3 id="ms-print得到-a-图"><a href="#ms-print得到-a-图" class="headerlink" title="ms_print得到(a)图"></a>ms_print得到(a)图</h3><ul>
+<h4 id="ms-print得到-a-图"><a href="#ms-print得到-a-图" class="headerlink" title="ms_print得到(a)图"></a>ms_print得到(a)图</h4><ul>
 <li><p>Note that for very short-run programs, most of the graph empty, with only a couple of bars at the very end: most of the executed instructions involve the loading and dynamic linking of the program. The execution of main (and thus the heap allocations) only occur at the very end.  For a short-running program like this, we can use the <code>--time-unit=B</code> option to specify that we want the time unit to instead be <em>the number of bytes allocated&#x2F;deallocated on the heap and stack(s)</em>.</p>
 <p><img src="/profile-memory-takeup-%E6%B5%8B%E9%87%8F%E7%A8%8B%E5%BA%8F%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8/image-20230305165206632.png" class="lazyload" data-srcset="/profile-memory-takeup-%E6%B5%8B%E9%87%8F%E7%A8%8B%E5%BA%8F%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8/image-20230305165206632.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20230305165206632"></p>
 </li>
@@ -2750,7 +2752,7 @@ the external time command and not the shell builtin variant.
 </ul>
 </li>
 </ul>
-<h3 id="ms-print得到的-b-snapshot-info"><a href="#ms-print得到的-b-snapshot-info" class="headerlink" title="ms_print得到的(b)snapshot info"></a>ms_print得到的(b)snapshot info</h3><p>normal snapshot<br><img src="/profile-memory-takeup-%E6%B5%8B%E9%87%8F%E7%A8%8B%E5%BA%8F%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8/image-20230305165938498.png" class="lazyload" data-srcset="/profile-memory-takeup-%E6%B5%8B%E9%87%8F%E7%A8%8B%E5%BA%8F%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8/image-20230305165938498.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20230305165938498"></p>
+<h4 id="ms-print得到的-b-snapshot-info"><a href="#ms-print得到的-b-snapshot-info" class="headerlink" title="ms_print得到的(b)snapshot info"></a>ms_print得到的(b)snapshot info</h4><p>注意，每个snapshot的内存占比来源分析，都是当前快照下内存的全部实际来源，而不是仅仅看此快照和上一个快照时间之间执行的代码申请的内存噢！所以超级好用！<br>比如我好奇峰值的时候内存分布，直接去看峰值snapshot的内存来源分析就可以了！<br>normal snapshot<br><img src="/profile-memory-takeup-%E6%B5%8B%E9%87%8F%E7%A8%8B%E5%BA%8F%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8/image-20230305165938498.png" class="lazyload" data-srcset="/profile-memory-takeup-%E6%B5%8B%E9%87%8F%E7%A8%8B%E5%BA%8F%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8/image-20230305165938498.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20230305165938498"></p>
 <p>The next snapshot is detailed. As well as the basic counts, it gives an allocation tree which indicates exactly which pieces of code were responsible for allocating heap memory:<br><img src="/profile-memory-takeup-%E6%B5%8B%E9%87%8F%E7%A8%8B%E5%BA%8F%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8/image-20230305170016635.png" class="lazyload" data-srcset="/profile-memory-takeup-%E6%B5%8B%E9%87%8F%E7%A8%8B%E5%BA%8F%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8/image-20230305170016635.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20230305170016635"></p>
 <p>下面最后部分的含义：n&#x3D;14的snapshots的主要堆内存占用from three different code locations: line 20, which is responsible for 10,000B (49.74%); line 5, which is responsible for 8,000B (39.79%); and line 10, which is responsible for 2,000B (9.95%).</p>
 <p><img src="/profile-memory-takeup-%E6%B5%8B%E9%87%8F%E7%A8%8B%E5%BA%8F%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8/image-20230305170323143.png" class="lazyload" data-srcset="/profile-memory-takeup-%E6%B5%8B%E9%87%8F%E7%A8%8B%E5%BA%8F%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8/image-20230305170323143.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20230305170323143"></p>
@@ -2778,10 +2780,10 @@ the external time command and not the shell builtin variant.
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-03-05T17:20:14+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-03-08T09:14:23+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Mar 5, 2023</p>
+    <p>更新于：Mar 8, 2023</p>
   </a>
 </div>
 
@@ -2857,6 +2859,18 @@ the external time command and not the shell builtin variant.
   
     <div class="prev-next">
       
+        <a class='prev' href='/2023/03/06/daily-2023-3-6/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>6</p>
+          <p class='content'>今日目标：
+上午
+1
+add output time average over leaf
+run test1_c15000x
+确认查询定义
+严重怀疑hw老师觉得问题弱智不回答hhh（xx
+快中午...</p>
+        </a>
+      
       
         <a class='next' href='/2023/03/05/daily-2023-3-5/'>
           <p class='title'>5<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
@@ -2924,7 +2938,7 @@ the external time command and not the shell builtin variant.
 
 
   <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#time%E8%BE%93%E5%87%BA%E7%A8%8B%E5%BA%8F%E8%BF%90%E8%A1%8C%E7%9A%84time-memory-IO"><span class="toc-text">time输出程序运行的time memory IO</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-text">使用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ms-print%E5%BE%97%E5%88%B0-a-%E5%9B%BE"><span class="toc-text">ms_print得到(a)图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ms-print%E5%BE%97%E5%88%B0%E7%9A%84-b-snapshot-info"><span class="toc-text">ms_print得到的(b)snapshot info</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8%E5%B3%B0%E5%80%BC%EF%BC%9Atime-f"><span class="toc-text">内存占用峰值：time -f</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#time%E8%BE%93%E5%87%BA%E7%A8%8B%E5%BA%8F%E8%BF%90%E8%A1%8C%E7%9A%84time-memory-IO"><span class="toc-text">time输出程序运行的time memory IO</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%A6%E7%BB%86%E5%A0%86%E5%86%85%E5%AD%98-x2F-all%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8%EF%BC%9Amassif"><span class="toc-text">详细堆内存&#x2F;all内存占用：massif</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-text">使用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ms-print%E5%BE%97%E5%88%B0-a-%E5%9B%BE"><span class="toc-text">ms_print得到(a)图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ms-print%E5%BE%97%E5%88%B0%E7%9A%84-b-snapshot-info"><span class="toc-text">ms_print得到的(b)snapshot info</span></a></li></ol></li></ol></li></ol>
   </div>
 </section>
 
@@ -3887,7 +3901,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"grapher"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"zhiqiuyuan's blog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/tools/","name":"tools"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/03/05/profile-memory-takeup-测量程序内存占用/","name":"profile memory takeup 测量程序内存占用"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"zhiqiuyuan's blog","url":"http://example.com/","keywords":null,"description":"grapher","author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"grapher"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"profile memory takeup 测量程序内存占用","description":"grapher","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/03/05/profile-memory-takeup-%E6%B5%8B%E9%87%8F%E7%A8%8B%E5%BA%8F%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8/"},"author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/03/05/profile-memory-takeup-%E6%B5%8B%E9%87%8F%E7%A8%8B%E5%BA%8F%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8/","wordCount":0,"datePublished":"2023-03-05T08:21:05.000Z","dateModified":"2023-03-05T09:20:14.928Z","articleSection":"tools","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"grapher"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"zhiqiuyuan's blog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/tools/","name":"tools"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/03/05/profile-memory-takeup-测量程序内存占用/","name":"profile memory takeup 测量程序内存占用"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"zhiqiuyuan's blog","url":"http://example.com/","keywords":null,"description":"grapher","author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"grapher"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"profile memory takeup 测量程序内存占用","description":"grapher","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/03/05/profile-memory-takeup-%E6%B5%8B%E9%87%8F%E7%A8%8B%E5%BA%8F%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8/"},"author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/03/05/profile-memory-takeup-%E6%B5%8B%E9%87%8F%E7%A8%8B%E5%BA%8F%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8/","wordCount":0,"datePublished":"2023-03-05T08:21:05.000Z","dateModified":"2023-03-08T01:14:23.347Z","articleSection":"tools","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

@@ -2272,7 +2272,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1678018354333),
+    lastupdate: new Date(1680449240058),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2632,7 +2632,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/14/论文笔记 2017FAST Graphene_Fine Grained IO Management for Graph Computing/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/12/10/文本文件编码方式查看与修改/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2650,35 +2650,28 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/09/14/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202017FAST%20Graphene_Fine%20Grained%20IO%20Management%20for%20Graph%20Computing/"  itemprop="url">
-        论文笔记 2017FAST Graphene_Fine-Grained IO Management for Graph Computing
+      <a href="/2022/12/10/%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6%E7%BC%96%E7%A0%81%E6%96%B9%E5%BC%8F%E6%9F%A5%E7%9C%8B%E4%B8%8E%E4%BF%AE%E6%94%B9/"  itemprop="url">
+        文本文件编码方式查看与修改
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        一些definition
+        linux下
+修改文件编码方式从utf-8到ansi
 
-1 Bitmap Based, Asynchronous IO1 store
+iconv -f utf8 -t gbk -o ansi.txt utf8.txt
 
+-f: from
+-t: to
 
-block size依据： 
+查看文件编码方式
 
+file &lt;filename&gt;
 
-2 bitmap（这个）
-
-
-bitmap size: 举例：benefit:  
-
-
-3 Asynchronous IO
-upper bound for IO size(size for each IO transaction)
-
-
-依据： 
-
-
+# cp @ cp in ~/cp_lab/src/lexer [10:38:09] 
+$ file lexical_analyzer_utf8.l 
 ...
       
     
@@ -2687,20 +2680,20 @@ upper bound for IO size(size for each IO transaction)
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-09-14T11:19:38+08:00">2022-09-14</time>
+        <time itemprop="dateCreated datePublished" datetime="2022-12-10T23:47:49+08:00">2022-12-10</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/paper/">paper</a>
+          <a class="category-link" href="/categories/tool/">tool</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/paper/" itemprop="url"><span itemprop="name">paper</span></a>
+              <a href="/categories/tool/" itemprop="url"><span itemprop="name">tool</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2022/09/14/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202017FAST%20Graphene_Fine%20Grained%20IO%20Management%20for%20Graph%20Computing/' itemprop="url">
+          <a class='readmore' href='/2022/12/10/%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6%E7%BC%96%E7%A0%81%E6%96%B9%E5%BC%8F%E6%9F%A5%E7%9C%8B%E4%B8%8E%E4%BF%AE%E6%94%B9/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2716,7 +2709,7 @@ upper bound for IO size(size for each IO transaction)
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/13/论文笔记 2016SIGMOD iBFS_Concurrent Breadth First Search on GPUs/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/12/10/stat 文件元数据查看/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2734,23 +2727,22 @@ upper bound for IO size(size for each IO transaction)
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/"  itemprop="url">
-        论文笔记 2016SIGMOD iBFS_Concurrent Breadth-First Search on GPUs
+      <a href="/2022/12/10/stat%20%E6%96%87%E4%BB%B6%E5%85%83%E6%95%B0%E6%8D%AE%E6%9F%A5%E7%9C%8B/"  itemprop="url">
+        stat 文件元数据查看
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        问题
+        stat file
 
-code
-
-related workCPU-多BFS实例
-
-
-
-MSBFS VLDB[26] Manuel Then, Moritz Kaufmann, Fernando Chirigati,Tuan-Anh Hoang-Vu, Kien Pham, Alfons Kemper,Thomas Neumann, and Huy T Vo. The more themerrier: Ef...
+display file or file system status
+$ stat answer1
+  File: answer1
+  Size: 82        	Blocks: 8          IO Block: 4096   regular file
+Device: 805h/2053d	Inode: 1634042     Links: 1
+Acces...
       
     
   </div>
@@ -2758,20 +2750,24 @@ MSBFS VLDB[26] Manuel Then, Moritz Kaufmann, Fernando Chirigati,Tuan-Anh Hoang-V
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-09-13T17:22:20+08:00">2022-09-13</time>
+        <time itemprop="dateCreated datePublished" datetime="2022-12-10T23:45:35+08:00">2022-12-10</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/paper/">paper</a>
+          <a class="category-link" href="/categories/tool/">tool</a><span class="sep"></span><a class="category-link" href="/categories/tool/linux/">linux</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/paper/" itemprop="url"><span itemprop="name">paper</span></a>
+              <a href="/categories/tool/" itemprop="url"><span itemprop="name">tool</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/tool/linux/" itemprop="url"><span itemprop="name">linux</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2022/09/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202016SIGMOD%20iBFS_Concurrent%20Breadth%20First%20Search%20on%20GPUs/' itemprop="url">
+          <a class='readmore' href='/2022/12/10/stat%20%E6%96%87%E4%BB%B6%E5%85%83%E6%95%B0%E6%8D%AE%E6%9F%A5%E7%9C%8B/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2787,7 +2783,7 @@ MSBFS VLDB[26] Manuel Then, Moritz Kaufmann, Fernando Chirigati,Tuan-Anh Hoang-V
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/10/论文笔记 2012PPoPP Scalable GPU Graph Traversal/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/12/10/linux命令行 限制管理/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2805,22 +2801,17 @@ MSBFS VLDB[26] Manuel Then, Moritz Kaufmann, Fernando Chirigati,Tuan-Anh Hoang-V
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/09/10/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202012PPoPP%20Scalable%20GPU%20Graph%20Traversal/"  itemprop="url">
-        论文笔记 2012PPoPP Scalable GPU Graph Traversal
+      <a href="/2022/12/10/linux%E5%91%BD%E4%BB%A4%E8%A1%8C%20%E9%99%90%E5%88%B6%E7%AE%A1%E7%90%86/"  itemprop="url">
+        linux命令行 限制管理
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        details: High-Performance and Scalable GPU Graph Traversal我读的这篇详细的
-BFS
-approach
-componentsContract-Expand
-Two-Phase
-gatheringCoarse-Grained, Warp-Based Gathering
-
-Fine-Grained, Scan-Based Gathering...
+        概述软硬极限极限分为软性和硬性。
+The hard limit is the maximum value that is allowed for the soft limit. Any changes to the hard limit require root access. 
+The soft limit is the value that Linux uses to limit the...
       
     
   </div>
@@ -2828,20 +2819,24 @@ Fine-Grained, Scan-Based Gathering...
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-09-10T17:58:42+08:00">2022-09-10</time>
+        <time itemprop="dateCreated datePublished" datetime="2022-12-10T23:41:30+08:00">2022-12-10</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/paper/">paper</a>
+          <a class="category-link" href="/categories/tool/">tool</a><span class="sep"></span><a class="category-link" href="/categories/tool/linux/">linux</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/paper/" itemprop="url"><span itemprop="name">paper</span></a>
+              <a href="/categories/tool/" itemprop="url"><span itemprop="name">tool</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/tool/linux/" itemprop="url"><span itemprop="name">linux</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2022/09/10/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202012PPoPP%20Scalable%20GPU%20Graph%20Traversal/' itemprop="url">
+          <a class='readmore' href='/2022/12/10/linux%E5%91%BD%E4%BB%A4%E8%A1%8C%20%E9%99%90%E5%88%B6%E7%AE%A1%E7%90%86/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2857,7 +2852,7 @@ Fine-Grained, Scan-Based Gathering...
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/09/CUDA编程模型/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/12/10/linux命令行进程管理/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2875,85 +2870,21 @@ Fine-Grained, Scan-Based Gathering...
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/09/09/CUDA%E7%BC%96%E7%A8%8B%E6%A8%A1%E5%9E%8B/"  itemprop="url">
-        CUDA编程模型
+      <a href="/2022/12/10/linux%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/"  itemprop="url">
+        linux命令行进程管理
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html#programming-model
-overall
-thread hierarchy：将问题划分为线程块block
-Thread blocks are required to execute independently: It must be possible t...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-09-09T16:17:04+08:00">2022-09-09</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/GPU/">GPU</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/GPU/" itemprop="url"><span itemprop="name">GPU</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/09/09/CUDA%E7%BC%96%E7%A8%8B%E6%A8%A1%E5%9E%8B/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/06/GPU入门/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-    <meta itemprop="description" content="grapher">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/09/06/GPU%E5%85%A5%E9%97%A8/"  itemprop="url">
-        GPU入门
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        
-学习自：https://qiankunli.github.io/2021/08/18/gpu.htmlNVIDA官方手册：https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html#abstract
-
-整体感知
-GPU 的整个处理过程是一个流式处理（Stream Processing）的过程，分支条件少（少用控制语句）
+        管理jobs要启动一个进程到后台，追加一个“&amp;”到命令后面
+kill 发信号kill -STOP [pid]
+发送SIGSTOP (17,19,23)停止一个进程，而并不消灭这个进程。
+kill -CONT [pid]
+发送SIGCONT (19,18,25)重新开始一个停止的进程。
+kill -KILL [pid]
+发送SIGKILL (9)强迫进程立即停止，并且不实施清理操作。
 ...
       
     
@@ -2962,20 +2893,28 @@ GPU 的整个处理过程是一个流式处理（Stream Processing）的过程�
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-09-06T17:26:37+08:00">2022-09-06</time>
+        <time itemprop="dateCreated datePublished" datetime="2022-12-10T23:40:30+08:00">2022-12-10</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/GPU/">GPU</a>
+          <a class="category-link" href="/categories/debug/">debug</a><span class="sep"></span><a class="category-link" href="/categories/tool/">tool</a><span class="sep"></span><a class="category-link" href="/categories/tool/linux/">linux</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/GPU/" itemprop="url"><span itemprop="name">GPU</span></a>
+              <a href="/categories/tool/" itemprop="url"><span itemprop="name">tool</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/tool/linux/" itemprop="url"><span itemprop="name">linux</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/debug/" itemprop="url"><span itemprop="name">debug</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2022/09/06/GPU%E5%85%A5%E9%97%A8/' itemprop="url">
+          <a class='readmore' href='/2022/12/10/linux%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2991,7 +2930,7 @@ GPU 的整个处理过程是一个流式处理（Stream Processing）的过程�
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/04/rockdb leveldb handbook链接/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/12/10/pmap/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -3009,16 +2948,30 @@ GPU 的整个处理过程是一个流式处理（Stream Processing）的过程�
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/09/04/rockdb%20leveldb%20handbook%E9%93%BE%E6%8E%A5/"  itemprop="url">
-        rockdb leveldb handbook链接
+      <a href="/2022/12/10/pmap/"  itemprop="url">
+        pmap
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        leveldb: https://leveldb-handbook.readthedocs.io/zh/latest/basic.htmlrocksdb: https://www.bookstack.cn/read/rocksdb-6.14-en/79f0ebf380de6ff5.md
+        pmap（对于每个进程）pmap 命令可以查看进程的内存映像信息，其输出内容来自于/proc/&lt;pid&gt;/maps和/proc/&lt;pid&gt;/smaps这两个文件，maps文件包含了每一段内存的大概描述，smaps里包含了具体每段的详细信息
+pmap [options] pid
 
+参数
+
+
+Options
+功能
+
+
+
+-x, –extended
+显示扩展格式
+
+
+-d,...
       
     
   </div>
@@ -3026,20 +2979,28 @@ GPU 的整个处理过程是一个流式处理（Stream Processing）的过程�
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-09-04T11:04:12+08:00">2022-09-04</time>
+        <time itemprop="dateCreated datePublished" datetime="2022-12-10T23:39:20+08:00">2022-12-10</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/db/">db</a>
+          <a class="category-link" href="/categories/debug/">debug</a><span class="sep"></span><a class="category-link" href="/categories/tool/">tool</a><span class="sep"></span><a class="category-link" href="/categories/tool/linux/">linux</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/db/" itemprop="url"><span itemprop="name">db</span></a>
+              <a href="/categories/tool/" itemprop="url"><span itemprop="name">tool</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/tool/linux/" itemprop="url"><span itemprop="name">linux</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/debug/" itemprop="url"><span itemprop="name">debug</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2022/09/04/rockdb%20leveldb%20handbook%E9%93%BE%E6%8E%A5/' itemprop="url">
+          <a class='readmore' href='/2022/12/10/pmap/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3055,7 +3016,7 @@ GPU 的整个处理过程是一个流式处理（Stream Processing）的过程�
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/04/leveldb SSTable sst文件 sst解析工具/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/12/10/iostat/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -3073,21 +3034,19 @@ GPU 的整个处理过程是一个流式处理（Stream Processing）的过程�
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/09/04/leveldb%20SSTable%20sst%E6%96%87%E4%BB%B6%20sst%E8%A7%A3%E6%9E%90%E5%B7%A5%E5%85%B7/"  itemprop="url">
-        leveldb SSTable sst文件 sst解析工具
+      <a href="/2022/12/10/iostat/"  itemprop="url">
+        iostat
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        
-https://leveldb-handbook.readthedocs.io/zh/latest/sstable.html
+        iostat（对于每个设备）显示所有设备负载情况
+iostat [选项] [&lt;指定设备名&gt;] [&lt;时间间隔&gt;] [&lt;次数&gt;]
 
-SStable文件格式物理结构
-一个sstable文件按照固定大小进行块划分，默认每个块的大小为4KiB。
-每个Block中，除了存储数据以外，还会存储两个额外的辅助字段：
-压缩类型：说明了Block中存储的数据是否进行了数据压缩，若是，采用了哪种算法进行压缩。l...
+参数 -c： 显示CPU使用情况 -d： 显示磁盘使用情况 -N： 显示磁盘阵列(LVM) 信息 -n： 显示NFS 使用情况 -t： 报告每秒向终端读取和写入的字符数和CPU的信息 -p： [磁盘] 显示磁盘和分区的情况
+ -k...
       
     
   </div>
@@ -3095,20 +3054,28 @@ SStable文件格式物理结构
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-09-04T10:45:23+08:00">2022-09-04</time>
+        <time itemprop="dateCreated datePublished" datetime="2022-12-10T23:38:39+08:00">2022-12-10</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/db/">db</a>
+          <a class="category-link" href="/categories/debug/">debug</a><span class="sep"></span><a class="category-link" href="/categories/tool/">tool</a><span class="sep"></span><a class="category-link" href="/categories/tool/linux/">linux</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/db/" itemprop="url"><span itemprop="name">db</span></a>
+              <a href="/categories/tool/" itemprop="url"><span itemprop="name">tool</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/tool/linux/" itemprop="url"><span itemprop="name">linux</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/debug/" itemprop="url"><span itemprop="name">debug</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2022/09/04/leveldb%20SSTable%20sst%E6%96%87%E4%BB%B6%20sst%E8%A7%A3%E6%9E%90%E5%B7%A5%E5%85%B7/' itemprop="url">
+          <a class='readmore' href='/2022/12/10/iostat/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3124,7 +3091,7 @@ SStable文件格式物理结构
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/04/跳跃列表/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/12/10/pidstat/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -3142,22 +3109,18 @@ SStable文件格式物理结构
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/09/04/%E8%B7%B3%E8%B7%83%E5%88%97%E8%A1%A8/"  itemprop="url">
-        跳跃列表
+      <a href="/2022/12/10/pidstat/"  itemprop="url">
+        pidstat
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        
-https://zh.wikipedia.org/wiki/%E8%B7%B3%E8%B7%83%E5%88%97%E8%A1%A8
-
-概述
-使得包含n个元素的有序序列的查找和插入操作的平均时间复杂度都是O(log n)，优于数组的O(n)复杂度
-一个多层次的链表。与前一层（下面一层）链表元素的数量相比，每一层链表中的元素的数量更少。每一层是有序的
-
-构造跳跃列表是按层建造的。底层是一个普...
+        pidstat（对于每个进程）Linux 运行进程实时监控pidstat命令详解
+pidstat主要用于监控全部或指定进程占用系统资源的情况，如CPU，内存、设备IO、任务切换、线程等。
+pidstat首次运行时显示自系统启动开始的各项统计信息，之后运行pidstat将显示自上次运行该命令以后的统计信息。用户可以通过指定统计的次数和时间来获得所需的统计信息。
+pidstat [ 选项 ] [...
       
     
   </div>
@@ -3165,20 +3128,28 @@ https://zh.wikipedia.org/wiki/%E8%B7%B3%E8%B7%83%E5%88%97%E8%A1%A8
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-09-04T09:44:28+08:00">2022-09-04</time>
+        <time itemprop="dateCreated datePublished" datetime="2022-12-10T23:38:02+08:00">2022-12-10</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/algorithm/">algorithm</a>
+          <a class="category-link" href="/categories/debug/">debug</a><span class="sep"></span><a class="category-link" href="/categories/tool/">tool</a><span class="sep"></span><a class="category-link" href="/categories/tool/linux/">linux</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/algorithm/" itemprop="url"><span itemprop="name">algorithm</span></a>
+              <a href="/categories/tool/" itemprop="url"><span itemprop="name">tool</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/tool/linux/" itemprop="url"><span itemprop="name">linux</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/debug/" itemprop="url"><span itemprop="name">debug</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2022/09/04/%E8%B7%B3%E8%B7%83%E5%88%97%E8%A1%A8/' itemprop="url">
+          <a class='readmore' href='/2022/12/10/pidstat/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3194,7 +3165,7 @@ https://zh.wikipedia.org/wiki/%E8%B7%B3%E8%B7%83%E5%88%97%E8%A1%A8
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/04/leveldb底层概述和Files/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/12/10/linux进程状态 ps指定stat字段可查看/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -3212,20 +3183,17 @@ https://zh.wikipedia.org/wiki/%E8%B7%B3%E8%B7%83%E5%88%97%E8%A1%A8
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/09/04/leveldb%E5%BA%95%E5%B1%82%E6%A6%82%E8%BF%B0%E5%92%8CFiles/"  itemprop="url">
-        leveldb底层概述和Files
+      <a href="/2022/12/10/linux%E8%BF%9B%E7%A8%8B%E7%8A%B6%E6%80%81%20ps%E6%8C%87%E5%AE%9Astat%E5%AD%97%E6%AE%B5%E5%8F%AF%E6%9F%A5%E7%9C%8B/"  itemprop="url">
+        linux进程状态 ps指定stat字段可查看
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        https://leveldb-handbook.readthedocs.io/zh/latest/basic.htmlhttps://github.com/google/leveldb/blob/main/doc/impl.md
-leveldb架构
-leveldb写流程概述
-将所有的写操作写到日志文件（log文件）中
-将内容写入到内存中
-先memtable，等到其存储内容的容量达到阈值时（...
+        [转载] Linux进程状态解析之R、S、D、T、Z、X-阿里云开发者社区 (aliyun.com)
+stat字段比如R+
+R (TASK_RUNNING)，可执行状态只有在该状态的进程才可能在CPU上运行。而同一时刻可能有多个进程处于可执行状态，这些进程的task_struct结构（进程控制块）被放入对应CPU的可执行队列中（一个进程最多只能出现在一个CPU的可执行队列中）。进程调度器的任...
       
     
   </div>
@@ -3233,20 +3201,28 @@ leveldb写流程概述
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-09-04T09:16:33+08:00">2022-09-04</time>
+        <time itemprop="dateCreated datePublished" datetime="2022-12-10T23:36:45+08:00">2022-12-10</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/db/">db</a>
+          <a class="category-link" href="/categories/debug/">debug</a><span class="sep"></span><a class="category-link" href="/categories/tool/">tool</a><span class="sep"></span><a class="category-link" href="/categories/tool/linux/">linux</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/db/" itemprop="url"><span itemprop="name">db</span></a>
+              <a href="/categories/tool/" itemprop="url"><span itemprop="name">tool</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/tool/linux/" itemprop="url"><span itemprop="name">linux</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/debug/" itemprop="url"><span itemprop="name">debug</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2022/09/04/leveldb%E5%BA%95%E5%B1%82%E6%A6%82%E8%BF%B0%E5%92%8CFiles/' itemprop="url">
+          <a class='readmore' href='/2022/12/10/linux%E8%BF%9B%E7%A8%8B%E7%8A%B6%E6%80%81%20ps%E6%8C%87%E5%AE%9Astat%E5%AD%97%E6%AE%B5%E5%8F%AF%E6%9F%A5%E7%9C%8B/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3262,7 +3238,7 @@ leveldb写流程概述
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/03/NebulaGraph存储/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/12/10/命令行颜色/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -3280,20 +3256,23 @@ leveldb写流程概述
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/09/03/NebulaGraph%E5%AD%98%E5%82%A8/"  itemprop="url">
-        NebulaGraph存储
+      <a href="/2022/12/10/%E5%91%BD%E4%BB%A4%E8%A1%8C%E9%A2%9C%E8%89%B2/"  itemprop="url">
+        命令行颜色
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        架构
-架构总览 - Nebula Graph Database 手册 (nebula-graph.com.cn)
+        
+ANSI转义序列 - 维基百科，自由的百科全书 (wikipedia.org)
+Build your own Command Line with ANSI escape codes (lihaoyi.com)
 
-Meta 服务是由 nebula-metad 进程提供的，负责数据管理，例如 Schema 操作、集群管理和用户权限管理等。
 
-所有 nebula-metad 进程构成了基于 Raft 协议的集群，其中一个进程是 leader，其他进程都是 follower。leader 是由...
+Red: \u001b[31m
+Reset: \u001b[0m
+
+This \u001b character is the special character that sta...
       
     
   </div>
@@ -3301,24 +3280,93 @@ Meta 服务是由 nebula-metad 进程提供的，负责数据管理，例如 Sch
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-09-03T10:17:55+08:00">2022-09-03</time>
+        <time itemprop="dateCreated datePublished" datetime="2022-12-10T23:28:58+08:00">2022-12-10</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/graph/">graph</a><span class="sep"></span><a class="category-link" href="/categories/graph/db/">db</a>
+          <a class="category-link" href="/categories/tool/">tool</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/graph/" itemprop="url"><span itemprop="name">graph</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/graph/db/" itemprop="url"><span itemprop="name">db</span></a>
+              <a href="/categories/tool/" itemprop="url"><span itemprop="name">tool</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2022/09/03/NebulaGraph%E5%AD%98%E5%82%A8/' itemprop="url">
+          <a class='readmore' href='/2022/12/10/%E5%91%BD%E4%BB%A4%E8%A1%8C%E9%A2%9C%E8%89%B2/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/12/10/ls/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/12/10/ls/"  itemprop="url">
+        ls
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        -luse a long listing format
+
+missing:~$ ls -l /home
+drwxr-xr-x 1 missing users 4096 Jun 15 2019 missing
+
+First, the d at the beginning of the line tells us that missing is a directory. 
+Then follow...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-12-10T23:28:20+08:00">2022-12-10</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/tool/">tool</a><span class="sep"></span><a class="category-link" href="/categories/tool/linux/">linux</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/tool/" itemprop="url"><span itemprop="name">tool</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/tool/linux/" itemprop="url"><span itemprop="name">linux</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/12/10/ls/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3345,7 +3393,7 @@ Meta 服务是由 nebula-metad 进程提供的，负责数据管理，例如 Sch
           </a>
         
         <p class="current">
-          17 / 25
+          17 / 31
         </p>
         
           <a class="next" rel="next" href="/page/18/">
@@ -3450,12 +3498,12 @@ Meta 服务是由 nebula-metad 进程提供的，负责数据管理，例如 Sch
           <li><a class="flat-box"
             title="/categories/algorithm/" href="/categories/algorithm/"
             active-action="action-categoriesalgorithm"
-            ><div class='name'>algorithm</div><div class='badge'>(7)</div></a></li>
+            ><div class='name'>algorithm</div><div class='badge'>(9)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/c/" href="/categories/c/"
             active-action="action-categoriesc"
-            ><div class='name'>c++</div><div class='badge'>(35)</div></a></li>
+            ><div class='name'>c++</div><div class='badge'>(37)</div></a></li>
         
           <li><a class="flat-box child"
             title="/categories/c/SIMD/" href="/categories/c/SIMD/"
@@ -3600,7 +3648,7 @@ Meta 服务是由 nebula-metad 进程提供的，负责数据管理，例如 Sch
           <li><a class="flat-box"
             title="/categories/tools/" href="/categories/tools/"
             active-action="action-categoriestools"
-            ><div class='name'>tools</div><div class='badge'>(2)</div></a></li>
+            ><div class='name'>tools</div><div class='badge'>(3)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/" href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/"

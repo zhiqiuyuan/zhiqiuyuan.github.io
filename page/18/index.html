@@ -2272,7 +2272,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1678018354333),
+    lastupdate: new Date(1680449240058),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2632,7 +2632,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/03/Raft/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/12/10/文件系统查看 df/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2650,20 +2650,21 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/09/03/Raft/"  itemprop="url">
-        Raft
+      <a href="/2022/12/10/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E6%9F%A5%E7%9C%8B%20df/"  itemprop="url">
+        文件系统查看 df
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        
-https://docs.nebula-graph.com.cn/3.2.0/1.introduction/3.nebula-graph-architecture/4.storage-service/#raft
-https://cloud.tencent.com/developer/article/1826594
+        report file system disk space usage
+Filesystem      Size  Used Avail Use% Mounted on
 
-简介
-分布式系统中，同一份数据通常会有多个副本，这样即使少数副本发生故障，...
+-h-h, –human-readable              print sizes in powers of 1024 (e.g., 1023M)
+df -h
+
+–max-depth-a, –all       ...
       
     
   </div>
@@ -2671,291 +2672,7 @@ https://cloud.tencent.com/developer/article/1826594
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-09-03T10:17:27+08:00">2022-09-03</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/algorithm/">algorithm</a><span class="sep"></span><a class="category-link" href="/categories/db/">db</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/algorithm/" itemprop="url"><span itemprop="name">algorithm</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/db/" itemprop="url"><span itemprop="name">db</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/09/03/Raft/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/03/WAL Write Ahead Log预写日志/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-    <meta itemprop="description" content="grapher">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/09/03/WAL%20Write%20Ahead%20Log%E9%A2%84%E5%86%99%E6%97%A5%E5%BF%97/"  itemprop="url">
-        WAL Write Ahead Log预写日志
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        
-https://www.cnblogs.com/xuwc/p/14037750.html
-
-
-在使用 WAL 的系统中，**所有的修改在提交之前都要先写入 log 文件中(写入log文件是写入永久存储)**。log 文件中通常包括 redo 和 undo 信息
-使用 WAL 的数据库系统不会再每新增一条 WAL 日志就将其刷入数据库文件中，一般**积累一定的量然后批量写入(checkpoi...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-09-03T09:31:41+08:00">2022-09-03</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/db/">db</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/db/" itemprop="url"><span itemprop="name">db</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/09/03/WAL%20Write%20Ahead%20Log%E9%A2%84%E5%86%99%E6%97%A5%E5%BF%97/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/02/powershell美化字体颜色/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-    <meta itemprop="description" content="grapher">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/09/02/powershell%E7%BE%8E%E5%8C%96%E5%AD%97%E4%BD%93%E9%A2%9C%E8%89%B2/"  itemprop="url">
-        powershell美化 powershell字体 powershell颜色
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        设置颜色
-安装colortoolscoop install colortool
-
-
-预览主题
-列出哪些主题
-
-colortool -s
-
-
-预览主题，比如OneHalfDark.itermcolors
-
-  colortool OneHalfDark.itermcolors
-
-
-设置主题（将方案同时应用于当前控制台和默认控制台）colortool -b OneHalfDark.itermco...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-09-02T15:09:19+08:00">2022-09-02</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/tool/">tool</a><span class="sep"></span><a class="category-link" href="/categories/tool/windows/">windows</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/tool/" itemprop="url"><span itemprop="name">tool</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/tool/windows/" itemprop="url"><span itemprop="name">windows</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/09/02/powershell%E7%BE%8E%E5%8C%96%E5%AD%97%E4%BD%93%E9%A2%9C%E8%89%B2/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/02/graph schema/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-    <meta itemprop="description" content="grapher">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/09/02/graph%20schema/"  itemprop="url">
-        graph schema
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        
-https://docs.tigergraph.com/gsql-ref/current/tutorials/gsql-101/
-
-Every graph has a schema, or a model describing the types of vertices and edges that appear in a graph.（描述图中有哪些类型的点边，每种类型有哪些属性，以及点...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-09-02T10:34:14+08:00">2022-09-02</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/graph/">graph</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/graph/" itemprop="url"><span itemprop="name">graph</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/09/02/graph%20schema/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/01/linux启动docker服务/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-    <meta itemprop="description" content="grapher">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/09/01/linux%E5%90%AF%E5%8A%A8docker%E6%9C%8D%E5%8A%A1/"  itemprop="url">
-        linux启动docker服务
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        安装和启动这个写很好：Install Docker Engine on Ubuntu
-在上述教程install之后docker run hello-word之前可能需要启动docker后台服务：sudo service docker starthow would you know that the service name was docker： You can see them using...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-09-01T20:49:03+08:00">2022-09-01</time>
+        <time itemprop="dateCreated datePublished" datetime="2022-12-10T23:27:53+08:00">2022-12-10</time>
         
           <span class="dot"></span>
           <a class="category-link" href="/categories/tool/">tool</a><span class="sep"></span><a class="category-link" href="/categories/tool/linux/">linux</a>
@@ -2972,7 +2689,7 @@ Every graph has a schema, or a model describing the types of vertices and edges 
       </div>
       
         <div>
-          <a class='readmore' href='/2022/09/01/linux%E5%90%AF%E5%8A%A8docker%E6%9C%8D%E5%8A%A1/' itemprop="url">
+          <a class='readmore' href='/2022/12/10/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E6%9F%A5%E7%9C%8B%20df/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2988,7 +2705,7 @@ Every graph has a schema, or a model describing the types of vertices and edges 
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/01/bash获取命令退出代码/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/12/10/bash快捷键/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -3006,15 +2723,15 @@ Every graph has a schema, or a model describing the types of vertices and edges 
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/09/01/bash%E8%8E%B7%E5%8F%96%E5%91%BD%E4%BB%A4%E9%80%80%E5%87%BA%E4%BB%A3%E7%A0%81/"  itemprop="url">
-        bash获取命令退出代码
+      <a href="/2022/12/10/bash%E5%BF%AB%E6%8D%B7%E9%94%AE/"  itemprop="url">
+        bash快捷键
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        echo $?即输出上一条执行命令的退出码另外if command; then fi也是对command的退出码进行判断，如果为0则条件成立
+        ctrl+R 可以搜索历史输入指令
 
       
     
@@ -3023,7 +2740,7 @@ Every graph has a schema, or a model describing the types of vertices and edges 
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-09-01T14:39:40+08:00">2022-09-01</time>
+        <time itemprop="dateCreated datePublished" datetime="2022-12-10T23:26:19+08:00">2022-12-10</time>
         
           <span class="dot"></span>
           <a class="category-link" href="/categories/tool/">tool</a><span class="sep"></span><a class="category-link" href="/categories/tool/linux/">linux</a>
@@ -3040,7 +2757,7 @@ Every graph has a schema, or a model describing the types of vertices and edges 
       </div>
       
         <div>
-          <a class='readmore' href='/2022/09/01/bash%E8%8E%B7%E5%8F%96%E5%91%BD%E4%BB%A4%E9%80%80%E5%87%BA%E4%BB%A3%E7%A0%81/' itemprop="url">
+          <a class='readmore' href='/2022/12/10/bash%E5%BF%AB%E6%8D%B7%E9%94%AE/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3056,7 +2773,7 @@ Every graph has a schema, or a model describing the types of vertices and edges 
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/01/bash超时kill/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/12/10/bash文件判断和比较/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -3074,20 +2791,36 @@ Every graph has a schema, or a model describing the types of vertices and edges 
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/09/01/bash%E8%B6%85%E6%97%B6kill/"  itemprop="url">
-        bash超时kill
+      <a href="/2022/12/10/bash%E6%96%87%E4%BB%B6%E5%88%A4%E6%96%AD%E5%92%8C%E6%AF%94%E8%BE%83/"  itemprop="url">
+        bash文件判断和比较
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        timeout 3 sleep 30
+        
 
-当 sleep 执行 3 秒的时候就会终止
-包裹程序未超时，timeout传递退出代码（--preserve-status）（亲测似乎不加此选项也会保护退出代码）
-timeout --preserve-status 1m ping -c 5 Nostromo.local
-echo $? # 如果timeout包裹的程序超时，则返回值为124，否则为未超...
+
+比较符
+说明
+举例
+
+
+
+-e filename
+如果filename存在，则为真
+[ -e &#x2F;var&#x2F;log&#x2F;syslog ]
+
+
+-d filename
+如果filename为目录，则为真
+[ -d &#x2F;tmp&#x2F;mydir ]
+
+
+-f filename
+如果filename常规文件，则为真
+[ -f &#x2F;usr&#x2F;b...
       
     
   </div>
@@ -3095,7 +2828,7 @@ echo $? # 如果timeout包裹的程序超时，则返回值为124，否则为未
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-09-01T11:05:21+08:00">2022-09-01</time>
+        <time itemprop="dateCreated datePublished" datetime="2022-12-10T23:25:50+08:00">2022-12-10</time>
         
           <span class="dot"></span>
           <a class="category-link" href="/categories/tool/">tool</a><span class="sep"></span><a class="category-link" href="/categories/tool/linux/">linux</a>
@@ -3112,7 +2845,7 @@ echo $? # 如果timeout包裹的程序超时，则返回值为124，否则为未
       </div>
       
         <div>
-          <a class='readmore' href='/2022/09/01/bash%E8%B6%85%E6%97%B6kill/' itemprop="url">
+          <a class='readmore' href='/2022/12/10/bash%E6%96%87%E4%BB%B6%E5%88%A4%E6%96%AD%E5%92%8C%E6%AF%94%E8%BE%83/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3128,7 +2861,7 @@ echo $? # 如果timeout包裹的程序超时，则返回值为124，否则为未
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/01/bash遍历数组/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/12/10/bash特殊符号 特殊变量/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -3146,22 +2879,24 @@ echo $? # 如果timeout包裹的程序超时，则返回值为124，否则为未
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/09/01/bash%E9%81%8D%E5%8E%86%E6%95%B0%E7%BB%84/"  itemprop="url">
-        bash遍历数组
+      <a href="/2022/12/10/bash%E7%89%B9%E6%AE%8A%E7%AC%A6%E5%8F%B7%20%E7%89%B9%E6%AE%8A%E5%8F%98%E9%87%8F/"  itemprop="url">
+        bash特殊符号 特殊变量
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        无下标控制，类似range-for
-array=(hello word)
-for element in $array  
-do 
-    echo $element
-done
+        特殊符号$()和`` 命令代换替换为命令输出（输出到stdout的内容），
+所有的shell支持使用反引号的方式进行命令替换，
+命令替换可以嵌套，需要注意的是如果使用反引号的形式，在内部反引用前必须使用反斜杠转义
+Current_Folder=$(cd `dirname $0`; pwd)
 
+$ nproc
+1
+$ make -j $(nproc) #即make -j 1
 
+$ echo $...
       
     
   </div>
@@ -3169,7 +2904,7 @@ done
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-09-01T11:03:35+08:00">2022-09-01</time>
+        <time itemprop="dateCreated datePublished" datetime="2022-12-10T23:24:22+08:00">2022-12-10</time>
         
           <span class="dot"></span>
           <a class="category-link" href="/categories/tool/">tool</a><span class="sep"></span><a class="category-link" href="/categories/tool/linux/">linux</a>
@@ -3186,7 +2921,7 @@ done
       </div>
       
         <div>
-          <a class='readmore' href='/2022/09/01/bash%E9%81%8D%E5%8E%86%E6%95%B0%E7%BB%84/' itemprop="url">
+          <a class='readmore' href='/2022/12/10/bash%E7%89%B9%E6%AE%8A%E7%AC%A6%E5%8F%B7%20%E7%89%B9%E6%AE%8A%E5%8F%98%E9%87%8F/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3202,7 +2937,7 @@ done
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/01/bash变量计数加一/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/12/10/SSE编译flag/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -3220,18 +2955,15 @@ done
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/09/01/bash%E5%8F%98%E9%87%8F%E8%AE%A1%E6%95%B0%E5%8A%A0%E4%B8%80/"  itemprop="url">
-        bash变量计数加一
+      <a href="/2022/12/10/SSE%E7%BC%96%E8%AF%91flag/"  itemprop="url">
+        SSE编译flag
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        i=1
-# in loop body
-i=`expr $i + 1`
-
+        gcc或g++编译：SSE2不用给flag##include &lt;immintrin.h&gt; 给flag -march=native
 
       
     
@@ -3240,24 +2972,28 @@ i=`expr $i + 1`
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-09-01T11:02:15+08:00">2022-09-01</time>
+        <time itemprop="dateCreated datePublished" datetime="2022-12-10T22:21:00+08:00">2022-12-10</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/tool/">tool</a><span class="sep"></span><a class="category-link" href="/categories/tool/linux/">linux</a>
+          <a class="category-link" href="/categories/SIMD/">SIMD</a><span class="sep"></span><a class="category-link" href="/categories/c/">c++</a><span class="sep"></span><a class="category-link" href="/categories/c/SIMD/">SIMD</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/tool/" itemprop="url"><span itemprop="name">tool</span></a>
+              <a href="/categories/c/" itemprop="url"><span itemprop="name">c++</span></a>
             </span>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/tool/linux/" itemprop="url"><span itemprop="name">linux</span></a>
+              <a href="/categories/SIMD/" itemprop="url"><span itemprop="name">SIMD</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/c/SIMD/" itemprop="url"><span itemprop="name">SIMD</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2022/09/01/bash%E5%8F%98%E9%87%8F%E8%AE%A1%E6%95%B0%E5%8A%A0%E4%B8%80/' itemprop="url">
+          <a class='readmore' href='/2022/12/10/SSE%E7%BC%96%E8%AF%91flag/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3273,7 +3009,7 @@ i=`expr $i + 1`
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/01/bash获取命令输出内容 一维或多维/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/12/09/operf-t-thread举例/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -3291,26 +3027,25 @@ i=`expr $i + 1`
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/09/01/bash%E8%8E%B7%E5%8F%96%E5%91%BD%E4%BB%A4%E8%BE%93%E5%87%BA%E5%86%85%E5%AE%B9%20%E4%B8%80%E7%BB%B4%E6%88%96%E5%A4%9A%E7%BB%B4/"  itemprop="url">
-        bash获取命令输出内容 一维或多维
+      <a href="/2022/12/09/operf-t-thread%E4%B8%BE%E4%BE%8B/"  itemprop="url">
+        operf -t thread举例
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        一维
-line=`cat syntest.sh | wc -l`
-echo $line
+        命令
+profile程序（-t则将把每个线程分开统计并分别输出，-k指定内核调试文件，这样会得到内核的调用信息）
 
-多维：返回数组
-fnames=`ls testcase/functional | grep .sy`
-for fname in $&#123;fnames[@]&#125;
-do
-    echo $fname
-done
+sudo operf -t -k /usr/lib/debug/lib/modules/$(uname -r)/vmlinux ./main
 
 
+根据得到的采集数据输出结果
+
+opreport -o symbols.txt -l 
+
+callgraph若要输出函数callgra...
       
     
   </div>
@@ -3318,10 +3053,10 @@ done
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-09-01T10:44:00+08:00">2022-09-01</time>
+        <time itemprop="dateCreated datePublished" datetime="2022-12-09T22:55:43+08:00">2022-12-09</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/tool/">tool</a><span class="sep"></span><a class="category-link" href="/categories/tool/linux/">linux</a>
+          <a class="category-link" href="/categories/debug/">debug</a><span class="sep"></span><a class="category-link" href="/categories/tool/">tool</a><span class="sep"></span><a class="category-link" href="/categories/tool/linux/">linux</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
               <a href="/categories/tool/" itemprop="url"><span itemprop="name">tool</span></a>
@@ -3331,11 +3066,251 @@ done
               <a href="/categories/tool/linux/" itemprop="url"><span itemprop="name">linux</span></a>
             </span>
           
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/debug/" itemprop="url"><span itemprop="name">debug</span></a>
+            </span>
+          
         
       </div>
       
         <div>
-          <a class='readmore' href='/2022/09/01/bash%E8%8E%B7%E5%8F%96%E5%91%BD%E4%BB%A4%E8%BE%93%E5%87%BA%E5%86%85%E5%AE%B9%20%E4%B8%80%E7%BB%B4%E6%88%96%E5%A4%9A%E7%BB%B4/' itemprop="url">
+          <a class='readmore' href='/2022/12/09/operf-t-thread%E4%B8%BE%E4%BE%8B/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/12/09/社交网络复习/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/"  itemprop="url">
+        社交网络复习
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        
+未看但是可能要看：
+2.4 分支限界算法中：多项式近似算法，page 35
+2.4 KT index，page 63
+
+
+1.1 图的基本概念、类型
+
+1.2 幂律分布、图的测度参数、随机图
+
+
+ 
+
+2.1 顶点及边的中心性计算
+
+n为全图顶点数目
+
+无向图的度中心性：顶点的度（可以通过除以最大可能值n-1来标准化度数）
+
+
+
+
+
+
+
+2.2 可达性&amp;最短路径
+Dijkstra算...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-12-09T19:36:23+08:00">2022-12-09</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/course/">course</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/course/" itemprop="url"><span itemprop="name">course</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/12/09/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/12/08/github-hexo-volantis主题搭建博客/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/12/08/github-hexo-volantis%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"  itemprop="url">
+        github+hexo+volantis主题搭建博客
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        参考：GitHub Pages + Hexo搭建个人博客网站，史上最全教程
+搭建创建github仓库新建public仓库，命名为&lt;用户名&gt;.github.io
+仓库settings中pages项启用github pages（默认是启用了的）
+本地hexo
+安装 Hexo
+
+npm install -g hexo-cli
+
+
+验证是否安装成功：查看版本
+hexo -v
+
+
+
+创建一...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-12-08T23:31:20+08:00">2022-12-08</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/play/">play</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/play/" itemprop="url"><span itemprop="name">play</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/12/08/github-hexo-volantis%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/12/07/rust学习资源链接/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/12/07/rust%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90%E9%93%BE%E6%8E%A5/"  itemprop="url">
+        rust learning source link
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        入门学习：rust语言圣经 https://course.rs/first-try/editor.html
+
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-12-07T23:50:58+08:00">2022-12-07</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/rust/">rust</a><span class="sep"></span><a class="category-link" href="/categories/rust/language/">language</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/rust/" itemprop="url"><span itemprop="name">rust</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/rust/language/" itemprop="url"><span itemprop="name">language</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/12/07/rust%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90%E9%93%BE%E6%8E%A5/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3362,7 +3337,7 @@ done
           </a>
         
         <p class="current">
-          18 / 25
+          18 / 31
         </p>
         
           <a class="next" rel="next" href="/page/19/">
@@ -3467,12 +3442,12 @@ done
           <li><a class="flat-box"
             title="/categories/algorithm/" href="/categories/algorithm/"
             active-action="action-categoriesalgorithm"
-            ><div class='name'>algorithm</div><div class='badge'>(7)</div></a></li>
+            ><div class='name'>algorithm</div><div class='badge'>(9)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/c/" href="/categories/c/"
             active-action="action-categoriesc"
-            ><div class='name'>c++</div><div class='badge'>(35)</div></a></li>
+            ><div class='name'>c++</div><div class='badge'>(37)</div></a></li>
         
           <li><a class="flat-box child"
             title="/categories/c/SIMD/" href="/categories/c/SIMD/"
@@ -3617,7 +3592,7 @@ done
           <li><a class="flat-box"
             title="/categories/tools/" href="/categories/tools/"
             active-action="action-categoriestools"
-            ><div class='name'>tools</div><div class='badge'>(2)</div></a></li>
+            ><div class='name'>tools</div><div class='badge'>(3)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/" href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/"

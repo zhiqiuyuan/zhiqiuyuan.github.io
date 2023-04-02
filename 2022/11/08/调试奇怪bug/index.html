@@ -41,7 +41,7 @@
 <meta property="og:title" content="调试奇怪bug">
 <meta property="og:url" content="http://example.com/2022/11/08/%E8%B0%83%E8%AF%95%E5%A5%87%E6%80%AAbug/index.html">
 <meta property="og:site_name" content="zhiqiuyuan&#39;s blog">
-<meta property="og:description" content="valgrind gdb细粒度跟踪（这个超级牛啊） 可以不断确定要在哪里打断点，然后r，带着已经打的断点重新观察  经验malloc abort 或者 delete报错（说二次释放可是其实没有）heap is corrupt：被程序写了不该写的地方，比如在数组&#x2F;vector长度后面写东西 std::vector&lt;VertexIdType&gt; new_vps(problem_n">
+<meta property="og:description" content="valgrind  这个厉害！比如其中的memcheck工具，跑一遍告诉你哪里越界访问了！yyds！ gdb细粒度跟踪（这个超级牛啊） 可以不断确定要在哪里打断点，然后r，带着已经打的断点重新观察  经验malloc abort 或者 delete报错（说二次释放可是其实没有）heap is corrupt：被程序写了不该写的地方，比如在数组&#x2F;vector长度后面写东西 std::ve">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-11-08T07:26:44.976Z">
@@ -2276,7 +2276,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1678018354333),
+    lastupdate: new Date(1680449240058),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2729,7 +2729,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
     <ol>
-<li><code>valgrind</code></li>
+<li><code>valgrind</code><br>  这个厉害！比如其中的memcheck工具，跑一遍告诉你哪里越界访问了！yyds！</li>
 <li><code>gdb</code>细粒度跟踪（这个超级牛啊）</li>
 <li>可以不断确定要在哪里打断点，然后<code>r</code>，带着已经打的断点重新观察</li>
 </ol>
@@ -2858,8 +2858,7 @@ VertexIdType *ranges = new VertexIdType[batch_num * 2];
       
         <a class='prev' href='/2022/11/13/bash%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%ADif%20%E5%AD%97%E7%AC%A6%E4%B8%B2%20%E6%95%B4%E6%95%B0/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>bash条件判断if 字符串 整数</p>
-          <p class='content'>https://blog.csdn.net/yusiguyuan/article/details/17054231
-</p>
+          <p class='content'>https://ryanstutorials.net/bash-scripting-tutorial/bash-if-statements.phphttps://blog.csdn.net/yu...</p>
         </a>
       
       

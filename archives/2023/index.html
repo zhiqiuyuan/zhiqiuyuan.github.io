@@ -2272,7 +2272,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1678018354333),
+    lastupdate: new Date(1680449240058),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2657,7 +2657,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/05/profile-memory-takeup-测量程序内存占用/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/02/MPI-multi-thread/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2675,17 +2675,18 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/03/05/profile-memory-takeup-%E6%B5%8B%E9%87%8F%E7%A8%8B%E5%BA%8F%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8/"  itemprop="url">
-        profile memory takeup 测量程序内存占用
+      <a href="/2023/04/02/MPI-multi-thread/"  itemprop="url">
+        MPI multi thread
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        内存占用峰值：time -f$ /usr/bin/time -f &quot;%M KB&quot; &lt;command_and_args&gt;
+        教程：https://enccs.github.io/intermediate-mpi/mpi-and-threads-pt1/#
+教程配套代码：https://github.com/ENCCS/intermediate-mpi/tree/master/content/code
 
-注意给time传递参数的时候，bash user需要给定time的绝对路径time -f ... ...会报错-f: command not found，这实际上uses an internal version of time, provi...
+Comparing pure MPI（一个rank一个线程） vs hybrid MPI-threading（一...
       
     
   </div>
@@ -2693,20 +2694,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-03-05T16:21:05+08:00">2023-03-05</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/tools/">tools</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/tools/" itemprop="url"><span itemprop="name">tools</span></a>
-            </span>
-          
+        <time itemprop="dateCreated datePublished" datetime="2023-04-02T19:19:02+08:00">2023-04-02</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/03/05/profile-memory-takeup-%E6%B5%8B%E9%87%8F%E7%A8%8B%E5%BA%8F%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8/' itemprop="url">
+          <a class='readmore' href='/2023/04/02/MPI-multi-thread/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2717,24 +2710,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </div>
 
           </div>
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
         
       
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/02/27/vscode快捷键/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/02/open-mpi安装/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2752,17 +2733,16 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/02/27/vscode%E5%BF%AB%E6%8D%B7%E9%94%AE/"  itemprop="url">
-        vscode快捷键
+      <a href="/2023/04/02/open-mpi%E5%AE%89%E8%A3%85/"  itemprop="url">
+        open mpi安装
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        工作区navigationctrl+R 从最近打开的一些工作区中选择一个打开
-文件navigationctrl+P 以文件名搜索当前目录中的文件并打开ctrl+T 以文件内容搜索当前目录中的文件并打开
-代码编辑ctrl+shift+K 删除当前行（或全部选中行）ctrl+X 剪切当前行（或全部选中部分）ctrl+backspace 删除光标前的一个单词alt+上/下方向键 把当前行上移&#x...
+        install on linuxhttps://sites.google.com/site/rangsiman1993/comp-env/program-install/install-openmpibrief: download and build
+
       
     
   </div>
@@ -2770,20 +2750,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-02-27T09:24:12+08:00">2023-02-27</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/tools/">tools</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/tools/" itemprop="url"><span itemprop="name">tools</span></a>
-            </span>
-          
+        <time itemprop="dateCreated datePublished" datetime="2023-04-02T16:14:15+08:00">2023-04-02</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/02/27/vscode%E5%BF%AB%E6%8D%B7%E9%94%AE/' itemprop="url">
+          <a class='readmore' href='/2023/04/02/open-mpi%E5%AE%89%E8%A3%85/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2797,7 +2769,460 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
       
         
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/02/run-mpi-program-over-a-cluster-在集群上跑mpi程序/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/04/02/run-mpi-program-over-a-cluster-%E5%9C%A8%E9%9B%86%E7%BE%A4%E4%B8%8A%E8%B7%91mpi%E7%A8%8B%E5%BA%8F/"  itemprop="url">
+        run mpi program over a cluster 在集群上跑mpi程序
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
       
+        https://mpitutorial.com/tutorials/running-an-mpi-cluster-within-a-lan/
+OpenMPI 集群配置 - HelloWooo - 博客园 (cnblogs.com)
+步骤：1. 建立连接  2. 运行mpi程序
+建立连接Your machines are gonna be talking over the network vi...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-04-02T16:13:41+08:00">2023-04-02</time>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/04/02/run-mpi-program-over-a-cluster-%E5%9C%A8%E9%9B%86%E7%BE%A4%E4%B8%8A%E8%B7%91mpi%E7%A8%8B%E5%BA%8F/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/02/MPI-Reduce-and-Allreduce/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/04/02/MPI-Reduce-and-Allreduce/"  itemprop="url">
+        MPI Reduce and Allreduce
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        https://mpitutorial.com/tutorials/mpi-reduce-and-allreduce/
+An introduction to reduceData reduction involves reducing a set of numbers into a smaller set of numbers via a function. For example, let...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-04-02T11:19:41+08:00">2023-04-02</time>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/04/02/MPI-Reduce-and-Allreduce/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/02/collective-call-example-Performing-Parallel-Rank-with-MPI/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/04/02/collective-call-example-Performing-Parallel-Rank-with-MPI/"  itemprop="url">
+        collective call example: Performing Parallel Rank with MPI
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        https://mpitutorial.com/tutorials/performing-parallel-rank-with-mpi/
+Parallel rank - problem overviewWhen processes all have a single number stored in their local memory, it can be useful to know w...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-04-02T10:26:02+08:00">2023-04-02</time>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/04/02/collective-call-example-Performing-Parallel-Rank-with-MPI/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/02/MPI-Scatter-Gather-and-Allgather/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/04/02/MPI-Scatter-Gather-and-Allgather/"  itemprop="url">
+        MPI Scatter, Gather, and Allgather
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        https://mpitutorial.com/tutorials/mpi-scatter-gather-and-allgather/
+An introduction to MPI_ScatterMPI_Bcast sends the same piece of data to all processes while MPI_Scatter sends chunks of an array ...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-04-02T09:50:54+08:00">2023-04-02</time>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/04/02/MPI-Scatter-Gather-and-Allgather/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/02/mpi-overall/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/04/02/mpi-overall/"  itemprop="url">
+        mpi overall
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        每个process的开始：MPI_Init之后MPI_Init之后初始化的变量是每个process一个copy的，在local memory中
+Hello world code examples#include &lt;mpi.h&gt;
+#include &lt;stdio.h&gt;
+
+int main(int argc, char** argv) &#123;
+    // Initi...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-04-02T09:47:08+08:00">2023-04-02</time>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/04/02/mpi-overall/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/02/命令行查看环境变量-env/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/04/02/%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%9F%A5%E7%9C%8B%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F-env/"  itemprop="url">
+        命令行查看环境变量 env
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        env
+
+env | grep PATH
+
+
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-04-02T09:44:55+08:00">2023-04-02</time>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/04/02/%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%9F%A5%E7%9C%8B%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F-env/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/02/mpi时间测量-MPI-Wtime/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/04/02/mpi%E6%97%B6%E9%97%B4%E6%B5%8B%E9%87%8F-MPI-Wtime/"  itemprop="url">
+        mpi时间测量 MPI_Wtime
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        https://mpitutorial.com/tutorials/mpi-broadcast-and-collective-communication/
+Comparison of MPI_Bcast with MPI_Send and MPI_RecvMPI_Wtime takes no arguments, and it simply returns a floating-point ...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-04-02T09:20:09+08:00">2023-04-02</time>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/04/02/mpi%E6%97%B6%E9%97%B4%E6%B5%8B%E9%87%8F-MPI-Wtime/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/02/MPI-Broadcast-and-Collective-Communication/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/04/02/MPI-Broadcast-and-Collective-Communication/"  itemprop="url">
+        MPI Broadcast and Collective Communication
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        https://mpitutorial.com/tutorials/mpi-broadcast-and-collective-communication/
+Collective communication and synchronization pointsOne of the things to remember about collective communication is that...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-04-02T09:05:44+08:00">2023-04-02</time>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/04/02/MPI-Broadcast-and-Collective-Communication/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
         
       
     
@@ -2808,7 +3233,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div class="prev-next">
         
         <p class="current">
-          1 / 10
+          1 / 15
         </p>
         
           <a class="next" rel="next" href="/archives/2023/page/2/">
@@ -2914,12 +3339,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           <li><a class="flat-box"
             title="/categories/algorithm/" href="/categories/algorithm/"
             active-action="action-categoriesalgorithm"
-            ><div class='name'>algorithm</div><div class='badge'>(7)</div></a></li>
+            ><div class='name'>algorithm</div><div class='badge'>(9)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/c/" href="/categories/c/"
             active-action="action-categoriesc"
-            ><div class='name'>c++</div><div class='badge'>(35)</div></a></li>
+            ><div class='name'>c++</div><div class='badge'>(37)</div></a></li>
         
           <li><a class="flat-box child"
             title="/categories/c/SIMD/" href="/categories/c/SIMD/"
@@ -3064,7 +3489,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           <li><a class="flat-box"
             title="/categories/tools/" href="/categories/tools/"
             active-action="action-categoriestools"
-            ><div class='name'>tools</div><div class='badge'>(2)</div></a></li>
+            ><div class='name'>tools</div><div class='badge'>(3)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/" href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/"
