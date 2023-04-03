@@ -45,7 +45,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-01-21T12:22:16.000Z">
-<meta property="article:modified_time" content="2023-01-21T13:09:52.312Z">
+<meta property="article:modified_time" content="2023-04-03T02:51:21.074Z">
 <meta property="article:author" content="zhiqiuyuan">
 <meta property="article:tag" content="rust">
 <meta name="twitter:card" content="summary">
@@ -2275,7 +2275,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1680449240058),
+    lastupdate: new Date(1680490323025),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2748,7 +2748,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     println!(&quot;&#123;&#125;, world!&quot;, s1); // 会报错
 &#125;
 </code></pre>
-<p><img src="/rust%E6%89%80%E6%9C%89%E6%9D%83/image-20230121203515223.png" class="lazyload" data-srcset="/rust%E6%89%80%E6%9C%89%E6%9D%83/image-20230121203515223.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20230121203515223"></p>
+<img src="/2023/01/21/rust%E6%89%80%E6%9C%89%E6%9D%83/image-20230121203515223.png" class="lazyload" data-srcset="/2023/01/21/rust%E6%89%80%E6%9C%89%E6%9D%83/image-20230121203515223.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 <ul>
 <li>引用：全在栈上的对象</li>
 </ul>
@@ -2760,7 +2760,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 &#125;
 </code></pre>
 <p>图示最左边的方块是&amp;String类型</p>
-<p><img src="/rust%E6%89%80%E6%9C%89%E6%9D%83/image-20230121203816144.png" class="lazyload" data-srcset="/rust%E6%89%80%E6%9C%89%E6%9D%83/image-20230121203816144.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20230121203816144"></p>
+<img src="/2023/01/21/rust%E6%89%80%E6%9C%89%E6%9D%83/image-20230121203816144.png" class="lazyload" data-srcset="/2023/01/21/rust%E6%89%80%E6%9C%89%E6%9D%83/image-20230121203816144.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
 <p>所以总结let：<strong>新建栈上对象</strong>（拷贝右值的栈上对象，或字面值（字面值会编码到机器指令中）），<br>如果右值对象有<strong>堆上对象</strong>，且<strong>没有实现Copy trait</strong>，则新对象的堆上对象就是右值对象的堆上对象(毕竟栈上对象是直接拷贝右值的，指针值还是指向原先的堆上对象)，而<strong>右值对象会被编译器强制失效</strong>，不能再使用了</p>
 <h2 id="函数参数和返回值"><a href="#函数参数和返回值" class="headerlink" title="函数参数和返回值"></a>函数参数和返回值</h2><p>传递参数，<strong>跟let语句一样</strong></p>
 <pre><code class="rust">fn main() &#123;
@@ -2842,10 +2843,10 @@ println!(&quot;&#123;&#125;&quot;, r3);
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-01-21T21:09:52+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-04-03T10:51:21+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Jan 21, 2023</p>
+    <p>更新于：Apr 3, 2023</p>
   </a>
 </div>
 
@@ -3968,7 +3969,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"grapher"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"zhiqiuyuan's blog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/rust/","name":"rust"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/rust/language/","name":"language"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/01/21/rust所有权/","name":"rust所有权"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"zhiqiuyuan's blog","url":"http://example.com/","keywords":null,"description":"grapher","author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"grapher"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"rust所有权","description":"grapher","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/01/21/rust%E6%89%80%E6%9C%89%E6%9D%83/"},"author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/01/21/rust%E6%89%80%E6%9C%89%E6%9D%83/","wordCount":0,"datePublished":"2023-01-21T12:22:16.000Z","dateModified":"2023-01-21T13:09:52.312Z","articleSection":"rust","keywords":"rust","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"grapher"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"zhiqiuyuan's blog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/rust/","name":"rust"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/rust/language/","name":"language"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/01/21/rust所有权/","name":"rust所有权"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"zhiqiuyuan's blog","url":"http://example.com/","keywords":null,"description":"grapher","author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"grapher"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"rust所有权","description":"grapher","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/01/21/rust%E6%89%80%E6%9C%89%E6%9D%83/"},"author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/01/21/rust%E6%89%80%E6%9C%89%E6%9D%83/","wordCount":0,"datePublished":"2023-01-21T12:22:16.000Z","dateModified":"2023-04-03T02:51:21.074Z","articleSection":"rust","keywords":"rust","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

@@ -45,7 +45,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-04-01T02:37:09.000Z">
-<meta property="article:modified_time" content="2023-04-01T03:43:05.547Z">
+<meta property="article:modified_time" content="2023-04-03T02:51:21.141Z">
 <meta property="article:author" content="zhiqiuyuan">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -2274,7 +2274,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1680449240058),
+    lastupdate: new Date(1680490323025),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2699,17 +2699,20 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <p><a target="_blank" rel="noopener" href="https://mpitutorial.com/tutorials/point-to-point-communication-application-random-walk/">https://mpitutorial.com/tutorials/point-to-point-communication-application-random-walk/</a></p>
 <p>The basic problem definition of a random walk is as follows. </p>
 <p>Given a <em>Min</em>, <em>Max</em>, and random walker <em>W</em>, make walker <em>W</em> take <em>S</em> random walks of arbitrary length to the right（“a random walk of length&#x2F;size 6”的意思是，移动6步）. If the process goes out of bounds, it wraps back around. <em>W</em> can only move one unit to the right or left at a time.</p>
-<p><img src="/mpi-Point-to-Point-Communication-example-random-walk/random_walk.png" class="lazyload" data-srcset="/mpi-Point-to-Point-Communication-example-random-walk/random_walk.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Random walk illustration"></p>
+<img src="/2023/04/01/mpi-Point-to-Point-Communication-example-random-walk/random_walk.png" class="lazyload" data-srcset="/2023/04/01/mpi-Point-to-Point-Communication-example-random-walk/random_walk.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
 <h2 id="Parallelization-of-the-random-walking-problem"><a href="#Parallelization-of-the-random-walking-problem" class="headerlink" title="Parallelization of the random walking problem"></a>Parallelization of the random walking problem</h2><p>splitting the domain across processes</p>
 <p>The random walk problem has a one-dimensional domain of size <em>Max - Min + 1</em> (since <em>Max</em> and <em>Min</em> are inclusive to the walker). </p>
 <p>Assuming that walkers can only take integer-sized steps, we can easily <strong>partition the domain into near-equal-sized chunks across processes.</strong> For example, if <em>Min</em> is 0 and <em>Max</em> is 20 and we have four processes, the domain would be split like this.</p>
-<p><img src="/mpi-Point-to-Point-Communication-example-random-walk/domain_decomp.png" class="lazyload" data-srcset="/mpi-Point-to-Point-Communication-example-random-walk/domain_decomp.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Domain decomposition example"></p>
+<img src="/2023/04/01/mpi-Point-to-Point-Communication-example-random-walk/domain_decomp.png" class="lazyload" data-srcset="/2023/04/01/mpi-Point-to-Point-Communication-example-random-walk/domain_decomp.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
 <p>if the walker takes <strong>a walk of size six</strong> on process zero (using the previous domain decomposition), the execution of the walker will go like this:</p>
 <ol>
 <li>The walker starts taking incremental steps. When it hits value four, however, it has <strong>reached the end</strong> of the bounds of process zero. Process zero now has to <strong>communicate the walker to process one.</strong></li>
 <li>Process one <strong>receives the walker and continues walking</strong> until it has reached its total walk size of six. The walker can then proceed on a new random walk.</li>
 </ol>
-<p><img src="/mpi-Point-to-Point-Communication-example-random-walk/walk_step_one.png" class="lazyload" data-srcset="/mpi-Point-to-Point-Communication-example-random-walk/walk_step_one.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Random walk, step one"></p>
+<img src="/2023/04/01/mpi-Point-to-Point-Communication-example-random-walk/walk_step_one.png" class="lazyload" data-srcset="/2023/04/01/mpi-Point-to-Point-Communication-example-random-walk/walk_step_one.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
 <p>In this example, <em>W</em> only had to be communicated one time from process zero to process one. If <em>W</em> had to take a longer walk, however, it may have needed to be passed through more processes along its path through the domain.</p>
 <h2 id="代码逻辑"><a href="#代码逻辑" class="headerlink" title="代码逻辑"></a>代码逻辑</h2><ol>
 <li>Initialize the walkers.（这个意思其实是”出题“）</li>
@@ -2745,7 +2748,8 @@ while (!all_walkers_finished) &#123; // Determine walker completion later
 &#125;
 </code></pre>
 <h2 id="Deadlock-and-prevention"><a href="#Deadlock-and-prevention" class="headerlink" title="Deadlock and prevention"></a>Deadlock and prevention</h2><p>the above code will result in a circular chain of <code>MPI_Send</code> calls.</p>
-<p><img src="/mpi-Point-to-Point-Communication-example-random-walk/deadlock-1.png" class="lazyload" data-srcset="/mpi-Point-to-Point-Communication-example-random-walk/deadlock-1.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Deadlock"></p>
+<img src="/2023/04/01/mpi-Point-to-Point-Communication-example-random-walk/deadlock-1.png" class="lazyload" data-srcset="/2023/04/01/mpi-Point-to-Point-Communication-example-random-walk/deadlock-1.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
 <blockquote>
 <p>It is worth noting that the above code will actually <strong>not</strong> deadlock most of the time. </p>
 <p>Although <code>MPI_Send</code> is a blocking call, the <a target="_blank" rel="noopener" href="http://www.amazon.com/gp/product/0262692163/ref=as_li_tf_tl?ie=UTF8&tag=softengiintet-20&linkCode=as2&camp=217145&creative=399377&creativeASIN=0262692163">MPI specification</a> says that </p>
@@ -2763,7 +2767,8 @@ while (!all_walkers_finished) &#123; // Determine walker completion later
 <p>01解决（0从发送中返回，1从接收中返回）；23解决</p>
 <p>第二行：0从发送返回后执行接收（即0尝试从3接收），1从接收返回后执行发送（1尝试发送给2），2从发送返回后执行接收（即2尝试从1接收），3从接收返回后执行发送（3尝试发送给0）：</p>
 <p>03解决；12解决</p>
-<p><img src="/mpi-Point-to-Point-Communication-example-random-walk/deadlock-2.png" class="lazyload" data-srcset="/mpi-Point-to-Point-Communication-example-random-walk/deadlock-2.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Deadlock prevention"></p>
+<img src="/2023/04/01/mpi-Point-to-Point-Communication-example-random-walk/deadlock-2.png" class="lazyload" data-srcset="/2023/04/01/mpi-Point-to-Point-Communication-example-random-walk/deadlock-2.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
 <blockquote>
 <p><strong>Note</strong> - Executing this with one process can still deadlock. To avoid this, simply don’t perform sends and receives when using one process.</p>
 </blockquote>
@@ -2778,7 +2783,8 @@ while (!all_walkers_finished) &#123; // Determine walker completion later
 <p>第三行：0从接收中返回后本轮的代码结束，1仍然block在发送给2中，2在上一阶段从发送返回后执行接收（2尝试从1接收）：</p>
 <p>12解决，1从发送中返回，2从接收中返回</p>
 <p>至此，都完成了各自的本轮代码</p>
-<p><img src="/mpi-Point-to-Point-Communication-example-random-walk/deadlock-3.png" class="lazyload" data-srcset="/mpi-Point-to-Point-Communication-example-random-walk/deadlock-3.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Deadlock solution"></p>
+<img src="/2023/04/01/mpi-Point-to-Point-Communication-example-random-walk/deadlock-3.png" class="lazyload" data-srcset="/2023/04/01/mpi-Point-to-Point-Communication-example-random-walk/deadlock-3.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
 <p>As you can see, at all three stages, there is <strong>at least one posted <code>MPI_Send</code> that matches a posted <code>MPI_Recv</code></strong>, so we don’t have to worry about the occurrence of deadlock.</p>
 <h2 id="Determining-completion-of-all-walkers"><a href="#Determining-completion-of-all-walkers" class="headerlink" title="Determining completion of all walkers"></a>Determining completion of all walkers</h2><blockquote>
 <p>cumbersome solution:</p>
@@ -2993,10 +2999,10 @@ int main(int argc, char** argv) &#123;
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-04-01T11:43:05+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-04-03T10:51:21+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Apr 1, 2023</p>
+    <p>更新于：Apr 3, 2023</p>
   </a>
 </div>
 
@@ -3075,7 +3081,7 @@ int main(int argc, char** argv) &#123;
         <a class='prev' href='/2023/04/02/daily-2023-4-2/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>2</p>
           <p class='content'>昨天出去玩啦！今天回归今日目标：上午和下午学完mpi；晚上开发hw多机版有时间看看敏感性分析和缺失数据补全（具体方法其实应该看看类似研究的文献）
-上午下午晚上</p>
+上午下午晚上来自4.3：昨天主要只是学习了下基础...</p>
         </a>
       
       
@@ -4106,7 +4112,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"grapher"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"zhiqiuyuan's blog"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/04/01/mpi-Point-to-Point-Communication-example-random-walk/","name":"mpi Point-to-Point Communication example: random walk"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"zhiqiuyuan's blog","url":"http://example.com/","keywords":null,"description":"grapher","author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"grapher"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"mpi Point-to-Point Communication example: random walk","description":"grapher","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/04/01/mpi-Point-to-Point-Communication-example-random-walk/"},"author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/04/01/mpi-Point-to-Point-Communication-example-random-walk/","wordCount":0,"datePublished":"2023-04-01T02:37:09.000Z","dateModified":"2023-04-01T03:43:05.547Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"grapher"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"zhiqiuyuan's blog"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/04/01/mpi-Point-to-Point-Communication-example-random-walk/","name":"mpi Point-to-Point Communication example: random walk"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"zhiqiuyuan's blog","url":"http://example.com/","keywords":null,"description":"grapher","author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"grapher"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"mpi Point-to-Point Communication example: random walk","description":"grapher","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/04/01/mpi-Point-to-Point-Communication-example-random-walk/"},"author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/04/01/mpi-Point-to-Point-Communication-example-random-walk/","wordCount":0,"datePublished":"2023-04-01T02:37:09.000Z","dateModified":"2023-04-03T02:51:21.141Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

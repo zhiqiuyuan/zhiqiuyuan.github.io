@@ -2272,7 +2272,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1680449240058),
+    lastupdate: new Date(1680490323025),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2628,6 +2628,238 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <section class="post-list">
     
     
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/17/论文笔记 1999SODA IOcomplexity of graph algorithms/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%201999SODA%20IOcomplexity%20of%20graph%20algorithms/"  itemprop="url">
+        论文笔记 1999SODA IO-complexity of graph algorithms
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        尚未全部阅读
+parallel disk model（对于BFS没啥大用）模型
+
+BD(j-1)定位红色框（trackj前有j-1个track（红框），每个track有BD个records）；B(k-1)在红框中定位蓝框（红框中，diskk前有k-1个block（蓝框），每个block有B个records）；i在蓝框中定位record
+IO
+
+compute
+BFS一个性质level(t-1...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-09-17T11:25:31+08:00">2022-09-17</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/paper/">paper</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/paper/" itemprop="url"><span itemprop="name">paper</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/09/17/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%201999SODA%20IOcomplexity%20of%20graph%20algorithms/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/16/论文笔记 2020VLDB Traversing Large Graphs on GPUs with Unified Memory/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/09/16/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202020VLDB%20Traversing%20Large%20Graphs%20on%20GPUs%20with%20Unified%20Memory/"  itemprop="url">
+        论文笔记 2020VLDB Traversing Large Graphs on GPUs with Unified Memory
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        问题
+ 且cpu部分的存储貌似只是内存，没有考虑外存那些
+在UVM settings下讨论（CUDA支持）
+
+related work本文作为对比对象的：
+
+
+大图放多GPU或GPU和CPU
+
+GPU BFS
+
+external BFS：已计划
+
+一些定义
+UVM
+
+
+CSR和BFS
+
+分析factors that impact performance(DATA ACCESS PATTERN...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-09-16T10:27:01+08:00">2022-09-16</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/paper/">paper</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/paper/" itemprop="url"><span itemprop="name">paper</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/09/16/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202020VLDB%20Traversing%20Large%20Graphs%20on%20GPUs%20with%20Unified%20Memory/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/15/An Overview of Semi/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/09/15/An%20Overview%20of%20Semi/"  itemprop="url">
+        An Overview of Semi-External Graph System
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        
+来自2022FAST Practicably Boosting the Processing Performance of BFS-like Algorithms on Semi-External Graph System via IO-Efficient Graph Ordering
+
+存储
+
+
+
+
+I&#x2F;O optimization techniques
+
+
+
+
+Pre-pro...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-09-15T14:56:54+08:00">2022-09-15</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/graph/">graph</a><span class="sep"></span><a class="category-link" href="/categories/graph/db/">db</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/graph/" itemprop="url"><span itemprop="name">graph</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/graph/db/" itemprop="url"><span itemprop="name">db</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/09/15/An%20Overview%20of%20Semi/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
       
         
           <div class='post-wrapper'>
@@ -3110,209 +3342,6 @@ GPU 的整个处理过程是一个流式处理（Stream Processing）的过程�
       
         <div>
           <a class='readmore' href='/2022/09/06/GPU%E5%85%A5%E9%97%A8/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/04/rockdb leveldb handbook链接/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-    <meta itemprop="description" content="grapher">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/09/04/rockdb%20leveldb%20handbook%E9%93%BE%E6%8E%A5/"  itemprop="url">
-        rockdb leveldb handbook链接
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        leveldb: https://leveldb-handbook.readthedocs.io/zh/latest/basic.htmlrocksdb: https://www.bookstack.cn/read/rocksdb-6.14-en/79f0ebf380de6ff5.md
-
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-09-04T11:04:12+08:00">2022-09-04</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/db/">db</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/db/" itemprop="url"><span itemprop="name">db</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/09/04/rockdb%20leveldb%20handbook%E9%93%BE%E6%8E%A5/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/04/leveldb SSTable sst文件 sst解析工具/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-    <meta itemprop="description" content="grapher">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/09/04/leveldb%20SSTable%20sst%E6%96%87%E4%BB%B6%20sst%E8%A7%A3%E6%9E%90%E5%B7%A5%E5%85%B7/"  itemprop="url">
-        leveldb SSTable sst文件 sst解析工具
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        
-https://leveldb-handbook.readthedocs.io/zh/latest/sstable.html
-
-SStable文件格式物理结构
-一个sstable文件按照固定大小进行块划分，默认每个块的大小为4KiB。
-每个Block中，除了存储数据以外，还会存储两个额外的辅助字段：
-压缩类型：说明了Block中存储的数据是否进行了数据压缩，若是，采用了哪种算法进行压缩。l...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-09-04T10:45:23+08:00">2022-09-04</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/db/">db</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/db/" itemprop="url"><span itemprop="name">db</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/09/04/leveldb%20SSTable%20sst%E6%96%87%E4%BB%B6%20sst%E8%A7%A3%E6%9E%90%E5%B7%A5%E5%85%B7/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/04/跳跃列表/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-    <meta itemprop="description" content="grapher">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/09/04/%E8%B7%B3%E8%B7%83%E5%88%97%E8%A1%A8/"  itemprop="url">
-        跳跃列表
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        
-https://zh.wikipedia.org/wiki/%E8%B7%B3%E8%B7%83%E5%88%97%E8%A1%A8
-
-概述
-使得包含n个元素的有序序列的查找和插入操作的平均时间复杂度都是O(log n)，优于数组的O(n)复杂度
-一个多层次的链表。与前一层（下面一层）链表元素的数量相比，每一层链表中的元素的数量更少。每一层是有序的
-
-构造跳跃列表是按层建造的。底层是一个普...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-09-04T09:44:28+08:00">2022-09-04</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/algorithm/">algorithm</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/algorithm/" itemprop="url"><span itemprop="name">algorithm</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/09/04/%E8%B7%B3%E8%B7%83%E5%88%97%E8%A1%A8/' itemprop="url">
             Read More
           </a>
         </div>

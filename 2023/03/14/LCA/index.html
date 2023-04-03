@@ -45,7 +45,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-03-14T01:04:52.000Z">
-<meta property="article:modified_time" content="2023-03-14T01:12:56.472Z">
+<meta property="article:modified_time" content="2023-04-03T02:51:21.115Z">
 <meta property="article:author" content="zhiqiuyuan">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -2274,7 +2274,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1680449240058),
+    lastupdate: new Date(1680490323025),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2698,7 +2698,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div id="post-body" itemprop="articleBody">
     <p><a target="_blank" rel="noopener" href="https://cp-algorithms.com/graph/lca.html">https://cp-algorithms.com/graph/lca.html</a></p>
 <p>Before answering the queries, we need to preprocess the tree. We make a <strong>DFS</strong> traversal starting at the root and we build a list  <strong>$\text{euler}$</strong>  which stores the order of the vertices that we visit (a vertex is added to the list when we first visit it, and after the return of the DFS traversals to its children). This is also called <strong>an Euler tour</strong> of the tree. It is clear that the size of this list will be $O(N)$ .<br>We also need to build an array  $\text{first}[0..N-1]$  which stores for each vertex  $i$  its first occurrence in  $\text{euler}$ .<br>Also by using the DFS we can find the height of each node (distance from root to it) and store it in the array $\text{height}[0..N-1]$ .</p>
-<p>LCA(v1,v2):<br>Consider <strong>the vertices that we visit in the Euler tour between the first visit of  $v_1$  and the first visit of  $v_2$</strong> .<br>the  $\text{LCA}(v_1, v_2)$  is the vertex with the <strong>lowest height on this path</strong><br><img src="/LCA/image-20230314090707896.png" class="lazyload" data-srcset="/LCA/image-20230314090707896.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20230314090707896"></p>
+<p>LCA(v1,v2):<br>Consider <strong>the vertices that we visit in the Euler tour between the first visit of  $v_1$  and the first visit of  $v_2$</strong> .<br>the  $\text{LCA}(v_1, v_2)$  is the vertex with the <strong>lowest height on this path</strong></p>
+<img src="/2023/03/14/LCA/image-20230314090707896.png" class="lazyload" data-srcset="/2023/03/14/LCA/image-20230314090707896.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
 <p>So the  $\text{LCA}(v_1, v_2)$  can be uniquely determined by finding the vertex with the smallest height in the Euler tour between  $\text{first}(v_1)$  and  $\text{first}(v_2)$ .<br>-&gt; RMQ problem (finding the minimum in an range)</p>
 
   </div>
@@ -2724,10 +2726,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-03-14T09:12:56+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-04-03T10:51:21+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Mar 14, 2023</p>
+    <p>更新于：Apr 3, 2023</p>
   </a>
 </div>
 
@@ -3861,7 +3863,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"grapher"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"zhiqiuyuan's blog"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/03/14/LCA/","name":"LCA"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"zhiqiuyuan's blog","url":"http://example.com/","keywords":null,"description":"grapher","author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"grapher"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"LCA","description":"grapher","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/03/14/LCA/"},"author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/03/14/LCA/","wordCount":0,"datePublished":"2023-03-14T01:04:52.000Z","dateModified":"2023-03-14T01:12:56.472Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"grapher"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"zhiqiuyuan's blog"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/03/14/LCA/","name":"LCA"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"zhiqiuyuan's blog","url":"http://example.com/","keywords":null,"description":"grapher","author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"grapher"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"LCA","description":"grapher","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/03/14/LCA/"},"author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/03/14/LCA/","wordCount":0,"datePublished":"2023-03-14T01:04:52.000Z","dateModified":"2023-04-03T02:51:21.115Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

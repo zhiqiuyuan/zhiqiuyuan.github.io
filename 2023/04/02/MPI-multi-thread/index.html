@@ -41,11 +41,11 @@
 <meta property="og:title" content="MPI multi thread">
 <meta property="og:url" content="http://example.com/2023/04/02/MPI-multi-thread/index.html">
 <meta property="og:site_name" content="zhiqiuyuan&#39;s blog">
-<meta property="og:description" content="教程：https:&#x2F;&#x2F;enccs.github.io&#x2F;intermediate-mpi&#x2F;mpi-and-threads-pt1&#x2F;# 教程配套代码：https:&#x2F;&#x2F;github.com&#x2F;ENCCS&#x2F;intermediate-mpi&#x2F;tree&#x2F;master&#x2F;content&#x2F;code  Comparing pure MPI（一个rank一个线程） vs hybrid MPI-threading（一个ra">
+<meta property="og:description" content="教程：https:&#x2F;&#x2F;enccs.github.io&#x2F;intermediate-mpi&#x2F;mpi-and-threads-pt1&#x2F;# 教程配套代码：https:&#x2F;&#x2F;github.com&#x2F;ENCCS&#x2F;intermediate-mpi&#x2F;tree&#x2F;master&#x2F;content&#x2F;code   Comparing pure MPI（一个rank一个线程） vs hybrid MPI-threading（一个r">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-04-02T11:19:02.000Z">
-<meta property="article:modified_time" content="2023-04-02T11:48:13.163Z">
+<meta property="article:modified_time" content="2023-04-03T02:51:21.146Z">
 <meta property="article:author" content="zhiqiuyuan">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -2274,7 +2274,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1680449240058),
+    lastupdate: new Date(1680490323025),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2698,7 +2698,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div id="post-body" itemprop="articleBody">
     <p>教程：<a target="_blank" rel="noopener" href="https://enccs.github.io/intermediate-mpi/mpi-and-threads-pt1/#">https://enccs.github.io/intermediate-mpi/mpi-and-threads-pt1/#</a></p>
 <p>教程配套代码：<a target="_blank" rel="noopener" href="https://github.com/ENCCS/intermediate-mpi/tree/master/content/code">https://github.com/ENCCS/intermediate-mpi/tree/master/content/code</a></p>
-<p><img src="/MPI-multi-thread/pure-vs-hybrid.svg" class="lazyload" data-srcset="/MPI-multi-thread/pure-vs-hybrid.svg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="pure-vs-hybrid.svg"></p>
+<img src="/2023/04/02/MPI-multi-thread/pure-vs-hybrid.svg" class="lazyload" data-srcset="/2023/04/02/MPI-multi-thread/pure-vs-hybrid.svg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
 <p><em>Comparing <strong>pure MPI（一个rank一个线程）</strong> vs <strong>hybrid MPI-threading（一个rank多个线程）</strong> solutions. MPI ranks are shown in red boxes. Total memory usage and message cost tends to be lower with hybrid, because threads can share the same memory. However, realizing those benefits can lead to further work to reduce contention and eliminate race conditions.</em></p>
 <h2 id="MPI-support-for-threading"><a href="#MPI-support-for-threading" class="headerlink" title="MPI support for threading"></a>MPI support for threading</h2><p>Since version 2.0, MPI can be initialized in up to four different ways. The former approach using <code>MPI_Init</code> still works, but applications that wish to use threading should use <a target="_blank" rel="noopener" href="https://enccs.github.io/intermediate-mpi/quick-reference/index.html#term-MPI_Init_thread"><code>MPI_Init_thread</code></a>.</p>
 <pre><code class="cpp">int MPI_Init_thread(int *argc, char ***argv, int required, int *provided)
@@ -2707,18 +2708,21 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>The following threading levels are generally supported:</p>
 <ul>
 <li><p><code>MPI_THREAD_SINGLE</code> - <strong>rank is not allowed to use threads</strong>, which is basically equivalent to calling <code>MPI_Init</code>.</p>
-<p><img src="/MPI-multi-thread/MPI_THREAD_SINGLE.svg" class="lazyload" data-srcset="/MPI-multi-thread/MPI_THREAD_SINGLE.svg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="MPI_THREAD_SINGLE.svg"></p>
+<img src="/2023/04/02/MPI-multi-thread/MPI_THREAD_SINGLE.svg" class="lazyload" data-srcset="/2023/04/02/MPI-multi-thread/MPI_THREAD_SINGLE.svg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
 <p><em>With <code>MPI_THREAD_SINGLE</code>, the rank may use MPI freely and will not use threads.</em></p>
 </li>
 <li><p><code>MPI_THREAD_FUNNELED</code> - <strong>rank can be multi-threaded but only the main thread may call MPI functions</strong>. Ideal for fork-join parallelism such as used in <code>#pragma omp parallel</code>, where <em>all</em> MPI calls are outside the OpenMP regions.</p>
-<p><img src="/MPI-multi-thread/MPI_THREAD_FUNNELED.svg" class="lazyload" data-srcset="/MPI-multi-thread/MPI_THREAD_FUNNELED.svg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="MPI_THREAD_FUNNELED.svg"></p>
+<img src="/2023/04/02/MPI-multi-thread/MPI_THREAD_FUNNELED.svg" class="lazyload" data-srcset="/2023/04/02/MPI-multi-thread/MPI_THREAD_FUNNELED.svg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 </li>
 <li><p><code>MPI_THREAD_SERIALIZED</code> - rank can be multi-threaded but <strong>only one thread at a time may call MPI functions</strong>. The rank must ensure that MPI is used in a thread-safe way. One approach is to ensure that MPI usage is <em>mutually excluded</em> by all the threads, eg. with a <em>mutex</em>.</p>
-<p><img src="/MPI-multi-thread/MPI_THREAD_SERIALIZED.svg" class="lazyload" data-srcset="/MPI-multi-thread/MPI_THREAD_SERIALIZED.svg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="MPI_THREAD_SERIALIZED.svg"></p>
+<img src="/2023/04/02/MPI-multi-thread/MPI_THREAD_SERIALIZED.svg" class="lazyload" data-srcset="/2023/04/02/MPI-multi-thread/MPI_THREAD_SERIALIZED.svg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
 <p>*With <code>MPI_THREAD_SERIALIZED</code>, the rank can use MPI from any thread so long as it ensures the threads synchronize such that no thread calls MPI while another thread is doing so</p>
 </li>
 <li><p><code>MPI_THREAD_MULTIPLE</code> - rank can be multi-threaded and <strong>any thread may call MPI functions</strong>. The MPI library ensures that this access is safe across threads. Note that this makes <strong>all MPI operations less efficient</strong>, even if only one thread makes MPI calls, so should be used only where necessary.</p>
-<p><img src="/MPI-multi-thread/MPI_THREAD_MULTIPLE.svg" class="lazyload" data-srcset="/MPI-multi-thread/MPI_THREAD_MULTIPLE.svg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="MPI_THREAD_MULTIPLE.svg"></p>
+<img src="/2023/04/02/MPI-multi-thread/MPI_THREAD_MULTIPLE.svg" class="lazyload" data-srcset="/2023/04/02/MPI-multi-thread/MPI_THREAD_MULTIPLE.svg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
 <p><em>With <code>MPI_THREAD_MULTIPLE</code>, the rank can use MPI from any thread. <strong>The MPI library ensures the necessary synchronization</strong></em></p>
 </li>
 </ul>
@@ -2770,10 +2774,10 @@ mpiexec -np 2 ./pi-integration 10000000
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-04-02T19:48:13+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-04-03T10:51:21+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Apr 2, 2023</p>
+    <p>更新于：Apr 3, 2023</p>
   </a>
 </div>
 
@@ -2848,6 +2852,11 @@ mpiexec -np 2 ./pi-integration 10000000
 
   
     <div class="prev-next">
+      
+        <a class='prev' href='/2023/04/03/daily-2023-4-3/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>3</p>
+          <p class='content'>今日目标：希望学完mpi multithread，并且设计好多机算法（呜，总是完成不了每日flag的话会影响心情的）艹问了gpt之后发现可以一起用std::thread的，那么不用学openmp...</p>
+        </a>
       
       
         <a class='next' href='/2023/04/02/open-mpi%E5%AE%89%E8%A3%85/'>
@@ -3876,7 +3885,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"grapher"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"zhiqiuyuan's blog"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/04/02/MPI-multi-thread/","name":"MPI multi thread"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"zhiqiuyuan's blog","url":"http://example.com/","keywords":null,"description":"grapher","author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"grapher"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"MPI multi thread","description":"grapher","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/04/02/MPI-multi-thread/"},"author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/04/02/MPI-multi-thread/","wordCount":0,"datePublished":"2023-04-02T11:19:02.000Z","dateModified":"2023-04-02T11:48:13.163Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"grapher"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"zhiqiuyuan's blog"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/04/02/MPI-multi-thread/","name":"MPI multi thread"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"zhiqiuyuan's blog","url":"http://example.com/","keywords":null,"description":"grapher","author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"grapher"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"MPI multi thread","description":"grapher","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/04/02/MPI-multi-thread/"},"author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/04/02/MPI-multi-thread/","wordCount":0,"datePublished":"2023-04-02T11:19:02.000Z","dateModified":"2023-04-03T02:51:21.146Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

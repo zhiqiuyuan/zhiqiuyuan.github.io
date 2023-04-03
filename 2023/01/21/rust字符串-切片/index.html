@@ -41,11 +41,11 @@
 <meta property="og:title" content="rust字符串 切片">
 <meta property="og:url" content="http://example.com/2023/01/21/rust%E5%AD%97%E7%AC%A6%E4%B8%B2-%E5%88%87%E7%89%87/index.html">
 <meta property="og:site_name" content="zhiqiuyuan&#39;s blog">
-<meta property="og:description" content="学习自 rust圣经  切片：全在栈上的对象，一个指针+一个长度 fn main() &amp;#123; let s &#x3D; String::from(&quot;hello world&quot;);  let hello &#x3D; &amp;s[0..5]; let world &#x3D; &amp;s[6..11]; &amp;#125;  world：   四种不同的类型：String（如上图的s），&amp;Stri">
+<meta property="og:description" content="学习自 rust圣经  切片：全在栈上的对象，一个指针+一个长度 fn main() &amp;#123; let s &#x3D; String::from(&quot;hello world&quot;);  let hello &#x3D; &amp;s[0..5]; let world &#x3D; &amp;s[6..11]; &amp;#125;  world：    四种不同的类型：String（如上图的s），&amp;Str">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-01-21T13:10:22.000Z">
-<meta property="article:modified_time" content="2023-01-21T13:21:30.455Z">
+<meta property="article:modified_time" content="2023-04-03T02:51:21.072Z">
 <meta property="article:author" content="zhiqiuyuan">
 <meta property="article:tag" content="rust">
 <meta name="twitter:card" content="summary">
@@ -2275,7 +2275,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1680449240058),
+    lastupdate: new Date(1680490323025),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2727,11 +2727,13 @@ let world = &amp;s[6..11];
 &#125;
 </code></pre>
 <p>world：</p>
-<p><img src="/rust%E5%AD%97%E7%AC%A6%E4%B8%B2-%E5%88%87%E7%89%87/image-20230121211113605.png" class="lazyload" data-srcset="/rust%E5%AD%97%E7%AC%A6%E4%B8%B2-%E5%88%87%E7%89%87/image-20230121211113605.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20230121211113605"></p>
+<img src="/2023/01/21/rust%E5%AD%97%E7%AC%A6%E4%B8%B2-%E5%88%87%E7%89%87/image-20230121211113605.png" class="lazyload" data-srcset="/2023/01/21/rust%E5%AD%97%E7%AC%A6%E4%B8%B2-%E5%88%87%E7%89%87/image-20230121211113605.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
 <ul>
 <li>四种不同的类型：String（如上图的s），&amp;String（如下图的s），str（如下一段代码的hello，字符内容是硬编码在可执行文件中的），&amp;str（字符串切片，如上图的world）</li>
 </ul>
-<p><img src="/rust%E5%AD%97%E7%AC%A6%E4%B8%B2-%E5%88%87%E7%89%87/image-20230121211555742.png" class="lazyload" data-srcset="/rust%E5%AD%97%E7%AC%A6%E4%B8%B2-%E5%88%87%E7%89%87/image-20230121211555742.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20230121211555742"></p>
+<img src="/2023/01/21/rust%E5%AD%97%E7%AC%A6%E4%B8%B2-%E5%88%87%E7%89%87/image-20230121211555742.png" class="lazyload" data-srcset="/2023/01/21/rust%E5%AD%97%E7%AC%A6%E4%B8%B2-%E5%88%87%E7%89%87/image-20230121211555742.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
 <ul>
 <li>其中String和&amp;str用得很多</li>
 <li>都是utf-8编码，每个字符所占的字节数是变化的(1 - 4)<ul>
@@ -2783,10 +2785,10 @@ fn say_hello(s: &amp;str) &#123;
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-01-21T21:21:30+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-04-03T10:51:21+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Jan 21, 2023</p>
+    <p>更新于：Apr 3, 2023</p>
   </a>
 </div>
 
@@ -3904,7 +3906,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"grapher"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"zhiqiuyuan's blog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/rust/","name":"rust"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/rust/language/","name":"language"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/01/21/rust字符串-切片/","name":"rust字符串 切片"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"zhiqiuyuan's blog","url":"http://example.com/","keywords":null,"description":"grapher","author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"grapher"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"rust字符串 切片","description":"grapher","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/01/21/rust%E5%AD%97%E7%AC%A6%E4%B8%B2-%E5%88%87%E7%89%87/"},"author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/01/21/rust%E5%AD%97%E7%AC%A6%E4%B8%B2-%E5%88%87%E7%89%87/","wordCount":0,"datePublished":"2023-01-21T13:10:22.000Z","dateModified":"2023-01-21T13:21:30.455Z","articleSection":"rust","keywords":"rust","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"grapher"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"zhiqiuyuan's blog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/rust/","name":"rust"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/rust/language/","name":"language"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/01/21/rust字符串-切片/","name":"rust字符串 切片"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"zhiqiuyuan's blog","url":"http://example.com/","keywords":null,"description":"grapher","author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"grapher"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"rust字符串 切片","description":"grapher","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/01/21/rust%E5%AD%97%E7%AC%A6%E4%B8%B2-%E5%88%87%E7%89%87/"},"author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/01/21/rust%E5%AD%97%E7%AC%A6%E4%B8%B2-%E5%88%87%E7%89%87/","wordCount":0,"datePublished":"2023-01-21T13:10:22.000Z","dateModified":"2023-04-03T02:51:21.072Z","articleSection":"rust","keywords":"rust","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

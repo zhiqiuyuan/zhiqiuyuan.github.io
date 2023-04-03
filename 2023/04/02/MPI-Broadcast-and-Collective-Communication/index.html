@@ -45,7 +45,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-04-02T01:05:44.000Z">
-<meta property="article:modified_time" content="2023-04-02T02:19:16.858Z">
+<meta property="article:modified_time" content="2023-04-03T02:51:21.145Z">
 <meta property="article:author" content="zhiqiuyuan">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -2274,7 +2274,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1680449240058),
+    lastupdate: new Date(1680490323025),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2704,7 +2704,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>Want to know <strong>how MPI_Barrier is implemented</strong>? Sure you do :-) Do you remember <strong>the ring program from the sending and receiving tutorial</strong>? To refresh your memory, we wrote a program that <font color=red><strong>passed a token around all processes in a ring-like fashion</strong></font>. This type of program is one of the simplest methods to implement a barrier since a token can’t be passed around completely until all processes work together.</p>
 <p>Always remember that <font color=red><strong>every collective call you make is synchronized</strong></font>. In other words, if you can’t successfully complete an MPI_Barrier, then you also can’t successfully complete any collective call. If you try to call MPI_Barrier or other collective routines <strong>without ensuring all processes in the communicator will also call it</strong>, your program will idle</p>
 <h2 id="Broadcasting-with-MPI-Bcast"><a href="#Broadcasting-with-MPI-Bcast" class="headerlink" title="Broadcasting with MPI_Bcast"></a>Broadcasting with MPI_Bcast</h2><p>During a broadcast, one process sends the same data to all processes in a communicator. </p>
-<p><img src="/MPI-Broadcast-and-Collective-Communication/broadcast_pattern.png" class="lazyload" data-srcset="/MPI-Broadcast-and-Collective-Communication/broadcast_pattern.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="MPI_Bcast pattern"></p>
+<img src="/2023/04/02/MPI-Broadcast-and-Collective-Communication/broadcast_pattern.png" class="lazyload" data-srcset="/2023/04/02/MPI-Broadcast-and-Collective-Communication/broadcast_pattern.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
 <p>In MPI, broadcasting can be accomplished by using <code>MPI_Bcast</code>. The function prototype looks like this:</p>
 <pre><code class="cpp">MPI_Bcast(
     void* data,
@@ -2749,7 +2750,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>第一行：最开始只有0可以发送消息。0发送给了1；</p>
 <p>第二行：1收到消息后也开始发送消息，0也继续发送消息。0-&gt;2，1-&gt;3；</p>
 <p>第三行：2和3收到消息后也开始发送消息，0和1也继续发送消息。0-&gt;4, 3-&gt;6, 1-&gt;5, 3-&gt;7）</p>
-<p><img src="/MPI-Broadcast-and-Collective-Communication/broadcast_tree.png" class="lazyload" data-srcset="/MPI-Broadcast-and-Collective-Communication/broadcast_tree.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="MPI_Bcast tree"></p>
+<img src="/2023/04/02/MPI-Broadcast-and-Collective-Communication/broadcast_tree.png" class="lazyload" data-srcset="/2023/04/02/MPI-Broadcast-and-Collective-Communication/broadcast_tree.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+
+
+
 <h2 id="Comparison-of-MPI-Bcast-with-MPI-Send-and-MPI-Recv"><a href="#Comparison-of-MPI-Bcast-with-MPI-Send-and-MPI-Recv" class="headerlink" title="Comparison of MPI_Bcast with MPI_Send and MPI_Recv"></a>Comparison of MPI_Bcast with MPI_Send and MPI_Recv</h2><p><code>MPI_Wtime</code> takes no arguments, and it simply returns a floating-point number of seconds since a set time in the past.</p>
 <p>注意更新计时变量前的Barrier，确保所有的process都执行到了MPI_Barrier这一行之后，才让它们更新total_my_bcast_time</p>
 <pre><code class="cpp">// Synchronize before starting timing
@@ -2835,10 +2839,10 @@ total_my_bcast_time += MPI_Wtime();
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-04-02T10:19:16+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-04-03T10:51:21+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Apr 2, 2023</p>
+    <p>更新于：Apr 3, 2023</p>
   </a>
 </div>
 
@@ -2924,7 +2928,7 @@ Comparison of MPI_B...</p>
         <a class='next' href='/2023/04/02/daily-2023-4-2/'>
           <p class='title'>2<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
           <p class='content'>昨天出去玩啦！今天回归今日目标：上午和下午学完mpi；晚上开发hw多机版有时间看看敏感性分析和缺失数据补全（具体方法其实应该看看类似研究的文献）
-上午下午晚上</p>
+上午下午晚上来自4.3：昨天主要只是学习了下基础...</p>
         </a>
       
     </div>
@@ -3948,7 +3952,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"grapher"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"zhiqiuyuan's blog"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/04/02/MPI-Broadcast-and-Collective-Communication/","name":"MPI Broadcast and Collective Communication"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"zhiqiuyuan's blog","url":"http://example.com/","keywords":null,"description":"grapher","author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"grapher"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"MPI Broadcast and Collective Communication","description":"grapher","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/04/02/MPI-Broadcast-and-Collective-Communication/"},"author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/04/02/MPI-Broadcast-and-Collective-Communication/","wordCount":0,"datePublished":"2023-04-02T01:05:44.000Z","dateModified":"2023-04-02T02:19:16.858Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"grapher"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"zhiqiuyuan's blog"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/04/02/MPI-Broadcast-and-Collective-Communication/","name":"MPI Broadcast and Collective Communication"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"zhiqiuyuan's blog","url":"http://example.com/","keywords":null,"description":"grapher","author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"grapher"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"MPI Broadcast and Collective Communication","description":"grapher","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/04/02/MPI-Broadcast-and-Collective-Communication/"},"author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/04/02/MPI-Broadcast-and-Collective-Communication/","wordCount":0,"datePublished":"2023-04-02T01:05:44.000Z","dateModified":"2023-04-03T02:51:21.145Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
