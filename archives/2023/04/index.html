@@ -2272,7 +2272,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1680490323025),
+    lastupdate: new Date(1681118093230),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2657,6 +2657,69 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/10/vector-bool-不是一个好选择/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/04/10/vector-bool-%E4%B8%8D%E6%98%AF%E4%B8%80%E4%B8%AA%E5%A5%BD%E9%80%89%E6%8B%A9/"  itemprop="url">
+        vector<bool>不是一个好选择
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        实现bool是一个字节但是vector实际上是用一个比特来表示一个bool
+因此vector慢（实际测试中：访问vector x次，访问vector 2*x次，但是访问vector的时间却是访问vector的7倍）    虽然O3优化可以加速，但是开O3优化后可能出问题且for(auto&amp;v:vector)等对于vector元素的引用会出现问题
+不如bitset（定长，一个比特表示一...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-04-10T15:05:25+08:00">2023-04-10</time>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/04/10/vector-bool-%E4%B8%8D%E6%98%AF%E4%B8%80%E4%B8%AA%E5%A5%BD%E9%80%89%E6%8B%A9/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
   <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/03/mpi教程目录/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
@@ -2748,9 +2811,9 @@ mpi block send...
     
       
         来自chatgpt
-这个是低阶版本的，高阶的是openMPI+openMP，见博客
+这个是低阶版本的，高阶的是openMPI+openMP，见MPI + openMP
 openMPI和std::thread同时使用有什么要求当在MPI应用程序中使用std::thread时，只有主线程可以调用MPI接口。
-在其他线程中调用MPI接口会导致未定义的行为，可能会导致程序崩溃或者产生不可预测的结果。因此，如果需要在其他线程中进行与MPI相关的操作，应该使用线程间通信机制将任务委托给...
+在其他线程中调用MPI接口会导致未定义的行为，可能会导致程序崩溃或者产生不可预测的结果。因此，如果需要在其他线程中进行与MPI相关的操作，应该使用线程间...
       
     
   </div>
@@ -2951,234 +3014,6 @@ OpenMPI 集群配置 - HelloWooo - 博客园 (cnblogs.com)
           </div>
         
       
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/02/MPI-Reduce-and-Allreduce/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-    <meta itemprop="description" content="grapher">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/04/02/MPI-Reduce-and-Allreduce/"  itemprop="url">
-        MPI Reduce and Allreduce
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        https://mpitutorial.com/tutorials/mpi-reduce-and-allreduce/
-An introduction to reduceData reduction involves reducing a set of numbers into a smaller set of numbers via a function. For example, let...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-04-02T11:19:41+08:00">2023-04-02</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/04/02/MPI-Reduce-and-Allreduce/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/02/collective-call-example-Performing-Parallel-Rank-with-MPI/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-    <meta itemprop="description" content="grapher">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/04/02/collective-call-example-Performing-Parallel-Rank-with-MPI/"  itemprop="url">
-        collective call example: Performing Parallel Rank with MPI
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        https://mpitutorial.com/tutorials/performing-parallel-rank-with-mpi/
-Parallel rank - problem overviewWhen processes all have a single number stored in their local memory, it can be useful to know w...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-04-02T10:26:02+08:00">2023-04-02</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/04/02/collective-call-example-Performing-Parallel-Rank-with-MPI/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/02/MPI-Scatter-Gather-and-Allgather/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-    <meta itemprop="description" content="grapher">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/04/02/MPI-Scatter-Gather-and-Allgather/"  itemprop="url">
-        MPI Scatter, Gather, and Allgather
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        https://mpitutorial.com/tutorials/mpi-scatter-gather-and-allgather/
-An introduction to MPI_ScatterMPI_Bcast sends the same piece of data to all processes while MPI_Scatter sends chunks of an array ...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-04-02T09:50:54+08:00">2023-04-02</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/04/02/MPI-Scatter-Gather-and-Allgather/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/02/mpi-overall/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-    <meta itemprop="description" content="grapher">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/04/02/mpi-overall/"  itemprop="url">
-        mpi overall
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        每个process的开始：MPI_Init之后MPI_Init之后初始化的变量是每个process一个copy的，在local memory中
-Hello world code examples#include &lt;mpi.h&gt;
-#include &lt;stdio.h&gt;
-
-int main(int argc, char** argv) &#123;
-    // Initi...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-04-02T09:47:08+08:00">2023-04-02</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/04/02/mpi-overall/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
     
   </section>
   
@@ -3187,7 +3022,7 @@ int main(int argc, char** argv) &#123;
       <div class="prev-next">
         
         <p class="current">
-          1 / 2
+          1 / 3
         </p>
         
           <a class="next" rel="next" href="/archives/2023/04/page/2/">

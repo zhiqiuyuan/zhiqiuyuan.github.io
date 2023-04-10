@@ -41,11 +41,11 @@
 <meta property="og:title" content="3">
 <meta property="og:url" content="http://example.com/2023/04/03/daily-2023-4-3/index.html">
 <meta property="og:site_name" content="zhiqiuyuan&#39;s blog">
-<meta property="og:description" content="今日目标：希望学完mpi multithread，并且设计好多机算法（呜，总是完成不了每日flag的话会影响心情的）艹问了gpt之后发现可以一起用std::thread的，那么不用学openmp了 上午下午晚上">
+<meta property="og:description" content="今日目标：希望学完mpi multithread，并且设计好多机算法（呜，总是完成不了每日flag的话会影响心情的）艹问了gpt之后发现可以一起用std::thread的，那么不用学openmp了 上午下午 1 tsk size均分，测试各种数量线程的时间性能(希望了解为啥没有scale up的原因，以及tsksz是不是可能的原因)    晚上下午晚上摆烂了（因为突然通知明天hw开会，然后我和上次">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-04-03T00:43:15.000Z">
-<meta property="article:modified_time" content="2023-04-03T01:21:36.902Z">
+<meta property="article:modified_time" content="2023-04-04T01:38:28.172Z">
 <meta property="article:author" content="zhiqiuyuan">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -2274,7 +2274,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1680490323025),
+    lastupdate: new Date(1681118093230),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2697,7 +2697,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
     <p>今日目标：希望学完mpi multithread，并且设计好多机算法（呜，总是完成不了每日flag的话会影响心情的）<br>艹问了gpt之后发现可以一起用std::thread的，那么不用学openmp了</p>
-<h2 id="上午"><a href="#上午" class="headerlink" title="上午"></a>上午</h2><h2 id="下午"><a href="#下午" class="headerlink" title="下午"></a>下午</h2><h2 id="晚上"><a href="#晚上" class="headerlink" title="晚上"></a>晚上</h2>
+<h2 id="上午"><a href="#上午" class="headerlink" title="上午"></a>上午</h2><h2 id="下午"><a href="#下午" class="headerlink" title="下午"></a>下午</h2><ul>
+<li>1<ul>
+<li>tsk size均分，测试各种数量线程的时间性能(希望了解为啥没有scale up的原因，以及tsksz是不是可能的原因)</li>
+</ul>
+</li>
+</ul>
+<h2 id="晚上"><a href="#晚上" class="headerlink" title="晚上"></a>晚上</h2><p>下午晚上摆烂了（因为突然通知明天hw开会，然后我和上次相比完全没有进展+目前啥都没达标+初次汇报ppt有点担心，然后就摆烂了呜呜呜）<br>看完呼啸山庄（剧情up，描写up！虽然景物描写有些我没有看进去，但是对于人物的描写（语言，动作，神态，外貌）一点也没落下，寥寥数笔看见人物在眼前）<br>开始看文豪野犬</p>
+
   </div>
   
   
@@ -2721,10 +2728,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-04-03T09:21:36+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-04-04T09:38:28+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Apr 3, 2023</p>
+    <p>更新于：Apr 4, 2023</p>
   </a>
 </div>
 
@@ -2803,8 +2810,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <a class='prev' href='/2023/04/03/openMPI-std-thread-multithreaad/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>openMPI std::thread multithreaad</p>
           <p class='content'>来自chatgpt
-这个是低阶版本的，高阶的是openMPI+openMP，见博客
-openMPI和std::thread同时使用有什么要求当在MPI应用程序中使用std::thread时，只有...</p>
+这个是低阶版本的，高阶的是openMPI+openMP，见MPI + openMP
+openMPI和std::thread同时使用有什么要求当在MPI应用程序中使用std::...</p>
         </a>
       
       
@@ -3835,7 +3842,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"grapher"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"zhiqiuyuan's blog"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/04/03/daily-2023-4-3/","name":"3"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"zhiqiuyuan's blog","url":"http://example.com/","keywords":null,"description":"grapher","author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"grapher"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"3","description":"grapher","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/04/03/daily-2023-4-3/"},"author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/04/03/daily-2023-4-3/","wordCount":0,"datePublished":"2023-04-03T00:43:15.000Z","dateModified":"2023-04-03T01:21:36.902Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"grapher"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"zhiqiuyuan's blog"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/04/03/daily-2023-4-3/","name":"3"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"zhiqiuyuan's blog","url":"http://example.com/","keywords":null,"description":"grapher","author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"grapher"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"3","description":"grapher","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/04/03/daily-2023-4-3/"},"author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/04/03/daily-2023-4-3/","wordCount":0,"datePublished":"2023-04-03T00:43:15.000Z","dateModified":"2023-04-04T01:38:28.172Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

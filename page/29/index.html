@@ -2272,7 +2272,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1680490323025),
+    lastupdate: new Date(1681118093230),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2628,6 +2628,317 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <section class="post-list">
     
     
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/16/c++11左右值引用 移动语义/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/07/16/c++11%E5%B7%A6%E5%8F%B3%E5%80%BC%E5%BC%95%E7%94%A8%20%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89/"  itemprop="url">
+        c++11左右值引用 移动语义
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        
+学习自一文读懂C++右值引用和std::move - 知乎 (zhihu.com)，原文真的写得超级好！
+该文文末还讲解了std::forward，暂时未学习
+
+左右值引用左值引用左值引用类型为T&amp;
+非const不可以指向右值
+int a = 5;
+int &amp;ref_a = a; // 左值引用指向左值，编译通过
+int &amp;ref_a = 5; // 左值引用指向了...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-07-16T21:11:07+08:00">2022-07-16</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/c/">c++</a><span class="sep"></span><a class="category-link" href="/categories/c/language/">language</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/c/" itemprop="url"><span itemprop="name">c++</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/c/language/" itemprop="url"><span itemprop="name">language</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/07/16/c++11%E5%B7%A6%E5%8F%B3%E5%80%BC%E5%BC%95%E7%94%A8%20%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/16/c++11异常处理/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/07/16/c++11%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/"  itemprop="url">
+        c++11异常处理
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        
+学习自C++11异常处理 noexcept_木的情感的博客-CSDN博客_c++11 noexcept
+
+C++03 异常处理（throw）c++11也可以用
+指定异常规格（语法）C++98中，在函数声明时，我们使用throw指定一个函数可以抛出异常的类型（异常规格（exception specification））。例如：
+class Ex &#123;
+public:
+  double...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-07-16T21:10:25+08:00">2022-07-16</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/c/">c++</a><span class="sep"></span><a class="category-link" href="/categories/c/language/">language</a><span class="sep"></span><a class="category-link" href="/categories/debug/">debug</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/debug/" itemprop="url"><span itemprop="name">debug</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/c/" itemprop="url"><span itemprop="name">c++</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/c/language/" itemprop="url"><span itemprop="name">language</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/07/16/c++11%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/16/c++并发编程实践2ed：21和23 thread生命周期/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/07/16/c++%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B52ed%EF%BC%9A21%E5%92%8C23%20thread%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"  itemprop="url">
+        c++并发编程实践2ed：2.1和2.3 thread生命周期
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        
+学习自 第25课 std::thread对象的析构 - 浅墨浓香 - 博客园 (cnblogs.com)和《c++并发编程实践第二版》2.1
+
+一、线程创建std::thread th对象创建时，创建线程，这个线程是主线程的子线程，与主线程并发执行
+语法
+每个程序有一个执行 main() 函数的主线程，将函数添加为 std::thread 的参数即可创建另一个线程，两个线程并发运行
+
+#i...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-07-16T21:08:25+08:00">2022-07-16</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/c/">c++</a><span class="sep"></span><a class="category-link" href="/categories/c/c-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B52ed/">c++并发编程实践2ed</a><span class="sep"></span><a class="category-link" href="/categories/c/language/">language</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/c/" itemprop="url"><span itemprop="name">c++</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/c/language/" itemprop="url"><span itemprop="name">language</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/c/c-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B52ed/" itemprop="url"><span itemprop="name">c++并发编程实践2ed</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/07/16/c++%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B52ed%EF%BC%9A21%E5%92%8C23%20thread%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/16/c++底层 c++STL源码/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/07/16/c++%E5%BA%95%E5%B1%82%20c++STL%E6%BA%90%E7%A0%81/"  itemprop="url">
+        c++底层 c++STL源码
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        用户内存分配和使用的规则（os知识）堆栈查看堆栈总大小每个进程允许的堆栈总大小在linux下可以用ulimit查看 stack size
+#查看软极限，单个进程的stack size限制
+ulimit -a #或者ulimit -aS
+#查看硬极限，软极限的限制
+ulimit -aH
+
+堆栈地址增长方向x86机器上，
+
+栈是向下增长的，即入栈是栈顶指针值变小
+堆是向上增长的（这个其实无所谓，...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-07-16T21:00:59+08:00">2022-07-16</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/c/">c++</a><span class="sep"></span><a class="category-link" href="/categories/c/language-deep/">language_deep</a><span class="sep"></span><a class="category-link" href="/categories/debug/">debug</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/debug/" itemprop="url"><span itemprop="name">debug</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/c/" itemprop="url"><span itemprop="name">c++</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/c/language-deep/" itemprop="url"><span itemprop="name">language_deep</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/07/16/c++%E5%BA%95%E5%B1%82%20c++STL%E6%BA%90%E7%A0%81/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
       
         
           <div class='post-wrapper'>
@@ -3056,294 +3367,6 @@ expor...
       
         <div>
           <a class='readmore' href='/2022/07/10/strace%20%E8%BE%93%E5%87%BA%E6%89%80%E6%9C%89%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/09/计算机保研面试2分钟英语自我介绍/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-    <meta itemprop="description" content="grapher">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/07/09/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BF%9D%E7%A0%94%E9%9D%A2%E8%AF%952%E5%88%86%E9%92%9F%E8%8B%B1%E8%AF%AD%E8%87%AA%E6%88%91%E4%BB%8B%E7%BB%8D/"  itemprop="url">
-        计算机保研面试2分钟英语自我介绍
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        没有复杂句式和高级词汇（记不住），两分钟版本
-姓名学校专业+总纲
-Good Morning teachers. I am xxx from xxx University, majored in xxx.Next, I’d like to introduce myself from three aspects: major learning, scientific research, and ...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-07-09T23:28:33+08:00">2022-07-09</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/">生活随记</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/" itemprop="url"><span itemprop="name">生活随记</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/07/09/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BF%9D%E7%A0%94%E9%9D%A2%E8%AF%952%E5%88%86%E9%92%9F%E8%8B%B1%E8%AF%AD%E8%87%AA%E6%88%91%E4%BB%8B%E7%BB%8D/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/09/个人博客后台服务器宕机解决/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-    <meta itemprop="description" content="grapher">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/07/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%90%8E%E5%8F%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%95%E6%9C%BA%E8%A7%A3%E5%86%B3/"  itemprop="url">
-        个人博客后台服务器宕机解决
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        宕机恢复后如何重启服务服务器上重启博客后台服务：
-
-检查是否有进程的comm是“java”
-ps -eo pid,comm | grep &quot;java&quot;
-
-若无则运行halo jar包
-nohup java -jar halo-1.5.4.jar &amp;
-
-
-检查是否有进程的comm是“nginx”，若无则重启nginx服务
-nginx -s reload
-#可能由于一...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-07-09T23:25:19+08:00">2022-07-09</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/fix-error/">fix_error</a><span class="sep"></span><a class="category-link" href="/categories/play/">play</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/play/" itemprop="url"><span itemprop="name">play</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/fix-error/" itemprop="url"><span itemprop="name">fix_error</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/07/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%90%8E%E5%8F%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%95%E6%9C%BA%E8%A7%A3%E5%86%B3/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/09/计算机保研简历面准备/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-    <meta itemprop="description" content="grapher">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/07/09/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BF%9D%E7%A0%94%E7%AE%80%E5%8E%86%E9%9D%A2%E5%87%86%E5%A4%87/"  itemprop="url">
-        计算机保研简历面准备
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        
-我当时是按这个准备的面试~ 准备了我的两个科研项目，面试的时候项目相关问题基本全部覆盖（开放性问题除外，这个当场思考下）2022北叉大数据计科专业面经 成功上岸
-
-对于每个打算被问的项目梳理如下内容：
-情境：研究的什么问题，这个项目大概是干啥的（或输入输出，架构和各模块的大致设计）），研究的问题有什么实际应用场景
-我在这个项目中贡献了什么：写了哪些代码，代码量多少，调研了哪些论文，完成了什...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-07-09T21:50:14+08:00">2022-07-09</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/">生活随记</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/" itemprop="url"><span itemprop="name">生活随记</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/07/09/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BF%9D%E7%A0%94%E7%AE%80%E5%8E%86%E9%9D%A2%E5%87%86%E5%A4%87/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/09/linux源码阅读开发环境搭建/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-    <meta itemprop="description" content="grapher">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/07/09/linux%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"  itemprop="url">
-        linux源码阅读开发环境搭建
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        vscode阅读linux源码方法一 一站式配置vscode目前存在的问题：仍然有一些红线报错，但是不影响跳转定义
-vscode 安装插件
-Remote-SSH：本机安装
-C&#x2F;C++ 插件：remote安装（在remote安装插件的方法：先Remote-SSH连接上remote）
-
-编译内核源码[编译内核（简单版）](# 编译内核（简单版）)
-获取.vscode和生成compile...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-07-09T21:10:10+08:00">2022-07-09</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/fix-error/">fix_error</a><span class="sep"></span><a class="category-link" href="/categories/tool/">tool</a><span class="sep"></span><a class="category-link" href="/categories/tool/linux/">linux</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/tool/" itemprop="url"><span itemprop="name">tool</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/tool/linux/" itemprop="url"><span itemprop="name">linux</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/fix-error/" itemprop="url"><span itemprop="name">fix_error</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/07/09/linux%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/' itemprop="url">
             Read More
           </a>
         </div>
