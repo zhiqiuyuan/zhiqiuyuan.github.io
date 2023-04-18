@@ -2275,7 +2275,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1681118093230),
+    lastupdate: new Date(1681861812500),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2721,7 +2721,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div id="post-body" itemprop="articleBody">
     <h2 id="原理和简介"><a href="#原理和简介" class="headerlink" title="原理和简介"></a>原理和简介</h2><p>Valgrind <strong>follows each allocation</strong> in your program and tracks it to see if it is returned properly, continue to be referenced or is lost in space, which is a ‘memory leak’. And as any leak, given enough time you will drown, in this case require more and more memory, until either you program is eating up your whole computer, or you get out of memory.</p>
 <h2 id="常用"><a href="#常用" class="headerlink" title="常用"></a>常用</h2><p><code>--tool=memcheck</code>是默认选项</p>
-<pre><code class="bash">valgrind  --leak-check=yes YourRunCommand
+<pre><code class="bash">valgrind --leak-check=yes YourRunCommand
 </code></pre>
 <pre><code class="bash">valgrind --leak-check=full  YourRunCommand
 </code></pre>

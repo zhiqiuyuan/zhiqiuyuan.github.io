@@ -2272,7 +2272,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1681118093230),
+    lastupdate: new Date(1681861812500),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2655,9 +2655,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         
+      
+        
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/10/vector-bool-不是一个好选择/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/17/c-静态数据成员和普通数据成员访问快慢测评/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2675,17 +2677,23 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/04/10/vector-bool-%E4%B8%8D%E6%98%AF%E4%B8%80%E4%B8%AA%E5%A5%BD%E9%80%89%E6%8B%A9/"  itemprop="url">
-        vector<bool>不是一个好选择
+      <a href="/2023/04/17/c-%E9%9D%99%E6%80%81%E6%95%B0%E6%8D%AE%E6%88%90%E5%91%98%E5%92%8C%E6%99%AE%E9%80%9A%E6%95%B0%E6%8D%AE%E6%88%90%E5%91%98%E8%AE%BF%E9%97%AE%E5%BF%AB%E6%85%A2%E6%B5%8B%E8%AF%84/"  itemprop="url">
+        c++静态数据成员和普通数据成员访问快慢测评
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        实现bool是一个字节但是vector实际上是用一个比特来表示一个bool
-因此vector慢（实际测试中：访问vector x次，访问vector 2*x次，但是访问vector的时间却是访问vector的7倍）    虽然O3优化可以加速，但是开O3优化后可能出问题且for(auto&amp;v:vector)等对于vector元素的引用会出现问题
-不如bitset（定长，一个比特表示一...
+        比较类的静态数据成员和普通数据成员哪个访问得快一点
+代码顺序访问#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+#include &lt;vector&gt;
+#include &lt;chrono&gt;
+
+using namespace std;
+typedef chrono::microseconds UnitType;
+chron...
       
     
   </div>
@@ -2693,12 +2701,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-04-10T15:05:25+08:00">2023-04-10</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-04-17T17:42:40+08:00">2023-04-17</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/04/10/vector-bool-%E4%B8%8D%E6%98%AF%E4%B8%80%E4%B8%AA%E5%A5%BD%E9%80%89%E6%8B%A9/' itemprop="url">
+          <a class='readmore' href='/2023/04/17/c-%E9%9D%99%E6%80%81%E6%95%B0%E6%8D%AE%E6%88%90%E5%91%98%E5%92%8C%E6%99%AE%E9%80%9A%E6%95%B0%E6%8D%AE%E6%88%90%E5%91%98%E8%AE%BF%E9%97%AE%E5%BF%AB%E6%85%A2%E6%B5%8B%E8%AF%84/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2712,15 +2720,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
       
         
-      
-        
-      
-        
-      
-        
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/03/mpi教程目录/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/16/概率分布/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2738,24 +2740,17 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/04/03/mpi%E6%95%99%E7%A8%8B%E7%9B%AE%E5%BD%95/"  itemprop="url">
-        mpi教程目录
+      <a href="/2023/04/16/%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83/"  itemprop="url">
+        概率分布
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        主要参考：基础教程：https://mpitutorial.com/tutorials进阶教程：https://enccs.github.io/intermediate-mpi
-基础教程安装运行：
+        常见连续型概率分布指数分布
 
-open mpi安装
-run mpi program over a cluster 在集群上跑mpi程序
-mpi overall
 
-point-to-point：
-
-mpi block send...
       
     
   </div>
@@ -2763,12 +2758,20 @@ mpi block send...
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-04-03T10:40:55+08:00">2023-04-03</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-04-16T20:33:14+08:00">2023-04-16</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E6%A6%82%E7%BB%9F/">概统</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E6%A6%82%E7%BB%9F/" itemprop="url"><span itemprop="name">概统</span></a>
+            </span>
+          
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/04/03/mpi%E6%95%99%E7%A8%8B%E7%9B%AE%E5%BD%95/' itemprop="url">
+          <a class='readmore' href='/2023/04/16/%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2784,7 +2787,7 @@ mpi block send...
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/03/openMPI-std-thread-multithreaad/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/16/数学期望/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2802,18 +2805,24 @@ mpi block send...
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/04/03/openMPI-std-thread-multithreaad/"  itemprop="url">
-        openMPI std::thread multithreaad
+      <a href="/2023/04/16/%E6%95%B0%E5%AD%A6%E6%9C%9F%E6%9C%9B/"  itemprop="url">
+        数学期望
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        来自chatgpt
-这个是低阶版本的，高阶的是openMPI+openMP，见MPI + openMP
-openMPI和std::thread同时使用有什么要求当在MPI应用程序中使用std::thread时，只有主线程可以调用MPI接口。
-在其他线程中调用MPI接口会导致未定义的行为，可能会导致程序崩溃或者产生不可预测的结果。因此，如果需要在其他线程中进行与MPI相关的操作，应该使用线程间...
+        含义：
+
+
+离散型
+
+
+
+连续型
+常见分布的数学期望指数分布
+
       
     
   </div>
@@ -2821,12 +2830,20 @@ openMPI和std::thread同时使用有什么要求当在MPI应用程序中使用st
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-04-03T09:20:57+08:00">2023-04-03</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-04-16T20:09:20+08:00">2023-04-16</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E6%A6%82%E7%BB%9F/">概统</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E6%A6%82%E7%BB%9F/" itemprop="url"><span itemprop="name">概统</span></a>
+            </span>
+          
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/04/03/openMPI-std-thread-multithreaad/' itemprop="url">
+          <a class='readmore' href='/2023/04/16/%E6%95%B0%E5%AD%A6%E6%9C%9F%E6%9C%9B/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2840,11 +2857,9 @@ openMPI和std::thread同时使用有什么要求当在MPI应用程序中使用st
         
       
         
-      
-        
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/02/MPI-multi-thread/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/16/假设检验/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2862,19 +2877,22 @@ openMPI和std::thread同时使用有什么要求当在MPI应用程序中使用st
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/04/02/MPI-multi-thread/"  itemprop="url">
-        MPI multi thread
+      <a href="/2023/04/16/%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C/"  itemprop="url">
+        假设检验
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        教程：https://enccs.github.io/intermediate-mpi/mpi-and-threads-pt1/#
-教程配套代码：https://github.com/ENCCS/intermediate-mpi/tree/master/content/code
+        概念例子：
+
+这个“去判定”的命题，即
+
+概念：
 
 
-Comparing pure MPI（一个rank一个线程） vs hybrid MPI-threading（...
+
       
     
   </div>
@@ -2882,12 +2900,20 @@ Comparing pure MPI（一个rank一个线程） vs hybrid MPI-threading（...
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-04-02T19:19:02+08:00">2023-04-02</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-04-16T16:44:25+08:00">2023-04-16</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E6%A6%82%E7%BB%9F/">概统</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E6%A6%82%E7%BB%9F/" itemprop="url"><span itemprop="name">概统</span></a>
+            </span>
+          
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/04/02/MPI-multi-thread/' itemprop="url">
+          <a class='readmore' href='/2023/04/16/%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2903,7 +2929,7 @@ Comparing pure MPI（一个rank一个线程） vs hybrid MPI-threading（...
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/02/open-mpi安装/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/16/西瓜书-2-4-比较检验/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2921,15 +2947,15 @@ Comparing pure MPI（一个rank一个线程） vs hybrid MPI-threading（...
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/04/02/open-mpi%E5%AE%89%E8%A3%85/"  itemprop="url">
-        open mpi安装
+      <a href="/2023/04/16/%E8%A5%BF%E7%93%9C%E4%B9%A6-2-4-%E6%AF%94%E8%BE%83%E6%A3%80%E9%AA%8C/"  itemprop="url">
+        西瓜书 2.4 比较检验
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        install on linuxhttps://sites.google.com/site/rangsiman1993/comp-env/program-install/install-openmpibrief: download and build
+        
 
       
     
@@ -2938,12 +2964,12 @@ Comparing pure MPI（一个rank一个线程） vs hybrid MPI-threading（...
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-04-02T16:14:15+08:00">2023-04-02</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-04-16T16:11:57+08:00">2023-04-16</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/04/02/open-mpi%E5%AE%89%E8%A3%85/' itemprop="url">
+          <a class='readmore' href='/2023/04/16/%E8%A5%BF%E7%93%9C%E4%B9%A6-2-4-%E6%AF%94%E8%BE%83%E6%A3%80%E9%AA%8C/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2957,9 +2983,11 @@ Comparing pure MPI（一个rank一个线程） vs hybrid MPI-threading（...
         
       
         
+      
+        
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/02/run-mpi-program-over-a-cluster-在集群上跑mpi程序/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/15/西瓜书-第2章/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2977,18 +3005,36 @@ Comparing pure MPI（一个rank一个线程） vs hybrid MPI-threading（...
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/04/02/run-mpi-program-over-a-cluster-%E5%9C%A8%E9%9B%86%E7%BE%A4%E4%B8%8A%E8%B7%91mpi%E7%A8%8B%E5%BA%8F/"  itemprop="url">
-        run mpi program over a cluster 在集群上跑mpi程序
+      <a href="/2023/04/15/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E7%AC%AC2%E7%AB%A0/"  itemprop="url">
+        西瓜书 2.2 评估方法 2.3 性能度量
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        https://mpitutorial.com/tutorials/running-an-mpi-cluster-within-a-lan/
-OpenMPI 集群配置 - HelloWooo - 博客园 (cnblogs.com)
-步骤：1. 建立连接  2. 运行mpi程序
-建立连接Your machines are gonna be talking over the network vi...
+        2.2对测试样本的假设
+一个数据集得到训练集和测试集留出法
+
+
+
+交叉验证
+
+自助法有放回抽样m次，得到含m个样本的集合，作为训练集（这个训练集中有重复的样本，但是我们不去重）
+
+
+
+调参
+
+验证集验证集来自训练数据
+即给定数据集D，其被划分为：训练数据，测试数据
+其中训练数据进一步划分为：训练集，验证集
+
+最终模型
+2.3 性能度量（主要分类问题）
+错误率 精度
+
+混淆矩阵 查全率reca...
       
     
   </div>
@@ -2996,12 +3042,12 @@ OpenMPI 集群配置 - HelloWooo - 博客园 (cnblogs.com)
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-04-02T16:13:41+08:00">2023-04-02</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-04-15T11:11:43+08:00">2023-04-15</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/04/02/run-mpi-program-over-a-cluster-%E5%9C%A8%E9%9B%86%E7%BE%A4%E4%B8%8A%E8%B7%91mpi%E7%A8%8B%E5%BA%8F/' itemprop="url">
+          <a class='readmore' href='/2023/04/15/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E7%AC%AC2%E7%AB%A0/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3012,6 +3058,73 @@ OpenMPI 集群配置 - HelloWooo - 博客园 (cnblogs.com)
 </div>
 
           </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/14/有向无环图-枚举st路径-st路径计数/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/04/14/%E6%9C%89%E5%90%91%E6%97%A0%E7%8E%AF%E5%9B%BE-%E6%9E%9A%E4%B8%BEst%E8%B7%AF%E5%BE%84-st%E8%B7%AF%E5%BE%84%E8%AE%A1%E6%95%B0/"  itemprop="url">
+        有向无环图 枚举st路径 st路径计数
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        https://www.geeksforgeeks.org/number-of-paths-from-source-to-destination-in-a-directed-acyclic-graph/
+拓扑排序+动态规划，好厉害
+Let f(u) be the number of ways one can travel from node u to destination vertex. ...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-04-14T09:45:26+08:00">2023-04-14</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/algorithm/">algorithm</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/algorithm/" itemprop="url"><span itemprop="name">algorithm</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/04/14/%E6%9C%89%E5%90%91%E6%97%A0%E7%8E%AF%E5%9B%BE-%E6%9E%9A%E4%B8%BEst%E8%B7%AF%E5%BE%84-st%E8%B7%AF%E5%BE%84%E8%AE%A1%E6%95%B0/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
         
       
     
@@ -3022,7 +3135,7 @@ OpenMPI 集群配置 - HelloWooo - 博客园 (cnblogs.com)
       <div class="prev-next">
         
         <p class="current">
-          1 / 16
+          1 / 17
         </p>
         
           <a class="next" rel="next" href="/archives/2023/page/2/">
@@ -3118,7 +3231,7 @@ OpenMPI 集群配置 - HelloWooo - 博客园 (cnblogs.com)
           <li><a class="flat-box"
             title="/categories/ML/" href="/categories/ML/"
             active-action="action-categoriesML"
-            ><div class='name'>ML</div><div class='badge'>(1)</div></a></li>
+            ><div class='name'>ML</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/SIMD/" href="/categories/SIMD/"
@@ -3128,7 +3241,7 @@ OpenMPI 集群配置 - HelloWooo - 博客园 (cnblogs.com)
           <li><a class="flat-box"
             title="/categories/algorithm/" href="/categories/algorithm/"
             active-action="action-categoriesalgorithm"
-            ><div class='name'>algorithm</div><div class='badge'>(9)</div></a></li>
+            ><div class='name'>algorithm</div><div class='badge'>(10)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/c/" href="/categories/c/"
@@ -3281,6 +3394,11 @@ OpenMPI 集群配置 - HelloWooo - 博客园 (cnblogs.com)
             ><div class='name'>tools</div><div class='badge'>(3)</div></a></li>
         
           <li><a class="flat-box"
+            title="/categories/%E6%A6%82%E7%BB%9F/" href="/categories/%E6%A6%82%E7%BB%9F/"
+            active-action="action-categoriesE6A682E7BB9F"
+            ><div class='name'>概统</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box"
             title="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/" href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/"
             active-action="action-categoriesE7949FE6B4BBE99A8FE8AEB0"
             ><div class='name'>生活随记</div><div class='badge'>(3)</div></a></li>
@@ -3308,7 +3426,7 @@ OpenMPI 集群配置 - HelloWooo - 博客园 (cnblogs.com)
 
 
     <div class='content'>
-      <a href="/tags/GPU/" style="font-size: 15.11px; color: #919191">GPU</a> <a href="/tags/SIMD/" style="font-size: 17.33px; color: #828282">SIMD</a> <a href="/tags/bash/" style="font-size: 21.78px; color: #646464">bash</a> <a href="/tags/c/" style="font-size: 22.89px; color: #5d5d5d">c++</a> <a href="/tags/concurrency/" style="font-size: 20.67px; color: #6c6c6c">concurrency</a> <a href="/tags/git/" style="font-size: 14px; color: #999">git</a> <a href="/tags/graph/" style="font-size: 19.56px; color: #737373">graph</a> <a href="/tags/halo/" style="font-size: 16.22px; color: #8a8a8a">halo</a> <a href="/tags/hexo/" style="font-size: 15.11px; color: #919191">hexo</a> <a href="/tags/linux/" style="font-size: 24px; color: #555">linux</a> <a href="/tags/python/" style="font-size: 18.44px; color: #7b7b7b">python</a> <a href="/tags/rocksdb/" style="font-size: 16.22px; color: #8a8a8a">rocksdb</a> <a href="/tags/rust/" style="font-size: 19.56px; color: #737373">rust</a> <a href="/tags/tex/" style="font-size: 18.44px; color: #7b7b7b">tex</a> <a href="/tags/tool/" style="font-size: 14px; color: #999">tool</a> <a href="/tags/%E6%A6%82%E7%BB%9F/" style="font-size: 14px; color: #999">概统</a>
+      <a href="/tags/GPU/" style="font-size: 15.11px; color: #919191">GPU</a> <a href="/tags/ML/" style="font-size: 14px; color: #999">ML</a> <a href="/tags/SIMD/" style="font-size: 17.33px; color: #828282">SIMD</a> <a href="/tags/bash/" style="font-size: 21.78px; color: #646464">bash</a> <a href="/tags/c/" style="font-size: 22.89px; color: #5d5d5d">c++</a> <a href="/tags/concurrency/" style="font-size: 20.67px; color: #6c6c6c">concurrency</a> <a href="/tags/git/" style="font-size: 14px; color: #999">git</a> <a href="/tags/graph/" style="font-size: 19.56px; color: #737373">graph</a> <a href="/tags/halo/" style="font-size: 16.22px; color: #8a8a8a">halo</a> <a href="/tags/hexo/" style="font-size: 15.11px; color: #919191">hexo</a> <a href="/tags/linux/" style="font-size: 24px; color: #555">linux</a> <a href="/tags/python/" style="font-size: 18.44px; color: #7b7b7b">python</a> <a href="/tags/rocksdb/" style="font-size: 16.22px; color: #8a8a8a">rocksdb</a> <a href="/tags/rust/" style="font-size: 19.56px; color: #737373">rust</a> <a href="/tags/tex/" style="font-size: 18.44px; color: #7b7b7b">tex</a> <a href="/tags/tool/" style="font-size: 14px; color: #999">tool</a> <a href="/tags/%E6%A6%82%E7%BB%9F/" style="font-size: 17.33px; color: #828282">概统</a>
     </div>
   </section>
 

@@ -41,11 +41,11 @@
 <meta property="og:title" content="vector&lt;bool&gt;不是一个好选择">
 <meta property="og:url" content="http://example.com/2023/04/10/vector-bool-%E4%B8%8D%E6%98%AF%E4%B8%80%E4%B8%AA%E5%A5%BD%E9%80%89%E6%8B%A9/index.html">
 <meta property="og:site_name" content="zhiqiuyuan&#39;s blog">
-<meta property="og:description" content="实现bool是一个字节但是vector实际上是用一个比特来表示一个bool 因此vector慢（实际测试中：访问vector x次，访问vector 2*x次，但是访问vector的时间却是访问vector的7倍）    虽然O3优化可以加速，但是开O3优化后可能出问题且for(auto&amp;v:vector)等对于vector元素的引用会出现问题 不如bitset（定长，一个比特表示一个bo">
+<meta property="og:description" content="实现bool是一个字节但是vector实际上是用一个比特来表示一个bool 因此vector慢（实际测试中：访问vector x次，访问vector 2*x次，但是访问vector的时间却是访问vector的7倍）    虽然O3优化可以加速，但是开O3优化后可能出问题且for(auto&amp;v:vector)等对于vector元素的引用会出现问题 不如bitset（编译期知道长度，定长，一个">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-04-10T07:05:25.000Z">
-<meta property="article:modified_time" content="2023-04-10T07:15:31.287Z">
+<meta property="article:modified_time" content="2023-04-11T04:34:53.015Z">
 <meta property="article:author" content="zhiqiuyuan">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -2274,7 +2274,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1681118093230),
+    lastupdate: new Date(1681861812500),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2698,7 +2698,191 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div id="post-body" itemprop="articleBody">
     <h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>bool是一个字节<br>但是vector<bool>实际上是用一个比特来表示一个bool</p>
 <h2 id="因此"><a href="#因此" class="headerlink" title="因此"></a>因此</h2><p>vector<bool>慢（实际测试中：访问vector<bool> x次，访问vector<unsigned> 2*x次，但是访问vector<bool>的时间却是访问vector<unsigned>的7倍）<br>    虽然O3优化可以加速，但是开O3优化后可能出问题<br>且for(auto&amp;v:vector<bool>)等对于vector<bool>元素的引用会出现问题</p>
-<p>不如bitset（定长，一个比特表示一个bool）或bool*（定长，一个字节表示一个数组）或vector<char></p>
+<p>不如bitset（编译期知道长度，定长，一个比特表示一个bool）或bool*（变量长度，定长，一个字节表示一个数组）或vector<char></p>
+<h2 id="性能对比：vector-vector-bool"><a href="#性能对比：vector-vector-bool" class="headerlink" title="性能对比：vector, vector, bool*"></a>性能对比：vector<bool>, vector<char>, bool*</h2><p>perfomance部分是20次的平均，初始化bool*数组用的是原始的for loop</p>
+<h3 id="结果：bool-最好"><a href="#结果：bool-最好" class="headerlink" title="结果：bool*最好"></a>结果：bool*最好</h3><h4 id="无-O3编译"><a href="#无-O3编译" class="headerlink" title="无-O3编译"></a>无<code>-O3</code>编译</h4><p>bool*最快<br>vector<char>初始化比bool*快<br>vector<bool>慢麻了</p>
+<pre><code class="bash">vector&lt;bool&gt;
+[alloc_and_init] 38624 us
+[ave performance] 33919797 us
+
+vector&lt;char&gt;
+[alloc_and_init] 327476 us
+[ave performance] 5525479 us
+
+bool*
+[alloc_and_init] 2190725 us
+[ave performance] 3875693 us
+</code></pre>
+<h4 id="O3编译"><a href="#O3编译" class="headerlink" title="-O3编译"></a><code>-O3</code>编译</h4><p>vector<char>和bool*性能类似，vector<char>初始化比bool*慢<br>vector<bool>慢麻了</p>
+<pre><code class="bash">vector&lt;bool&gt;
+[alloc_and_init] 54526 us
+[ave performance] 1864292 us
+
+vector&lt;char&gt;
+[alloc_and_init] 406340 us
+[ave performance] 741159 us
+
+bool*
+[alloc_and_init] 149163 us
+[ave performance] 769090 us
+</code></pre>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>编译</p>
+<pre><code class="bash">g++ -std=c++17 -O3 -g -Wall -rdynamic main.cpp -o main
+</code></pre>
+<p>代码</p>
+<pre><code class="cpp">#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+#include &lt;vector&gt;
+#include &lt;chrono&gt;
+
+using namespace std;
+typedef chrono::microseconds UnitType;
+chrono::_V2::system_clock::time_point t_start, t_end;
+UnitType d;
+#define TIMING_START t_start = chrono::system_clock::now();
+#define TIMING_END(str)                                   \
+    t_end = chrono::system_clock::now();                  \
+    d = chrono::duration_cast&lt;UnitType&gt;(t_end - t_start); \
+    cout &lt;&lt; str &lt;&lt; d.count() &lt;&lt; &quot; us&quot; &lt;&lt; endl;
+
+void moving_average(double &amp;old_ave, double new_val, int &amp;cnt)
+&#123;
+    ++cnt;
+    double tmp1 = old_ave * ((double(cnt - 1)) / cnt);
+    double tmp2 = new_val / cnt;
+    old_ave = tmp1 + tmp2;
+&#125;
+
+// vector&lt;bool&gt;, vector&lt;char&gt;, bool*
+template &lt;typename Arr&gt;
+void benchmark_bool_array(Arr arr, size_t sz, int repeat_times, ostream &amp;absorb_stdout)
+&#123;
+    double ave = 0;
+    int cnt = 0;
+    for (int i = 0; i &lt; repeat_times; ++i)
+    &#123;
+        std::cout &lt;&lt; &quot;rnd &quot; &lt;&lt; i;
+        TIMING_START
+        for (size_t j = 0; j &lt; sz; ++j)
+        &#123;
+            if (j % 2)
+                arr[j] = 1;
+            else
+                arr[j] = 0;
+        &#125;
+        bool or_total = 0;
+        for (size_t j = 0; j &lt; sz; ++j)
+        &#123;
+            if (arr[j])
+                or_total = 1;
+        &#125;
+        TIMING_END(&quot; &quot;)
+        absorb_stdout &lt;&lt; or_total;
+        moving_average(ave, d.count(), cnt);
+    &#125;
+    cout &lt;&lt; &quot;[ave performance] &quot; &lt;&lt; (int64_t)ave &lt;&lt; &quot; us&quot; &lt;&lt; endl;
+&#125;
+void compare_bool_array(ostream &amp;absorb_stdout)
+&#123;
+    size_t sz = 1000000000; // 10^9
+    int repeat_times = 20;
+    cout &lt;&lt; &quot;vector&lt;bool&gt;&quot; &lt;&lt; endl;
+    &#123;
+        TIMING_START
+        vector&lt;bool&gt; arr(sz, 0);
+        TIMING_END(&quot;[alloc_and_init] &quot;)
+        benchmark_bool_array&lt;vector&lt;bool&gt;&gt;(std::move(arr), sz, repeat_times, absorb_stdout);
+    &#125;
+
+    cout &lt;&lt; &quot;\n\nvector&lt;char&gt;&quot; &lt;&lt; endl;
+    &#123;
+        TIMING_START
+        vector&lt;char&gt; arr(sz, 0);
+        TIMING_END(&quot;[alloc_and_init] &quot;)
+        benchmark_bool_array&lt;vector&lt;char&gt;&gt;(std::move(arr), sz, repeat_times, absorb_stdout);
+    &#125;
+
+    cout &lt;&lt; &quot;\n\nbool*&quot; &lt;&lt; endl;
+    &#123;
+        TIMING_START
+        bool *arr = new bool[sz];
+        for (size_t j = 0; j &lt; sz; ++j)
+            arr[j] = 0;
+        TIMING_END(&quot;[alloc_and_init] &quot;)
+        benchmark_bool_array&lt;bool *&gt;(arr, sz, repeat_times, absorb_stdout);
+        delete[] arr;
+    &#125;
+&#125;
+
+int main()
+&#123;
+    ofstream absorb_stdout(&quot;tmp.txt&quot;);
+    compare_bool_array(absorb_stdout);
+    return 0;
+&#125;
+</code></pre>
+<h2 id="bool-初始化对比"><a href="#bool-初始化对比" class="headerlink" title="bool*初始化对比"></a><code>bool*</code>初始化对比</h2><p>for loop和memset对比<br>perfomance部分是20次的平均</p>
+<h3 id="结果：memset更好"><a href="#结果：memset更好" class="headerlink" title="结果：memset更好"></a>结果：memset更好</h3><h4 id="没有-O3"><a href="#没有-O3" class="headerlink" title="没有-O3"></a>没有<code>-O3</code></h4><p>差异显著</p>
+<pre><code class="bash">[alloc] 6 us
+for loop
+[ave performance] 1847234 us
+
+memset
+[ave performance] 114449 us
+</code></pre>
+<h4 id="O3"><a href="#O3" class="headerlink" title="-O3"></a><code>-O3</code></h4><p>仍有差异</p>
+<pre><code class="bash">[alloc] 5 us
+for loop
+[ave performance] 114162 us
+
+memset
+[ave performance] 150901 us
+</code></pre>
+<h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><p>工具函数等和上面的测评一样</p>
+<pre><code class="cpp">void compare_bool_star_init()
+&#123;
+    size_t sz = 1000000000; // 10^9
+    int repeat_times = 20;
+    TIMING_START
+    bool *arr = new bool[sz];
+    TIMING_END(&quot;[alloc] &quot;)
+
+    cout &lt;&lt; &quot;for loop&quot; &lt;&lt; endl;
+    double ave = 0;
+    int cnt = 0;
+    for (int i = 0; i &lt; repeat_times; ++i)
+    &#123;
+        std::cout &lt;&lt; &quot;rnd &quot; &lt;&lt; i;
+        TIMING_START
+        for (size_t j = 0; j &lt; sz; ++j)
+            arr[j] = 0;
+        TIMING_END(&quot; &quot;)
+        moving_average(ave, d.count(), cnt);
+    &#125;
+    cout &lt;&lt; &quot;[ave performance] &quot; &lt;&lt; (int64_t)ave &lt;&lt; &quot; us&quot; &lt;&lt; endl;
+
+    cout &lt;&lt; &quot;\n\nmemset&quot; &lt;&lt; endl;
+    ave = 0;
+    cnt = 0;
+    for (int i = 0; i &lt; repeat_times; ++i)
+    &#123;
+        std::cout &lt;&lt; &quot;rnd &quot; &lt;&lt; i;
+        TIMING_START
+        memset(arr, 0, sizeof(bool) * sz);
+        TIMING_END(&quot; &quot;)
+        moving_average(ave, d.count(), cnt);
+    &#125;
+    cout &lt;&lt; &quot;[ave performance] &quot; &lt;&lt; (int64_t)ave &lt;&lt; &quot; us&quot; &lt;&lt; endl;
+
+    delete[] arr;
+&#125;
+
+int main()
+&#123;
+    compare_bool_star_init();
+    return 0;
+&#125;
+</code></pre>
 
   </div>
   
@@ -2723,10 +2907,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-04-10T15:15:31+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-04-11T12:34:53+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Apr 10, 2023</p>
+    <p>更新于：Apr 11, 2023</p>
   </a>
 </div>
 
@@ -2802,6 +2986,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
+        <a class='prev' href='/2023/04/12/vector-unsigned-%E5%88%9D%E5%A7%8B%E5%8C%96%E5%AF%B9%E6%AF%94/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>vector<unsigned>初始化对比</p>
+          <p class='content'>对比vector(sz)vector(sz,0)vector(sz,-1u)vector(sz)然后arr[i]&#x3D;i的时间
+结果：performance是跑20次的平均
+-O3编译：有...</p>
+        </a>
+      
       
         <a class='next' href='/2023/04/07/daily-2023-4-7/'>
           <p class='title'>7<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
@@ -2867,7 +3058,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
   <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0"><span class="toc-text">实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%A0%E6%AD%A4"><span class="toc-text">因此</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0"><span class="toc-text">实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%A0%E6%AD%A4"><span class="toc-text">因此</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%A7%E8%83%BD%E5%AF%B9%E6%AF%94%EF%BC%9Avector-vector-bool"><span class="toc-text">性能对比：vector, vector, bool*</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C%EF%BC%9Abool-%E6%9C%80%E5%A5%BD"><span class="toc-text">结果：bool*最好</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%A0-O3%E7%BC%96%E8%AF%91"><span class="toc-text">无-O3编译</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#O3%E7%BC%96%E8%AF%91"><span class="toc-text">-O3编译</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-text">代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bool-%E5%88%9D%E5%A7%8B%E5%8C%96%E5%AF%B9%E6%AF%94"><span class="toc-text">bool*初始化对比</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C%EF%BC%9Amemset%E6%9B%B4%E5%A5%BD"><span class="toc-text">结果：memset更好</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B2%A1%E6%9C%89-O3"><span class="toc-text">没有-O3</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#O3"><span class="toc-text">-O3</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81-1"><span class="toc-text">代码</span></a></li></ol></li></ol>
   </div>
 </section>
 
@@ -3830,7 +4021,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"grapher"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"zhiqiuyuan's blog"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/04/10/vector-bool-不是一个好选择/","name":"vector<bool>不是一个好选择"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"zhiqiuyuan's blog","url":"http://example.com/","keywords":null,"description":"grapher","author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"grapher"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"vector<bool>不是一个好选择","description":"grapher","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/04/10/vector-bool-%E4%B8%8D%E6%98%AF%E4%B8%80%E4%B8%AA%E5%A5%BD%E9%80%89%E6%8B%A9/"},"author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/04/10/vector-bool-%E4%B8%8D%E6%98%AF%E4%B8%80%E4%B8%AA%E5%A5%BD%E9%80%89%E6%8B%A9/","wordCount":0,"datePublished":"2023-04-10T07:05:25.000Z","dateModified":"2023-04-10T07:15:31.287Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"grapher"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"zhiqiuyuan's blog"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/04/10/vector-bool-不是一个好选择/","name":"vector<bool>不是一个好选择"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"zhiqiuyuan's blog","url":"http://example.com/","keywords":null,"description":"grapher","author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"grapher"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"vector<bool>不是一个好选择","description":"grapher","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/04/10/vector-bool-%E4%B8%8D%E6%98%AF%E4%B8%80%E4%B8%AA%E5%A5%BD%E9%80%89%E6%8B%A9/"},"author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/04/10/vector-bool-%E4%B8%8D%E6%98%AF%E4%B8%80%E4%B8%AA%E5%A5%BD%E9%80%89%E6%8B%A9/","wordCount":0,"datePublished":"2023-04-10T07:05:25.000Z","dateModified":"2023-04-11T04:34:53.015Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
