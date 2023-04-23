@@ -41,11 +41,11 @@
 <meta property="og:title" content="mpi overall">
 <meta property="og:url" content="http://example.com/2023/04/02/mpi-overall/index.html">
 <meta property="og:site_name" content="zhiqiuyuan&#39;s blog">
-<meta property="og:description" content="每个process的开始：MPI_Init之后MPI_Init之后初始化的变量是每个process一个copy的，在local memory中 Hello world code examples#include &lt;mpi.h&gt; #include &lt;stdio.h&gt;  int main(int argc, char** argv) &amp;#123;     &#x2F;&#x2F; Initiali">
+<meta property="og:description" content="https:&#x2F;&#x2F;mpitutorial.com&#x2F;tutorials&#x2F;mpi-hello-world&#x2F; 每个process的开始：MPI_Init之后MPI_Init之后初始化的变量是每个process一个copy的，在local memory中 Hello world code examples#include &lt;mpi.h&gt; #include &lt;stdio.h&gt;  int">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-04-02T01:47:08.000Z">
-<meta property="article:modified_time" content="2023-04-03T02:51:21.148Z">
+<meta property="article:modified_time" content="2023-04-22T03:02:31.550Z">
 <meta property="article:author" content="zhiqiuyuan">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -2274,7 +2274,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1681861812500),
+    lastupdate: new Date(1682233597330),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2696,7 +2696,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p>每个process的开始：MPI_Init之后<br>MPI_Init之后初始化的变量是每个process一个copy的，在local memory中</p>
+    <p><a target="_blank" rel="noopener" href="https://mpitutorial.com/tutorials/mpi-hello-world/">https://mpitutorial.com/tutorials/mpi-hello-world/</a></p>
+<p>每个process的开始：MPI_Init之后<br>MPI_Init之后初始化的变量是每个process一个copy的，在local memory中</p>
 <h2 id="Hello-world-code-examples"><a href="#Hello-world-code-examples" class="headerlink" title="Hello world code examples"></a>Hello world code examples</h2><pre><code class="cpp">#include &lt;mpi.h&gt;
 #include &lt;stdio.h&gt;
 
@@ -2725,12 +2726,22 @@ int main(int argc, char** argv) &#123;
     MPI_Finalize();
 &#125;
 </code></pre>
-<p>MPI environment must be initialized with:</p>
+<h2 id="MPI-Init"><a href="#MPI-Init" class="headerlink" title="MPI_Init"></a>MPI_Init</h2><p>MPI environment must be initialized with:</p>
 <pre><code class="cpp">MPI_Init(
     int* argc,
     char*** argv)
 </code></pre>
 <p>During <code>MPI_Init</code>, all of <strong>MPI’s global and internal variables are constructed</strong>. For example, <strong>a communicator is formed around all of the processes that were spawned, and unique ranks are assigned to each process</strong>.</p>
+<h2 id="编译运行"><a href="#编译运行" class="headerlink" title="编译运行"></a>编译运行</h2><p>编译（把<code>gcc</code>换成<code>mpicc</code>即可，或者把<code>g++</code>替换成<code>mpicxx</code>）</p>
+<pre><code class="makefile">mpicc -o mpi_hello_world mpi_hello_world.c
+</code></pre>
+<p>运行（单节点）</p>
+<pre><code class="bash">mpirun -np 1 ./mpi-hello-world
+</code></pre>
+<h2 id="MPI-Abort"><a href="#MPI-Abort" class="headerlink" title="MPI_Abort"></a>MPI_Abort</h2><pre><code class="cpp">int MPI_Abort(MPI_Comm comm, int errorcode)
+</code></pre>
+<p>comm<br>communicator of tasks to abort<br>errorcode<br>error code to return to invoking environment</p>
+<p>Terminates all MPI processes associated with the communicator comm; in most systems (all to date), terminates all processes.</p>
 
   </div>
   
@@ -2755,10 +2766,10 @@ int main(int argc, char** argv) &#123;
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-04-03T10:51:21+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-04-22T11:02:31+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Apr 3, 2023</p>
+    <p>更新于：Apr 22, 2023</p>
   </a>
 </div>
 
@@ -2908,7 +2919,7 @@ env | grep PATH
 
 
   <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hello-world-code-examples"><span class="toc-text">Hello world code examples</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hello-world-code-examples"><span class="toc-text">Hello world code examples</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MPI-Init"><span class="toc-text">MPI_Init</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E8%BF%90%E8%A1%8C"><span class="toc-text">编译运行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MPI-Abort"><span class="toc-text">MPI_Abort</span></a></li></ol>
   </div>
 </section>
 
@@ -3871,7 +3882,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"grapher"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"zhiqiuyuan's blog"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/04/02/mpi-overall/","name":"mpi overall"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"zhiqiuyuan's blog","url":"http://example.com/","keywords":null,"description":"grapher","author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"grapher"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"mpi overall","description":"grapher","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/04/02/mpi-overall/"},"author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/04/02/mpi-overall/","wordCount":0,"datePublished":"2023-04-02T01:47:08.000Z","dateModified":"2023-04-03T02:51:21.148Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"grapher"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"zhiqiuyuan's blog"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/04/02/mpi-overall/","name":"mpi overall"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"zhiqiuyuan's blog","url":"http://example.com/","keywords":null,"description":"grapher","author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"grapher"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"mpi overall","description":"grapher","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/04/02/mpi-overall/"},"author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/04/02/mpi-overall/","wordCount":0,"datePublished":"2023-04-02T01:47:08.000Z","dateModified":"2023-04-22T03:02:31.550Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

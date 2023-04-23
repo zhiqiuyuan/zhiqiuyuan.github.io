@@ -45,7 +45,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-04-03T01:20:57.000Z">
-<meta property="article:modified_time" content="2023-04-03T02:57:56.091Z">
+<meta property="article:modified_time" content="2023-04-23T06:56:36.494Z">
 <meta property="article:author" content="zhiqiuyuan">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -2274,7 +2274,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1681861812500),
+    lastupdate: new Date(1682233597330),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2700,6 +2700,34 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>这个是低阶版本的，高阶的是openMPI+openMP，见<a target="_blank" rel="noopener" href="https://zhiqiuyuan.github.io/2023/04/02/MPI-multi-thread/">MPI + openMP</a></p>
 <h2 id="openMPI和std-thread同时使用有什么要求"><a href="#openMPI和std-thread同时使用有什么要求" class="headerlink" title="openMPI和std::thread同时使用有什么要求"></a>openMPI和std::thread同时使用有什么要求</h2><p>当在MPI应用程序中使用<code>std::thread</code>时，<strong>只有主线程可以调用MPI接口。</strong></p>
 <p>在其他线程中调用MPI接口会导致未定义的行为，可能会导致程序崩溃或者产生不可预测的结果。因此，如果需要在其他线程中进行与MPI相关的操作，应该使用线程间通信机制将任务委托给主线程进行处理。</p>
+<h2 id="注意process-bind（来自man-mpirun和实验）"><a href="#注意process-bind（来自man-mpirun和实验）" class="headerlink" title="注意process bind（来自man mpirun和实验）"></a>注意process bind（来自man mpirun和实验）</h2><p>Please note that mpirun <strong>automatically binds processes</strong> as of the start of the  v1.8  series.  Three binding patterns are used in the absence of any further directives:</p>
+<ul>
+<li><p>Bind to core:     when the number of processes is &lt;&#x3D; 2</p>
+</li>
+<li><p>Bind to socket:   when the number of processes is &gt; 2</p>
+</li>
+<li><p>Bind to none:     when oversubscribed</p>
+</li>
+</ul>
+<p>If  your  application <strong>uses threads</strong>, then you probably want to <font color=red>ensure that you are either <strong>not bound</strong> at all (by specifying –bind-to none), or <strong>bound to multiple cores</strong></font>  using  <code>an  appropriate  binding level</code> or <code>specific number of processing elements per application process</code>.</p>
+<p>（即每个process多线程的时候，要么指定<font color=red><strong><code>--bind-to none</code></strong></font>，这样会<code>not bound (or bound to all available processors</code>；要么指定每个process分配多少处理器核心，比如<code>--map-by node:PE=n</code>是每个节点一个process、每个process bind to n个处理器核心）</p>
+<h4 id="相关option"><a href="#相关option" class="headerlink" title="相关option"></a>相关option</h4><p>运行指定：</p>
+<ul>
+<li><p>–bind-to <foo><br>Bind  processes  to the specified object, defaults to core. Supported options include slot, hwthread, core, l1cache, l2cache, l3cache, socket, numa, board, cpu-list, and none.</p>
+</li>
+<li><p>–map-by <foo><br>          Map process to the specified object, defaults to socket. Supported options include slot,  hwthread,<br>          core,  L1cache, L2cache, L3cache, socket, numa, board, node, sequential, distance, and ppr.<br>          Any object can include modifiers by adding a : and any combination of <strong>PE&#x3D;n (bind n processing  elements to each proc</strong>), SPAN (load balance the processes across the allocation), OVER‐<br>          SUBSCRIBE (allow more processes on a node than processing elements),  and  NOOVERSUBSCRIBE.<br>          This  includes  PPR,  where the pattern would be terminated by another colon to separate it<br>          from the modifiers.</p>
+<blockquote>
+<p>比如 –map-by node:PE&#x3D;n<br>   load balance the processes across the available  <strong>nodes</strong>, and bind each process to 32 processing elements.</p>
+</blockquote>
+</li>
+<li><p>–use-hwthread-cpus</p>
+<p>​	then <strong>processing element</strong> is not physical core, but hardware thread</p>
+</li>
+</ul>
+<p>帮助监控：</p>
+<ul>
+<li>-report-bindings, –report-bindings<br><strong>Report</strong> any bindings for launched processes.</li>
+</ul>
 <h2 id="使用std-thread和openMPI以及读写锁的例子"><a href="#使用std-thread和openMPI以及读写锁的例子" class="headerlink" title="使用std::thread和openMPI以及读写锁的例子"></a>使用std::thread和openMPI以及读写锁的例子</h2><p>由于只在主线程中调用MPI接口，因此使用MPI_THREAD_FUNNELED层次</p>
 <pre><code class="cpp">#include &lt;iostream&gt;
 #include &lt;thread&gt;
@@ -2864,10 +2892,10 @@ int main(int argc, char **argv) &#123;
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-04-03T10:57:56+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-04-23T14:56:36+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Apr 3, 2023</p>
+    <p>更新于：Apr 23, 2023</p>
   </a>
 </div>
 
@@ -3013,7 +3041,7 @@ int main(int argc, char **argv) &#123;
 
 
   <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#openMPI%E5%92%8Cstd-thread%E5%90%8C%E6%97%B6%E4%BD%BF%E7%94%A8%E6%9C%89%E4%BB%80%E4%B9%88%E8%A6%81%E6%B1%82"><span class="toc-text">openMPI和std::thread同时使用有什么要求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8std-thread%E5%92%8CopenMPI%E4%BB%A5%E5%8F%8A%E8%AF%BB%E5%86%99%E9%94%81%E7%9A%84%E4%BE%8B%E5%AD%90"><span class="toc-text">使用std::thread和openMPI以及读写锁的例子</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E8%BF%90%E8%A1%8C"><span class="toc-text">编译运行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%99%E6%98%AF%E4%B8%80%E4%B8%AA%E4%B8%8D%E5%A5%BD%E7%9A%84%E8%A1%8C%E4%B8%BA%EF%BC%8C%E6%88%91%E4%BB%AC%E6%9C%80%E5%A5%BD%E4%B8%8D%E8%BF%99%E4%B9%88%E5%B9%B2-MPI%E5%BA%93%E4%BC%9A%E4%BF%9D%E8%AF%81%E8%BF%99%E4%B8%80%E7%82%B9%EF%BC%9AMPI-THREAD-FUNNELED%E7%BA%A7%E5%88%AB%E5%8F%AA%E6%9C%89%E4%B8%BB%E7%BA%BF%E7%A8%8B%E5%8F%AF%E4%BB%A5%E8%B0%83%E7%94%A8MPI%E5%87%BD%E6%95%B0"><span class="toc-text">这是一个不好的行为，我们最好不这么干 MPI库会保证这一点：MPI_THREAD_FUNNELED级别只有主线程可以调用MPI函数</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#openMPI%E5%92%8Cstd-thread%E5%90%8C%E6%97%B6%E4%BD%BF%E7%94%A8%E6%9C%89%E4%BB%80%E4%B9%88%E8%A6%81%E6%B1%82"><span class="toc-text">openMPI和std::thread同时使用有什么要求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E6%84%8Fprocess-bind%EF%BC%88%E6%9D%A5%E8%87%AAman-mpirun%E5%92%8C%E5%AE%9E%E9%AA%8C%EF%BC%89"><span class="toc-text">注意process bind（来自man mpirun和实验）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3option"><span class="toc-text">相关option</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8std-thread%E5%92%8CopenMPI%E4%BB%A5%E5%8F%8A%E8%AF%BB%E5%86%99%E9%94%81%E7%9A%84%E4%BE%8B%E5%AD%90"><span class="toc-text">使用std::thread和openMPI以及读写锁的例子</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E8%BF%90%E8%A1%8C"><span class="toc-text">编译运行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%99%E6%98%AF%E4%B8%80%E4%B8%AA%E4%B8%8D%E5%A5%BD%E7%9A%84%E8%A1%8C%E4%B8%BA%EF%BC%8C%E6%88%91%E4%BB%AC%E6%9C%80%E5%A5%BD%E4%B8%8D%E8%BF%99%E4%B9%88%E5%B9%B2-MPI%E5%BA%93%E4%BC%9A%E4%BF%9D%E8%AF%81%E8%BF%99%E4%B8%80%E7%82%B9%EF%BC%9AMPI-THREAD-FUNNELED%E7%BA%A7%E5%88%AB%E5%8F%AA%E6%9C%89%E4%B8%BB%E7%BA%BF%E7%A8%8B%E5%8F%AF%E4%BB%A5%E8%B0%83%E7%94%A8MPI%E5%87%BD%E6%95%B0"><span class="toc-text">这是一个不好的行为，我们最好不这么干 MPI库会保证这一点：MPI_THREAD_FUNNELED级别只有主线程可以调用MPI函数</span></a></li></ol>
   </div>
 </section>
 
@@ -3976,7 +4004,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"grapher"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"zhiqiuyuan's blog"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/04/03/openMPI-std-thread-multithreaad/","name":"openMPI std::thread multithreaad"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"zhiqiuyuan's blog","url":"http://example.com/","keywords":null,"description":"grapher","author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"grapher"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"openMPI std::thread multithreaad","description":"grapher","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/04/03/openMPI-std-thread-multithreaad/"},"author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/04/03/openMPI-std-thread-multithreaad/","wordCount":0,"datePublished":"2023-04-03T01:20:57.000Z","dateModified":"2023-04-03T02:57:56.091Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"grapher"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"zhiqiuyuan's blog"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/04/03/openMPI-std-thread-multithreaad/","name":"openMPI std::thread multithreaad"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"zhiqiuyuan's blog","url":"http://example.com/","keywords":null,"description":"grapher","author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"grapher"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"openMPI std::thread multithreaad","description":"grapher","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/04/03/openMPI-std-thread-multithreaad/"},"author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/04/03/openMPI-std-thread-multithreaad/","wordCount":0,"datePublished":"2023-04-03T01:20:57.000Z","dateModified":"2023-04-23T06:56:36.494Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

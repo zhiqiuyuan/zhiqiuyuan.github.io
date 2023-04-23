@@ -2272,7 +2272,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1681861812500),
+    lastupdate: new Date(1682233597330),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2630,13 +2630,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         
-      
-        
-      
-        
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/02/25/shift-m128i/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/05/profile-memory-takeup-测量程序内存占用/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2654,18 +2650,17 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/02/25/shift-m128i/"  itemprop="url">
-        shift __m128i
+      <a href="/2023/03/05/profile-memory-takeup-%E6%B5%8B%E9%87%8F%E7%A8%8B%E5%BA%8F%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8/"  itemprop="url">
+        profile memory takeup 测量程序内存占用
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        https://stackoverflow.com/questions/34478328/the-best-way-to-shift-a-m128i/34482688#34482688
-逻辑右移__m128i reg b比特（逻辑右移reg &gt;&gt; b）
-__m128i right_shift_128i(__m128i reg, int b)&#123;
-    assert(b&...
+        内存占用峰值：time -f$ /usr/bin/time -f &quot;%M KB&quot; &lt;command_and_args&gt;
+
+注意给time传递参数的时候，bash user需要给定time的绝对路径time -f ... ...会报错-f: command not found，这实际上uses an internal version of time, provi...
       
     
   </div>
@@ -2673,20 +2668,20 @@ __m128i right_shift_128i(__m128i reg, int b)&#123;
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-02-25T20:30:14+08:00">2023-02-25</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-03-05T16:21:05+08:00">2023-03-05</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/SIMD/">SIMD</a>
+          <a class="category-link" href="/categories/tools/">tools</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/SIMD/" itemprop="url"><span itemprop="name">SIMD</span></a>
+              <a href="/categories/tools/" itemprop="url"><span itemprop="name">tools</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/02/25/shift-m128i/' itemprop="url">
+          <a class='readmore' href='/2023/03/05/profile-memory-takeup-%E6%B5%8B%E9%87%8F%E7%A8%8B%E5%BA%8F%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2714,7 +2709,7 @@ __m128i right_shift_128i(__m128i reg, int b)&#123;
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/02/18/B-树/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/02/27/vscode快捷键/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2732,32 +2727,38 @@ __m128i right_shift_128i(__m128i reg, int b)&#123;
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/02/18/B-%E6%A0%91/"  itemprop="url">
-        B+树
+      <a href="/2023/02/27/vscode%E5%BF%AB%E6%8D%B7%E9%94%AE/"  itemprop="url">
+        vscode快捷键
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
+    
+      
+        工作区navigationctrl+R 从最近打开的一些工作区中选择一个打开
+文件navigationctrl+P 以文件名搜索当前目录中的文件并打开ctrl+T 以文件内容搜索当前目录中的文件并打开
+代码编辑ctrl+shift+K 删除当前行（或全部选中行）ctrl+X 剪切当前行（或全部选中部分）ctrl+backspace 删除光标前的一个单词alt+上/下方向键 把当前行上移&#x...
+      
     
   </div>
   
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-02-18T17:23:24+08:00">2023-02-18</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-02-27T09:24:12+08:00">2023-02-27</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/algorithm/">algorithm</a>
+          <a class="category-link" href="/categories/tools/">tools</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/algorithm/" itemprop="url"><span itemprop="name">algorithm</span></a>
+              <a href="/categories/tools/" itemprop="url"><span itemprop="name">tools</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/02/18/B-%E6%A0%91/' itemprop="url">
+          <a class='readmore' href='/2023/02/27/vscode%E5%BF%AB%E6%8D%B7%E9%94%AE/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2768,6 +2769,10 @@ __m128i right_shift_128i(__m128i reg, int b)&#123;
 </div>
 
           </div>
+        
+      
+        
+      
         
       
     
