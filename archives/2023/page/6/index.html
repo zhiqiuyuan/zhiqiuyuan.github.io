@@ -2272,7 +2272,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1682233597330),
+    lastupdate: new Date(1685326411440),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2633,13 +2633,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
       
         
-      
-        
-      
-        
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/23/vim-find-count-计数查找/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/15/西瓜书-第2章/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2657,16 +2653,36 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/03/23/vim-find-count-%E8%AE%A1%E6%95%B0%E6%9F%A5%E6%89%BE/"  itemprop="url">
-        vim find count 计数查找
+      <a href="/2023/04/15/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E7%AC%AC2%E7%AB%A0/"  itemprop="url">
+        西瓜书 2.2 评估方法 2.3 性能度量
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        https://stackoverflow.com/questions/49297579/how-to-count-search-results-in-vim
-You can count the number of matches using the n flag in the substitute command. Use the following to show number of t...
+        2.2对测试样本的假设
+一个数据集得到训练集和测试集留出法
+
+
+
+交叉验证
+
+自助法有放回抽样m次，得到含m个样本的集合，作为训练集（这个训练集中有重复的样本，但是我们不去重）
+
+
+
+调参
+
+验证集验证集来自训练数据
+即给定数据集D，其被划分为：训练数据，测试数据
+其中训练数据进一步划分为：训练集，验证集
+
+最终模型
+2.3 性能度量（主要分类问题）
+错误率 精度
+
+混淆矩阵 查全率reca...
       
     
   </div>
@@ -2674,12 +2690,12 @@ You can count the number of matches using the n flag in the substitute command. 
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-03-23T10:38:35+08:00">2023-03-23</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-04-15T11:11:43+08:00">2023-04-15</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/03/23/vim-find-count-%E8%AE%A1%E6%95%B0%E6%9F%A5%E6%89%BE/' itemprop="url">
+          <a class='readmore' href='/2023/04/15/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E7%AC%AC2%E7%AB%A0/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2693,11 +2709,9 @@ You can count the number of matches using the n flag in the substitute command. 
         
       
         
-      
-        
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/22/cpp读写锁-reader-writer-lock/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/14/有向无环图-枚举st路径-st路径计数/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2715,19 +2729,17 @@ You can count the number of matches using the n flag in the substitute command. 
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/03/22/cpp%E8%AF%BB%E5%86%99%E9%94%81-reader-writer-lock/"  itemprop="url">
-        cpp读写锁 reader-writer-lock
+      <a href="/2023/04/14/%E6%9C%89%E5%90%91%E6%97%A0%E7%8E%AF%E5%9B%BE-%E6%9E%9A%E4%B8%BEst%E8%B7%AF%E5%BE%84-st%E8%B7%AF%E5%BE%84%E8%AE%A1%E6%95%B0/"  itemprop="url">
+        有向无环图 枚举st路径 st路径计数
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        examplehttps://stackoverflow.com/questions/244316/reader-writer-locks-in-cSince C++ 17 (VS2015) you can use the standard:
-#include &lt;shared_mutex&gt;
-
-typedef std::shared_mutex Lock;
-typedef std:...
+        https://www.geeksforgeeks.org/number-of-paths-from-source-to-destination-in-a-directed-acyclic-graph/
+拓扑排序+动态规划，好厉害
+Let f(u) be the number of ways one can travel from node u to destination vertex. ...
       
     
   </div>
@@ -2735,74 +2747,20 @@ typedef std:...
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-03-22T16:40:45+08:00">2023-03-22</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-04-14T09:45:26+08:00">2023-04-14</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/algorithm/">algorithm</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/algorithm/" itemprop="url"><span itemprop="name">algorithm</span></a>
+            </span>
+          
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/03/22/cpp%E8%AF%BB%E5%86%99%E9%94%81-reader-writer-lock/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/22/cpp线程池-basic-threadpool/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-    <meta itemprop="description" content="grapher">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/03/22/cpp%E7%BA%BF%E7%A8%8B%E6%B1%A0-basic-threadpool/"  itemprop="url">
-        cpp线程池 basic threadpool
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        #ifndef _THREADPOOL_H
-#define _THREADPOOL_H
-#include &lt;thread&gt;
-#include &lt;mutex&gt;
-#include &lt;condition_variable&gt;
-#include &lt;vector&gt;
-#include &lt;queue&gt;
-#if TIME_KILL_ENABLE ==...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-03-22T11:56:57+08:00">2023-03-22</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/03/22/cpp%E7%BA%BF%E7%A8%8B%E6%B1%A0-basic-threadpool/' itemprop="url">
+          <a class='readmore' href='/2023/04/14/%E6%9C%89%E5%90%91%E6%97%A0%E7%8E%AF%E5%9B%BE-%E6%9E%9A%E4%B8%BEst%E8%B7%AF%E5%BE%84-st%E8%B7%AF%E5%BE%84%E8%AE%A1%E6%95%B0/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2820,7 +2778,7 @@ typedef std:...
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/21/data-race-数据竞争/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/13/西瓜书-第1章/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2838,16 +2796,32 @@ typedef std:...
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/03/21/data-race-%E6%95%B0%E6%8D%AE%E7%AB%9E%E4%BA%89/"  itemprop="url">
-        data race 数据竞争
+      <a href="/2023/04/13/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E7%AC%AC1%E7%AB%A0/"  itemprop="url">
+        西瓜书 第1章
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        data race常见举例：https://yourbasic.org/golang/data-races-explained/
-向相同的地址写同样的值是否存在数据竞争：https://stackoverflow.com/questions/8315931/does-writing-the-same-value-to-the-same-memory-location-cause-a-data...
+        1.2数据集
+
+
+
+1.3学得的模型也称假设
+
+泛化能力
+对样本空间和样本的假设
+
+偏好
+
+1.4模型在训练集之外的所有样本上的误差 
+NFL定理
+
+
+
+但是事实上我们通常并不总是关心训练集外的“所有”样本，而是一部分
+
       
     
   </div>
@@ -2855,12 +2829,20 @@ typedef std:...
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-03-21T18:36:20+08:00">2023-03-21</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-04-13T18:21:36+08:00">2023-04-13</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/ML/">ML</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/ML/" itemprop="url"><span itemprop="name">ML</span></a>
+            </span>
+          
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/03/21/data-race-%E6%95%B0%E6%8D%AE%E7%AB%9E%E4%BA%89/' itemprop="url">
+          <a class='readmore' href='/2023/04/13/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E7%AC%AC1%E7%AB%A0/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2871,6 +2853,128 @@ typedef std:...
 </div>
 
           </div>
+        
+      
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/12/vector-unsigned-初始化对比/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/04/12/vector-unsigned-%E5%88%9D%E5%A7%8B%E5%8C%96%E5%AF%B9%E6%AF%94/"  itemprop="url">
+        vector<unsigned>初始化对比
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        对比vector(sz)vector(sz,0)vector(sz,-1u)vector(sz)然后arr[i]&#x3D;i的时间
+结果：performance是跑20次的平均
+-O3编译：有initializer的两种差不多，另外两种差不多no initializer
+[ave performance] 1916320 us
+
+init to all 0
+[ave performance...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-04-12T10:50:08+08:00">2023-04-12</time>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/04/12/vector-unsigned-%E5%88%9D%E5%A7%8B%E5%8C%96%E5%AF%B9%E6%AF%94/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/10/vector-bool-不是一个好选择/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/04/10/vector-bool-%E4%B8%8D%E6%98%AF%E4%B8%80%E4%B8%AA%E5%A5%BD%E9%80%89%E6%8B%A9/"  itemprop="url">
+        vector<bool>不是一个好选择
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        实现bool是一个字节但是vector实际上是用一个比特来表示一个bool
+因此vector慢（实际测试中：访问vector x次，访问vector 2*x次，但是访问vector的时间却是访问vector的7倍）    虽然O3优化可以加速，但是开O3优化后可能出问题且for(auto&amp;v:vector)等对于vector元素的引用会出现问题
+不如bitset（编译期知道长度，定长...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-04-10T15:05:25+08:00">2023-04-10</time>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/04/10/vector-bool-%E4%B8%8D%E6%98%AF%E4%B8%80%E4%B8%AA%E5%A5%BD%E9%80%89%E6%8B%A9/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
         
       
         
@@ -2889,7 +2993,7 @@ typedef std:...
           </a>
         
         <p class="current">
-          6 / 18
+          6 / 21
         </p>
         
           <a class="next" rel="next" href="/archives/2023/page/7/">
@@ -3130,12 +3234,12 @@ typedef std:...
           <li><a class="flat-box"
             title="/categories/tool/" href="/categories/tool/"
             active-action="action-categoriestool"
-            ><div class='name'>tool</div><div class='badge'>(72)</div></a></li>
+            ><div class='name'>tool</div><div class='badge'>(70)</div></a></li>
         
           <li><a class="flat-box child"
             title="/categories/tool/linux/" href="/categories/tool/linux/"
             active-action="action-categoriestoollinux"
-            ><div class='name'>linux</div><div class='badge'>(52)</div></a></li>
+            ><div class='name'>linux</div><div class='badge'>(51)</div></a></li>
         
           <li><a class="flat-box child"
             title="/categories/tool/windows/" href="/categories/tool/windows/"

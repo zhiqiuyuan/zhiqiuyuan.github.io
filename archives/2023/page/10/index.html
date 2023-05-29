@@ -2272,7 +2272,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1682233597330),
+    lastupdate: new Date(1685326411440),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2631,9 +2631,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         
+      
+        
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/02/25/shift-m128i/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/22/cpp读写锁-reader-writer-lock/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2651,18 +2653,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/02/25/shift-m128i/"  itemprop="url">
-        shift __m128i
+      <a href="/2023/03/22/cpp%E8%AF%BB%E5%86%99%E9%94%81-reader-writer-lock/"  itemprop="url">
+        cpp读写锁 reader-writer-lock
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        https://stackoverflow.com/questions/34478328/the-best-way-to-shift-a-m128i/34482688#34482688
-逻辑右移__m128i reg b比特（逻辑右移reg &gt;&gt; b）
-__m128i right_shift_128i(__m128i reg, int b)&#123;
-    assert(b&...
+        examplehttps://stackoverflow.com/questions/244316/reader-writer-locks-in-cSince C++ 17 (VS2015) you can use the standard:
+#include &lt;shared_mutex&gt;
+
+typedef std::shared_mutex Lock;
+typedef std:...
       
     
   </div>
@@ -2670,20 +2673,132 @@ __m128i right_shift_128i(__m128i reg, int b)&#123;
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-02-25T20:30:14+08:00">2023-02-25</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/SIMD/">SIMD</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/SIMD/" itemprop="url"><span itemprop="name">SIMD</span></a>
-            </span>
-          
+        <time itemprop="dateCreated datePublished" datetime="2023-03-22T16:40:45+08:00">2023-03-22</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/02/25/shift-m128i/' itemprop="url">
+          <a class='readmore' href='/2023/03/22/cpp%E8%AF%BB%E5%86%99%E9%94%81-reader-writer-lock/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/22/cpp线程池-basic-threadpool/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/03/22/cpp%E7%BA%BF%E7%A8%8B%E6%B1%A0-basic-threadpool/"  itemprop="url">
+        cpp线程池 basic threadpool
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        #ifndef _THREADPOOL_H
+#define _THREADPOOL_H
+#include &lt;thread&gt;
+#include &lt;mutex&gt;
+#include &lt;condition_variable&gt;
+#include &lt;vector&gt;
+#include &lt;queue&gt;
+#if TIME_KILL_ENABLE ==...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-03-22T11:56:57+08:00">2023-03-22</time>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/03/22/cpp%E7%BA%BF%E7%A8%8B%E6%B1%A0-basic-threadpool/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/21/data-race-数据竞争/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/03/21/data-race-%E6%95%B0%E6%8D%AE%E7%AB%9E%E4%BA%89/"  itemprop="url">
+        data race 数据竞争
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        data race常见举例：https://yourbasic.org/golang/data-races-explained/
+向相同的地址写同样的值是否存在数据竞争：https://stackoverflow.com/questions/8315931/does-writing-the-same-value-to-the-same-memory-location-cause-a-data...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-03-21T18:36:20+08:00">2023-03-21</time>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/03/21/data-race-%E6%95%B0%E6%8D%AE%E7%AB%9E%E4%BA%89/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2702,128 +2817,6 @@ __m128i right_shift_128i(__m128i reg, int b)&#123;
       
         
       
-        
-      
-        
-      
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/02/18/B-树/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-    <meta itemprop="description" content="grapher">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/02/18/B-%E6%A0%91/"  itemprop="url">
-        B+树
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-02-18T17:23:24+08:00">2023-02-18</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/algorithm/">algorithm</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/algorithm/" itemprop="url"><span itemprop="name">algorithm</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/02/18/B-%E6%A0%91/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/02/17/写paper学习-Chapter-3-Breaking-Up-Long-Sentences/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-    <meta itemprop="description" content="grapher">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/02/17/%E5%86%99paper%E5%AD%A6%E4%B9%A0-Chapter-3-Breaking-Up-Long-Sentences/"  itemprop="url">
-        写paper学习 Chapter 3 Breaking Up Long Sentences
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-02-17T13:54:47+08:00">2023-02-17</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/paper/">paper</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/paper/" itemprop="url"><span itemprop="name">paper</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/02/17/%E5%86%99paper%E5%AD%A6%E4%B9%A0-Chapter-3-Breaking-Up-Long-Sentences/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
         
       
         
@@ -2842,7 +2835,7 @@ __m128i right_shift_128i(__m128i reg, int b)&#123;
           </a>
         
         <p class="current">
-          10 / 18
+          10 / 21
         </p>
         
           <a class="next" rel="next" href="/archives/2023/page/11/">
@@ -3083,12 +3076,12 @@ __m128i right_shift_128i(__m128i reg, int b)&#123;
           <li><a class="flat-box"
             title="/categories/tool/" href="/categories/tool/"
             active-action="action-categoriestool"
-            ><div class='name'>tool</div><div class='badge'>(72)</div></a></li>
+            ><div class='name'>tool</div><div class='badge'>(70)</div></a></li>
         
           <li><a class="flat-box child"
             title="/categories/tool/linux/" href="/categories/tool/linux/"
             active-action="action-categoriestoollinux"
-            ><div class='name'>linux</div><div class='badge'>(52)</div></a></li>
+            ><div class='name'>linux</div><div class='badge'>(51)</div></a></li>
         
           <li><a class="flat-box child"
             title="/categories/tool/windows/" href="/categories/tool/windows/"

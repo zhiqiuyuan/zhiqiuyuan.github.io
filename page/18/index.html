@@ -2272,7 +2272,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1682233597330),
+    lastupdate: new Date(1685326411440),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2630,13 +2630,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         
-      
-        
-      
-        
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/01/hexo主题volantis自定义页面/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/11/写paper学习-chapter14-Review-of-the-Literature/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2654,20 +2650,16 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/01/01/hexo%E4%B8%BB%E9%A2%98volantis%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2/"  itemprop="url">
-        hexo主题volantis自定义页面
+      <a href="/2023/01/11/%E5%86%99paper%E5%AD%A6%E4%B9%A0-chapter14-Review-of-the-Literature/"  itemprop="url">
+        写paper学习-chapter14 Review of the Literature
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        知识
-在source/目录下的index.md的链接：source/about/index.md的访问链接为博客链接/about，在.yml文件中导航栏处配置url时写about/
-
-font-matter中layout: docs指定使用themes/layout/下哪个ejs文件作为模板，比如上述的index.md文件
-
-post.&lt;name&gt;可以获取每篇博客的font-ma...
+        from “English for Writing Research Papers”
+provide readers with just the right amount of literature regarding the sequence of events leading up to the current situationas support for the author’s a...
       
     
   </div>
@@ -2675,93 +2667,20 @@ post.&lt;name&gt;可以获取每篇博客的font-ma...
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-01-01T22:04:00+08:00">2023-01-01</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-01-11T10:59:08+08:00">2023-01-11</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/play/">play</a>
+          <a class="category-link" href="/categories/paper/">paper</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/play/" itemprop="url"><span itemprop="name">play</span></a>
+              <a href="/categories/paper/" itemprop="url"><span itemprop="name">paper</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/01/01/hexo%E4%B8%BB%E9%A2%98volantis%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/12/22/LSM-tree/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-    <meta itemprop="description" content="grapher">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/12/22/LSM-tree/"  itemprop="url">
-        LSM tree
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        
-LSM树详解 - 知乎 (zhihu.com)
-
-rocksdb的存储方式就是这种
-LSM树简介
-https://cloud.tencent.com/developer/article/1441835
-
-写1，当收到一个写请求时，会先把该条数据记录在WAL Log里面，用作故障恢复。
-2，当写完WAL Log后，会把该条数据写入内存的SSTable里面（删除是墓碑标记，更新是新记录一条的数...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-12-22T21:30:23+08:00">2022-12-22</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/db/">db</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/db/" itemprop="url"><span itemprop="name">db</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/12/22/LSM-tree/' itemprop="url">
+          <a class='readmore' href='/2023/01/11/%E5%86%99paper%E5%AD%A6%E4%B9%A0-chapter14-Review-of-the-Literature/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2777,7 +2696,7 @@ https://cloud.tencent.com/developer/article/1441835
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/12/21/Gremlin入门/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/11/写paper学习-chapter13-Introduction/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2795,22 +2714,16 @@ https://cloud.tencent.com/developer/article/1441835
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/12/21/Gremlin%E5%85%A5%E9%97%A8/"  itemprop="url">
-        Gremlin入门
+      <a href="/2023/01/11/%E5%86%99paper%E5%AD%A6%E4%B9%A0-chapter13-Introduction/"  itemprop="url">
+        写paper学习-chapter13 Introduction
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        resource
-入门
-Apache TinkerPop Introduction to Gremlin
-Gremlin Query Language - JanusGraph
-TinkerPop Documentation (apache.org) start-steps
-
-
-详细（或速查，目录是按字母序的所有steps）TinkerPop Documentation (apache.or...
+        from “English for Writing Research Papers”
+The Introduction presents the background knowledge that readers need so that theycan appreciate how the findings of the paper are an advance on current kn...
       
     
   </div>
@@ -2818,20 +2731,20 @@ TinkerPop Documentation (apache.org) start-steps
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-12-21T17:42:14+08:00">2022-12-21</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-01-11T10:00:51+08:00">2023-01-11</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/graph/">graph</a>
+          <a class="category-link" href="/categories/paper/">paper</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/graph/" itemprop="url"><span itemprop="name">graph</span></a>
+              <a href="/categories/paper/" itemprop="url"><span itemprop="name">paper</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2022/12/21/Gremlin%E5%85%A5%E9%97%A8/' itemprop="url">
+          <a class='readmore' href='/2023/01/11/%E5%86%99paper%E5%AD%A6%E4%B9%A0-chapter13-Introduction/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2847,7 +2760,7 @@ TinkerPop Documentation (apache.org) start-steps
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/12/21/cpp-priority-queue/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/10/写paper学习-charpter12-Abstract/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2865,28 +2778,20 @@ TinkerPop Documentation (apache.org) start-steps
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/12/21/cpp-priority-queue/"  itemprop="url">
-        cpp priority_queue
+      <a href="/2023/01/10/%E5%86%99paper%E5%AD%A6%E4%B9%A0-charpter12-Abstract/"  itemprop="url">
+        写paper学习-charpter12 Abstract
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        概述
-最大堆
-时间复杂度：
-取堆顶（最大元素）：O(1)
-插入&#x2F;删除堆顶：O(logn)，n为堆中元素数目
+        from “English for Writing Research Papers”
+Abstract is designed to ‘sell’ your research
+contentYou can use the answers to these questions to structure your Abstract.
 
-
-
-自定义判断“大”的函数：方法一：&lt;操作符成员函数class T
-&#123;
-    ...
-    bool operator&lt;(const T&amp;r)&#123;...&#125;
-&#125;;
-priority_queue&lt;T&gt; q...
+background &#x2F; context  
+no...
       
     
   </div>
@@ -2894,24 +2799,20 @@ priority_queue&lt;T&gt; q...
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-12-21T12:23:02+08:00">2022-12-21</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-01-10T18:05:37+08:00">2023-01-10</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/c/">c++</a><span class="sep"></span><a class="category-link" href="/categories/c/language/">language</a>
+          <a class="category-link" href="/categories/paper/">paper</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/c/" itemprop="url"><span itemprop="name">c++</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/c/language/" itemprop="url"><span itemprop="name">language</span></a>
+              <a href="/categories/paper/" itemprop="url"><span itemprop="name">paper</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2022/12/21/cpp-priority-queue/' itemprop="url">
+          <a class='readmore' href='/2023/01/10/%E5%86%99paper%E5%AD%A6%E4%B9%A0-charpter12-Abstract/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2927,7 +2828,7 @@ priority_queue&lt;T&gt; q...
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/12/20/vscode思维导图-draw-io插件/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/09/java程序命令行运行/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2945,18 +2846,23 @@ priority_queue&lt;T&gt; q...
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/12/20/vscode%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE-draw-io%E6%8F%92%E4%BB%B6/"  itemprop="url">
-        vscode思维导图 draw.io插件
+      <a href="/2023/01/09/java%E7%A8%8B%E5%BA%8F%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%BF%90%E8%A1%8C/"  itemprop="url">
+        java程序命令行运行
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        用vscode画思维导图、流程图等好用的插件：draw.io.Integration
-装好之后，用vscode打开后缀名为 .drawio, .dio, .drawio.svg or .drawio.png中任意文件，即可进入画图界面：
+        源文件hello.java
+public  class Hello&#123;
+    public static void main(String[] args)&#123;
+        System.out.println(&quot;Hello World&quot;);
+    &#125;
+&#125;
 
-
+方法一编译，将在当前目录下生成hello.class
+javac hel...
       
     
   </div>
@@ -2964,20 +2870,20 @@ priority_queue&lt;T&gt; q...
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-12-20T16:16:28+08:00">2022-12-20</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-01-09T15:21:25+08:00">2023-01-09</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/tool/">tool</a>
+          <a class="category-link" href="/categories/java/">java</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/tool/" itemprop="url"><span itemprop="name">tool</span></a>
+              <a href="/categories/java/" itemprop="url"><span itemprop="name">java</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2022/12/20/vscode%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE-draw-io%E6%8F%92%E4%BB%B6/' itemprop="url">
+          <a class='readmore' href='/2023/01/09/java%E7%A8%8B%E5%BA%8F%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%BF%90%E8%A1%8C/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2993,7 +2899,7 @@ priority_queue&lt;T&gt; q...
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/12/20/python3-mkdir/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/09/python-java程序执行过程/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -3011,27 +2917,18 @@ priority_queue&lt;T&gt; q...
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/12/20/python3-mkdir/"  itemprop="url">
-        python3 mkdir
+      <a href="/2023/01/09/python-java%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B/"  itemprop="url">
+        python java程序执行过程
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        import os
+        https://www.cnblogs.com/shangping/p/11666551.html
 
-
-create dir：recusive, create if not exists, else throw error
-
-os.makedirs(path[,mode])
-
-
-check path exists：
-
-if(os.path.)
-
-
+C：将源代码编译成可执行的二进制文件，即把源代码翻译成机器代码
+Python和Java都是半编译半解释：从源代码中产生一组字节码，它并不是机器代码，但是不管是在Linux还是Windows的机器上，同样的源代码产生的字节码都是一样的，同时它还有个虚拟机，虚拟机会一条一条执行字节码，生成可执行...
       
     
   </div>
@@ -3039,24 +2936,24 @@ if(os.path.)
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-12-20T12:15:38+08:00">2022-12-20</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-01-09T15:18:17+08:00">2023-01-09</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/python/">python</a><span class="sep"></span><a class="category-link" href="/categories/python/language/">language</a>
+          <a class="category-link" href="/categories/java/">java</a><span class="sep"></span><a class="category-link" href="/categories/python/">python</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
               <a href="/categories/python/" itemprop="url"><span itemprop="name">python</span></a>
             </span>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/python/language/" itemprop="url"><span itemprop="name">language</span></a>
+              <a href="/categories/java/" itemprop="url"><span itemprop="name">java</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2022/12/20/python3-mkdir/' itemprop="url">
+          <a class='readmore' href='/2023/01/09/python-java%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3070,9 +2967,13 @@ if(os.path.)
         
       
         
+      
+        
+      
+        
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/12/20/python3-cmd-debug-pdb/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/08/写paper学习-chapter2-Word-Order/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -3090,28 +2991,18 @@ if(os.path.)
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/12/20/python3-cmd-debug-pdb/"  itemprop="url">
-        python3 cmd debug pdb
+      <a href="/2023/01/08/%E5%86%99paper%E5%AD%A6%E4%B9%A0-chapter2-Word-Order/"  itemprop="url">
+        写paper学习-chapter2 Word Order
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        单文件debug app.py
-
-in  app.py
-import pdb; pdb.set_trace()
-
-
-cmd:
-python3 -m pdb app.py arg1 arg2
-
-
-然后就开始debug，和gdb类似的界面和指令
-
-
-
+        from “English for Writing Research Papers”
+加*的例句：错误的例子
+If these parts come in a different order, this requires more effort by the native reader to understand the whole meaning
+Basic word order in E...
       
     
   </div>
@@ -3119,24 +3010,87 @@ python3 -m pdb app.py arg1 arg2
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-12-20T11:42:11+08:00">2022-12-20</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-01-08T21:07:51+08:00">2023-01-08</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/python/">python</a><span class="sep"></span><a class="category-link" href="/categories/python/debug/">debug</a>
+          <a class="category-link" href="/categories/paper/">paper</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/python/" itemprop="url"><span itemprop="name">python</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/python/debug/" itemprop="url"><span itemprop="name">debug</span></a>
+              <a href="/categories/paper/" itemprop="url"><span itemprop="name">paper</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2022/12/20/python3-cmd-debug-pdb/' itemprop="url">
+          <a class='readmore' href='/2023/01/08/%E5%86%99paper%E5%AD%A6%E4%B9%A0-chapter2-Word-Order/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/08/写paper学习-chapter1 Planning and Preparation/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/01/08/%E5%86%99paper%E5%AD%A6%E4%B9%A0-chapter1%20Planning%20and%20Preparation/"  itemprop="url">
+        写paper学习-chapter1 Planning and Preparation
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        from “English for Writing Research Papers”
+writing orderyou might write several sections simultaneously
+It is generally best to start with a very rough draft of the Abstract, and then whichever sec...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-01-08T11:37:00+08:00">2023-01-08</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/paper/">paper</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/paper/" itemprop="url"><span itemprop="name">paper</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/01/08/%E5%86%99paper%E5%AD%A6%E4%B9%A0-chapter1%20Planning%20and%20Preparation/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3163,7 +3117,7 @@ python3 -m pdb app.py arg1 arg2
           </a>
         
         <p class="current">
-          18 / 33
+          18 / 37
         </p>
         
           <a class="next" rel="next" href="/page/19/">
@@ -3403,12 +3357,12 @@ python3 -m pdb app.py arg1 arg2
           <li><a class="flat-box"
             title="/categories/tool/" href="/categories/tool/"
             active-action="action-categoriestool"
-            ><div class='name'>tool</div><div class='badge'>(72)</div></a></li>
+            ><div class='name'>tool</div><div class='badge'>(70)</div></a></li>
         
           <li><a class="flat-box child"
             title="/categories/tool/linux/" href="/categories/tool/linux/"
             active-action="action-categoriestoollinux"
-            ><div class='name'>linux</div><div class='badge'>(52)</div></a></li>
+            ><div class='name'>linux</div><div class='badge'>(51)</div></a></li>
         
           <li><a class="flat-box child"
             title="/categories/tool/windows/" href="/categories/tool/windows/"

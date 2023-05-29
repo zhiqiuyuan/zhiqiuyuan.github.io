@@ -45,7 +45,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-04-02T03:19:41.000Z">
-<meta property="article:modified_time" content="2023-04-03T02:51:21.151Z">
+<meta property="article:modified_time" content="2023-05-28T08:33:14.236Z">
 <meta property="article:author" content="zhiqiuyuan">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -2274,7 +2274,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1682233597330),
+    lastupdate: new Date(1685326411440),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2857,6 +2857,83 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 &#125;
 </code></pre>
 <p>In the above code, each process computes the <code>local_sum</code> of elements and sums them using <code>MPI_Allreduce</code>. After the global sum is available on all processes, the <code>mean</code> is computed so that <code>local_sq_diff</code> can be computed. Once all of the local squared differences are computed, <code>global_sq_diff</code> is found by using <code>MPI_Reduce</code>. The root process can then compute the standard deviation by taking the square root of the mean of the global squared differences.</p>
+<h2 id="自定义reduce操作"><a href="#自定义reduce操作" class="headerlink" title="自定义reduce操作"></a>自定义reduce操作</h2><p><a target="_blank" rel="noopener" href="https://scc.ustc.edu.cn/zlsc/cxyy/200910/MPICH/mpi49.htm">https://scc.ustc.edu.cn/zlsc/cxyy/200910/MPICH/mpi49.htm</a></p>
+<h3 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h3><pre><code class="cpp">typedef struct &#123;
+    double real,imag;
+&#125; Complex;
+/* 用户自定义的函数 */
+void myProd(Complex *in, Complex *inout, int *len, MPI_Datatype *dptr)
+&#123;
+    int i;
+    Complex c;
+
+    for (i=0; i &lt; *len; ++i) &#123;
+        c.real = inout-&gt;real*in-&gt;real - inout-&gt;imag*in-&gt;imag;
+        c.imag = inout-&gt;real*in-&gt;imag + inout-&gt;imag*in-&gt;real;
+        *inout = c;
+        in++; inout++;
+    &#125;
+&#125;
+/* 然后调用它 */
+/* 每个进程都有一个100个元素的复数数组 */
+Complex a[100], answer[100];
+MPI_Op myOp;
+MPI_Datatype ctype;
+
+/* 告之MPI复数结构是如何定义的 */
+MPI_Type_contiguous(2, MPI_DOUBLE, &amp;ctype);
+MPI_Type_commit(&amp;ctype);
+/* 生成用户定义的复数乘积操作 */
+MPI_Op_create(myProd, True, &amp;myOp);
+MPI_Reduce(a, answer, 100, ctype, myOp, root, comm);
+/* 这时结果(为100个复数)就已经存放在根进程 */
+</code></pre>
+<h3 id="MPI-OP-CREATE"><a href="#MPI-OP-CREATE" class="headerlink" title="MPI_OP_CREATE"></a>MPI_OP_CREATE</h3><p>MPI_OP_CREATE自定义操作,可以用于函数MPI_REDUCE 、MPI_ALLREDUCEMPI_REDUCE_SCATTER和MPI_SCAN中.</p>
+<pre><code class="cpp">MPI_OP_CREATE(function, commute, op)
+ IN   function   用户自定义的函数(函数)
+ IN   commute    可交换则为true,否则为false
+ OUT  op         操作(句柄)
+
+int MPI_Op_create(MPI_User_function *function,int commute,MPI_Op *op)
+</code></pre>
+<p>参数介绍:<br><code>commute</code>: 用户自定义的操作被认为是可以结合的.如果commute&#x3D;true,则此操作是可交换且可结合的;如果commute&#x3D;false,则此操作的顺序是固定地按进程序列号升序方式进行,即从序列号为0的进程开始.</p>
+<p><code>function</code>是用户自定义的函数,必须具备四个参数: invec, inoutvec, len和datatype.</p>
+<p>在ANSI C中这个函数的原型是:</p>
+<pre><code class="cpp">typedef void MPI_User_function(void *invec, void *inoutvec, 
+                                   int *len, MPI_Datatype *datatype);
+</code></pre>
+<p>参数<code>datatype</code>用于控制传送给MPI_REDUCE的数据类型.用户的归约函数应当写成下列方式:<br>当函数被激活时,令u[0],…,u[len-1]是通信缓冲区中len个由参数<code>invec</code>、<code>len</code>和<code>datatype</code>描述的元素;令v[0],…,v[len- 1]是通信缓冲区中len个由参数<code>inoutvec</code>、<code>len</code>和<code>datatype</code>描述的元素;<br>当函数返回时,令w[0],…,w[len-1]是通信缓冲区中len个由参数<code>inoutvec</code>、<code>len</code>和<code>datatype</code>描述的元素;此时<code>w[i] = u[i]·v[i]</code> ,<code>i从0到len-1</code>,这里<code>·是function所定义的归约操作</code>.</p>
+<p>从非正式的角度来看,我们可以认为invec和inoutvec是函数中长度为len的数组,<code>归约的结果重写了inoutvec的值</code>.每次调用此函数都导致了对这len个元素逐个进行相应的操作,例如:函数<code>将invec[i]·inoutvec[i]的结果返回到inoutvec[i]中</code>,i从0 到count-1,这里·是由此函数执行的归约操作.</p>
+<p>tips: </p>
+<ul>
+<li>参数len可以使MPI_REDUCE不去调用输入缓冲区中的每个元素,也就是说,系统可以有选择地对输入进行处理.在C语言中,为了与Fortran语言兼容,此参数以引用的方式传送.</li>
+<li>通过内部对数据类型参数datatype的值与已知的、全局句柄进行比较,就可能将一个用户自定义的操作作用于几种不同的数据类型.</li>
+</ul>
+<p>通常的数据类型可以传给用户自定义的参数,然而互不相邻的数据类型可能会导致低效率.</p>
+<p>在用户自定义的函数中不能调用MPI中的通信函数.当函数出错时可能会调用MPI_ABORT.</p>
+<p>下面给出MPI_REDUCE本质的但非高效的实现过程.</p>
+<pre><code class="cpp">if (rank &gt; 0) &#123;
+    RECV(tempbuf, count, datatype, rank-1,...) /* 从前一个rank接收数据 */
+    User_reduce(tempbuf, sendbuf, count, datatype) /* 用户定义的函数function */
+&#125;
+if (rank &lt; groupsize-1) &#123;
+    SEND(sendbuf, count, datatype, rank+1,...) /* 把结果发送给下一个rank */
+&#125;
+/* 结果位于进程groupsize-1上,现在将其发送到根进程 */
+if (rank == groupsize-1) &#123;
+    SEND(sendbuf, count, datatype, root, ...)
+&#125;
+if (rank == root) &#123;
+    RECV(recvbuf, count, datatype, groupsize-1,...)
+&#125;
+</code></pre>
+<p>归约操作<code>顺序地、依次地从进程0计算到进程groupsize-1</code>.这样选择顺序的原因是为了照顾用户自定义的User_reduce函数中有些操作的顺序是不可交换的.更有效的实现方法是采用可结合性的特点或应用对数树形归约法.对于在MPI_OP_CREATE 中 commute为true的情况,还可以利用可交换性的特点,也就是说可以对缓冲区中的一部分数据进行归约操作,这样通信和计算就可以流水执行,即可以传送的数据块的长度len可以小于count.</p>
+<h3 id="MPI-OP-FREE"><a href="#MPI-OP-FREE" class="headerlink" title="MPI_OP_FREE"></a>MPI_OP_FREE</h3><pre><code class="cpp">MPI_OP_FREE(op)
+ IN  op      操作(句柄)
+
+int MPI_Op_free(MPI_Op *op)
+</code></pre>
+<p>如要将用户自定义的归约操作撤消,将op设置成MPI_OP_NULL.</p>
 
   </div>
   
@@ -2881,10 +2958,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-04-03T10:51:21+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-05-28T16:33:14+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Apr 3, 2023</p>
+    <p>更新于：May 28, 2023</p>
   </a>
 </div>
 
@@ -3031,7 +3108,7 @@ Parallel rank - problem over...</p>
 
 
   <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#An-introduction-to-reduce"><span class="toc-text">An introduction to reduce</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MPI-Reduce"><span class="toc-text">MPI_Reduce</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#example"><span class="toc-text">example</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MPI-Allreduce"><span class="toc-text">MPI_Allreduce</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Computing-standard-deviation-with-MPI-Allreduce"><span class="toc-text">Computing standard deviation with MPI_Allreduce</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#An-introduction-to-reduce"><span class="toc-text">An introduction to reduce</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MPI-Reduce"><span class="toc-text">MPI_Reduce</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#example"><span class="toc-text">example</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MPI-Allreduce"><span class="toc-text">MPI_Allreduce</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Computing-standard-deviation-with-MPI-Allreduce"><span class="toc-text">Computing standard deviation with MPI_Allreduce</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89reduce%E6%93%8D%E4%BD%9C"><span class="toc-text">自定义reduce操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BE%E4%BE%8B"><span class="toc-text">举例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MPI-OP-CREATE"><span class="toc-text">MPI_OP_CREATE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MPI-OP-FREE"><span class="toc-text">MPI_OP_FREE</span></a></li></ol></li></ol>
   </div>
 </section>
 
@@ -3994,7 +4071,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"grapher"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"zhiqiuyuan's blog"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/04/02/MPI-Reduce-and-Allreduce/","name":"MPI Reduce and Allreduce"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"zhiqiuyuan's blog","url":"http://example.com/","keywords":null,"description":"grapher","author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"grapher"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"MPI Reduce and Allreduce","description":"grapher","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/04/02/MPI-Reduce-and-Allreduce/"},"author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/04/02/MPI-Reduce-and-Allreduce/","wordCount":0,"datePublished":"2023-04-02T03:19:41.000Z","dateModified":"2023-04-03T02:51:21.151Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"grapher"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"zhiqiuyuan's blog"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/04/02/MPI-Reduce-and-Allreduce/","name":"MPI Reduce and Allreduce"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"zhiqiuyuan's blog","url":"http://example.com/","keywords":null,"description":"grapher","author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"grapher"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"MPI Reduce and Allreduce","description":"grapher","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/04/02/MPI-Reduce-and-Allreduce/"},"author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/04/02/MPI-Reduce-and-Allreduce/","wordCount":0,"datePublished":"2023-04-02T03:19:41.000Z","dateModified":"2023-05-28T08:33:14.236Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

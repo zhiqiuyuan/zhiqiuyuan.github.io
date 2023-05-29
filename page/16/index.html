@@ -2272,7 +2272,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1682233597330),
+    lastupdate: new Date(1685326411440),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2632,13 +2632,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
       
         
-      
-        
-      
-        
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/05/ubuntu修改nameserver-DNS服务器/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/21/rust字符串-切片/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2656,19 +2652,30 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/01/05/ubuntu%E4%BF%AE%E6%94%B9nameserver-DNS%E6%9C%8D%E5%8A%A1%E5%99%A8/"  itemprop="url">
-        ubuntu修改nameserver DNS服务器
+      <a href="/2023/01/21/rust%E5%AD%97%E7%AC%A6%E4%B8%B2-%E5%88%87%E7%89%87/"  itemprop="url">
+        rust字符串 切片
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        修改/etc/resolv.conf即可比如在其中添加
-nameserver 8.8.8.8
-nameserver 8.8.4.4
+        
+学习自 rust圣经
+
+切片：全在栈上的对象，一个指针+一个长度
+fn main() &#123;
+let s = String::from(&quot;hello world&quot;);
+
+let hello = &amp;s[0..5];
+let world = &amp;s[6..11];
+&#125;
+
+world：
 
 
+
+四种不同的类型：String（如上图的s），&amp;...
       
     
   </div>
@@ -2676,24 +2683,24 @@ nameserver 8.8.4.4
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-01-05T00:27:27+08:00">2023-01-05</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-01-21T21:10:22+08:00">2023-01-21</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/tool/">tool</a><span class="sep"></span><a class="category-link" href="/categories/tool/linux/">linux</a>
+          <a class="category-link" href="/categories/rust/">rust</a><span class="sep"></span><a class="category-link" href="/categories/rust/language/">language</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/tool/" itemprop="url"><span itemprop="name">tool</span></a>
+              <a href="/categories/rust/" itemprop="url"><span itemprop="name">rust</span></a>
             </span>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/tool/linux/" itemprop="url"><span itemprop="name">linux</span></a>
+              <a href="/categories/rust/language/" itemprop="url"><span itemprop="name">language</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/01/05/ubuntu%E4%BF%AE%E6%94%B9nameserver-DNS%E6%9C%8D%E5%8A%A1%E5%99%A8/' itemprop="url">
+          <a class='readmore' href='/2023/01/21/rust%E5%AD%97%E7%AC%A6%E4%B8%B2-%E5%88%87%E7%89%87/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2709,7 +2716,7 @@ nameserver 8.8.4.4
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/04/gcc内置统计1比特数-leading-zero-counts/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/21/rust所有权/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2727,16 +2734,21 @@ nameserver 8.8.4.4
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/01/04/gcc%E5%86%85%E7%BD%AE%E7%BB%9F%E8%AE%A11%E6%AF%94%E7%89%B9%E6%95%B0-leading-zero-counts/"  itemprop="url">
-        gcc内置统计1比特数 leading zero counts
+      <a href="/2023/01/21/rust%E6%89%80%E6%9C%89%E6%9D%83/"  itemprop="url">
+        rust所有权
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        https://www.geeksforgeeks.org/builtin-functions-gcc-compiler/
-__builtin_clz(x): This function is used to count the leading zeros of the integer. Note : clz &#x3D; count leading zero’sExample: It co...
+        
+学习自 rust圣经
+
+强烈建议：https://gcc.godbolt.org/ 看反汇编注意，下文的“新建栈上对象”，其实不是“申请”，而是机器代码控制，在函数体对应的机器代码之前，栈顶就保留了足够长的栈，然后栈底+offset是栈上对象的起始地址
+rust所有权规则
+每一个值(内存对象)都被一个变量所拥有，该变量被称为值的所有者
+一个值(内存对象)同时(同一个作用域内)只能被一个变量...
       
     
   </div>
@@ -2744,24 +2756,24 @@ __builtin_clz(x): This function is used to count the leading zeros of the intege
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-01-04T10:21:02+08:00">2023-01-04</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-01-21T20:22:16+08:00">2023-01-21</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/c/">c++</a><span class="sep"></span><a class="category-link" href="/categories/c/gcc/">gcc</a>
+          <a class="category-link" href="/categories/rust/">rust</a><span class="sep"></span><a class="category-link" href="/categories/rust/language/">language</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/c/" itemprop="url"><span itemprop="name">c++</span></a>
+              <a href="/categories/rust/" itemprop="url"><span itemprop="name">rust</span></a>
             </span>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/c/gcc/" itemprop="url"><span itemprop="name">gcc</span></a>
+              <a href="/categories/rust/language/" itemprop="url"><span itemprop="name">language</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/01/04/gcc%E5%86%85%E7%BD%AE%E7%BB%9F%E8%AE%A11%E6%AF%94%E7%89%B9%E6%95%B0-leading-zero-counts/' itemprop="url">
+          <a class='readmore' href='/2023/01/21/rust%E6%89%80%E6%9C%89%E6%9D%83/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2781,7 +2793,7 @@ __builtin_clz(x): This function is used to count the leading zeros of the intege
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/03/c-模板类继承，成员获取/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/18/unix-文件-inode-文件名-文件描述符-的关系/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2799,25 +2811,22 @@ __builtin_clz(x): This function is used to count the leading zeros of the intege
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/01/03/c-%E6%A8%A1%E6%9D%BF%E7%B1%BB%E7%BB%A7%E6%89%BF%EF%BC%8C%E6%88%90%E5%91%98%E8%8E%B7%E5%8F%96/"  itemprop="url">
-        c++模板类继承，成员获取
+      <a href="/2023/01/18/unix-%E6%96%87%E4%BB%B6-inode-%E6%96%87%E4%BB%B6%E5%90%8D-%E6%96%87%E4%BB%B6%E6%8F%8F%E8%BF%B0%E7%AC%A6-%E7%9A%84%E5%85%B3%E7%B3%BB/"  itemprop="url">
+        unix 文件-inode-文件名-文件描述符 的关系
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        public继承普通类，子类中可以直接用父类的protected和public成员
-class base
-&#123;
-protected:
-    int a;
-    typedef int value_type;
-&#125;;
-class child : public base
-&#123;
-public:
-    void set(int o) &#123; a = o; &#12...
+        如图所示
+
+
+
+蓝色箭头：一对一
+橙色&#x2F;绿色箭头：多对一
+
+
       
     
   </div>
@@ -2825,24 +2834,28 @@ public:
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-01-03T11:13:11+08:00">2023-01-03</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-01-18T15:44:42+08:00">2023-01-18</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/c/">c++</a><span class="sep"></span><a class="category-link" href="/categories/c/language/">language</a>
+          <a class="category-link" href="/categories/course/">course</a><span class="sep"></span><a class="category-link" href="/categories/course/os/">os</a><span class="sep"></span><a class="category-link" href="/categories/linux/">linux</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/c/" itemprop="url"><span itemprop="name">c++</span></a>
+              <a href="/categories/course/" itemprop="url"><span itemprop="name">course</span></a>
             </span>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/c/language/" itemprop="url"><span itemprop="name">language</span></a>
+              <a href="/categories/course/os/" itemprop="url"><span itemprop="name">os</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/linux/" itemprop="url"><span itemprop="name">linux</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/01/03/c-%E6%A8%A1%E6%9D%BF%E7%B1%BB%E7%BB%A7%E6%89%BF%EF%BC%8C%E6%88%90%E5%91%98%E8%8E%B7%E5%8F%96/' itemprop="url">
+          <a class='readmore' href='/2023/01/18/unix-%E6%96%87%E4%BB%B6-inode-%E6%96%87%E4%BB%B6%E5%90%8D-%E6%96%87%E4%BB%B6%E6%8F%8F%E8%BF%B0%E7%AC%A6-%E7%9A%84%E5%85%B3%E7%B3%BB/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2853,6 +2866,10 @@ public:
 </div>
 
           </div>
+        
+      
+        
+      
         
       
         
@@ -2873,7 +2890,7 @@ public:
           </a>
         
         <p class="current">
-          16 / 33
+          16 / 37
         </p>
         
           <a class="next" rel="next" href="/page/17/">
@@ -3113,12 +3130,12 @@ public:
           <li><a class="flat-box"
             title="/categories/tool/" href="/categories/tool/"
             active-action="action-categoriestool"
-            ><div class='name'>tool</div><div class='badge'>(72)</div></a></li>
+            ><div class='name'>tool</div><div class='badge'>(70)</div></a></li>
         
           <li><a class="flat-box child"
             title="/categories/tool/linux/" href="/categories/tool/linux/"
             active-action="action-categoriestoollinux"
-            ><div class='name'>linux</div><div class='badge'>(52)</div></a></li>
+            ><div class='name'>linux</div><div class='badge'>(51)</div></a></li>
         
           <li><a class="flat-box child"
             title="/categories/tool/windows/" href="/categories/tool/windows/"
