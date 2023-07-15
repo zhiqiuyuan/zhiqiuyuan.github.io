@@ -2272,7 +2272,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1685326411440),
+    lastupdate: new Date(1689423278757),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2630,9 +2630,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         
+      
+        
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/09/c-时间测量-chrono/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/23/vim-find-count-计数查找/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2650,21 +2652,16 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/03/09/c-%E6%97%B6%E9%97%B4%E6%B5%8B%E9%87%8F-chrono/"  itemprop="url">
-        c++时间测量 chrono
+      <a href="/2023/03/23/vim-find-count-%E8%AE%A1%E6%95%B0%E6%9F%A5%E6%89%BE/"  itemprop="url">
+        vim find count 计数查找
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        tools.h
-#include &lt;chrono&gt;
-#define TIME_MEASURE_SZ 5
-template &lt;typename UnitType&gt; // std::chrono::nanoseconds, microseconds, milliseconds, seconds ...
-class TimeMeasure
-&#123;
-    std::c...
+        https://stackoverflow.com/questions/49297579/how-to-count-search-results-in-vim
+You can count the number of matches using the n flag in the substitute command. Use the following to show number of t...
       
     
   </div>
@@ -2672,20 +2669,12 @@ class TimeMeasure
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-03-09T10:41:39+08:00">2023-03-09</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/c/">c++</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/c/" itemprop="url"><span itemprop="name">c++</span></a>
-            </span>
-          
+        <time itemprop="dateCreated datePublished" datetime="2023-03-23T10:38:35+08:00">2023-03-23</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/03/09/c-%E6%97%B6%E9%97%B4%E6%B5%8B%E9%87%8F-chrono/' itemprop="url">
+          <a class='readmore' href='/2023/03/23/vim-find-count-%E8%AE%A1%E6%95%B0%E6%9F%A5%E6%89%BE/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2703,7 +2692,7 @@ class TimeMeasure
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/08/少用vector-vector/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/22/cpp读写锁-reader-writer-lock/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2721,16 +2710,19 @@ class TimeMeasure
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/03/08/%E5%B0%91%E7%94%A8vector-vector/"  itemprop="url">
-        少用vector<vector>
+      <a href="/2023/03/22/cpp%E8%AF%BB%E5%86%99%E9%94%81-reader-writer-lock/"  itemprop="url">
+        cpp读写锁 reader-writer-lock
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        massif分析实践表明，vector&lt;vector&lt;builtin-type&gt;&gt;要比CSR 两个vector&lt;builtin-type&gt;占用的内存大很多，尤其当nbrs部分和offset部分仅2、3倍的时候，vector&lt;vector&gt;的第一层vector开销的内存甚至可以占第二层vector的3倍
+        examplehttps://stackoverflow.com/questions/244316/reader-writer-locks-in-cSince C++ 17 (VS2015) you can use the standard:
+#include &lt;shared_mutex&gt;
 
+typedef std::shared_mutex Lock;
+typedef std:...
       
     
   </div>
@@ -2738,12 +2730,74 @@ class TimeMeasure
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-03-08T10:53:47+08:00">2023-03-08</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-03-22T16:40:45+08:00">2023-03-22</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/03/08/%E5%B0%91%E7%94%A8vector-vector/' itemprop="url">
+          <a class='readmore' href='/2023/03/22/cpp%E8%AF%BB%E5%86%99%E9%94%81-reader-writer-lock/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/22/cpp线程池-basic-threadpool/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/03/22/cpp%E7%BA%BF%E7%A8%8B%E6%B1%A0-basic-threadpool/"  itemprop="url">
+        cpp线程池 basic threadpool
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        #ifndef _THREADPOOL_H
+#define _THREADPOOL_H
+#include &lt;thread&gt;
+#include &lt;mutex&gt;
+#include &lt;condition_variable&gt;
+#include &lt;vector&gt;
+#include &lt;queue&gt;
+#if TIME_KILL_ENABLE ==...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-03-22T11:56:57+08:00">2023-03-22</time>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/03/22/cpp%E7%BA%BF%E7%A8%8B%E6%B1%A0-basic-threadpool/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2759,13 +2813,9 @@ class TimeMeasure
         
       
         
-      
-        
-      
-        
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/05/profile-memory-takeup-测量程序内存占用/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/21/data-race-数据竞争/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2783,17 +2833,16 @@ class TimeMeasure
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/03/05/profile-memory-takeup-%E6%B5%8B%E9%87%8F%E7%A8%8B%E5%BA%8F%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8/"  itemprop="url">
-        profile memory takeup 测量程序内存占用
+      <a href="/2023/03/21/data-race-%E6%95%B0%E6%8D%AE%E7%AB%9E%E4%BA%89/"  itemprop="url">
+        data race 数据竞争
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        内存占用峰值：time -f$ /usr/bin/time -f &quot;%M KB&quot; &lt;command_and_args&gt;
-
-注意给time传递参数的时候，bash user需要给定time的绝对路径time -f ... ...会报错-f: command not found，这实际上uses an internal version of time, provi...
+        data race常见举例：https://yourbasic.org/golang/data-races-explained/
+向相同的地址写同样的值是否存在数据竞争：https://stackoverflow.com/questions/8315931/does-writing-the-same-value-to-the-same-memory-location-cause-a-data...
       
     
   </div>
@@ -2801,20 +2850,12 @@ class TimeMeasure
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-03-05T16:21:05+08:00">2023-03-05</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/tools/">tools</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/tools/" itemprop="url"><span itemprop="name">tools</span></a>
-            </span>
-          
+        <time itemprop="dateCreated datePublished" datetime="2023-03-21T18:36:20+08:00">2023-03-21</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/03/05/profile-memory-takeup-%E6%B5%8B%E9%87%8F%E7%A8%8B%E5%BA%8F%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8/' itemprop="url">
+          <a class='readmore' href='/2023/03/21/data-race-%E6%95%B0%E6%8D%AE%E7%AB%9E%E4%BA%89/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2847,7 +2888,7 @@ class TimeMeasure
           </a>
         
         <p class="current">
-          12 / 37
+          12 / 39
         </p>
         
           <a class="next" rel="next" href="/page/13/">

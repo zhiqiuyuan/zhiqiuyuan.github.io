@@ -2272,7 +2272,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1685326411440),
+    lastupdate: new Date(1689423278757),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2630,9 +2630,15 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         
+      
+        
+      
+        
+      
+        
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/31/敏感性分析（Sensitivity-Analysis）/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/03/mpi教程目录/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2650,18 +2656,23 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/03/31/%E6%95%8F%E6%84%9F%E6%80%A7%E5%88%86%E6%9E%90%EF%BC%88Sensitivity-Analysis%EF%BC%89/"  itemprop="url">
-        敏感性分析（Sensitivity Analysis）
+      <a href="/2023/04/03/mpi%E6%95%99%E7%A8%8B%E7%9B%AE%E5%BD%95/"  itemprop="url">
+        mpi教程目录
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        https://zhuanlan.zhihu.com/p/38568075
-假设模型表示为 y &#x3D; f(x1, x2, …, xn)，敏感性分析就是令每个属性在可能的范围变动，研究和预测这些属性的变化对模型输出值的影响程度。
-我们将影响程度的大小称为该属性的敏感性系数，敏感性系数越大，就说明属性对模型输出的影响越大。
-一般来讲对于神经网络的敏感性分析方法可以分为变量敏感性分析、样本...
+        主要参考：基础教程：https://mpitutorial.com/tutorials进阶教程：https://enccs.github.io/intermediate-mpi
+基础教程安装运行：
+
+open mpi安装
+run mpi program over a cluster 在集群上跑mpi程序
+mpi overall
+这篇必看，摘自man mpirun mpirun
+
+point-...
       
     
   </div>
@@ -2669,12 +2680,70 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-03-31T14:09:41+08:00">2023-03-31</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-04-03T10:40:55+08:00">2023-04-03</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/03/31/%E6%95%8F%E6%84%9F%E6%80%A7%E5%88%86%E6%9E%90%EF%BC%88Sensitivity-Analysis%EF%BC%89/' itemprop="url">
+          <a class='readmore' href='/2023/04/03/mpi%E6%95%99%E7%A8%8B%E7%9B%AE%E5%BD%95/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/03/openMPI-std-thread-multithreaad/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/04/03/openMPI-std-thread-multithreaad/"  itemprop="url">
+        openMPI std::thread multithreaad
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        来自chatgpt
+这个是低阶版本的，高阶的是openMPI+openMP，见MPI + openMP
+openMPI和std::thread同时使用有什么要求当在MPI应用程序中使用std::thread时，只有主线程可以调用MPI接口。
+在其他线程中调用MPI接口会导致未定义的行为，可能会导致程序崩溃或者产生不可预测的结果。因此，如果需要在其他线程中进行与MPI相关的操作，应该使用线程间...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-04-03T09:20:57+08:00">2023-04-03</time>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/04/03/openMPI-std-thread-multithreaad/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2692,7 +2761,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/30/open-mpi-学习/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/02/MPI-multi-thread/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2710,15 +2779,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/03/30/open-mpi-%E5%AD%A6%E4%B9%A0/"  itemprop="url">
-        open mpi 学习
+      <a href="/2023/04/02/MPI-multi-thread/"  itemprop="url">
+        MPI multi thread
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        conceptsMPI uses the notion of process rather than processor. Program copies are mapped to processors by the MPI runtime.Each process has its own rank(用于在程序中indentify这是哪个process), the total number ...
+        教程：https://enccs.github.io/intermediate-mpi/mpi-and-threads-pt1/#
+教程配套代码：https://github.com/ENCCS/intermediate-mpi/tree/master/content/code
+
+
+Comparing pure MPI（一个rank一个线程） vs hybrid MPI-threading（...
       
     
   </div>
@@ -2726,12 +2799,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-03-30T09:57:43+08:00">2023-03-30</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-04-02T19:19:02+08:00">2023-04-02</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/03/30/open-mpi-%E5%AD%A6%E4%B9%A0/' itemprop="url">
+          <a class='readmore' href='/2023/04/02/MPI-multi-thread/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2747,7 +2820,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/30/获取c-builtin-array-内置数组的长度-sizeof/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/02/open-mpi安装/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2765,19 +2838,16 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/03/30/%E8%8E%B7%E5%8F%96c-builtin-array-%E5%86%85%E7%BD%AE%E6%95%B0%E7%BB%84%E7%9A%84%E9%95%BF%E5%BA%A6-sizeof/"  itemprop="url">
-        获取c builtin array 内置数组的长度 sizeof
+      <a href="/2023/04/02/open-mpi%E5%AE%89%E8%A3%85/"  itemprop="url">
+        open mpi安装
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        int main()
-&#123;
-    int send_array[100];
-    cout &lt;&lt; sizeof(send_array) &lt;&lt; endl;                       // 整个数组在栈上占的字节数 400
-    cout &lt;&lt; sizeof(send_array) / sizeof(*send_array) &...
+        install on linuxhttps://sites.google.com/site/rangsiman1993/comp-env/program-install/install-openmpibrief: download and buildhttps://edu.itp.phys.ethz.ch/hs12/programming_techniques/openmpi.pdf
+The...
       
     
   </div>
@@ -2785,12 +2855,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-03-30T09:43:51+08:00">2023-03-30</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-04-02T16:14:15+08:00">2023-04-02</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/03/30/%E8%8E%B7%E5%8F%96c-builtin-array-%E5%86%85%E7%BD%AE%E6%95%B0%E7%BB%84%E7%9A%84%E9%95%BF%E5%BA%A6-sizeof/' itemprop="url">
+          <a class='readmore' href='/2023/04/02/open-mpi%E5%AE%89%E8%A3%85/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2804,11 +2874,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
       
         
-      
-        
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/27/ROC-AUC/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/02/run-mpi-program-over-a-cluster-在集群上跑mpi程序/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2826,17 +2894,18 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/03/27/ROC-AUC/"  itemprop="url">
-        ROC AUC
+      <a href="/2023/04/02/run-mpi-program-over-a-cluster-%E5%9C%A8%E9%9B%86%E7%BE%A4%E4%B8%8A%E8%B7%91mpi%E7%A8%8B%E5%BA%8F/"  itemprop="url">
+        run mpi program over a cluster 在集群上跑mpi程序
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        https://developers.google.com/machine-learning/crash-course/classification/roc-and-auc
-ROC curveThis curve plots two parameters:True Positive Rate (recall)False Positive Rate
-An ROC curve plots TPR...
+        https://mpitutorial.com/tutorials/running-an-mpi-cluster-within-a-lan/
+OpenMPI 集群配置 - HelloWooo - 博客园 (cnblogs.com)
+步骤：1. 建立连接  2. 运行mpi程序
+建立连接Your machines are gonna be talking over the network vi...
       
     
   </div>
@@ -2844,12 +2913,12 @@ An ROC curve plots TPR...
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-03-27T16:58:01+08:00">2023-03-27</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-04-02T16:13:41+08:00">2023-04-02</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/03/27/ROC-AUC/' itemprop="url">
+          <a class='readmore' href='/2023/04/02/run-mpi-program-over-a-cluster-%E5%9C%A8%E9%9B%86%E7%BE%A4%E4%B8%8A%E8%B7%91mpi%E7%A8%8B%E5%BA%8F/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2863,15 +2932,9 @@ An ROC curve plots TPR...
         
       
         
-      
-        
-      
-        
-      
-        
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/23/vim-find-count-计数查找/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/02/MPI-Reduce-and-Allreduce/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2889,16 +2952,16 @@ An ROC curve plots TPR...
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/03/23/vim-find-count-%E8%AE%A1%E6%95%B0%E6%9F%A5%E6%89%BE/"  itemprop="url">
-        vim find count 计数查找
+      <a href="/2023/04/02/MPI-Reduce-and-Allreduce/"  itemprop="url">
+        MPI Reduce and Allreduce
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        https://stackoverflow.com/questions/49297579/how-to-count-search-results-in-vim
-You can count the number of matches using the n flag in the substitute command. Use the following to show number of t...
+        https://mpitutorial.com/tutorials/mpi-reduce-and-allreduce/
+An introduction to reduceData reduction involves reducing a set of numbers into a smaller set of numbers via a function. For example, let...
       
     
   </div>
@@ -2906,12 +2969,12 @@ You can count the number of matches using the n flag in the substitute command. 
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-03-23T10:38:35+08:00">2023-03-23</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-04-02T11:19:41+08:00">2023-04-02</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/03/23/vim-find-count-%E8%AE%A1%E6%95%B0%E6%9F%A5%E6%89%BE/' itemprop="url">
+          <a class='readmore' href='/2023/04/02/MPI-Reduce-and-Allreduce/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2938,7 +3001,7 @@ You can count the number of matches using the n flag in the substitute command. 
           </a>
         
         <p class="current">
-          9 / 37
+          9 / 39
         </p>
         
           <a class="next" rel="next" href="/page/10/">

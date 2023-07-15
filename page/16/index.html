@@ -2272,7 +2272,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1685326411440),
+    lastupdate: new Date(1689423278757),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2632,9 +2632,17 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
       
         
+      
+        
+      
+        
+      
+        
+      
+        
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/21/rust字符串-切片/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/02/18/B-树/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2652,55 +2660,32 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/01/21/rust%E5%AD%97%E7%AC%A6%E4%B8%B2-%E5%88%87%E7%89%87/"  itemprop="url">
-        rust字符串 切片
+      <a href="/2023/02/18/B-%E6%A0%91/"  itemprop="url">
+        B+树
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
-    
-      
-        
-学习自 rust圣经
-
-切片：全在栈上的对象，一个指针+一个长度
-fn main() &#123;
-let s = String::from(&quot;hello world&quot;);
-
-let hello = &amp;s[0..5];
-let world = &amp;s[6..11];
-&#125;
-
-world：
-
-
-
-四种不同的类型：String（如上图的s），&amp;...
-      
     
   </div>
   
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-01-21T21:10:22+08:00">2023-01-21</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-02-18T17:23:24+08:00">2023-02-18</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/rust/">rust</a><span class="sep"></span><a class="category-link" href="/categories/rust/language/">language</a>
+          <a class="category-link" href="/categories/algorithm/">algorithm</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/rust/" itemprop="url"><span itemprop="name">rust</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/rust/language/" itemprop="url"><span itemprop="name">language</span></a>
+              <a href="/categories/algorithm/" itemprop="url"><span itemprop="name">algorithm</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/01/21/rust%E5%AD%97%E7%AC%A6%E4%B8%B2-%E5%88%87%E7%89%87/' itemprop="url">
+          <a class='readmore' href='/2023/02/18/B-%E6%A0%91/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2716,7 +2701,7 @@ world：
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/21/rust所有权/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/02/17/写paper学习-Chapter-3-Breaking-Up-Long-Sentences/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2734,46 +2719,32 @@ world：
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/01/21/rust%E6%89%80%E6%9C%89%E6%9D%83/"  itemprop="url">
-        rust所有权
+      <a href="/2023/02/17/%E5%86%99paper%E5%AD%A6%E4%B9%A0-Chapter-3-Breaking-Up-Long-Sentences/"  itemprop="url">
+        写paper学习 Chapter 3 Breaking Up Long Sentences
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
-    
-      
-        
-学习自 rust圣经
-
-强烈建议：https://gcc.godbolt.org/ 看反汇编注意，下文的“新建栈上对象”，其实不是“申请”，而是机器代码控制，在函数体对应的机器代码之前，栈顶就保留了足够长的栈，然后栈底+offset是栈上对象的起始地址
-rust所有权规则
-每一个值(内存对象)都被一个变量所拥有，该变量被称为值的所有者
-一个值(内存对象)同时(同一个作用域内)只能被一个变量...
-      
     
   </div>
   
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-01-21T20:22:16+08:00">2023-01-21</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-02-17T13:54:47+08:00">2023-02-17</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/rust/">rust</a><span class="sep"></span><a class="category-link" href="/categories/rust/language/">language</a>
+          <a class="category-link" href="/categories/paper/">paper</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/rust/" itemprop="url"><span itemprop="name">rust</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/rust/language/" itemprop="url"><span itemprop="name">language</span></a>
+              <a href="/categories/paper/" itemprop="url"><span itemprop="name">paper</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/01/21/rust%E6%89%80%E6%9C%89%E6%9D%83/' itemprop="url">
+          <a class='readmore' href='/2023/02/17/%E5%86%99paper%E5%AD%A6%E4%B9%A0-Chapter-3-Breaking-Up-Long-Sentences/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2789,11 +2760,9 @@ rust所有权规则
         
       
         
-      
-        
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/18/unix-文件-inode-文件名-文件描述符-的关系/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/02/14/chrome自定义路径安装-默认安装后移动/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2811,21 +2780,15 @@ rust所有权规则
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/01/18/unix-%E6%96%87%E4%BB%B6-inode-%E6%96%87%E4%BB%B6%E5%90%8D-%E6%96%87%E4%BB%B6%E6%8F%8F%E8%BF%B0%E7%AC%A6-%E7%9A%84%E5%85%B3%E7%B3%BB/"  itemprop="url">
-        unix 文件-inode-文件名-文件描述符 的关系
+      <a href="/2023/02/14/chrome%E8%87%AA%E5%AE%9A%E4%B9%89%E8%B7%AF%E5%BE%84%E5%AE%89%E8%A3%85-%E9%BB%98%E8%AE%A4%E5%AE%89%E8%A3%85%E5%90%8E%E7%A7%BB%E5%8A%A8/"  itemprop="url">
+        chrome自定义路径安装:默认安装后移动
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        如图所示
-
-
-
-蓝色箭头：一对一
-橙色&#x2F;绿色箭头：多对一
-
+        https://blog.csdn.net/yhcwjh/article/details/106806083
 
       
     
@@ -2834,28 +2797,20 @@ rust所有权规则
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-01-18T15:44:42+08:00">2023-01-18</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-02-14T12:16:25+08:00">2023-02-14</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/course/">course</a><span class="sep"></span><a class="category-link" href="/categories/course/os/">os</a><span class="sep"></span><a class="category-link" href="/categories/linux/">linux</a>
+          <a class="category-link" href="/categories/play/">play</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/course/" itemprop="url"><span itemprop="name">course</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/course/os/" itemprop="url"><span itemprop="name">os</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/linux/" itemprop="url"><span itemprop="name">linux</span></a>
+              <a href="/categories/play/" itemprop="url"><span itemprop="name">play</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/01/18/unix-%E6%96%87%E4%BB%B6-inode-%E6%96%87%E4%BB%B6%E5%90%8D-%E6%96%87%E4%BB%B6%E6%8F%8F%E8%BF%B0%E7%AC%A6-%E7%9A%84%E5%85%B3%E7%B3%BB/' itemprop="url">
+          <a class='readmore' href='/2023/02/14/chrome%E8%87%AA%E5%AE%9A%E4%B9%89%E8%B7%AF%E5%BE%84%E5%AE%89%E8%A3%85-%E9%BB%98%E8%AE%A4%E5%AE%89%E8%A3%85%E5%90%8E%E7%A7%BB%E5%8A%A8/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2869,11 +2824,68 @@ rust所有权规则
         
       
         
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/02/14/edge浏览器收藏夹导出到chrome/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/02/14/edge%E6%B5%8F%E8%A7%88%E5%99%A8%E6%94%B6%E8%97%8F%E5%A4%B9%E5%AF%BC%E5%87%BA%E5%88%B0chrome/"  itemprop="url">
+        edge浏览器收藏夹导出到chrome
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
       
         
+edge浏览器中右键收藏夹栏 - 管理收藏夹(manage favorite bar) - 右上角三个点 - 导出(export favorites)，从而导出收藏夹信息保存到html文件
+chrome浏览器中 右上角三个点 - 设置(settings) - 导入书签和设置(import bookmarks and settings) - 下拉选择导入源为HTML - 选择从edge浏览器...
       
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
         
+        <time itemprop="dateCreated datePublished" datetime="2023-02-14T11:55:37+08:00">2023-02-14</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/play/">play</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/play/" itemprop="url"><span itemprop="name">play</span></a>
+            </span>
+          
+        
+      </div>
       
+        <div>
+          <a class='readmore' href='/2023/02/14/edge%E6%B5%8F%E8%A7%88%E5%99%A8%E6%94%B6%E8%97%8F%E5%A4%B9%E5%AF%BC%E5%87%BA%E5%88%B0chrome/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
         
       
     
@@ -2890,7 +2902,7 @@ rust所有权规则
           </a>
         
         <p class="current">
-          16 / 37
+          16 / 39
         </p>
         
           <a class="next" rel="next" href="/page/17/">

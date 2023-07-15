@@ -2272,7 +2272,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1685326411440),
+    lastupdate: new Date(1689423278757),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2641,9 +2641,15 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
       
         
+      
+        
+      
+        
+      
+        
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/17/c-静态数据成员和普通数据成员访问快慢测评/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/05/07/python处理excel-pandas/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2661,23 +2667,18 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/04/17/c-%E9%9D%99%E6%80%81%E6%95%B0%E6%8D%AE%E6%88%90%E5%91%98%E5%92%8C%E6%99%AE%E9%80%9A%E6%95%B0%E6%8D%AE%E6%88%90%E5%91%98%E8%AE%BF%E9%97%AE%E5%BF%AB%E6%85%A2%E6%B5%8B%E8%AF%84/"  itemprop="url">
-        c++静态数据成员和普通数据成员访问快慢测评
+      <a href="/2023/05/07/python%E5%A4%84%E7%90%86excel-pandas/"  itemprop="url">
+        python处理excel pandas
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        比较类的静态数据成员和普通数据成员哪个访问得快一点
-代码顺序访问#include &lt;iostream&gt;
-#include &lt;fstream&gt;
-#include &lt;vector&gt;
-#include &lt;chrono&gt;
-
-using namespace std;
-typedef chrono::microseconds UnitType;
-chron...
+        https://geek-docs.com/pandas/pandas-read-write/pandas-to-read-and-write-excel.html
+read_excel可以把excel读成dataframesto_excel把dataframes写成excel
+读excelimport pandas as pd
+df = pd.read_excel(&quot;copy.x...
       
     
   </div>
@@ -2685,12 +2686,12 @@ chron...
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-04-17T17:42:40+08:00">2023-04-17</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-05-07T12:18:28+08:00">2023-05-07</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/04/17/c-%E9%9D%99%E6%80%81%E6%95%B0%E6%8D%AE%E6%88%90%E5%91%98%E5%92%8C%E6%99%AE%E9%80%9A%E6%95%B0%E6%8D%AE%E6%88%90%E5%91%98%E8%AE%BF%E9%97%AE%E5%BF%AB%E6%85%A2%E6%B5%8B%E8%AF%84/' itemprop="url">
+          <a class='readmore' href='/2023/05/07/python%E5%A4%84%E7%90%86excel-pandas/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2706,7 +2707,7 @@ chron...
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/16/概率分布/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/05/03/python模拟网页操作/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2724,17 +2725,20 @@ chron...
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/04/16/%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83/"  itemprop="url">
-        概率分布
+      <a href="/2023/05/03/python%E6%A8%A1%E6%8B%9F%E7%BD%91%E9%A1%B5%E6%93%8D%E4%BD%9C/"  itemprop="url">
+        python模拟网页操作
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        常见连续型概率分布指数分布
-
-
+        Pre-requisites: Python installed and Selenium installed as package along with the web driver (.exe file)
+Browser Automation Using Selenium
+举例from selenium import webdriver
+import time
+import re
+opt...
       
     
   </div>
@@ -2742,218 +2746,12 @@ chron...
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-04-16T20:33:14+08:00">2023-04-16</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%A6%82%E7%BB%9F/">概统</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%A6%82%E7%BB%9F/" itemprop="url"><span itemprop="name">概统</span></a>
-            </span>
-          
+        <time itemprop="dateCreated datePublished" datetime="2023-05-03T08:19:51+08:00">2023-05-03</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/04/16/%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/16/数学期望/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-    <meta itemprop="description" content="grapher">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/04/16/%E6%95%B0%E5%AD%A6%E6%9C%9F%E6%9C%9B/"  itemprop="url">
-        数学期望
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        含义：
-
-
-离散型
-
-
-
-连续型
-常见分布的数学期望指数分布
-
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-04-16T20:09:20+08:00">2023-04-16</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%A6%82%E7%BB%9F/">概统</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%A6%82%E7%BB%9F/" itemprop="url"><span itemprop="name">概统</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/04/16/%E6%95%B0%E5%AD%A6%E6%9C%9F%E6%9C%9B/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/16/假设检验/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-    <meta itemprop="description" content="grapher">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/04/16/%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C/"  itemprop="url">
-        假设检验
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        概念例子：
-
-这个“去判定”的命题，即
-
-概念：
-
-
-
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-04-16T16:44:25+08:00">2023-04-16</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%A6%82%E7%BB%9F/">概统</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%A6%82%E7%BB%9F/" itemprop="url"><span itemprop="name">概统</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/04/16/%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/16/西瓜书-2-4-比较检验/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-    <meta itemprop="description" content="grapher">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/04/16/%E8%A5%BF%E7%93%9C%E4%B9%A6-2-4-%E6%AF%94%E8%BE%83%E6%A3%80%E9%AA%8C/"  itemprop="url">
-        西瓜书 2.4 比较检验
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        
-
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-04-16T16:11:57+08:00">2023-04-16</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/04/16/%E8%A5%BF%E7%93%9C%E4%B9%A6-2-4-%E6%AF%94%E8%BE%83%E6%A3%80%E9%AA%8C/' itemprop="url">
+          <a class='readmore' href='/2023/05/03/python%E6%A8%A1%E6%8B%9F%E7%BD%91%E9%A1%B5%E6%93%8D%E4%BD%9C/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2980,7 +2778,7 @@ chron...
           </a>
         
         <p class="current">
-          5 / 21
+          5 / 24
         </p>
         
           <a class="next" rel="next" href="/archives/2023/page/6/">

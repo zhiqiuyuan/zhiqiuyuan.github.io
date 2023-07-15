@@ -36,14 +36,16 @@
   <title>西瓜书 2.4 比较检验 - zhiqiuyuan's blog</title>
   <meta name="keywords" content="null">
   <meta desc name="description" content="grapher - zhiqiuyuan - zhiqiuyuan's blog">
-  <meta property="og:type" content="article">
+  
+<meta property="og:type" content="article">
 <meta property="og:title" content="西瓜书 2.4 比较检验">
 <meta property="og:url" content="http://example.com/2023/04/16/%E8%A5%BF%E7%93%9C%E4%B9%A6-2-4-%E6%AF%94%E8%BE%83%E6%A3%80%E9%AA%8C/index.html">
 <meta property="og:site_name" content="zhiqiuyuan&#39;s blog">
+<meta property="og:description" content="2.4.1 假设检验   对于这个假设即需要： “e&gt;e0”的总概率&lt;a “e&gt;e0”的总概率即">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-04-16T08:11:57.000Z">
-<meta property="article:modified_time" content="2023-04-16T08:43:37.639Z">
+<meta property="article:modified_time" content="2023-06-02T00:30:48.000Z">
 <meta property="article:author" content="zhiqiuyuan">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -2272,7 +2274,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1685326411440),
+    lastupdate: new Date(1689423278757),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2695,6 +2697,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
     <p><img src="/%E8%A5%BF%E7%93%9C%E4%B9%A6-2-4-%E6%AF%94%E8%BE%83%E6%A3%80%E9%AA%8C/image-20230416161547028.png" class="lazyload" data-srcset="/%E8%A5%BF%E7%93%9C%E4%B9%A6-2-4-%E6%AF%94%E8%BE%83%E6%A3%80%E9%AA%8C/image-20230416161547028.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20230416161547028"></p>
+<h2 id="2-4-1-假设检验"><a href="#2-4-1-假设检验" class="headerlink" title="2.4.1 假设检验"></a>2.4.1 假设检验</h2><p><img src="/%E8%A5%BF%E7%93%9C%E4%B9%A6-2-4-%E6%AF%94%E8%BE%83%E6%A3%80%E9%AA%8C/image-20230602082131948.png" class="lazyload" data-srcset="/%E8%A5%BF%E7%93%9C%E4%B9%A6-2-4-%E6%AF%94%E8%BE%83%E6%A3%80%E9%AA%8C/image-20230602082131948.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20230602082131948"></p>
+<p><img src="/%E8%A5%BF%E7%93%9C%E4%B9%A6-2-4-%E6%AF%94%E8%BE%83%E6%A3%80%E9%AA%8C/image-20230602082209555.png" class="lazyload" data-srcset="/%E8%A5%BF%E7%93%9C%E4%B9%A6-2-4-%E6%AF%94%E8%BE%83%E6%A3%80%E9%AA%8C/image-20230602082209555.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20230602082209555"></p>
+<p><img src="/%E8%A5%BF%E7%93%9C%E4%B9%A6-2-4-%E6%AF%94%E8%BE%83%E6%A3%80%E9%AA%8C/image-20230602082245687.png" class="lazyload" data-srcset="/%E8%A5%BF%E7%93%9C%E4%B9%A6-2-4-%E6%AF%94%E8%BE%83%E6%A3%80%E9%AA%8C/image-20230602082245687.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20230602082245687"></p>
+<p>对于这个假设即需要：</p>
+<p>“e&gt;e0”的总概率&lt;a</p>
+<p>“e&gt;e0”的总概率即<img src="/%E8%A5%BF%E7%93%9C%E4%B9%A6-2-4-%E6%AF%94%E8%BE%83%E6%A3%80%E9%AA%8C/image-20230602082446344.png" class="lazyload" data-srcset="/%E8%A5%BF%E7%93%9C%E4%B9%A6-2-4-%E6%AF%94%E8%BE%83%E6%A3%80%E9%AA%8C/image-20230602082446344.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20230602082446344"></p>
+<p><img src="/%E8%A5%BF%E7%93%9C%E4%B9%A6-2-4-%E6%AF%94%E8%BE%83%E6%A3%80%E9%AA%8C/image-20230602083047724.png" class="lazyload" data-srcset="/%E8%A5%BF%E7%93%9C%E4%B9%A6-2-4-%E6%AF%94%E8%BE%83%E6%A3%80%E9%AA%8C/image-20230602083047724.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20230602083047724"></p>
+<p><img src="/%E8%A5%BF%E7%93%9C%E4%B9%A6-2-4-%E6%AF%94%E8%BE%83%E6%A3%80%E9%AA%8C/image-20230602082255415.png" class="lazyload" data-srcset="/%E8%A5%BF%E7%93%9C%E4%B9%A6-2-4-%E6%AF%94%E8%BE%83%E6%A3%80%E9%AA%8C/image-20230602082255415.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20230602082255415"></p>
 
   </div>
   
@@ -2719,10 +2729,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-04-16T16:43:37+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-06-02T08:30:48+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Apr 16, 2023</p>
+    <p>更新于：Jun 2, 2023</p>
   </a>
 </div>
 
@@ -2889,7 +2899,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
   <div class='content'>
-      
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-1-%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C"><span class="toc-text">2.4.1 假设检验</span></a></li></ol>
   </div>
 </section>
 
@@ -3852,7 +3862,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"grapher"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"zhiqiuyuan's blog"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/04/16/西瓜书-2-4-比较检验/","name":"西瓜书 2.4 比较检验"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"zhiqiuyuan's blog","url":"http://example.com/","keywords":null,"description":"grapher","author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"grapher"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"西瓜书 2.4 比较检验","description":"grapher","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/04/16/%E8%A5%BF%E7%93%9C%E4%B9%A6-2-4-%E6%AF%94%E8%BE%83%E6%A3%80%E9%AA%8C/"},"author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/04/16/%E8%A5%BF%E7%93%9C%E4%B9%A6-2-4-%E6%AF%94%E8%BE%83%E6%A3%80%E9%AA%8C/","wordCount":0,"datePublished":"2023-04-16T08:11:57.000Z","dateModified":"2023-04-16T08:43:37.639Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"grapher"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"zhiqiuyuan's blog"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/04/16/西瓜书-2-4-比较检验/","name":"西瓜书 2.4 比较检验"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"zhiqiuyuan's blog","url":"http://example.com/","keywords":null,"description":"grapher","author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"grapher"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"西瓜书 2.4 比较检验","description":"grapher","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/04/16/%E8%A5%BF%E7%93%9C%E4%B9%A6-2-4-%E6%AF%94%E8%BE%83%E6%A3%80%E9%AA%8C/"},"author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/04/16/%E8%A5%BF%E7%93%9C%E4%B9%A6-2-4-%E6%AF%94%E8%BE%83%E6%A3%80%E9%AA%8C/","wordCount":0,"datePublished":"2023-04-16T08:11:57.000Z","dateModified":"2023-06-02T00:30:48.000Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

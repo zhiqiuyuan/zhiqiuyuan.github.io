@@ -2272,7 +2272,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1685326411440),
+    lastupdate: new Date(1689423278757),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2631,11 +2631,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         
-      
-        
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/14/LCA/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/01/mpi-block-send-and-receive/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2653,16 +2651,17 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/03/14/LCA/"  itemprop="url">
-        LCA
+      <a href="/2023/04/01/mpi-block-send-and-receive/"  itemprop="url">
+        mpi block send and receive
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        https://cp-algorithms.com/graph/lca.html
-Before answering the queries, we need to preprocess the tree. We make a DFS traversal starting at the root and we build a list  $\text{euler}$  which stores...
+        https://mpitutorial.com/tutorials/mpi-send-and-receive/
+Overview of sending and receiving with MPIA-&gt;B
+MPI’s send and receive calls operate in the following manner. First, process A decides a me...
       
     
   </div>
@@ -2670,12 +2669,12 @@ Before answering the queries, we need to preprocess the tree. We make a DFS trav
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-03-14T09:04:52+08:00">2023-03-14</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-04-01T09:56:00+08:00">2023-04-01</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/03/14/LCA/' itemprop="url">
+          <a class='readmore' href='/2023/04/01/mpi-block-send-and-receive/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2693,7 +2692,7 @@ Before answering the queries, we need to preprocess the tree. We make a DFS trav
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/12/树的高度/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/31/敏感性分析（Sensitivity-Analysis）/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2711,15 +2710,18 @@ Before answering the queries, we need to preprocess the tree. We make a DFS trav
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/03/12/%E6%A0%91%E7%9A%84%E9%AB%98%E5%BA%A6/"  itemprop="url">
-        树的高度
+      <a href="/2023/03/31/%E6%95%8F%E6%84%9F%E6%80%A7%E5%88%86%E6%9E%90%EF%BC%88Sensitivity-Analysis%EF%BC%89/"  itemprop="url">
+        敏感性分析（Sensitivity Analysis）
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        https://www.geeksforgeeks.org/roots-tree-gives-minimum-height/Given an undirected graph, which has tree characteristics (any connected graph without simple cycles is a tree.). It is possible to cho...
+        https://zhuanlan.zhihu.com/p/38568075
+假设模型表示为 y &#x3D; f(x1, x2, …, xn)，敏感性分析就是令每个属性在可能的范围变动，研究和预测这些属性的变化对模型输出值的影响程度。
+我们将影响程度的大小称为该属性的敏感性系数，敏感性系数越大，就说明属性对模型输出的影响越大。
+一般来讲对于神经网络的敏感性分析方法可以分为变量敏感性分析、样本...
       
     
   </div>
@@ -2727,20 +2729,12 @@ Before answering the queries, we need to preprocess the tree. We make a DFS trav
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-03-12T10:56:11+08:00">2023-03-12</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/algorithm/">algorithm</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/algorithm/" itemprop="url"><span itemprop="name">algorithm</span></a>
-            </span>
-          
+        <time itemprop="dateCreated datePublished" datetime="2023-03-31T14:09:41+08:00">2023-03-31</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/03/12/%E6%A0%91%E7%9A%84%E9%AB%98%E5%BA%A6/' itemprop="url">
+          <a class='readmore' href='/2023/03/31/%E6%95%8F%E6%84%9F%E6%80%A7%E5%88%86%E6%9E%90%EF%BC%88Sensitivity-Analysis%EF%BC%89/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2758,7 +2752,7 @@ Before answering the queries, we need to preprocess the tree. We make a DFS trav
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/11/c-模板类申明（在定义前申明）/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/30/open-mpi-学习/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2776,20 +2770,15 @@ Before answering the queries, we need to preprocess the tree. We make a DFS trav
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/03/11/c-%E6%A8%A1%E6%9D%BF%E7%B1%BB%E7%94%B3%E6%98%8E%EF%BC%88%E5%9C%A8%E5%AE%9A%E4%B9%89%E5%89%8D%E7%94%B3%E6%98%8E%EF%BC%89/"  itemprop="url">
-        c++模板类申明（在定义前申明）
+      <a href="/2023/03/30/open-mpi-%E5%AD%A6%E4%B9%A0/"  itemprop="url">
+        open mpi 学习
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        在一些情况下我们先定义类A，再定义类B（这样的定义顺序是因为类B有个成员函数返回类型A（而不是A的引用或指针）），但是在类A中有一个数据成员的类型是类B的引用，此时便需要在类A的定义前先申明B
-// 申明模板类Graph
-template &lt;typename BatchSetType&gt;
-class Graph; 
-// 定义模板类BlockCutTree
-template &lt...
+        conceptsMPI uses the notion of process rather than processor. Program copies are mapped to processors by the MPI runtime.Each process has its own rank(用于在程序中indentify这是哪个process), the total number ...
       
     
   </div>
@@ -2797,20 +2786,71 @@ template &lt...
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-03-11T21:35:02+08:00">2023-03-11</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/c/">c++</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/c/" itemprop="url"><span itemprop="name">c++</span></a>
-            </span>
-          
+        <time itemprop="dateCreated datePublished" datetime="2023-03-30T09:57:43+08:00">2023-03-30</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/03/11/c-%E6%A8%A1%E6%9D%BF%E7%B1%BB%E7%94%B3%E6%98%8E%EF%BC%88%E5%9C%A8%E5%AE%9A%E4%B9%89%E5%89%8D%E7%94%B3%E6%98%8E%EF%BC%89/' itemprop="url">
+          <a class='readmore' href='/2023/03/30/open-mpi-%E5%AD%A6%E4%B9%A0/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/30/获取c-builtin-array-内置数组的长度-sizeof/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/03/30/%E8%8E%B7%E5%8F%96c-builtin-array-%E5%86%85%E7%BD%AE%E6%95%B0%E7%BB%84%E7%9A%84%E9%95%BF%E5%BA%A6-sizeof/"  itemprop="url">
+        获取c builtin array 内置数组的长度 sizeof
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        int main()
+&#123;
+    int send_array[100];
+    cout &lt;&lt; sizeof(send_array) &lt;&lt; endl;                       // 整个数组在栈上占的字节数 400
+    cout &lt;&lt; sizeof(send_array) / sizeof(*send_array) &...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-03-30T09:43:51+08:00">2023-03-30</time>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/03/30/%E8%8E%B7%E5%8F%96c-builtin-array-%E5%86%85%E7%BD%AE%E6%95%B0%E7%BB%84%E7%9A%84%E9%95%BF%E5%BA%A6-sizeof/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2828,7 +2868,7 @@ template &lt...
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/10/二连通图-two-connected-graph-biconnected-graph/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/27/ROC-AUC/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2846,16 +2886,17 @@ template &lt...
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/03/10/%E4%BA%8C%E8%BF%9E%E9%80%9A%E5%9B%BE-two-connected-graph-biconnected-graph/"  itemprop="url">
-        二连通图 two-connected-graph biconnected-graph
+      <a href="/2023/03/27/ROC-AUC/"  itemprop="url">
+        ROC AUC
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        https://www.techiedelight.com/2-vertex-connectivity-graph/http://www.cs.rpi.edu/~goldberg/14-GT/08-block.pdf
-无向图DFSWe can find Articulation points in a graph using Depth–first search (DFS).We can s...
+        https://developers.google.com/machine-learning/crash-course/classification/roc-and-auc
+ROC curveThis curve plots two parameters:True Positive Rate (recall)False Positive Rate
+An ROC curve plots TPR...
       
     
   </div>
@@ -2863,20 +2904,12 @@ template &lt...
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-03-10T16:46:11+08:00">2023-03-10</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/algorithm/">algorithm</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/algorithm/" itemprop="url"><span itemprop="name">algorithm</span></a>
-            </span>
-          
+        <time itemprop="dateCreated datePublished" datetime="2023-03-27T16:58:01+08:00">2023-03-27</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/03/10/%E4%BA%8C%E8%BF%9E%E9%80%9A%E5%9B%BE-two-connected-graph-biconnected-graph/' itemprop="url">
+          <a class='readmore' href='/2023/03/27/ROC-AUC/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2891,71 +2924,6 @@ template &lt...
       
         
       
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/09/use-git-in-debug-mode-git输出详细过程信息/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-    <meta itemprop="description" content="grapher">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/03/09/use-git-in-debug-mode-git%E8%BE%93%E5%87%BA%E8%AF%A6%E7%BB%86%E8%BF%87%E7%A8%8B%E4%BF%A1%E6%81%AF/"  itemprop="url">
-        use git in debug mode git输出详细过程信息
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        https://www.shellhacks.com/git-verbose-mode-debug-fatal-errors/
-Git Verbose Mode in Linux&#x2F;MacOSDebug Git command:
-$ GIT_TRACE=true \
-GIT_CURL_VERBOSE=true \
-GIT_SSH_COMMAND=&quot;ssh -vvv&quot...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-03-09T18:52:42+08:00">2023-03-09</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/tools/">tools</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/tools/" itemprop="url"><span itemprop="name">tools</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/03/09/use-git-in-debug-mode-git%E8%BE%93%E5%87%BA%E8%AF%A6%E7%BB%86%E8%BF%87%E7%A8%8B%E4%BF%A1%E6%81%AF/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
         
       
     
@@ -2972,7 +2940,7 @@ GIT_SSH_COMMAND=&quot;ssh -vvv&quot...
           </a>
         
         <p class="current">
-          11 / 21
+          11 / 24
         </p>
         
           <a class="next" rel="next" href="/archives/2023/page/12/">
