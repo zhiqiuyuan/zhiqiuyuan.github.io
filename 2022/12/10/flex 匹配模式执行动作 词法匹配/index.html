@@ -2275,7 +2275,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1689423278757),
+    lastupdate: new Date(1708084958563),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2726,10 +2726,116 @@ User subroutines
 </code></pre>
 <p>输入文件的第 1 段 <strong>%{</strong> 和 <strong>%}</strong> 之间的为 <strong>声明（Declarations）</strong> ，都是 C 代码，这些代码会被原样的复制到 <strong>lex.yy.c</strong> 文件中，一般在这里声明一些全局变量和函数，这样在后面可以使用这些变量和函数。</p>
 <p>第 2 段 <strong>%} 和 %%</strong> 之间的为 <strong>定义（Definitions）</strong>，在这里可以定义正则表达式中的一些名字，可以在 <strong>规则（Rules）</strong> 段被使用，如本文件中定义了 <strong>WORD</strong> 为 <strong>([^</strong> <strong>\t\n\r\a]+)</strong> ， 这样在后面可以用 <strong>{WORD}</strong> 代替这个正则表达式。</p>
-<p>第 3 段为 <strong>规则（Rules）</strong> 段，上一个例子中已经详细说明过了。</p>
+<p>第 3 段为 <strong>规则（Rules）</strong> 段；会按从上往下的顺序尝试匹配。By default, any text not matched by a flex scanner is copied to the output</p>
 <p>第 4 段为 <strong>用户定义过程（User subroutines）</strong> 段，也都是 C 代码，本段内容会被原样复制到 <strong>yylex.c</strong> 文件的最末尾，一般在此定义第 1 段中声明的函数。</p>
 <h3 id="函数和变量"><a href="#函数和变量" class="headerlink" title="函数和变量"></a>函数和变量</h3><h4 id="yywrap"><a href="#yywrap" class="headerlink" title="yywrap"></a>yywrap</h4><p><strong>yywrap</strong> 函数的作用是将多个输入文件打包成一个输入，当 <strong>yylex</strong> 函数读入到一个文件结束（EOF）时，它会向 yywrap 函数询问， yywrap 函数返回 1 的意思是告诉 <strong>yylex</strong> 函数后面没有其他输入文件了，此时 yylex 函数结束，yywrap 函数也可以打开下一个输入文件，再向 yylex 函数返回 0 ，告诉它后面还有别的输入文件，此时 yylex 函数会继续解析下一个输入文件。总之，由于我们不考虑连续解析多个文件，因此此处返回 1 。</p>
 <h4 id="关于刚刚匹配到的字符串"><a href="#关于刚刚匹配到的字符串" class="headerlink" title="关于刚刚匹配到的字符串"></a>关于刚刚匹配到的字符串</h4><p> flex 提供的两个全局变量 <strong>yytext</strong> 和 <strong>yyleng</strong>，分别用来表示刚刚匹配到的字符串以及它的长度</p>
+<h3 id="简单举例1"><a href="#简单举例1" class="headerlink" title="简单举例1"></a>简单举例1</h3><p><a target="_blank" rel="noopener" href="https://www.oreilly.com/library/view/flex-bison/9780596805418/ch01.html">https://www.oreilly.com/library/view/flex-bison/9780596805418/ch01.html</a><br>文件<code>test.l</code></p>
+<pre><code class="cpp">/* just like Unix wc */
+%&#123;
+int chars = 0;
+int words = 0;
+int lines = 0;
+%&#125;
+
+%%
+
+[a-zA-Z]+  &#123; words++; chars += strlen(yytext); &#125;
+\n         &#123; chars++; lines++; &#125; /* 注意，.不会匹配\n字符 */
+.          &#123; chars++; &#125;
+
+%%
+
+int main(int argc, char **argv)
+&#123;
+  yylex();
+  printf(&quot;%8d%8d%8d\n&quot;, lines, words, chars);
+&#125;
+</code></pre>
+<h3 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h3><h4 id="flex-gcc"><a href="#flex-gcc" class="headerlink" title="flex + gcc"></a>flex + gcc</h4><p>简单举例1中的代码运行：</p>
+<pre><code class="bash">$ flex test.l # tell flex to translate our program
+$ gcc -lfl lex.yy.c # compile lex.yy.c; link it with the flex library, -lfl
+$ ./a.out # run it; and type a little input for it to count.
+The boy stood on the burning deck
+shelling peanuts by the peck
+^D
+2 12 63
+$
+</code></pre>
+<p>如果link flex lib步骤中ld报错找不到库的话，可以这样定位下问题：<br>输出ld实际上想找哪些库：</p>
+<pre><code class="bash">ld -lfl --verbose
+</code></pre>
+<p>可以看到没有你要的<br>如果你需要的<code>libfl.so</code>文件在目录<code>/path/to/lib</code>下：</p>
+<pre><code class="bash">gcc -L/path/to/lib -lfl lex.yy.c
+</code></pre>
+<p>&#x2F;home&#x2F;yuanzhiqiu&#x2F;built&#x2F;flex-2.6.4&#x2F;lib</p>
+<h3 id="简单举例2"><a href="#简单举例2" class="headerlink" title="简单举例2"></a>简单举例2</h3><p><a target="_blank" rel="noopener" href="http://web.mit.edu/gnu/doc/html/flex_1.html#:~:text=An%20Overview%20of%20flex%2C%20with%20Examples%201%20Text-Substitution,Language%20Scanner%20A%20somewhat%20more%20complicated%20example%3A%20">http://web.mit.edu/gnu/doc/html/flex_1.html#:~:text=An%20Overview%20of%20flex%2C%20with%20Examples%201%20Text-Substitution,Language%20Scanner%20A%20somewhat%20more%20complicated%20example%3A%20</a></p>
+<pre><code class="cpp">/* scanner for a toy Pascal-like language */
+
+%&#123;
+/* Declarations */
+/* need this for the call to atof() below */
+#include &lt;math.h&gt;
+%&#125;
+
+/* Definitions */
+DIGIT    [0-9]
+ID       [a-z][a-z0-9]*
+
+%%
+/* Rules */
+/* pattern &#123;action&#125; */
+&#123;DIGIT&#125;+    &#123;
+    printf( &quot;An integer: %s (%d)\n&quot;, yytext, atoi( yytext ) );
+&#125;    
+
+&#123;DIGIT&#125;+&quot;.&quot;&#123;DIGIT&#125;* &#123;
+    printf( &quot;A float: %s (%g)\n&quot;, yytext, atof( yytext ) );
+&#125;
+
+if|then|begin|end|procedure|function    &#123;
+    printf( &quot;A keyword: %s\n&quot;, yytext );
+&#125;
+
+&#123;ID&#125;    &#123;
+    printf( &quot;An identifier: %s\n&quot;, yytext );
+&#125;
+
+&quot;+&quot;|&quot;-&quot;|&quot;*&quot;|&quot;/&quot; &#123;
+    printf( &quot;An operator: %s\n&quot;, yytext );
+&#125;
+
+&quot;&#123;&quot;[^&#125;\n]*&quot;&#125;&quot;   &#123;&#125; /* no action: eat up one-line comments */
+
+[ \t\n]+    &#123;&#125; /* no action: eat up whitespace */
+
+.   &#123;
+    printf( &quot;Unrecognized character: %s\n&quot;, yytext );
+&#125;
+
+%%
+
+/* User subroutines */
+int main(int argc, char **argv)
+&#123;
+    if ( argc &gt; 1 )
+        yyin = fopen( argv[1], &quot;r&quot; );
+    else
+        yyin = stdin;
+    yylex(); /* entry */
+&#125;
+</code></pre>
+<h3 id="编译安装"><a href="#编译安装" class="headerlink" title="编译安装"></a>编译安装</h3><p><a target="_blank" rel="noopener" href="https://github.com/westes/flex/blob/master/INSTALL.md">https://github.com/westes/flex/blob/master/INSTALL.md</a><br><a target="_blank" rel="noopener" href="https://github.com/westes/flex/releases">https://github.com/westes/flex/releases</a></p>
+<h3 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h3><p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/cb721b883b57">https://www.jianshu.com/p/cb721b883b57</a></p>
+<h4 id="一些语法"><a href="#一些语法" class="headerlink" title="一些语法"></a>一些语法</h4><p>x          匹配字符 <code>x</code><br>.          除<strong>换行符外</strong>的任何字符<br>[xyz]      字符类别；匹配<code>x</code>、<code>y</code>、<code>z</code><br>[abj-oZ]   具有范围的字符类；匹配 <code>a</code>， <code>b</code>， <code>j</code>到<code>o</code>中的任何字母或 <code>Z</code><br>[^A-Z]    否定字符类，即该类中的字符<em>以外的</em>任何字符  [^A-Z\n]   除大写字母或换行符外的任何字符</p>
+<p>r*          零个或多个<code>r</code>，其中<code>r</code>是任何正则表达式（如何确定r：*前的子表达式）<br>r+          一个或多个 <code>r</code><br>r？         零或一个<code>r</code><br>r{2,5}      从两到五​​个<br>r{2,}      两个或多个<br>r{4}        恰好4个<br>上面这些默认是最长匹配，加一个?则是最短匹配<br>*?	重复任意次，但尽可能少重复<br>+?	重复1次或更多次，但尽可能少重复<br>??	重复0次或1次，但尽可能少重复<br>{n,m}?	重复n到m次，但尽可能少重复<br>{n,}?	重复n次以上，但尽可能少重复</p>
+<p>{name}      扩展<code>name</code><em>定义</em>，把别处定义的<code>name</code>拿过来用</p>
+<p>\X           普通字符(不是特殊字符，比如不是<code>*</code>,<code>&quot;</code>等)不转义，就是表示<code>\x</code>。否则，为字符<code>X</code><br>    举例：”[xyz]&quot;foo” 表示<code>[xyz]&quot;foo</code>，外面的””表示是一个字符串，里面的&quot;表示是一个转义字符，匹配<code>&quot;</code><br>\0          一个NUL字符（ASCII代码0）<br>\123        八进制值123的字符<br>\x2a        十六进制值为2a的字符</p>
+<p>(r)        匹配<code>r</code>；定义子表达式；括号用于改变优先级；且可以和<code>\1</code>等配合进行捕获</p>
+<p>rs                正则表达式<code>r</code>后跟正则表达式<code>s</code>，称为串联<br>r|s                <code>r</code>或<code>s</code><br>r&#x2F;s              一个<code>r</code>，但<em>前提是</em>其后跟一个<code>s</code>。确定此规则是否为最长匹配项时，<br>                    将包含用<code>s</code>匹配的文本，但在执行操作之前，该文本将返回到输入。因此，<br>                   该操作只会看到与<code>r</code>匹配的文本。这种模式称为尾随上下文。 （flex不能正确<br>                   匹配某些r&#x2F;s组合。有关危险的尾随上下文，请参见限制。）</p>
+<p>^r              一个<code>r</code>，但仅在一行的开头（即刚开始扫描时，或在扫描换行符之后）。<br>r$              一个<code>r</code>，但只能在一行的末尾（即，在换行符之前）。等同于r&#x2F;\n。<br>                   请注意，flex的”换行符”概念与C编译器用来将flex解释为\n的情况完全相同。<br>                   特别是，在某些DOS系统上，您必须自己过滤掉输入中的\r，<br>                   或显式地将” r &#x2F;\r\ n”用作” r $”。</p>
+<p><s> r             一个<code>r</code>，但仅在<em>起始条件</em>s中（请参阅”起始条件”以了解起始条件）。<br>&lt;s1，s2，s3&gt; r  同上，但在任何启动条件s1，s2或s3中。<br>&lt;*&gt; r             任何开始条件下的<code>r</code>，甚至是排他条件。<br>&lt;&lt; EOF &gt;&gt;         文件结束。<br>&lt;s1,s2&gt;&lt;<EOF>&gt;   在开始条件s1或s2中的文件结束</p>
+<h4 id="匹配任意字符串"><a href="#匹配任意字符串" class="headerlink" title="匹配任意字符串"></a>匹配任意字符串</h4><p>注意这样不行：[.\n]* 这样会匹配<code>.</code>或<code>\n</code>而不是任意字符<br>要这样写：(.|\n)*</p>
 
   </div>
   
@@ -2918,7 +3024,7 @@ log.txt文本内容如下：
 
 
   <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-text">定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%92%8C%E5%8F%98%E9%87%8F"><span class="toc-text">函数和变量</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#yywrap"><span class="toc-text">yywrap</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E5%88%9A%E5%88%9A%E5%8C%B9%E9%85%8D%E5%88%B0%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-text">关于刚刚匹配到的字符串</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-text">定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%92%8C%E5%8F%98%E9%87%8F"><span class="toc-text">函数和变量</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#yywrap"><span class="toc-text">yywrap</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E5%88%9A%E5%88%9A%E5%8C%B9%E9%85%8D%E5%88%B0%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-text">关于刚刚匹配到的字符串</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E4%B8%BE%E4%BE%8B1"><span class="toc-text">简单举例1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C"><span class="toc-text">运行</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#flex-gcc"><span class="toc-text">flex + gcc</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E4%B8%BE%E4%BE%8B2"><span class="toc-text">简单举例2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85"><span class="toc-text">编译安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-text">正则表达式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E8%AF%AD%E6%B3%95"><span class="toc-text">一些语法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8C%B9%E9%85%8D%E4%BB%BB%E6%84%8F%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-text">匹配任意字符串</span></a></li></ol></li></ol>
   </div>
 </section>
 

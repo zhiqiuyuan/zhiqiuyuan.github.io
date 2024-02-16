@@ -2272,7 +2272,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1689423278757),
+    lastupdate: new Date(1708084958563),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2630,13 +2630,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         
-      
-        
-      
-        
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/15/windows实时绘图工具推荐-live-draw/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/09/c-时间测量-chrono/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2654,16 +2650,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/01/15/windows%E5%AE%9E%E6%97%B6%E7%BB%98%E5%9B%BE%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90-live-draw/"  itemprop="url">
-        windows实时绘图工具推荐 live-draw
+      <a href="/2023/03/09/c-%E6%97%B6%E9%97%B4%E6%B5%8B%E9%87%8F-chrono/"  itemprop="url">
+        c++时间测量 chrono
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        好用的实时画图工具，免安装就是个可以运行的exe文件，在任何情况下的屏幕上画画，支持保存，超方便呀！https://github.com/antfu/live-draw
-
+        microseconds, us
+std::chrono::microseconds has_tag_delete_time = std::chrono::microseconds::zero();
+auto d_t0 = std::chrono::steady_clock::now();
+// do something
+auto d_t1 = std::chrono::steady_clo...
       
     
   </div>
@@ -2671,24 +2670,20 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-01-15T17:35:10+08:00">2023-01-15</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-03-09T10:41:39+08:00">2023-03-09</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/tool/">tool</a><span class="sep"></span><a class="category-link" href="/categories/tool/windows/">windows</a>
+          <a class="category-link" href="/categories/c/">c++</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/tool/" itemprop="url"><span itemprop="name">tool</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/tool/windows/" itemprop="url"><span itemprop="name">windows</span></a>
+              <a href="/categories/c/" itemprop="url"><span itemprop="name">c++</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/01/15/windows%E5%AE%9E%E6%97%B6%E7%BB%98%E5%9B%BE%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90-live-draw/' itemprop="url">
+          <a class='readmore' href='/2023/03/09/c-%E6%97%B6%E9%97%B4%E6%B5%8B%E9%87%8F-chrono/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2702,9 +2697,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
       
         
+      
+        
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/15/tex文献引用/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/08/少用vector-vector/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2722,23 +2719,16 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/01/15/tex%E6%96%87%E7%8C%AE%E5%BC%95%E7%94%A8/"  itemprop="url">
-        tex文献引用
+      <a href="/2023/03/08/%E5%B0%91%E7%94%A8vector-vector/"  itemprop="url">
+        少用vector<vector>
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        举例main.tex指定引用所在文件和引用样式
-\documentclass&#123;article&#125;
+        massif分析实践表明，vector&lt;vector&lt;builtin-type&gt;&gt;要比CSR 两个vector&lt;builtin-type&gt;占用的内存大很多，尤其当nbrs部分和offset部分仅2、3倍的时候，vector&lt;vector&gt;的第一层vector开销的内存甚至可以占第二层vector的3倍
 
-\begin&#123;document&#125;
- 
-\bibliographystyle&#123;ACM-Reference-Format&#125;
-\bibliography&#123;main&#125; % 引用在文件/main.bib中
-
-... are e...
       
     
   </div>
@@ -2746,20 +2736,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-01-15T11:35:36+08:00">2023-01-15</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/paper/">paper</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/paper/" itemprop="url"><span itemprop="name">paper</span></a>
-            </span>
-          
+        <time itemprop="dateCreated datePublished" datetime="2023-03-08T10:53:47+08:00">2023-03-08</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/01/15/tex%E6%96%87%E7%8C%AE%E5%BC%95%E7%94%A8/' itemprop="url">
+          <a class='readmore' href='/2023/03/08/%E5%B0%91%E7%94%A8vector-vector/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2773,9 +2755,15 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
       
         
+      
+        
+      
+        
+      
+        
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/15/使用默认pypi源出现连接超时/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/05/profile-memory-takeup-测量程序内存占用/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2793,22 +2781,17 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/01/15/%E4%BD%BF%E7%94%A8%E9%BB%98%E8%AE%A4pypi%E6%BA%90%E5%87%BA%E7%8E%B0%E8%BF%9E%E6%8E%A5%E8%B6%85%E6%97%B6/"  itemprop="url">
-        使用默认pypi源出现连接超时
+      <a href="/2023/03/05/profile-memory-takeup-%E6%B5%8B%E9%87%8F%E7%A8%8B%E5%BA%8F%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8/"  itemprop="url">
+        profile memory takeup 测量程序内存占用
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        https://cloud.tencent.com/developer/article/1354614
-报错：
-&#39;Connection to pypi.python.org timed out. (connect timeout=15)&#39;)&#39;
+        内存占用峰值：time -f$ /usr/bin/time -f &quot;%M KB&quot; &lt;command_and_args&gt;
 
-原因：采用了默认的pypi源(国外的pypi源)，出现连接超时问题
-解决办法
-国内常用的pypi源如下：
-阿里云 http:...
+注意给time传递参数的时候，bash user需要给定time的绝对路径time -f ... ...会报错-f: command not found，这实际上uses an internal version of time, provi...
       
     
   </div>
@@ -2816,20 +2799,20 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-01-15T10:39:15+08:00">2023-01-15</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-03-05T16:21:05+08:00">2023-03-05</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/python/">python</a>
+          <a class="category-link" href="/categories/tools/">tools</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/python/" itemprop="url"><span itemprop="name">python</span></a>
+              <a href="/categories/tools/" itemprop="url"><span itemprop="name">tools</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/01/15/%E4%BD%BF%E7%94%A8%E9%BB%98%E8%AE%A4pypi%E6%BA%90%E5%87%BA%E7%8E%B0%E8%BF%9E%E6%8E%A5%E8%B6%85%E6%97%B6/' itemprop="url">
+          <a class='readmore' href='/2023/03/05/profile-memory-takeup-%E6%B5%8B%E9%87%8F%E7%A8%8B%E5%BA%8F%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2844,141 +2827,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         
       
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/15/tex作图TikZ/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-    <meta itemprop="description" content="grapher">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/01/15/tex%E4%BD%9C%E5%9B%BETikZ/"  itemprop="url">
-        tex作图TikZ
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        https://www.overleaf.com/learn/latex/TikZ_package主要是面向画图论的图
-单文件和语法举例\node和\draw后面的[]中传入样式参数\begin&#123;tikzpicture&#125;后面的[]中也是传参，定义这个画图环境中的一些变量
-1\documentclass&#123;article&#125;
-\usepackage&#123...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-01-15T09:40:02+08:00">2023-01-15</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/paper/">paper</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/paper/" itemprop="url"><span itemprop="name">paper</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/01/15/tex%E4%BD%9C%E5%9B%BETikZ/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/15/tex伪代码/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-    <meta itemprop="description" content="grapher">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/01/15/tex%E4%BC%AA%E4%BB%A3%E7%A0%81/"  itemprop="url">
-        tex伪代码
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        比特操作\mathbin&#123;\&amp;&#125; % and
-\mathbin&#123;|&#125; % or
-\ll % shift left
-\gg % shift right
-\ensuremath&#123;\mathord&#123;\sim&#125;&#125; % not
-
-伪代码举例文档参考：https://www.overleaf.com/learn/la...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-01-15T09:38:45+08:00">2023-01-15</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/paper/">paper</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/paper/" itemprop="url"><span itemprop="name">paper</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/01/15/tex%E4%BC%AA%E4%BB%A3%E7%A0%81/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
         
       
         
@@ -2997,7 +2845,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           </a>
         
         <p class="current">
-          19 / 39
+          19 / 44
         </p>
         
           <a class="next" rel="next" href="/page/20/">
@@ -3185,6 +3033,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             ><div class='name'>java</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box"
+            title="/categories/leetcode/" href="/categories/leetcode/"
+            active-action="action-categoriesleetcode"
+            ><div class='name'>leetcode</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box"
             title="/categories/linux/" href="/categories/linux/"
             active-action="action-categorieslinux"
             ><div class='name'>linux</div><div class='badge'>(1)</div></a></li>
@@ -3287,7 +3140,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-      <a href="/tags/GPU/" style="font-size: 15.11px; color: #919191">GPU</a> <a href="/tags/ML/" style="font-size: 14px; color: #999">ML</a> <a href="/tags/SIMD/" style="font-size: 17.33px; color: #828282">SIMD</a> <a href="/tags/bash/" style="font-size: 21.78px; color: #646464">bash</a> <a href="/tags/c/" style="font-size: 22.89px; color: #5d5d5d">c++</a> <a href="/tags/concurrency/" style="font-size: 20.67px; color: #6c6c6c">concurrency</a> <a href="/tags/git/" style="font-size: 14px; color: #999">git</a> <a href="/tags/graph/" style="font-size: 19.56px; color: #737373">graph</a> <a href="/tags/halo/" style="font-size: 16.22px; color: #8a8a8a">halo</a> <a href="/tags/hexo/" style="font-size: 15.11px; color: #919191">hexo</a> <a href="/tags/linux/" style="font-size: 24px; color: #555">linux</a> <a href="/tags/python/" style="font-size: 18.44px; color: #7b7b7b">python</a> <a href="/tags/rocksdb/" style="font-size: 16.22px; color: #8a8a8a">rocksdb</a> <a href="/tags/rust/" style="font-size: 19.56px; color: #737373">rust</a> <a href="/tags/tex/" style="font-size: 18.44px; color: #7b7b7b">tex</a> <a href="/tags/tool/" style="font-size: 14px; color: #999">tool</a> <a href="/tags/%E6%A6%82%E7%BB%9F/" style="font-size: 17.33px; color: #828282">概统</a>
+      <a href="/tags/GPU/" style="font-size: 15.11px; color: #919191">GPU</a> <a href="/tags/ML/" style="font-size: 14px; color: #999">ML</a> <a href="/tags/SIMD/" style="font-size: 17.33px; color: #828282">SIMD</a> <a href="/tags/bash/" style="font-size: 21.78px; color: #646464">bash</a> <a href="/tags/c/" style="font-size: 22.89px; color: #5d5d5d">c++</a> <a href="/tags/concurrency/" style="font-size: 20.67px; color: #6c6c6c">concurrency</a> <a href="/tags/git/" style="font-size: 14px; color: #999">git</a> <a href="/tags/graph/" style="font-size: 19.56px; color: #737373">graph</a> <a href="/tags/halo/" style="font-size: 16.22px; color: #8a8a8a">halo</a> <a href="/tags/hexo/" style="font-size: 15.11px; color: #919191">hexo</a> <a href="/tags/leetcode/" style="font-size: 18.44px; color: #7b7b7b">leetcode</a> <a href="/tags/leetcode-binary-tree/" style="font-size: 14px; color: #999">leetcode-binary-tree</a> <a href="/tags/leetcode-bit-trick/" style="font-size: 14px; color: #999">leetcode-bit-trick</a> <a href="/tags/leetcode-brain-teaser/" style="font-size: 15.11px; color: #919191">leetcode-brain-teaser</a> <a href="/tags/leetcode-easy/" style="font-size: 18.44px; color: #7b7b7b">leetcode-easy</a> <a href="/tags/leetcode-string/" style="font-size: 14px; color: #999">leetcode-string</a> <a href="/tags/linux/" style="font-size: 24px; color: #555">linux</a> <a href="/tags/python/" style="font-size: 18.44px; color: #7b7b7b">python</a> <a href="/tags/rocksdb/" style="font-size: 16.22px; color: #8a8a8a">rocksdb</a> <a href="/tags/rust/" style="font-size: 19.56px; color: #737373">rust</a> <a href="/tags/tex/" style="font-size: 18.44px; color: #7b7b7b">tex</a> <a href="/tags/tool/" style="font-size: 14px; color: #999">tool</a> <a href="/tags/%E6%A6%82%E7%BB%9F/" style="font-size: 17.33px; color: #828282">概统</a>
     </div>
   </section>
 

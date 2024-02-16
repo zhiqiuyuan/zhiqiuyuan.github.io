@@ -1,0 +1,4828 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/#6.0.0-alpha.1'>
+  <meta name="generator" content="Hexo 6.3.0">
+  <meta name="Volantis" content="6.0.0-alpha.1">
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+  <link rel="canonical" href="http://example.com/2024/01/03/lmdb接口学习/"/>
+  <!-- 渲染优化 -->
+    <meta http-equiv='x-dns-prefetch-control' content='on' />
+      <link rel='dns-prefetch' href='https://unpkg.com'>
+      <link rel="preconnect" href="https://unpkg.com" crossorigin>
+      <link rel='dns-prefetch' href='https://cdn.bootcdn.net'>
+      <link rel="preconnect" href="https://cdn.bootcdn.net" crossorigin>
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Content-Security-Policy" content=" default-src 'self' https:; block-all-mixed-content; base-uri 'self' https:; form-action 'self' https:; worker-src 'self' https:; connect-src 'self' https: *; img-src 'self' data: https: *; media-src 'self' https: *; font-src 'self' data: https: *; frame-src 'self' https: *; manifest-src 'self' https: *; child-src https:; script-src 'self' https: 'unsafe-inline' *; style-src 'self' https: 'unsafe-inline' *; ">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <!-- import head_begin begin -->
+  <!-- import head_begin end -->
+  <!-- Custom Files headBegin begin-->
+  
+  <!-- Custom Files headBegin end-->
+  <link rel="preload" href="/css/style.css" as="style">
+  <link rel="preload" href="https://unpkg.com/volantis-static@0.0.1660614606622/media/fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+<link rel="preload" href="https://unpkg.com/volantis-static@0.0.1660614606622/media/fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+
+  <!-- feed -->
+  <!-- 页面元数据 -->
+  <title>lmdb接口学习 - zhiqiuyuan's blog</title>
+  <meta name="keywords" content="null">
+  <meta desc name="description" content="grapher - zhiqiuyuan - zhiqiuyuan's blog">
+  
+<meta property="og:type" content="article">
+<meta property="og:title" content="lmdb接口学习">
+<meta property="og:url" content="http://example.com/2024/01/03/lmdb%E6%8E%A5%E5%8F%A3%E5%AD%A6%E4%B9%A0/index.html">
+<meta property="og:site_name" content="zhiqiuyuan&#39;s blog">
+<meta property="og:description" content="简介： http:&#x2F;&#x2F;www.lmdb.tech&#x2F;doc&#x2F; Quick Start： http:&#x2F;&#x2F;www.lmdb.tech&#x2F;doc&#x2F;starting.html 全部接口介绍： http:&#x2F;&#x2F;www.lmdb.tech&#x2F;doc&#x2F;group__mdb.html The entire database is exposed in a memory map, and all data fetches">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+<meta property="article:published_time" content="2024-01-03T12:01:10.000Z">
+<meta property="article:modified_time" content="2024-01-19T08:48:04.000Z">
+<meta property="article:author" content="zhiqiuyuan">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+  <style>
+    /* 首屏样式 */
+    #safearea {
+  display: none;
+}
+:root {
+  --color-site-body: #f4f4f4;
+  --color-site-bg: #f4f4f4;
+  --color-site-inner: #fff;
+  --color-site-footer: #666;
+  --color-card: #fff;
+  --color-text: #444;
+  --color-block: #f6f6f6;
+  --color-inlinecode: #c74f00;
+  --color-codeblock: #fff7ea;
+  --color-h1: #3a3a3a;
+  --color-h2: #3a3a3a;
+  --color-h3: #333;
+  --color-h4: #444;
+  --color-h5: #555;
+  --color-h6: #666;
+  --color-p: #444;
+  --color-list: #666;
+  --color-list-hl: #30ad91;
+  --color-meta: #888;
+  --color-read-bkg: #e0d8c8;
+  --color-read-post: #f8f1e2;
+  --color-copyright-bkg: #f5f5f5;
+}
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  outline: none;
+  margin: 0;
+  padding: 0;
+}
+*::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;
+}
+*::-webkit-scrollbar-track-piece {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background: #3dd9b6;
+  cursor: pointer;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: #ff5722;
+}
+html {
+  color: var(--color-text);
+  width: 100%;
+  height: 100%;
+  font-family: UbuntuMono, "Varela Round", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Menlo, Monaco, monospace, sans-serif;
+  font-size: 16px;
+}
+html >::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;
+}
+html >::-webkit-scrollbar-track-piece {
+  background: transparent;
+}
+html >::-webkit-scrollbar-thumb {
+  background: #3dd9b6;
+  cursor: pointer;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+}
+html >::-webkit-scrollbar-thumb:hover {
+  background: #ff5722;
+}
+body {
+  background-color: var(--color-site-body);
+  text-rendering: optimizelegibility;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+body.modal-active {
+  overflow: hidden;
+}
+@media screen and (max-width: 680px) {
+  body.modal-active {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+a {
+  color: #2092ec;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+}
+a:hover {
+  color: #ff5722;
+}
+a:active,
+a:hover {
+  outline: 0;
+}
+ul,
+ol {
+  padding-left: 0;
+}
+ul li,
+ol li {
+  list-style: none;
+}
+header {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+}
+img {
+  border: 0;
+  background: none;
+  max-width: 100%;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  height: 0;
+  border: 0;
+  border-radius: 1px;
+  -webkit-border-radius: 1px;
+  border-bottom: 1px solid rgba(68,68,68,0.1);
+}
+button,
+input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+button {
+  overflow: visible;
+  text-transform: none;
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+@supports (backdrop-filter: blur(20px)) {
+  .blur {
+    background: rgba(255,255,255,0.9) !important;
+    backdrop-filter: saturate(200%) blur(20px);
+  }
+}
+.shadow {
+  box-shadow: 0 1px 2px 0px rgba(0,0,0,0.1);
+  -webkit-box-shadow: 0 1px 2px 0px rgba(0,0,0,0.1);
+}
+.shadow.floatable {
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+}
+.shadow.floatable:hover {
+  box-shadow: 0 2px 4px 0px rgba(0,0,0,0.1), 0 4px 8px 0px rgba(0,0,0,0.1), 0 8px 16px 0px rgba(0,0,0,0.1);
+  -webkit-box-shadow: 0 2px 4px 0px rgba(0,0,0,0.1), 0 4px 8px 0px rgba(0,0,0,0.1), 0 8px 16px 0px rgba(0,0,0,0.1);
+}
+#l_cover {
+  min-height: 64px;
+}
+.cover-wrapper {
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  height: 100vh;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  flex-wrap: nowrap;
+  -webkit-flex-wrap: nowrap;
+  -khtml-flex-wrap: nowrap;
+  -moz-flex-wrap: nowrap;
+  -o-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+  color: var(--color-site-inner);
+  padding: 0 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: -100px;
+}
+.cover-wrapper .cover-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+}
+.cover-wrapper .cover-bg.lazyload:not(.loaded) {
+  opacity: 0;
+  -webkit-opacity: 0;
+  -moz-opacity: 0;
+}
+.cover-wrapper .cover-bg.lazyload.loaded {
+  animation-delay: 0s;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+  animation-name: fadeIn;
+}
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    filter: blur(12px);
+    transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+    -khtml-transform: scale(1.02);
+    -moz-transform: scale(1.02);
+    -o-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    filter: blur(12px);
+    transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+    -khtml-transform: scale(1.02);
+    -moz-transform: scale(1.02);
+    -o-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    filter: blur(12px);
+    transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+    -khtml-transform: scale(1.02);
+    -moz-transform: scale(1.02);
+    -o-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    filter: blur(12px);
+    transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+    -khtml-transform: scale(1.02);
+    -moz-transform: scale(1.02);
+    -o-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+.cover-wrapper .cover-body {
+  z-index: 1;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.cover-wrapper#full {
+  height: calc(100vh + 100px);
+  padding-bottom: 100px;
+}
+.cover-wrapper#half {
+  max-height: 640px;
+  min-height: 400px;
+  height: calc(36vh - 64px + 200px);
+}
+.cover-wrapper #scroll-down {
+  width: 100%;
+  height: 64px;
+  position: absolute;
+  bottom: 100px;
+  text-align: center;
+  cursor: pointer;
+}
+.cover-wrapper #scroll-down .scroll-down-effects {
+  color: #fff;
+  font-size: 24px;
+  line-height: 64px;
+  position: absolute;
+  width: 24px;
+  left: calc(50% - 12px);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  animation: scroll-down-effect 1.5s infinite;
+  -webkit-animation: scroll-down-effect 1.5s infinite;
+  -khtml-animation: scroll-down-effect 1.5s infinite;
+  -moz-animation: scroll-down-effect 1.5s infinite;
+  -o-animation: scroll-down-effect 1.5s infinite;
+  -ms-animation: scroll-down-effect 1.5s infinite;
+}
+@-moz-keyframes scroll-down-effect {
+  0% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+  50% {
+    top: -16px;
+    opacity: 0.4;
+    -webkit-opacity: 0.4;
+    -moz-opacity: 0.4;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@-webkit-keyframes scroll-down-effect {
+  0% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+  50% {
+    top: -16px;
+    opacity: 0.4;
+    -webkit-opacity: 0.4;
+    -moz-opacity: 0.4;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@-o-keyframes scroll-down-effect {
+  0% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+  50% {
+    top: -16px;
+    opacity: 0.4;
+    -webkit-opacity: 0.4;
+    -moz-opacity: 0.4;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@keyframes scroll-down-effect {
+  0% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+  50% {
+    top: -16px;
+    opacity: 0.4;
+    -webkit-opacity: 0.4;
+    -moz-opacity: 0.4;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+.cover-wrapper .cover-body {
+  margin-top: 64px;
+  margin-bottom: 100px;
+}
+.cover-wrapper .cover-body,
+.cover-wrapper .cover-body .top,
+.cover-wrapper .cover-body .bottom {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  -webkit-justify-content: center;
+  -khtml-justify-content: center;
+  -moz-justify-content: center;
+  -o-justify-content: center;
+  -ms-justify-content: center;
+  max-width: 100%;
+}
+.cover-wrapper .cover-body .bottom {
+  margin-top: 32px;
+}
+.cover-wrapper .cover-body .title {
+  font-family: "Varela Round", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Helvetica, monospace;
+  font-size: 3.125rem;
+  line-height: 1.2;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+.cover-wrapper .cover-body .subtitle {
+  font-size: 20px;
+}
+.cover-wrapper .cover-body .logo {
+  max-height: 120px;
+  max-width: calc(100% - 4 * 16px);
+}
+@media screen and (min-height: 1024px) {
+  .cover-wrapper .cover-body .title {
+    font-size: 3rem;
+  }
+  .cover-wrapper .cover-body .subtitle {
+    font-size: 1.05rem;
+  }
+  .cover-wrapper .cover-body .logo {
+    max-height: 150px;
+  }
+}
+.cover-wrapper .cover-body .m_search {
+  position: relative;
+  max-width: calc(100% - 16px);
+  width: 320px;
+  vertical-align: middle;
+}
+.cover-wrapper .cover-body .m_search .form {
+  position: relative;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+  width: 100%;
+}
+.cover-wrapper .cover-body .m_search .icon,
+.cover-wrapper .cover-body .m_search .input {
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+}
+.cover-wrapper .cover-body .m_search .icon {
+  position: absolute;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+  line-height: 2.5rem;
+  width: 32px;
+  top: 0;
+  left: 5px;
+  color: rgba(68,68,68,0.75);
+}
+.cover-wrapper .cover-body .m_search .input {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+  height: 2.5rem;
+  width: 100%;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  font-size: 0.875rem;
+  -webkit-appearance: none;
+  padding-left: 36px;
+  border-radius: 1.4rem;
+  -webkit-border-radius: 1.4rem;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(10px);
+  border: none;
+  color: var(--color-text);
+}
+@media screen and (max-width: 500px) {
+  .cover-wrapper .cover-body .m_search .input {
+    padding-left: 36px;
+  }
+}
+.cover-wrapper .cover-body .m_search .input:hover {
+  background: rgba(255,255,255,0.8);
+}
+.cover-wrapper .cover-body .m_search .input:focus {
+  background: #fff;
+}
+.cover-wrapper .list-h {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -khtml-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -o-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  align-items: stretch;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+.cover-wrapper .list-h a {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -webkit-flex: 1 0;
+  -ms-flex: 1 0;
+  flex: 1 0;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  font-weight: 600;
+}
+.cover-wrapper .list-h a img {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  margin: 4px;
+  min-width: 40px;
+  max-width: 44px;
+}
+@media screen and (max-width: 768px) {
+  .cover-wrapper .list-h a img {
+    min-width: 36px;
+    max-width: 40px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .cover-wrapper .list-h a img {
+    margin: 2px 4px;
+    min-width: 32px;
+    max-width: 36px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .cover-wrapper .list-h a img {
+    min-width: 28px;
+    max-width: 32px;
+  }
+}
+.cover-wrapper {
+  max-width: 100%;
+}
+.cover-wrapper.search .bottom .menu {
+  margin-top: 16px;
+}
+.cover-wrapper.search .bottom .menu .list-h a {
+  white-space: nowrap;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  align-items: baseline;
+  padding: 2px;
+  margin: 4px;
+  color: var(--color-site-inner);
+  opacity: 0.75;
+  -webkit-opacity: 0.75;
+  -moz-opacity: 0.75;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  border-bottom: 2px solid transparent;
+}
+.cover-wrapper.search .bottom .menu .list-h a i {
+  margin-right: 4px;
+}
+.cover-wrapper.search .bottom .menu .list-h a p {
+  font-size: 0.9375rem;
+}
+.cover-wrapper.search .bottom .menu .list-h a:hover,
+.cover-wrapper.search .bottom .menu .list-h a.active,
+.cover-wrapper.search .bottom .menu .list-h a:active {
+  opacity: 1;
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  border-bottom: 2px solid var(--color-site-inner);
+}
+.cover-wrapper.dock .menu,
+.cover-wrapper.featured .menu,
+.cover-wrapper.focus .menu {
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+}
+.cover-wrapper.dock .menu .list-h a,
+.cover-wrapper.featured .menu .list-h a,
+.cover-wrapper.focus .menu .list-h a {
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px;
+  line-height: 24px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-bottom: none;
+  text-align: center;
+  align-content: flex-end;
+  color: rgba(68,68,68,0.7);
+  font-size: 1.5rem;
+}
+@media screen and (max-width: 500px) {
+  .cover-wrapper.dock .menu .list-h a,
+  .cover-wrapper.featured .menu .list-h a,
+  .cover-wrapper.focus .menu .list-h a {
+    padding: 12px 8px;
+  }
+}
+.cover-wrapper.dock .menu .list-h a i,
+.cover-wrapper.featured .menu .list-h a i,
+.cover-wrapper.focus .menu .list-h a i {
+  margin: 8px;
+}
+.cover-wrapper.dock .menu .list-h a p,
+.cover-wrapper.featured .menu .list-h a p,
+.cover-wrapper.focus .menu .list-h a p {
+  font-size: 0.875rem;
+}
+.cover-wrapper.dock .menu .list-h a.active,
+.cover-wrapper.featured .menu .list-h a.active,
+.cover-wrapper.focus .menu .list-h a.active {
+  background: var(--color-card);
+  backdrop-filter: none;
+}
+.cover-wrapper.dock .menu .list-h a.active i,
+.cover-wrapper.featured .menu .list-h a.active i,
+.cover-wrapper.focus .menu .list-h a.active i,
+.cover-wrapper.dock .menu .list-h a.active i+p,
+.cover-wrapper.featured .menu .list-h a.active i+p,
+.cover-wrapper.focus .menu .list-h a.active i+p {
+  color: #3dd9b6;
+}
+.cover-wrapper.dock .menu .list-h a.active img+p,
+.cover-wrapper.featured .menu .list-h a.active img+p,
+.cover-wrapper.focus .menu .list-h a.active img+p {
+  color: var(--color-text);
+}
+.cover-wrapper.dock .menu .list-h a:hover,
+.cover-wrapper.featured .menu .list-h a:hover,
+.cover-wrapper.focus .menu .list-h a:hover {
+  background: var(--color-card);
+}
+.cover-wrapper.dock .top {
+  margin-bottom: 48px;
+}
+.cover-wrapper.dock .menu {
+  background: rgba(255,255,255,0.5);
+  position: absolute;
+  bottom: 0;
+  max-width: 100%;
+}
+.cover-wrapper.dock .menu .list-h {
+  flex-wrap: nowrap;
+  -webkit-flex-wrap: nowrap;
+  -khtml-flex-wrap: nowrap;
+  -moz-flex-wrap: nowrap;
+  -o-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  margin: 4px;
+}
+.cover-wrapper.dock .menu .list-h a+a {
+  margin-left: 4px;
+}
+@media screen and (max-width: 500px) {
+  .cover-wrapper.dock .menu .list-h {
+    overflow-x: scroll;
+  }
+  .cover-wrapper.dock .menu .list-h::-webkit-scrollbar {
+    height: 0;
+    width: 0;
+  }
+  .cover-wrapper.dock .menu .list-h::-webkit-scrollbar-track-piece {
+    background: transparent;
+  }
+  .cover-wrapper.dock .menu .list-h::-webkit-scrollbar-thumb {
+    background: #3dd9b6;
+    cursor: pointer;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+  }
+  .cover-wrapper.dock .menu .list-h::-webkit-scrollbar-thumb:hover {
+    background: #ff5722;
+  }
+}
+@supports (backdrop-filter: blur(20px)) {
+  .cover-wrapper.dock .menu {
+    background: rgba(255,255,255,0.5);
+    backdrop-filter: saturate(200%) blur(20px);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-mode: 'dark';
+  }
+  :root:not([color-scheme]) {
+    --color-site-body: #121212;
+    --color-read-bkg: #1f1f1f;
+    --color-read-post: #262626;
+    --color-site-bg: #1f1f1f;
+    --color-site-inner: rgba(238,238,238,0.871);
+    --color-site-footer: rgba(170,170,170,0.871);
+    --color-card: #262626;
+    --color-text: rgba(238,238,238,0.871);
+    --color-block: #434343;
+    --color-codeblock: #1f1f1f;
+    --color-inlinecode: #d56d28;
+    --color-h1: rgba(255,255,255,0.871);
+    --color-h2: rgba(255,255,255,0.871);
+    --color-h3: rgba(255,255,255,0.6);
+    --color-h4: rgba(255,255,255,0.6);
+    --color-h5: rgba(255,255,255,0.6);
+    --color-h6: rgba(255,255,255,0.6);
+    --color-p: rgba(217,217,217,0.871);
+    --color-list: rgba(217,217,217,0.871);
+    --color-list-hl: #63e0c4;
+    --color-meta: rgba(191,191,191,0.871);
+    --color-link: rgba(191,191,191,0.871);
+    --color-copyright-bkg: #21252b;
+  }
+  :root:not([color-scheme]) img {
+    filter: brightness(70%) !important;
+  }
+  :root:not([color-scheme]) .blur {
+    background: rgba(31,31,31,0.9) !important;
+  }
+  :root:not([color-scheme]) .white-box.blur {
+    background: rgba(38,38,38,0.9) !important;
+  }
+  :root:not([color-scheme]) .nav-main .u-search-input {
+    background: var(--color-card) !important;
+  }
+  :root:not([color-scheme]) #l_main .article .prev-next>a {
+    background: var(--color-block) !important;
+  }
+  :root:not([color-scheme]) #l_main .article .prev-next>a:hover {
+    background: var(--color-site-bg) !important;
+  }
+  :root:not([color-scheme]) .article blockquote {
+    background: var(--color-block) !important;
+  }
+  :root:not([color-scheme]) .article-title a {
+    color: var(--color-h1) !important;
+  }
+  :root:not([color-scheme]) details>summary {
+    color: var(--color-p) !important;
+    background: var(--color-site-bg) !important;
+  }
+  :root:not([color-scheme]) details {
+    border: 1px solid var(--color-site-bg) !important;
+    background: var(--color-site-bg) !important;
+  }
+  :root:not([color-scheme]) #u-search .modal,
+  :root:not([color-scheme]) #u-search .modal-header,
+  :root:not([color-scheme]) #u-search .modal-body {
+    background: var(--color-card) !important;
+  }
+  :root:not([color-scheme]) #u-search .modal-body .modal-results .result:hover {
+    background: var(--color-block) !important;
+  }
+  :root:not([color-scheme]) .u-search-input:hover {
+    background: var(--color-block) !important;
+  }
+  :root:not([color-scheme]) .u-search-input:focus {
+    background: var(--color-site-body) !important;
+  }
+}
+[color-scheme='dark'] {
+  --color-site-body: #121212;
+  --color-read-bkg: #1f1f1f;
+  --color-read-post: #262626;
+  --color-site-bg: #1f1f1f;
+  --color-site-inner: rgba(238,238,238,0.871);
+  --color-site-footer: rgba(170,170,170,0.871);
+  --color-card: #262626;
+  --color-text: rgba(238,238,238,0.871);
+  --color-block: #434343;
+  --color-codeblock: #1f1f1f;
+  --color-inlinecode: #d56d28;
+  --color-h1: rgba(255,255,255,0.871);
+  --color-h2: rgba(255,255,255,0.871);
+  --color-h3: rgba(255,255,255,0.6);
+  --color-h4: rgba(255,255,255,0.6);
+  --color-h5: rgba(255,255,255,0.6);
+  --color-h6: rgba(255,255,255,0.6);
+  --color-p: rgba(217,217,217,0.871);
+  --color-list: rgba(217,217,217,0.871);
+  --color-list-hl: #63e0c4;
+  --color-meta: rgba(191,191,191,0.871);
+  --color-link: rgba(191,191,191,0.871);
+  --color-copyright-bkg: #21252b;
+}
+[color-scheme='dark'] img {
+  filter: brightness(70%) !important;
+}
+[color-scheme='dark'] .blur {
+  background: rgba(31,31,31,0.9) !important;
+}
+[color-scheme='dark'] .white-box.blur {
+  background: rgba(38,38,38,0.9) !important;
+}
+[color-scheme='dark'] .nav-main .u-search-input {
+  background: var(--color-card) !important;
+}
+[color-scheme='dark'] #l_main .article .prev-next>a {
+  background: var(--color-block) !important;
+}
+[color-scheme='dark'] #l_main .article .prev-next>a:hover {
+  background: var(--color-site-bg) !important;
+}
+[color-scheme='dark'] .article blockquote {
+  background: var(--color-block) !important;
+}
+[color-scheme='dark'] .article-title a {
+  color: var(--color-h1) !important;
+}
+[color-scheme='dark'] details>summary {
+  color: var(--color-p) !important;
+  background: var(--color-site-bg) !important;
+}
+[color-scheme='dark'] details {
+  border: 1px solid var(--color-site-bg) !important;
+  background: var(--color-site-bg) !important;
+}
+[color-scheme='dark'] #u-search .modal,
+[color-scheme='dark'] #u-search .modal-header,
+[color-scheme='dark'] #u-search .modal-body {
+  background: var(--color-card) !important;
+}
+[color-scheme='dark'] #u-search .modal-body .modal-results .result:hover {
+  background: var(--color-block) !important;
+}
+[color-scheme='dark'] .u-search-input:hover {
+  background: var(--color-block) !important;
+}
+[color-scheme='dark'] .u-search-input:focus {
+  background: var(--color-site-body) !important;
+}
+@media screen and (max-width: 500px) {
+  [color-scheme='dark'] .l_header .m_search {
+    background: var(--color-site-bg) !important;
+  }
+}
+@font-face {
+  font-family: 'UbuntuMono';
+  src: url("https://unpkg.com/volantis-static@0.0.1660614606622/media/fonts/UbuntuMono/UbuntuMono-Regular.ttf");
+  font-weight: 'normal';
+  font-style: 'normal';
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Varela Round';
+  src: url("https://unpkg.com/volantis-static@0.0.1660614606622/media/fonts/VarelaRound/VarelaRound-Regular.ttf");
+  font-weight: 'normal';
+  font-style: 'normal';
+  font-display: swap;
+}
+.l_header {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  width: 100%;
+  height: 64px;
+  background: var(--color-card);
+  box-shadow: 0 1px 2px 0px rgba(0,0,0,0.1);
+  -webkit-box-shadow: 0 1px 2px 0px rgba(0,0,0,0.1);
+}
+.l_header.auto {
+  transition: opacity 0.4s ease;
+  -webkit-transition: opacity 0.4s ease;
+  -khtml-transition: opacity 0.4s ease;
+  -moz-transition: opacity 0.4s ease;
+  -o-transition: opacity 0.4s ease;
+  -ms-transition: opacity 0.4s ease;
+  visibility: hidden;
+}
+.l_header.auto.show {
+  opacity: 1 !important;
+  -webkit-opacity: 1 !important;
+  -moz-opacity: 1 !important;
+  visibility: visible;
+}
+.l_header .container {
+  margin-left: 16px;
+  margin-right: 16px;
+}
+.l_header #wrapper {
+  height: 100%;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+.l_header #wrapper .nav-main,
+.l_header #wrapper .nav-sub {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  flex-wrap: nowrap;
+  -webkit-flex-wrap: nowrap;
+  -khtml-flex-wrap: nowrap;
+  -moz-flex-wrap: nowrap;
+  -o-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+  -khtml-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -o-justify-content: space-between;
+  -ms-justify-content: space-between;
+  align-items: center;
+}
+.l_header #wrapper .nav-main {
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+}
+.l_header #wrapper.sub .nav-main {
+  transform: translateY(-64px);
+  -webkit-transform: translateY(-64px);
+  -khtml-transform: translateY(-64px);
+  -moz-transform: translateY(-64px);
+  -o-transform: translateY(-64px);
+  -ms-transform: translateY(-64px);
+}
+.l_header #wrapper .nav-sub {
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+  opacity: 0;
+  -webkit-opacity: 0;
+  -moz-opacity: 0;
+  height: 64px;
+  width: calc(100% - 2 * 16px);
+  position: absolute;
+}
+.l_header #wrapper .nav-sub ::-webkit-scrollbar {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: none;
+}
+@media screen and (min-width: 2048px) {
+  .l_header #wrapper .nav-sub {
+    max-width: 55vw;
+    margin: auto;
+  }
+}
+.l_header #wrapper.sub .nav-sub {
+  opacity: 1;
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+}
+.l_header #wrapper .title {
+  position: relative;
+  color: var(--color-text);
+  padding-left: 24px;
+  max-height: 64px;
+}
+.l_header #wrapper .nav-main .title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 0;
+  line-height: 64px;
+  padding: 0 24px;
+  font-size: 1.25rem;
+  font-family: "Varela Round", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Helvetica, monospace;
+}
+.l_header #wrapper .nav-main .title img {
+  height: 64px;
+}
+.l_header .nav-sub {
+  max-width: 1080px;
+  margin: auto;
+}
+.l_header .nav-sub .title {
+  font-weight: bold;
+  font-family: UbuntuMono, "Varela Round", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Menlo, Monaco, monospace, sans-serif;
+  line-height: 1.2;
+  max-height: 64px;
+  white-space: normal;
+  flex-shrink: 1;
+}
+.l_header .switcher {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: none;
+  line-height: 64px;
+  align-items: center;
+}
+.l_header .switcher .s-toc {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .l_header .switcher .s-toc {
+    display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+    display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+    display: -ms-flexbox /* TWEENER - IE 10 */;
+    display: -webkit-flex /* NEW - Chrome */;
+    display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+    display: flex;
+  }
+}
+.l_header .switcher >li {
+  height: 48px;
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+  margin: 2px;
+}
+@media screen and (max-width: 500px) {
+  .l_header .switcher >li {
+    margin: 0 1px;
+    height: 48px;
+  }
+}
+.l_header .switcher >li >a {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  justify-content: center;
+  -webkit-justify-content: center;
+  -khtml-justify-content: center;
+  -moz-justify-content: center;
+  -o-justify-content: center;
+  -ms-justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  padding: 0.85em 1.1em;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  border: none;
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+  color: #3dd9b6;
+}
+.l_header .switcher >li >a:hover {
+  border: none;
+}
+.l_header .switcher >li >a.active,
+.l_header .switcher >li >a:active {
+  border: none;
+  background: var(--color-site-bg);
+}
+@media screen and (max-width: 500px) {
+  .l_header .switcher >li >a {
+    width: 36px;
+    height: 48px;
+  }
+}
+.l_header .nav-sub .switcher {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+}
+.l_header .m_search {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  height: 64px;
+  width: 240px;
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+}
+@media screen and (max-width: 1024px) {
+  .l_header .m_search {
+    width: 44px;
+    min-width: 44px;
+  }
+  .l_header .m_search input::placeholder {
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+  }
+  .l_header .m_search:hover {
+    width: 240px;
+  }
+  .l_header .m_search:hover input::placeholder {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@media screen and (min-width: 500px) {
+  .l_header .m_search:hover .input {
+    width: 100%;
+  }
+  .l_header .m_search:hover .input::placeholder {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@media screen and (max-width: 500px) {
+  .l_header .m_search {
+    min-width: 0;
+  }
+  .l_header .m_search input::placeholder {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+.l_header .m_search .form {
+  position: relative;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+.l_header .m_search .icon {
+  position: absolute;
+  width: 36px;
+  left: 5px;
+  color: var(--color-meta);
+}
+@media screen and (max-width: 500px) {
+  .l_header .m_search .icon {
+    display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+    display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+    display: none;
+  }
+}
+.l_header .m_search .input {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  line-height: 1.3;
+  width: 100%;
+  color: var(--color-text);
+  background: #fafafa;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  padding-left: 40px;
+  font-size: 0.875rem;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border: none;
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+}
+@media screen and (min-width: 500px) {
+  .l_header .m_search .input:focus {
+    box-shadow: 0 4px 8px 0px rgba(0,0,0,0.1);
+    -webkit-box-shadow: 0 4px 8px 0px rgba(0,0,0,0.1);
+  }
+}
+@media screen and (max-width: 500px) {
+  .l_header .m_search .input {
+    background: var(--color-block);
+    padding-left: 8px;
+    border: none;
+  }
+  .l_header .m_search .input:hover,
+  .l_header .m_search .input:focus {
+    border: none;
+  }
+}
+@media (max-width: 500px) {
+  .l_header .m_search {
+    left: 0;
+    width: 0;
+    overflow: hidden;
+    position: absolute;
+    background: #fff;
+    transition: all 0.28s ease;
+    -webkit-transition: all 0.28s ease;
+    -khtml-transition: all 0.28s ease;
+    -moz-transition: all 0.28s ease;
+    -o-transition: all 0.28s ease;
+    -ms-transition: all 0.28s ease;
+  }
+  .l_header .m_search .input {
+    border-radius: 32px;
+    -webkit-border-radius: 32px;
+    margin-left: 16px;
+    padding-left: 16px;
+  }
+  .l_header.z_search-open .m_search {
+    width: 100%;
+  }
+  .l_header.z_search-open .m_search .input {
+    width: calc(100% - 120px);
+  }
+}
+ul.m-pc >li>a {
+  color: inherit;
+  border-bottom: 2px solid transparent;
+}
+ul.m-pc >li>a:active,
+ul.m-pc >li>a.active {
+  border-bottom: 2px solid #3dd9b6;
+}
+ul.m-pc li:hover >ul.list-v,
+ul.list-v li:hover >ul.list-v {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+}
+ul.nav-list-h {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  align-items: stretch;
+}
+ul.nav-list-h>li {
+  position: relative;
+  justify-content: center;
+  -webkit-justify-content: center;
+  -khtml-justify-content: center;
+  -moz-justify-content: center;
+  -o-justify-content: center;
+  -ms-justify-content: center;
+  height: 100%;
+  line-height: 2.4;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+}
+ul.nav-list-h>li >a {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 600;
+}
+ul.list-v {
+  z-index: 1;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: none;
+  position: absolute;
+  background: var(--color-card);
+  box-shadow: 0 2px 4px 0px rgba(0,0,0,0.08), 0 4px 8px 0px rgba(0,0,0,0.08), 0 8px 16px 0px rgba(0,0,0,0.08);
+  -webkit-box-shadow: 0 2px 4px 0px rgba(0,0,0,0.08), 0 4px 8px 0px rgba(0,0,0,0.08), 0 8px 16px 0px rgba(0,0,0,0.08);
+  margin-top: -6px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  padding: 8px 0;
+}
+ul.list-v.show {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+}
+ul.list-v hr {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+ul.list-v >li {
+  white-space: nowrap;
+  word-break: keep-all;
+}
+ul.list-v >li.header {
+  font-size: 0.78125rem;
+  font-weight: bold;
+  line-height: 2em;
+  color: var(--color-meta);
+  margin: 8px 16px 4px;
+}
+ul.list-v >li.header i {
+  margin-right: 8px;
+}
+ul.list-v >li ul {
+  margin-left: 0;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: none;
+  margin-top: -40px;
+}
+ul.list-v .aplayer-container {
+  min-height: 64px;
+  padding: 6px 16px;
+}
+ul.list-v >li>a {
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+  color: var(--color-list);
+  font-size: 0.875rem;
+  font-weight: bold;
+  line-height: 36px;
+  padding: 0 20px 0 16px;
+  text-overflow: ellipsis;
+  margin: 0 4px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+}
+@media screen and (max-width: 1024px) {
+  ul.list-v >li>a {
+    line-height: 40px;
+  }
+}
+ul.list-v >li>a >i {
+  margin-right: 8px;
+}
+ul.list-v >li>a:active,
+ul.list-v >li>a.active {
+  color: var(--color-list-hl);
+}
+ul.list-v >li>a:hover {
+  color: var(--color-list-hl);
+  background: var(--color-site-bg);
+}
+.l_header .menu >ul>li>a {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+  padding: 0 8px;
+}
+.l_header .menu >ul>li>a >i {
+  margin-right: 4px;
+}
+.l_header ul.nav-list-h>li {
+  color: var(--color-list);
+  line-height: 64px;
+}
+.l_header ul.nav-list-h>li >a {
+  max-height: 64px;
+  overflow: hidden;
+  color: inherit;
+}
+.l_header ul.nav-list-h>li >a:active,
+.l_header ul.nav-list-h>li >a.active {
+  color: #3dd9b6;
+}
+.l_header ul.nav-list-h>li:hover>a {
+  color: var(--color-list-hl);
+}
+.l_header ul.nav-list-h>li i.music {
+  animation: rotate-effect 1.5s linear infinite;
+  -webkit-animation: rotate-effect 1.5s linear infinite;
+  -khtml-animation: rotate-effect 1.5s linear infinite;
+  -moz-animation: rotate-effect 1.5s linear infinite;
+  -o-animation: rotate-effect 1.5s linear infinite;
+  -ms-animation: rotate-effect 1.5s linear infinite;
+}
+@-moz-keyframes rotate-effect {
+  0% {
+    transform: rotate(0);
+    -webkit-transform: rotate(0);
+    -khtml-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -o-transform: rotate(0);
+    -ms-transform: rotate(0);
+  }
+  25% {
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -khtml-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -khtml-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -khtml-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -khtml-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes rotate-effect {
+  0% {
+    transform: rotate(0);
+    -webkit-transform: rotate(0);
+    -khtml-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -o-transform: rotate(0);
+    -ms-transform: rotate(0);
+  }
+  25% {
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -khtml-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -khtml-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -khtml-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -khtml-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+  }
+}
+@-o-keyframes rotate-effect {
+  0% {
+    transform: rotate(0);
+    -webkit-transform: rotate(0);
+    -khtml-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -o-transform: rotate(0);
+    -ms-transform: rotate(0);
+  }
+  25% {
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -khtml-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -khtml-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -khtml-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -khtml-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+  }
+}
+@keyframes rotate-effect {
+  0% {
+    transform: rotate(0);
+    -webkit-transform: rotate(0);
+    -khtml-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -o-transform: rotate(0);
+    -ms-transform: rotate(0);
+  }
+  25% {
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -khtml-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -khtml-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -khtml-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -khtml-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+  }
+}
+.menu-phone li ul.list-v {
+  right: calc(100% - 0.5 * 16px);
+}
+.menu-phone li ul.list-v ul {
+  right: calc(100% - 0.5 * 16px);
+}
+#wrapper {
+  max-width: 1080px;
+  margin: auto;
+}
+@media screen and (min-width: 2048px) {
+  #wrapper {
+    max-width: 55vw;
+  }
+}
+#wrapper .menu {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  margin: 0 16px 0 0;
+}
+#wrapper .menu .list-v ul {
+  left: calc(100% - 0.5 * 16px);
+}
+.menu-phone {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: none;
+  margin-top: 16px;
+  right: 8px;
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+}
+.menu-phone ul {
+  right: calc(100% - 0.5 * 16px);
+}
+@media screen and (max-width: 500px) {
+  .menu-phone {
+    display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+    display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+    display: block;
+  }
+}
+.l_header {
+  max-width: 65vw;
+  left: calc((100% - 65vw) * 0.5);
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+@media screen and (max-width: 2048px) {
+  .l_header {
+    max-width: 1112px;
+    left: calc((100% - 1112px) * 0.5);
+  }
+}
+@media screen and (max-width: 1112px) {
+  .l_header {
+    left: 0;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .l_header .container {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .l_header #wrapper .nav-main .title {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .l_header #wrapper .nav-sub {
+    width: 100%;
+  }
+  .l_header #wrapper .nav-sub .title {
+    overflow-y: scroll;
+    margin-top: 2px;
+    padding: 8px 16px;
+  }
+  .l_header #wrapper .switcher {
+    display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+    display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+    display: -ms-flexbox /* TWEENER - IE 10 */;
+    display: -webkit-flex /* NEW - Chrome */;
+    display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+    display: flex;
+    margin-right: 8px;
+  }
+  .l_header .menu {
+    display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+    display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+    display: none;
+  }
+}
+@media screen and (max-width: 500px) {
+  .list-v li {
+    max-width: 270px;
+  }
+}
+#u-search {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 60px 20px;
+  z-index: 1001;
+}
+@media screen and (max-width: 680px) {
+  #u-search {
+    padding: 0px;
+  }
+}
+@media screen and (prefers-color-scheme: dark) and (max-width: 500px) {
+  .l_header .m_search {
+    background: var(--color-site-bg) !important;
+  }
+}
+
+  </style>
+  <link rel="stylesheet" href="/css/style.css" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css"></noscript>
+    <script>
+      let userColorScheme=localStorage.getItem("color-scheme")
+      if(userColorScheme){
+        document.documentElement.setAttribute("color-scheme", userColorScheme);
+      }
+    </script>
+  
+<script>
+if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode))
+    document.write(
+	'<style>'+
+		'html{'+
+			'overflow-x: hidden !important;'+
+			'overflow-y: hidden !important;'+
+		'}'+
+		'.kill-ie{'+
+			'text-align:center;'+
+			'height: 100%;'+
+			'margin-top: 15%;'+
+			'margin-bottom: 5500%;'+
+		'}'+
+    '.kill-t{'+
+      'font-size: 2rem;'+
+    '}'+
+    '.kill-c{'+
+      'font-size: 1.2rem;'+
+    '}'+
+		'#l_header,#l_body{'+
+			'display: none;'+
+		'}'+
+	'</style>'+
+    '<div class="kill-ie">'+
+        `<span class="kill-t"><b>Sorry, your browser cannot access this site</b></span><br/>`+
+        `<span class="kill-c">Microsoft has terminated support for Internet Explorer (IE) 10 and earlier versions in 2016. <br/>There are great security risks to continue using it. Please use contemporary mainstream browsers to access.</span><br/>`+
+        `<a target="_blank" rel="noopener" href="https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/"><strong>Learn more ></strong></a>`+
+    '</div>');
+</script>
+
+
+<noscript>
+	<style>
+		html{
+			overflow-x: hidden !important;
+			overflow-y: hidden !important;
+		}
+		.kill-noscript{
+			text-align:center;
+			height: 100%;
+			margin-top: 15%;
+			margin-bottom: 5500%;
+		}
+    .kill-t{
+      font-size: 2rem;
+    }
+    .kill-c{
+      font-size: 1.2rem;
+    }
+		#l_header,#l_body{
+			display: none;
+		}
+	</style>
+    <div class="kill-noscript">
+        <span class="kill-t"><b>Sorry, your browser cannot access this site</b></span><br/>
+        <span class="kill-c">This page requires browser support (enable) JavaScript</span><br/>
+        <a target="_blank" rel="noopener" href="https://www.baidu.com/s?wd=启用JavaScript"><strong>Learn more ></strong></a>
+    </div>
+</noscript>
+
+
+  <script>
+  /************这个文件存放不需要重载的全局变量和全局函数*********/
+  window.volantis = {}; // volantis 全局变量
+  volantis.debug = "env"; // 调试模式
+  volantis.dom = {}; // 页面Dom see: /source/js/app.js etc.
+  /******************** volantis.dom.$ ********************************/
+  // 注：这里没有选择器，也没有forEach一次只处理一个dom，这里重新封装主题常用的dom方法，返回的是dom对象，对象包含了以下方法，同时保留dom的原生API
+  function volantisDom(ele) {
+    if (!ele) ele = document.createElement("div")
+    this.ele = ele;
+    // ==============================================================
+    this.ele.find = (c) => {
+      let q = this.ele.querySelector(c)
+      if (q)
+        return new volantisDom(q)
+    }
+    // ==============================================================
+    this.ele.hasClass = (c) => {
+      return this.ele.className.match(new RegExp('(\\s|^)' + c + '(\\s|$)'));
+    }
+    this.ele.addClass = (c) => {
+      this.ele.classList.add(c);
+      return this.ele
+    }
+    this.ele.removeClass = (c) => {
+      this.ele.classList.remove(c);
+      return this.ele
+    }
+    this.ele.toggleClass = (c) => {
+      if (this.ele.hasClass(c)) {
+        this.ele.removeClass(c)
+      } else {
+        this.ele.addClass(c)
+      }
+      return this.ele
+    }
+    // ==============================================================
+    this.ele.on = (c, f) => {
+      this.ele.addEventListener(c, f, false)
+      return this.ele
+    }
+    this.ele.click = (f, r) => {
+      this.ele.on("click", f, r)
+      return this.ele
+    }
+    this.ele.scroll = (f, r) => {
+      this.ele.on("scroll", f, r)
+      return this.ele
+    }
+    // ==============================================================
+    this.ele.html = (c) => {
+      // if(c=== undefined){
+      //   return this.ele.innerHTML
+      // }else{
+      this.ele.innerHTML = c
+      return this.ele
+      // }
+    }
+    // ==============================================================
+    this.ele.hide = (c) => {
+      this.ele.style.display = "none"
+      return this.ele
+    }
+    this.ele.show = (c) => {
+      this.ele.style.display = "block"
+      return this.ele
+    }
+    // ==============================================================
+    return this.ele
+  }
+  volantis.dom.$ = (ele) => {
+    return !!ele ? new volantisDom(ele) : null;
+  }
+  /******************** RunItem ********************************/
+  function RunItem() {
+    this.list = []; // 存放回调函数
+    this.start = () => {
+      for (var i = 0; i < this.list.length; i++) {
+        this.list[i].run();
+      }
+    };
+    this.push = (fn, name, setRequestAnimationFrame = true) => {
+      let myfn = fn
+      if (setRequestAnimationFrame) {
+        myfn = () => {
+          volantis.requestAnimationFrame(fn)
+        }
+      }
+      var f = new Item(myfn, name);
+      this.list.push(f);
+    };
+    this.remove = (name) => {
+      for (let index = 0; index < this.list.length; index++) {
+        const e = this.list[index];
+        if (e.name == name) {
+          this.list.splice(index, 1);
+        }
+      }
+    }
+    // 构造一个可以run的对象
+    function Item(fn, name) {
+      // 函数名称
+      this.name = name || fn.name;
+      // run方法
+      this.run = () => {
+        try {
+          fn()
+        } catch (error) {
+          console.log(error);
+        }
+      };
+    }
+  }
+  /******************** RightMenu ********************************/
+  // volantis.rightmenu.handle(callBack[,"callBackName"]) 外部菜单项控制
+  // 可在 volantis.mouseEvent 处获取右键事件
+  volantis.rightmenu = {};
+  volantis.rightmenu.method = {
+    handle: new RunItem(),
+  }
+  volantis.rightmenu = Object.assign(volantis.rightmenu, {
+    handle: volantis.rightmenu.method.handle.push,
+  });
+  /********************  Dark Mode  ********************************/
+  // /layout/_partial/scripts/darkmode.ejs
+  // volantis.dark.mode 当前模式 dark or light
+  // volantis.dark.toggle() 暗黑模式触发器
+  // volantis.dark.push(callBack[,"callBackName"]) 传入触发器回调函数
+  volantis.dark = {};
+  volantis.dark.method = {
+    toggle: new RunItem(),
+  };
+  volantis.dark = Object.assign(volantis.dark, {
+    push: volantis.dark.method.toggle.push,
+  });
+  /********************  Message  ********************************/
+  // VolantisApp.message
+  /********************  isMobile  ********************************/
+  // /source/js/app.js
+  // volantis.isMobile
+  // volantis.isMobileOld
+  /********************脚本动态加载函数********************************/
+  // volantis.js(src, cb)  cb 可以传入onload回调函数 或者 JSON对象 例如: volantis.js("src", ()=>{}) 或 volantis.js("src", {defer:true,onload:()=>{}})
+  // volantis.css(src)
+
+  // 返回Promise对象，如下方法同步加载资源，这利于处理文件资源之间的依赖关系，例如：APlayer 需要在 MetingJS 之前加载
+  // (async () => {
+  //     await volantis.js("...theme.plugins.aplayer.js.aplayer...")
+  //     await volantis.js("...theme.plugins.aplayer.js.meting...")
+  // })();
+
+  // 已经加入了setTimeout
+  volantis.js = (src, cb) => {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        var HEAD = document.getElementsByTagName("head")[0] || document.documentElement;
+        var script = document.createElement("script");
+        script.setAttribute("type", "text/javascript");
+        if (cb) {
+          if (JSON.stringify(cb)) {
+            for (let p in cb) {
+              if (p == "onload") {
+                script[p] = () => {
+                  cb[p]()
+                  resolve()
+                }
+              } else {
+                script[p] = cb[p]
+                script.onload = resolve
+              }
+            }
+          } else {
+            script.onload = () => {
+              cb()
+              resolve()
+            };
+          }
+        } else {
+          script.onload = resolve
+        }
+        script.setAttribute("src", src);
+        HEAD.appendChild(script);
+      });
+    });
+  }
+  volantis.css = (src) => {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        var link = document.createElement('link');
+        link.rel = "stylesheet";
+        link.href = src;
+        link.onload = resolve;
+        document.getElementsByTagName("head")[0].appendChild(link);
+      });
+    });
+  }
+  /********************按需加载的插件********************************/
+  // volantis.import.jQuery().then(()=>{})
+  volantis.import = {
+    jQuery: () => {
+      if (typeof jQuery == "undefined") {
+        return volantis.js("https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js")
+      } else {
+        return new Promise(resolve => {
+          resolve()
+        });
+      }
+    }
+  }
+  /********************** requestAnimationFrame ********************************/
+  // 1、requestAnimationFrame 会把每一帧中的所有 DOM 操作集中起来，在一次重绘或回流中就完成，并且重绘或回流的时间间隔紧紧跟随浏览器的刷新频率，一般来说，这个频率为每秒60帧。
+  // 2、在隐藏或不可见的元素中，requestAnimationFrame 将不会进行重绘或回流，这当然就意味着更少的的 cpu，gpu 和内存使用量。
+  volantis.requestAnimationFrame = (fn) => {
+    if (!window.requestAnimationFrame) {
+      window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame;
+    }
+    window.requestAnimationFrame(fn)
+  }
+  /************************ layoutHelper *****************************************/
+  volantis.layoutHelper = (helper, html, opt) => {
+    opt = Object.assign({ clean: false}, opt)
+    function myhelper(helper, html, clean) {
+      volantis.tempDiv = document.createElement("div");
+      volantis.tempDiv.innerHTML = html;
+      let layoutHelper = document.querySelector("#layoutHelper-" + helper)
+      if (layoutHelper) {
+        if (clean) {
+          layoutHelper.innerHTML = ""
+        }
+        layoutHelper.append(volantis.tempDiv);
+      }
+    }
+    myhelper(helper, html, opt.clean)
+  }
+  /****************************** 滚动事件处理 ****************************************/
+  volantis.scroll = {
+    engine: new RunItem(),
+    unengine: new RunItem(),
+  };
+  volantis.scroll = Object.assign(volantis.scroll, {
+    push: volantis.scroll.engine.push,
+  });
+  // 滚动条距离顶部的距离
+  volantis.scroll.getScrollTop = () => {
+    let scrollPos;
+    if (window.pageYOffset) {
+      scrollPos = window.pageYOffset;
+    } else if (document.compatMode && document.compatMode != 'BackCompat') {
+      scrollPos = document.documentElement.scrollTop;
+    } else if (document.body) {
+      scrollPos = document.body.scrollTop;
+    }
+    return scrollPos;
+  }
+  volantis.scroll.scrollHeight = function () {
+    return Math.max(
+      document.body.scrollHeight,
+      document.documentElement.scrollHeight,
+    )
+  }
+  volantis.scroll.offsetHeight = function () {
+    return Math.max(
+      document.body.offsetHeight,
+      document.documentElement.offsetHeight,
+      document.body.clientHeight,
+      document.documentElement.clientHeight
+    )
+  }
+  volantis.scroll.progress = function () {
+    return volantis.scroll.getScrollTop() / (volantis.scroll.scrollHeight() - volantis.scroll.offsetHeight())
+  }
+  // 使用 requestAnimationFrame 处理滚动事件
+  // `volantis.scroll.del` 中存储了一个数值, 该数值检测一定时间间隔内滚动条滚动的位移, 数值的检测频率是浏览器的刷新频率. 数值为正数时, 表示向下滚动. 数值为负数时, 表示向上滚动.
+  volantis.scroll.handleScrollEvents = () => {
+    volantis.scroll.lastScrollTop = volantis.scroll.getScrollTop()
+    function loop() {
+      const scrollTop = volantis.scroll.getScrollTop();
+      if (volantis.scroll.lastScrollTop !== scrollTop) {
+        volantis.scroll.del = scrollTop - volantis.scroll.lastScrollTop;
+        volantis.scroll.lastScrollTop = scrollTop;
+        // if (volantis.scroll.del > 0) {
+        //   console.log("向下滚动");
+        // } else {
+        //   console.log("向上滚动");
+        // }
+        // 注销过期的unengine未滚动事件
+        volantis.scroll.unengine.list = []
+        volantis.scroll.engine.start();
+      } else {
+        volantis.scroll.unengine.start();
+      }
+      volantis.requestAnimationFrame(loop)
+    }
+    volantis.requestAnimationFrame(loop)
+  }
+  volantis.scroll.handleScrollEvents()
+  volantis.scroll.ele = null;
+  // 触发页面滚动至目标元素位置
+  volantis.scroll.to = (ele, option = {}) => {
+    if (!ele) return;
+    volantis.scroll.ele = ele;
+    // 默认配置
+    opt = {
+      top: ele.getBoundingClientRect().top + document.documentElement.scrollTop,
+      behavior: "smooth"
+    }
+    // 定义配置
+    if ("top" in option) {
+      opt.top = option.top
+    }
+    if ("behavior" in option) {
+      opt.behavior = option.behavior
+    }
+    if ("addTop" in option) {
+      opt.top += option.addTop
+    }
+    if (!("observerDic" in option)) {
+      option.observerDic = 100
+    }
+    // 滚动
+    window.scrollTo(opt);
+    // 监视器
+    // 监视并矫正元素滚动到指定位置
+    // 用于处理 lazyload 引起的 cls 导致的定位失败问题
+    // option.observer = false
+    if (option.observer) {
+      setTimeout(() => {
+        if (volantis.scroll.ele != ele) {
+          return
+        }
+        volantis.scroll.unengine.push(() => {
+          let me = ele.getBoundingClientRect().top
+          if (!(me >= -option.observerDic && me <= option.observerDic)) {
+            volantis.scroll.to(ele, option)
+          }
+          volantis.scroll.unengine.remove("unengineObserver")
+        }, "unengineObserver")
+      }, 1000)
+    }
+  }
+  /********************** Content Visibility ********************************/
+  // 见 source/css/first.styl 如果遇到任何问题 删除 .post-story 即可
+  // 一个元素被声明 content-visibility 属性后 如果元素不在 viewport 中 浏览器不会计算其后代元素样式和属性 从而节省 Style & Layout 耗时
+  // content-visibility 的副作用: 锚点失效 等等(实验初期 暂不明确), 使用此方法清除样式
+  volantis.cleanContentVisibility = () => {
+    if (document.querySelector(".post-story")) {
+      console.log("cleanContentVisibility");
+      document.querySelectorAll(".post-story").forEach(e => {
+        e.classList.remove("post-story")
+      })
+    }
+  }
+  /******************************************************************************/
+  /******************************************************************************/
+  /******************************************************************************/
+  //图像加载出错时的处理
+  function errorImgAvatar(img) {
+    img.src = "https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg";
+    img.onerror = null;
+  }
+  function errorImgCover(img) {
+    img.src = "https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg";
+    img.onerror = null;
+  }
+  /******************************************************************************/
+</script>
+
+<script>
+  window.pdata={}
+  pdata.ispage=true;
+  pdata.commentPath="";
+  pdata.commentPlaceholder="";
+  pdata.commentConfig={};
+  volantis.GLOBAL_CONFIG ={
+    root: '/',
+    debug: "env",
+    default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
+    lastupdate: new Date(1708084958563),
+    cdn: {
+      izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
+      izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
+      fancybox_css: 'https://cdn.bootcdn.net/ajax/libs/fancyapps-ui/4.0.31/fancybox.min.css',
+      fancybox_js: 'https://cdn.bootcdn.net/ajax/libs/fancyapps-ui/4.0.31/fancybox.umd.min.js'
+    },
+    sidebar: {
+      for_page: ["blogger","category","tagcloud","donate"],
+      for_post: ["toc"],
+      webinfo: {
+        lastupd: {
+          enable: true,
+          friendlyShow: true
+        },
+        runtime: {
+          data: "2020/01/01",
+          unit: "天"
+        }
+      }
+    },
+    plugins: {
+      message: {"enable":true,"icon":{"default":"fa-solid fa-info-circle light-blue","quection":"fa-solid fa-question-circle light-blue"},"time":{"default":5000,"quection":20000},"position":"topRight","transitionIn":"bounceInLeft","transitionOut":"fadeOutRight","titleColor":"var(--color-text)","messageColor":"var(--color-text)","backgroundColor":"var(--color-card)","zindex":2147483647,"copyright":{"enable":true,"title":"知识共享许可协议","message":"请遵守 CC BY-NC-SA 4.0 协议。","icon":"far fa-copyright light-blue"},"aplayer":{"enable":true,"play":"fa-solid fa-play","pause":"fa-solid fa-pause"},"rightmenu":{"enable":true,"notice":true}},
+      
+      
+      rightmenus: {"enable":true,"order":["plugins.navigation","hr","plugins.inputBox","plugins.seletctText","plugins.elementCheck","plugins.elementImage","menus.link","hr","menus.darkMode","plugins.articlePage","music"],"options":{"iconPrefix":"fa-solid","articleShowLink":false,"musicAlwaysShow":false,"corsAnywhere":null},"plugins":{"navigation":[{"id":"left","name":"转到上一页","icon":"fa-solid fa-arrow-left","event":"history.back()","group":"navigation"},{"id":"right","name":"转到下一页","icon":"fa-solid fa-arrow-right","event":"history.forward()","group":"navigation"},{"id":"redo","name":"刷新当前页面","icon":"fa-solid fa-redo","event":"window.location.reload()","group":"navigation"},{"id":"up","name":"回到顶部","icon":"fa-solid fa-arrow-up","event":"VolantisApp.scrolltoElement(volantis.dom.bodyAnchor)","group":"navigation"}],"inputBox":[{"id":"copyPaste","name":"粘贴文本","icon":"fa-solid fa-paste","event":"copyPaste","group":"inputBox"},{"id":"copyAll","name":"全选文本","icon":"fa-solid fa-object-ungroup","event":"copyAll","group":"inputBox"},{"id":"copyCut","name":"剪切文本","icon":"fa-solid fa-cut","event":"copyCut","group":"inputBox"}],"seletctText":[{"id":"copyText","name":"复制文本","icon":"fa-solid fa-copy","event":"copyText","group":"seletctText"},{"id":"searchWord","name":"站内搜索","icon":"fa-solid fa-search","event":"OpenSearch(__text__)","group":"seletctText"},{"id":"bingSearch","name":"必应搜索","icon":"fa-solid fa-search","event":"window.open(`https://cn.bing.com/search?q=${__text__}`)","group":"seletctText"}],"elementCheck":[{"id":"openTab","name":"新标签页打开","icon":"fa-solid fa-external-link-square-alt","event":"window.open(__link__)","group":"elementCheck"},{"id":"copyLink","name":"复制链接地址","icon":"fa-solid fa-link","event":"copyLink","group":"elementCheck"}],"elementImage":[{"id":"copyImg","name":"复制图片","icon":"fa-solid fa-image","event":"copyImg","group":"elementImage"},{"id":"googleImg","name":"谷歌识图","icon":"fa-solid fa-images","event":"window.open(`https://www.google.com.hk/searchbyimage?image_url=${__link__}`)","group":"elementImage"}],"articlePage":[{"id":"printMode","name":"打印页面","icon":"fa-solid fa-print","event":"printMode","group":"articlePage"},{"id":"readMode","name":"阅读模式","icon":"fa-solid fa-book-open","event":"readMode","group":"articlePage"}]},"menus":{"link":[{"id":"help","name":"常见问题","icon":"fa-solid fa-question","link":"https://volantis.js.org/faqs/","group":"link"},{"id":"examples","name":"示例博客","icon":"fa-solid fa-rss","link":"https://volantis.js.org/examples/","group":"link"},{"id":"contributors","name":"加入社区","icon":"fa-solid fa-fan","link":"https://volantis.js.org/contributors/","group":"link"},"hr",{"id":"source_docs","name":"本站源码","icon":"fa-solid fa-code-branch","link":"https://github.com/volantis-x/volantis-docs/","group":"link"},{"id":"source_theme","name":"主题源码","icon":"fa-solid fa-code-branch","link":"https://github.com/volantis-x/hexo-theme-volantis/","group":"link"}],"darkMode":[{"id":"darkMode","name":"暗黑模式","icon":"fa-solid fa-moon","event":"volantis.dark.toggle()","group":"darkMode"}]}}
+      
+    },
+    search: {
+      
+
+      
+        dataPath: (("/" || "/").endsWith("/") ? "/" || "/" : "//" || "/") + "content.json",
+      
+
+      
+    },
+    languages: {
+      
+        search: {
+          hits_empty: "We didn't find any results for the search: ${query}.",
+          hits_stats: "${hits} results found in ${time} ms",
+        }
+      
+    }
+  }
+</script>
+  <!-- import head_end begin -->
+  <!-- import head_end end -->
+  <!-- Custom Files headEnd begin-->
+  
+  <!-- Custom Files headEnd end-->
+</head>
+  <body itemscope itemtype="http://schema.org/WebPage">
+    <!-- import body_begin begin-->
+    <!-- import body_begin end-->
+    <!-- Custom Files bodyBegin begin-->
+    
+    <!-- Custom Files bodyBegin end-->
+    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur show" style='opacity: 0' >
+  <div class='container'>
+  <div id='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h m-phone'>
+        <li><a id="s-comment" class="fa-solid fa-comments fa-fw" target="_self" title="comment"></a></li>
+        
+          <li><a id="s-toc" class="s-toc fa-solid fa-list fa-fw" target="_self" title="toc"></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+            <img no-lazy class='logo' src='/img/blog_logo-removebg-preview.png'/>
+          
+          
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h m-pc'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/" title="博客"
+                  
+                  
+                  
+                    active-action="action-home"
+                  >
+                  <i class='fa-solid fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/categories/" title="分类"
+                  
+                  
+                  
+                    active-action="action-categories"
+                  >
+                  <i class='fa-solid fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/tags/" title="标签"
+                  
+                  
+                  
+                    active-action="action-tags"
+                  >
+                  <i class='fa-solid fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/archives/" title="归档"
+                  
+                  
+                  
+                    active-action="action-archives"
+                  >
+                  <i class='fa-solid fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/writing/" title="随笔"
+                  
+                  
+                  
+                    active-action="action-writing"
+                  >
+                  <i class='fa-solid fa-info-circle fa-fw'></i>随笔
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/daily_archives/" title="日报"
+                  
+                  
+                  
+                    active-action="action-daily_archives"
+                  >
+                  <i class='fa-solid fa-link fa-fw'></i>日报
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box header toggle-mode-btn">
+                  <i class='fa-solid fa-moon fa-fw'></i>
+                </a>
+              <li>
+            
+          
+          
+				</ul>
+			</div>
+      
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fa-solid fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Search..." />
+        </form>
+      </div>
+      
+
+			<ul class='switcher nav-list-h m-phone'>
+				
+					<li><a class="s-search fa-solid fa-search fa-fw" target="_self" title="search"></a></li>
+				
+				<li>
+          <a class="s-menu fa-solid fa-bars fa-fw" target="_self" title="menu"></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/" title="博客"
+                  
+                  
+                  
+                    active-action="action-home"
+                  >
+                  <i class='fa-solid fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/categories/" title="分类"
+                  
+                  
+                  
+                    active-action="action-categories"
+                  >
+                  <i class='fa-solid fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/tags/" title="标签"
+                  
+                  
+                  
+                    active-action="action-tags"
+                  >
+                  <i class='fa-solid fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/archives/" title="归档"
+                  
+                  
+                  
+                    active-action="action-archives"
+                  >
+                  <i class='fa-solid fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/writing/" title="随笔"
+                  
+                  
+                  
+                    active-action="action-writing"
+                  >
+                  <i class='fa-solid fa-info-circle fa-fw'></i>随笔
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/daily_archives/" title="日报"
+                  
+                  
+                  
+                    active-action="action-daily_archives"
+                  >
+                  <i class='fa-solid fa-link fa-fw'></i>日报
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box header toggle-mode-btn">
+                  <i class='fa-solid fa-moon fa-fw'></i>
+                </a>
+              <li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+
+      <!-- Custom Files header begin -->
+      
+      <!-- Custom Files header end -->
+		</div>
+	</div>
+  </div>
+</header>
+
+    <div id="l_body">
+      <div id="l_cover">
+  
+</div>
+
+      <div id="safearea">
+        <div class="body-wrapper">
+          
+<div id="l_main" class=''>
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2024/01/03/lmdb接口学习/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+
+
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  <div class="article-meta" id="top">
+    
+    
+    
+      <h1 class="title" itemprop="name headline">
+        lmdb接口学习
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' target="_blank" href="https://zhiqiuyuan.github.io/" rel="nofollow noopener">
+    <img itemprop="image" src="https://cn.bing.com/th?id=AMMS_fc8f99fd41ebd737a71c4e13806db9a0&w=110&h=110&c=7&rs=1&qlt=80&pcl=f9f9f9&cdv=1&dpr=2&pid=16.1" class="lazyload" data-srcset="https://cn.bing.com/th?id=AMMS_fc8f99fd41ebd737a71c4e13806db9a0&w=110&h=110&c=7&rs=1&qlt=80&pcl=f9f9f9&cdv=1&dpr=2&pid=16.1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <p itemprop="name">zhiqiuyuan</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+
+          
+        
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2024-01-03T20:01:10+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：Jan 3, 2024</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+
+
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
+      </div>
+    
+  </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <p>简介：</p>
+<p><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/">http://www.lmdb.tech/doc/</a></p>
+<p>Quick Start：</p>
+<p><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/starting.html">http://www.lmdb.tech/doc/starting.html</a></p>
+<p>全部接口介绍：</p>
+<p><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html">http://www.lmdb.tech/doc/group__mdb.html</a></p>
+<p>The entire database is exposed in a <strong>memory map</strong>, and all data fetches return data directly from the mapped memory, so no malloc’s or memcpy’s occur during data fetches.</p>
+<p>The memory map can be used as a <strong>read-only</strong> or <strong>read-write</strong> map. It is <strong>read-only by default</strong> as this provides total immunity to corruption. Using read-write mode offers much higher <strong>write performance</strong>, but adds the possibility for stray application writes thru pointers to silently corrupt the database. Of course if your application code is known to be bug-free (…) then this is not an issue.</p>
+<h1 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/starting.html">Quick Start</a></h1><h2 id="Getting-Started"><a href="#Getting-Started" class="headerlink" title="Getting Started"></a><strong>Getting Started</strong></h2><p>Everything starts with an environment, created by <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gaad6be3d8dcd4ea01f8df436f41d158d4">mdb_env_create()</a>. Once created, this environment must also be opened with <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga32a193c6bf4d7d5c5d579e71f22e9340">mdb_env_open()</a>.</p>
+<p><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga32a193c6bf4d7d5c5d579e71f22e9340">mdb_env_open()</a> gets passed a name which is interpreted as a <strong>directory</strong> path. Note that this directory must exist already, it is not created for you. Within that directory, <strong>a lock file and a storage file</strong> will be generated. If you don’t want to use a directory, you can pass the <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb__env.html#gabf0e3e3b1e18df6526969f6825a388ea">MDB_NOSUBDIR</a> option, in which case the path you provided is used directly as the data file, and another file with a “-lock” suffix added will be used for the lock file.</p>
+<p>Once the environment is open, a <strong>transaction</strong> can be created <strong>within it</strong> using <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gad7ea55da06b77513609efebd44b26920">mdb_txn_begin()</a>. Transactions may be read-write or read-only, and read-write transactions may be nested. A transaction must only be used by one thread at a time. Transactions are <strong>always</strong> required, even for <strong>read-only access</strong>. The transaction provides a consistent view of the data.</p>
+<p>Once a transaction has been created, a <strong>database</strong> can be opened within it using <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gac08cad5b096925642ca359a6d6f0562a">mdb_dbi_open()</a>. If only one database will ever be used in the environment, a NULL can be passed as the database <strong>name</strong>. For named databases, the <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb__dbi__open.html#gafd47620cff55fb3ec7cd7501d4d1cb4a">MDB_CREATE</a> flag must be used to create the database if it doesn’t already exist. Also, <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gaa2fc2f1f37cb1115e733b62cab2fcdbc">mdb_env_set_maxdbs()</a> must be called <strong>after</strong> <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gaad6be3d8dcd4ea01f8df436f41d158d4">mdb_env_create()</a> and <strong>before</strong> <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga32a193c6bf4d7d5c5d579e71f22e9340">mdb_env_open()</a> to set the maximum number of named databases you want to support.  <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gaa2506ec8dab3d969b0e609cd82e619e5">mdb_env_set_mapsize</a></p>
+<p>Note: a <strong>single</strong> transaction can open multiple databases. Generally databases should only be opened <strong>once</strong>, by the first transaction in the process. After the first transaction completes, the database <strong>handles</strong> can freely be used by all subsequent transactions.</p>
+<p>Within a transaction, <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga8bf10cd91d3f3a83a34d04ce6b07992d">mdb_get()</a> and <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga4fa8573d9236d54687c61827ebf8cac0">mdb_put()</a> can store <strong>single key&#x2F;value</strong> pairs if that is all you need to do (but see <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/starting.html#Cursors">Cursors</a> below if you want to do more).</p>
+<p>A key&#x2F;value pair is expressed as two <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#structMDB__val">MDB_val</a> structures. This struct has two fields, <code>mv_size</code> and <code>mv_data</code>. The data is a <code>void</code> pointer to an array of <code>mv_size</code> bytes.</p>
+<p>Because LMDB is very efficient (and usually zero-copy), the data returned in an <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#structMDB__val">MDB_val</a> structure may be memory-mapped straight from disk. In other words <strong>look but do not touch</strong> (or free() for that matter). Once a transaction is <strong>closed</strong>, the values can no longer be used, so make a <strong>copy</strong> if you need to keep them after that.</p>
+<h2 id="Cursor"><a href="#Cursor" class="headerlink" title="Cursor"></a>Cursor</h2><p>To do more powerful things, we must use a cursor.</p>
+<p>Within the transaction, a cursor can be created with <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga9ff5d7bd42557fd5ee235dc1d62613aa">mdb_cursor_open()</a>. With this cursor we can store&#x2F;retrieve&#x2F;delete <strong>(multiple) values</strong> using <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga48df35fb102536b32dfbb801a47b4cb0">mdb_cursor_get()</a>, <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga1f83ccb40011837ff37cc32be01ad91e">mdb_cursor_put()</a>, and <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga26a52d3efcfd72e5bf6bd6960bf75f95">mdb_cursor_del()</a>.</p>
+<p><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga48df35fb102536b32dfbb801a47b4cb0">mdb_cursor_get()</a> <strong>positions</strong> itself depending on the cursor operation requested, and for some operations, on the supplied key. For example, to list <strong>all</strong> key&#x2F;value pairs in a database, use operation <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gga1206b2af8b95e7f6b0ef6b28708c9127a7fa6e5dfe596e146026309ca4bc1fa8c">MDB_FIRST</a> for the first call to <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga48df35fb102536b32dfbb801a47b4cb0">mdb_cursor_get()</a>, and <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gga1206b2af8b95e7f6b0ef6b28708c9127ab4c331a54ff8f314d20c62f03a8c8505">MDB_NEXT</a> on subsequent calls, until the end is hit.</p>
+<p>To retrieve all keys starting from a <strong>specified</strong> key value, use <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gga1206b2af8b95e7f6b0ef6b28708c9127a0e2a8c96dea14b11fa8dee617ccc1d7e">MDB_SET</a>. For more cursor operations, see the <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html">LMDB API</a> docs.</p>
+<p>When using <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga1f83ccb40011837ff37cc32be01ad91e">mdb_cursor_put()</a>, either the function will position the cursor for you based on the <strong>key</strong>, or you can use operation <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb__put.html#ga92f7832a496213db0f03105e6fa9afae">MDB_CURRENT</a> to use the current position of the cursor. Note that <strong>key</strong> must then match the current position’s key.</p>
+<h3 id="Summarizing-the-Opening"><a href="#Summarizing-the-Opening" class="headerlink" title="Summarizing the Opening"></a>Summarizing the Opening</h3><p>So we have a cursor in a transaction which opened a database in an environment which is opened from a filesystem after it was separately created.</p>
+<p>Or, we create an environment, open it from a filesystem, create a transaction within it, open a database within that transaction, and create a cursor within all of the above.</p>
+<p>Got it?</p>
+<h2 id="Threads-and-Processes"><a href="#Threads-and-Processes" class="headerlink" title="Threads and Processes"></a>Threads and Processes</h2><p>LMDB uses POSIX locks on files, and these locks have issues if one process opens a file multiple times. Because of this, do <strong>not</strong> <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga32a193c6bf4d7d5c5d579e71f22e9340">mdb_env_open()</a> a file multiple times from a single process. Instead, <strong>share</strong> the LMDB environment that has opened the file across all threads. </p>
+<blockquote>
+<p>Otherwise, if a single process opens the same environment multiple times, closing it once will remove all the locks held on it, and the other instances will be vulnerable to corruption from other processes.</p>
+</blockquote>
+<p>Also note that a transaction is tied to one thread by default using <strong>Thread Local</strong> Storage. If you want to pass read-only transactions <strong>across</strong> threads, you can use the <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb__env.html#ga5dca84a576d14b4bfe2deddc2dc622d3">MDB_NOTLS</a> option on the environment.</p>
+<h2 id="Transactions-Rollbacks-etc"><a href="#Transactions-Rollbacks-etc" class="headerlink" title="Transactions, Rollbacks, etc."></a>Transactions, Rollbacks, etc.</h2><p>To actually get anything done, a transaction must be committed using <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga846fbd6f46105617ac9f4d76476f6597">mdb_txn_commit()</a>. Alternatively, all of a transaction’s operations can be discarded using <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga73a5938ae4c3239ee11efa07eb22b882">mdb_txn_abort()</a>. </p>
+<p>In a read-only transaction, any <strong>cursors</strong> will <strong>not</strong> automatically be freed. In a read-write transaction, all <strong>cursors</strong> will be freed and must not be used again.</p>
+<p>For <strong>read-only</strong> transactions, obviously there is nothing to commit to storage. The transaction still must eventually be <strong>aborted</strong> to <strong>close</strong> any database <strong>handle</strong>(s) opened in it, or <strong>committed</strong> to <strong>keep</strong> the database <strong>handles</strong> around for reuse in new transactions.</p>
+<p>In addition, as long as a transaction is open, a <strong>consistent view</strong> of the database is kept alive, which requires storage. A read-only transaction that no longer requires this consistent view should be terminated (committed or aborted) when the view is no longer needed (but see below for an optimization).</p>
+<p>There can be multiple simultaneously active read-only transactions but only <strong>one</strong> that can <strong>write</strong>. Once a single read-write transaction is opened, all further attempts to begin one will <strong>block</strong> until the first one is committed or aborted. This has <strong>no</strong> effect on read-only transactions, however, and they may continue to be opened at any time.</p>
+<h2 id="Duplicate-Keys"><a href="#Duplicate-Keys" class="headerlink" title="Duplicate Keys"></a>Duplicate Keys</h2><p><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga8bf10cd91d3f3a83a34d04ce6b07992d">mdb_get()</a> and <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga4fa8573d9236d54687c61827ebf8cac0">mdb_put()</a> respectively have no and only some support for multiple key&#x2F;value pairs with identical keys. If there are multiple values for a key, <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga8bf10cd91d3f3a83a34d04ce6b07992d">mdb_get()</a> will only return the first value.</p>
+<p>When multiple values for one key are required, pass the <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb__dbi__open.html#gae0626566c2562e9007f5c8c9535bab1a">MDB_DUPSORT</a> flag to <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gac08cad5b096925642ca359a6d6f0562a">mdb_dbi_open()</a>. In an <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb__dbi__open.html#gae0626566c2562e9007f5c8c9535bab1a">MDB_DUPSORT</a> database, by default <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga4fa8573d9236d54687c61827ebf8cac0">mdb_put()</a> will not <strong>replace</strong> the value for a key if the key existed already. Instead it will <strong>add</strong> the new value to the key. In addition, <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gab8182f9360ea69ac0afd4a4eaab1ddb0">mdb_del()</a> will pay attention to the value field too, allowing for specific values of a key to be deleted.</p>
+<p>Finally, additional cursor operations become available for traversing through and retrieving duplicate values.</p>
+<h2 id="Some-Optimization"><a href="#Some-Optimization" class="headerlink" title="Some Optimization"></a>Some Optimization</h2><p>If you frequently begin and abort <strong>read-only</strong> transactions, as an optimization, it is possible to only <strong>reset and renew</strong> a transaction.</p>
+<p><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga02b06706f8a66249769503c4e88c56cd">mdb_txn_reset()</a> releases any old copies of data kept around for a read-only transaction. To reuse this reset transaction, call <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga6c6f917959517ede1c504cf7c720ce6d">mdb_txn_renew()</a> on it. Any cursors in this transaction must also be renewed using <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gac8b57befb68793070c85ea813df481af">mdb_cursor_renew()</a>.</p>
+<p>Note that <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga02b06706f8a66249769503c4e88c56cd">mdb_txn_reset()</a> is similar to <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga73a5938ae4c3239ee11efa07eb22b882">mdb_txn_abort()</a> and will close any databases you opened within the transaction.</p>
+<p>To permanently free a transaction, reset or not, use <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga73a5938ae4c3239ee11efa07eb22b882">mdb_txn_abort()</a>.</p>
+<h2 id="Cleaning-Up"><a href="#Cleaning-Up" class="headerlink" title="Cleaning Up"></a>Cleaning Up</h2><p>For read-only transactions, any cursors created within it must be closed using <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gad685f5d73c052715c7bd859cc4c05188">mdb_cursor_close()</a>.</p>
+<p>It is very <strong>rarely</strong> necessary to <strong>close a database handle</strong>, and in general they should just be left open.</p>
+<h2 id="The-Full-API"><a href="#The-Full-API" class="headerlink" title="The Full API"></a>The Full API</h2><p>The full <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html">LMDB API</a> documentation lists further details, like how to:</p>
+<ul>
+<li>size a database (the default limits are intentionally small)</li>
+<li>drop and clean a database</li>
+<li>detect and report errors</li>
+<li>optimize (bulk) loading speed</li>
+<li>(temporarily) reduce robustness to gain even more speed</li>
+<li>gather statistics about the database</li>
+<li>define custom sort orders</li>
+</ul>
+<h1 id="Full-API"><a href="#Full-API" class="headerlink" title="Full API"></a><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html">Full API</a></h1><p>lmdb很简单</p>
+<h2 id="Functions"><a href="#Functions" class="headerlink" title="Functions"></a>Functions</h2><table>
+<thead>
+<tr>
+<th>Functions</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>char *</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga0e5d7298fc39b3c187fffbe30264c968">mdb_version</a> (int *major, int *minor, int *patch)</td>
+</tr>
+<tr>
+<td></td>
+<td>Return the LMDB library version information.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>char *</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga569e66c1e3edc1a6016b86719ee3d098">mdb_strerror</a> (int err)</td>
+</tr>
+<tr>
+<td></td>
+<td>Return a string <strong>describing</strong> a given error code.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="env"><a href="#env" class="headerlink" title="env"></a>env</h3><table>
+<thead>
+<tr>
+<th>Functions</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>int</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gaad6be3d8dcd4ea01f8df436f41d158d4">mdb_env_create</a> (<a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__env">MDB_env</a> **env)</td>
+</tr>
+<tr>
+<td></td>
+<td>Create an LMDB environment handle.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>int</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga32a193c6bf4d7d5c5d579e71f22e9340">mdb_env_open</a> (<a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__env">MDB_env</a> *env, const char *path, unsigned int flags, <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/lmdb_8h.html#a6bc5fbe1ea1873df138108acdf04a28d">mdb_mode_t</a> mode)</td>
+</tr>
+<tr>
+<td></td>
+<td>Open an environment handle.</td>
+</tr>
+<tr>
+<td></td>
+<td><code>flags</code>：<br/> <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb__env.html#ga492952277c481bc4a6fa08ef71c29487">MDB_FIXEDMAP</a> use a fixed address for the mmap region. This flag must be specified when creating the environment, and is stored persistently in the environment. If successful, <strong>the memory map</strong> will always reside at the <strong>same virtual address</strong> and pointers used to reference data items in the database will be constant across multiple invocations. This option may not always work, depending on how the operating system has allocated memory to shared libraries and other uses. The feature is highly experimental. <br/><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb__env.html#gabf0e3e3b1e18df6526969f6825a388ea">MDB_NOSUBDIR</a>  <br/><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb__env.html#gac4c41c0ae044127b2fc80420c323cac6">MDB_RDONLY</a> Open the environment in read-only mode. No write operations will be allowed. LMDB will still modify the lock file - except on read-only filesystems, where LMDB does not use locks. <br/><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb__env.html#ga7b81e9fd5f8fae38786d67e1a8387fa7">MDB_WRITEMAP</a> Use a writeable memory map unless MDB_RDONLY is set. This is <strong>faster</strong> and uses fewer mallocs, but <strong>loses protection</strong> from application bugs like wild pointer writes and other bad updates into the database. Incompatible with nested transactions. Do not mix processes with and without MDB_WRITEMAP on the same environment. This can defeat durability (<a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#ga85e61f05aa68b520cc6c3b981dba5037">mdb_env_sync</a> etc). <br/><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb__env.html#ga5021c4e96ffe9f383f5b8ab2af8e4b16">MDB_NOMETASYNC</a> Flush system buffers to disk only once per transaction, omit the metadata flush. Defer that until the system flushes files to disk, or next non-MDB_RDONLY commit or <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga85e61f05aa68b520cc6c3b981dba5037">mdb_env_sync()</a>. This optimization maintains database integrity, but a system crash may undo the last committed transaction. I.e. it preserves the ACI (atomicity, consistency, isolation) but not D (durability) database property. This flag may be changed <strong>at any time</strong> using <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga83f66cf02bfd42119451e9468dc58445">mdb_env_set_flags()</a>. <br/><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb__env.html#ga5791dd1adb09123f82dd1f331209e12e">MDB_NOSYNC</a> Don’t flush system buffers to disk when committing a transaction. This optimization means a system crash can corrupt the database or lose the last transactions if buffers are not yet flushed to disk. The risk is governed by how often the system flushes dirty buffers to disk and how often <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga85e61f05aa68b520cc6c3b981dba5037">mdb_env_sync()</a> is called. However, if the filesystem preserves write order and the <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb__env.html#ga7b81e9fd5f8fae38786d67e1a8387fa7">MDB_WRITEMAP</a> flag is not used, transactions exhibit ACI (atomicity, consistency, isolation) properties and only lose D (durability). I.e. database integrity is maintained, but a system crash may undo the final transactions. Note that (<a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb__env.html#ga5791dd1adb09123f82dd1f331209e12e">MDB_NOSYNC</a> | <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb__env.html#ga7b81e9fd5f8fae38786d67e1a8387fa7">MDB_WRITEMAP</a>) leaves the system with no hint for when to write transactions to disk, unless <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga85e61f05aa68b520cc6c3b981dba5037">mdb_env_sync()</a> is called. (<a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb__env.html#gab034ed0d8e5938090aef5ee0997f7e94">MDB_MAPASYNC</a> | <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb__env.html#ga7b81e9fd5f8fae38786d67e1a8387fa7">MDB_WRITEMAP</a>) may be preferable. This flag may be changed <strong>at any time</strong> using <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga83f66cf02bfd42119451e9468dc58445">mdb_env_set_flags()</a>. <br/><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb__env.html#gab034ed0d8e5938090aef5ee0997f7e94">MDB_MAPASYNC</a> When using <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb__env.html#ga7b81e9fd5f8fae38786d67e1a8387fa7">MDB_WRITEMAP</a>, use asynchronous flushes to disk. As with <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb__env.html#ga5791dd1adb09123f82dd1f331209e12e">MDB_NOSYNC</a>, a system crash can then corrupt the database or lose the last transactions. Calling <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga85e61f05aa68b520cc6c3b981dba5037">mdb_env_sync()</a> ensures on-disk database integrity until next commit. This flag may be changed at any time using <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga83f66cf02bfd42119451e9468dc58445">mdb_env_set_flags()</a>. <br/><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb__env.html#ga5dca84a576d14b4bfe2deddc2dc622d3">MDB_NOTLS</a> Don’t use Thread-Local Storage. Tie reader locktable slots to <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__txn">MDB_txn</a> objects instead of to threads. I.e. <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga02b06706f8a66249769503c4e88c56cd">mdb_txn_reset()</a> keeps the slot reseved for the <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__txn">MDB_txn</a> object. A thread may use parallel read-only transactions. A read-only transaction may span threads if the user synchronizes its use. Applications that multiplex many user threads over individual OS threads need this option. Such an application must also serialize the write transactions in an OS thread, since LMDB’s write locking is unaware of the user threads. <br/><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb__env.html#ga9b0450b1a87cb9f22e033550e49e5037">MDB_NOLOCK</a> Don’t do any locking. If concurrent access is anticipated, the caller must manage all concurrency itself. For proper operation the caller must enforce single-writer semantics, and must ensure that no readers are using old transactions while a writer is active. The simplest approach is to use an exclusive lock so that no readers may be active at all when a writer begins. <br/><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb__env.html#ga0fcdaf42f0c45749a2dff11ee322303f">MDB_NORDAHEAD</a> Turn off readahead. Most operating systems perform readahead on read requests by default. This option turns it off if the OS supports it. Turning it <strong>off</strong> may <strong>help random read</strong> performance when the <strong>DB is larger than RAM and system RAM is full</strong>. The option is not implemented on Windows. <br/><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb__env.html#gafa035a1f17ebf31376eafb7bd2cdd448">MDB_NOMEMINIT</a> Don’t initialize malloc’d memory before writing to unused spaces in the data file. By default, memory for pages written to the data file is obtained using malloc. While these pages may be reused in subsequent transactions, freshly malloc’d pages will be initialized to zeroes before use. This avoids persisting leftover data from other code (that used the heap and subsequently freed the memory) into the data file. Note that many other system libraries may allocate and free memory from the heap for arbitrary uses. E.g., stdio may use the heap for file I&#x2F;O buffers. This initialization step has a modest performance cost so some applications may want to disable it using this flag. This option can be a problem for applications which handle sensitive data like passwords, and it makes memory checkers like Valgrind noisy. This flag is not needed with <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb__env.html#ga7b81e9fd5f8fae38786d67e1a8387fa7">MDB_WRITEMAP</a>, which writes directly to the mmap instead of using malloc for pages. The initialization is also skipped if <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb__put.html#gac0545c6aea719991e3eae6ccc686efcc">MDB_RESERVE</a> is used; the caller is expected to overwrite all of the memory that was reserved in that case. This flag may be changed <strong>at any time</strong> using <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga83f66cf02bfd42119451e9468dc58445">mdb_env_set_flags()</a>.</td>
+</tr>
+<tr>
+<td>int</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga5d51d6130325f7353db0955dbedbc378">mdb_env_copy</a> (<a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__env">MDB_env</a> *env, const char *path)</td>
+</tr>
+<tr>
+<td></td>
+<td>Copy an LMDB environment to the specified path.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>int</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga470b0bcc64ac417de5de5930f20b1a28">mdb_env_copyfd</a> (<a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__env">MDB_env</a> *env, <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/lmdb_8h.html#a6799f2853adc2e3b863dc2e6d9d0064f">mdb_filehandle_t</a> fd)</td>
+</tr>
+<tr>
+<td></td>
+<td>Copy an LMDB environment to the specified file descriptor.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>int</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga3bf50d7793b36aaddf6b481a44e24244">mdb_env_copy2</a> (<a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__env">MDB_env</a> *env, const char *path, unsigned int flags)</td>
+</tr>
+<tr>
+<td></td>
+<td>Copy an LMDB environment to the specified path, with options.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>int</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga5040d0de1f14000fa01fc0b522ff1f86">mdb_env_copyfd2</a> (<a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__env">MDB_env</a> *env, <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/lmdb_8h.html#a6799f2853adc2e3b863dc2e6d9d0064f">mdb_filehandle_t</a> fd, unsigned int flags)</td>
+</tr>
+<tr>
+<td></td>
+<td>Copy an LMDB environment to the specified file descriptor, with options.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>int</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gaf881dca452050efbd434cd16e4bae255">mdb_env_stat</a> (<a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__env">MDB_env</a> *env, <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#structMDB__stat">MDB_stat</a> *stat)</td>
+</tr>
+<tr>
+<td></td>
+<td>Return statistics about the LMDB environment.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>int</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga18769362c7e7d6cf91889a028a5c5947">mdb_env_info</a> (<a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__env">MDB_env</a> *env, <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#structMDB__envinfo">MDB_envinfo</a> *stat)</td>
+</tr>
+<tr>
+<td></td>
+<td>Return information about the LMDB environment.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>int</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga85e61f05aa68b520cc6c3b981dba5037">mdb_env_sync</a> (<a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__env">MDB_env</a> *env, int force)</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>Flush</strong> the data buffers to <strong>disk</strong>.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>void</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga4366c43ada8874588b6a62fbda2d1e95">mdb_env_close</a> (<a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__env">MDB_env</a> *env)</td>
+</tr>
+<tr>
+<td></td>
+<td>Close the environment and release the memory map.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>int</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga83f66cf02bfd42119451e9468dc58445">mdb_env_set_flags</a> (<a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__env">MDB_env</a> *env, unsigned int flags, int onoff)</td>
+</tr>
+<tr>
+<td></td>
+<td>Set environment flags. or to unset these flags</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>int</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga2733aefc6f50beb49dd0c6eb19b067d9">mdb_env_get_flags</a> (<a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__env">MDB_env</a> *env, unsigned int *flags)</td>
+</tr>
+<tr>
+<td></td>
+<td>Get environment flags.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>int</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gac699fdd8c4f8013577cb933fb6a757fe">mdb_env_get_path</a> (<a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__env">MDB_env</a> *env, const char **path)</td>
+</tr>
+<tr>
+<td></td>
+<td>Return the path that was used in <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga32a193c6bf4d7d5c5d579e71f22e9340">mdb_env_open()</a>.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>int</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gaf1570e7c0e5a5d860fef1032cec7d5f2">mdb_env_get_fd</a> (<a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__env">MDB_env</a> *env, <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/lmdb_8h.html#a6799f2853adc2e3b863dc2e6d9d0064f">mdb_filehandle_t</a> *fd)</td>
+</tr>
+<tr>
+<td></td>
+<td>Return the filedescriptor for the given environment.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>int</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gaa2506ec8dab3d969b0e609cd82e619e5">mdb_env_set_mapsize</a> (<a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__env">MDB_env</a> *env, size_t size)</td>
+</tr>
+<tr>
+<td></td>
+<td>Set the size of the <strong>memory map</strong> to use for this environment.</td>
+</tr>
+<tr>
+<td></td>
+<td>The default is 10485760 bytes</td>
+</tr>
+<tr>
+<td>int</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gae687966c24b790630be2a41573fe40e2">mdb_env_set_maxreaders</a> (<a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__env">MDB_env</a> *env, unsigned int readers)</td>
+</tr>
+<tr>
+<td></td>
+<td>Set the maximum number of threads&#x2F;reader slots for the environment.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>int</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga70e143cf11760d869f754c9c9956e6cc">mdb_env_get_maxreaders</a> (<a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__env">MDB_env</a> *env, unsigned int *readers)</td>
+</tr>
+<tr>
+<td></td>
+<td>Get the maximum number of threads&#x2F;reader slots for the environment.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>int</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gaa2fc2f1f37cb1115e733b62cab2fcdbc">mdb_env_set_maxdbs</a> (<a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__env">MDB_env</a> *env, <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gadbe68a06c448dfb62da16443d251a78b">MDB_dbi</a> dbs)</td>
+</tr>
+<tr>
+<td></td>
+<td>Set the maximum number of named databases for the environment.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>int</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gaaf0be004f33828bf2fb09d77eb3cef94">mdb_env_get_maxkeysize</a> (<a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__env">MDB_env</a> *env)</td>
+</tr>
+<tr>
+<td></td>
+<td>Get the maximum size of keys and <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb__dbi__open.html#gae0626566c2562e9007f5c8c9535bab1a">MDB_DUPSORT</a> data we can write.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>int</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gaf2fe09eb9c96eeb915a76bf713eecc46">mdb_env_set_userctx</a> (<a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__env">MDB_env</a> *env, void *ctx)</td>
+</tr>
+<tr>
+<td></td>
+<td>Set application information associated with the <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__env">MDB_env</a>.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>void *</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga45df6a4fb150cda2316b5ae224ba52f1">mdb_env_get_userctx</a> (<a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__env">MDB_env</a> *env)</td>
+</tr>
+<tr>
+<td></td>
+<td>Get the application information associated with the <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__env">MDB_env</a>.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>int</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga6df57850b14a8b3f237ea4dc012a4e0b">mdb_env_set_assert</a> (<a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__env">MDB_env</a> *env, <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga949ada362b3e84ec0435197056d82371">MDB_assert_func</a> *func)</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="txn"><a href="#txn" class="headerlink" title="txn"></a>txn</h3><table>
+<thead>
+<tr>
+<th>Functions</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>int</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gad7ea55da06b77513609efebd44b26920">mdb_txn_begin</a> (<a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__env">MDB_env</a> *env, <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__txn">MDB_txn</a> *parent, unsigned int flags, <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__txn">MDB_txn</a> **txn)</td>
+</tr>
+<tr>
+<td></td>
+<td>Create a transaction for use with the environment.</td>
+</tr>
+<tr>
+<td></td>
+<td><code>flags</code>：<br/><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb__env.html#gac4c41c0ae044127b2fc80420c323cac6">MDB_RDONLY</a> This transaction will not perform any write operations.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__env">MDB_env</a> *</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gaeb17735b8aaa2938a78a45cab85c06a0">mdb_txn_env</a> (<a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__txn">MDB_txn</a> *txn)</td>
+</tr>
+<tr>
+<td></td>
+<td>Returns the transaction’s <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__env">MDB_env</a>.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>size_t</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gadc82bb5e2127ae99ac0c5fe12b955f25">mdb_txn_id</a> (<a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__txn">MDB_txn</a> *txn)</td>
+</tr>
+<tr>
+<td></td>
+<td>Return the transaction’s ID.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>int</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga846fbd6f46105617ac9f4d76476f6597">mdb_txn_commit</a> (<a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__txn">MDB_txn</a> *txn)</td>
+</tr>
+<tr>
+<td></td>
+<td>Commit all the operations of a transaction into the database.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>void</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga73a5938ae4c3239ee11efa07eb22b882">mdb_txn_abort</a> (<a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__txn">MDB_txn</a> *txn)</td>
+</tr>
+<tr>
+<td></td>
+<td>Abandon all the operations of the transaction instead of saving them.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>void</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga02b06706f8a66249769503c4e88c56cd">mdb_txn_reset</a> (<a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__txn">MDB_txn</a> *txn)</td>
+</tr>
+<tr>
+<td></td>
+<td>Reset a read-only transaction.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>int</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga6c6f917959517ede1c504cf7c720ce6d">mdb_txn_renew</a> (<a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__txn">MDB_txn</a> *txn)</td>
+</tr>
+<tr>
+<td></td>
+<td>Renew a read-only transaction.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="dbi"><a href="#dbi" class="headerlink" title="dbi"></a>dbi</h3><table>
+<thead>
+<tr>
+<th>Functions</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>int</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gac08cad5b096925642ca359a6d6f0562a">mdb_dbi_open</a> (<a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__txn">MDB_txn</a> *txn, const char *name, unsigned int flags, <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gadbe68a06c448dfb62da16443d251a78b">MDB_dbi</a> *dbi)</td>
+</tr>
+<tr>
+<td></td>
+<td>Open a database in the environment.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>int</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gae6c1069febe94299769dbdd032fadef6">mdb_stat</a> (<a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__txn">MDB_txn</a> *txn, <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gadbe68a06c448dfb62da16443d251a78b">MDB_dbi</a> dbi, <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#structMDB__stat">MDB_stat</a> *stat)</td>
+</tr>
+<tr>
+<td></td>
+<td>Retrieve statistics for a database.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>int</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga95ba4cb721035478a8705e57b91ae4d4">mdb_dbi_flags</a> (<a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__txn">MDB_txn</a> *txn, <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gadbe68a06c448dfb62da16443d251a78b">MDB_dbi</a> dbi, unsigned int *flags)</td>
+</tr>
+<tr>
+<td></td>
+<td>Retrieve the DB flags for a database handle.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>void</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga52dd98d0c542378370cd6b712ff961b5">mdb_dbi_close</a> (<a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__env">MDB_env</a> *env, <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gadbe68a06c448dfb62da16443d251a78b">MDB_dbi</a> dbi)</td>
+</tr>
+<tr>
+<td></td>
+<td>Close a database handle. <strong>Normally unnecessary</strong>. Use with care:</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>int</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gab966fab3840fc54a6571dfb32b00f2db">mdb_drop</a> (<a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__txn">MDB_txn</a> *txn, <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gadbe68a06c448dfb62da16443d251a78b">MDB_dbi</a> dbi, int del)</td>
+</tr>
+<tr>
+<td></td>
+<td>Empty or delete+close a database.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>int</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga68e47ffcf72eceec553c72b1784ee0fe">mdb_set_compare</a> (<a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__txn">MDB_txn</a> *txn, <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gadbe68a06c448dfb62da16443d251a78b">MDB_dbi</a> dbi, <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gaa8e6e7a6f99bd7142947c48f0c4b970f">MDB_cmp_func</a> *cmp)</td>
+</tr>
+<tr>
+<td></td>
+<td>Set a custom <strong>key comparison function</strong> for a database.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>int</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gacef4ec3dab0bbd9bc978b73c19c879ae">mdb_set_dupsort</a> (<a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__txn">MDB_txn</a> *txn, <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gadbe68a06c448dfb62da16443d251a78b">MDB_dbi</a> dbi, <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gaa8e6e7a6f99bd7142947c48f0c4b970f">MDB_cmp_func</a> *cmp)</td>
+</tr>
+<tr>
+<td></td>
+<td>Set a custom <strong>data comparison function</strong> for a <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb__dbi__open.html#gae0626566c2562e9007f5c8c9535bab1a">MDB_DUPSORT</a> database.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>int</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga697d82c7afe79f142207ad5adcdebfeb">mdb_set_relfunc</a> (<a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__txn">MDB_txn</a> *txn, <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gadbe68a06c448dfb62da16443d251a78b">MDB_dbi</a> dbi, <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gaf6dfd3df8c5c6f082c5befc585165747">MDB_rel_func</a> *rel)</td>
+</tr>
+<tr>
+<td></td>
+<td>Set a <strong>relocation function</strong> for a <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb__env.html#ga492952277c481bc4a6fa08ef71c29487">MDB_FIXEDMAP</a> database.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>int</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga7c34246308cee01724a1839a8f5cc594">mdb_set_relctx</a> (<a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__txn">MDB_txn</a> *txn, <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gadbe68a06c448dfb62da16443d251a78b">MDB_dbi</a> dbi, void *ctx)</td>
+</tr>
+<tr>
+<td></td>
+<td>Set a context pointer for a <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb__env.html#ga492952277c481bc4a6fa08ef71c29487">MDB_FIXEDMAP</a> database’s relocation function.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="read-x2F-write-on-dbi"><a href="#read-x2F-write-on-dbi" class="headerlink" title="read&#x2F;write on dbi"></a>read&#x2F;write on dbi</h3><table>
+<thead>
+<tr>
+<th>Functions</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>int</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga8bf10cd91d3f3a83a34d04ce6b07992d">mdb_get</a> (<a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__txn">MDB_txn</a> *txn, <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gadbe68a06c448dfb62da16443d251a78b">MDB_dbi</a> dbi, <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#structMDB__val">MDB_val</a> *key, <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#structMDB__val">MDB_val</a> *data)</td>
+</tr>
+<tr>
+<td></td>
+<td>Get items from a database.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>int</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga4fa8573d9236d54687c61827ebf8cac0">mdb_put</a> (<a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__txn">MDB_txn</a> *txn, <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gadbe68a06c448dfb62da16443d251a78b">MDB_dbi</a> dbi, <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#structMDB__val">MDB_val</a> *key, <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#structMDB__val">MDB_val</a> *data, unsigned int flags)</td>
+</tr>
+<tr>
+<td></td>
+<td>Store items into a database.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>int</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gab8182f9360ea69ac0afd4a4eaab1ddb0">mdb_del</a> (<a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__txn">MDB_txn</a> *txn, <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gadbe68a06c448dfb62da16443d251a78b">MDB_dbi</a> dbi, <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#structMDB__val">MDB_val</a> *key, <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#structMDB__val">MDB_val</a> *data)</td>
+</tr>
+<tr>
+<td></td>
+<td>Delete items from a database.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>int</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga9ff5d7bd42557fd5ee235dc1d62613aa">mdb_cursor_open</a> (<a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__txn">MDB_txn</a> *txn, <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gadbe68a06c448dfb62da16443d251a78b">MDB_dbi</a> dbi, <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__cursor">MDB_cursor</a> **cursor)</td>
+</tr>
+<tr>
+<td></td>
+<td>Create a cursor handle.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>void</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gad685f5d73c052715c7bd859cc4c05188">mdb_cursor_close</a> (<a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__cursor">MDB_cursor</a> *cursor)</td>
+</tr>
+<tr>
+<td></td>
+<td>Close a cursor handle.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>int</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gac8b57befb68793070c85ea813df481af">mdb_cursor_renew</a> (<a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__txn">MDB_txn</a> *txn, <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__cursor">MDB_cursor</a> *cursor)</td>
+</tr>
+<tr>
+<td></td>
+<td>Renew a cursor handle.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__txn">MDB_txn</a> *</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga7bf0d458f7f36b5232fcb368ebda79e0">mdb_cursor_txn</a> (<a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__cursor">MDB_cursor</a> *cursor)</td>
+</tr>
+<tr>
+<td></td>
+<td>Return the cursor’s transaction handle.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gadbe68a06c448dfb62da16443d251a78b">MDB_dbi</a></td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga2f7092cf70ee816fb3d2c3267a732372">mdb_cursor_dbi</a> (<a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__cursor">MDB_cursor</a> *cursor)</td>
+</tr>
+<tr>
+<td></td>
+<td>Return the cursor’s database handle.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>int</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga48df35fb102536b32dfbb801a47b4cb0">mdb_cursor_get</a> (<a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__cursor">MDB_cursor</a> *cursor, <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#structMDB__val">MDB_val</a> *key, <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#structMDB__val">MDB_val</a> *data, <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga1206b2af8b95e7f6b0ef6b28708c9127">MDB_cursor_op</a> op)</td>
+</tr>
+<tr>
+<td></td>
+<td>Retrieve by cursor.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>int</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga1f83ccb40011837ff37cc32be01ad91e">mdb_cursor_put</a> (<a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__cursor">MDB_cursor</a> *cursor, <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#structMDB__val">MDB_val</a> *key, <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#structMDB__val">MDB_val</a> *data, unsigned int flags)</td>
+</tr>
+<tr>
+<td></td>
+<td>Store by cursor.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>int</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga26a52d3efcfd72e5bf6bd6960bf75f95">mdb_cursor_del</a> (<a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__cursor">MDB_cursor</a> *cursor, unsigned int flags)</td>
+</tr>
+<tr>
+<td></td>
+<td>Delete current key&#x2F;data pair.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>int</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga4041fd1e1862c6b7d5f10590b86ffbe2">mdb_cursor_count</a> (<a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__cursor">MDB_cursor</a> *cursor, size_t *countp)</td>
+</tr>
+<tr>
+<td></td>
+<td>Return count of duplicates for current key.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>int</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gaba790a2493f744965b810efac73bac0e">mdb_cmp</a> (<a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__txn">MDB_txn</a> *txn, <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gadbe68a06c448dfb62da16443d251a78b">MDB_dbi</a> dbi, const <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#structMDB__val">MDB_val</a> *a, const <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#structMDB__val">MDB_val</a> *b)</td>
+</tr>
+<tr>
+<td></td>
+<td>Compare two data items according to a particular database.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>int</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gac61d3087282b0824c8c5caff6caabdf3">mdb_dcmp</a> (<a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__txn">MDB_txn</a> *txn, <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gadbe68a06c448dfb62da16443d251a78b">MDB_dbi</a> dbi, const <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#structMDB__val">MDB_val</a> *a, const <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#structMDB__val">MDB_val</a> *b)</td>
+</tr>
+<tr>
+<td></td>
+<td>Compare two data items according to a particular database.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="others"><a href="#others" class="headerlink" title="others"></a>others</h3><table>
+<thead>
+<tr>
+<th>Functions</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>int</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga8550000cd0501a44f57ee6dff0188744">mdb_reader_list</a> (<a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__env">MDB_env</a> *env, <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gaa8c2df73737d92fa83ccaae435af2ce0">MDB_msg_func</a> *func, void *ctx)</td>
+</tr>
+<tr>
+<td></td>
+<td>Dump the entries in the reader lock table.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>int</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga366923d08bb384b3d9580a98edf5d668">mdb_reader_check</a> (<a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__env">MDB_env</a> *env, int *dead)</td>
+</tr>
+<tr>
+<td></td>
+<td>Check for stale entries in the reader lock table.</td>
+</tr>
+</tbody></table>
+<h2 id="Modules（一些硬编码的值，比如flags）"><a href="#Modules（一些硬编码的值，比如flags）" class="headerlink" title="Modules（一些硬编码的值，比如flags）"></a>Modules（一些硬编码的值，比如flags）</h2><table>
+<thead>
+<tr>
+<th>Modules</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__Version.html">Version Macros</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb__env.html">Environment Flags</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb__dbi__open.html">Database Flags</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb__put.html">Write Flags</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb__copy.html">Copy Flags</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__errors.html">Return Codes</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="Data-Structures"><a href="#Data-Structures" class="headerlink" title="Data Structures"></a>Data Structures</h2><table>
+<thead>
+<tr>
+<th>Data Structures</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>struct</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#structMDB__val">MDB_val</a></td>
+</tr>
+<tr>
+<td></td>
+<td>Generic structure used for passing keys and data in and out of the database. <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#structMDB__val">More…</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>struct</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#structMDB__stat">MDB_stat</a></td>
+</tr>
+<tr>
+<td></td>
+<td>Statistics for a database in the environment. <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#structMDB__stat">More…</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>struct</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#structMDB__envinfo">MDB_envinfo</a></td>
+</tr>
+<tr>
+<td></td>
+<td>Information about the environment. <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#structMDB__envinfo">More…</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="Macros"><a href="#Macros" class="headerlink" title="Macros"></a>Macros</h2><table>
+<thead>
+<tr>
+<th>Macros</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>#define</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gab69d2d8eea05c0eb11cdb7a1916727bd">mdb_open</a>(txn, name, flags, dbi)  <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#gac08cad5b096925642ca359a6d6f0562a">mdb_dbi_open</a>(txn,name,flags,dbi)</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>#define</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gac56dd5b9c0cecaee35d3d6719939212a">mdb_close</a>(env, dbi)  <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#ga52dd98d0c542378370cd6b712ff961b5">mdb_dbi_close</a>(env,dbi)</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="Typedefs"><a href="#Typedefs" class="headerlink" title="Typedefs"></a>Typedefs</h2><table>
+<thead>
+<tr>
+<th>Typedefs</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>typedef unsigned int</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gadbe68a06c448dfb62da16443d251a78b">MDB_dbi</a></td>
+</tr>
+<tr>
+<td></td>
+<td>A handle for an individual database in the DB environment.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>typedef int(</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gaa8e6e7a6f99bd7142947c48f0c4b970f">MDB_cmp_func</a> )(const <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#structMDB__val">MDB_val</a> *a, const <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#structMDB__val">MDB_val</a> *b)</td>
+</tr>
+<tr>
+<td></td>
+<td>A callback function used to compare two keys in a database.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>typedef void(</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gaf6dfd3df8c5c6f082c5befc585165747">MDB_rel_func</a> )(<a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#structMDB__val">MDB_val</a> *item, void *oldptr, void *newptr, void *relctx)</td>
+</tr>
+<tr>
+<td></td>
+<td>A callback function used to relocate a position-dependent data item in a fixed-address database.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>typedef void</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga949ada362b3e84ec0435197056d82371">MDB_assert_func</a> (<a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__internal.html#structMDB__env">MDB_env</a> *env, const char *msg)</td>
+</tr>
+<tr>
+<td></td>
+<td>A callback function for most LMDB assert() failures, called before printing the message and aborting.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>typedef int(</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gaa8c2df73737d92fa83ccaae435af2ce0">MDB_msg_func</a> )(const char *msg, void *ctx)</td>
+</tr>
+<tr>
+<td></td>
+<td>A callback function used to print a message from the library.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="Enumerations"><a href="#Enumerations" class="headerlink" title="Enumerations"></a>Enumerations</h2><table>
+<thead>
+<tr>
+<th>Enumerations</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>enum</td>
+<td><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga1206b2af8b95e7f6b0ef6b28708c9127">MDB_cursor_op</a> {  <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gga1206b2af8b95e7f6b0ef6b28708c9127a7fa6e5dfe596e146026309ca4bc1fa8c">MDB_FIRST</a>, <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gga1206b2af8b95e7f6b0ef6b28708c9127a6d1d6a1b5d2786521cf01199b74e4707">MDB_FIRST_DUP</a>, <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gga1206b2af8b95e7f6b0ef6b28708c9127af6e8d2250238fc53d63f57a7dfd7fc9d">MDB_GET_BOTH</a>, <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gga1206b2af8b95e7f6b0ef6b28708c9127a2a35a3f4da5c7e8d24aad482c971def5">MDB_GET_BOTH_RANGE</a>,  <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gga1206b2af8b95e7f6b0ef6b28708c9127a57c48da61ad7d53ea56323ab3be53643">MDB_GET_CURRENT</a>, <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gga1206b2af8b95e7f6b0ef6b28708c9127aadfff65301fefedcb29d612a721717a1">MDB_GET_MULTIPLE</a>, <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gga1206b2af8b95e7f6b0ef6b28708c9127ae651b65401ec2877105ff8bf6d8c8424">MDB_LAST</a>, <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gga1206b2af8b95e7f6b0ef6b28708c9127aa3fd7b44991227e8590b9f5bac71c051">MDB_LAST_DUP</a>,  <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gga1206b2af8b95e7f6b0ef6b28708c9127ab4c331a54ff8f314d20c62f03a8c8505">MDB_NEXT</a>, <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gga1206b2af8b95e7f6b0ef6b28708c9127a184e21dcc148ee01f9325ba644a37bf2">MDB_NEXT_DUP</a>, <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gga1206b2af8b95e7f6b0ef6b28708c9127a37d22eecd320d77fbba9f905483f99e5">MDB_NEXT_MULTIPLE</a>, <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gga1206b2af8b95e7f6b0ef6b28708c9127ad1fe99714d88bbf18b36767b5fe4bf26">MDB_NEXT_NODUP</a>,  <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gga1206b2af8b95e7f6b0ef6b28708c9127ac3f9d31387235be1e0dc85bb947a7f9e">MDB_PREV</a>, <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gga1206b2af8b95e7f6b0ef6b28708c9127acc8bcecdcf6368f5e5fc15c885097bf7">MDB_PREV_DUP</a>, <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gga1206b2af8b95e7f6b0ef6b28708c9127ad5a35ed59afffdd86253de2fe03b6a09">MDB_PREV_NODUP</a>, <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gga1206b2af8b95e7f6b0ef6b28708c9127a0e2a8c96dea14b11fa8dee617ccc1d7e">MDB_SET</a>,  <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gga1206b2af8b95e7f6b0ef6b28708c9127a60ca5862cebed7f3487a8a622e77831a">MDB_SET_KEY</a>, <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#gga1206b2af8b95e7f6b0ef6b28708c9127af9feb0557c2954dbf7732eee5e1b59e7">MDB_SET_RANGE</a> }</td>
+</tr>
+<tr>
+<td></td>
+<td>Cursor Get operations. <a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/group__mdb.html#ga1206b2af8b95e7f6b0ef6b28708c9127">More…</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h1 id="Caveats"><a href="#Caveats" class="headerlink" title="Caveats"></a><a target="_blank" rel="noopener" href="http://www.lmdb.tech/doc/">Caveats</a></h1><p>haven’t read yet</p>
+<h1 id="benchmark"><a href="#benchmark" class="headerlink" title="benchmark"></a><a target="_blank" rel="noopener" href="http://www.lmdb.tech/bench/microbench/">benchmark</a></h1>
+  </div>
+  
+  
+    
+    <div class='footer'>
+       <!-- 参考资料、相关资料等 -->
+      
+       <!-- 相关文章 -->
+      
+      <!-- 版权声明组件 -->
+      
+      <!-- 打赏组件 -->
+      
+    </div>
+  
+  
+    
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-01-19T16:48:04+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：Jan 19, 2024</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2024/01/03/lmdb%E6%8E%A5%E5%8F%A3%E5%AD%A6%E4%B9%A0/&title=lmdb接口学习 - zhiqiuyuan's blog&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/qq.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2024/01/03/lmdb%E6%8E%A5%E5%8F%A3%E5%AD%A6%E4%B9%A0/&title=lmdb接口学习 - zhiqiuyuan's blog&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/qzone.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2024/01/03/lmdb%E6%8E%A5%E5%8F%A3%E5%AD%A6%E4%B9%A0/&title=lmdb接口学习 - zhiqiuyuan's blog&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/weibo.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+        <a class='prev' href='/2024/01/18/leetcode-%E4%BC%97%E6%95%B0/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>leetcode 众数</p>
+          <p class='content'>Qhttps://leetcode.cn/problems/majority-element/description/
+给定一个大小为 n 的数组 nums ，返回其中的多数元素。多数元素是指在...</p>
+        </a>
+      
+      
+        <a class='next' href='/2023/12/26/ssh%E8%BF%9C%E7%A8%8B%E5%85%B3%E9%97%AD%E6%9C%8D%E5%8A%A1%E5%99%A8-init-0/'>
+          <p class='title'>ssh远程关闭服务器 init 0<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>目前是ssh登录到远程服务器的状态，想关闭远程服务器：
+sudo init 0
+
+</p>
+        </a>
+      
+    </div>
+  
+  <!-- 文章推荐 -->
+  
+  
+  <!-- Custom Files postEnd begin-->
+  
+  <!-- Custom Files postEnd end-->
+</article>
+
+
+  
+
+
+  <article class="post white-box shadow floatable blur" id="comments">
+    <span hidden>
+      <meta itemprop="discussionUrl" content="/2024/01/03/lmdb%E6%8E%A5%E5%8F%A3%E5%AD%A6%E4%B9%A0/index.html#comments">
+    </span>
+    <p ct><i class='fa-solid fa-comments'></i> 评论</p>
+    
+
+    <div id="layoutHelper-comments"></div>
+
+  </article>
+
+
+
+
+
+
+</div>
+<aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
+  
+
+  
+    
+    
+      
+    
+  
+
+
+<div class="widget-sticky">
+
+  
+  
+
+
+<section class="widget toc-wrapper desktop mobile" id="toc-div" >
+  
+  <header>
+    
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+  <div class='content'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Getting-Started"><span class="toc-text">Getting Started</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cursor"><span class="toc-text">Cursor</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Summarizing-the-Opening"><span class="toc-text">Summarizing the Opening</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Threads-and-Processes"><span class="toc-text">Threads and Processes</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Transactions-Rollbacks-etc"><span class="toc-text">Transactions, Rollbacks, etc.</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Duplicate-Keys"><span class="toc-text">Duplicate Keys</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Some-Optimization"><span class="toc-text">Some Optimization</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cleaning-Up"><span class="toc-text">Cleaning Up</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#The-Full-API"><span class="toc-text">The Full API</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Functions"><span class="toc-text">Functions</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#env"><span class="toc-text">env</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#txn"><span class="toc-text">txn</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dbi"><span class="toc-text">dbi</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#read-x2F-write-on-dbi"><span class="toc-text">read&#x2F;write on dbi</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#others"><span class="toc-text">others</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Modules%EF%BC%88%E4%B8%80%E4%BA%9B%E7%A1%AC%E7%BC%96%E7%A0%81%E7%9A%84%E5%80%BC%EF%BC%8C%E6%AF%94%E5%A6%82flags%EF%BC%89"><span class="toc-text">Modules（一些硬编码的值，比如flags）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Data-Structures"><span class="toc-text">Data Structures</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Macros"><span class="toc-text">Macros</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Typedefs"><span class="toc-text">Typedefs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Enumerations"><span class="toc-text">Enumerations</span></a></li></ol>
+  </div>
+</section>
+
+  
+
+</div>
+
+  <!-- Custom Files side begin -->
+  
+  <!-- Custom Files side end -->
+</aside>
+
+
+
+        </div>
+        
+  
+  <footer class="footer clearfix"  itemscope itemtype="http://schema.org/WPFooter">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper" itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          
+            
+          
+            
+          
+            
+          
+        </div>
+      
+    
+      
+        <div><p>Blog content follows the <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
+</div>
+      
+    
+      
+        Use
+        <a href="https://github.com/volantis-x/hexo-theme-volantis/#6.0.0-alpha.1" target="_blank" class="codename">Volantis</a>
+        as theme
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="/">Copyright © since 2022 zhiqiuyuan</a></p>
+
+        </div>
+      
+    
+    <!-- Custom Files footer begin-->
+    
+    <!-- Custom Files footer end-->
+  </footer>
+
+
+        <a id="s-top" class="fa-solid fa-arrow-up fa-fw" title="top"></a>
+      </div>
+    </div>
+    <div>
+      <script>
+  /******************** volantis.dom ********************************/
+  // 页面选择器 将dom对象缓存起来 see: /source/js/app.js etc.
+  volantis.dom.bodyAnchor = volantis.dom.$(document.getElementById("safearea")); // 页面主体
+  volantis.dom.topBtn = volantis.dom.$(document.getElementById('s-top')); // 向上
+  volantis.dom.wrapper = volantis.dom.$(document.getElementById('wrapper')); // 整个导航栏
+  volantis.dom.coverAnchor = volantis.dom.$(document.querySelector('#l_cover .cover-wrapper')); // 1个
+  volantis.dom.switcher = volantis.dom.$(document.querySelector('#l_header .switcher .s-search')); // 搜索按钮   移动端 1个
+  volantis.dom.header = volantis.dom.$(document.getElementById('l_header')); // 移动端导航栏
+  volantis.dom.search = volantis.dom.$(document.querySelector('#l_header .m_search')); // 搜索框 桌面端 移动端 1个
+  volantis.dom.mPhoneList = volantis.dom.$(document.querySelectorAll('#l_header .m-phone .list-v')); //  手机端 子菜单 多个
+</script>
+
+<script>
+  
+  volantis.css("https://cdn.bootcdn.net/ajax/libs/font-awesome/6.1.1/css/all.min.css");
+  
+  
+  
+</script>
+
+<!-- required -->
+
+
+<!-- internal -->
+
+<script src="/js/app.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="rightmenu-wrapper">
+  <ul class="list-v rightmenu" id="rightmenu-content">
+    
+  <li class='navigation menuNavigation-Content'>
+
+
+    <a class="nav icon-only fix-cursor-default" onclick="history.back()"><i class="fa-solid fa-arrow-left fa-fw"></i></a>
+
+
+
+    <a class="nav icon-only fix-cursor-default" onclick="history.forward()"><i class="fa-solid fa-arrow-right fa-fw"></i></a>
+
+
+
+    <a class="nav icon-only fix-cursor-default" onclick="window.location.reload()"><i class="fa-solid fa-redo fa-fw"></i></a>
+
+
+
+    <a class="nav icon-only fix-cursor-default" onclick="VolantisApp.scrolltoElement(volantis.dom.bodyAnchor)"><i class="fa-solid fa-arrow-up fa-fw"></i></a>
+
+
+  </li>
+
+
+    <hr class="menuLoad-Content" >
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="copyPaste" data-event="copyPaste" data-group="inputBox">
+      <i class="fa-solid fa-paste fa-fw"></i>
+      粘贴文本
+    </span>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="copyAll" data-event="copyAll" data-group="inputBox">
+      <i class="fa-solid fa-object-ungroup fa-fw"></i>
+      全选文本
+    </span>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="copyCut" data-event="copyCut" data-group="inputBox">
+      <i class="fa-solid fa-cut fa-fw"></i>
+      剪切文本
+    </span>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="copyText" data-event="copyText" data-group="seletctText">
+      <i class="fa-solid fa-copy fa-fw"></i>
+      复制文本
+    </span>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="searchWord" data-event="OpenSearch(__text__)" data-group="seletctText">
+      <i class="fa-solid fa-search fa-fw"></i>
+      站内搜索
+    </span>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="bingSearch" data-event="window.open(`https://cn.bing.com/search?q=${__text__}`)" data-group="seletctText">
+      <i class="fa-solid fa-search fa-fw"></i>
+      必应搜索
+    </span>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="openTab" data-event="window.open(__link__)" data-group="elementCheck">
+      <i class="fa-solid fa-external-link-square-alt fa-fw"></i>
+      新标签页打开
+    </span>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="copyLink" data-event="copyLink" data-group="elementCheck">
+      <i class="fa-solid fa-link fa-fw"></i>
+      复制链接地址
+    </span>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="copyImg" data-event="copyImg" data-group="elementImage">
+      <i class="fa-solid fa-image fa-fw"></i>
+      复制图片
+    </span>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="googleImg" data-event="window.open(`https://www.google.com.hk/searchbyimage?image_url=${__link__}`)" data-group="elementImage">
+      <i class="fa-solid fa-images fa-fw"></i>
+      谷歌识图
+    </span>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <a class="vlts-menu fix-cursor-default" id="help" target="_blank" rel="noopener" href="https://volantis.js.org/faqs/" data-group="link">
+      <i class="fa-solid fa-question fa-fw"></i>
+      常见问题
+    </a>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <a class="vlts-menu fix-cursor-default" id="examples" target="_blank" rel="noopener" href="https://volantis.js.org/examples/" data-group="link">
+      <i class="fa-solid fa-rss fa-fw"></i>
+      示例博客
+    </a>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <a class="vlts-menu fix-cursor-default" id="contributors" target="_blank" rel="noopener" href="https://volantis.js.org/contributors/" data-group="link">
+      <i class="fa-solid fa-fan fa-fw"></i>
+      加入社区
+    </a>
+  </li>
+
+
+
+    <hr class="menuLoad-Content" >
+
+
+
+  <li class="menuLoad-Content">
+    <a class="vlts-menu fix-cursor-default" id="source_docs" target="_blank" rel="noopener" href="https://github.com/volantis-x/volantis-docs/" data-group="link">
+      <i class="fa-solid fa-code-branch fa-fw"></i>
+      本站源码
+    </a>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <a class="vlts-menu fix-cursor-default" id="source_theme" target="_blank" rel="noopener" href="https://github.com/volantis-x/hexo-theme-volantis/" data-group="link">
+      <i class="fa-solid fa-code-branch fa-fw"></i>
+      主题源码
+    </a>
+  </li>
+
+
+
+    <hr class="menuLoad-Content" >
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="darkMode" data-event="volantis.dark.toggle()" data-group="darkMode">
+      <i class="fa-solid fa-moon fa-fw"></i>
+      暗黑模式
+    </span>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="printMode" data-event="printMode" data-group="articlePage">
+      <i class="fa-solid fa-print fa-fw"></i>
+      打印页面
+    </span>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="readMode" data-event="readMode" data-group="articlePage">
+      <i class="fa-solid fa-book-open fa-fw"></i>
+      阅读模式
+    </span>
+  </li>
+
+
+<div id="menuMusic">
+  <li class='music name menuOption-Content'>
+    <p class='nav music-title fix-cursor-default'></p>
+  </li>
+  <li class='music ctrl'>
+    <a class='nav icon-only backward fix-cursor-default'  title="backward">
+      <i class='fa-solid fa-step-backward fa-fw'></i>
+    </a>
+    <a class='nav icon-only toggle fix-cursor-default'  title="toggle">
+      <i class='fa-solid fa-play fa-fw'></i>
+    </a>
+    <a class='nav icon-only forward fix-cursor-default'  title="forward">
+      <i class='fa-solid fa-step-forward fa-fw'></i>
+    </a>
+  </li>
+  <li class='music volume'>
+    <div class='nav volume'>
+      <div class="aplayer-volume-bar-wrap">
+        <div class="aplayer-volume-bar fix-cursor-pointer">
+          <div class="aplayer-volume"></div>
+          <i class='left fa-solid fa-volume-off fa-fw'></i>
+          <i class='right fa-solid fa-volume-up fa-fw'></i>
+        </div>
+      </div>
+    </div>
+  </li>
+</div>
+
+  </ul>
+</div>
+<script src="/js/plugins/rightMenus.js"></script>
+<script>
+  const RightMenusFunction = {};
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  //RightMenusFunction['copyPaste'] = (fun) => {fun()}
+
+
+
+
+
+  //RightMenusFunction['copyAll'] = (fun) => {fun()}
+
+
+
+
+
+  //RightMenusFunction['copyCut'] = (fun) => {fun()}
+
+
+
+
+
+  //RightMenusFunction['copyText'] = (fun) => {fun()}
+
+
+
+
+
+  RightMenusFunction['searchWord'] = (__text__) => {OpenSearch(__text__)}
+
+
+
+
+
+  RightMenusFunction['bingSearch'] = (__text__) => {window.open(`https://cn.bing.com/search?q=${__text__}`)}
+
+
+
+
+
+  RightMenusFunction['openTab'] = (__link__) => {window.open(__link__)}
+
+
+
+
+
+  //RightMenusFunction['copyLink'] = (fun) => {fun()}
+
+
+
+
+
+  //RightMenusFunction['copyImg'] = (fun) => {fun()}
+
+
+
+
+
+  RightMenusFunction['googleImg'] = (__link__) => {window.open(`https://www.google.com.hk/searchbyimage?image_url=${__link__}`)}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  RightMenusFunction['darkMode'] = () => {volantis.dark.toggle()}
+
+
+
+
+
+  //RightMenusFunction['printMode'] = (fun) => {fun()}
+
+
+
+
+
+  //RightMenusFunction['readMode'] = (fun) => {fun()}
+
+
+
+
+
+</script>
+
+
+
+<!-- rightmenu要在darkmode之前（ToggleButton） darkmode要在comments之前（volantis.dark.push）-->
+
+  <script>
+const rootElement = document.documentElement;
+const darkModeStorageKey = "color-scheme";
+const rootElementDarkModeAttributeName = "color-scheme";
+const setLS = (k, v) => {
+    localStorage.setItem(k, v);
+};
+const removeLS = (k) => {
+    localStorage.removeItem(k);
+};
+const getLS = (k) => {
+    return localStorage.getItem(k);
+};
+const getModeFromCSSMediaQuery = () => {
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
+};
+const resetRootDarkModeAttributeAndLS = () => {
+  rootElement.removeAttribute(rootElementDarkModeAttributeName);
+  removeLS(darkModeStorageKey);
+};
+const validColorModeKeys = {
+  dark: true,
+  light: true,
+};
+const applyCustomDarkModeSettings = (mode) => {
+  const currentSetting = mode || getLS(darkModeStorageKey);
+  getCustomDarkMode();
+  if (currentSetting === getModeFromCSSMediaQuery()) {
+    resetRootDarkModeAttributeAndLS();
+  } else if (validColorModeKeys[currentSetting]) {
+    rootElement.setAttribute(rootElementDarkModeAttributeName, currentSetting);
+  } else {
+    resetRootDarkModeAttributeAndLS();
+  }
+};
+const invertDarkModeObj = {
+  dark: "light",
+  light: "dark",
+};
+/**
+ * get target mode
+ */
+ const getCustomDarkMode = () => {
+  let currentSetting = getLS(darkModeStorageKey);
+  if (validColorModeKeys[currentSetting]) {
+    currentSetting = invertDarkModeObj[currentSetting];
+  } else if (currentSetting === null) {
+    currentSetting = invertDarkModeObj[getModeFromCSSMediaQuery()];
+  } else {
+    return;
+  }
+  if(currentSetting=="dark"){
+    volantis.dark.mode="light";
+  }else{
+    volantis.dark.mode="dark";
+  }
+  // console.log(volantis.dark.mode)
+};
+const toggleCustomDarkMode = () => {
+  let currentSetting = getLS(darkModeStorageKey);
+  if (validColorModeKeys[currentSetting]) {
+    currentSetting = invertDarkModeObj[currentSetting];
+  } else if (currentSetting === null) {
+    currentSetting = invertDarkModeObj[getModeFromCSSMediaQuery()];
+  } else {
+    return;
+  }
+  setLS(darkModeStorageKey, currentSetting);
+  return currentSetting;
+};
+/**
+ * 暗黑模式触发器
+ */
+volantis.dark.toggle=()=>{
+  const mode = toggleCustomDarkMode();
+  applyCustomDarkModeSettings(mode);
+  // 使用 volantis.dark.push 方法传入volantis.dark.toggle回调函数 参见layout/_partial/scripts/global.ejs
+  volantis.dark.method.toggle.start();
+}
+/**
+ * bind event for toggle button
+ */
+
+function bindToggleButton() {
+  var btn= document.querySelectorAll("#wrapper .toggle-mode-btn,#rightmenu-wrapper .toggle-mode-btn")
+  btn.forEach(function (e) {
+    volantis.dom.$(e).on('click',volantis.dark.toggle);
+  })
+}
+applyCustomDarkModeSettings();
+document.addEventListener("DOMContentLoaded", ()=>{
+  volantis.requestAnimationFrame(bindToggleButton)
+});
+
+const darkModelListeners={
+  dark:(mediaQueryList )=>{
+    if(mediaQueryList.matches){
+      volantis.dark.mode = "dark";
+    }
+    volantis.dark.method.toggle.start();
+  },
+  light:(mediaQueryList)=>{
+    if(mediaQueryList.matches){
+      volantis.dark.mode = "light";
+    }
+    volantis.dark.method.toggle.start();
+  }
+}
+window.matchMedia('(prefers-color-scheme: dark)').addListener(darkModelListeners.dark)
+window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListeners.light)
+</script>
+
+
+
+
+<script>
+  function loadIssuesJS() {
+    
+      const sites_api = document.getElementById('sites-api');
+      if (sites_api != undefined && typeof SitesJS === 'undefined') {
+        volantis.js("/js/plugins/tags/sites.js")
+      }
+    
+    
+      const friends_api = document.getElementById('friends-api');
+      if (friends_api != undefined && typeof FriendsJS === 'undefined') {
+        volantis.js("/js/plugins/tags/friends.js")
+      }
+    
+    
+      const contributors_api = document.getElementById('contributors-api');
+      if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
+        volantis.js("/js/plugins/tags/contributors.js")
+      }
+    
+  };
+  loadIssuesJS()
+</script>
+
+
+
+
+  <script defer src="https://cdn.bootcdn.net/ajax/libs/vanilla-lazyload/17.1.0/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 0
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    lazyLoadInstance.update();
+  });
+</script>
+
+
+
+
+  
+
+<script>
+  window.FPConfig = {
+	delay: 0,
+	ignoreKeywords: ["#"],
+	maxRPS: 6,
+	hoverDelay: 0
+  };
+</script>
+<script defer src="https://unpkg.com/volantis-static@0.0.1660614606622/libs/flying-pages/flying-pages.min.js"></script>
+
+
+
+
+
+
+
+
+
+      <script>
+  volantis.layoutHelper("comments",`<div id="giscus_container"></div>`)
+
+  volantis.giscus = {};
+
+  function check_giscus() {
+    if (volantis.dark.mode === "dark") {
+      volantis.giscus.Theme = 'dark';
+    } else {
+      volantis.giscus.Theme = 'light';
+    }
+
+    return document.getElementById("giscus_container");
+  }
+
+  function p_giscus() {
+    const HEAD = check_giscus();
+    if (!HEAD) return;
+    let cfg = Object.assign({"theme":{"light":"light","dark":"dark"},"repo":"zhiqiuyuan/zhiqiuyuan.github.io","repo-id":"R_kgDOIkV5Eg","category":"Announcements","category-id":"DIC_kwDOIkV5Es4CS9Vg","mapping":"pathname","strict":"0","reactions-enabled":"1","emit-metadata":"0","input-position":"bottom","lang":"zh-CN"},pdata.commentConfig)
+    const script = document.createElement('script');
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    Object.keys(cfg).forEach(k=>{
+      if (k != "theme") {
+        script.setAttribute('data-'+k, cfg[k]);
+      }
+    })
+    script.setAttribute('data-theme', volantis.giscus.Theme);
+    script.setAttribute('crossorigin', "anonymous");
+    HEAD.appendChild(script);
+  }
+
+  function dark_giscus() {
+    const HEAD = check_giscus();
+    if (!HEAD) return;
+
+    const message = {
+      setConfig: {
+        theme: volantis.giscus.Theme
+      }
+    };
+    const giscusIframe = document.querySelector('iframe.giscus-frame');
+    giscusIframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+  }
+  p_giscus();
+  volantis.dark.push(dark_giscus);
+</script>
+
+    
+
+
+
+
+
+<!-- optional -->
+
+  <script>
+  async function loadSearchScript() {
+    
+        
+    
+    return volantis.js("/js/search/hexo.js");
+  }
+
+  function loadSearchService() {
+    loadSearchScript();
+    document.querySelectorAll(".input.u-search-input").forEach((e) => {
+      e.removeEventListener("focus", loadSearchService, false);
+    });
+
+    document.querySelectorAll(".u-search-form").forEach((e) => {
+      e.addEventListener("submit", (event) => {
+        event.preventDefault();
+      }, false);
+    });
+  }
+
+  // 打开并搜索 字符串 s
+  function OpenSearch(s) {
+    if (typeof SearchService === 'undefined')
+      loadSearchScript().then(() => {
+        SearchService.setQueryText(s);
+        SearchService.search();
+      });
+    else {
+      SearchService.setQueryText(s);
+      SearchService.search();
+    }
+  }
+
+  // 访问含有 ?s=xxx  的链接时打开搜索 // 与搜索引擎 structured data 相关: /scripts/helpers/structured-data/lib/config.js
+  if (window.location.search && /^\?s=/g.test(window.location.search)) {
+    let queryText = decodeURI(window.location.search)
+      .replace(/\ /g, "-")
+      .replace(/^\?s=/g, "");
+    OpenSearch(queryText);
+  }
+
+  // 搜索输入框获取焦点时加载搜索
+  document.querySelectorAll(".input.u-search-input").forEach((e) => {
+    e.addEventListener("focus", loadSearchService, false);
+  });
+</script>
+
+
+
+
+
+
+
+  <script>
+
+  volantis.css("https://unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css");
+
+
+
+  function p_highlightjs_copyCode(){
+    if (!(document.querySelector(".highlight .code pre") ||
+      document.querySelector(".article pre code"))) {
+      return;
+    }
+    VolantisApp.utilCopyCode(".highlight .code pre, .article pre code")
+  }
+  volantis.requestAnimationFrame(p_highlightjs_copyCode)
+
+</script>
+
+
+
+
+
+
+
+
+
+
+  <script>
+  function load_swiper() {
+    if (!document.querySelectorAll(".swiper-container")[0]) return;
+    volantis.css("https://cdn.bootcdn.net/ajax/libs/Swiper/8.3.2/swiper-bundle.min.css");
+    volantis.js("https://cdn.bootcdn.net/ajax/libs/Swiper/8.3.2/swiper-bundle.min.js").then(() => {
+      p_swiper();
+    });
+  }
+
+  load_swiper();
+
+  function p_swiper() {
+    volantis.swiper = new Swiper('.swiper-container', {
+      slidesPerView: 'auto',
+      spaceBetween: 8,
+      centeredSlides: true,
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  }
+
+</script>
+
+
+
+  <script>
+  volantis.css("https://cdn.bootcdn.net/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.min.css");
+  volantis.js("https://cdn.bootcdn.net/ajax/libs/pace/1.2.4/pace.min.js").then(() => {
+    Pace.options.restartOnPushState = false;
+    // 阅读进度
+    volantis.scroll.push(() => {
+      Pace.stop();
+      Pace.trigger('start');
+      Pace.bar.update(volantis.scroll.progress() * 100);
+      document.body.className = document.body.className.replaceAll("pace-running ","");
+    },"阅读进度")
+    // todo：配置项开关, 哪些页面添加阅读进度
+  })
+</script>
+
+
+
+
+<script>
+  function listenSidebarTOC() {
+    const navItems = document.querySelectorAll(".toc li");
+    if (!navItems.length) return;
+    const targets = []
+    const sections = Array.from(navItems).forEach((element) => {
+      const link = element.querySelector(".toc-link");
+      const target = document.getElementById(
+        link.getAttribute("href") ? decodeURI(link.getAttribute("href")).replace("#", "") : link.getAttribute("toc-action").split("toc-")[1] // 兼容 hexo-blog-encrypt
+      );
+      targets.push(target)
+      // 解除 a 标签 href 的 锚点定位, a 标签 href 的 锚点定位 会随机启用?? 产生错位???
+      if (link.getAttribute("href")) {
+        link.setAttribute("toc-action", "toc-" + decodeURI(link.getAttribute("href")).replace("#", ""))
+        link.removeAttribute("href")
+      }
+      // 配置 点击 触发新的锚点定位
+      if (target && target.id) {
+        link.addEventListener("click", (event) => {
+          event.preventDefault();
+          // 这里的 addTop 是通过错位使得 toc 自动展开.
+          volantis.scroll.to(target, { addTop: 5, observer: true })
+          // Anchor id
+          history.pushState(null, document.title, "#" + target.id);
+        });
+      }
+      return target;
+    });
+
+    function activateNavByIndex(target) {
+      if (target.classList.contains("active-current")) return;
+
+      document.querySelectorAll(".toc .active").forEach((element) => {
+        element.classList.remove("active", "active-current");
+      });
+      target.classList.add("active", "active-current");
+      let parent = target.parentNode;
+      while (!parent.matches(".toc")) {
+        if (parent.matches("li")) parent.classList.add("active");
+        parent = parent.parentNode;
+      }
+    }
+
+    // 方案一：
+    volantis.activateNavIndex = 0
+    activateNavByIndex(navItems[volantis.activateNavIndex])
+    if (targets[0]) {
+      volantis.scroll.push(() => {
+        if (targets[0].getBoundingClientRect().top >= 0) {
+          volantis.activateNavIndex = 0
+        } else if (targets[targets.length - 1].getBoundingClientRect().top < 0) {
+          volantis.activateNavIndex = targets.length - 1
+        } else {
+          for (let index = 0; index < targets.length; index++) {
+            const target0 = targets[index];
+            const target1 = targets[(index + 1) % targets.length];
+            if (target0.getBoundingClientRect().top < 0 && target1.getBoundingClientRect().top >= 0) {
+              volantis.activateNavIndex = index
+              break;
+            }
+          }
+        }
+        activateNavByIndex(navItems[volantis.activateNavIndex])
+      })
+    }
+
+    // 方案二：
+    // IntersectionObserver 不是完美精确到像素级别 也不是低延时性的
+    // function findIndex(entries) {
+    //   let index = 0;
+    //   let entry = entries[index];
+    //   if (entry.boundingClientRect.top > 0) {
+    //     index = sections.indexOf(entry.target);
+    //     return index === 0 ? 0 : index - 1;
+    //   }
+    //   for (; index < entries.length; index++) {
+    //     if (entries[index].boundingClientRect.top <= 0) {
+    //       entry = entries[index];
+    //     } else {
+    //       return sections.indexOf(entry.target);
+    //     }
+    //   }
+    //   return sections.indexOf(entry.target);
+    // }
+    // function createIntersectionObserver(marginTop) {
+    //   marginTop = Math.floor(marginTop + 10000);
+    //   let intersectionObserver = new IntersectionObserver(
+    //     (entries, observe) => {
+    //       let scrollHeight = document.documentElement.scrollHeight;
+    //       if (scrollHeight > marginTop) {
+    //         observe.disconnect();
+    //         createIntersectionObserver(scrollHeight);
+    //         return;
+    //       }
+    //       let index = findIndex(entries);
+    //       activateNavByIndex(navItems[index]);
+    //     }, {
+    //       rootMargin: marginTop + "px 0px -100% 0px",
+    //       threshold: 0,
+    //     }
+    //   );
+    //   sections.forEach((element) => {
+    //     element && intersectionObserver.observe(element);
+    //   });
+    // }
+    // createIntersectionObserver(document.documentElement.scrollHeight);
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    volantis.requestAnimationFrame(listenSidebarTOC)
+  });
+</script>
+
+
+
+
+
+<script>
+  document.onreadystatechange = function () {
+    if (document.readyState == 'complete') {
+      // 页面加载完毕 样式加载失败，或是当前网速慢，或是开启了省流模式
+      const { saveData, effectiveType } = navigator.connection || navigator.mozConnection || navigator.webkitConnection || {}
+      if (getComputedStyle(document.querySelector("#safearea"), null)["display"] == "none" || saveData || /2g/.test(effectiveType)) {
+        document.querySelectorAll(".reveal").forEach(function (e) {
+          e.style["opacity"] = "1";
+        });
+        document.querySelector("#safearea").style["display"] = "block";
+      }
+    }
+  }
+</script>
+
+
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"grapher"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"zhiqiuyuan's blog"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2024/01/03/lmdb接口学习/","name":"lmdb接口学习"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"zhiqiuyuan's blog","url":"http://example.com/","keywords":null,"description":"grapher","author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"grapher"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"lmdb接口学习","description":"grapher","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2024/01/03/lmdb%E6%8E%A5%E5%8F%A3%E5%AD%A6%E4%B9%A0/"},"author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2024/01/03/lmdb%E6%8E%A5%E5%8F%A3%E5%AD%A6%E4%B9%A0/","wordCount":0,"datePublished":"2024-01-03T12:01:10.000Z","dateModified":"2024-01-19T08:48:04.000Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+
+
+
+    </div>
+    <!-- import body_end begin-->
+    <!-- import body_end end-->
+    <!-- Custom Files bodyEnd begin-->
+    
+    <!-- Custom Files bodyEnd end-->
+  </body>
+</html>

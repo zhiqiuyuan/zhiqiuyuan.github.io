@@ -2272,7 +2272,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1689423278757),
+    lastupdate: new Date(1708084958563),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2630,15 +2630,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         
-      
-        
-      
-        
-      
-        
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/14/LCA/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/16/西瓜书-2-4-比较检验/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2656,16 +2650,24 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/03/14/LCA/"  itemprop="url">
-        LCA
+      <a href="/2023/04/16/%E8%A5%BF%E7%93%9C%E4%B9%A6-2-4-%E6%AF%94%E8%BE%83%E6%A3%80%E9%AA%8C/"  itemprop="url">
+        西瓜书 2.4 比较检验
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        https://cp-algorithms.com/graph/lca.html
-Before answering the queries, we need to preprocess the tree. We make a DFS traversal starting at the root and we build a list  $\text{euler}$  which stores...
+        
+2.4.1 假设检验
+
+
+对于这个假设即需要：
+“e&gt;e0”的总概率&lt;a
+“e&gt;e0”的总概率即
+
+
+
       
     
   </div>
@@ -2673,12 +2675,12 @@ Before answering the queries, we need to preprocess the tree. We make a DFS trav
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-03-14T09:04:52+08:00">2023-03-14</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-04-16T16:11:57+08:00">2023-04-16</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/03/14/LCA/' itemprop="url">
+          <a class='readmore' href='/2023/04/16/%E8%A5%BF%E7%93%9C%E4%B9%A6-2-4-%E6%AF%94%E8%BE%83%E6%A3%80%E9%AA%8C/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2696,7 +2698,7 @@ Before answering the queries, we need to preprocess the tree. We make a DFS trav
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/12/树的高度/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/15/西瓜书-第2章/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2714,15 +2716,36 @@ Before answering the queries, we need to preprocess the tree. We make a DFS trav
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/03/12/%E6%A0%91%E7%9A%84%E9%AB%98%E5%BA%A6/"  itemprop="url">
-        树的高度
+      <a href="/2023/04/15/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E7%AC%AC2%E7%AB%A0/"  itemprop="url">
+        西瓜书 2.2 评估方法 2.3 性能度量
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        https://www.geeksforgeeks.org/roots-tree-gives-minimum-height/Given an undirected graph, which has tree characteristics (any connected graph without simple cycles is a tree.). It is possible to cho...
+        2.2对测试样本的假设
+一个数据集得到训练集和测试集留出法
+
+
+
+交叉验证
+
+自助法有放回抽样m次，得到含m个样本的集合，作为训练集（这个训练集中有重复的样本，但是我们不去重）
+
+
+
+调参
+
+验证集验证集来自训练数据
+即给定数据集D，其被划分为：训练数据，测试数据
+其中训练数据进一步划分为：训练集，验证集
+
+最终模型
+2.3 性能度量（主要分类问题）
+错误率 精度
+
+混淆矩阵 查全率reca...
       
     
   </div>
@@ -2730,7 +2753,64 @@ Before answering the queries, we need to preprocess the tree. We make a DFS trav
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-03-12T10:56:11+08:00">2023-03-12</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-04-15T11:11:43+08:00">2023-04-15</time>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/04/15/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E7%AC%AC2%E7%AB%A0/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/14/有向无环图-枚举st路径-st路径计数/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/04/14/%E6%9C%89%E5%90%91%E6%97%A0%E7%8E%AF%E5%9B%BE-%E6%9E%9A%E4%B8%BEst%E8%B7%AF%E5%BE%84-st%E8%B7%AF%E5%BE%84%E8%AE%A1%E6%95%B0/"  itemprop="url">
+        有向无环图 枚举st路径 st路径计数
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        https://www.geeksforgeeks.org/number-of-paths-from-source-to-destination-in-a-directed-acyclic-graph/
+拓扑排序+动态规划，好厉害
+Let f(u) be the number of ways one can travel from node u to destination vertex. ...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-04-14T09:45:26+08:00">2023-04-14</time>
         
           <span class="dot"></span>
           <a class="category-link" href="/categories/algorithm/">algorithm</a>
@@ -2743,7 +2823,7 @@ Before answering the queries, we need to preprocess the tree. We make a DFS trav
       </div>
       
         <div>
-          <a class='readmore' href='/2023/03/12/%E6%A0%91%E7%9A%84%E9%AB%98%E5%BA%A6/' itemprop="url">
+          <a class='readmore' href='/2023/04/14/%E6%9C%89%E5%90%91%E6%97%A0%E7%8E%AF%E5%9B%BE-%E6%9E%9A%E4%B8%BEst%E8%B7%AF%E5%BE%84-st%E8%B7%AF%E5%BE%84%E8%AE%A1%E6%95%B0/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2761,7 +2841,7 @@ Before answering the queries, we need to preprocess the tree. We make a DFS trav
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/11/c-模板类申明（在定义前申明）/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/13/西瓜书-第1章/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2779,20 +2859,32 @@ Before answering the queries, we need to preprocess the tree. We make a DFS trav
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/03/11/c-%E6%A8%A1%E6%9D%BF%E7%B1%BB%E7%94%B3%E6%98%8E%EF%BC%88%E5%9C%A8%E5%AE%9A%E4%B9%89%E5%89%8D%E7%94%B3%E6%98%8E%EF%BC%89/"  itemprop="url">
-        c++模板类申明（在定义前申明）
+      <a href="/2023/04/13/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E7%AC%AC1%E7%AB%A0/"  itemprop="url">
+        西瓜书 第1章
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        在一些情况下我们先定义类A，再定义类B（这样的定义顺序是因为类B有个成员函数返回类型A（而不是A的引用或指针）），但是在类A中有一个数据成员的类型是类B的引用，此时便需要在类A的定义前先申明B
-// 申明模板类Graph
-template &lt;typename BatchSetType&gt;
-class Graph; 
-// 定义模板类BlockCutTree
-template &lt...
+        1.2数据集
+
+
+
+1.3学得的模型也称假设
+
+泛化能力
+对样本空间和样本的假设
+
+偏好
+
+1.4模型在训练集之外的所有样本上的误差 
+NFL定理
+
+
+
+但是事实上我们通常并不总是关心训练集外的“所有”样本，而是一部分
+
       
     
   </div>
@@ -2800,20 +2892,20 @@ template &lt...
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-03-11T21:35:02+08:00">2023-03-11</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-04-13T18:21:36+08:00">2023-04-13</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/c/">c++</a>
+          <a class="category-link" href="/categories/ML/">ML</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/c/" itemprop="url"><span itemprop="name">c++</span></a>
+              <a href="/categories/ML/" itemprop="url"><span itemprop="name">ML</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/03/11/c-%E6%A8%A1%E6%9D%BF%E7%B1%BB%E7%94%B3%E6%98%8E%EF%BC%88%E5%9C%A8%E5%AE%9A%E4%B9%89%E5%89%8D%E7%94%B3%E6%98%8E%EF%BC%89/' itemprop="url">
+          <a class='readmore' href='/2023/04/13/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E7%AC%AC1%E7%AB%A0/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2831,7 +2923,7 @@ template &lt...
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/10/二连通图-two-connected-graph-biconnected-graph/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/12/vector-unsigned-初始化对比/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2849,16 +2941,21 @@ template &lt...
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/03/10/%E4%BA%8C%E8%BF%9E%E9%80%9A%E5%9B%BE-two-connected-graph-biconnected-graph/"  itemprop="url">
-        二连通图 two-connected-graph biconnected-graph
+      <a href="/2023/04/12/vector-unsigned-%E5%88%9D%E5%A7%8B%E5%8C%96%E5%AF%B9%E6%AF%94/"  itemprop="url">
+        vector<unsigned>初始化对比
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        https://www.techiedelight.com/2-vertex-connectivity-graph/http://www.cs.rpi.edu/~goldberg/14-GT/08-block.pdf
-无向图DFSWe can find Articulation points in a graph using Depth–first search (DFS).We can s...
+        对比vector(sz)vector(sz,0)vector(sz,-1u)vector(sz)然后arr[i]&#x3D;i的时间
+结果：performance是跑20次的平均
+-O3编译：有initializer的两种差不多，另外两种差不多no initializer
+[ave performance] 1916320 us
+
+init to all 0
+[ave performance...
       
     
   </div>
@@ -2866,20 +2963,12 @@ template &lt...
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-03-10T16:46:11+08:00">2023-03-10</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/algorithm/">algorithm</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/algorithm/" itemprop="url"><span itemprop="name">algorithm</span></a>
-            </span>
-          
+        <time itemprop="dateCreated datePublished" datetime="2023-04-12T10:50:08+08:00">2023-04-12</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/03/10/%E4%BA%8C%E8%BF%9E%E9%80%9A%E5%9B%BE-two-connected-graph-biconnected-graph/' itemprop="url">
+          <a class='readmore' href='/2023/04/12/vector-unsigned-%E5%88%9D%E5%A7%8B%E5%8C%96%E5%AF%B9%E6%AF%94/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2890,6 +2979,65 @@ template &lt...
 </div>
 
           </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/10/vector-bool-不是一个好选择/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/04/10/vector-bool-%E4%B8%8D%E6%98%AF%E4%B8%80%E4%B8%AA%E5%A5%BD%E9%80%89%E6%8B%A9/"  itemprop="url">
+        vector<bool>不是一个好选择
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        实现bool是一个字节但是vector实际上是用一个比特来表示一个bool
+因此vector慢（实际测试中：访问vector x次，访问vector 2*x次，但是访问vector的时间却是访问vector的7倍）    虽然O3优化可以加速，但是开O3优化后可能出问题且for(auto&amp;v:vector)等对于vector元素的引用会出现问题
+不如bitset（编译期知道长度，定长...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-04-10T15:05:25+08:00">2023-04-10</time>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/04/10/vector-bool-%E4%B8%8D%E6%98%AF%E4%B8%80%E4%B8%AA%E5%A5%BD%E9%80%89%E6%8B%A9/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
         
       
     
@@ -2906,7 +3054,7 @@ template &lt...
           </a>
         
         <p class="current">
-          13 / 39
+          13 / 44
         </p>
         
           <a class="next" rel="next" href="/page/14/">
@@ -3094,6 +3242,11 @@ template &lt...
             ><div class='name'>java</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box"
+            title="/categories/leetcode/" href="/categories/leetcode/"
+            active-action="action-categoriesleetcode"
+            ><div class='name'>leetcode</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box"
             title="/categories/linux/" href="/categories/linux/"
             active-action="action-categorieslinux"
             ><div class='name'>linux</div><div class='badge'>(1)</div></a></li>
@@ -3196,7 +3349,7 @@ template &lt...
 
 
     <div class='content'>
-      <a href="/tags/GPU/" style="font-size: 15.11px; color: #919191">GPU</a> <a href="/tags/ML/" style="font-size: 14px; color: #999">ML</a> <a href="/tags/SIMD/" style="font-size: 17.33px; color: #828282">SIMD</a> <a href="/tags/bash/" style="font-size: 21.78px; color: #646464">bash</a> <a href="/tags/c/" style="font-size: 22.89px; color: #5d5d5d">c++</a> <a href="/tags/concurrency/" style="font-size: 20.67px; color: #6c6c6c">concurrency</a> <a href="/tags/git/" style="font-size: 14px; color: #999">git</a> <a href="/tags/graph/" style="font-size: 19.56px; color: #737373">graph</a> <a href="/tags/halo/" style="font-size: 16.22px; color: #8a8a8a">halo</a> <a href="/tags/hexo/" style="font-size: 15.11px; color: #919191">hexo</a> <a href="/tags/linux/" style="font-size: 24px; color: #555">linux</a> <a href="/tags/python/" style="font-size: 18.44px; color: #7b7b7b">python</a> <a href="/tags/rocksdb/" style="font-size: 16.22px; color: #8a8a8a">rocksdb</a> <a href="/tags/rust/" style="font-size: 19.56px; color: #737373">rust</a> <a href="/tags/tex/" style="font-size: 18.44px; color: #7b7b7b">tex</a> <a href="/tags/tool/" style="font-size: 14px; color: #999">tool</a> <a href="/tags/%E6%A6%82%E7%BB%9F/" style="font-size: 17.33px; color: #828282">概统</a>
+      <a href="/tags/GPU/" style="font-size: 15.11px; color: #919191">GPU</a> <a href="/tags/ML/" style="font-size: 14px; color: #999">ML</a> <a href="/tags/SIMD/" style="font-size: 17.33px; color: #828282">SIMD</a> <a href="/tags/bash/" style="font-size: 21.78px; color: #646464">bash</a> <a href="/tags/c/" style="font-size: 22.89px; color: #5d5d5d">c++</a> <a href="/tags/concurrency/" style="font-size: 20.67px; color: #6c6c6c">concurrency</a> <a href="/tags/git/" style="font-size: 14px; color: #999">git</a> <a href="/tags/graph/" style="font-size: 19.56px; color: #737373">graph</a> <a href="/tags/halo/" style="font-size: 16.22px; color: #8a8a8a">halo</a> <a href="/tags/hexo/" style="font-size: 15.11px; color: #919191">hexo</a> <a href="/tags/leetcode/" style="font-size: 18.44px; color: #7b7b7b">leetcode</a> <a href="/tags/leetcode-binary-tree/" style="font-size: 14px; color: #999">leetcode-binary-tree</a> <a href="/tags/leetcode-bit-trick/" style="font-size: 14px; color: #999">leetcode-bit-trick</a> <a href="/tags/leetcode-brain-teaser/" style="font-size: 15.11px; color: #919191">leetcode-brain-teaser</a> <a href="/tags/leetcode-easy/" style="font-size: 18.44px; color: #7b7b7b">leetcode-easy</a> <a href="/tags/leetcode-string/" style="font-size: 14px; color: #999">leetcode-string</a> <a href="/tags/linux/" style="font-size: 24px; color: #555">linux</a> <a href="/tags/python/" style="font-size: 18.44px; color: #7b7b7b">python</a> <a href="/tags/rocksdb/" style="font-size: 16.22px; color: #8a8a8a">rocksdb</a> <a href="/tags/rust/" style="font-size: 19.56px; color: #737373">rust</a> <a href="/tags/tex/" style="font-size: 18.44px; color: #7b7b7b">tex</a> <a href="/tags/tool/" style="font-size: 14px; color: #999">tool</a> <a href="/tags/%E6%A6%82%E7%BB%9F/" style="font-size: 17.33px; color: #828282">概统</a>
     </div>
   </section>
 

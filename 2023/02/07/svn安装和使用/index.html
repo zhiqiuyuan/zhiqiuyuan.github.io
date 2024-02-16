@@ -41,11 +41,11 @@
 <meta property="og:title" content="svn安装和使用">
 <meta property="og:url" content="http://example.com/2023/02/07/svn%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="zhiqiuyuan&#39;s blog">
-<meta property="og:description" content="简介：SVN，版本管理，和git用起来类似 安装tortoiseSVN，记得勾选安装命令行工具（命令行比GUI用得舒服hhh另外如果下面要集成到vscode中用svn插件，也需要装这个）： https:&#x2F;&#x2F;tortoisesvn.net&#x2F; 常用svn命令：https:&#x2F;&#x2F;svnbucket.com&#x2F;posts&#x2F;svn-commands-tutorial&#x2F; vscode集成svn使用： 安装：安装">
+<meta property="og:description" content="简介：SVN，版本管理，和git用起来类似 安装tortoiseSVN，记得勾选安装命令行工具（命令行比GUI用得舒服hhh另外如果下面要集成到vscode中用svn插件，也需要装这个）： https:&#x2F;&#x2F;tortoisesvn.net&#x2F; 常用svn命令：https:&#x2F;&#x2F;svnbucket.com&#x2F;posts&#x2F;svn-commands-tutorial&#x2F;列出命令说明  svn help  svn">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-02-07T04:01:28.000Z">
-<meta property="article:modified_time" content="2023-04-03T02:51:21.076Z">
+<meta property="article:modified_time" content="2023-12-25T15:57:11.000Z">
 <meta property="article:author" content="zhiqiuyuan">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -2274,7 +2274,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1689423278757),
+    lastupdate: new Date(1708084958563),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2699,7 +2699,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <ul>
 <li>简介：SVN，版本管理，和git用起来类似</li>
 <li>安装tortoiseSVN，记得勾选安装命令行工具（命令行比GUI用得舒服hhh另外如果下面要集成到vscode中用svn插件，也需要装这个）： <a target="_blank" rel="noopener" href="https://tortoisesvn.net/">https://tortoisesvn.net/</a></li>
-<li>常用svn命令：<a target="_blank" rel="noopener" href="https://svnbucket.com/posts/svn-commands-tutorial/">https://svnbucket.com/posts/svn-commands-tutorial/</a></li>
+<li>常用svn命令：<a target="_blank" rel="noopener" href="https://svnbucket.com/posts/svn-commands-tutorial/">https://svnbucket.com/posts/svn-commands-tutorial/</a><br>列出命令说明</li>
+</ul>
+<pre><code class="bash">svn help
+</code></pre>
+<pre><code class="bash">svn help status # 列出svn status命令的帮助信息
+</code></pre>
+<ul>
 <li>vscode集成svn使用：<ul>
 <li>安装：安装插件SVN</li>
 <li>使用：<ul>
@@ -2710,6 +2716,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </ul>
 </li>
 </ul>
+<h2 id="svn-status"><a href="#svn-status" class="headerlink" title="svn status"></a>svn status</h2><p>The first seven columns in the output are each one character wide:<br>    First column: Says if item was added, deleted, or otherwise changed<br>      ‘ ‘ no modifications<br>      ‘A’ Added<br>      ‘C’ Conflicted<br>      ‘D’ Deleted<br>      ‘I’ Ignored<br>      ‘M’ Modified<br>      ‘R’ Replaced<br>      ‘X’ an unversioned directory created by an externals definition<br>      ‘?’ item is not under version control<br>      ‘!’ item is missing (removed by non-svn command) or incomplete<br>      ‘~’ versioned item obstructed by some item of a different kind<br>    Second column: Modifications of a file’s or directory’s properties<br>      ‘ ‘ no modifications<br>      ‘C’ Conflicted<br>      ‘M’ Modified<br>    Third column: Whether the working copy is locked for writing by<br>                  another Subversion client modifying the working copy<br>      ‘ ‘ not locked for writing<br>      ‘L’ locked for writing<br>    Fourth column: Scheduled commit will create a copy (addition-with-history)<br>      ‘ ‘ no history scheduled with commit (item was newly added)<br>      ‘+’ history scheduled with commit (item was copied)<br>    Fifth column: Whether the item is switched or a file external<br>      ‘ ‘ normal<br>      ‘S’ the item has a Switched URL relative to the parent<br>      ‘X’ a versioned file created by an eXternals definition<br>    Sixth column: Whether the item is locked in repository for exclusive commit<br>      (without -u)<br>      ‘ ‘ not locked by this working copy<br>      ‘K’ locked by this working copy, but lock might be stolen or broken<br>      (with -u)<br>      ‘ ‘ not locked in repository, not locked by this working copy<br>      ‘K’ locked in repository, lock owned by this working copy<br>      ‘O’ locked in repository, lock owned by another working copy<br>      ‘T’ locked in repository, lock owned by this working copy was stolen<br>      ‘B’ not locked in repository, lock owned by this working copy is broken<br>    Seventh column: Whether the item is the victim of a tree conflict<br>      ‘ ‘ normal<br>      ‘C’ tree-Conflicted<br>    If the item is a tree conflict victim, an additional line is printed<br>    after the item’s status line, explaining the nature of the conflict.</p>
+<p>  The out-of-date information appears in the ninth column (with -u):<br>      ‘*’ a newer revision exists on the server<br>      ‘ ‘ the working copy is up to date</p>
 
   </div>
   
@@ -2734,10 +2742,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-04-03T10:51:21+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-12-25T23:57:11+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Apr 3, 2023</p>
+    <p>更新于：Dec 25, 2023</p>
   </a>
 </div>
 
@@ -2889,7 +2897,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
   <div class='content'>
-      
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#svn-status"><span class="toc-text">svn status</span></a></li></ol>
   </div>
 </section>
 
@@ -3852,7 +3860,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"grapher"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"zhiqiuyuan's blog"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/02/07/svn安装和使用/","name":"svn安装和使用"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"zhiqiuyuan's blog","url":"http://example.com/","keywords":null,"description":"grapher","author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"grapher"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"svn安装和使用","description":"grapher","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/02/07/svn%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/"},"author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/02/07/svn%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/","wordCount":0,"datePublished":"2023-02-07T04:01:28.000Z","dateModified":"2023-04-03T02:51:21.076Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"grapher"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"zhiqiuyuan's blog"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/02/07/svn安装和使用/","name":"svn安装和使用"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"zhiqiuyuan's blog","url":"http://example.com/","keywords":null,"description":"grapher","author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"grapher"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"svn安装和使用","description":"grapher","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/02/07/svn%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/"},"author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/02/07/svn%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/","wordCount":0,"datePublished":"2023-02-07T04:01:28.000Z","dateModified":"2023-12-25T15:57:11.000Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

@@ -2272,7 +2272,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1689423278757),
+    lastupdate: new Date(1708084958563),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2631,19 +2631,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/02/27/vscode快捷键/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/30/open-mpi-学习/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2661,17 +2651,15 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/02/27/vscode%E5%BF%AB%E6%8D%B7%E9%94%AE/"  itemprop="url">
-        vscode快捷键
+      <a href="/2023/03/30/open-mpi-%E5%AD%A6%E4%B9%A0/"  itemprop="url">
+        open mpi 学习
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        工作区navigationctrl+R 从最近打开的一些工作区中选择一个打开
-文件navigationctrl+P 以文件名搜索当前目录中的文件并打开ctrl+T 以文件内容搜索当前目录中的文件并打开
-代码编辑ctrl+shift+K 删除当前行（或全部选中行）ctrl+X 剪切当前行（或全部选中部分）ctrl+backspace 删除光标前的一个单词alt+上/下方向键 把当前行上移&#x...
+        conceptsMPI uses the notion of process rather than processor. Program copies are mapped to processors by the MPI runtime.Each process has its own rank(用于在程序中indentify这是哪个process), the total number ...
       
     
   </div>
@@ -2679,20 +2667,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-02-27T09:24:12+08:00">2023-02-27</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/tools/">tools</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/tools/" itemprop="url"><span itemprop="name">tools</span></a>
-            </span>
-          
+        <time itemprop="dateCreated datePublished" datetime="2023-03-30T09:57:43+08:00">2023-03-30</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/02/27/vscode%E5%BF%AB%E6%8D%B7%E9%94%AE/' itemprop="url">
+          <a class='readmore' href='/2023/03/30/open-mpi-%E5%AD%A6%E4%B9%A0/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2706,13 +2686,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
       
         
-      
-        
-      
-        
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/02/25/shift-m128i/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/30/获取c-builtin-array-内置数组的长度-sizeof/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2730,18 +2706,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/02/25/shift-m128i/"  itemprop="url">
-        shift __m128i
+      <a href="/2023/03/30/%E8%8E%B7%E5%8F%96c-builtin-array-%E5%86%85%E7%BD%AE%E6%95%B0%E7%BB%84%E7%9A%84%E9%95%BF%E5%BA%A6-sizeof/"  itemprop="url">
+        获取c builtin array 内置数组的长度 sizeof
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        https://stackoverflow.com/questions/34478328/the-best-way-to-shift-a-m128i/34482688#34482688
-逻辑右移__m128i reg b比特（逻辑右移reg &gt;&gt; b）
-__m128i right_shift_128i(__m128i reg, int b)&#123;
-    assert(b&...
+        int main()
+&#123;
+    int send_array[100];
+    cout &lt;&lt; sizeof(send_array) &lt;&lt; endl;                       // 整个数组在栈上占的字节数 400
+    cout &lt;&lt; sizeof(send_array) / sizeof(*send_array) &...
       
     
   </div>
@@ -2749,20 +2726,12 @@ __m128i right_shift_128i(__m128i reg, int b)&#123;
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-02-25T20:30:14+08:00">2023-02-25</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/SIMD/">SIMD</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/SIMD/" itemprop="url"><span itemprop="name">SIMD</span></a>
-            </span>
-          
+        <time itemprop="dateCreated datePublished" datetime="2023-03-30T09:43:51+08:00">2023-03-30</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/02/25/shift-m128i/' itemprop="url">
+          <a class='readmore' href='/2023/03/30/%E8%8E%B7%E5%8F%96c-builtin-array-%E5%86%85%E7%BD%AE%E6%95%B0%E7%BB%84%E7%9A%84%E9%95%BF%E5%BA%A6-sizeof/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2775,6 +2744,186 @@ __m128i right_shift_128i(__m128i reg, int b)&#123;
           </div>
         
       
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/27/ROC-AUC/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/03/27/ROC-AUC/"  itemprop="url">
+        ROC AUC
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        https://developers.google.com/machine-learning/crash-course/classification/roc-and-auc
+ROC curveThis curve plots two parameters:True Positive Rate (recall)False Positive Rate
+An ROC curve plots TPR...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-03-27T16:58:01+08:00">2023-03-27</time>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/03/27/ROC-AUC/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/23/vim-find-count-计数查找/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/03/23/vim-find-count-%E8%AE%A1%E6%95%B0%E6%9F%A5%E6%89%BE/"  itemprop="url">
+        vim find count 计数查找
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        https://stackoverflow.com/questions/49297579/how-to-count-search-results-in-vim
+You can count the number of matches using the n flag in the substitute command. Use the following to show number of t...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-03-23T10:38:35+08:00">2023-03-23</time>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/03/23/vim-find-count-%E8%AE%A1%E6%95%B0%E6%9F%A5%E6%89%BE/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/22/cpp读写锁-reader-writer-lock/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/03/22/cpp%E8%AF%BB%E5%86%99%E9%94%81-reader-writer-lock/"  itemprop="url">
+        cpp读写锁 reader-writer-lock
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        examplehttps://stackoverflow.com/questions/244316/reader-writer-locks-in-cSince C++ 17 (VS2015) you can use the standard:
+#include &lt;shared_mutex&gt;
+
+typedef std::shared_mutex Lock;
+typedef std:...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-03-22T16:40:45+08:00">2023-03-22</time>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/03/22/cpp%E8%AF%BB%E5%86%99%E9%94%81-reader-writer-lock/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
         
       
     
@@ -2791,7 +2940,7 @@ __m128i right_shift_128i(__m128i reg, int b)&#123;
           </a>
         
         <p class="current">
-          15 / 24
+          15 / 27
         </p>
         
           <a class="next" rel="next" href="/archives/2023/page/16/">
@@ -2980,6 +3129,11 @@ __m128i right_shift_128i(__m128i reg, int b)&#123;
             ><div class='name'>java</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box"
+            title="/categories/leetcode/" href="/categories/leetcode/"
+            active-action="action-categoriesleetcode"
+            ><div class='name'>leetcode</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box"
             title="/categories/linux/" href="/categories/linux/"
             active-action="action-categorieslinux"
             ><div class='name'>linux</div><div class='badge'>(1)</div></a></li>
@@ -3082,7 +3236,7 @@ __m128i right_shift_128i(__m128i reg, int b)&#123;
 
 
     <div class='content'>
-      <a href="/tags/GPU/" style="font-size: 15.11px; color: #919191">GPU</a> <a href="/tags/ML/" style="font-size: 14px; color: #999">ML</a> <a href="/tags/SIMD/" style="font-size: 17.33px; color: #828282">SIMD</a> <a href="/tags/bash/" style="font-size: 21.78px; color: #646464">bash</a> <a href="/tags/c/" style="font-size: 22.89px; color: #5d5d5d">c++</a> <a href="/tags/concurrency/" style="font-size: 20.67px; color: #6c6c6c">concurrency</a> <a href="/tags/git/" style="font-size: 14px; color: #999">git</a> <a href="/tags/graph/" style="font-size: 19.56px; color: #737373">graph</a> <a href="/tags/halo/" style="font-size: 16.22px; color: #8a8a8a">halo</a> <a href="/tags/hexo/" style="font-size: 15.11px; color: #919191">hexo</a> <a href="/tags/linux/" style="font-size: 24px; color: #555">linux</a> <a href="/tags/python/" style="font-size: 18.44px; color: #7b7b7b">python</a> <a href="/tags/rocksdb/" style="font-size: 16.22px; color: #8a8a8a">rocksdb</a> <a href="/tags/rust/" style="font-size: 19.56px; color: #737373">rust</a> <a href="/tags/tex/" style="font-size: 18.44px; color: #7b7b7b">tex</a> <a href="/tags/tool/" style="font-size: 14px; color: #999">tool</a> <a href="/tags/%E6%A6%82%E7%BB%9F/" style="font-size: 17.33px; color: #828282">概统</a>
+      <a href="/tags/GPU/" style="font-size: 15.11px; color: #919191">GPU</a> <a href="/tags/ML/" style="font-size: 14px; color: #999">ML</a> <a href="/tags/SIMD/" style="font-size: 17.33px; color: #828282">SIMD</a> <a href="/tags/bash/" style="font-size: 21.78px; color: #646464">bash</a> <a href="/tags/c/" style="font-size: 22.89px; color: #5d5d5d">c++</a> <a href="/tags/concurrency/" style="font-size: 20.67px; color: #6c6c6c">concurrency</a> <a href="/tags/git/" style="font-size: 14px; color: #999">git</a> <a href="/tags/graph/" style="font-size: 19.56px; color: #737373">graph</a> <a href="/tags/halo/" style="font-size: 16.22px; color: #8a8a8a">halo</a> <a href="/tags/hexo/" style="font-size: 15.11px; color: #919191">hexo</a> <a href="/tags/leetcode/" style="font-size: 18.44px; color: #7b7b7b">leetcode</a> <a href="/tags/leetcode-binary-tree/" style="font-size: 14px; color: #999">leetcode-binary-tree</a> <a href="/tags/leetcode-bit-trick/" style="font-size: 14px; color: #999">leetcode-bit-trick</a> <a href="/tags/leetcode-brain-teaser/" style="font-size: 15.11px; color: #919191">leetcode-brain-teaser</a> <a href="/tags/leetcode-easy/" style="font-size: 18.44px; color: #7b7b7b">leetcode-easy</a> <a href="/tags/leetcode-string/" style="font-size: 14px; color: #999">leetcode-string</a> <a href="/tags/linux/" style="font-size: 24px; color: #555">linux</a> <a href="/tags/python/" style="font-size: 18.44px; color: #7b7b7b">python</a> <a href="/tags/rocksdb/" style="font-size: 16.22px; color: #8a8a8a">rocksdb</a> <a href="/tags/rust/" style="font-size: 19.56px; color: #737373">rust</a> <a href="/tags/tex/" style="font-size: 18.44px; color: #7b7b7b">tex</a> <a href="/tags/tool/" style="font-size: 14px; color: #999">tool</a> <a href="/tags/%E6%A6%82%E7%BB%9F/" style="font-size: 17.33px; color: #828282">概统</a>
     </div>
   </section>
 

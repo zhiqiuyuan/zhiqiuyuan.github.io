@@ -2272,7 +2272,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1689423278757),
+    lastupdate: new Date(1708084958563),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2632,7 +2632,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/09/linux源码阅读开发环境搭建/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/16/lsof 查看资源被进程占用情况/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2650,21 +2650,20 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/07/09/linux%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"  itemprop="url">
-        linux源码阅读开发环境搭建
+      <a href="/2022/08/16/lsof%20%E6%9F%A5%E7%9C%8B%E8%B5%84%E6%BA%90%E8%A2%AB%E8%BF%9B%E7%A8%8B%E5%8D%A0%E7%94%A8%E6%83%85%E5%86%B5/"  itemprop="url">
+        lsof 查看资源被进程占用情况
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        vscode阅读linux源码方法一 一站式配置vscode目前存在的问题：仍然有一些红线报错，但是不影响跳转定义
-vscode 安装插件
-Remote-SSH：本机安装
-C&#x2F;C++ 插件：remote安装（在remote安装插件的方法：先Remote-SSH连接上remote）
+        打开文件的进程定位到打开的进程
+lsof &lt;file&gt;
 
-编译内核源码[编译内核（简单版）](# 编译内核（简单版）)
-获取.vscode和生成compile...
+$ lsof /opt/mysql/data/5690/mysql-error.log 
+COMMAND   PID                USER   FD   TYPE DEVICE SIZE/OFF     NODE NAME
+mysqld  12858 actiontech-universe    1w  ...
       
     
   </div>
@@ -2672,304 +2671,7 @@ C&#x2F;C++ 插件：remote安装（在remote安装插件的方法：先Remote-SS
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-07-09T21:10:10+08:00">2022-07-09</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/fix-error/">fix_error</a><span class="sep"></span><a class="category-link" href="/categories/tool/">tool</a><span class="sep"></span><a class="category-link" href="/categories/tool/linux/">linux</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/tool/" itemprop="url"><span itemprop="name">tool</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/tool/linux/" itemprop="url"><span itemprop="name">linux</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/fix-error/" itemprop="url"><span itemprop="name">fix_error</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/07/09/linux%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/09/powershell/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-    <meta itemprop="description" content="grapher">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/07/09/powershell/"  itemprop="url">
-        powershell
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        删除文件（夹）rmdir递归删除
-rmdir /s folder
-
-查看所有文件dir查看包含隐藏文件的所有文件
-dir /A *
-
-
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-07-09T20:58:18+08:00">2022-07-09</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/tool/">tool</a><span class="sep"></span><a class="category-link" href="/categories/tool/windows/">windows</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/tool/" itemprop="url"><span itemprop="name">tool</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/tool/windows/" itemprop="url"><span itemprop="name">windows</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/07/09/powershell/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/09/tmux/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-    <meta itemprop="description" content="grapher">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/07/09/tmux/"  itemprop="url">
-        tmux
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        Tmux所有快捷键都要通过前缀键（Ctrl+b）唤起，在tmux窗口中可以使用；
-tmux命令在普通终端和tmux窗口中均可以使用；
-多个会话，每个会话可以创建多个窗口，每个窗口可以划分为多个窗格；
-以会话为单位attach上某个会话
-新建tmux #新建一个会话，编号从0开始
-tmux new -t &lt;session-name&gt;
-
-Tmux 窗口底部有一个状态栏。状态栏的左侧是...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-07-09T20:54:32+08:00">2022-07-09</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/tool/">tool</a><span class="sep"></span><a class="category-link" href="/categories/tool/linux/">linux</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/tool/" itemprop="url"><span itemprop="name">tool</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/tool/linux/" itemprop="url"><span itemprop="name">linux</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/07/09/tmux/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/09/git/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-    <meta itemprop="description" content="grapher">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/07/09/git/"  itemprop="url">
-        git
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        git
-廖雪峰
-
-
-跟踪文本文件的改动
-
-不要使用Windows自带的记事本编辑任何文本文件。原因是Microsoft开发记事本的团队使用了一个非常弱智的行为来保存UTF-8编码的文件，他们自作聪明地在每个文件开头添加了0xefbbbf（十六进制）的字符
-
-
-基础用法1.git init把当前目录变成Git可以管理的仓库：
-$ mkdir learngit
-$ cd learngit
-$ g...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-07-09T20:48:53+08:00">2022-07-09</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/tool/">tool</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/tool/" itemprop="url"><span itemprop="name">tool</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/07/09/git/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/09/netstat 查看udptcp连接/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-    <meta itemprop="description" content="grapher">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/07/09/netstat%20%E6%9F%A5%E7%9C%8Budptcp%E8%BF%9E%E6%8E%A5/"  itemprop="url">
-        netstat 查看udptcp连接
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        netstatnetstat -nt  —&gt;&gt;&gt;查看tcp连接
-netstat -nua  —&gt;&gt;&gt;查看udp连接
-[root@dbserver ~]# netstat -nt  ---&gt;&gt;&gt;查看tcp连接
-Active Internet connections (w/o servers)
-Proto Recv-Q Send-Q Loca...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-07-09T15:23:48+08:00">2022-07-09</time>
+        <time itemprop="dateCreated datePublished" datetime="2022-08-16T10:27:01+08:00">2022-08-16</time>
         
           <span class="dot"></span>
           <a class="category-link" href="/categories/debug/">debug</a><span class="sep"></span><a class="category-link" href="/categories/tool/">tool</a><span class="sep"></span><a class="category-link" href="/categories/tool/linux/">linux</a>
@@ -2990,7 +2692,7 @@ Proto Recv-Q Send-Q Loca...
       </div>
       
         <div>
-          <a class='readmore' href='/2022/07/09/netstat%20%E6%9F%A5%E7%9C%8Budptcp%E8%BF%9E%E6%8E%A5/' itemprop="url">
+          <a class='readmore' href='/2022/08/16/lsof%20%E6%9F%A5%E7%9C%8B%E8%B5%84%E6%BA%90%E8%A2%AB%E8%BF%9B%E7%A8%8B%E5%8D%A0%E7%94%A8%E6%83%85%E5%86%B5/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3006,7 +2708,7 @@ Proto Recv-Q Send-Q Loca...
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/09/npm/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/16/cmake/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -3024,27 +2726,25 @@ Proto Recv-Q Send-Q Loca...
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/07/09/npm/"  itemprop="url">
-        npm
+      <a href="/2022/08/16/cmake/"  itemprop="url">
+        cmake
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        创建项目
-给项目添加package.json文件
+        cmake
+https://www.jianshu.com/p/cdd6e56c2422
 
-npm init
+指定编译标准CXX标准set(CMAKE_CXX_STANDARD 14) # c++14
 
+PROJECT基本用法：指定工程名称（完成路径赋值）
+# 顶层CMakeLists.txt
+cmake_minimum_required (VERSION 3.10.2)
+project (mytest)
 
-index.html放public目录下
-js放src目录下
-
-运行npm install #安装依赖
-npm start #u
-
-安装模块到指定目录默认情况下（即npm install XXX），在哪个文件夹下运行npm，npm就在当前目录创建一个文件夹node_modules，然后将要安装的程序安装到文件夹node...
+...
       
     
   </div>
@@ -3052,7 +2752,7 @@ npm start #u
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-07-09T14:45:08+08:00">2022-07-09</time>
+        <time itemprop="dateCreated datePublished" datetime="2022-08-16T10:23:54+08:00">2022-08-16</time>
         
           <span class="dot"></span>
           <a class="category-link" href="/categories/tool/">tool</a>
@@ -3065,7 +2765,7 @@ npm start #u
       </div>
       
         <div>
-          <a class='readmore' href='/2022/07/09/npm/' itemprop="url">
+          <a class='readmore' href='/2022/08/16/cmake/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3081,7 +2781,7 @@ npm start #u
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/09/vim操作/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/16/make/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -3099,16 +2799,21 @@ npm start #u
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/07/09/vim%E6%93%8D%E4%BD%9C/"  itemprop="url">
-        vim操作
+      <a href="/2022/08/16/make/"  itemprop="url">
+        make
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        配置you should modify the vim configuration file. The file is called vimrc, and it is located under /etc/vim directory. We first make a copy of it to the home directory by cp command:
-cp /etc/vim/vim...
+        make
+http://www.ruanyifeng.com/blog/2015/02/make.html
+
+
+代码变成可执行文件，叫做编译（compile）；先编译这个，还是先编译那个（即编译的安排），叫做构建（build）。Make是最常用的构建工具，主要用于C语言的项目。但是实际上 ，任何只要某个文件有变化，就要重新构建的项目，都可以用Make构建。
+
+重构的标准”目标”是否重新构建的...
       
     
   </div>
@@ -3116,79 +2821,7 @@ cp /etc/vim/vim...
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-07-09T14:10:04+08:00">2022-07-09</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/tool/">tool</a><span class="sep"></span><a class="category-link" href="/categories/tool/linux/">linux</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/tool/" itemprop="url"><span itemprop="name">tool</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/tool/linux/" itemprop="url"><span itemprop="name">linux</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/07/09/vim%E6%93%8D%E4%BD%9C/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/09/vscode通用操作 vscode安装卸载/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-    <meta itemprop="description" content="grapher">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/07/09/vscode%E9%80%9A%E7%94%A8%E6%93%8D%E4%BD%9C%20vscode%E5%AE%89%E8%A3%85%E5%8D%B8%E8%BD%BD/"  itemprop="url">
-        vscode通用操作 vscode安装卸载
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        ubuntu20.04下安装和启动ubuntu20.04使用 apt 安装Visual Studio Code 在官方的微软 Apt 源仓库中可用。想要安装它，按照下面的步骤来：
-
-以 sudo 用户身份运行下面的命令，更新软件包索引，并且安装依赖软件：
-
-sudo apt update
-sudo apt install software-properties-common apt-tran...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-07-09T14:09:18+08:00">2022-07-09</time>
+        <time itemprop="dateCreated datePublished" datetime="2022-08-16T10:22:53+08:00">2022-08-16</time>
         
           <span class="dot"></span>
           <a class="category-link" href="/categories/tool/">tool</a>
@@ -3201,7 +2834,7 @@ sudo apt install software-properties-common apt-tran...
       </div>
       
         <div>
-          <a class='readmore' href='/2022/07/09/vscode%E9%80%9A%E7%94%A8%E6%93%8D%E4%BD%9C%20vscode%E5%AE%89%E8%A3%85%E5%8D%B8%E8%BD%BD/' itemprop="url">
+          <a class='readmore' href='/2022/08/16/make/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3217,7 +2850,7 @@ sudo apt install software-properties-common apt-tran...
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/09/python安装模块/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/13/论文笔记 2014VLDB The More the Merrier Efficient Multi Source Graph Traversal/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -3235,23 +2868,27 @@ sudo apt install software-properties-common apt-tran...
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/07/09/python%E5%AE%89%E8%A3%85%E6%A8%A1%E5%9D%97/"  itemprop="url">
-        python安装模块
+      <a href="/2022/08/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202014VLDB%20The%20More%20the%20Merrier%20Efficient%20Multi%20Source%20Graph%20Traversal/"  itemprop="url">
+        论文笔记 2014VLDB The More the Merrier Efficient Multi-Source Graph Traversal
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        python3 pipwindows
-pip install &lt;package_name&gt;
+        
+MSBFSThe More the Merrier: Efficient Multi-Source Graph TraversalVLDB 2014
 
-linuxpython3:
-pip3 install &lt;package_name&gt;
+基准
+bit op
+ANP（这个）
+tuningcache line
+heuristic maximum sharing way of grouping BFSs
 
-网上搜一下，不一定和import的一样
-–user 仅为当前用户安装10.13 安装私有的包 — python3-cookbook 3.0.0 文档
-Python有一个用户安装目录，通常类似...
+reason: 
+
+
+
       
     
   </div>
@@ -3259,24 +2896,20 @@ Python有一个用户安装目录，通常类似...
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-07-09T12:45:21+08:00">2022-07-09</time>
+        <time itemprop="dateCreated datePublished" datetime="2022-08-13T16:36:44+08:00">2022-08-13</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/fix-error/">fix_error</a><span class="sep"></span><a class="category-link" href="/categories/python/">python</a>
+          <a class="category-link" href="/categories/paper/">paper</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/fix-error/" itemprop="url"><span itemprop="name">fix_error</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/python/" itemprop="url"><span itemprop="name">python</span></a>
+              <a href="/categories/paper/" itemprop="url"><span itemprop="name">paper</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2022/07/09/python%E5%AE%89%E8%A3%85%E6%A8%A1%E5%9D%97/' itemprop="url">
+          <a class='readmore' href='/2022/08/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202014VLDB%20The%20More%20the%20Merrier%20Efficient%20Multi%20Source%20Graph%20Traversal/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3292,7 +2925,7 @@ Python有一个用户安装目录，通常类似...
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/09/ubuntu+virtualbox虚拟机安装后操作/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/11/有sudo的ubuntu安装指定版本gcc/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -3310,24 +2943,16 @@ Python有一个用户安装目录，通常类似...
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/07/09/ubuntu+virtualbox%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85%E5%90%8E%E6%93%8D%E4%BD%9C/"  itemprop="url">
-        ubuntu+virtualbox虚拟机安装后操作
+      <a href="/2022/08/11/%E6%9C%89sudo%E7%9A%84ubuntu%E5%AE%89%E8%A3%85%E6%8C%87%E5%AE%9A%E7%89%88%E6%9C%ACgcc/"  itemprop="url">
+        有sudo的ubuntu安装指定版本gcc
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        装ubuntu虚拟机参考网上教程
-[可选]装ubuntu虚拟机后virtualbox安装增强功能设备-&gt;安装增强功能
-sudo su
-cd /media
-mkdir cdrom
-mount /dev/cdrom /media/cdrom
+        https://blog.csdn.net/qq_29007291/article/details/84953671
 
-然后跑去根目录找一下VBoxLinuxAdditions.run在哪里，应该在&#x2F;media&#x2F;cdrom中
-cd /
-sudo f...
       
     
   </div>
@@ -3335,7 +2960,7 @@ sudo f...
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-07-09T12:39:00+08:00">2022-07-09</time>
+        <time itemprop="dateCreated datePublished" datetime="2022-08-11T17:20:17+08:00">2022-08-11</time>
         
           <span class="dot"></span>
           <a class="category-link" href="/categories/fix-error/">fix_error</a><span class="sep"></span><a class="category-link" href="/categories/tool/">tool</a><span class="sep"></span><a class="category-link" href="/categories/tool/linux/">linux</a>
@@ -3356,7 +2981,363 @@ sudo f...
       </div>
       
         <div>
-          <a class='readmore' href='/2022/07/09/ubuntu+virtualbox%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85%E5%90%8E%E6%93%8D%E4%BD%9C/' itemprop="url">
+          <a class='readmore' href='/2022/08/11/%E6%9C%89sudo%E7%9A%84ubuntu%E5%AE%89%E8%A3%85%E6%8C%87%E5%AE%9A%E7%89%88%E6%9C%ACgcc/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/11/win10开机自动执行命令 后台运行/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/08/11/win10%E5%BC%80%E6%9C%BA%E8%87%AA%E5%8A%A8%E6%89%A7%E8%A1%8C%E5%91%BD%E4%BB%A4%20%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8C/"  itemprop="url">
+        win10开机自动执行命令 后台运行
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        
+打开startup文件夹：win+R键入shell:startup回车，打开的文件夹即是
+在这个文件夹中放xx.bat脚本或者应用xx.exe（或它们的快捷方式），即会开机执行它们
+这样执行.bat文件是在前台执行，且会有一个黑框，消除黑框的方法：
+https://codeantenna.com/a/3gznir1890
+
+
+在startup文件夹中放xx.vbs文件来代替原先的bat文件...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-08-11T12:57:04+08:00">2022-08-11</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/tool/">tool</a><span class="sep"></span><a class="category-link" href="/categories/tool/windows/">windows</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/tool/" itemprop="url"><span itemprop="name">tool</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/tool/windows/" itemprop="url"><span itemprop="name">windows</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/08/11/win10%E5%BC%80%E6%9C%BA%E8%87%AA%E5%8A%A8%E6%89%A7%E8%A1%8C%E5%91%BD%E4%BB%A4%20%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8C/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/11/vscode配置c++项目 include路径等/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/08/11/vscode%E9%85%8D%E7%BD%AEc++%E9%A1%B9%E7%9B%AE%20include%E8%B7%AF%E5%BE%84%E7%AD%89/"  itemprop="url">
+        vscode配置c++项目 include路径等
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        装c++环境gcc和g++都要以ubuntu为例
+sudo apt-get instal gcc
+sudo apt-get instal g++ #没装会报错找不到比如iostream头文件
+
+配置vscode
+https://blog.csdn.net/jinking01/article/details/106186575
+
+装c/c++、c++ IntelliSense插件version...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-08-11T11:58:44+08:00">2022-08-11</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/c/">c++</a><span class="sep"></span><a class="category-link" href="/categories/c/debug/">debug</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/c/" itemprop="url"><span itemprop="name">c++</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/c/debug/" itemprop="url"><span itemprop="name">debug</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/08/11/vscode%E9%85%8D%E7%BD%AEc++%E9%A1%B9%E7%9B%AE%20include%E8%B7%AF%E5%BE%84%E7%AD%89/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/11/WSL wsl/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/08/11/WSL%20wsl/"  itemprop="url">
+        WSL wsl
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        安装教程https://zhuanlan.zhihu.com/p/386590591?utm_campaign=shareopn&amp;utm_medium=social&amp;utm_oi=1123716080996339712&amp;utm_psn=1540980178544648192&amp;utm_source=wechat_session
+WSL中访问本地文件
+在“&#x2...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-08-11T11:04:12+08:00">2022-08-11</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/tool/">tool</a><span class="sep"></span><a class="category-link" href="/categories/tool/windows/">windows</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/tool/" itemprop="url"><span itemprop="name">tool</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/tool/windows/" itemprop="url"><span itemprop="name">windows</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/08/11/WSL%20wsl/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/11/linux服务器间文件传送 targz文件压缩和解压/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/08/11/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%97%B4%E6%96%87%E4%BB%B6%E4%BC%A0%E9%80%81%20targz%E6%96%87%E4%BB%B6%E5%8E%8B%E7%BC%A9%E5%92%8C%E8%A7%A3%E5%8E%8B/"  itemprop="url">
+        linux服务器间文件传送 .tar.gz文件压缩和解压
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        
+旧服务器备份：把~&#x2F;.halo压缩
+
+tar -zvcf ~/.halo.tar.gz ~/.halo # 得到~/.halo.tar.gz
+
+
+移到新服务器中在旧服务器上运行
+
+scp ~/.halo.tar.gz &lt;新服务器用户名&gt;@&lt;新服务器ip地址&gt;:~/.halo.tar.gz #scp即secure copy，是用来进行远程文件拷贝的。数据传输...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-08-11T09:46:09+08:00">2022-08-11</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/tool/">tool</a><span class="sep"></span><a class="category-link" href="/categories/tool/linux/">linux</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/tool/" itemprop="url"><span itemprop="name">tool</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/tool/linux/" itemprop="url"><span itemprop="name">linux</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/08/11/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%97%B4%E6%96%87%E4%BB%B6%E4%BC%A0%E9%80%81%20targz%E6%96%87%E4%BB%B6%E5%8E%8B%E7%BC%A9%E5%92%8C%E8%A7%A3%E5%8E%8B/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/11/解决应用商店Microsoft store打不开 代码0x80131500/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/08/11/%E8%A7%A3%E5%86%B3%E5%BA%94%E7%94%A8%E5%95%86%E5%BA%97Microsoft%20store%E6%89%93%E4%B8%8D%E5%BC%80%20%E4%BB%A3%E7%A0%810x80131500/"  itemprop="url">
+        解决应用商店Microsoft store打不开 代码0x80131500
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        解决方法：https://zhuanlan.zhihu.com/p/116654088事后还原：勾选 TLS 1.0，取消勾选TLS 1.2
+
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-08-11T09:10:13+08:00">2022-08-11</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/fix-error/">fix_error</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/fix-error/" itemprop="url"><span itemprop="name">fix_error</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/08/11/%E8%A7%A3%E5%86%B3%E5%BA%94%E7%94%A8%E5%95%86%E5%BA%97Microsoft%20store%E6%89%93%E4%B8%8D%E5%BC%80%20%E4%BB%A3%E7%A0%810x80131500/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3383,7 +3364,7 @@ sudo f...
           </a>
         
         <p class="current">
-          38 / 39
+          38 / 44
         </p>
         
           <a class="next" rel="next" href="/page/39/">
@@ -3571,6 +3552,11 @@ sudo f...
             ><div class='name'>java</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box"
+            title="/categories/leetcode/" href="/categories/leetcode/"
+            active-action="action-categoriesleetcode"
+            ><div class='name'>leetcode</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box"
             title="/categories/linux/" href="/categories/linux/"
             active-action="action-categorieslinux"
             ><div class='name'>linux</div><div class='badge'>(1)</div></a></li>
@@ -3673,7 +3659,7 @@ sudo f...
 
 
     <div class='content'>
-      <a href="/tags/GPU/" style="font-size: 15.11px; color: #919191">GPU</a> <a href="/tags/ML/" style="font-size: 14px; color: #999">ML</a> <a href="/tags/SIMD/" style="font-size: 17.33px; color: #828282">SIMD</a> <a href="/tags/bash/" style="font-size: 21.78px; color: #646464">bash</a> <a href="/tags/c/" style="font-size: 22.89px; color: #5d5d5d">c++</a> <a href="/tags/concurrency/" style="font-size: 20.67px; color: #6c6c6c">concurrency</a> <a href="/tags/git/" style="font-size: 14px; color: #999">git</a> <a href="/tags/graph/" style="font-size: 19.56px; color: #737373">graph</a> <a href="/tags/halo/" style="font-size: 16.22px; color: #8a8a8a">halo</a> <a href="/tags/hexo/" style="font-size: 15.11px; color: #919191">hexo</a> <a href="/tags/linux/" style="font-size: 24px; color: #555">linux</a> <a href="/tags/python/" style="font-size: 18.44px; color: #7b7b7b">python</a> <a href="/tags/rocksdb/" style="font-size: 16.22px; color: #8a8a8a">rocksdb</a> <a href="/tags/rust/" style="font-size: 19.56px; color: #737373">rust</a> <a href="/tags/tex/" style="font-size: 18.44px; color: #7b7b7b">tex</a> <a href="/tags/tool/" style="font-size: 14px; color: #999">tool</a> <a href="/tags/%E6%A6%82%E7%BB%9F/" style="font-size: 17.33px; color: #828282">概统</a>
+      <a href="/tags/GPU/" style="font-size: 15.11px; color: #919191">GPU</a> <a href="/tags/ML/" style="font-size: 14px; color: #999">ML</a> <a href="/tags/SIMD/" style="font-size: 17.33px; color: #828282">SIMD</a> <a href="/tags/bash/" style="font-size: 21.78px; color: #646464">bash</a> <a href="/tags/c/" style="font-size: 22.89px; color: #5d5d5d">c++</a> <a href="/tags/concurrency/" style="font-size: 20.67px; color: #6c6c6c">concurrency</a> <a href="/tags/git/" style="font-size: 14px; color: #999">git</a> <a href="/tags/graph/" style="font-size: 19.56px; color: #737373">graph</a> <a href="/tags/halo/" style="font-size: 16.22px; color: #8a8a8a">halo</a> <a href="/tags/hexo/" style="font-size: 15.11px; color: #919191">hexo</a> <a href="/tags/leetcode/" style="font-size: 18.44px; color: #7b7b7b">leetcode</a> <a href="/tags/leetcode-binary-tree/" style="font-size: 14px; color: #999">leetcode-binary-tree</a> <a href="/tags/leetcode-bit-trick/" style="font-size: 14px; color: #999">leetcode-bit-trick</a> <a href="/tags/leetcode-brain-teaser/" style="font-size: 15.11px; color: #919191">leetcode-brain-teaser</a> <a href="/tags/leetcode-easy/" style="font-size: 18.44px; color: #7b7b7b">leetcode-easy</a> <a href="/tags/leetcode-string/" style="font-size: 14px; color: #999">leetcode-string</a> <a href="/tags/linux/" style="font-size: 24px; color: #555">linux</a> <a href="/tags/python/" style="font-size: 18.44px; color: #7b7b7b">python</a> <a href="/tags/rocksdb/" style="font-size: 16.22px; color: #8a8a8a">rocksdb</a> <a href="/tags/rust/" style="font-size: 19.56px; color: #737373">rust</a> <a href="/tags/tex/" style="font-size: 18.44px; color: #7b7b7b">tex</a> <a href="/tags/tool/" style="font-size: 14px; color: #999">tool</a> <a href="/tags/%E6%A6%82%E7%BB%9F/" style="font-size: 17.33px; color: #828282">概统</a>
     </div>
   </section>
 
