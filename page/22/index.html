@@ -2272,7 +2272,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1708084958563),
+    lastupdate: new Date(1709044408207),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2634,9 +2634,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
       
         
+      
+        
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/02/12/Latex本地开发环境-texlive-texstudio/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/23/vim-find-count-计数查找/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2654,25 +2656,16 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/02/12/Latex%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83-texlive-texstudio/"  itemprop="url">
-        Latex本地开发环境 texlive+texstudio
+      <a href="/2023/03/23/vim-find-count-%E8%AE%A1%E6%95%B0%E6%9F%A5%E6%89%BE/"  itemprop="url">
+        vim find count 计数查找
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        https://zhuanlan.zhihu.com/p/80603542
-windows安装
-安装texlive方法一：
-
-下载install-tl.zip http://mirror.lzu.edu.cn/CTAN/systems/texlive/tlnet/
-
-解压install-tl.zip
-
-运行install-tl-windows.bat（安装时间较长，&gt;1h）方法二：
-
-...
+        https://stackoverflow.com/questions/49297579/how-to-count-search-results-in-vim
+You can count the number of matches using the n flag in the substitute command. Use the following to show number of t...
       
     
   </div>
@@ -2680,20 +2673,12 @@ windows安装
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-02-12T20:12:43+08:00">2023-02-12</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/paper/">paper</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/paper/" itemprop="url"><span itemprop="name">paper</span></a>
-            </span>
-          
+        <time itemprop="dateCreated datePublished" datetime="2023-03-23T10:38:35+08:00">2023-03-23</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/02/12/Latex%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83-texlive-texstudio/' itemprop="url">
+          <a class='readmore' href='/2023/03/23/vim-find-count-%E8%AE%A1%E6%95%B0%E6%9F%A5%E6%89%BE/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2707,9 +2692,11 @@ windows安装
         
       
         
+      
+        
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/02/08/chatGPT-guide/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/22/cpp读写锁-reader-writer-lock/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2727,19 +2714,19 @@ windows安装
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/02/08/chatGPT-guide/"  itemprop="url">
-        chatGPT guide
+      <a href="/2023/03/22/cpp%E8%AF%BB%E5%86%99%E9%94%81-reader-writer-lock/"  itemprop="url">
+        cpp读写锁 reader-writer-lock
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        参考https://sms-activate.org/en/info/ChatGPThttps://mp.weixin.qq.com/s/zti8CCIY8vAG8NU0YpzpAg
-一些其他信息
-官网：https://chat.openai.com/
-桌面应用：https://github.com/lencx/ChatGPT
-第三方的 ChatGPT 桌面应用。把 ChatGPT 放到你的...
+        examplehttps://stackoverflow.com/questions/244316/reader-writer-locks-in-cSince C++ 17 (VS2015) you can use the standard:
+#include &lt;shared_mutex&gt;
+
+typedef std::shared_mutex Lock;
+typedef std:...
       
     
   </div>
@@ -2747,20 +2734,12 @@ windows安装
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-02-08T17:19:32+08:00">2023-02-08</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/play/">play</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/play/" itemprop="url"><span itemprop="name">play</span></a>
-            </span>
-          
+        <time itemprop="dateCreated datePublished" datetime="2023-03-22T16:40:45+08:00">2023-03-22</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/02/08/chatGPT-guide/' itemprop="url">
+          <a class='readmore' href='/2023/03/22/cpp%E8%AF%BB%E5%86%99%E9%94%81-reader-writer-lock/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2776,7 +2755,7 @@ windows安装
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/02/08/rust宏-缺失值-Some/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/22/cpp线程池-basic-threadpool/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2794,24 +2773,22 @@ windows安装
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/02/08/rust%E5%AE%8F-%E7%BC%BA%E5%A4%B1%E5%80%BC-Some/"  itemprop="url">
-        rust宏 缺失值 Some
+      <a href="/2023/03/22/cpp%E7%BA%BF%E7%A8%8B%E6%B1%A0-basic-threadpool/"  itemprop="url">
+        cpp线程池 basic threadpool
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        _x 会将值绑定到变量，而 _ 则完全不会绑定:
-let s = Some(String::from(&quot;Hello!&quot;));
-
-if let Some(_s) = s &#123;
-    println!(&quot;found a string&quot;);
-&#125;
-
-println!(&quot;&#123;:?&#125;&quot;, s);
-
-s 是一...
+        #ifndef _THREADPOOL_H
+#define _THREADPOOL_H
+#include &lt;thread&gt;
+#include &lt;mutex&gt;
+#include &lt;condition_variable&gt;
+#include &lt;vector&gt;
+#include &lt;queue&gt;
+#if TIME_KILL_ENABLE ==...
       
     
   </div>
@@ -2819,24 +2796,12 @@ s 是一...
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-02-08T15:05:38+08:00">2023-02-08</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/rust/">rust</a><span class="sep"></span><a class="category-link" href="/categories/rust/language/">language</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/rust/" itemprop="url"><span itemprop="name">rust</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/rust/language/" itemprop="url"><span itemprop="name">language</span></a>
-            </span>
-          
+        <time itemprop="dateCreated datePublished" datetime="2023-03-22T11:56:57+08:00">2023-03-22</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/02/08/rust%E5%AE%8F-%E7%BC%BA%E5%A4%B1%E5%80%BC-Some/' itemprop="url">
+          <a class='readmore' href='/2023/03/22/cpp%E7%BA%BF%E7%A8%8B%E6%B1%A0-basic-threadpool/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2850,9 +2815,11 @@ s 是一...
         
       
         
+      
+        
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/02/08/rust流程控制/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/21/data-race-数据竞争/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2870,24 +2837,16 @@ s 是一...
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/02/08/rust%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/"  itemprop="url">
-        rust流程控制
+      <a href="/2023/03/21/data-race-%E6%95%B0%E6%8D%AE%E7%AB%9E%E4%BA%89/"  itemprop="url">
+        data race 数据竞争
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        if elseif else语句块是表达式
-fn main() &#123;
-    let condition = true;
-    let number = if condition &#123;
-        5
-    &#125; else &#123;
-        6
-    &#125;;
-
-    println!(&quot;The value of number ...
+        data race常见举例：https://yourbasic.org/golang/data-races-explained/
+向相同的地址写同样的值是否存在数据竞争：https://stackoverflow.com/questions/8315931/does-writing-the-same-value-to-the-same-memory-location-cause-a-data...
       
     
   </div>
@@ -2895,24 +2854,12 @@ fn main() &#123;
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-02-08T14:54:38+08:00">2023-02-08</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/rust/">rust</a><span class="sep"></span><a class="category-link" href="/categories/rust/language/">language</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/rust/" itemprop="url"><span itemprop="name">rust</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/rust/language/" itemprop="url"><span itemprop="name">language</span></a>
-            </span>
-          
+        <time itemprop="dateCreated datePublished" datetime="2023-03-21T18:36:20+08:00">2023-03-21</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/02/08/rust%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/' itemprop="url">
+          <a class='readmore' href='/2023/03/21/data-race-%E6%95%B0%E6%8D%AE%E7%AB%9E%E4%BA%89/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2925,147 +2872,6 @@ fn main() &#123;
           </div>
         
       
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/02/08/rust结构体/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-    <meta itemprop="description" content="grapher">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/02/08/rust%E7%BB%93%E6%9E%84%E4%BD%93/"  itemprop="url">
-        rust结构体
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        内存布局struct File &#123;
-   name: String,
-   data: Vec&lt;u8&gt;,
- &#125;
-
- fn main() &#123;
-   let f1 = File &#123;
-     name: String::from(&quot;f1.txt&quot;),
-     data: Vec::new(),
-   &#125;;
- &#...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-02-08T11:55:55+08:00">2023-02-08</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/rust/">rust</a><span class="sep"></span><a class="category-link" href="/categories/rust/language/">language</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/rust/" itemprop="url"><span itemprop="name">rust</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/rust/language/" itemprop="url"><span itemprop="name">language</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/02/08/rust%E7%BB%93%E6%9E%84%E4%BD%93/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-      
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/02/07/svn安装和使用/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-    <meta itemprop="description" content="grapher">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/02/07/svn%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/"  itemprop="url">
-        svn安装和使用
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        
-简介：SVN，版本管理，和git用起来类似
-安装tortoiseSVN，记得勾选安装命令行工具（命令行比GUI用得舒服hhh另外如果下面要集成到vscode中用svn插件，也需要装这个）： https://tortoisesvn.net/
-常用svn命令：https://svnbucket.com/posts/svn-commands-tutorial/列出命令说明
-
-svn help
-
-...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-02-07T12:01:28+08:00">2023-02-07</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/02/07/svn%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
         
       
     
@@ -3082,7 +2888,7 @@ svn help
           </a>
         
         <p class="current">
-          22 / 44
+          22 / 49
         </p>
         
           <a class="next" rel="next" href="/page/23/">
@@ -3327,7 +3133,7 @@ svn help
           <li><a class="flat-box"
             title="/categories/tool/" href="/categories/tool/"
             active-action="action-categoriestool"
-            ><div class='name'>tool</div><div class='badge'>(70)</div></a></li>
+            ><div class='name'>tool</div><div class='badge'>(69)</div></a></li>
         
           <li><a class="flat-box child"
             title="/categories/tool/linux/" href="/categories/tool/linux/"
@@ -3337,7 +3143,7 @@ svn help
           <li><a class="flat-box child"
             title="/categories/tool/windows/" href="/categories/tool/windows/"
             active-action="action-categoriestoolwindows"
-            ><div class='name'>windows</div><div class='badge'>(8)</div></a></li>
+            ><div class='name'>windows</div><div class='badge'>(7)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/tools/" href="/categories/tools/"

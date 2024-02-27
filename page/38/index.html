@@ -2272,7 +2272,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1708084958563),
+    lastupdate: new Date(1709044408207),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2632,7 +2632,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/16/lsof 查看资源被进程占用情况/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/13/bash条件判断if 字符串 整数/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2650,20 +2650,17 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/08/16/lsof%20%E6%9F%A5%E7%9C%8B%E8%B5%84%E6%BA%90%E8%A2%AB%E8%BF%9B%E7%A8%8B%E5%8D%A0%E7%94%A8%E6%83%85%E5%86%B5/"  itemprop="url">
-        lsof 查看资源被进程占用情况
+      <a href="/2022/11/13/bash%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%ADif%20%E5%AD%97%E7%AC%A6%E4%B8%B2%20%E6%95%B4%E6%95%B0/"  itemprop="url">
+        bash条件判断if 字符串 整数
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        打开文件的进程定位到打开的进程
-lsof &lt;file&gt;
-
-$ lsof /opt/mysql/data/5690/mysql-error.log 
-COMMAND   PID                USER   FD   TYPE DEVICE SIZE/OFF     NODE NAME
-mysqld  12858 actiontech-universe    1w  ...
+        https://ryanstutorials.net/bash-scripting-tutorial/bash-if-statements.php
+1.整数比较 
+-eq 等于,如:if [ “$a” -eq “$b” ]-ne 不等于,如:if [ “$a” -ne “$b” ]-gt 大于,如:if [ “$a” -gt “$b” ]-ge 大于等于,如:if [ “$a” -ge “$...
       
     
   </div>
@@ -2671,7 +2668,587 @@ mysqld  12858 actiontech-universe    1w  ...
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-08-16T10:27:01+08:00">2022-08-16</time>
+        <time itemprop="dateCreated datePublished" datetime="2022-11-13T11:36:54+08:00">2022-11-13</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/tool/">tool</a><span class="sep"></span><a class="category-link" href="/categories/tool/linux/">linux</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/tool/" itemprop="url"><span itemprop="name">tool</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/tool/linux/" itemprop="url"><span itemprop="name">linux</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/11/13/bash%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%ADif%20%E5%AD%97%E7%AC%A6%E4%B8%B2%20%E6%95%B4%E6%95%B0/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/08/调试奇怪bug/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/11/08/%E8%B0%83%E8%AF%95%E5%A5%87%E6%80%AAbug/"  itemprop="url">
+        调试奇怪bug
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        
+valgrind  这个厉害！比如其中的memcheck工具，跑一遍告诉你哪里越界访问了！yyds！
+gdb细粒度跟踪（这个超级牛啊）
+可以不断确定要在哪里打断点，然后r，带着已经打的断点重新观察
+
+经验malloc abort 或者 delete报错（说二次释放可是其实没有）heap is corrupt：被程序写了不该写的地方，比如在数组&#x2F;vector长度后面写东西
+std:...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-11-08T15:26:44+08:00">2022-11-08</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/c/">c++</a><span class="sep"></span><a class="category-link" href="/categories/c/debug/">debug</a><span class="sep"></span><a class="category-link" href="/categories/debug/">debug</a><span class="sep"></span><a class="category-link" href="/categories/tool/">tool</a><span class="sep"></span><a class="category-link" href="/categories/tool/linux/">linux</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/c/" itemprop="url"><span itemprop="name">c++</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/tool/" itemprop="url"><span itemprop="name">tool</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/tool/linux/" itemprop="url"><span itemprop="name">linux</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/debug/" itemprop="url"><span itemprop="name">debug</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/c/debug/" itemprop="url"><span itemprop="name">debug</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/11/08/%E8%B0%83%E8%AF%95%E5%A5%87%E6%80%AAbug/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/25/windows查看文件被啥进程占用 资源监视器/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/10/25/windows%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E8%A2%AB%E5%95%A5%E8%BF%9B%E7%A8%8B%E5%8D%A0%E7%94%A8%20%E8%B5%84%E6%BA%90%E7%9B%91%E8%A7%86%E5%99%A8/"  itemprop="url">
+        windows查看文件被啥进程占用 资源监视器
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        （按windows键然后输入任务管理器）任务管理器-（上方横栏）性能-（下方）打开资源监视器或者直接搜资源监视器-（下方）搜索句柄
+输入完整路径，得占用其的PID
+
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-10-25T09:20:00+08:00">2022-10-25</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/tool/">tool</a><span class="sep"></span><a class="category-link" href="/categories/tool/windows/">windows</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/tool/" itemprop="url"><span itemprop="name">tool</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/tool/windows/" itemprop="url"><span itemprop="name">windows</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/10/25/windows%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E8%A2%AB%E5%95%A5%E8%BF%9B%E7%A8%8B%E5%8D%A0%E7%94%A8%20%E8%B5%84%E6%BA%90%E7%9B%91%E8%A7%86%E5%99%A8/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/25/文件被exploreexe占用无法通过文件资源管理器重命名/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/10/25/%E6%96%87%E4%BB%B6%E8%A2%ABexploreexe%E5%8D%A0%E7%94%A8%E6%97%A0%E6%B3%95%E9%80%9A%E8%BF%87%E6%96%87%E4%BB%B6%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8%E9%87%8D%E5%91%BD%E5%90%8D/"  itemprop="url">
+        文件被explore.exe占用无法通过文件资源管理器重命名
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        explore.exe是文件资源管理器的进程，所以得通过命令行来重命名
+先关掉文件资源管理器，然后通过git bash用mv重命名（不推荐powershell的ren等，貌似有问题，总提示找不到）
+
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-10-25T09:15:50+08:00">2022-10-25</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/fix-error/">fix_error</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/fix-error/" itemprop="url"><span itemprop="name">fix_error</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/10/25/%E6%96%87%E4%BB%B6%E8%A2%ABexploreexe%E5%8D%A0%E7%94%A8%E6%97%A0%E6%B3%95%E9%80%9A%E8%BF%87%E6%96%87%E4%BB%B6%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8%E9%87%8D%E5%91%BD%E5%90%8D/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/20/embedding matrix/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/10/20/embedding%20matrix/"  itemprop="url">
+        embedding matrix
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        embedding matrix：多列，每列是一个单词对应的特征向量
+这个矩阵*one_hot向量（n个单词则是n维向量，只有一个1）得到这个向量表示的单词的特征向量
+或者对于一个变量，其值域为D，是离散的，其中有|D|个不同取值，则embedding matrix：多列，每列是一个取值对应的特征向量
+或者不通过矩阵乘法的方式得到某值对应的特征向量，而是通过哈希表的方式，值-&gt;对应特征...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-10-20T16:40:09+08:00">2022-10-20</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/ML/">ML</a><span class="sep"></span><a class="category-link" href="/categories/math/">math</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/ML/" itemprop="url"><span itemprop="name">ML</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/math/" itemprop="url"><span itemprop="name">math</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/10/20/embedding%20matrix/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/20/iid 独立同分布/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/10/20/iid%20%E7%8B%AC%E7%AB%8B%E5%90%8C%E5%88%86%E5%B8%83/"  itemprop="url">
+        i.i.d. 独立同分布
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        i.i.d.独立同分布 (Independent and identically distributed random variables)一组随机变量中每个变量的概率分布都相同，且这些随机变量互相独立
+
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-10-20T15:31:15+08:00">2022-10-20</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/math/">math</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/math/" itemprop="url"><span itemprop="name">math</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/10/20/iid%20%E7%8B%AC%E7%AB%8B%E5%90%8C%E5%88%86%E5%B8%83/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/20/论文笔记 2021VLDB NeuroCard_one cardinality estimator for all tables/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/10/20/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202021VLDB%20NeuroCard_one%20cardinality%20estimator%20for%20all%20tables/"  itemprop="url">
+        论文笔记 2021VLDB NeuroCard_one cardinality estimator for all tables
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        codehttps://github.com/neurocard
+problem
+
+problem related 名词解释cardinity即解的大小（解包含多个tuple（有多个tuple都是解），解的大小是tuple的数量）
+
+前置知识AR模型即用采样的方法得到条件概率
+AR
+
+
+结构：
+
+
+Conor Durkan and Charlie Nash. 2019. Autoregres...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-10-20T10:29:49+08:00">2022-10-20</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/paper/">paper</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/paper/" itemprop="url"><span itemprop="name">paper</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/10/20/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202021VLDB%20NeuroCard_one%20cardinality%20estimator%20for%20all%20tables/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/20/论文笔记 2020VLDB Buffer Pool Aware Query Scheduling via Deep Reinforcement Learning/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/10/20/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202020VLDB%20Buffer%20Pool%20Aware%20Query%20Scheduling%20via%20Deep%20Reinforcement%20Learning/"  itemprop="url">
+        论文笔记 2020VLDB Buffer Pool Aware Query Scheduling via Deep Reinforcement Learning
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        名词解释
+
+
+问题
+
+
+模型总图
+输入在内存中cache了哪些block
+
+每个query要请求哪些block
+
+
+形式化
+
+
+
+实验效果
+
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-10-20T09:49:14+08:00">2022-10-20</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/paper/">paper</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/paper/" itemprop="url"><span itemprop="name">paper</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/10/20/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202020VLDB%20Buffer%20Pool%20Aware%20Query%20Scheduling%20via%20Deep%20Reinforcement%20Learning/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/19/vmstat 系统内存监控/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/10/19/vmstat%20%E7%B3%BB%E7%BB%9F%E5%86%85%E5%AD%98%E7%9B%91%E6%8E%A7/"  itemprop="url">
+        vmstat 系统内存监控
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        
+https://www.cnblogs.com/sjli-blog/p/15076966.html
+
+vmstat的常规用法：vmstat interval times即每隔interval秒采样一次，共采样times次，如果省略times,则一直采集数据，直到用户手动停止为止。
+[yuanzhiqiu@graph vertex_disjoint_path]$ vmstat 1 2
+pro...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-10-19T09:17:46+08:00">2022-10-19</time>
         
           <span class="dot"></span>
           <a class="category-link" href="/categories/debug/">debug</a><span class="sep"></span><a class="category-link" href="/categories/tool/">tool</a><span class="sep"></span><a class="category-link" href="/categories/tool/linux/">linux</a>
@@ -2692,7 +3269,7 @@ mysqld  12858 actiontech-universe    1w  ...
       </div>
       
         <div>
-          <a class='readmore' href='/2022/08/16/lsof%20%E6%9F%A5%E7%9C%8B%E8%B5%84%E6%BA%90%E8%A2%AB%E8%BF%9B%E7%A8%8B%E5%8D%A0%E7%94%A8%E6%83%85%E5%86%B5/' itemprop="url">
+          <a class='readmore' href='/2022/10/19/vmstat%20%E7%B3%BB%E7%BB%9F%E5%86%85%E5%AD%98%E7%9B%91%E6%8E%A7/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2708,7 +3285,7 @@ mysqld  12858 actiontech-universe    1w  ...
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/16/cmake/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/19/内存泄漏检测工具valgrind/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2726,25 +3303,15 @@ mysqld  12858 actiontech-universe    1w  ...
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/08/16/cmake/"  itemprop="url">
-        cmake
+      <a href="/2022/10/19/%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E6%A3%80%E6%B5%8B%E5%B7%A5%E5%85%B7valgrind/"  itemprop="url">
+        内存泄漏检测工具valgrind
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        cmake
-https://www.jianshu.com/p/cdd6e56c2422
-
-指定编译标准CXX标准set(CMAKE_CXX_STANDARD 14) # c++14
-
-PROJECT基本用法：指定工程名称（完成路径赋值）
-# 顶层CMakeLists.txt
-cmake_minimum_required (VERSION 3.10.2)
-project (mytest)
-
-...
+        原理和简介Valgrind follows each allocation in your program and tracks it to see if it is returned properly, continue to be referenced or is lost in space, which is a ‘memory leak’. And as any leak, give...
       
     
   </div>
@@ -2752,218 +3319,10 @@ project (mytest)
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-08-16T10:23:54+08:00">2022-08-16</time>
+        <time itemprop="dateCreated datePublished" datetime="2022-10-19T09:09:57+08:00">2022-10-19</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/tool/">tool</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/tool/" itemprop="url"><span itemprop="name">tool</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/08/16/cmake/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/16/make/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-    <meta itemprop="description" content="grapher">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/08/16/make/"  itemprop="url">
-        make
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        make
-http://www.ruanyifeng.com/blog/2015/02/make.html
-
-
-代码变成可执行文件，叫做编译（compile）；先编译这个，还是先编译那个（即编译的安排），叫做构建（build）。Make是最常用的构建工具，主要用于C语言的项目。但是实际上 ，任何只要某个文件有变化，就要重新构建的项目，都可以用Make构建。
-
-重构的标准”目标”是否重新构建的...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-08-16T10:22:53+08:00">2022-08-16</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/tool/">tool</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/tool/" itemprop="url"><span itemprop="name">tool</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/08/16/make/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/13/论文笔记 2014VLDB The More the Merrier Efficient Multi Source Graph Traversal/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-    <meta itemprop="description" content="grapher">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/08/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202014VLDB%20The%20More%20the%20Merrier%20Efficient%20Multi%20Source%20Graph%20Traversal/"  itemprop="url">
-        论文笔记 2014VLDB The More the Merrier Efficient Multi-Source Graph Traversal
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        
-MSBFSThe More the Merrier: Efficient Multi-Source Graph TraversalVLDB 2014
-
-基准
-bit op
-ANP（这个）
-tuningcache line
-heuristic maximum sharing way of grouping BFSs
-
-reason: 
-
-
-
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-08-13T16:36:44+08:00">2022-08-13</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/paper/">paper</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/paper/" itemprop="url"><span itemprop="name">paper</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/08/13/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%202014VLDB%20The%20More%20the%20Merrier%20Efficient%20Multi%20Source%20Graph%20Traversal/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/11/有sudo的ubuntu安装指定版本gcc/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-    <meta itemprop="description" content="grapher">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/08/11/%E6%9C%89sudo%E7%9A%84ubuntu%E5%AE%89%E8%A3%85%E6%8C%87%E5%AE%9A%E7%89%88%E6%9C%ACgcc/"  itemprop="url">
-        有sudo的ubuntu安装指定版本gcc
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        https://blog.csdn.net/qq_29007291/article/details/84953671
-
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-08-11T17:20:17+08:00">2022-08-11</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/fix-error/">fix_error</a><span class="sep"></span><a class="category-link" href="/categories/tool/">tool</a><span class="sep"></span><a class="category-link" href="/categories/tool/linux/">linux</a>
+          <a class="category-link" href="/categories/debug/">debug</a><span class="sep"></span><a class="category-link" href="/categories/tool/">tool</a><span class="sep"></span><a class="category-link" href="/categories/tool/linux/">linux</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
               <a href="/categories/tool/" itemprop="url"><span itemprop="name">tool</span></a>
@@ -2974,370 +3333,14 @@ reason:
             </span>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/fix-error/" itemprop="url"><span itemprop="name">fix_error</span></a>
+              <a href="/categories/debug/" itemprop="url"><span itemprop="name">debug</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2022/08/11/%E6%9C%89sudo%E7%9A%84ubuntu%E5%AE%89%E8%A3%85%E6%8C%87%E5%AE%9A%E7%89%88%E6%9C%ACgcc/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/11/win10开机自动执行命令 后台运行/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-    <meta itemprop="description" content="grapher">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/08/11/win10%E5%BC%80%E6%9C%BA%E8%87%AA%E5%8A%A8%E6%89%A7%E8%A1%8C%E5%91%BD%E4%BB%A4%20%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8C/"  itemprop="url">
-        win10开机自动执行命令 后台运行
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        
-打开startup文件夹：win+R键入shell:startup回车，打开的文件夹即是
-在这个文件夹中放xx.bat脚本或者应用xx.exe（或它们的快捷方式），即会开机执行它们
-这样执行.bat文件是在前台执行，且会有一个黑框，消除黑框的方法：
-https://codeantenna.com/a/3gznir1890
-
-
-在startup文件夹中放xx.vbs文件来代替原先的bat文件...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-08-11T12:57:04+08:00">2022-08-11</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/tool/">tool</a><span class="sep"></span><a class="category-link" href="/categories/tool/windows/">windows</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/tool/" itemprop="url"><span itemprop="name">tool</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/tool/windows/" itemprop="url"><span itemprop="name">windows</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/08/11/win10%E5%BC%80%E6%9C%BA%E8%87%AA%E5%8A%A8%E6%89%A7%E8%A1%8C%E5%91%BD%E4%BB%A4%20%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8C/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/11/vscode配置c++项目 include路径等/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-    <meta itemprop="description" content="grapher">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/08/11/vscode%E9%85%8D%E7%BD%AEc++%E9%A1%B9%E7%9B%AE%20include%E8%B7%AF%E5%BE%84%E7%AD%89/"  itemprop="url">
-        vscode配置c++项目 include路径等
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        装c++环境gcc和g++都要以ubuntu为例
-sudo apt-get instal gcc
-sudo apt-get instal g++ #没装会报错找不到比如iostream头文件
-
-配置vscode
-https://blog.csdn.net/jinking01/article/details/106186575
-
-装c/c++、c++ IntelliSense插件version...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-08-11T11:58:44+08:00">2022-08-11</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/c/">c++</a><span class="sep"></span><a class="category-link" href="/categories/c/debug/">debug</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/c/" itemprop="url"><span itemprop="name">c++</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/c/debug/" itemprop="url"><span itemprop="name">debug</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/08/11/vscode%E9%85%8D%E7%BD%AEc++%E9%A1%B9%E7%9B%AE%20include%E8%B7%AF%E5%BE%84%E7%AD%89/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/11/WSL wsl/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-    <meta itemprop="description" content="grapher">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/08/11/WSL%20wsl/"  itemprop="url">
-        WSL wsl
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        安装教程https://zhuanlan.zhihu.com/p/386590591?utm_campaign=shareopn&amp;utm_medium=social&amp;utm_oi=1123716080996339712&amp;utm_psn=1540980178544648192&amp;utm_source=wechat_session
-WSL中访问本地文件
-在“&#x2...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-08-11T11:04:12+08:00">2022-08-11</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/tool/">tool</a><span class="sep"></span><a class="category-link" href="/categories/tool/windows/">windows</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/tool/" itemprop="url"><span itemprop="name">tool</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/tool/windows/" itemprop="url"><span itemprop="name">windows</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/08/11/WSL%20wsl/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/11/linux服务器间文件传送 targz文件压缩和解压/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-    <meta itemprop="description" content="grapher">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/08/11/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%97%B4%E6%96%87%E4%BB%B6%E4%BC%A0%E9%80%81%20targz%E6%96%87%E4%BB%B6%E5%8E%8B%E7%BC%A9%E5%92%8C%E8%A7%A3%E5%8E%8B/"  itemprop="url">
-        linux服务器间文件传送 .tar.gz文件压缩和解压
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        
-旧服务器备份：把~&#x2F;.halo压缩
-
-tar -zvcf ~/.halo.tar.gz ~/.halo # 得到~/.halo.tar.gz
-
-
-移到新服务器中在旧服务器上运行
-
-scp ~/.halo.tar.gz &lt;新服务器用户名&gt;@&lt;新服务器ip地址&gt;:~/.halo.tar.gz #scp即secure copy，是用来进行远程文件拷贝的。数据传输...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-08-11T09:46:09+08:00">2022-08-11</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/tool/">tool</a><span class="sep"></span><a class="category-link" href="/categories/tool/linux/">linux</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/tool/" itemprop="url"><span itemprop="name">tool</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/tool/linux/" itemprop="url"><span itemprop="name">linux</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/08/11/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%97%B4%E6%96%87%E4%BB%B6%E4%BC%A0%E9%80%81%20targz%E6%96%87%E4%BB%B6%E5%8E%8B%E7%BC%A9%E5%92%8C%E8%A7%A3%E5%8E%8B/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/11/解决应用商店Microsoft store打不开 代码0x80131500/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-    <meta itemprop="description" content="grapher">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/08/11/%E8%A7%A3%E5%86%B3%E5%BA%94%E7%94%A8%E5%95%86%E5%BA%97Microsoft%20store%E6%89%93%E4%B8%8D%E5%BC%80%20%E4%BB%A3%E7%A0%810x80131500/"  itemprop="url">
-        解决应用商店Microsoft store打不开 代码0x80131500
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        解决方法：https://zhuanlan.zhihu.com/p/116654088事后还原：勾选 TLS 1.0，取消勾选TLS 1.2
-
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-08-11T09:10:13+08:00">2022-08-11</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/fix-error/">fix_error</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/fix-error/" itemprop="url"><span itemprop="name">fix_error</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/08/11/%E8%A7%A3%E5%86%B3%E5%BA%94%E7%94%A8%E5%95%86%E5%BA%97Microsoft%20store%E6%89%93%E4%B8%8D%E5%BC%80%20%E4%BB%A3%E7%A0%810x80131500/' itemprop="url">
+          <a class='readmore' href='/2022/10/19/%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E6%A3%80%E6%B5%8B%E5%B7%A5%E5%85%B7valgrind/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3364,7 +3367,7 @@ scp ~/.halo.tar.gz &lt;新服务器用户名&gt;@&lt;新服务器ip地址&gt;:~/
           </a>
         
         <p class="current">
-          38 / 44
+          38 / 49
         </p>
         
           <a class="next" rel="next" href="/page/39/">
@@ -3609,7 +3612,7 @@ scp ~/.halo.tar.gz &lt;新服务器用户名&gt;@&lt;新服务器ip地址&gt;:~/
           <li><a class="flat-box"
             title="/categories/tool/" href="/categories/tool/"
             active-action="action-categoriestool"
-            ><div class='name'>tool</div><div class='badge'>(70)</div></a></li>
+            ><div class='name'>tool</div><div class='badge'>(69)</div></a></li>
         
           <li><a class="flat-box child"
             title="/categories/tool/linux/" href="/categories/tool/linux/"
@@ -3619,7 +3622,7 @@ scp ~/.halo.tar.gz &lt;新服务器用户名&gt;@&lt;新服务器ip地址&gt;:~/
           <li><a class="flat-box child"
             title="/categories/tool/windows/" href="/categories/tool/windows/"
             active-action="action-categoriestoolwindows"
-            ><div class='name'>windows</div><div class='badge'>(8)</div></a></li>
+            ><div class='name'>windows</div><div class='badge'>(7)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/tools/" href="/categories/tools/"

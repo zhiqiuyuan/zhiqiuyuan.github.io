@@ -2272,7 +2272,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1708084958563),
+    lastupdate: new Date(1709044408207),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2630,13 +2630,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         
-      
-        
-      
-        
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/03/mpi教程目录/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/05/25/sklearn调参/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2654,23 +2650,17 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/04/03/mpi%E6%95%99%E7%A8%8B%E7%9B%AE%E5%BD%95/"  itemprop="url">
-        mpi教程目录
+      <a href="/2023/05/25/sklearn%E8%B0%83%E5%8F%82/"  itemprop="url">
+        sklearn调参
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        主要参考：基础教程：https://mpitutorial.com/tutorials进阶教程：https://enccs.github.io/intermediate-mpi
-基础教程安装运行：
-
-open mpi安装
-run mpi program over a cluster 在集群上跑mpi程序
-mpi overall
-这篇必看，摘自man mpirun mpirun
-
-point-...
+        举例：https://www.kaggle.com/code/funxexcel/p2-logistic-regression-hyperparameter-tuning
+先看这篇中的3.2.1 Exhaustive Grid Search https://scikit-learn.org/dev/modules/grid_search.html#
+然后看这篇 https://scikit-...
       
     
   </div>
@@ -2678,12 +2668,12 @@ point-...
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-04-03T10:40:55+08:00">2023-04-03</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-05-25T16:07:56+08:00">2023-05-25</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/04/03/mpi%E6%95%99%E7%A8%8B%E7%9B%AE%E5%BD%95/' itemprop="url">
+          <a class='readmore' href='/2023/05/25/sklearn%E8%B0%83%E5%8F%82/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2699,7 +2689,7 @@ point-...
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/03/openMPI-std-thread-multithreaad/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/05/25/k折交叉验证-训练集-验证集-测试集/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2717,18 +2707,20 @@ point-...
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/04/03/openMPI-std-thread-multithreaad/"  itemprop="url">
-        openMPI std::thread multithreaad
+      <a href="/2023/05/25/k%E6%8A%98%E4%BA%A4%E5%8F%89%E9%AA%8C%E8%AF%81-%E8%AE%AD%E7%BB%83%E9%9B%86-%E9%AA%8C%E8%AF%81%E9%9B%86-%E6%B5%8B%E8%AF%95%E9%9B%86/"  itemprop="url">
+        k折交叉验证 训练集 验证集 测试集
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        来自chatgpt
-这个是低阶版本的，高阶的是openMPI+openMP，见MPI + openMP
-openMPI和std::thread同时使用有什么要求当在MPI应用程序中使用std::thread时，只有主线程可以调用MPI接口。
-在其他线程中调用MPI接口会导致未定义的行为，可能会导致程序崩溃或者产生不可预测的结果。因此，如果需要在其他线程中进行与MPI相关的操作，应该使用线程间...
+        https://scikit-learn.org/dev/modules/cross_validation.html#cross-validation这个官方文档写得太好了
+概念Here is a flowchart of typical cross validation workflow in model training. 
+
+k折交叉验证解释：
+
+cross_val_score 和cr...
       
     
   </div>
@@ -2736,12 +2728,12 @@ openMPI和std::thread同时使用有什么要求当在MPI应用程序中使用st
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-04-03T09:20:57+08:00">2023-04-03</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-05-25T12:36:06+08:00">2023-05-25</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/04/03/openMPI-std-thread-multithreaad/' itemprop="url">
+          <a class='readmore' href='/2023/05/25/k%E6%8A%98%E4%BA%A4%E5%8F%89%E9%AA%8C%E8%AF%81-%E8%AE%AD%E7%BB%83%E9%9B%86-%E9%AA%8C%E8%AF%81%E9%9B%86-%E6%B5%8B%E8%AF%95%E9%9B%86/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2755,11 +2747,9 @@ openMPI和std::thread同时使用有什么要求当在MPI应用程序中使用st
         
       
         
-      
-        
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/02/MPI-multi-thread/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/05/25/机器学习缺失值处理/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2777,19 +2767,16 @@ openMPI和std::thread同时使用有什么要求当在MPI应用程序中使用st
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/04/02/MPI-multi-thread/"  itemprop="url">
-        MPI multi thread
+      <a href="/2023/05/25/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BC%BA%E5%A4%B1%E5%80%BC%E5%A4%84%E7%90%86/"  itemprop="url">
+        机器学习缺失值处理
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        教程：https://enccs.github.io/intermediate-mpi/mpi-and-threads-pt1/#
-教程配套代码：https://github.com/ENCCS/intermediate-mpi/tree/master/content/code
+        https://towardsdatascience.com/7-ways-to-handle-missing-values-in-machine-learning-1a6326adf79e
 
-
-Comparing pure MPI（一个rank一个线程） vs hybrid MPI-threading（...
       
     
   </div>
@@ -2797,12 +2784,12 @@ Comparing pure MPI（一个rank一个线程） vs hybrid MPI-threading（...
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-04-02T19:19:02+08:00">2023-04-02</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-05-25T09:19:42+08:00">2023-05-25</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/04/02/MPI-multi-thread/' itemprop="url">
+          <a class='readmore' href='/2023/05/25/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BC%BA%E5%A4%B1%E5%80%BC%E5%A4%84%E7%90%86/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2816,9 +2803,11 @@ Comparing pure MPI（一个rank一个线程） vs hybrid MPI-threading（...
         
       
         
+      
+        
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/02/open-mpi安装/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/05/25/机器学习实战入门/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2836,16 +2825,16 @@ Comparing pure MPI（一个rank一个线程） vs hybrid MPI-threading（...
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/04/02/open-mpi%E5%AE%89%E8%A3%85/"  itemprop="url">
-        open mpi安装
+      <a href="/2023/05/25/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E6%88%98%E5%85%A5%E9%97%A8/"  itemprop="url">
+        机器学习实战入门
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        install on linuxhttps://sites.google.com/site/rangsiman1993/comp-env/program-install/install-openmpibrief: download and buildhttps://edu.itp.phys.ethz.ch/hs12/programming_techniques/openmpi.pdf
-The...
+        https://zhuanlan.zhihu.com/p/59768106https://stackabuse.com/overview-of-classification-methods-in-python-with-scikit-learn/
+
       
     
   </div>
@@ -2853,12 +2842,12 @@ The...
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-04-02T16:14:15+08:00">2023-04-02</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-05-25T08:42:14+08:00">2023-05-25</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/04/02/open-mpi%E5%AE%89%E8%A3%85/' itemprop="url">
+          <a class='readmore' href='/2023/05/25/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E6%88%98%E5%85%A5%E9%97%A8/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2874,7 +2863,7 @@ The...
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/02/run-mpi-program-over-a-cluster-在集群上跑mpi程序/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/05/25/Confusion-Matrix-Accuracy-Precision-Recall-F1-Score/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2892,18 +2881,18 @@ The...
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/04/02/run-mpi-program-over-a-cluster-%E5%9C%A8%E9%9B%86%E7%BE%A4%E4%B8%8A%E8%B7%91mpi%E7%A8%8B%E5%BA%8F/"  itemprop="url">
-        run mpi program over a cluster 在集群上跑mpi程序
+      <a href="/2023/05/25/Confusion-Matrix-Accuracy-Precision-Recall-F1-Score/"  itemprop="url">
+        Confusion Matrix, Accuracy, Precision, Recall, F1 Score
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        https://mpitutorial.com/tutorials/running-an-mpi-cluster-within-a-lan/
-OpenMPI 集群配置 - HelloWooo - 博客园 (cnblogs.com)
-步骤：1. 建立连接  2. 运行mpi程序
-建立连接Your machines are gonna be talking over the network vi...
+        https://medium.com/analytics-vidhya/confusion-matrix-accuracy-precision-recall-f1-score-ade299cf63cd
+https://www.scikit-yb.org/en/latest/api/classifier/classification_report.html
+
+A person who is a...
       
     
   </div>
@@ -2911,12 +2900,12 @@ OpenMPI 集群配置 - HelloWooo - 博客园 (cnblogs.com)
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-04-02T16:13:41+08:00">2023-04-02</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-05-25T08:12:16+08:00">2023-05-25</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/04/02/run-mpi-program-over-a-cluster-%E5%9C%A8%E9%9B%86%E7%BE%A4%E4%B8%8A%E8%B7%91mpi%E7%A8%8B%E5%BA%8F/' itemprop="url">
+          <a class='readmore' href='/2023/05/25/Confusion-Matrix-Accuracy-Precision-Recall-F1-Score/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2930,115 +2919,11 @@ OpenMPI 集群配置 - HelloWooo - 博客园 (cnblogs.com)
         
       
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/02/MPI-Reduce-and-Allreduce/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-    <meta itemprop="description" content="grapher">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/04/02/MPI-Reduce-and-Allreduce/"  itemprop="url">
-        MPI Reduce and Allreduce
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
       
-        https://mpitutorial.com/tutorials/mpi-reduce-and-allreduce/
-An introduction to reduceData reduction involves reducing a set of numbers into a smaller set of numbers via a function. For example, let...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-04-02T11:19:41+08:00">2023-04-02</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/04/02/MPI-Reduce-and-Allreduce/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
         
       
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/02/collective-call-example-Performing-Parallel-Rank-with-MPI/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-    <meta itemprop="description" content="grapher">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/04/02/collective-call-example-Performing-Parallel-Rank-with-MPI/"  itemprop="url">
-        collective call example: Performing Parallel Rank with MPI
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
       
-        https://mpitutorial.com/tutorials/performing-parallel-rank-with-mpi/
-Parallel rank - problem overviewWhen processes all have a single number stored in their local memory, it can be useful to know w...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-04-02T10:26:02+08:00">2023-04-02</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/04/02/collective-call-example-Performing-Parallel-Rank-with-MPI/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
         
       
     
@@ -3055,7 +2940,7 @@ Parallel rank - problem overviewWhen processes all have a single number stored i
           </a>
         
         <p class="current">
-          14 / 44
+          14 / 49
         </p>
         
           <a class="next" rel="next" href="/page/15/">
@@ -3300,7 +3185,7 @@ Parallel rank - problem overviewWhen processes all have a single number stored i
           <li><a class="flat-box"
             title="/categories/tool/" href="/categories/tool/"
             active-action="action-categoriestool"
-            ><div class='name'>tool</div><div class='badge'>(70)</div></a></li>
+            ><div class='name'>tool</div><div class='badge'>(69)</div></a></li>
         
           <li><a class="flat-box child"
             title="/categories/tool/linux/" href="/categories/tool/linux/"
@@ -3310,7 +3195,7 @@ Parallel rank - problem overviewWhen processes all have a single number stored i
           <li><a class="flat-box child"
             title="/categories/tool/windows/" href="/categories/tool/windows/"
             active-action="action-categoriestoolwindows"
-            ><div class='name'>windows</div><div class='badge'>(8)</div></a></li>
+            ><div class='name'>windows</div><div class='badge'>(7)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/tools/" href="/categories/tools/"

@@ -2272,7 +2272,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1708084958563),
+    lastupdate: new Date(1709044408207),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2632,7 +2632,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/18/python内存和时间占用监测-资源占用监测/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2024/02/20/torch-Sparse-COO-tensors-COO-format-coordinate-format/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2650,21 +2650,17 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/10/18/python%E5%86%85%E5%AD%98%E5%92%8C%E6%97%B6%E9%97%B4%E5%8D%A0%E7%94%A8%E7%9B%91%E6%B5%8B-%E8%B5%84%E6%BA%90%E5%8D%A0%E7%94%A8%E7%9B%91%E6%B5%8B/"  itemprop="url">
-        python内存和时间占用监测 资源占用监测
+      <a href="/2024/02/20/torch-Sparse-COO-tensors-COO-format-coordinate-format/"  itemprop="url">
+        torch Sparse COO tensors; COO format; coordinate format
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        我们可以使用sys模块的getsizeof函数来检查存储同样的元素的元组和列表各自占用了多少内存空间
-f = [x ** 2 for x in range(1, 1000)]
-print(sys.getsizeof(f))  # 查看对象占用内存的字节数
-
-我们可以在ipython中使用魔法指令%timeit来分析创建同样内容的元组和列表所花费的时间
-&gt;ipython
-Python 3...
+        https://pytorch.org/docs/stable/sparse.html#sparse-coo-docs
+PyTorch implements the so-called Coordinate format, or COO format, as one of the storage formats for implementing sparse tensors. 
+In COO...
       
     
   </div>
@@ -2672,12 +2668,12 @@ Python 3...
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-10-18T13:37:59+08:00">2023-10-18</time>
+        <time itemprop="dateCreated datePublished" datetime="2024-02-20T14:55:19+08:00">2024-02-20</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/10/18/python%E5%86%85%E5%AD%98%E5%92%8C%E6%97%B6%E9%97%B4%E5%8D%A0%E7%94%A8%E7%9B%91%E6%B5%8B-%E8%B5%84%E6%BA%90%E5%8D%A0%E7%94%A8%E7%9B%91%E6%B5%8B/' itemprop="url">
+          <a class='readmore' href='/2024/02/20/torch-Sparse-COO-tensors-COO-format-coordinate-format/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2693,7 +2689,7 @@ Python 3...
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/18/chrome查看网页cookie/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2024/02/19/softmax-function/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2711,15 +2707,20 @@ Python 3...
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/10/18/chrome%E6%9F%A5%E7%9C%8B%E7%BD%91%E9%A1%B5cookie/"  itemprop="url">
-        chrome查看网页cookie
+      <a href="/2024/02/19/softmax-function/"  itemprop="url">
+        softmax function
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        F12-network-Doc-你要查看的网页的Name条目（在network界面有）（如果没有数据，刷新一下界面）-Headers可以看到有cookie等信息
+        hardmax是最大值，
+对于一个集合z1,z2,…zC，我们想求最大值
+hardmax是最大值，
+softmax要soft一些，不是仅保留最大值，而是给所有都赋一个概率，这个概率分布满足值越大对应的概率越大
+softmax函数如下：
+
 
       
     
@@ -2728,12 +2729,12 @@ Python 3...
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-10-18T09:17:46+08:00">2023-10-18</time>
+        <time itemprop="dateCreated datePublished" datetime="2024-02-19T20:48:35+08:00">2024-02-19</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/10/18/chrome%E6%9F%A5%E7%9C%8B%E7%BD%91%E9%A1%B5cookie/' itemprop="url">
+          <a class='readmore' href='/2024/02/19/softmax-function/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2749,7 +2750,7 @@ Python 3...
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/13/transformer模型介绍/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2024/02/19/windowsterminal-快捷键/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2767,15 +2768,17 @@ Python 3...
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/10/13/transformer%E6%A8%A1%E5%9E%8B%E4%BB%8B%E7%BB%8D/"  itemprop="url">
-        transformer模型介绍
+      <a href="/2024/02/19/windowsterminal-%E5%BF%AB%E6%8D%B7%E9%94%AE/"  itemprop="url">
+        windowsterminal 快捷键
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        Large-scale pre-trained models (PTMs), such as Transformer models, have promoted the deep learning (DL) development on various complicated tasks, including natural language processing, e.g., BERT [...
+        快捷键设置和查看：设置-操作
+关闭当前窗格 ctrl+shift+w新建窗格 ctrl+shift+t下一个窗格 ctrl+tab(上一个窗格 ctrl+shift+tab)
+
       
     
   </div>
@@ -2783,12 +2786,12 @@ Python 3...
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-10-13T09:49:29+08:00">2023-10-13</time>
+        <time itemprop="dateCreated datePublished" datetime="2024-02-19T14:30:47+08:00">2024-02-19</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/10/13/transformer%E6%A8%A1%E5%9E%8B%E4%BB%8B%E7%BB%8D/' itemprop="url">
+          <a class='readmore' href='/2024/02/19/windowsterminal-%E5%BF%AB%E6%8D%B7%E9%94%AE/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2804,7 +2807,7 @@ Python 3...
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/12/virtualbox解决桥接网卡无法上网的问题/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2024/02/18/GNN-introduction-GNN简介/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2822,16 +2825,18 @@ Python 3...
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/10/12/virtualbox%E8%A7%A3%E5%86%B3%E6%A1%A5%E6%8E%A5%E7%BD%91%E5%8D%A1%E6%97%A0%E6%B3%95%E4%B8%8A%E7%BD%91%E7%9A%84%E9%97%AE%E9%A2%98/"  itemprop="url">
-        virtualbox解决桥接网卡无法上网的问题
+      <a href="/2024/02/18/GNN-introduction-GNN%E7%AE%80%E4%BB%8B/"  itemprop="url">
+        GNN introduction GNN简介
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        https://blog.csdn.net/a469517790/article/details/80747383
-在PC中，为虚拟机上网的网卡（可能和桥接的网卡不一样），设置成与实际上PC上网的网卡共享：实际上PC上网的网卡：如果PC是有线网，则有实际网卡，如果是无线网，则是无线网卡虚拟机上网的网卡：PC中点击左下角网络图标-网络和internet设置-更改适配器选项，可以看到一个连接叫V...
+        写得好好！循序渐进！图例简直了超级形象呀！
+向全世界安利这个博客作为GNN的入门博客！
+不过这是2021年的了，一些比较新的技术和方向没有包含
+A Gentle Introduction to Graph Neural NetworksGraphs have up to four types of information that we will potentially want to us...
       
     
   </div>
@@ -2839,12 +2844,12 @@ Python 3...
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-10-12T18:12:25+08:00">2023-10-12</time>
+        <time itemprop="dateCreated datePublished" datetime="2024-02-18T21:59:51+08:00">2024-02-18</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/10/12/virtualbox%E8%A7%A3%E5%86%B3%E6%A1%A5%E6%8E%A5%E7%BD%91%E5%8D%A1%E6%97%A0%E6%B3%95%E4%B8%8A%E7%BD%91%E7%9A%84%E9%97%AE%E9%A2%98/' itemprop="url">
+          <a class='readmore' href='/2024/02/18/GNN-introduction-GNN%E7%AE%80%E4%BB%8B/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2860,7 +2865,7 @@ Python 3...
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/11/makefile中设置环境变量/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2024/02/18/chrome暗黑模式-网页暗黑模式-page-dark-mode-可自定义调节/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2878,25 +2883,17 @@ Python 3...
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/10/11/makefile%E4%B8%AD%E8%AE%BE%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/"  itemprop="url">
-        makefile中设置环境变量
+      <a href="/2024/02/18/chrome%E6%9A%97%E9%BB%91%E6%A8%A1%E5%BC%8F-%E7%BD%91%E9%A1%B5%E6%9A%97%E9%BB%91%E6%A8%A1%E5%BC%8F-page-dark-mode-%E5%8F%AF%E8%87%AA%E5%AE%9A%E4%B9%89%E8%B0%83%E8%8A%82/"  itemprop="url">
+        chrome暗黑模式 网页暗黑模式 page dark mode 可自定义调节
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        直接像命令行中一样设置会有问题，应这样设置：https://segmentfault.com/a/1190000008535305
-全局设置：
-export FLASK_ENV=dev
-export FLASK_DEBUG=1
+        https://zhuanlan.zhihu.com/p/162015675
+chrome:&#x2F;&#x2F;flags&#x2F;#enable-force-dark然后选择enable
 
-dev:
-    @echo $(FLASK_ENV)
-    @echo $(FLASK_DEBUG)
-
-运行make dev时则返回：
-$ make devde...
       
     
   </div>
@@ -2904,12 +2901,12 @@ $ make devde...
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-10-11T16:20:19+08:00">2023-10-11</time>
+        <time itemprop="dateCreated datePublished" datetime="2024-02-18T21:12:23+08:00">2024-02-18</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/10/11/makefile%E4%B8%AD%E8%AE%BE%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/' itemprop="url">
+          <a class='readmore' href='/2024/02/18/chrome%E6%9A%97%E9%BB%91%E6%A8%A1%E5%BC%8F-%E7%BD%91%E9%A1%B5%E6%9A%97%E9%BB%91%E6%A8%A1%E5%BC%8F-page-dark-mode-%E5%8F%AF%E8%87%AA%E5%AE%9A%E4%B9%89%E8%B0%83%E8%8A%82/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2925,7 +2922,7 @@ $ make devde...
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/11/hadoop入门-example/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2024/02/18/node2vec/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2943,16 +2940,24 @@ $ make devde...
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/10/11/hadoop%E5%85%A5%E9%97%A8-example/"  itemprop="url">
-        hadoop入门 example
+      <a href="/2024/02/18/node2vec/"  itemprop="url">
+        node2vec
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        最简单的wordcount程序https://hadoop.apache.org/docs/stable/hadoop-mapreduce-client/hadoop-mapreduce-client-core/MapReduceTutorial.html
-加上in-mapper-combine：https://jinwooooo.github.io/jinwooooo-blog/hadoo...
+        对deepwalk的改进：替换deepwalk中的neighborhood sampling strategy，即从随机游走(randomwalk)改成node2vecWalk
+deepwalk见博客
+node2vecWalk
+下面介绍Πvx怎么计算
+
+
+dtx为啥取值只可能是0,1,2：因为t和v相邻，v和x相邻，只有三种情况：
+
+t和x相同：dtx&#x3D;0
+t和x不相邻：dtx&#...
       
     
   </div>
@@ -2960,12 +2965,12 @@ $ make devde...
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-10-11T10:07:47+08:00">2023-10-11</time>
+        <time itemprop="dateCreated datePublished" datetime="2024-02-18T17:45:49+08:00">2024-02-18</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/10/11/hadoop%E5%85%A5%E9%97%A8-example/' itemprop="url">
+          <a class='readmore' href='/2024/02/18/node2vec/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2981,7 +2986,7 @@ $ make devde...
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/11/光标移动不用方向键-vscode-shell等/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2024/02/18/deepwalk/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2999,16 +3004,17 @@ $ make devde...
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/10/11/%E5%85%89%E6%A0%87%E7%A7%BB%E5%8A%A8%E4%B8%8D%E7%94%A8%E6%96%B9%E5%90%91%E9%94%AE-vscode-shell%E7%AD%89/"  itemprop="url">
-        光标移动不用方向键 vscode shell等
+      <a href="/2024/02/18/deepwalk/"  itemprop="url">
+        deepwalk
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        vscodehttps://blog.csdn.net/m0_65450343/article/details/124704989ctrl+K, ctrl+S 进入快捷键设置alt+i 上alt+k 下alt+j 左alt+l 右alt+u 行首alt+o 行末
-// Place your key bindings in this file to override the defaultsa...
+        图嵌入&#x2F;图表示学习Graph Embedding将图中的节点以低维稠密向量的形式进行表达，要求在原始图中相似(不同的方法对相似的定义不同)的节点其在低维表达空间也接近。得到的表达向量可以用来进行下游任务，如节点分类，链接预测，可视化或重构原始图等。
+deepwalk原理https://zhuanlan.zhihu.com/p/56380812
+在NLP任务中，word2vec是一种...
       
     
   </div>
@@ -3016,12 +3022,12 @@ $ make devde...
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-10-11T09:42:58+08:00">2023-10-11</time>
+        <time itemprop="dateCreated datePublished" datetime="2024-02-18T17:05:53+08:00">2024-02-18</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/10/11/%E5%85%89%E6%A0%87%E7%A7%BB%E5%8A%A8%E4%B8%8D%E7%94%A8%E6%96%B9%E5%90%91%E9%94%AE-vscode-shell%E7%AD%89/' itemprop="url">
+          <a class='readmore' href='/2024/02/18/deepwalk/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3037,7 +3043,7 @@ $ make devde...
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/10/python-pip安装网络问题/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2024/02/18/GNN训练框架入门-美团图神经网络框架Tulong/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -3055,18 +3061,18 @@ $ make devde...
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/10/10/python-pip%E5%AE%89%E8%A3%85%E7%BD%91%E7%BB%9C%E9%97%AE%E9%A2%98/"  itemprop="url">
-        python pip安装网络问题
+      <a href="/2024/02/18/GNN%E8%AE%AD%E7%BB%83%E6%A1%86%E6%9E%B6%E5%85%A5%E9%97%A8-%E7%BE%8E%E5%9B%A2%E5%9B%BE%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%A1%86%E6%9E%B6Tulong/"  itemprop="url">
+        GNN训练框架入门 美团图神经网络框架Tulong
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        https://blog.csdn.net/qq_22476313/article/details/120342538
-python.exe -m pip install scikit-learn -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
-
-解决方式：在 pip install xx...
+        美团图神经网络框架Tulong，图计算库MTGraph
+图神经网络训练框架的实践和探索1. 前言深度学习技术将图像、文本、语音等多种多样的数据转化为稠密的向量表示，提供了表示数据的另一种方式。
+由于图数据特有的稀疏性（图的所有节点对之间只有少量边相连），直接使用通用的深度学习框架（例如TensorFlow和PyTorch）训练往往性能不佳。
+针对图神经网络的深度学习框架应运而出：PyG (P...
       
     
   </div>
@@ -3074,12 +3080,12 @@ python.exe -m pip install scikit-learn -i http://mirrors.aliyun.com/pypi/simple/
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-10-10T19:38:49+08:00">2023-10-10</time>
+        <time itemprop="dateCreated datePublished" datetime="2024-02-18T15:41:18+08:00">2024-02-18</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/10/10/python-pip%E5%AE%89%E8%A3%85%E7%BD%91%E7%BB%9C%E9%97%AE%E9%A2%98/' itemprop="url">
+          <a class='readmore' href='/2024/02/18/GNN%E8%AE%AD%E7%BB%83%E6%A1%86%E6%9E%B6%E5%85%A5%E9%97%A8-%E7%BE%8E%E5%9B%A2%E5%9B%BE%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%A1%86%E6%9E%B6Tulong/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3095,7 +3101,7 @@ python.exe -m pip install scikit-learn -i http://mirrors.aliyun.com/pypi/simple/
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/08/ubuntu打不开termial解决-图形界面和ctrl-alt-T快捷键都打不开/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2024/02/18/windowsterminal-wt-设置为默认命令行/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -3113,8 +3119,8 @@ python.exe -m pip install scikit-learn -i http://mirrors.aliyun.com/pypi/simple/
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/10/08/ubuntu%E6%89%93%E4%B8%8D%E5%BC%80termial%E8%A7%A3%E5%86%B3-%E5%9B%BE%E5%BD%A2%E7%95%8C%E9%9D%A2%E5%92%8Cctrl-alt-T%E5%BF%AB%E6%8D%B7%E9%94%AE%E9%83%BD%E6%89%93%E4%B8%8D%E5%BC%80/"  itemprop="url">
-        ubuntu打不开termial解决 图形界面和ctrl+alt+T快捷键都打不开
+      <a href="/2024/02/18/windowsterminal-wt-%E8%AE%BE%E7%BD%AE%E4%B8%BA%E9%BB%98%E8%AE%A4%E5%91%BD%E4%BB%A4%E8%A1%8C/"  itemprop="url">
+        windowsterminal wt 设置为默认命令行
       </a>
     </h2>
   
@@ -3122,9 +3128,13 @@ python.exe -m pip install scikit-learn -i http://mirrors.aliyun.com/pypi/simple/
     
       
         
-解决流程https://www.jianshu.com/p/6c21a1683ac5ctrl+alt+F1进入命令行界面，解决gnome-terminal的报错，然后ctrl+alt+F7返回图形界面，即解决问题
+win+s 搜索终端，进入wt
+ctrl+,进入设置
+设置默认配置文件用cmd：设置-启动-默认配置文件
+设置为默认的终端：设置-启动-默认终端应用程序
 
-[可选步骤]export DISPLAY&#x3D;:0https://askubuntu.com/questions/871092/failed-to-connect-to-...
+设置主题：wt是以配置文件为单元设置默认值的，以设置cmd的默认主题为例，设置-（左边栏”配置文件”列表）命令提示符然后在右边进行设置，设置主题的话就点击外观
+
       
     
   </div>
@@ -3132,12 +3142,12 @@ python.exe -m pip install scikit-learn -i http://mirrors.aliyun.com/pypi/simple/
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-10-08T09:42:32+08:00">2023-10-08</time>
+        <time itemprop="dateCreated datePublished" datetime="2024-02-18T12:29:29+08:00">2024-02-18</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/10/08/ubuntu%E6%89%93%E4%B8%8D%E5%BC%80termial%E8%A7%A3%E5%86%B3-%E5%9B%BE%E5%BD%A2%E7%95%8C%E9%9D%A2%E5%92%8Cctrl-alt-T%E5%BF%AB%E6%8D%B7%E9%94%AE%E9%83%BD%E6%89%93%E4%B8%8D%E5%BC%80/' itemprop="url">
+          <a class='readmore' href='/2024/02/18/windowsterminal-wt-%E8%AE%BE%E7%BD%AE%E4%B8%BA%E9%BB%98%E8%AE%A4%E5%91%BD%E4%BB%A4%E8%A1%8C/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3153,7 +3163,7 @@ python.exe -m pip install scikit-learn -i http://mirrors.aliyun.com/pypi/simple/
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/08/awk提取文件某一列存到数组中-awk输出存到数组-awk存到数组/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2024/02/18/管理wsl-LxRunOffline-查看wsl所在目录-移动wsl到非c盘/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -3171,20 +3181,26 @@ python.exe -m pip install scikit-learn -i http://mirrors.aliyun.com/pypi/simple/
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/08/08/awk%E6%8F%90%E5%8F%96%E6%96%87%E4%BB%B6%E6%9F%90%E4%B8%80%E5%88%97%E5%AD%98%E5%88%B0%E6%95%B0%E7%BB%84%E4%B8%AD-awk%E8%BE%93%E5%87%BA%E5%AD%98%E5%88%B0%E6%95%B0%E7%BB%84-awk%E5%AD%98%E5%88%B0%E6%95%B0%E7%BB%84/"  itemprop="url">
-        awk提取文件某一列存到数组中 awk输出存到数组 awk存到数组
+      <a href="/2024/02/18/%E7%AE%A1%E7%90%86wsl-LxRunOffline-%E6%9F%A5%E7%9C%8Bwsl%E6%89%80%E5%9C%A8%E7%9B%AE%E5%BD%95-%E7%A7%BB%E5%8A%A8wsl%E5%88%B0%E9%9D%9Ec%E7%9B%98/"  itemprop="url">
+        管理wsl LxRunOffline 查看wsl所在目录 移动wsl到非c盘
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        # 将tmp文件中倒数第二列提取到一个数组evl中
-# 这样不行: evl=`awk &#39;&#123;print $(NF-1)&#125;&#39; tmp` 这样是把空格分割的字符串赋值给evl（且还不严格是空格分割的，用IFS方法拆分无效）
-# 得加一个括号，这样转成数组
-evl=(`awk &#39;&#123;print $(NF-1)&#125;&#39; tmp`)
+        LxRunOffline
+在cmd中直接运行
+LxRunOffline.exe
 
-e...
+将输出help信息
+查看WSL所在目录
+查看子系统所在目录
+
+LxRunOffline.exe get-dir -n Ubuntu-18.04
+
+移动到非C盘
+参考https://learnku.com/articles/46234https://blog.csdn.net/yihuajack/article/...
       
     
   </div>
@@ -3192,12 +3208,12 @@ e...
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-08-08T14:38:52+08:00">2023-08-08</time>
+        <time itemprop="dateCreated datePublished" datetime="2024-02-18T12:26:23+08:00">2024-02-18</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/08/08/awk%E6%8F%90%E5%8F%96%E6%96%87%E4%BB%B6%E6%9F%90%E4%B8%80%E5%88%97%E5%AD%98%E5%88%B0%E6%95%B0%E7%BB%84%E4%B8%AD-awk%E8%BE%93%E5%87%BA%E5%AD%98%E5%88%B0%E6%95%B0%E7%BB%84-awk%E5%AD%98%E5%88%B0%E6%95%B0%E7%BB%84/' itemprop="url">
+          <a class='readmore' href='/2024/02/18/%E7%AE%A1%E7%90%86wsl-LxRunOffline-%E6%9F%A5%E7%9C%8Bwsl%E6%89%80%E5%9C%A8%E7%9B%AE%E5%BD%95-%E7%A7%BB%E5%8A%A8wsl%E5%88%B0%E9%9D%9Ec%E7%9B%98/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3224,7 +3240,7 @@ e...
           </a>
         
         <p class="current">
-          4 / 44
+          4 / 49
         </p>
         
           <a class="next" rel="next" href="/page/5/">
@@ -3469,7 +3485,7 @@ e...
           <li><a class="flat-box"
             title="/categories/tool/" href="/categories/tool/"
             active-action="action-categoriestool"
-            ><div class='name'>tool</div><div class='badge'>(70)</div></a></li>
+            ><div class='name'>tool</div><div class='badge'>(69)</div></a></li>
         
           <li><a class="flat-box child"
             title="/categories/tool/linux/" href="/categories/tool/linux/"
@@ -3479,7 +3495,7 @@ e...
           <li><a class="flat-box child"
             title="/categories/tool/windows/" href="/categories/tool/windows/"
             active-action="action-categoriestoolwindows"
-            ><div class='name'>windows</div><div class='badge'>(8)</div></a></li>
+            ><div class='name'>windows</div><div class='badge'>(7)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/tools/" href="/categories/tools/"

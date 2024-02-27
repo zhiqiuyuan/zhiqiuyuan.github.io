@@ -2272,7 +2272,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1708084958563),
+    lastupdate: new Date(1709044408207),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2904,11 +2904,11 @@ rm -rf tmpout
             </span>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/fix-error/" itemprop="url"><span itemprop="name">fix_error</span></a>
+              <a href="/categories/tool/windows/" itemprop="url"><span itemprop="name">windows</span></a>
             </span>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/tool/windows/" itemprop="url"><span itemprop="name">windows</span></a>
+              <a href="/categories/fix-error/" itemprop="url"><span itemprop="name">fix_error</span></a>
             </span>
           
         
@@ -3295,7 +3295,7 @@ https://codeantenna.com/a/3gznir1890
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/11/WSL wsl/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/11/linux服务器间文件传送 targz文件压缩和解压/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -3313,17 +3313,23 @@ https://codeantenna.com/a/3gznir1890
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/08/11/WSL%20wsl/"  itemprop="url">
-        WSL wsl
+      <a href="/2022/08/11/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%97%B4%E6%96%87%E4%BB%B6%E4%BC%A0%E9%80%81%20targz%E6%96%87%E4%BB%B6%E5%8E%8B%E7%BC%A9%E5%92%8C%E8%A7%A3%E5%8E%8B/"  itemprop="url">
+        linux服务器间文件传送 .tar.gz文件压缩和解压
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        安装教程https://zhuanlan.zhihu.com/p/386590591?utm_campaign=shareopn&amp;utm_medium=social&amp;utm_oi=1123716080996339712&amp;utm_psn=1540980178544648192&amp;utm_source=wechat_session
-WSL中访问本地文件
-在“&#x2...
+        
+旧服务器备份：把~&#x2F;.halo压缩
+
+tar -zvcf ~/.halo.tar.gz ~/.halo # 得到~/.halo.tar.gz
+
+
+移到新服务器中在旧服务器上运行
+
+scp ~/.halo.tar.gz &lt;新服务器用户名&gt;@&lt;新服务器ip地址&gt;:~/.halo.tar.gz #scp即secure copy，是用来进行远程文件拷贝的。数据传输...
       
     
   </div>
@@ -3331,24 +3337,24 @@ WSL中访问本地文件
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-08-11T11:04:12+08:00">2022-08-11</time>
+        <time itemprop="dateCreated datePublished" datetime="2022-08-11T09:46:09+08:00">2022-08-11</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/tool/">tool</a><span class="sep"></span><a class="category-link" href="/categories/tool/windows/">windows</a>
+          <a class="category-link" href="/categories/tool/">tool</a><span class="sep"></span><a class="category-link" href="/categories/tool/linux/">linux</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
               <a href="/categories/tool/" itemprop="url"><span itemprop="name">tool</span></a>
             </span>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/tool/windows/" itemprop="url"><span itemprop="name">windows</span></a>
+              <a href="/categories/tool/linux/" itemprop="url"><span itemprop="name">linux</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2022/08/11/WSL%20wsl/' itemprop="url">
+          <a class='readmore' href='/2022/08/11/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%97%B4%E6%96%87%E4%BB%B6%E4%BC%A0%E9%80%81%20targz%E6%96%87%E4%BB%B6%E5%8E%8B%E7%BC%A9%E5%92%8C%E8%A7%A3%E5%8E%8B/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3622,7 +3628,7 @@ WSL中访问本地文件
           <li><a class="flat-box"
             title="/categories/tool/" href="/categories/tool/"
             active-action="action-categoriestool"
-            ><div class='name'>tool</div><div class='badge'>(70)</div></a></li>
+            ><div class='name'>tool</div><div class='badge'>(69)</div></a></li>
         
           <li><a class="flat-box child"
             title="/categories/tool/linux/" href="/categories/tool/linux/"
@@ -3632,7 +3638,7 @@ WSL中访问本地文件
           <li><a class="flat-box child"
             title="/categories/tool/windows/" href="/categories/tool/windows/"
             active-action="action-categoriestoolwindows"
-            ><div class='name'>windows</div><div class='badge'>(8)</div></a></li>
+            ><div class='name'>windows</div><div class='badge'>(7)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/tools/" href="/categories/tools/"

@@ -2272,7 +2272,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1708084958563),
+    lastupdate: new Date(1709044408207),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2632,7 +2632,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/07/linux查看cpu信息和内存/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2024/02/18/ssh连接WSL-ssh连接WSL中的docker/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2650,20 +2650,21 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/08/07/linux%E6%9F%A5%E7%9C%8Bcpu%E4%BF%A1%E6%81%AF%E5%92%8C%E5%86%85%E5%AD%98/"  itemprop="url">
-        linux查看cpu信息和内存
+      <a href="/2024/02/18/ssh%E8%BF%9E%E6%8E%A5WSL-ssh%E8%BF%9E%E6%8E%A5WSL%E4%B8%AD%E7%9A%84docker/"  itemprop="url">
+        ssh连接WSL ssh连接WSL中的docker
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        cpucat /proc/cpuinfo | grep name | cut -f2 -d: | uniq -c
-
-8 Intel(R) Xeon(R) CPU E5410 @ 2.33GHz(看到有8个逻辑CPU, 也知道了CPU型号)
-内存free
+        ssh连接WSL
+参考https://cloud.tencent.com/developer/article/1538305
 
 
+sudo vim /etc/ssh/sshd_config，把PasswordAuthentication no改成PasswordAuthentication yes
+重启ssh服务sudo service ssh restart
+ifconfig查看ip（in...
       
     
   </div>
@@ -2671,12 +2672,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-08-07T14:19:18+08:00">2023-08-07</time>
+        <time itemprop="dateCreated datePublished" datetime="2024-02-18T12:23:54+08:00">2024-02-18</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/08/07/linux%E6%9F%A5%E7%9C%8Bcpu%E4%BF%A1%E6%81%AF%E5%92%8C%E5%86%85%E5%AD%98/' itemprop="url">
+          <a class='readmore' href='/2024/02/18/ssh%E8%BF%9E%E6%8E%A5WSL-ssh%E8%BF%9E%E6%8E%A5WSL%E4%B8%AD%E7%9A%84docker/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2692,7 +2693,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/05/正则表达式/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2024/02/18/新wsl安装开发环境-linux生产环境/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2710,16 +2711,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/08/05/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"  itemprop="url">
-        正则表达式
+      <a href="/2024/02/18/%E6%96%B0wsl%E5%AE%89%E8%A3%85%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83-linux%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83/"  itemprop="url">
+        新wsl安装开发环境 linux生产环境
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        一些语法x          匹配字符 x.          除换行符外的任何字符[xyz]      字符类别；匹配x、y、z[abj-oZ]   具有范围的字符类；匹配 a， b， j到o中的任何字母或 Z[^A-Z]    否定字符类，即该类中的字符以外的任何字符  [^A-Z\n]   除大写字母或换行符外的任何字符
-r*          零个或多个r，其中r是任何正则表达式（如...
+        如果默认是用root登录，则设定下默认用户搜我的博客 默认用户
+如果登录上去发现命令行无色（是&#x2F;bin&#x2F;sh）或者想改默认命令行程序搜我的博客 设定默认shell
+换源搜我的博客 ubuntu换源
+文件传输：WSL中访问本机文件/mnt目录下的目录即对应本机的各个盘
+vscode打开WSL中的目录本机的vscode安装WSL插件，然后ctrl+shift+p打开控制面板输...
       
     
   </div>
@@ -2727,12 +2731,12 @@ r*          零个或多个r，其中r是任何正则表达式（如...
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-08-05T15:15:40+08:00">2023-08-05</time>
+        <time itemprop="dateCreated datePublished" datetime="2024-02-18T12:16:05+08:00">2024-02-18</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/08/05/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/' itemprop="url">
+          <a class='readmore' href='/2024/02/18/%E6%96%B0wsl%E5%AE%89%E8%A3%85%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83-linux%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2748,7 +2752,7 @@ r*          零个或多个r，其中r是任何正则表达式（如...
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/05/bash分割字符串/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2024/02/18/linux新建用户-设定默认shell-给sudo/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2766,18 +2770,22 @@ r*          零个或多个r，其中r是任何正则表达式（如...
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/08/05/bash%E5%88%86%E5%89%B2%E5%AD%97%E7%AC%A6%E4%B8%B2/"  itemprop="url">
-        bash分割字符串
+      <a href="/2024/02/18/linux%E6%96%B0%E5%BB%BA%E7%94%A8%E6%88%B7-%E8%AE%BE%E5%AE%9A%E9%BB%98%E8%AE%A4shell-%E7%BB%99sudo/"  itemprop="url">
+        linux新建用户 设定默认shell 给sudo
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        方法一 tr替代字符串然后()转数组string=&quot;hello,shell,split,test&quot;  
-array=(`echo $string | tr &#39;,&#39; &#39; &#39;` )  # tr &#39;,&#39; &#39; &#39;将string中,替换成空格，然后()转成数组
- 
-for var in $&#123;array[@]&...
+        创建用户创建一个拥有主目录（-m）和默认shell（-s）是/usr/bin/zsh的用户
+useradd -m -s /usr/bin/zsh username
+
+useradd -m -s &#x2F;bin&#x2F;bash yuanzhiqiu
+然后你将为该用户添加一个密码：
+passwd username
+
+sudo需要的话，给sudo：修改/etc/sudoers文件：在行ro...
       
     
   </div>
@@ -2785,12 +2793,12 @@ for var in $&#123;array[@]&...
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-08-05T11:25:24+08:00">2023-08-05</time>
+        <time itemprop="dateCreated datePublished" datetime="2024-02-18T12:11:48+08:00">2024-02-18</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/08/05/bash%E5%88%86%E5%89%B2%E5%AD%97%E7%AC%A6%E4%B8%B2/' itemprop="url">
+          <a class='readmore' href='/2024/02/18/linux%E6%96%B0%E5%BB%BA%E7%94%A8%E6%88%B7-%E8%AE%BE%E5%AE%9A%E9%BB%98%E8%AE%A4shell-%E7%BB%99sudo/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2806,7 +2814,7 @@ for var in $&#123;array[@]&...
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/26/ubuntu换源/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2024/02/18/wox插件推荐-除了自带的插件外的插件/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2824,16 +2832,18 @@ for var in $&#123;array[@]&...
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/07/26/ubuntu%E6%8D%A2%E6%BA%90/"  itemprop="url">
-        ubuntu换源
+      <a href="/2024/02/18/wox%E6%8F%92%E4%BB%B6%E6%8E%A8%E8%8D%90-%E9%99%A4%E4%BA%86%E8%87%AA%E5%B8%A6%E7%9A%84%E6%8F%92%E4%BB%B6%E5%A4%96%E7%9A%84%E6%8F%92%E4%BB%B6/"  itemprop="url">
+        wox插件推荐 除了自带的插件外的插件
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        https://midoq.github.io/2022/05/30/Ubuntu20-04%E6%9B%B4%E6%8D%A2%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F%E6%BA%90/
-
+        插件管理在alt+space出来的框中键入：插件安装：wpm install &lt;plugin_name&gt;
+插件卸载：wpm uninstall &lt;plugin_name&gt;
+插件管理（enable，插件设置，查看文档等）settings然后plugin选项卡
+插件列表Timer设置倒计时，时间到了会通过wox的提示来提醒 http://www.wox.one/plugi...
       
     
   </div>
@@ -2841,12 +2851,12 @@ for var in $&#123;array[@]&...
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-07-26T14:18:37+08:00">2023-07-26</time>
+        <time itemprop="dateCreated datePublished" datetime="2024-02-18T10:48:35+08:00">2024-02-18</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/07/26/ubuntu%E6%8D%A2%E6%BA%90/' itemprop="url">
+          <a class='readmore' href='/2024/02/18/wox%E6%8F%92%E4%BB%B6%E6%8E%A8%E8%8D%90-%E9%99%A4%E4%BA%86%E8%87%AA%E5%B8%A6%E7%9A%84%E6%8F%92%E4%BB%B6%E5%A4%96%E7%9A%84%E6%8F%92%E4%BB%B6/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2862,7 +2872,7 @@ for var in $&#123;array[@]&...
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/26/导入安装的wsl设置默认登录用户/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2024/02/18/win注册表编辑/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2880,22 +2890,21 @@ for var in $&#123;array[@]&...
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/07/26/%E5%AF%BC%E5%85%A5%E5%AE%89%E8%A3%85%E7%9A%84wsl%E8%AE%BE%E7%BD%AE%E9%BB%98%E8%AE%A4%E7%99%BB%E5%BD%95%E7%94%A8%E6%88%B7/"  itemprop="url">
-        导入安装的wsl设置默认登录用户
+      <a href="/2024/02/18/win%E6%B3%A8%E5%86%8C%E8%A1%A8%E7%BC%96%E8%BE%91/"  itemprop="url">
+        win注册表编辑
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        https://learn.microsoft.com/zh-cn/windows/wsl/basic-commands#set-wsl-version-to-1-or-2
-先确认wsl版本是2查看版本
-wsl -l -v
+        方法一：
 
-如果不是2的话设置版本
-wsl --set-version &lt;distribution name&gt; &lt;versionNumber&gt;
+win+R，输入regedit，进入注册表编辑GUI界面
+顶部路径那里，可以直接输入路径，或者输入前缀，会自动提示和切换到路径
 
-若要指定运...
+方法二：新建文件xxx.reg，按需添加内容，双击运行该文件
+
       
     
   </div>
@@ -2903,12 +2912,12 @@ wsl --set-version &lt;distribution name&gt; &lt;versionNumber&gt;
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-07-26T10:42:23+08:00">2023-07-26</time>
+        <time itemprop="dateCreated datePublished" datetime="2024-02-18T10:02:36+08:00">2024-02-18</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/07/26/%E5%AF%BC%E5%85%A5%E5%AE%89%E8%A3%85%E7%9A%84wsl%E8%AE%BE%E7%BD%AE%E9%BB%98%E8%AE%A4%E7%99%BB%E5%BD%95%E7%94%A8%E6%88%B7/' itemprop="url">
+          <a class='readmore' href='/2024/02/18/win%E6%B3%A8%E5%86%8C%E8%A1%A8%E7%BC%96%E8%BE%91/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2924,7 +2933,7 @@ wsl --set-version &lt;distribution name&gt; &lt;versionNumber&gt;
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/26/win10设置应用程序启动快捷键/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2024/02/17/linux硬件配置信息-硬件环境-cpu信息-内存信息-缓存信息-磁盘信息/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2942,15 +2951,22 @@ wsl --set-version &lt;distribution name&gt; &lt;versionNumber&gt;
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/07/26/win10%E8%AE%BE%E7%BD%AE%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%90%AF%E5%8A%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/"  itemprop="url">
-        win10设置应用程序启动快捷键
+      <a href="/2024/02/17/linux%E7%A1%AC%E4%BB%B6%E9%85%8D%E7%BD%AE%E4%BF%A1%E6%81%AF-%E7%A1%AC%E4%BB%B6%E7%8E%AF%E5%A2%83-cpu%E4%BF%A1%E6%81%AF-%E5%86%85%E5%AD%98%E4%BF%A1%E6%81%AF-%E7%BC%93%E5%AD%98%E4%BF%A1%E6%81%AF-%E7%A3%81%E7%9B%98%E4%BF%A1%E6%81%AF/"  itemprop="url">
+        linux硬件配置信息 硬件环境 cpu信息 内存信息 缓存信息 磁盘信息
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        https://blog.csdn.net/qq_43546203/article/details/122490415#:~:text=windows10%20%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%90%AF%E5%8A%A8%E5%BF%AB%E6%8D%B7%E9%94%AE%E8%AE%BE%E7%BD%AE%E4%B8%8E%E5%8F%96...
+        cpulscpu
+
+cpu型号cat /proc/cpuinfo | grep name | cut -f2 -d: | uniq -c
+
+8 Intel(R) Xeon(R) CPU E5410 @ 2.33GHz(8个逻辑CPU, 以及CPU型号)
+逻辑核数目cat /proc/cpuinfo| grep &quot;processor&quot;| wc -l
+
+物理核数目cat /p...
       
     
   </div>
@@ -2958,12 +2974,12 @@ wsl --set-version &lt;distribution name&gt; &lt;versionNumber&gt;
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-07-26T10:11:21+08:00">2023-07-26</time>
+        <time itemprop="dateCreated datePublished" datetime="2024-02-17T21:18:40+08:00">2024-02-17</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/07/26/win10%E8%AE%BE%E7%BD%AE%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%90%AF%E5%8A%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/' itemprop="url">
+          <a class='readmore' href='/2024/02/17/linux%E7%A1%AC%E4%BB%B6%E9%85%8D%E7%BD%AE%E4%BF%A1%E6%81%AF-%E7%A1%AC%E4%BB%B6%E7%8E%AF%E5%A2%83-cpu%E4%BF%A1%E6%81%AF-%E5%86%85%E5%AD%98%E4%BF%A1%E6%81%AF-%E7%BC%93%E5%AD%98%E4%BF%A1%E6%81%AF-%E7%A3%81%E7%9B%98%E4%BF%A1%E6%81%AF/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2979,7 +2995,7 @@ wsl --set-version &lt;distribution name&gt; &lt;versionNumber&gt;
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/25/c-头文件相互包含/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2024/02/17/cachegrind-cache-profile-缓存profile/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2997,25 +3013,18 @@ wsl --set-version &lt;distribution name&gt; &lt;versionNumber&gt;
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/07/25/c-%E5%A4%B4%E6%96%87%E4%BB%B6%E7%9B%B8%E4%BA%92%E5%8C%85%E5%90%AB/"  itemprop="url">
-        c++头文件相互包含
+      <a href="/2024/02/17/cachegrind-cache-profile-%E7%BC%93%E5%AD%98profile/"  itemprop="url">
+        cachegrind cache profile 缓存profile
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        类相互引用的情况，如果编译不通过的话，参考下面的原则（如果通过的话就没啥管的bushi）：
-在本文件中，
-
-需要引用某类的成员（数据成员或函数成员，静态或不是静态），才需包含头文件
-若只需要使用某类的指针或引用，可以不包含头文件，有一个前置申明即可
-
-举例：A中用到B的成员，B中有A*B.h
-// 仅用到A的指针，不需要包含头文件
-class A; // 但是需要前置申明
-class B
-&...
+        https://wwwcdf.pd.infn.it/valgrind/cg_main.html
+4 Cachegrind: a cache-miss profilervalgrind --tool=cachegrind
+Detailed technical documentation on how Cachegrind works is available here. 
+If you wan...
       
     
   </div>
@@ -3023,12 +3032,12 @@ class B
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-07-25T09:14:58+08:00">2023-07-25</time>
+        <time itemprop="dateCreated datePublished" datetime="2024-02-17T20:50:44+08:00">2024-02-17</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/07/25/c-%E5%A4%B4%E6%96%87%E4%BB%B6%E7%9B%B8%E4%BA%92%E5%8C%85%E5%90%AB/' itemprop="url">
+          <a class='readmore' href='/2024/02/17/cachegrind-cache-profile-%E7%BC%93%E5%AD%98profile/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3044,7 +3053,7 @@ class B
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/23/vscode老版本gdb命令行查看vector内容/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2024/02/17/win11右键菜单管理-右键菜单快捷键管理/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -3062,16 +3071,18 @@ class B
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/07/23/vscode%E8%80%81%E7%89%88%E6%9C%ACgdb%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%9F%A5%E7%9C%8Bvector%E5%86%85%E5%AE%B9/"  itemprop="url">
-        vscode老版本gdb命令行查看vector内容
+      <a href="/2024/02/17/win11%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95%E7%AE%A1%E7%90%86-%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95%E5%BF%AB%E6%8D%B7%E9%94%AE%E7%AE%A1%E7%90%86/"  itemprop="url">
+        win11右键菜单管理 右键菜单快捷键管理
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        在DEBUG_CONSOLE中或者watch*(your_vector._M_impl._M_start)@(your_vector.size())
-
+        https://blog.csdn.net/qq_42951560/article/details/123507617https://zhuanlan.zhihu.com/p/638686816
+步骤：
+通过ContextMenuManager管理右键菜单，或找到右键菜单某项目（比如”在terminal中打开”）所在的注册表项目
+win10的话有确定的注册表路径，win11不太行，得借助工具...
       
     
   </div>
@@ -3079,12 +3090,12 @@ class B
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-07-23T21:28:32+08:00">2023-07-23</time>
+        <time itemprop="dateCreated datePublished" datetime="2024-02-17T19:09:51+08:00">2024-02-17</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/07/23/vscode%E8%80%81%E7%89%88%E6%9C%ACgdb%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%9F%A5%E7%9C%8Bvector%E5%86%85%E5%AE%B9/' itemprop="url">
+          <a class='readmore' href='/2024/02/17/win11%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95%E7%AE%A1%E7%90%86-%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95%E5%BF%AB%E6%8D%B7%E9%94%AE%E7%AE%A1%E7%90%86/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3098,11 +3109,9 @@ class B
         
       
         
-      
-        
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/15/设置vscode命令行启动路径为当前文件所在目录/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2024/02/17/win11修改任务栏高度/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -3120,15 +3129,15 @@ class B
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/07/15/%E8%AE%BE%E7%BD%AEvscode%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%90%AF%E5%8A%A8%E8%B7%AF%E5%BE%84%E4%B8%BA%E5%BD%93%E5%89%8D%E6%96%87%E4%BB%B6%E6%89%80%E5%9C%A8%E7%9B%AE%E5%BD%95/"  itemprop="url">
-        设置vscode命令行启动路径为当前文件所在目录
+      <a href="/2024/02/17/win11%E4%BF%AE%E6%94%B9%E4%BB%BB%E5%8A%A1%E6%A0%8F%E9%AB%98%E5%BA%A6/"  itemprop="url">
+        win11修改任务栏高度
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        ctrl+,进入设置 ，然后terminal &gt; integrated: cwd${fileDirname}
+        https://blog.csdn.net/winkexin/article/details/131619069
 
       
     
@@ -3137,12 +3146,68 @@ class B
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-07-15T08:02:13+08:00">2023-07-15</time>
+        <time itemprop="dateCreated datePublished" datetime="2024-02-17T15:57:22+08:00">2024-02-17</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/07/15/%E8%AE%BE%E7%BD%AEvscode%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%90%AF%E5%8A%A8%E8%B7%AF%E5%BE%84%E4%B8%BA%E5%BD%93%E5%89%8D%E6%96%87%E4%BB%B6%E6%89%80%E5%9C%A8%E7%9B%AE%E5%BD%95/' itemprop="url">
+          <a class='readmore' href='/2024/02/17/win11%E4%BF%AE%E6%94%B9%E4%BB%BB%E5%8A%A1%E6%A0%8F%E9%AB%98%E5%BA%A6/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2024/02/17/win摆脱鼠标工具-wox-基础使用/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2024/02/17/win%E6%91%86%E8%84%B1%E9%BC%A0%E6%A0%87%E5%B7%A5%E5%85%B7-wox-%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/"  itemprop="url">
+        win摆脱鼠标工具 wox 基础使用
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        http://doc.wox.one/en/basic/超级好用，相见恨晚
+
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2024-02-17T15:50:04+08:00">2024-02-17</time>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2024/02/17/win%E6%91%86%E8%84%B1%E9%BC%A0%E6%A0%87%E5%B7%A5%E5%85%B7-wox-%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3169,7 +3234,7 @@ class B
           </a>
         
         <p class="current">
-          5 / 44
+          5 / 49
         </p>
         
           <a class="next" rel="next" href="/page/6/">
@@ -3414,7 +3479,7 @@ class B
           <li><a class="flat-box"
             title="/categories/tool/" href="/categories/tool/"
             active-action="action-categoriestool"
-            ><div class='name'>tool</div><div class='badge'>(70)</div></a></li>
+            ><div class='name'>tool</div><div class='badge'>(69)</div></a></li>
         
           <li><a class="flat-box child"
             title="/categories/tool/linux/" href="/categories/tool/linux/"
@@ -3424,7 +3489,7 @@ class B
           <li><a class="flat-box child"
             title="/categories/tool/windows/" href="/categories/tool/windows/"
             active-action="action-categoriestoolwindows"
-            ><div class='name'>windows</div><div class='badge'>(8)</div></a></li>
+            ><div class='name'>windows</div><div class='badge'>(7)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/tools/" href="/categories/tools/"

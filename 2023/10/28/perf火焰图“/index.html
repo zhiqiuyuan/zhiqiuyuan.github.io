@@ -41,11 +41,11 @@
 <meta property="og:title" content="perf火焰图“">
 <meta property="og:url" content="http://example.com/2023/10/28/perf%E7%81%AB%E7%84%B0%E5%9B%BE%E2%80%9C/index.html">
 <meta property="og:site_name" content="zhiqiuyuan&#39;s blog">
-<meta property="og:description" content="火焰图介绍https:&#x2F;&#x2F;www.ruanyifeng.com&#x2F;blog&#x2F;2017&#x2F;09&#x2F;flame-graph.html 火焰图生成教程https:&#x2F;&#x2F;www.brendangregg.com&#x2F;FlameGraphs&#x2F;cpuflamegraphs.html # 下载根据perf输出得到火焰图的可执行文件&#96;.&#x2F;stackcollapse-perf.pl&#96;&amp;&#96;.&#x2F;flamegraph.pl&#96;">
+<meta property="og:description" content="火焰图介绍https:&#x2F;&#x2F;www.ruanyifeng.com&#x2F;blog&#x2F;2017&#x2F;09&#x2F;flame-graph.html 火焰图生成教程https:&#x2F;&#x2F;www.brendangregg.com&#x2F;FlameGraphs&#x2F;cpuflamegraphs.html 下载根据perf输出得到火焰图的可执行文件.&#x2F;stackcollapse-perf.pl&amp;.&#x2F;flamegraph.plgit cl">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-10-28T06:32:01.000Z">
-<meta property="article:modified_time" content="2024-02-06T08:59:36.000Z">
+<meta property="article:modified_time" content="2024-02-25T03:07:11.376Z">
 <meta property="article:author" content="zhiqiuyuan">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -2274,7 +2274,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1708084958563),
+    lastupdate: new Date(1709044408207),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2698,35 +2698,29 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div id="post-body" itemprop="articleBody">
     <p>火焰图介绍<br><a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2017/09/flame-graph.html">https://www.ruanyifeng.com/blog/2017/09/flame-graph.html</a></p>
 <p>火焰图生成教程<br><a target="_blank" rel="noopener" href="https://www.brendangregg.com/FlameGraphs/cpuflamegraphs.html">https://www.brendangregg.com/FlameGraphs/cpuflamegraphs.html</a></p>
-<pre><code class="bash"># 下载根据perf输出得到火焰图的可执行文件`./stackcollapse-perf.pl`&amp;`./flamegraph.pl`
-git clone https://github.com/brendangregg/FlameGraph  # or download it from github
+<h2 id="下载根据perf输出得到火焰图的可执行文件-stackcollapse-perf-pl-amp-flamegraph-pl"><a href="#下载根据perf输出得到火焰图的可执行文件-stackcollapse-perf-pl-amp-flamegraph-pl" class="headerlink" title="下载根据perf输出得到火焰图的可执行文件./stackcollapse-perf.pl&amp;./flamegraph.pl"></a>下载根据perf输出得到火焰图的可执行文件<code>./stackcollapse-perf.pl</code>&amp;<code>./flamegraph.pl</code></h2><pre><code class="bash">git clone https://github.com/brendangregg/FlameGraph  # or download it from github
 cd FlameGraph
-
-# perf你的程序，会将数据放到`./perf.data`中
-perf record -F 2999 -a --call-graph dwarf yourRunningCmd
+</code></pre>
+<h2 id="perf你的程序，会将数据放到-perf-data中"><a href="#perf你的程序，会将数据放到-perf-data中" class="headerlink" title="perf你的程序，会将数据放到./perf.data中"></a>perf你的程序，会将数据放到<code>./perf.data</code>中</h2><pre><code class="bash">sudo perf record -F 2999 -a --call-graph dwarf yourRunningCmd
 # The perf record command samples at 2999 Hertz (-F 2999) across all CPUs (-a), capturing stack traces so that a call graph (-g) of function ancestry can be generated later. 
 # The samples are saved in a perf.data file, which are read by perf script. 
 # --call-graph dwarf: When &quot;dwarf&quot; recording is used, perf also records (user) stack dump
 #    when sampled.  Default size of the stack dump is 8192 (bytes).
 #    User can change the size by passing the size after comma like
 #    &quot;--call-graph dwarf,4096&quot;.
-# --call-graph df: faster then --call-graph dwarf
-
-# 根据`./perf.data`生成火焰图
-perf script | ./stackcollapse-perf.pl &gt; out.perf-folded
+# 或者，更快一点的：
+sudo perf record -F 2999 -a --call-graph fp yourRunningCmd
+# --call-graph fp: faster then --call-graph dwarf
+</code></pre>
+<h2 id="根据-perf-data生成火焰图"><a href="#根据-perf-data生成火焰图" class="headerlink" title="根据./perf.data生成火焰图"></a>根据<code>./perf.data</code>生成火焰图</h2><pre><code class="bash">sudo perf script | ./stackcollapse-perf.pl &gt; out.perf-folded
 ./flamegraph.pl out.perf-folded &gt; perf.svg
 </code></pre>
-<p>modfun上：<br>perf程序：</p>
-<pre><code class="bash">sudo perf record -F 2999 -a --call-graph dwarf yourRunningCmd
-# 或者
-# 下边的这个更快一点
-sudo perf record -F 2999 -a --call-graph fp yourRunningCmd
-</code></pre>
-<p>生成火焰图</p>
+<h2 id="modfun上火焰图装在-x2F-home-x2F-shared-x2F-FlameGraph-x2F"><a href="#modfun上火焰图装在-x2F-home-x2F-shared-x2F-FlameGraph-x2F" class="headerlink" title="modfun上火焰图装在&#x2F;home&#x2F;shared&#x2F;FlameGraph&#x2F;"></a>modfun上火焰图装在&#x2F;home&#x2F;shared&#x2F;FlameGraph&#x2F;</h2><p>生成火焰图</p>
 <pre><code class="bash">sudo perf script | /home/shared/FlameGraph/stackcollapse-perf.pl &gt; out.perf-folded
 /home/shared/FlameGraph/flamegraph.pl out.perf-folded &gt; perf.svg
 </code></pre>
-<p>make<br>perf record -F 2999 –call-graph dwarf bin&#x2F;gprint_multi_thread -q data&#x2F;pg_cypher&#x2F;1.cypher -db test -t 1<br>mv .&#x2F;perf.data .&#x2F;perf_file&#x2F;<br>perf report -i .&#x2F;perf_file&#x2F;perf.data &gt; .&#x2F;perf_file&#x2F;perf.txt<br>perf script -i .&#x2F;perf_file&#x2F;perf.data &amp;&gt; .&#x2F;perf_file&#x2F;perf.unfold<br>&#x2F;disk1&#x2F;data&#x2F;FlameGraph&#x2F;stackcollapse-perf.pl .&#x2F;perf_file&#x2F;perf.unfold &amp;&gt; .&#x2F;perf_file&#x2F;perf.folded<br>&#x2F;disk1&#x2F;data&#x2F;FlameGraph&#x2F;flamegraph.pl .&#x2F;perf_file&#x2F;perf.folded &gt; .&#x2F;perf_file&#x2F;perf.svg</p>
+<h2 id="火焰图分析"><a href="#火焰图分析" class="headerlink" title="火焰图分析"></a>火焰图分析</h2><p>点击块，会expand</p>
+<h3 id="支持统计关键字（可正则搜索）出现的百分比，且根据选择的根块自动换算百分比"><a href="#支持统计关键字（可正则搜索）出现的百分比，且根据选择的根块自动换算百分比" class="headerlink" title="支持统计关键字（可正则搜索）出现的百分比，且根据选择的根块自动换算百分比"></a>支持统计关键字（可正则搜索）出现的百分比，且根据选择的根块自动换算百分比</h3><p>点击根块，然后ctrl+f搜索要统计的关键字，然后火焰图上就会用粉紫色高亮匹配到的块，并在右下角显示总共的百分比<br>且关键词支持<strong>正则搜索</strong>，比如搜Database::|getobjIDlistBysubIDpreID|getsubIDlistByobjIDpreID<br>自动换算是指，比如调用栈是main-&gt;fun1-&gt;fun2，统计某关键字的百分比时，点击main块得到的结果和点击fun1块得到的结果不一样</p>
 
   </div>
   
@@ -2751,10 +2745,10 @@ sudo perf record -F 2999 -a --call-graph fp yourRunningCmd
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-02-06T16:59:36+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-02-25T11:07:11+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Feb 6, 2024</p>
+    <p>更新于：Feb 25, 2024</p>
   </a>
 </div>
 
@@ -2902,7 +2896,7 @@ print(sys...</p>
 
 
   <div class='content'>
-      
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E6%A0%B9%E6%8D%AEperf%E8%BE%93%E5%87%BA%E5%BE%97%E5%88%B0%E7%81%AB%E7%84%B0%E5%9B%BE%E7%9A%84%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6-stackcollapse-perf-pl-amp-flamegraph-pl"><span class="toc-text">下载根据perf输出得到火焰图的可执行文件.&#x2F;stackcollapse-perf.pl&amp;.&#x2F;flamegraph.pl</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#perf%E4%BD%A0%E7%9A%84%E7%A8%8B%E5%BA%8F%EF%BC%8C%E4%BC%9A%E5%B0%86%E6%95%B0%E6%8D%AE%E6%94%BE%E5%88%B0-perf-data%E4%B8%AD"><span class="toc-text">perf你的程序，会将数据放到.&#x2F;perf.data中</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B9%E6%8D%AE-perf-data%E7%94%9F%E6%88%90%E7%81%AB%E7%84%B0%E5%9B%BE"><span class="toc-text">根据.&#x2F;perf.data生成火焰图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#modfun%E4%B8%8A%E7%81%AB%E7%84%B0%E5%9B%BE%E8%A3%85%E5%9C%A8-x2F-home-x2F-shared-x2F-FlameGraph-x2F"><span class="toc-text">modfun上火焰图装在&#x2F;home&#x2F;shared&#x2F;FlameGraph&#x2F;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%81%AB%E7%84%B0%E5%9B%BE%E5%88%86%E6%9E%90"><span class="toc-text">火焰图分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%AF%E6%8C%81%E7%BB%9F%E8%AE%A1%E5%85%B3%E9%94%AE%E5%AD%97%EF%BC%88%E5%8F%AF%E6%AD%A3%E5%88%99%E6%90%9C%E7%B4%A2%EF%BC%89%E5%87%BA%E7%8E%B0%E7%9A%84%E7%99%BE%E5%88%86%E6%AF%94%EF%BC%8C%E4%B8%94%E6%A0%B9%E6%8D%AE%E9%80%89%E6%8B%A9%E7%9A%84%E6%A0%B9%E5%9D%97%E8%87%AA%E5%8A%A8%E6%8D%A2%E7%AE%97%E7%99%BE%E5%88%86%E6%AF%94"><span class="toc-text">支持统计关键字（可正则搜索）出现的百分比，且根据选择的根块自动换算百分比</span></a></li></ol></li></ol>
   </div>
 </section>
 
@@ -3865,7 +3859,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"grapher"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"zhiqiuyuan's blog"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/10/28/perf火焰图“/","name":"perf火焰图“"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"zhiqiuyuan's blog","url":"http://example.com/","keywords":null,"description":"grapher","author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"grapher"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"perf火焰图“","description":"grapher","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/10/28/perf%E7%81%AB%E7%84%B0%E5%9B%BE%E2%80%9C/"},"author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/10/28/perf%E7%81%AB%E7%84%B0%E5%9B%BE%E2%80%9C/","wordCount":0,"datePublished":"2023-10-28T06:32:01.000Z","dateModified":"2024-02-06T08:59:36.000Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"grapher"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"zhiqiuyuan's blog"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/10/28/perf火焰图“/","name":"perf火焰图“"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"zhiqiuyuan's blog","url":"http://example.com/","keywords":null,"description":"grapher","author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"grapher"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"perf火焰图“","description":"grapher","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/10/28/perf%E7%81%AB%E7%84%B0%E5%9B%BE%E2%80%9C/"},"author":{"@type":"Person","name":"zhiqiuyuan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"zhiqiuyuan's blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/10/28/perf%E7%81%AB%E7%84%B0%E5%9B%BE%E2%80%9C/","wordCount":0,"datePublished":"2023-10-28T06:32:01.000Z","dateModified":"2024-02-25T03:07:11.376Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

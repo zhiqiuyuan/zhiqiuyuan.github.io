@@ -2272,7 +2272,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1708084958563),
+    lastupdate: new Date(1709044408207),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2630,11 +2630,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         
-      
-        
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/14/LCA/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/17/c-静态数据成员和普通数据成员访问快慢测评/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2652,16 +2650,23 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/03/14/LCA/"  itemprop="url">
-        LCA
+      <a href="/2023/04/17/c-%E9%9D%99%E6%80%81%E6%95%B0%E6%8D%AE%E6%88%90%E5%91%98%E5%92%8C%E6%99%AE%E9%80%9A%E6%95%B0%E6%8D%AE%E6%88%90%E5%91%98%E8%AE%BF%E9%97%AE%E5%BF%AB%E6%85%A2%E6%B5%8B%E8%AF%84/"  itemprop="url">
+        c++静态数据成员和普通数据成员访问快慢测评
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        https://cp-algorithms.com/graph/lca.html
-Before answering the queries, we need to preprocess the tree. We make a DFS traversal starting at the root and we build a list  $\text{euler}$  which stores...
+        比较类的静态数据成员和普通数据成员哪个访问得快一点
+代码顺序访问#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+#include &lt;vector&gt;
+#include &lt;chrono&gt;
+
+using namespace std;
+typedef chrono::microseconds UnitType;
+chron...
       
     
   </div>
@@ -2669,12 +2674,291 @@ Before answering the queries, we need to preprocess the tree. We make a DFS trav
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-03-14T09:04:52+08:00">2023-03-14</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-04-17T17:42:40+08:00">2023-04-17</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/03/14/LCA/' itemprop="url">
+          <a class='readmore' href='/2023/04/17/c-%E9%9D%99%E6%80%81%E6%95%B0%E6%8D%AE%E6%88%90%E5%91%98%E5%92%8C%E6%99%AE%E9%80%9A%E6%95%B0%E6%8D%AE%E6%88%90%E5%91%98%E8%AE%BF%E9%97%AE%E5%BF%AB%E6%85%A2%E6%B5%8B%E8%AF%84/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/16/概率分布/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/04/16/%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83/"  itemprop="url">
+        概率分布
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        常见离散型概率分布二项分布
+
+泊松分布
+
+超几何分布
+
+常见连续型概率分布正态分布
+
+指数分布
+
+
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-04-16T20:33:14+08:00">2023-04-16</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E6%A6%82%E7%BB%9F/">概统</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E6%A6%82%E7%BB%9F/" itemprop="url"><span itemprop="name">概统</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/04/16/%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/16/数学期望/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/04/16/%E6%95%B0%E5%AD%A6%E6%9C%9F%E6%9C%9B/"  itemprop="url">
+        数学期望
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        含义：
+
+
+离散型
+
+
+
+连续型
+常见分布的数学期望指数分布
+
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-04-16T20:09:20+08:00">2023-04-16</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E6%A6%82%E7%BB%9F/">概统</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E6%A6%82%E7%BB%9F/" itemprop="url"><span itemprop="name">概统</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/04/16/%E6%95%B0%E5%AD%A6%E6%9C%9F%E6%9C%9B/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/16/假设检验/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/04/16/%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C/"  itemprop="url">
+        假设检验
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        概念例子：
+
+这个“去判定”的命题，即
+
+概念：
+
+
+
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-04-16T16:44:25+08:00">2023-04-16</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E6%A6%82%E7%BB%9F/">概统</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E6%A6%82%E7%BB%9F/" itemprop="url"><span itemprop="name">概统</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/04/16/%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/16/西瓜书-2-4-比较检验/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/04/16/%E8%A5%BF%E7%93%9C%E4%B9%A6-2-4-%E6%AF%94%E8%BE%83%E6%A3%80%E9%AA%8C/"  itemprop="url">
+        西瓜书 2.4 比较检验
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        
+2.4.1 假设检验
+
+
+对于这个假设即需要：
+“e&gt;e0”的总概率&lt;a
+“e&gt;e0”的总概率即
+
+
+
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-04-16T16:11:57+08:00">2023-04-16</time>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/04/16/%E8%A5%BF%E7%93%9C%E4%B9%A6-2-4-%E6%AF%94%E8%BE%83%E6%A3%80%E9%AA%8C/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2692,7 +2976,7 @@ Before answering the queries, we need to preprocess the tree. We make a DFS trav
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/12/树的高度/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/15/西瓜书-第2章/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2710,15 +2994,36 @@ Before answering the queries, we need to preprocess the tree. We make a DFS trav
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/03/12/%E6%A0%91%E7%9A%84%E9%AB%98%E5%BA%A6/"  itemprop="url">
-        树的高度
+      <a href="/2023/04/15/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E7%AC%AC2%E7%AB%A0/"  itemprop="url">
+        西瓜书 2.2 评估方法 2.3 性能度量
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        https://www.geeksforgeeks.org/roots-tree-gives-minimum-height/Given an undirected graph, which has tree characteristics (any connected graph without simple cycles is a tree.). It is possible to cho...
+        2.2对测试样本的假设
+一个数据集得到训练集和测试集留出法
+
+
+
+交叉验证
+
+自助法有放回抽样m次，得到含m个样本的集合，作为训练集（这个训练集中有重复的样本，但是我们不去重）
+
+
+
+调参
+
+验证集验证集来自训练数据
+即给定数据集D，其被划分为：训练数据，测试数据
+其中训练数据进一步划分为：训练集，验证集
+
+最终模型
+2.3 性能度量（主要分类问题）
+错误率 精度
+
+混淆矩阵 查全率reca...
       
     
   </div>
@@ -2726,7 +3031,64 @@ Before answering the queries, we need to preprocess the tree. We make a DFS trav
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-03-12T10:56:11+08:00">2023-03-12</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-04-15T11:11:43+08:00">2023-04-15</time>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/04/15/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E7%AC%AC2%E7%AB%A0/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/14/有向无环图-枚举st路径-st路径计数/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/04/14/%E6%9C%89%E5%90%91%E6%97%A0%E7%8E%AF%E5%9B%BE-%E6%9E%9A%E4%B8%BEst%E8%B7%AF%E5%BE%84-st%E8%B7%AF%E5%BE%84%E8%AE%A1%E6%95%B0/"  itemprop="url">
+        有向无环图 枚举st路径 st路径计数
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        https://www.geeksforgeeks.org/number-of-paths-from-source-to-destination-in-a-directed-acyclic-graph/
+拓扑排序+动态规划，好厉害
+Let f(u) be the number of ways one can travel from node u to destination vertex. ...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-04-14T09:45:26+08:00">2023-04-14</time>
         
           <span class="dot"></span>
           <a class="category-link" href="/categories/algorithm/">algorithm</a>
@@ -2739,7 +3101,7 @@ Before answering the queries, we need to preprocess the tree. We make a DFS trav
       </div>
       
         <div>
-          <a class='readmore' href='/2023/03/12/%E6%A0%91%E7%9A%84%E9%AB%98%E5%BA%A6/' itemprop="url">
+          <a class='readmore' href='/2023/04/14/%E6%9C%89%E5%90%91%E6%97%A0%E7%8E%AF%E5%9B%BE-%E6%9E%9A%E4%B8%BEst%E8%B7%AF%E5%BE%84-st%E8%B7%AF%E5%BE%84%E8%AE%A1%E6%95%B0/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2757,7 +3119,7 @@ Before answering the queries, we need to preprocess the tree. We make a DFS trav
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/11/c-模板类申明（在定义前申明）/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/13/西瓜书-第1章/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2775,20 +3137,32 @@ Before answering the queries, we need to preprocess the tree. We make a DFS trav
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/03/11/c-%E6%A8%A1%E6%9D%BF%E7%B1%BB%E7%94%B3%E6%98%8E%EF%BC%88%E5%9C%A8%E5%AE%9A%E4%B9%89%E5%89%8D%E7%94%B3%E6%98%8E%EF%BC%89/"  itemprop="url">
-        c++模板类申明（在定义前申明）
+      <a href="/2023/04/13/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E7%AC%AC1%E7%AB%A0/"  itemprop="url">
+        西瓜书 第1章
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        在一些情况下我们先定义类A，再定义类B（这样的定义顺序是因为类B有个成员函数返回类型A（而不是A的引用或指针）），但是在类A中有一个数据成员的类型是类B的引用，此时便需要在类A的定义前先申明B
-// 申明模板类Graph
-template &lt;typename BatchSetType&gt;
-class Graph; 
-// 定义模板类BlockCutTree
-template &lt...
+        1.2数据集
+
+
+
+1.3学得的模型也称假设
+
+泛化能力
+对样本空间和样本的假设
+
+偏好
+
+1.4模型在训练集之外的所有样本上的误差 
+NFL定理
+
+
+
+但是事实上我们通常并不总是关心训练集外的“所有”样本，而是一部分
+
       
     
   </div>
@@ -2796,155 +3170,20 @@ template &lt...
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-03-11T21:35:02+08:00">2023-03-11</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-04-13T18:21:36+08:00">2023-04-13</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/c/">c++</a>
+          <a class="category-link" href="/categories/ML/">ML</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/c/" itemprop="url"><span itemprop="name">c++</span></a>
+              <a href="/categories/ML/" itemprop="url"><span itemprop="name">ML</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/03/11/c-%E6%A8%A1%E6%9D%BF%E7%B1%BB%E7%94%B3%E6%98%8E%EF%BC%88%E5%9C%A8%E5%AE%9A%E4%B9%89%E5%89%8D%E7%94%B3%E6%98%8E%EF%BC%89/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/10/二连通图-two-connected-graph-biconnected-graph/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-    <meta itemprop="description" content="grapher">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/03/10/%E4%BA%8C%E8%BF%9E%E9%80%9A%E5%9B%BE-two-connected-graph-biconnected-graph/"  itemprop="url">
-        二连通图 two-connected-graph biconnected-graph
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        https://www.techiedelight.com/2-vertex-connectivity-graph/http://www.cs.rpi.edu/~goldberg/14-GT/08-block.pdf
-无向图DFSWe can find Articulation points in a graph using Depth–first search (DFS).We can s...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-03-10T16:46:11+08:00">2023-03-10</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/algorithm/">algorithm</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/algorithm/" itemprop="url"><span itemprop="name">algorithm</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/03/10/%E4%BA%8C%E8%BF%9E%E9%80%9A%E5%9B%BE-two-connected-graph-biconnected-graph/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/09/use-git-in-debug-mode-git输出详细过程信息/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="zhiqiuyuan's blog">
-    <meta itemprop="description" content="grapher">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/03/09/use-git-in-debug-mode-git%E8%BE%93%E5%87%BA%E8%AF%A6%E7%BB%86%E8%BF%87%E7%A8%8B%E4%BF%A1%E6%81%AF/"  itemprop="url">
-        use git in debug mode git输出详细过程信息
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        https://www.shellhacks.com/git-verbose-mode-debug-fatal-errors/
-Git Verbose Mode in Linux&#x2F;MacOSDebug Git command:
-$ GIT_TRACE=true \
-GIT_CURL_VERBOSE=true \
-GIT_SSH_COMMAND=&quot;ssh -vvv&quot...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-03-09T18:52:42+08:00">2023-03-09</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/tools/">tools</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/tools/" itemprop="url"><span itemprop="name">tools</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/03/09/use-git-in-debug-mode-git%E8%BE%93%E5%87%BA%E8%AF%A6%E7%BB%86%E8%BF%87%E7%A8%8B%E4%BF%A1%E6%81%AF/' itemprop="url">
+          <a class='readmore' href='/2023/04/13/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E7%AC%AC1%E7%AB%A0/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2971,7 +3210,7 @@ GIT_SSH_COMMAND=&quot;ssh -vvv&quot...
           </a>
         
         <p class="current">
-          18 / 44
+          18 / 49
         </p>
         
           <a class="next" rel="next" href="/page/19/">
@@ -3216,7 +3455,7 @@ GIT_SSH_COMMAND=&quot;ssh -vvv&quot...
           <li><a class="flat-box"
             title="/categories/tool/" href="/categories/tool/"
             active-action="action-categoriestool"
-            ><div class='name'>tool</div><div class='badge'>(70)</div></a></li>
+            ><div class='name'>tool</div><div class='badge'>(69)</div></a></li>
         
           <li><a class="flat-box child"
             title="/categories/tool/linux/" href="/categories/tool/linux/"
@@ -3226,7 +3465,7 @@ GIT_SSH_COMMAND=&quot;ssh -vvv&quot...
           <li><a class="flat-box child"
             title="/categories/tool/windows/" href="/categories/tool/windows/"
             active-action="action-categoriestoolwindows"
-            ><div class='name'>windows</div><div class='badge'>(8)</div></a></li>
+            ><div class='name'>windows</div><div class='badge'>(7)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/tools/" href="/categories/tools/"

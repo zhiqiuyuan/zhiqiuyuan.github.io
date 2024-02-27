@@ -2272,7 +2272,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1708084958563),
+    lastupdate: new Date(1709044408207),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2630,11 +2630,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         
-      
-        
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/14/自定义安装wsl/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2024/02/17/win-重启资源管理器-explorer/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2652,20 +2650,18 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/07/14/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AE%89%E8%A3%85wsl/"  itemprop="url">
-        自定义安装wsl
+      <a href="/2024/02/17/win-%E9%87%8D%E5%90%AF%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8-explorer/"  itemprop="url">
+        win 重启资源管理器 explorer
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        安装https://lukebest.github.io/posts/bb32在这里下载分发版：https://learn.microsoft.com/en-us/windows/wsl/install-manual#downloading-distributions
-切换成版本2查看版本
-wsl -l -v
+        重启资源管理器
+taskkill /f /im explorer.exe &amp; start explorer.exe
 
-如果不是2的话设置版本
-wsl --set-version &lt;distri...
+
       
     
   </div>
@@ -2673,12 +2669,12 @@ wsl --set-version &lt;distri...
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-07-14T11:33:15+08:00">2023-07-14</time>
+        <time itemprop="dateCreated datePublished" datetime="2024-02-17T15:48:42+08:00">2024-02-17</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/07/14/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AE%89%E8%A3%85wsl/' itemprop="url">
+          <a class='readmore' href='/2024/02/17/win-%E9%87%8D%E5%90%AF%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8-explorer/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2694,7 +2690,7 @@ wsl --set-version &lt;distri...
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/14/windows安装mingw/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2024/02/17/win-where-查看程序所在路径-查看命令所在路径/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2712,17 +2708,17 @@ wsl --set-version &lt;distri...
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/07/14/windows%E5%AE%89%E8%A3%85mingw/"  itemprop="url">
-        windows安装mingw
+      <a href="/2024/02/17/win-where-%E6%9F%A5%E7%9C%8B%E7%A8%8B%E5%BA%8F%E6%89%80%E5%9C%A8%E8%B7%AF%E5%BE%84-%E6%9F%A5%E7%9C%8B%E5%91%BD%E4%BB%A4%E6%89%80%E5%9C%A8%E8%B7%AF%E5%BE%84/"  itemprop="url">
+        win where 查看程序所在路径 查看命令所在路径
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        https://stackoverflow.com/questions/46455927/mingw-w64-installer-the-file-has-been-downloaded-incorrectly
-下载https://sourceforge.net/projects/mingw-w64/files/mingw-w64/，然后解压，然后把bin目录添加环境变量
-关于选型：Vers...
+        where gcc
+
+
       
     
   </div>
@@ -2730,12 +2726,12 @@ wsl --set-version &lt;distri...
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-07-14T10:19:46+08:00">2023-07-14</time>
+        <time itemprop="dateCreated datePublished" datetime="2024-02-17T15:23:00+08:00">2024-02-17</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/07/14/windows%E5%AE%89%E8%A3%85mingw/' itemprop="url">
+          <a class='readmore' href='/2024/02/17/win-where-%E6%9F%A5%E7%9C%8B%E7%A8%8B%E5%BA%8F%E6%89%80%E5%9C%A8%E8%B7%AF%E5%BE%84-%E6%9F%A5%E7%9C%8B%E5%91%BD%E4%BB%A4%E6%89%80%E5%9C%A8%E8%B7%AF%E5%BE%84/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2751,7 +2747,7 @@ wsl --set-version &lt;distri...
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/14/chrome快捷键/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2024/02/17/win11资源管理器右键菜单恢复成win10版本/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2769,19 +2765,16 @@ wsl --set-version &lt;distri...
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/07/14/chrome%E5%BF%AB%E6%8D%B7%E9%94%AE/"  itemprop="url">
-        chrome快捷键
+      <a href="/2024/02/17/win11%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95%E6%81%A2%E5%A4%8D%E6%88%90win10%E7%89%88%E6%9C%AC/"  itemprop="url">
+        win11资源管理器右键菜单恢复成win10版本
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        Ctrl+Tab 或 Ctrl+PgDown 切换到下一个标签页。
-Ctrl+Shift+Tab 或 Ctrl+PgUp 切换到上一个标签页。
-Ctrl+W 或 Ctrl+F4 关闭当前标签页或弹出窗口。
-Ctrl+T 打开新标签页。
-
+        https://zhuanlan.zhihu.com/p/626355083
+inspiron 15 3511 用了修改注册表的方法    恢复的方法：删除掉注册表中HKEY_CURRENT_USER\SOFTWARE\CLASSES\CLSID\&#123;86ca1aa0-34aa-4e8b-a509-50c905bae2a2&#125;下的项InprocServer32，然后重启资源管...
       
     
   </div>
@@ -2789,12 +2782,12 @@ Ctrl+T 打开新标签页。
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-07-14T09:45:48+08:00">2023-07-14</time>
+        <time itemprop="dateCreated datePublished" datetime="2024-02-17T10:52:04+08:00">2024-02-17</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/07/14/chrome%E5%BF%AB%E6%8D%B7%E9%94%AE/' itemprop="url">
+          <a class='readmore' href='/2024/02/17/win11%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95%E6%81%A2%E5%A4%8D%E6%88%90win10%E7%89%88%E6%9C%AC/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2810,7 +2803,7 @@ Ctrl+T 打开新标签页。
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/14/win10快捷键/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2024/02/17/vscode-leetcode插件登录/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2828,17 +2821,22 @@ Ctrl+T 打开新标签页。
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/07/14/win10%E5%BF%AB%E6%8D%B7%E9%94%AE/"  itemprop="url">
-        win10快捷键
+      <a href="/2024/02/17/vscode-leetcode%E6%8F%92%E4%BB%B6%E7%99%BB%E5%BD%95/"  itemprop="url">
+        vscode leetcode插件登录
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        win+D 切换到桌面win+S 底部工具栏的搜索
-win+R 运行win+X 黑色栏
+        目前leetcode插件似乎仅支持leetcode.cn的endpoint，不支持leetcode.com的步骤：
 
+安装leetcode插件
+switch endpoint: 将endpoint切换为cn
+可以在插件设置中修改，也可以点击左侧栏的leetcode插件图标然后点击侧边栏顶部的地球图标
+
+
+sign in: 如果同时网页上也登录了，那无法使用账号密码登录，不过可以使用cooki...
       
     
   </div>
@@ -2846,12 +2844,12 @@ win+R 运行win+X 黑色栏
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-07-14T09:45:10+08:00">2023-07-14</time>
+        <time itemprop="dateCreated datePublished" datetime="2024-02-17T10:39:49+08:00">2024-02-17</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/07/14/win10%E5%BF%AB%E6%8D%B7%E9%94%AE/' itemprop="url">
+          <a class='readmore' href='/2024/02/17/vscode-leetcode%E6%8F%92%E4%BB%B6%E7%99%BB%E5%BD%95/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2867,7 +2865,7 @@ win+R 运行win+X 黑色栏
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/14/windows-vscode-环境变量和系统不同步/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2024/02/17/win-GNU-MSYS2-非MSVC环境安装Rust/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="zhiqiuyuan's blog">
   </span>
@@ -2885,22 +2883,16 @@ win+R 运行win+X 黑色栏
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/07/14/windows-vscode-%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E5%92%8C%E7%B3%BB%E7%BB%9F%E4%B8%8D%E5%90%8C%E6%AD%A5/"  itemprop="url">
-        windows vscode 环境变量和系统不同步
+      <a href="/2024/02/17/win-GNU-MSYS2-%E9%9D%9EMSVC%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85Rust/"  itemprop="url">
+        win GNU MSYS2 非MSVC环境安装Rust
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        https://github.com/microsoft/vscode/issues/144339
-在全局settings.json中添加
-&quot;terminal.integrated.env.windows&quot;: &#123;
-        &quot;PATH&quot;: &quot;$&#123;env:PATH&#125;;&quot;
-    &#125;,
+        https://zhuanlan.zhihu.com/p/613466378
 
-
-...
       
     
   </div>
@@ -2908,12 +2900,12 @@ win+R 运行win+X 黑色栏
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-07-14T09:41:18+08:00">2023-07-14</time>
+        <time itemprop="dateCreated datePublished" datetime="2024-02-17T10:05:40+08:00">2024-02-17</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/07/14/windows-vscode-%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E5%92%8C%E7%B3%BB%E7%BB%9F%E4%B8%8D%E5%90%8C%E6%AD%A5/' itemprop="url">
+          <a class='readmore' href='/2024/02/17/win-GNU-MSYS2-%E9%9D%9EMSVC%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85Rust/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2927,11 +2919,310 @@ win+R 运行win+X 黑色栏
         
       
         
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2024/02/17/判断笔记本是否是新机/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2024/02/17/%E5%88%A4%E6%96%AD%E7%AC%94%E8%AE%B0%E6%9C%AC%E6%98%AF%E5%90%A6%E6%98%AF%E6%96%B0%E6%9C%BA/"  itemprop="url">
+        判断笔记本是否是新机
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
       
+        https://mp.weixin.qq.com/s/r8UtWtotGtnyPGiMnc996A
+
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2024-02-17T09:41:38+08:00">2024-02-17</time>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2024/02/17/%E5%88%A4%E6%96%AD%E7%AC%94%E8%AE%B0%E6%9C%AC%E6%98%AF%E5%90%A6%E6%98%AF%E6%96%B0%E6%9C%BA/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
         
       
         
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2024/02/07/笔记本查看电池健康/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2024/02/07/%E7%AC%94%E8%AE%B0%E6%9C%AC%E6%9F%A5%E7%9C%8B%E7%94%B5%E6%B1%A0%E5%81%A5%E5%BA%B7/"  itemprop="url">
+        笔记本查看电池健康
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
       
+        https://blog.csdn.net/weixin_43960383/article/details/118395867
+打开cmd，生成电池健康报告
+powercfg/batteryreport
+
+含义电池型号 Installed batteries当前电池健康 Installed batteriesDESIGN CAPACITYFULL CHARGE CAPACITYbattery...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2024-02-07T15:06:32+08:00">2024-02-07</time>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2024/02/07/%E7%AC%94%E8%AE%B0%E6%9C%AC%E6%9F%A5%E7%9C%8B%E7%94%B5%E6%B1%A0%E5%81%A5%E5%BA%B7/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2024/02/07/多线程程序性能上不去-没有线性加速-cpu没有跑满-原因排查/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2024/02/07/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%A8%8B%E5%BA%8F%E6%80%A7%E8%83%BD%E4%B8%8A%E4%B8%8D%E5%8E%BB-%E6%B2%A1%E6%9C%89%E7%BA%BF%E6%80%A7%E5%8A%A0%E9%80%9F-cpu%E6%B2%A1%E6%9C%89%E8%B7%91%E6%BB%A1-%E5%8E%9F%E5%9B%A0%E6%8E%92%E6%9F%A5/"  itemprop="url">
+        多线程程序性能上不去 没有线性加速 cpu没有跑满 原因排查
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        现象：在n个物理核的机器上跑线程数为c（小于n）的多线程程序，其对串行版本的加速比达不到c
+（持续完善ing，目前只有“全内存，计算intensive”类程序的经验）
+原因排查：
+
+看cpu占用是否达到线性加速：
+top或htop：看是否达到串行时的cpu占用率*c（top中程序的cpu占用是把每个线程的cpu占用累加起来的）
+htop可以更加直观地看到每个逻辑核的占用情况
+
+
+达不到的可能...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2024-02-07T10:26:37+08:00">2024-02-07</time>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2024/02/07/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%A8%8B%E5%BA%8F%E6%80%A7%E8%83%BD%E4%B8%8A%E4%B8%8D%E5%8E%BB-%E6%B2%A1%E6%9C%89%E7%BA%BF%E6%80%A7%E5%8A%A0%E9%80%9F-cpu%E6%B2%A1%E6%9C%89%E8%B7%91%E6%BB%A1-%E5%8E%9F%E5%9B%A0%E6%8E%92%E6%9F%A5/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2024/02/07/linux命令行没有颜色-tab自动补全无效-新云服务器指定命令行为bash/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2024/02/07/linux%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%B2%A1%E6%9C%89%E9%A2%9C%E8%89%B2-tab%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8%E6%97%A0%E6%95%88-%E6%96%B0%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%8C%87%E5%AE%9A%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%B8%BAbash/"  itemprop="url">
+        linux命令行没有颜色 tab自动补全无效 新云服务器指定命令行为bash
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        https://blog.csdn.net/Frederick_Bala/article/details/107410923（首先系统要有bin/bash，然后）
+查看使用的shell echo $SHELL如果不是/bin/bash，查看 ls -l /bin/sh，如果该软链接的不是/bin/bash，执行 ln -sf /bin/bash /bin/sh
+
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2024-02-07T10:23:57+08:00">2024-02-07</time>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2024/02/07/linux%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%B2%A1%E6%9C%89%E9%A2%9C%E8%89%B2-tab%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8%E6%97%A0%E6%95%88-%E6%96%B0%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%8C%87%E5%AE%9A%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%B8%BAbash/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2024/02/03/leetcode-完全二叉树的节点个数/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="zhiqiuyuan's blog">
+    <meta itemprop="description" content="grapher">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2024/02/03/leetcode-%E5%AE%8C%E5%85%A8%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E8%8A%82%E7%82%B9%E4%B8%AA%E6%95%B0/"  itemprop="url">
+        leetcode 完全二叉树的节点个数
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        完全二叉树的节点个数Q给你一棵 完全二叉树 的根节点 root ，求出该树的节点个数。
+完全二叉树 的定义如下：在完全二叉树中，除了最底层节点可能没填满外，其余每层节点数都达到最大值，并且最下面一层的节点都集中在该层最左边的若干位置。若最底层为第 h 层，则该层包含 1~ 2h 个节点。
+示例 1：
+
+输入：root = [1,2,3,4,5,6]
+输出：6
+
+示例 2：
+输入：root =...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2024-02-03T14:25:07+08:00">2024-02-03</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/leetcode/">leetcode</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/leetcode/" itemprop="url"><span itemprop="name">leetcode</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2024/02/03/leetcode-%E5%AE%8C%E5%85%A8%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E8%8A%82%E7%82%B9%E4%B8%AA%E6%95%B0/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
         
       
     
@@ -2948,7 +3239,7 @@ win+R 运行win+X 黑色栏
           </a>
         
         <p class="current">
-          6 / 44
+          6 / 49
         </p>
         
           <a class="next" rel="next" href="/page/7/">
@@ -3193,7 +3484,7 @@ win+R 运行win+X 黑色栏
           <li><a class="flat-box"
             title="/categories/tool/" href="/categories/tool/"
             active-action="action-categoriestool"
-            ><div class='name'>tool</div><div class='badge'>(70)</div></a></li>
+            ><div class='name'>tool</div><div class='badge'>(69)</div></a></li>
         
           <li><a class="flat-box child"
             title="/categories/tool/linux/" href="/categories/tool/linux/"
@@ -3203,7 +3494,7 @@ win+R 运行win+X 黑色栏
           <li><a class="flat-box child"
             title="/categories/tool/windows/" href="/categories/tool/windows/"
             active-action="action-categoriestoolwindows"
-            ><div class='name'>windows</div><div class='badge'>(8)</div></a></li>
+            ><div class='name'>windows</div><div class='badge'>(7)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/tools/" href="/categories/tools/"

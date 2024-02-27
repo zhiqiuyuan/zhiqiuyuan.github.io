@@ -2275,7 +2275,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1708084958563),
+    lastupdate: new Date(1709044408207),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2720,13 +2720,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
     <h2 id="原理和简介"><a href="#原理和简介" class="headerlink" title="原理和简介"></a>原理和简介</h2><p>Valgrind <strong>follows each allocation</strong> in your program and tracks it to see if it is returned properly, continue to be referenced or is lost in space, which is a ‘memory leak’. And as any leak, given enough time you will drown, in this case require more and more memory, until either you program is eating up your whole computer, or you get out of memory.</p>
-<h2 id="常用"><a href="#常用" class="headerlink" title="常用"></a>常用</h2><p><code>--tool=memcheck</code>是默认选项</p>
+<h2 id="常用-memcheck"><a href="#常用-memcheck" class="headerlink" title="常用 memcheck"></a>常用 <code>memcheck</code></h2><p><code>--tool=memcheck</code>是默认选项</p>
 <pre><code class="bash">valgrind --leak-check=yes YourRunCommand
 </code></pre>
 <pre><code class="bash">valgrind --leak-check=full  YourRunCommand
 </code></pre>
 <p><a target="_blank" rel="noopener" href="https://tutorialadda.com/gdb/what-is-valgrind-and-how-to-debug-memory-related-issue-using-valgrind#:~:text=Valgrind%20is%20a%20debugging%20tool%20used%20for%20memory,to%20optimize%20memory%20uses%20during%20running%20the%20program">https://tutorialadda.com/gdb/what-is-valgrind-and-how-to-debug-memory-related-issue-using-valgrind#:~:text=Valgrind%20is%20a%20debugging%20tool%20used%20for%20memory,to%20optimize%20memory%20uses%20during%20running%20the%20program</a>.</p>
-<h2 id="配合gdb"><a href="#配合gdb" class="headerlink" title="配合gdb"></a>配合gdb</h2><p><a target="_blank" rel="noopener" href="https://www.responsive.se/thomas/2013/09/20/debugging-memory-leaks-with-valgrind-and-gdb/">https://www.responsive.se/thomas/2013/09/20/debugging-memory-leaks-with-valgrind-and-gdb/</a></p>
+<h2 id="其他工具：多线程竞争halgrind，缓存misscachegrind"><a href="#其他工具：多线程竞争halgrind，缓存misscachegrind" class="headerlink" title="其他工具：多线程竞争halgrind，缓存misscachegrind"></a>其他工具：多线程竞争<code>halgrind</code>，缓存miss<code>cachegrind</code></h2><h2 id="配合gdb"><a href="#配合gdb" class="headerlink" title="配合gdb"></a>配合gdb</h2><p>gdb可以停在valgrind的error处，此时你可以通过gdb来观察现场<br><a target="_blank" rel="noopener" href="https://www.responsive.se/thomas/2013/09/20/debugging-memory-leaks-with-valgrind-and-gdb/">https://www.responsive.se/thomas/2013/09/20/debugging-memory-leaks-with-valgrind-and-gdb/</a></p>
 
   </div>
   
@@ -2909,7 +2909,7 @@ vmstat的常规用法：vmstat interval times即每隔interval秒...</p>
 
 
   <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%9F%E7%90%86%E5%92%8C%E7%AE%80%E4%BB%8B"><span class="toc-text">原理和简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8"><span class="toc-text">常用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E5%90%88gdb"><span class="toc-text">配合gdb</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%9F%E7%90%86%E5%92%8C%E7%AE%80%E4%BB%8B"><span class="toc-text">原理和简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8-memcheck"><span class="toc-text">常用 memcheck</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E5%B7%A5%E5%85%B7%EF%BC%9A%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%AB%9E%E4%BA%89halgrind%EF%BC%8C%E7%BC%93%E5%AD%98misscachegrind"><span class="toc-text">其他工具：多线程竞争halgrind，缓存misscachegrind</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E5%90%88gdb"><span class="toc-text">配合gdb</span></a></li></ol>
   </div>
 </section>
 
